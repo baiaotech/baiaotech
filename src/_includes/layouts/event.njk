@@ -1,0 +1,63 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  {% set cover = cover_image | localAsset %}
+  {% set categoryLabels = page.inputPath | eventCategoryLabels(categoriesBySlug) %}
+  <article class="detail-page detail-page--event">
+    <section class="detail-intro">
+      <div class="container detail-intro__grid {{ 'detail-intro__grid--single' if not cover }}">
+        <div class="detail-intro__content" data-reveal>
+          <p class="eyebrow">Evento</p>
+          <h1>{{ title }}</h1>
+          <p class="detail-intro__lead">
+            {{ start_date | eventDateRange(end_date) }}
+            {% if city or state %} · {{ city }}{% if city and state %}, {% endif %}{{ state | stateName }}{% endif %}
+          </p>
+          <div class="meta-pills">
+            <span>{{ kind | kindLabel }}</span>
+            <span>{{ format | formatLabel }}</span>
+            {% if price %}<span>{{ price | priceLabel }}</span>{% endif %}
+          </div>
+        </div>
+
+        {% if cover %}
+          <div class="detail-intro__media" data-reveal style="--detail-image: url('{{ cover | url }}');"></div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div class="container detail-body__grid">
+        <aside class="detail-aside" data-reveal>
+          <p class="eyebrow">Acesso rápido</p>
+          <dl class="detail-facts">
+            <div>
+              <dt>Organização</dt>
+              <dd>{{ organizer }}</dd>
+            </div>
+            <div>
+              <dt>Local</dt>
+              <dd>{{ venue }}</dd>
+            </div>
+            {% if categoryLabels.length %}
+              <div>
+                <dt>Categorias</dt>
+                <dd class="detail-facts__chips">
+                  {% for categoryLabel in categoryLabels %}
+                    <span>{{ categoryLabel }}</span>
+                  {% endfor %}
+                </dd>
+              </div>
+            {% endif %}
+          </dl>
+          {% if ticket_url %}
+            <a class="button button--primary" href="{{ ticket_url }}">Abrir inscrição</a>
+          {% endif %}
+        </aside>
+        <div class="prose" data-reveal>
+          {{ content | safe }}
+        </div>
+      </div>
+    </section>
+  </article>
+{% endblock %}

@@ -1,0 +1,145 @@
+---
+layout: layouts/base.njk
+title: Como contribuir
+description: Guia simples para abrir PRs com eventos e comunidades.
+bodyClass: page-contribute
+---
+<section class="utility-intro utility-intro--soft">
+  <div class="container utility-intro__inner" data-reveal>
+    <p class="eyebrow">Contribuição</p>
+    <h1>Como sugerir um evento ou uma comunidade.</h1>
+    <p>
+      Cada item do site fica em um arquivo próprio. Você pode sugerir ajustes por PR no repositório.
+    </p>
+  </div>
+</section>
+
+<section class="editorial-section editorial-section--contribute">
+  <div class="container contribute-stack">
+    <article class="contribute-section">
+      <div class="contribute-section__summary" data-reveal>
+        <div>
+          <p class="eyebrow">Eventos</p>
+          <h2>Adicionar um evento</h2>
+          <p class="contribute-section__lead">
+            Cada evento entra em um arquivo Markdown com datas, local, formato e link principal.
+          </p>
+        </div>
+        <div class="contribute-section__meta">
+          <span>Arquivo sugerido</span>
+          <code>src/content/events/nome-do-evento.md</code>
+        </div>
+      </div>
+
+      <div class="contribute-section__layout">
+        <div class="contribute-section__steps" data-reveal>
+          <ol class="contribute-steps">
+            <li>Crie um novo arquivo em <code>src/content/events/</code>.</li>
+            <li>Preencha o front matter com datas, tipo, formato e organização.</li>
+            <li>Descreva o evento no corpo em Markdown com o contexto essencial.</li>
+            <li>Abra o PR com o arquivo novo ou com a edição necessária.</li>
+          </ol>
+          <p class="contribute-note">
+            Se houver capa, prefira um arquivo local do projeto e use o caminho em <code>cover_image</code>.
+            Se nao houver, deixe vazio.
+          </p>
+        </div>
+
+        <div class="contribute-section__sample" data-reveal>
+          <p class="eyebrow">Modelo base</p>
+          <pre><code>---
+title: "Nome do evento"
+start_date: "2026-08-20"
+end_date: "2026-08-21"
+kind: "conference"
+format: "in-person"
+city: "Salvador"
+state: "BA"
+organizer: "Comunidade XYZ"
+venue: "Centro de Convencoes"
+ticket_url: "https://..."
+categories:
+  - "frontend"
+featured: false
+cover_image: ""
+price: "0.00"
+---
+
+Descricao do evento em Markdown.</code></pre>
+          <p class="contribute-note">
+            Template no repositório:
+            <a href="{{ site.repoUrl }}/blob/main/docs/templates/event-template.md">event-template.md</a>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contribute-section">
+      <div class="contribute-section__summary" data-reveal>
+        <div>
+          <p class="eyebrow">Comunidades</p>
+          <h2>Adicionar uma comunidade</h2>
+          <p class="contribute-section__lead">
+            Registre links principais, localização e um resumo curto para facilitar a leitura no diretório.
+          </p>
+        </div>
+        <div class="contribute-section__meta">
+          <span>Arquivo sugerido</span>
+          <code>src/content/communities/nome-da-comunidade.md</code>
+        </div>
+      </div>
+
+      <div class="contribute-section__layout">
+        <div class="contribute-section__steps" data-reveal>
+          <ol class="contribute-steps">
+            <li>Crie um novo arquivo em <code>src/content/communities/</code>.</li>
+            <li>Preencha links, estado, cidade e metadados basicos.</li>
+            <li>Explique o contexto da comunidade no corpo em Markdown.</li>
+            <li>Abra o PR com o arquivo novo ou com a correção.</li>
+          </ol>
+          <p class="contribute-note">
+            Quando houver imagem, use um asset local do repositório. Se nao houver,
+            <code>cover_image</code> pode ficar vazio.
+          </p>
+        </div>
+
+        <div class="contribute-section__sample" data-reveal>
+          <p class="eyebrow">Modelo base</p>
+          <pre><code>---
+title: "Nome da comunidade"
+state: "PE"
+city: "Recife"
+website: "https://..."
+instagram: "https://..."
+linkedin: ""
+telegram: ""
+whatsapp: ""
+tags:
+  - "python"
+featured: false
+cover_image: "/assets/covers/communities/nome-da-comunidade.jpg"
+---
+
+Descricao da comunidade em Markdown.</code></pre>
+          <p class="contribute-note">
+            Template no repositório:
+            <a href="{{ site.repoUrl }}/blob/main/docs/templates/community-template.md">community-template.md</a>
+          </p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="closing-cta">
+  <div class="container closing-cta__inner" data-reveal>
+    <div>
+      <p class="eyebrow">Repositorio</p>
+      <h2>Abra o repositório e envie sua sugestão.</h2>
+    </div>
+    <div class="closing-cta__actions">
+      <a class="button button--primary" href="{{ site.repoUrl }}">Abrir repositorio</a>
+      <a class="button button--ghost" href="{{ site.repoUrl }}/blob/main/.github/pull_request_template.md">Template de PR</a>
+    </div>
+  </div>
+</section>

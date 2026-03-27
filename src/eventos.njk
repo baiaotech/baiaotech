@@ -1,0 +1,136 @@
+---
+layout: layouts/base.njk
+title: Eventos
+description: Agenda filtrável de eventos de tecnologia com leitura direta e filtros claros.
+bodyClass: page-events
+pageScripts:
+  - /assets/js/list-filters.js
+---
+{% set futureEvents = collections.eventsFuture %}
+{% set pastEvents = collections.eventsPast %}
+{% set allEvents = collections.eventsSorted %}
+{% set monthOptions = allEvents | eventMonths %}
+{% set stateOptions = allEvents | uniqueStates %}
+
+<section class="utility-intro">
+  <div class="container utility-intro__inner" data-reveal>
+    <p class="eyebrow">Agenda</p>
+    <h1>Encontre o próximo evento em poucos segundos.</h1>
+    <p>
+      Busque por nome, organizador, formato, categoria, estado e mês sem atravessar uma interface carregada.
+    </p>
+  </div>
+</section>
+
+<section class="listing-shell" data-list-root>
+  <div class="container listing-shell__toolbar" data-reveal>
+    <div>
+      <p class="eyebrow">Índice</p>
+      <h2><span data-results-count>{{ allEvents.length }}</span> eventos</h2>
+    </div>
+    <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="event-filters">
+      Filtrar
+    </button>
+  </div>
+
+  <div class="filter-backdrop" data-filter-backdrop hidden></div>
+
+  <div class="container listing-shell__layout">
+    <aside class="filter-panel" id="event-filters" data-filter-panel>
+      <div class="filter-panel__header">
+        <h3>Filtros</h3>
+        <button class="filter-panel__close" type="button" data-filter-close>Fechar</button>
+      </div>
+
+      <form class="filter-form" aria-label="Filtros de eventos" data-filter-form>
+        <label>
+          <span>Buscar</span>
+          <input type="search" placeholder="Titulo, cidade, organizacao..." data-filter-search>
+        </label>
+        <label>
+          <span>Tipo</span>
+          <select data-filter-key="kind">
+            <option value="">Todos</option>
+            {% for item in eventMeta.kinds %}
+              <option value="{{ item.value }}">{{ item.label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Categoria</span>
+          <select data-filter-key="categories">
+            <option value="">Todas</option>
+            {% for category in categories %}
+              <option value="{{ category.slug }}">{{ category.name }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Formato</span>
+          <select data-filter-key="format">
+            <option value="">Todos</option>
+            {% for item in eventMeta.formats %}
+              <option value="{{ item.value }}">{{ item.label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Estado</span>
+          <select data-filter-key="state">
+            <option value="">Todos</option>
+            {% for state in stateOptions %}
+              <option value="{{ state }}">{{ state | stateName }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Mes</span>
+          <select data-filter-key="month">
+            <option value="">Todos</option>
+            {% for month in monthOptions %}
+              <option value="{{ month.value }}">{{ month.label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <div class="filter-actions">
+          <button class="button button--primary" type="submit">Aplicar filtros</button>
+          <button class="button button--ghost" type="button" data-filter-reset>Limpar</button>
+        </div>
+      </form>
+    </aside>
+
+    <div class="listing-shell__content">
+      <section class="listing-block" data-filter-section>
+        <div class="listing-block__header">
+          <div>
+            <p class="eyebrow">Próximos</p>
+            <h2>Proximos</h2>
+          </div>
+          <p>{{ futureEvents.length }} no radar</p>
+        </div>
+        <div class="listing-list">
+          {% for event in futureEvents %}
+            {% include "partials/event-card.njk" %}
+          {% endfor %}
+        </div>
+        <p class="empty-inline" data-section-empty hidden>Nenhum proximo evento combina com os filtros.</p>
+      </section>
+
+      <section class="listing-block listing-block--subdued" data-filter-section>
+        <div class="listing-block__header">
+          <div>
+            <p class="eyebrow">Arquivo</p>
+            <h2>Arquivo</h2>
+          </div>
+          <p>{{ pastEvents.length }} no arquivo</p>
+        </div>
+        <div class="listing-list">
+          {% for event in pastEvents %}
+            {% include "partials/event-card.njk" %}
+          {% endfor %}
+        </div>
+        <p class="empty-inline" data-section-empty hidden>Nenhum item do arquivo combina com os filtros.</p>
+      </section>
+    </div>
+  </div>
+</section>

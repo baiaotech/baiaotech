@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+permalink: 404.html
+title: Pagina nao encontrada
+description: A rota que voce tentou acessar nao existe.
+bodyClass: page-404
+---
+<section class="utility-intro">
+  <div class="container utility-intro__inner" data-reveal>
+    <p class="eyebrow">404</p>
+    <h1>Essa rota não existe no índice atual.</h1>
+    <p>Volte para a home ou navegue por eventos e comunidades.</p>
+    <div class="hero-home__actions">
+      <a class="button button--primary" href="{{ '/' | url }}">Voltar para a home</a>
+      <a class="button button--ghost" href="{{ '/eventos/' | url }}">Ver eventos</a>
+    </div>
+  </div>
+</section>

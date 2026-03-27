@@ -1,0 +1,154 @@
+[
+  {
+    "id": 1,
+    "name": "Devops",
+    "slug": "devops",
+    "description": "",
+    "color": "#6B7280",
+    "order": 1
+  },
+  {
+    "id": 2,
+    "name": "Frontend",
+    "slug": "frontend",
+    "description": "",
+    "color": "#6B7280",
+    "order": 2
+  },
+  {
+    "id": 3,
+    "name": "Backend",
+    "slug": "backend",
+    "description": "",
+    "color": "#6B7280",
+    "order": 3
+  },
+  {
+    "id": 4,
+    "name": "Fullstack",
+    "slug": "fullstack",
+    "description": "",
+    "color": "#6B7280",
+    "order": 4
+  },
+  {
+    "id": 5,
+    "name": "Mobile",
+    "slug": "mobile",
+    "description": "",
+    "color": "#6B7280",
+    "order": 5
+  },
+  {
+    "id": 6,
+    "name": "IA",
+    "slug": "ia",
+    "description": "",
+    "color": "#6B7280",
+    "order": 6
+  },
+  {
+    "id": 7,
+    "name": "Cloud",
+    "slug": "cloud",
+    "description": "",
+    "color": "#6B7280",
+    "order": 7
+  },
+  {
+    "id": 8,
+    "name": "Segurança",
+    "slug": "seguranca",
+    "description": "",
+    "color": "#6B7280",
+    "order": 8
+  },
+  {
+    "id": 9,
+    "name": "Agilidade",
+    "slug": "agilidade",
+    "description": "",
+    "color": "#6B7280",
+    "order": 9
+  },
+  {
+    "id": 10,
+    "name": "Blockchain",
+    "slug": "blockchain",
+    "description": "",
+    "color": "#6B7280",
+    "order": 10
+  },
+  {
+    "id": 11,
+    "name": "Big Data",
+    "slug": "big-data",
+    "description": "",
+    "color": "#6B7280",
+    "order": 11
+  },
+  {
+    "id": 12,
+    "name": "UX",
+    "slug": "ux",
+    "description": "",
+    "color": "#6B7280",
+    "order": 12
+  },
+  {
+    "id": 13,
+    "name": "UI",
+    "slug": "ui",
+    "description": "",
+    "color": "#6B7280",
+    "order": 13
+  },
+  {
+    "id": 14,
+    "name": "Data Science",
+    "slug": "data-science",
+    "description": "",
+    "color": "#6B7280",
+    "order": 14
+  },
+  {
+    "id": 15,
+    "name": "Gestão (PO, PM, Tech Recruiter)",
+    "slug": "gestao-po-pm-tech-recruiter",
+    "description": "",
+    "color": "#6B7280",
+    "order": 15
+  },
+  {
+    "id": 16,
+    "name": "Inovação",
+    "slug": "inovacao",
+    "description": "",
+    "color": "#6B7280",
+    "order": 16
+  },
+  {
+    "id": 17,
+    "name": "OpenSource",
+    "slug": "opensource",
+    "description": "",
+    "color": "#6B7280",
+    "order": 17
+  },
+  {
+    "id": 18,
+    "name": "Games",
+    "slug": "games",
+    "description": "",
+    "color": "#6B7280",
+    "order": 18
+  },
+  {
+    "id": 19,
+    "name": "Outros",
+    "slug": "outros",
+    "description": "",
+    "color": "#6B7280",
+    "order": 19
+  }
+]

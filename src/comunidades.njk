@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+title: Comunidades
+description: Diretório aberto de comunidades de tecnologia com leitura direta e filtro simples.
+bodyClass: page-communities
+pageScripts:
+  - /assets/js/list-filters.js
+---
+{% set allCommunities = collections.communitiesSorted %}
+{% set stateOptions = allCommunities | uniqueStates %}
+
+<section class="utility-intro utility-intro--soft">
+  <div class="container utility-intro__inner" data-reveal>
+    <p class="eyebrow">Diretório</p>
+    <h1>Encontre comunidades tech por estado, cidade ou tema.</h1>
+    <p>
+      Busque por nome, filtre por estado e abra os links principais com uma leitura direta.
+    </p>
+  </div>
+</section>
+
+<section class="listing-shell" data-list-root>
+  <div class="container listing-shell__toolbar" data-reveal>
+    <div>
+      <p class="eyebrow">Índice</p>
+      <h2><span data-results-count>{{ allCommunities.length }}</span> comunidades</h2>
+    </div>
+    <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="community-filters">
+      Filtrar
+    </button>
+  </div>
+
+  <div class="filter-backdrop" data-filter-backdrop hidden></div>
+
+  <div class="container listing-shell__layout">
+    <aside class="filter-panel" id="community-filters" data-filter-panel>
+      <div class="filter-panel__header">
+        <h3>Filtros</h3>
+        <button class="filter-panel__close" type="button" data-filter-close>Fechar</button>
+      </div>
+
+      <form class="filter-form" aria-label="Filtros de comunidades" data-filter-form>
+        <label>
+          <span>Buscar</span>
+          <input type="search" placeholder="Nome, cidade, tag..." data-filter-search>
+        </label>
+        <label>
+          <span>Estado</span>
+          <select data-filter-key="state">
+            <option value="">Todos</option>
+            {% for state in stateOptions %}
+              <option value="{{ state }}">{{ state | stateName }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <div class="filter-actions">
+          <button class="button button--primary" type="submit">Aplicar filtros</button>
+          <button class="button button--ghost" type="button" data-filter-reset>Limpar</button>
+        </div>
+      </form>
+    </aside>
+
+    <div class="listing-shell__content">
+      <section class="listing-block" data-filter-section>
+        <div class="listing-list">
+          {% for community in allCommunities %}
+            {% include "partials/community-card.njk" %}
+          {% endfor %}
+        </div>
+        <p class="empty-inline" data-section-empty hidden>Nenhuma comunidade combina com os filtros.</p>
+      </section>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,5 @@
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M-80 620C144 520 244 508 430 566C651 635 771 798 1012 792C1183 788 1290 696 1520 524" stroke="#F3C39A" stroke-width="2"/>
+  <path d="M-60 700C159 587 347 573 544 649C730 720 897 857 1117 846C1267 838 1394 762 1536 671" stroke="#F0AE76" stroke-width="1.5" opacity="0.8"/>
+  <path d="M-20 800C184 692 363 680 577 739C771 793 937 912 1143 901C1288 893 1419 831 1520 766" stroke="#E79A61" stroke-width="1.5" opacity="0.65"/>
+</svg>

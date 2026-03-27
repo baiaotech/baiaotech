@@ -1,0 +1,30 @@
+{
+  "name": "baiaotech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agenda e diretório de comunidades do Baião Tech em Eleventy.",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "npm run validate && eleventy",
+    "build:site": "eleventy",
+    "test:e2e:install": "node scripts/playwright-install.mjs",
+    "test:e2e": "npm run build && node scripts/playwright-run.mjs test",
+    "test:e2e:headed": "npm run build && node scripts/playwright-run.mjs test --headed",
+    "validate": "node scripts/validate-content.mjs",
+    "import:backend": "node scripts/import-backend-fixtures.mjs",
+    "sync:community-covers": "node scripts/sync-community-covers.mjs"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "serve": "^14.2.6"
+  }
+}

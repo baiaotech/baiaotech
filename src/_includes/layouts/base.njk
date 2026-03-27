@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{ site.locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <meta name="theme-color" content="#2f4fda">
+    <meta property="og:title" content="{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absoluteUrl }}">
+    <link rel="canonical" href="{{ page.url | absoluteUrl }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+  </head>
+  <body class="{{ bodyClass or '' }}">
+    <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
+
+    <header class="site-header" data-site-header>
+      <div class="container site-header__inner">
+        <a class="site-brand" href="{{ '/' | url }}">
+          <span class="site-brand__name">Baião Tech</span>
+          <span class="site-brand__sub">eventos e comunidades</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Principal">
+          {% set nav = [
+            { "href": "/", "label": "Inicio" },
+            { "href": "/eventos/", "label": "Eventos" },
+            { "href": "/comunidades/", "label": "Comunidades" },
+            { "href": "/como-contribuir/", "label": "Contribuir" }
+          ] %}
+          {% for item in nav %}
+            <a href="{{ item.href | url }}" {% if page.url == item.href %}aria-current="page"{% endif %}>
+              {{ item.label }}
+            </a>
+          {% endfor %}
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      {% block content %}{{ content | safe }}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>
+          <p class="eyebrow">Baião Tech</p>
+          <p class="site-footer__summary">
+            Acompanhe eventos e descubra comunidades de tecnologia em um só lugar.
+          </p>
+        </div>
+        <div class="site-footer__links">
+          <a href="{{ '/eventos/' | url }}">Eventos</a>
+          <a href="{{ '/comunidades/' | url }}">Comunidades</a>
+          <a href="{{ '/como-contribuir/' | url }}">Como contribuir</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ '/assets/js/site.js' | url }}" defer></script>
+    {% if pageScripts %}
+      {% for scriptPath in pageScripts %}
+        <script src="{{ scriptPath | url }}" defer></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>

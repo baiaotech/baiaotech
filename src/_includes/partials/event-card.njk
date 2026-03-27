@@ -1,0 +1,55 @@
+{% set data = event.data %}
+{% set isFuture = data.end_date | isFutureDate %}
+{% set cover = data.cover_image | localAsset %}
+{% set categorySlugs = data.page.inputPath | eventCategorySlugs %}
+{% set categoryLabels = data.page.inputPath | eventCategoryLabels(categoriesBySlug) %}
+<article
+  class="listing-row listing-row--event {{ 'listing-row--with-media' if cover else 'listing-row--no-media' }}"
+  data-card
+  data-reveal
+  data-searchable="{{ data.title }} {{ data.organizer }} {{ data.city }} {{ data.state }} {{ categorySlugs | join(' ') }}"
+  data-kind="{{ data.kind }}"
+  data-format="{{ data.format }}"
+  data-state="{{ data.state }}"
+  data-month="{{ data.start_date.slice(0, 7) }}"
+  data-categories="{{ categorySlugs | join(',') }}"
+  data-status="{{ 'future' if isFuture else 'past' }}"
+>
+  <div class="listing-row__date">
+    <span class="listing-row__day">{{ data.start_date | dayNumber }}</span>
+    <span class="listing-row__month">{{ data.start_date | monthShort }}</span>
+  </div>
+
+  <div class="listing-row__body">
+    <p class="listing-row__eyebrow">
+      {{ data.kind | kindLabel }} · {{ data.format | formatLabel }}
+      {% if data.state %} · {{ data.state | stateName }}{% endif %}
+    </p>
+    <h3 class="listing-row__title"><a href="{{ event.url | url }}">{{ data.title }}</a></h3>
+    <p class="listing-row__summary">
+      {{ data.organizer }}
+      {% if data.city or data.state %}
+        — {{ data.city }}{% if data.city and data.state %}, {% endif %}{{ data.state | stateName }}
+      {% endif %}
+    </p>
+
+    {% if categoryLabels.length %}
+      <ul class="listing-row__meta-list" aria-label="Categorias">
+        {% for categoryLabel in categoryLabels %}
+          <li>{{ categoryLabel }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+  {% if cover %}
+    <div class="listing-row__media" style="--listing-image: url('{{ cover | url }}');"></div>
+  {% endif %}
+
+  <div class="listing-row__cta">
+    {% if data.price %}
+      <span class="listing-row__price">{{ data.price | priceLabel }}</span>
+    {% endif %}
+    <a class="text-link" href="{{ event.url | url }}">Detalhes</a>
+  </div>
+</article>

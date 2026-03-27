@@ -1,0 +1,47 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  {% set cover = cover_image | localAsset %}
+  <article class="detail-page detail-page--community">
+    <section class="detail-intro">
+      <div class="container detail-intro__grid {{ 'detail-intro__grid--single' if not cover }}">
+        <div class="detail-intro__content" data-reveal>
+          <p class="eyebrow">Comunidade</p>
+          <h1>{{ title }}</h1>
+          <p class="detail-intro__lead">
+            {{ state | stateName }}{% if city %} · {{ city }}{% endif %}
+          </p>
+          {% if tags.length %}
+            <div class="meta-pills">
+              {% for tag in tags.slice(0, 4) %}
+                <span>{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if cover %}
+          <div class="detail-intro__media" data-reveal style="--detail-image: url('{{ cover | url }}');"></div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div class="container detail-body__grid">
+        <aside class="detail-aside" data-reveal>
+          <p class="eyebrow">Links</p>
+          <div class="detail-links">
+            {% if website %}<a class="button button--primary" href="{{ website }}">Site oficial</a>{% endif %}
+            {% if instagram %}<a class="button button--ghost" href="{{ instagram }}">Instagram</a>{% endif %}
+            {% if linkedin %}<a class="button button--ghost" href="{{ linkedin }}">LinkedIn</a>{% endif %}
+            {% if telegram %}<a class="button button--ghost" href="{{ telegram }}">Telegram</a>{% endif %}
+            {% if whatsapp %}<a class="button button--ghost" href="{{ whatsapp }}">WhatsApp</a>{% endif %}
+          </div>
+        </aside>
+        <div class="prose" data-reveal>
+          {{ content | safe }}
+        </div>
+      </div>
+    </section>
+  </article>
+{% endblock %}
