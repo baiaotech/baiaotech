@@ -84,4 +84,51 @@ describe("event intake blacklist", () => {
     expect(isBlacklistableReason("online_only")).toBe(true);
     expect(isBlacklistableReason("low_confidence")).toBe(false);
   });
+
+  it("carrega o fallback legado em JSON quando o NDJSON nao existe", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-blacklist-"));
+    await fs.mkdir(path.join(tempDir, "data"), { recursive: true });
+    await fs.writeFile(
+      path.join(tempDir, "data/event-intake-blacklist.json"),
+      JSON.stringify({
+        version: 2,
+        updated_at: "2026-03-28T00:00:00.000Z",
+        entries: [
+          {
+            key: "legacy-key",
+            title: "Legacy entry",
+            reason: "past",
+            source_url: "https://example.com/legacy"
+          }
+        ]
+      }),
+      "utf8"
+    );
+
+    const blacklist = await loadEventBlacklist(tempDir);
+
+    expect(blacklist.version).toBe(2);
+    expect(blacklist.entries).toHaveLength(1);
+    expect(blacklist.entries[0].title).toBe("Legacy entry");
+  });
+
+  it("encontra por chave derivada quando a URL nao esta presente", () => {
+    const created = upsertBlacklistEntry(
+      createEmptyBlacklist(),
+      {
+        title: "Cloud Day Recife",
+        source_name: "Meetup Recife",
+        start_date: "2026-04-20"
+      },
+      { todayKey: "2026-03-28", reason: "non_tech" }
+    );
+
+    expect(
+      findBlacklistedEvent(created.blacklist, {
+        title: "Cloud Day Recife",
+        source_name: "Meetup Recife",
+        start_date: "2026-04-20"
+      })?.reason
+    ).toBe("non_tech");
+  });
 });
