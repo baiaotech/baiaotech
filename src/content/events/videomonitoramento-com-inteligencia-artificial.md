@@ -20,23 +20,22 @@ price: "Grátis"
 
 Capacite-se na linha de videomonitoramento, torne-se um especialista e ofereça soluções ideais para empresas.
 
-Conteúdo:
-- O que é Inteligência Artificial
-- Conceitos de Machine Learning e Deep Learning
-- Metadado
-- Leitura de placas veiculares
-- Análise comportamental
-- Reconhecimento Facial
-- Apresentação VIP 5550 Z IA
-- Funções básicas do menu inicial
-- Linha Virtual e Cerca Virtual
-- Objeto Abandonado e Retirado
-- Estacionamento irregular
-- Aglomeração
-- Análise de comportamento
-- Mapa de calor
-- Detecção de face com metadados
-- Contagem na área
-- Contagem de pessoas
-- Análise de filas
-- Buscando gravações por tipo de evento
+**Tópicos abordados:**
+* O que é Inteligência Artificial
+* Conceitos de Machine Learning e Deep Learning
+* Metadado
+* Leitura de placas veiculares
+* Análise comportamental
+* Reconhecimento Facial
+* Apresentação VIP 5550 Z IA
+* Funções básicas do menu inicial
+* Linha Virtual e Cerca Virtual
+* Objeto Abandonado e Retirado
+* Estacionamento irregular
+* Aglomeração
+* Análise de comportamento
+* Mapa de calor
+* Detecção de face com metadados
+* Contagem na área
+* Contagem de pessoas
+* Análise de filas
