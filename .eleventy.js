@@ -1,6 +1,9 @@
 const fs = require("node:fs");
 const matter = require("gray-matter");
 
+const {
+  isFutureOrCurrentEventByDate
+} = require("./lib/event-dates.js");
 const { getSiteConfig } = require("./site.config.js");
 
 const site = getSiteConfig();
@@ -57,9 +60,7 @@ function sortByCommunity(a, b) {
 }
 
 function isFutureEvent(item) {
-  const now = new Date();
-  const end = parseDate(item.data.end_date || item.data.start_date);
-  return end && end >= now;
+  return isFutureOrCurrentEventByDate(item.data);
 }
 
 function formatMonthLabel(date) {
@@ -240,8 +241,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("isFutureDate", (value) => {
-    const date = parseDate(value);
-    return date ? date >= new Date() : false;
+    return isFutureOrCurrentEventByDate({ end_date: value });
   });
 
   eleventyConfig.addFilter("kindLabel", (value) => kindLabels[value] || value || "");

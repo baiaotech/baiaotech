@@ -14,6 +14,8 @@ Agenda de eventos e diretório de comunidades de tecnologia, construída com Ele
 - `npm run dev` inicia o servidor local
 - `npm run validate` valida o conteúdo em Markdown
 - `npm run build` valida e gera o site em `_site`
+- `npm run events:prune:check` lista quais eventos ja passaram e seriam removidos
+- `npm run events:prune` apaga arquivos de eventos com `end_date` anterior a hoje em `America/Fortaleza`
 - `npm run test:unit` roda os testes unitários com Vitest
 - `npm run test:coverage` gera cobertura LCOV em `coverage/lcov.info`
 - `npm run test:e2e:install` instala o Chromium do Playwright e tenta preparar dependências nativas
@@ -90,3 +92,11 @@ O deploy usa workflow customizado com GitHub Actions.
 - O workflow lê `base_url` e `base_path` diretamente do `actions/configure-pages`
 - Em domínio customizado, o build passa a usar automaticamente a origem do domínio e `PATH_PREFIX=/`
 - Em project site padrão do GitHub Pages, o build usa automaticamente o subpath do repositório
+
+## Limpeza automática de eventos
+
+O repositório tem um workflow agendado em `.github/workflows/prune-past-events.yml`.
+
+- Ele roda diariamente às `03:15 UTC`, equivalente a `00:15` em `America/Fortaleza`
+- Remove arquivos em `src/content/events/` cujo `end_date` seja anterior à data atual no timezone `America/Fortaleza`
+- Valida e recompila o site antes de criar um commit automático com a limpeza
