@@ -64,6 +64,41 @@ describe("list filters", () => {
     expect(root.querySelector("[data-results-count]").textContent).toBe("1");
   });
 
+  it("suporta dataset com multiplos valores e lida com estrutura incompleta", () => {
+    const { applyFilters, setFilterPanelState } = loadModule();
+
+    document.body.innerHTML = `
+      <div data-list-root>
+        <button type="button" data-filter-toggle aria-expanded="false">Abrir</button>
+        <div data-filter-panel></div>
+        <div data-filter-backdrop hidden></div>
+        <form data-filter-form>
+          <select data-filter-key="tags">
+            <option value="">Todos</option>
+            <option value="cloud">cloud</option>
+          </select>
+        </form>
+        <p><span data-results-count>0</span></p>
+        <section data-filter-section>
+          <p data-section-empty hidden>Vazio</p>
+          <article data-card data-searchable="Cloud Day" data-tags="cloud, ia"></article>
+          <article data-card data-searchable="UX Day" data-tags="ux"></article>
+        </section>
+      </div>
+    `;
+
+    const root = document.querySelector("[data-list-root]");
+    root.querySelector("[data-filter-key='tags']").value = "cloud";
+    applyFilters(root);
+
+    const cards = [...root.querySelectorAll("[data-card]")];
+    expect(cards[0].hidden).toBe(false);
+    expect(cards[1].hidden).toBe(true);
+
+    const incompleteRoot = document.createElement("div");
+    expect(() => setFilterPanelState(incompleteRoot, true, { document, window })).not.toThrow();
+  });
+
   it("controla o painel e os eventos de interacao", () => {
     const { bindListRoot, setFilterPanelState } = loadModule();
     const root = buildDom();
@@ -106,6 +141,32 @@ describe("list filters", () => {
     expect(root.classList.contains("filters-open")).toBe(true);
 
     cleanups.forEach((cleanup) => cleanup());
+  });
+
+  it("faz autoboot quando o flag de disable nao esta presente", () => {
+    document.body.innerHTML = `
+      <div data-list-root>
+        <button type="button" data-filter-toggle aria-expanded="false">Abrir</button>
+        <div data-filter-panel></div>
+        <button type="button" data-filter-close>Fechar</button>
+        <div data-filter-backdrop hidden></div>
+        <form data-filter-form>
+          <input data-filter-search value="" />
+        </form>
+        <p><span data-results-count>0</span></p>
+        <section data-filter-section>
+          <p data-section-empty hidden>Vazio</p>
+          <article data-card data-searchable="Recife Frontend" data-state="PE"></article>
+        </section>
+      </div>
+    `;
+
+    Reflect.deleteProperty(window, "__BAIAOTECH_DISABLE_AUTOBOOT__");
+    delete require.cache[require.resolve("../../src/assets/js/list-filters.js")];
+    require("../../src/assets/js/list-filters.js");
+
+    document.querySelector("[data-filter-toggle]").click();
+    expect(document.querySelector("[data-list-root]").classList.contains("filters-open")).toBe(true);
   });
 
   it("retorna vazio quando nao existe document para inicializar", () => {
