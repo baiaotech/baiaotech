@@ -87,16 +87,6 @@ Variáveis opcionais:
 
 O deploy usa workflow customizado com GitHub Actions.
 
-- Em repositório de projeto, o path prefix é inferido automaticamente
-- Para futuro domínio customizado, configure as vars do repositório:
-  - `SITE_URL`
-  - `PATH_PREFIX`
-
-Exemplos:
-
-- Projeto Pages padrão:
-  - `SITE_URL` vazio
-  - `PATH_PREFIX` vazio
-- Domínio customizado:
-  - `SITE_URL=https://agenda.baiaotech.org`
-  - `PATH_PREFIX=/`
+- O workflow lê `base_url` e `base_path` diretamente do `actions/configure-pages`
+- Em domínio customizado, o build passa a usar automaticamente a origem do domínio e `PATH_PREFIX=/`
+- Em project site padrão do GitHub Pages, o build usa automaticamente o subpath do repositório
