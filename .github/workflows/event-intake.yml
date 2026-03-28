@@ -1,0 +1,90 @@
+name: Event Intake
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Persistir PRs e issues"
+        required: false
+        default: false
+        type: boolean
+      source_name:
+        description: "Executar somente para uma fonte especifica"
+        required: false
+        type: string
+      max_sources:
+        description: "Limite de fontes por rodada"
+        required: false
+        default: "10"
+        type: string
+      max_candidates:
+        description: "Limite de candidatos por fonte"
+        required: false
+        default: "3"
+        type: string
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+  GEMINI_MODEL: gemini-2.5-flash-lite
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci --ignore-scripts
+          npm rebuild esbuild
+
+      - name: Detect browser-backed sources
+        id: sources
+        run: |
+          if grep -q '"fetch_mode": "browser"' data/event-sources.json; then
+            echo "needs_browser=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "needs_browser=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Playwright Chromium
+        if: steps.sources.outputs.needs_browser == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Run event intake
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TOKEN_FOR_CI_EVENTS: ${{ secrets.TOKEN_FOR_CI_EVENTS }}
+          EVENT_INTAKE_MAX_SOURCES: ${{ inputs.max_sources || '10' }}
+          EVENT_INTAKE_MAX_CANDIDATES_PER_SOURCE: ${{ inputs.max_candidates || '3' }}
+        run: |
+          APPLY_FLAG="--dry-run"
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.apply }}" = "true" ]; then
+            APPLY_FLAG="--apply"
+          fi
+
+          SOURCE_ARG=""
+          if [ -n "${{ inputs.source_name }}" ]; then
+            SOURCE_ARG="--source=${{ inputs.source_name }}"
+          fi
+
+          node scripts/event-intake/index.mjs "$APPLY_FLAG" "$SOURCE_ARG"
+
+      - name: Upload intake report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: event-intake-report
+          if-no-files-found: ignore
+          path: output/event-intake/latest.json

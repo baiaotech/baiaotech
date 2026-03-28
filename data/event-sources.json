@@ -1,0 +1,83 @@
+[
+  {
+    "source_name": "AWS User Group Ceará",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-BR/aws-users-group-ce/events/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS User Group João Pessoa",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-BR/aws-user-group-joao-pessoa/events/",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Bahia Indie Game Developers",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-BR/bind-dev/events/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "React Ladies Recife",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-br/rladies-recife/events/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "WordPress Fortaleza",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-BR/wpfortaleza/events/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GDG Fortaleza",
+    "source_type": "generic-html",
+    "entry_url": "https://gdg.community.dev/gdg-fortaleza/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GDG Recife",
+    "source_type": "generic-html",
+    "entry_url": "https://gdg.community.dev/gdg-recife/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GDG João Pessoa",
+    "source_type": "generic-html",
+    "entry_url": "https://gdg.community.dev/gdg-joao-pessoa/",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GDG Salvador",
+    "source_type": "generic-html",
+    "entry_url": "https://gdg.community.dev/gdg-salvador/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  }
+]

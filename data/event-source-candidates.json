@@ -1,0 +1,86 @@
+[
+  {
+    "source_name": "AWS User Group Ceará",
+    "recommended_type": "meetup-group",
+    "candidate_url": "https://www.meetup.com/pt-BR/aws-users-group-ce/",
+    "reason": "website da comunidade combina com plataforma suportada"
+  },
+  {
+    "source_name": "AWS User Group João Pessoa",
+    "recommended_type": "meetup-group",
+    "candidate_url": "https://www.meetup.com/pt-BR/aws-user-group-joao-pessoa/",
+    "reason": "website da comunidade combina com plataforma suportada"
+  },
+  {
+    "source_name": "Bahia Indie Game Developers",
+    "recommended_type": "meetup-group",
+    "candidate_url": "https://www.meetup.com/pt-BR/bind-dev/",
+    "reason": "website da comunidade combina com plataforma suportada"
+  },
+  {
+    "source_name": "GDG Aracaju",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-aracaju/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Fortaleza",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-fortaleza/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG João Pessoa",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-joao-pessoa/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Maceió",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-maceio/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Natal",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-natal/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Parnaíba",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-parnaiba/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Recife",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-recife/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "GDG Salvador",
+    "recommended_type": "generic-html",
+    "candidate_url": "https://gdg.community.dev/gdg-salvador/",
+    "reason": "site de chapter GDG com eventos live acessiveis via API publica"
+  },
+  {
+    "source_name": "PUG-AL (GruPy-AL)",
+    "recommended_type": "doity-page",
+    "candidate_url": "https://doity.com.br/i-encontro-de-usuarios-python-de-alagoas-pugal/contato",
+    "reason": "pagina do Doity detectada, mas parece ser evento pontual em vez de organizador recorrente"
+  },
+  {
+    "source_name": "React Ladies",
+    "recommended_type": "meetup-group",
+    "candidate_url": "https://www.meetup.com/pt-br/rladies-recife/",
+    "reason": "website da comunidade combina com plataforma suportada"
+  },
+  {
+    "source_name": "WordPress Fortaleza",
+    "recommended_type": "meetup-group",
+    "candidate_url": "https://www.meetup.com/pt-BR/wpfortaleza/",
+    "reason": "website da comunidade combina com plataforma suportada"
+  }
+]

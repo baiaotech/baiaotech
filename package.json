@@ -11,6 +11,8 @@
     "build": "npm run validate && eleventy",
     "build:site": "eleventy",
     "build:e2e": "node scripts/build-e2e.mjs",
+    "event-intake": "node scripts/event-intake/index.mjs --dry-run",
+    "event-sources:candidates": "node scripts/generate-event-source-candidates.mjs",
     "events:prune": "node scripts/prune-past-events.mjs --write",
     "events:prune:check": "node scripts/prune-past-events.mjs",
     "test:unit": "vitest run",

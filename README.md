@@ -14,6 +14,8 @@ Agenda de eventos e diretório de comunidades de tecnologia, construída com Ele
 - `npm run dev` inicia o servidor local
 - `npm run validate` valida o conteúdo em Markdown
 - `npm run build` valida e gera o site em `_site`
+- `npm run event-intake` roda o intake de eventos em modo dry-run
+- `npm run event-sources:candidates` regenera a lista inicial de fontes candidatas a partir das comunidades atuais
 - `npm run events:prune:check` lista quais eventos ja passaram e seriam removidos
 - `npm run events:prune` apaga arquivos de eventos com `end_date` anterior a hoje em `America/Fortaleza`
 - `npm run test:unit` roda os testes unitários com Vitest
@@ -56,6 +58,33 @@ Fluxo recomendado antes de subir mudanças de JavaScript:
 - `npm run test:unit`
 - `npm run test:coverage`
 - `npm run test:e2e`
+
+## Intake automático de eventos
+
+O repo agora inclui uma trilha de intake automático baseada em fontes confiáveis:
+
+- fontes aprovadas em `data/event-sources.json`
+- candidatos gerados a partir das comunidades atuais em `data/event-source-candidates.json`
+- pipeline em `scripts/event-intake/`
+- workflow agendado em `.github/workflows/event-intake.yml`
+
+Como funciona:
+
+- a descoberta visita apenas fontes aprovadas
+- parsers determinísticos tentam extrair links e metadados antes da IA
+- o Gemini 2.5 Flash Lite normaliza o evento para o schema do repo
+- alta confiança abre um PR por evento com reviewer `gabrielldn`
+- baixa confiança abre uma issue com label `event-intake`
+
+Segredos usados no workflow:
+
+- `GEMINI_API_KEY`
+- `TOKEN_FOR_CI_EVENTS`
+
+Para testar manualmente no GitHub:
+
+- execute `Event Intake` via `workflow_dispatch`
+- com `apply=false`, o workflow roda em dry-run e publica um relatório em `output/event-intake/latest.json`
 
 ## Estrutura editorial
 

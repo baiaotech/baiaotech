@@ -64,6 +64,8 @@ const eventSchema = z.object({
   featured: z.boolean().default(false),
   cover_image: optionalUrl,
   price: z.union([z.string(), z.number()]).optional(),
+  source_name: z.string().optional(),
+  source_url: z.string().regex(urlPattern, "deve ser uma URL http(s) valida").optional(),
   legacy_id: z.number().optional(),
   priority: z.number().optional()
 });
@@ -129,6 +131,10 @@ async function main() {
 
     if (parseDate(result.data.end_date) < parseDate(result.data.start_date)) {
       errors.push(`${relativePath}: end_date nao pode ser menor que start_date`);
+    }
+
+    if (result.data.source_url && !result.data.source_name) {
+      errors.push(`${relativePath}: source_name e obrigatorio quando source_url estiver presente`);
     }
 
     for (const slug of result.data.categories) {
