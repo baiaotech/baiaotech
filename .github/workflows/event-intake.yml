@@ -153,7 +153,7 @@ jobs:
             { "source_name": "Manguezal", "source_type": "generic-html", "entry_url": "https://manguez.al/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["software", "python", "javascript", "frontend", "backend"] },
             { "source_name": "Pyladies Recife", "source_type": "generic-html", "entry_url": "https://recife.pyladies.com/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["python", "dados", "ia", "software"] }
           ]
-            JSON
+          JSON
             echo '__JSON__'
           } >> "$GITHUB_ENV"
 
