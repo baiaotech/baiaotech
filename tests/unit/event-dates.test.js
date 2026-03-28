@@ -5,7 +5,9 @@ import eventDates from "../../lib/event-dates.js";
 const {
   EVENT_TIME_ZONE,
   getDateKeyInTimeZone,
+  getDatePartsInTimeZone,
   getEventBoundaryDateKey,
+  isDateOnly,
   isFutureOrCurrentEventByDate,
   isPastEventByDate
 } = eventDates;
@@ -27,6 +29,22 @@ describe("event dates", () => {
         end_date: "2026-04-03"
       })
     ).toBe("2026-04-03");
+  });
+
+  it("valida datas simples e ignora limites invalidos", () => {
+    expect(isDateOnly("2026-04-03")).toBe(true);
+    expect(isDateOnly("2026/04/03")).toBe(false);
+    expect(getDatePartsInTimeZone(new Date("2026-03-27T03:30:00Z"), EVENT_TIME_ZONE)).toEqual({
+      year: "2026",
+      month: "03",
+      day: "27"
+    });
+    expect(
+      getEventBoundaryDateKey({
+        start_date: "nao-e-data",
+        end_date: "tambem-nao"
+      })
+    ).toBe("");
   });
 
   it("marca como passado somente quando a data final fica antes de hoje", () => {

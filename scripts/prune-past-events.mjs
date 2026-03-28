@@ -11,7 +11,6 @@ import eventDates from "../lib/event-dates.js";
 const { EVENT_TIME_ZONE, getDateKeyInTimeZone, getEventBoundaryDateKey, isPastEventByDate } =
   eventDates;
 
-const ROOT = process.cwd();
 const EVENTS_GLOB = "src/content/events/*.md";
 
 function parseArgs(argv = process.argv.slice(2)) {
@@ -32,7 +31,7 @@ function parseArgs(argv = process.argv.slice(2)) {
 }
 
 export async function collectPastEventFiles({
-  cwd = ROOT,
+  cwd = process.cwd(),
   glob = EVENTS_GLOB,
   todayKey = getDateKeyInTimeZone(new Date(), EVENT_TIME_ZONE)
 } = {}) {

@@ -63,14 +63,20 @@ Fluxo recomendado antes de subir mudanças de JavaScript:
 
 O repo agora inclui uma trilha de intake automático baseada em fontes confiáveis:
 
-- fontes aprovadas em `data/event-sources.json`
-- candidatos gerados a partir das comunidades atuais em `data/event-source-candidates.json`
+- registro inline de fontes dentro de `.github/workflows/event-intake.yml`
+- candidatos derivados das comunidades atuais em `data/event-source-candidates.json` como referência auxiliar
+- blacklist versionado em `data/event-intake-blacklist.ndjson`
 - pipeline em `scripts/event-intake/`
 - workflow agendado em `.github/workflows/event-intake.yml`
 
 Como funciona:
 
-- a descoberta visita apenas fontes aprovadas
+- a descoberta combina buscas regionais em plataformas e seeds curadas de comunidades
+- nao existe mais limite por fonte; o intake processa todos os candidatos descobertos em cada fonte e respeita apenas o teto global de URLs unicas por rodada
+- o pipeline deduplica contra os eventos ja existentes em `src/content/events/` antes de abrir PR
+- eventos rejeitados por politica (`past`, `online_only`, `non_northeast`, `non_tech`) entram no blacklist versionado e deixam de ser reprocessados nas rodadas seguintes
+- o corte de data usa `America/Fortaleza` e descarta eventos cujo `end_date` ou `start_date` ja esteja antes da data atual
+- o workflow busca eventos apenas no Nordeste e só cria PR para eventos `in-person` ou `hybrid`
 - parsers determinísticos tentam extrair links e metadados antes da IA
 - o Gemini 2.5 Flash Lite normaliza o evento para o schema do repo
 - alta confiança abre um PR por evento com reviewer `gabrielldn`
@@ -84,7 +90,13 @@ Segredos usados no workflow:
 Para testar manualmente no GitHub:
 
 - execute `Event Intake` via `workflow_dispatch`
-- com `apply=false`, o workflow roda em dry-run e publica um relatório em `output/event-intake/latest.json`
+- com `apply=false`, o workflow roda em dry-run e publica artefatos em `output/event-intake/`
+- com `apply=true`, alem dos PRs/issues do intake, o workflow pode sincronizar o blacklist `NDJSON` no repo quando houver novos descartes por politica
+
+Para testar localmente:
+
+- exporte `EVENT_INTAKE_SOURCES_JSON` com um array JSON de fontes
+- rode `npm run event-intake`
 
 ## Estrutura editorial
 

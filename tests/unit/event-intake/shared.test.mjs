@@ -6,9 +6,12 @@ import {
   buildIssueBody,
   buildPrBody,
   buildPrTitle,
+  classifyIntakeCandidate,
   ensureEventDefaults,
   findExistingEvent,
+  parseEventSources,
   normalizeUrl,
+  normalizeStateCode,
   scoreNormalizedEvent
 } from "../../../scripts/event-intake/shared.mjs";
 
@@ -17,6 +20,21 @@ describe("event intake shared helpers", () => {
     expect(
       normalizeUrl("https://example.com/evento/?utm_source=x&fbclid=y#section")
     ).toBe("https://example.com/evento");
+  });
+
+  it("faz parse do registro inline de fontes", () => {
+    const sources = parseEventSources(`[
+      {
+        "source_name": "Meetup Fortaleza",
+        "source_type": "meetup-search",
+        "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        "enabled": true,
+        "fetch_mode": "http"
+      }
+    ]`);
+
+    expect(sources).toHaveLength(1);
+    expect(sources[0].source_type).toBe("meetup-search");
   });
 
   it("deduplica por source_url e por similaridade", () => {
@@ -57,7 +75,7 @@ describe("event intake shared helpers", () => {
         start_date: "2026-04-10",
         end_date: "2026-04-10",
         organizer: "GDG Fortaleza",
-        venue: "Online",
+        venue: "Hub de Inovacao",
         state: "CE",
         source_url: "https://gdg.community.dev/events/details/build-with-ai-fortaleza",
         ticket_url: "https://gdg.community.dev/events/details/build-with-ai-fortaleza",
@@ -70,6 +88,55 @@ describe("event intake shared helpers", () => {
 
     expect(scoreNormalizedEvent(normalized).isHighConfidence).toBe(true);
     expect(scoreNormalizedEvent({ ...normalized, categories: [] }).isHighConfidence).toBe(false);
+  });
+
+  it("classifica corretamente PR, issue e descartes de politica", () => {
+    const baseCandidate = ensureEventDefaults(
+      {
+        title: "Cloud AI Nordeste",
+        start_date: "2026-04-10",
+        end_date: "2026-04-10",
+        kind: "conference",
+        format: "in-person",
+        city: "Fortaleza",
+        state: "Ceara",
+        organizer: "Comunidade Cloud",
+        venue: "Hub",
+        source_url: "https://example.com/evento",
+        ticket_url: "https://example.com/evento",
+        categories: ["cloud"],
+        description: "Evento de cloud, ia e software no Nordeste.",
+        source_name: "Source"
+      },
+      ["cloud"]
+    );
+    const baseScore = scoreNormalizedEvent(baseCandidate);
+
+    expect(normalizeStateCode("Ceará")).toBe("CE");
+    expect(classifyIntakeCandidate(baseCandidate, baseScore, { todayKey: "2026-03-28" }).action).toBe("pr");
+    expect(classifyIntakeCandidate({ ...baseCandidate, format: "online" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
+      action: "skip",
+      reason: "online_only"
+    });
+    expect(classifyIntakeCandidate({ ...baseCandidate, state: "SP" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
+      action: "skip",
+      reason: "non_northeast"
+    });
+    expect(classifyIntakeCandidate({ ...baseCandidate, end_date: "2026-03-01" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
+      action: "skip",
+      reason: "past"
+    });
+    expect(classifyIntakeCandidate({ ...baseCandidate, categories: [], description: "Conteudo sem local nem categoria clara" }, {
+      ...baseScore,
+      isHighConfidence: false,
+      missingCategory: true,
+      missingLocation: true,
+      missingRequired: false,
+      blockingAmbiguities: ["location_uncertain"]
+    }, { todayKey: "2026-03-28" })).toEqual({
+      action: "issue",
+      reason: "low_confidence"
+    });
   });
 
   it("monta markdown, branch e corpos de PR/issue com rastreabilidade", () => {

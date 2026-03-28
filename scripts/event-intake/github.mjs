@@ -134,6 +134,33 @@ async function upsertFileOnBranch({
   };
 }
 
+export async function syncRepoFileToDefaultBranch({
+  token,
+  repo,
+  apiUrl = "https://api.github.com",
+  filePath,
+  content,
+  commitMessage
+}) {
+  const repoInfo = await getRepoInfo({ token, repo, apiUrl });
+  const branchName = repoInfo.default_branch;
+
+  const result = await upsertFileOnBranch({
+    token,
+    repo,
+    apiUrl,
+    filePath,
+    branchName,
+    content,
+    commitMessage
+  });
+
+  return {
+    changed: result.changed,
+    branch: branchName
+  };
+}
+
 async function findOpenPullForBranch({ token, repo, apiUrl, owner, branchName }) {
   const pulls = await githubRequest({
     token,

@@ -6,9 +6,7 @@ import { fileURLToPath } from "node:url";
 import fg from "fast-glob";
 import matter from "gray-matter";
 
-const ROOT = process.cwd();
 const COMMUNITIES_GLOB = "src/content/communities/*.md";
-const OUTPUT_PATH = path.join(ROOT, "data/event-source-candidates.json");
 
 function classifySource(url) {
   if (/meetup\.com/i.test(url)) {
@@ -16,19 +14,23 @@ function classifySource(url) {
   }
 
   if (/gdg\.community\.dev/i.test(url)) {
-    return "generic-html";
+    return "gdg-chapter";
   }
 
-  if (/eventbrite\./i.test(url) && /organizer|o\//i.test(url)) {
-    return "eventbrite-organizer";
+  if (/eventbrite\./i.test(url)) {
+    return "eventbrite-search";
   }
 
-  if (/sympla\.com\.br/i.test(url) && /produtor|organizador/i.test(url)) {
-    return "sympla-organizer";
+  if (/sympla\.com\.br/i.test(url)) {
+    return "sympla-search";
   }
 
   if (/doity\.com\.br/i.test(url)) {
-    return "doity-page";
+    return "doity-search";
+  }
+
+  if (/even3\.com\.br/i.test(url)) {
+    return "even3-search";
   }
 
   return "";
@@ -39,18 +41,22 @@ function explainReason(type, url) {
     return "website da comunidade combina com plataforma suportada";
   }
 
-  if (type === "generic-html" && /gdg\.community\.dev/i.test(url)) {
+  if (type === "gdg-chapter" && /gdg\.community\.dev/i.test(url)) {
     return "site de chapter GDG com eventos live acessiveis via API publica";
   }
 
-  if (type === "doity-page") {
-    return "pagina do Doity detectada, mas parece ser evento pontual em vez de organizador recorrente";
+  if (type === "doity-search") {
+    return "pagina da Doity detectada para busca ampla na plataforma";
+  }
+
+  if (type === "eventbrite-search" || type === "sympla-search" || type === "even3-search") {
+    return "fonte candidata para busca regional na plataforma";
   }
 
   return "fonte identificada a partir das comunidades atuais";
 }
 
-export async function collectCandidateSources(cwd = ROOT) {
+export async function collectCandidateSources(cwd = process.cwd()) {
   const communityPaths = await fg(COMMUNITIES_GLOB, { cwd });
   const seen = new Set();
   const candidates = [];
@@ -90,9 +96,11 @@ export async function collectCandidateSources(cwd = ROOT) {
 }
 
 export async function main() {
-  const candidates = await collectCandidateSources();
-  await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await fs.writeFile(`${OUTPUT_PATH}`, `${JSON.stringify(candidates, null, 2)}\n`, "utf8");
+  const cwd = process.cwd();
+  const outputPath = path.join(cwd, "data/event-source-candidates.json");
+  const candidates = await collectCandidateSources(cwd);
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  await fs.writeFile(outputPath, `${JSON.stringify(candidates, null, 2)}\n`, "utf8");
   console.log(`Lista candidata atualizada: ${candidates.length} fonte(s) em data/event-source-candidates.json.`);
 }
 

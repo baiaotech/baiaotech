@@ -8,9 +8,132 @@ import matter from "gray-matter";
 import { z } from "zod";
 
 const EVENTS_GLOB = "src/content/events/*.md";
-const EVENT_SOURCES_PATH = "data/event-sources.json";
 const CATEGORIES_PATH = "src/_data/categories.json";
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+const NORTHEAST_STATE_MAP = {
+  "AL": "AL",
+  "ALAGOAS": "AL",
+  "BA": "BA",
+  "BAHIA": "BA",
+  "CE": "CE",
+  "CEARA": "CE",
+  "CEARÁ": "CE",
+  "MA": "MA",
+  "MARANHAO": "MA",
+  "MARANHÃO": "MA",
+  "PB": "PB",
+  "PARAIBA": "PB",
+  "PARAÍBA": "PB",
+  "PE": "PE",
+  "PERNAMBUCO": "PE",
+  "PI": "PI",
+  "PIAUI": "PI",
+  "PIAUÍ": "PI",
+  "RN": "RN",
+  "RIO GRANDE DO NORTE": "RN",
+  "SE": "SE",
+  "SERGIPE": "SE"
+};
+const NORTHEAST_CITY_TO_STATE = {
+  "ARACAJU": "SE",
+  "CAMPINA GRANDE": "PB",
+  "CAXIAS": "MA",
+  "FEIRA DE SANTANA": "BA",
+  "FORTALEZA": "CE",
+  "IMPERATRIZ": "MA",
+  "JOAO PESSOA": "PB",
+  "JOÃO PESSOA": "PB",
+  "JUAZEIRO DO NORTE": "CE",
+  "MACEIO": "AL",
+  "MACEIÓ": "AL",
+  "MOSSORO": "RN",
+  "MOSSORÓ": "RN",
+  "NATAL": "RN",
+  "PARNAIBA": "PI",
+  "PARNAÍBA": "PI",
+  "PETROLINA": "PE",
+  "RECIFE": "PE",
+  "SALVADOR": "BA",
+  "SANTA RITA": "PB",
+  "SAO LUIS": "MA",
+  "SÃO LUÍS": "MA",
+  "TERESINA": "PI",
+  "VITORIA DA CONQUISTA": "BA",
+  "VITÓRIA DA CONQUISTA": "BA"
+};
+const TECHNOLOGY_KEYWORDS = [
+  "tech",
+  "tecnologia",
+  "developer",
+  "development",
+  "desenvolvimento",
+  "software",
+  "programacao",
+  "programação",
+  "programming",
+  "cloud",
+  "devops",
+  "frontend",
+  "backend",
+  "fullstack",
+  "full stack",
+  "data",
+  "dados",
+  "analytics",
+  "ai",
+  "ia",
+  "inteligencia artificial",
+  "inteligência artificial",
+  "machine learning",
+  "cyber",
+  "security",
+  "seguranca",
+  "segurança",
+  "product",
+  "produto",
+  "design",
+  "ux",
+  "ui",
+  "aws",
+  "google",
+  "gdg",
+  "kubernetes",
+  "platform engineering",
+  "sre",
+  "meetup tech",
+  "hackathon"
+];
+const RESERVED_EVEN3_SEGMENTS = new Set([
+  "",
+  "#organization",
+  "como-funciona",
+  "conteudos",
+  "documentos",
+  "empresa",
+  "evento",
+  "eventos",
+  "eventos-com-submissoes",
+  "fale-com-nosso-consultor",
+  "plataforma"
+]);
+const RESERVED_GENERIC_SEGMENTS = new Set([
+  "",
+  "agenda",
+  "agendas",
+  "article",
+  "blog",
+  "conteudo",
+  "conteudos",
+  "evento",
+  "eventos",
+  "home",
+  "index",
+  "news",
+  "noticia",
+  "noticias",
+  "post",
+  "posts"
+]);
 
 export const VALID_EVENT_KINDS = [
   "conference",
@@ -22,27 +145,23 @@ export const VALID_EVENT_KINDS = [
 ];
 
 export const VALID_FORMATS = ["in-person", "online", "hybrid"];
+export const NORTHEAST_STATE_CODES = ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"];
 
 export const VALID_STATE_CODES = [
-  "AL",
-  "BA",
-  "CE",
-  "MA",
-  "PB",
-  "PE",
-  "PI",
-  "RN",
-  "SE",
+  ...NORTHEAST_STATE_CODES,
   "Nacional",
   "Online",
   ""
 ];
 
 export const EVENT_SOURCE_TYPES = [
-  "sympla-organizer",
-  "eventbrite-organizer",
-  "doity-page",
+  "sympla-search",
+  "eventbrite-search",
+  "meetup-search",
   "meetup-group",
+  "doity-search",
+  "even3-search",
+  "gdg-chapter",
   "generic-html"
 ];
 
@@ -53,7 +172,8 @@ export const eventSourceSchema = z.object({
   enabled: z.boolean().default(true),
   state: z.string().default(""),
   city: z.string().default(""),
-  fetch_mode: z.enum(["http", "browser"]).default("http")
+  fetch_mode: z.enum(["http", "browser"]).default("http"),
+  keywords: z.array(z.string()).default([])
 });
 
 export const normalizedEventSchema = z.object({
@@ -83,12 +203,16 @@ export function getRootDir() {
 
 function removeTrackingParams(url) {
   const trackedParams = [
+    "eventOrigin",
     "fbclid",
     "gclid",
     "mc_cid",
     "mc_eid",
+    "recId",
+    "recSource",
     "ref",
     "referrer",
+    "searchId",
     "source",
     "utm_campaign",
     "utm_content",
@@ -133,6 +257,21 @@ export function normalizeText(value) {
     .replace(/\s+/g, " ")
     .trim()
     .toLowerCase();
+}
+
+function escapeRegExp(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function normalizeStateCode(value) {
+  const normalized = String(value || "").trim();
+
+  if (!normalized) {
+    return "";
+  }
+
+  const state = NORTHEAST_STATE_MAP[normalized.toUpperCase()];
+  return state || (/^[A-Z]{2}$/.test(normalized) ? normalized.toUpperCase() : "");
 }
 
 export function slugify(value) {
@@ -193,6 +332,140 @@ export function truncateText(value, maxLength = 12000) {
 
 export function unique(values) {
   return [...new Set(values.filter(Boolean))];
+}
+
+export function isNortheastState(value) {
+  return NORTHEAST_STATE_CODES.includes(normalizeStateCode(value));
+}
+
+export function inferNortheastLocationFromText(value) {
+  const text = String(value || "");
+
+  if (!text.trim()) {
+    return {
+      city: "",
+      state: "",
+      matched_text: ""
+    };
+  }
+
+  for (const [city, state] of Object.entries(NORTHEAST_CITY_TO_STATE)) {
+    const pattern = new RegExp(`\\b${city.replace(/\s+/g, "\\s+")}\\b`, "i");
+    if (pattern.test(text)) {
+      return {
+        city,
+        state,
+        matched_text: city
+      };
+    }
+  }
+
+  for (const [stateName, stateCode] of Object.entries(NORTHEAST_STATE_MAP)) {
+    const pattern = new RegExp(`\\b${stateName.replace(/\s+/g, "\\s+")}\\b`, "i");
+    if (pattern.test(text)) {
+      return {
+        city: "",
+        state: stateCode,
+        matched_text: stateName
+      };
+    }
+  }
+
+  return {
+    city: "",
+    state: "",
+    matched_text: ""
+  };
+}
+
+export function matchesTechnologyKeywords(text, keywords = TECHNOLOGY_KEYWORDS) {
+  const haystack = normalizeText(text);
+
+  if (!haystack) {
+    return false;
+  }
+
+  return keywords.some((keyword) => {
+    const normalizedKeyword = normalizeText(keyword);
+
+    if (!normalizedKeyword) {
+      return false;
+    }
+
+    if (normalizedKeyword.includes(" ")) {
+      return haystack.includes(normalizedKeyword);
+    }
+
+    const pattern = new RegExp(`(^|\\b)${escapeRegExp(normalizedKeyword)}(\\b|$)`, "i");
+    return pattern.test(haystack);
+  });
+}
+
+export function looksLikeEven3EventUrl(url) {
+  try {
+    const candidate = new URL(url);
+    if (!/even3\.com\.br$/i.test(candidate.host)) {
+      return false;
+    }
+
+    const segments = candidate.pathname.split("/").filter(Boolean);
+    if (segments.length !== 1) {
+      return false;
+    }
+
+    const [slug] = segments;
+    return Boolean(slug && !RESERVED_EVEN3_SEGMENTS.has(slug.toLowerCase()));
+  } catch {
+    return false;
+  }
+}
+
+export function looksLikeDoityEventUrl(url) {
+  try {
+    const candidate = new URL(url);
+    if (!/doity\.com\.br$/i.test(candidate.host)) {
+      return false;
+    }
+
+    const segments = candidate.pathname.split("/").filter(Boolean);
+    if (!segments.length || segments.length > 2) {
+      return false;
+    }
+
+    return !["404", "eventos"].includes((segments[0] || "").toLowerCase());
+  } catch {
+    return false;
+  }
+}
+
+export function looksLikeGenericCommunityEventUrl(url, baseUrl = "") {
+  const normalized = normalizeUrl(url, baseUrl);
+
+  if (!normalized) {
+    return false;
+  }
+
+  try {
+    const candidate = new URL(normalized);
+    const segments = candidate.pathname.split("/").filter(Boolean);
+    const lastSegment = (segments.at(-1) || "").toLowerCase();
+
+    if (!segments.length || RESERVED_GENERIC_SEGMENTS.has(lastSegment)) {
+      return false;
+    }
+
+    if (
+      /\/(agenda|evento|eventos|events|ingressos|inscricao|inscricoes|tickets|programacao|programacao-?|workshop|meetup|summit|hackathon|conference|conferencia|congresso|forum|bootcamp)\b/i.test(
+        candidate.pathname
+      )
+    ) {
+      return true;
+    }
+
+    return /(sympla|eventbrite|meetup|doity|even3|gdg\.community\.dev)/i.test(candidate.host);
+  } catch {
+    return false;
+  }
 }
 
 export function diceCoefficient(left, right) {
@@ -343,10 +616,19 @@ export async function loadCategories(filePath = path.join(getRootDir(), CATEGORI
   return categories;
 }
 
-export async function loadEventSources(filePath = path.join(getRootDir(), EVENT_SOURCES_PATH)) {
-  const source = await fs.readFile(filePath, "utf8");
-  const parsed = JSON.parse(source);
+export function parseEventSources(sourceText = "") {
+  const parsed = JSON.parse(sourceText);
   return z.array(eventSourceSchema).parse(parsed);
+}
+
+export async function loadEventSources(sourceText = process.env.EVENT_INTAKE_SOURCES_JSON || "") {
+  const trimmed = String(sourceText || "").trim();
+
+  if (!trimmed) {
+    throw new Error("EVENT_INTAKE_SOURCES_JSON precisa estar definido com o registro inline das fontes.");
+  }
+
+  return parseEventSources(trimmed);
 }
 
 export async function loadExistingEvents(cwd = getRootDir()) {
@@ -459,6 +741,40 @@ export function scoreNormalizedEvent(candidate) {
       !missingLocation &&
       score >= 80
   };
+}
+
+export function classifyIntakeCandidate(candidate, scoreResult, options = {}) {
+  const todayKey = String(options.todayKey || "");
+  const boundaryKey = candidate.end_date || candidate.start_date || "";
+  const state = normalizeStateCode(candidate.state || NORTHEAST_CITY_TO_STATE[candidate.city] || "");
+  const format = candidate.format || "";
+  const titleDescription = `${candidate.title || ""}\n${candidate.description || ""}\n${candidate.organizer || ""}`;
+
+  if (DATE_PATTERN.test(boundaryKey) && todayKey && boundaryKey < todayKey) {
+    return { action: "skip", reason: "past" };
+  }
+
+  if (format === "online") {
+    return { action: "skip", reason: "online_only" };
+  }
+
+  if (state && !isNortheastState(state)) {
+    return { action: "skip", reason: "non_northeast" };
+  }
+
+  if (!(candidate.categories || []).length && !matchesTechnologyKeywords(titleDescription)) {
+    return { action: "skip", reason: "non_tech" };
+  }
+
+  if (!scoreResult.isHighConfidence) {
+    return { action: "issue", reason: "low_confidence" };
+  }
+
+  if (!state) {
+    return { action: "issue", reason: "low_confidence" };
+  }
+
+  return { action: "pr", reason: "ready" };
 }
 
 function yamlValue(value, indent = 0) {
@@ -594,7 +910,7 @@ export function ensureEventDefaults(candidate, categorySlugs = []) {
   const normalized = normalizedEventSchema.parse({
     ...candidate,
     categories: unique((candidate.categories || []).filter((item) => categorySlugs.includes(item))),
-    state: VALID_STATE_CODES.includes(candidate.state || "") ? candidate.state || "" : "",
+    state: normalizeStateCode(candidate.state || "") || "",
     kind: VALID_EVENT_KINDS.includes(candidate.kind) ? candidate.kind : inferEventKind(candidate.title, candidate.description),
     format: VALID_FORMATS.includes(candidate.format)
       ? candidate.format
@@ -629,6 +945,5 @@ export function ensureEventDefaults(candidate, categorySlugs = []) {
 export {
   CATEGORIES_PATH,
   DATE_PATTERN,
-  EVENT_SOURCES_PATH,
   EVENTS_GLOB
 };

@@ -16,7 +16,6 @@ export default defineConfig({
         "src/assets/js/list-filters.js",
         "src/content/events/events.11tydata.js",
         "src/content/communities/communities.11tydata.js",
-        "scripts/import-backend-fixtures.mjs",
         "scripts/prune-past-events.mjs"
       ]
     }

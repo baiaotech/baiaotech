@@ -4,7 +4,9 @@ import {
   htmlToText,
   inferEventFormat,
   inferEventKind,
+  inferNortheastLocationFromText,
   normalizeUrl,
+  normalizeStateCode,
   parseLocationParts,
   toDateOnly,
   truncateText
@@ -86,13 +88,36 @@ function extractLocation(eventJsonLd) {
   };
 }
 
+function extractFallbackLocation(document, page, candidate) {
+  const textCandidates = [
+    getMeta(document, "description"),
+    getMeta(document, "og:description"),
+    document.querySelector("main")?.textContent || "",
+    document.body?.textContent || "",
+    candidate.seed_data?.description || "",
+    page.final_url || ""
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  const inferred = inferNortheastLocationFromText(textCandidates);
+
+  return {
+    venue: "",
+    city: inferred.city,
+    state: normalizeStateCode(inferred.state)
+  };
+}
+
 export function extractDeterministicEventData(page, candidate) {
   const document = getDocument(page.html, page.final_url);
   const jsonLdEvent = findJsonLdEvent(document);
   const location = extractLocation(jsonLdEvent);
+  const fallbackLocation = extractFallbackLocation(document, page, candidate);
   const title =
     jsonLdEvent?.name ||
     getMeta(document, "og:title") ||
+    document.querySelector("h1")?.textContent ||
     document.querySelector("title")?.textContent ||
     candidate.seed_data?.title ||
     "";
@@ -122,8 +147,8 @@ export function extractDeterministicEventData(page, candidate) {
     end_date: toDateOnly(jsonLdEvent?.endDate || candidate.seed_data?.end_date || ""),
     kind: inferEventKind(title, description),
     format: inferEventFormat(description, location.venue),
-    city: location.city || candidate.source.city || "",
-    state: location.state || candidate.source.state || "",
+    city: location.city || fallbackLocation.city || "",
+    state: normalizeStateCode(location.state || fallbackLocation.state || ""),
     organizer: String(organizer).trim(),
     venue: location.venue || "",
     ticket_url: ticketUrl,

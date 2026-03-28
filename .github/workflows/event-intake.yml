@@ -14,15 +14,19 @@ on:
         description: "Executar somente para uma fonte especifica"
         required: false
         type: string
+      source_type:
+        description: "Executar somente para um tipo especifico"
+        required: false
+        type: string
       max_sources:
         description: "Limite de fontes por rodada"
         required: false
-        default: "10"
+        default: "200"
         type: string
-      max_candidates:
-        description: "Limite de candidatos por fonte"
+      max_unique_urls:
+        description: "Limite global de URLs unicas processadas"
         required: false
-        default: "3"
+        default: "150"
         type: string
 
 env:
@@ -44,6 +48,106 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Prepare inline source registry
+        run: |
+          {
+            echo 'EVENT_INTAKE_SOURCES_JSON<<__JSON__'
+            cat <<'JSON'
+          [
+            { "source_name": "Sympla Fortaleza", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Fortaleza%2C%20CE", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Natal", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Natal%2C%20RN", "enabled": true, "state": "RN", "city": "Natal", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Joao Pessoa", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Jo%C3%A3o%20Pessoa%2C%20PB", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Recife", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Recife%2C%20PE", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Maceio", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Macei%C3%B3%2C%20AL", "enabled": true, "state": "AL", "city": "Maceio", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Aracaju", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Aracaju%2C%20SE", "enabled": true, "state": "SE", "city": "Aracaju", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Salvador", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Salvador%2C%20BA", "enabled": true, "state": "BA", "city": "Salvador", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Sao Luis", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=S%C3%A3o%20Lu%C3%ADs%2C%20MA", "enabled": true, "state": "MA", "city": "Sao Luis", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Teresina", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Teresina%2C%20PI", "enabled": true, "state": "PI", "city": "Teresina", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Sympla Bahia", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Bahia", "enabled": true, "state": "BA", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Ceara", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Cear%C3%A1", "enabled": true, "state": "CE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Pernambuco", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Pernambuco", "enabled": true, "state": "PE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Paraiba", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Para%C3%ADba", "enabled": true, "state": "PB", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Rio Grande do Norte", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Rio%20Grande%20do%20Norte", "enabled": true, "state": "RN", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Alagoas", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Alagoas", "enabled": true, "state": "AL", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Sergipe", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Sergipe", "enabled": true, "state": "SE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Maranhao", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Maranh%C3%A3o", "enabled": true, "state": "MA", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Sympla Piaui", "source_type": "sympla-search", "entry_url": "https://www.sympla.com.br/eventos?s=tecnologia&c=Piau%C3%AD", "enabled": true, "state": "PI", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Eventbrite Fortaleza", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--fortaleza/tecnologia/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Natal", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--natal/tecnologia/", "enabled": true, "state": "RN", "city": "Natal", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Joao Pessoa", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--jo%C3%A3o-pessoa/tecnologia/", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Recife", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--recife/tecnologia/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Maceio", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--macei%C3%B3/tecnologia/", "enabled": true, "state": "AL", "city": "Maceio", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Aracaju", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--aracaju/tecnologia/", "enabled": true, "state": "SE", "city": "Aracaju", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Salvador", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--salvador/tecnologia/", "enabled": true, "state": "BA", "city": "Salvador", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Sao Luis", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--s%C3%A3o-lu%C3%ADs/tecnologia/", "enabled": true, "state": "MA", "city": "Sao Luis", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Teresina", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--teresina/tecnologia/", "enabled": true, "state": "PI", "city": "Teresina", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Eventbrite Bahia", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--bahia/tecnologia/", "enabled": true, "state": "BA", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Ceara", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--ceara/tecnologia/", "enabled": true, "state": "CE", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Pernambuco", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--pernambuco/tecnologia/", "enabled": true, "state": "PE", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Paraiba", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--para%C3%ADba/tecnologia/", "enabled": true, "state": "PB", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Rio Grande do Norte", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--rio-grande-do-norte/tecnologia/", "enabled": true, "state": "RN", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Alagoas", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--alagoas/tecnologia/", "enabled": true, "state": "AL", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Sergipe", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--sergipe/tecnologia/", "enabled": true, "state": "SE", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Maranhao", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--maranh%C3%A3o/tecnologia/", "enabled": true, "state": "MA", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Eventbrite Piaui", "source_type": "eventbrite-search", "entry_url": "https://www.eventbrite.com.br/d/brazil--piau%C3%AD/tecnologia/", "enabled": true, "state": "PI", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Meetup Fortaleza", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Natal", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Natal,%20BR", "enabled": true, "state": "RN", "city": "Natal", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Joao Pessoa", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Jo%C3%A3o%20Pessoa,%20BR", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Recife", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Recife,%20BR", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Maceio", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Macei%C3%B3,%20BR", "enabled": true, "state": "AL", "city": "Maceio", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Aracaju", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Aracaju,%20BR", "enabled": true, "state": "SE", "city": "Aracaju", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Salvador", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Salvador,%20BR", "enabled": true, "state": "BA", "city": "Salvador", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Sao Luis", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=S%C3%A3o%20Lu%C3%ADs,%20BR", "enabled": true, "state": "MA", "city": "Sao Luis", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Teresina", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Teresina,%20BR", "enabled": true, "state": "PI", "city": "Teresina", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Meetup Bahia", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Bahia,%20BR", "enabled": true, "state": "BA", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Ceara", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Cear%C3%A1,%20BR", "enabled": true, "state": "CE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Pernambuco", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Pernambuco,%20BR", "enabled": true, "state": "PE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Paraiba", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Para%C3%ADba,%20BR", "enabled": true, "state": "PB", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Rio Grande do Norte", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Rio%20Grande%20do%20Norte,%20BR", "enabled": true, "state": "RN", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Alagoas", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Alagoas,%20BR", "enabled": true, "state": "AL", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Sergipe", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Sergipe,%20BR", "enabled": true, "state": "SE", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Maranhao", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Maranh%C3%A3o,%20BR", "enabled": true, "state": "MA", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Meetup Piaui", "source_type": "meetup-search", "entry_url": "https://www.meetup.com/find/?keywords=tecnologia&location=Piau%C3%AD,%20BR", "enabled": true, "state": "PI", "city": "", "fetch_mode": "http", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "Doity Eventos", "source_type": "doity-search", "entry_url": "https://doity.com.br/eventos", "enabled": true, "state": "", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Even3 Eventos", "source_type": "even3-search", "entry_url": "https://www.even3.com.br/eventos?todos=true", "enabled": true, "state": "", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+            { "source_name": "Even3 Submissoes", "source_type": "even3-search", "entry_url": "https://www.even3.com.br/eventos-com-submissoes/", "enabled": true, "state": "", "city": "", "fetch_mode": "browser", "keywords": ["tecnologia", "software", "cloud", "dados", "ia", "frontend", "backend", "devops", "design", "produto"] },
+
+            { "source_name": "AWS User Group Ceara", "source_type": "meetup-group", "entry_url": "https://www.meetup.com/pt-BR/aws-users-group-ce/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["cloud", "aws", "devops", "dados", "ia"] },
+            { "source_name": "AWS User Group Joao Pessoa", "source_type": "meetup-group", "entry_url": "https://www.meetup.com/pt-BR/aws-user-group-joao-pessoa/", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "http", "keywords": ["cloud", "aws", "devops", "dados", "ia"] },
+            { "source_name": "Bahia Indie Game Developers", "source_type": "meetup-group", "entry_url": "https://www.meetup.com/pt-BR/bind-dev/", "enabled": true, "state": "BA", "city": "Salvador", "fetch_mode": "http", "keywords": ["games", "game", "dev", "design", "programacao"] },
+            { "source_name": "React Ladies Recife", "source_type": "meetup-group", "entry_url": "https://www.meetup.com/pt-br/rladies-recife/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["react", "frontend", "javascript", "software"] },
+            { "source_name": "WordPress Fortaleza", "source_type": "meetup-group", "entry_url": "https://www.meetup.com/pt-BR/wpfortaleza/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["wordpress", "php", "frontend", "backend", "software"] },
+
+            { "source_name": "GDG Aracaju", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-aracaju/", "enabled": true, "state": "SE", "city": "Aracaju", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Fortaleza", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-fortaleza/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Joao Pessoa", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-joao-pessoa/", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Maceio", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-maceio/", "enabled": true, "state": "AL", "city": "Maceio", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Natal", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-natal/", "enabled": true, "state": "RN", "city": "Natal", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Parnaiba", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-parnaiba/", "enabled": true, "state": "PI", "city": "Parnaiba", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Recife", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-recife/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+            { "source_name": "GDG Salvador", "source_type": "gdg-chapter", "entry_url": "https://gdg.community.dev/gdg-salvador/", "enabled": true, "state": "BA", "city": "Salvador", "fetch_mode": "http", "keywords": ["google", "android", "firebase", "ai", "cloud"] },
+
+            { "source_name": "Front-End CE", "source_type": "generic-html", "entry_url": "https://frontendce.com.br/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["frontend", "react", "javascript", "ux", "design"] },
+            { "source_name": "ReactJS Ceara", "source_type": "generic-html", "entry_url": "https://www.reactjs-ceara.org/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["react", "frontend", "javascript", "design"] },
+            { "source_name": "Recife Front-End Community", "source_type": "generic-html", "entry_url": "https://www.rfec.com.br/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["frontend", "react", "javascript", "design"] },
+            { "source_name": "Geek Night Recife", "source_type": "generic-html", "entry_url": "https://geeknightrecife.github.io/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["tech", "software", "desenvolvimento", "frontend", "backend"] },
+            { "source_name": "Hack In Cariri", "source_type": "generic-html", "entry_url": "https://www.hackincariri.com.br/", "enabled": true, "state": "CE", "city": "", "fetch_mode": "http", "keywords": ["hackathon", "tech", "software", "inovacao"] },
+            { "source_name": "OWASP Fortaleza", "source_type": "generic-html", "entry_url": "https://owasp.org/www-chapter-fortaleza/", "enabled": true, "state": "CE", "city": "Fortaleza", "fetch_mode": "http", "keywords": ["security", "seguranca", "owasp", "cyber"] },
+            { "source_name": "OWASP Natal", "source_type": "generic-html", "entry_url": "https://owasp.org/www-chapter-natal/", "enabled": true, "state": "RN", "city": "Natal", "fetch_mode": "http", "keywords": ["security", "seguranca", "owasp", "cyber"] },
+            { "source_name": "OWASP PB", "source_type": "generic-html", "entry_url": "https://owasp.org/www-chapter-joao-pessoa/", "enabled": true, "state": "PB", "city": "Joao Pessoa", "fetch_mode": "http", "keywords": ["security", "seguranca", "owasp", "cyber"] },
+            { "source_name": "Manguezal", "source_type": "generic-html", "entry_url": "https://manguez.al/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["software", "python", "javascript", "frontend", "backend"] },
+            { "source_name": "Pyladies Recife", "source_type": "generic-html", "entry_url": "https://recife.pyladies.com/", "enabled": true, "state": "PE", "city": "Recife", "fetch_mode": "http", "keywords": ["python", "dados", "ia", "software"] }
+          ]
+            JSON
+            echo '__JSON__'
+          } >> "$GITHUB_ENV"
+
       - name: Install dependencies
         run: |
           npm ci --ignore-scripts
@@ -52,11 +156,11 @@ jobs:
       - name: Detect browser-backed sources
         id: sources
         run: |
-          if grep -q '"fetch_mode": "browser"' data/event-sources.json; then
-            echo "needs_browser=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "needs_browser=false" >> "$GITHUB_OUTPUT"
-          fi
+          node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const sources = JSON.parse(process.env.EVENT_INTAKE_SOURCES_JSON || "[]");
+          const needsBrowser = sources.some((source) => source.fetch_mode === "browser");
+          process.stdout.write(`needs_browser=${needsBrowser}\n`);
+          NODE
 
       - name: Install Playwright Chromium
         if: steps.sources.outputs.needs_browser == 'true'
@@ -66,8 +170,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TOKEN_FOR_CI_EVENTS: ${{ secrets.TOKEN_FOR_CI_EVENTS }}
-          EVENT_INTAKE_MAX_SOURCES: ${{ inputs.max_sources || '10' }}
-          EVENT_INTAKE_MAX_CANDIDATES_PER_SOURCE: ${{ inputs.max_candidates || '3' }}
+          EVENT_INTAKE_MAX_SOURCES: ${{ inputs.max_sources || '200' }}
+          EVENT_INTAKE_MAX_UNIQUE_URLS: ${{ inputs.max_unique_urls || '150' }}
         run: |
           APPLY_FLAG="--dry-run"
           if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.apply }}" = "true" ]; then
@@ -79,7 +183,17 @@ jobs:
             SOURCE_ARG="--source=${{ inputs.source_name }}"
           fi
 
-          node scripts/event-intake/index.mjs "$APPLY_FLAG" "$SOURCE_ARG"
+          SOURCE_TYPE_ARG=""
+          if [ -n "${{ inputs.source_type }}" ]; then
+            SOURCE_TYPE_ARG="--source-type=${{ inputs.source_type }}"
+          fi
+
+          node scripts/event-intake/index.mjs \
+            "$APPLY_FLAG" \
+            "$SOURCE_ARG" \
+            "$SOURCE_TYPE_ARG" \
+            "--max-sources=${{ inputs.max_sources || '200' }}" \
+            "--max-urls=${{ inputs.max_unique_urls || '150' }}"
 
       - name: Upload intake report
         if: always()
@@ -87,4 +201,4 @@ jobs:
         with:
           name: event-intake-report
           if-no-files-found: ignore
-          path: output/event-intake/latest.json
+          path: output/event-intake/

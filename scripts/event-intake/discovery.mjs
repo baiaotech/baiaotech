@@ -1,18 +1,29 @@
 import { JSDOM } from "jsdom";
 
 import {
-  normalizeUrl,
-  unique
+  looksLikeDoityEventUrl,
+  looksLikeEven3EventUrl,
+  looksLikeGenericCommunityEventUrl,
+  matchesTechnologyKeywords,
+  normalizeUrl
 } from "./shared.mjs";
 
 function getDocument(html, baseUrl) {
   return new JSDOM(html, { url: baseUrl }).window.document;
 }
 
-function collectAnchorUrls(document, baseUrl) {
+function normalizeCandidateUrl(url, baseUrl = "") {
+  return normalizeUrl(url, baseUrl);
+}
+
+function collectAnchorData(document, baseUrl) {
   return [...document.querySelectorAll("a[href]")]
-    .map((anchor) => normalizeUrl(anchor.getAttribute("href"), baseUrl))
-    .filter(Boolean);
+    .map((anchor) => ({
+      url: normalizeCandidateUrl(anchor.getAttribute("href"), baseUrl),
+      text: String(anchor.textContent || "").trim(),
+      title: String(anchor.getAttribute("title") || "").trim()
+    }))
+    .filter((item) => item.url);
 }
 
 function collectJsonLdNodes(document) {
@@ -50,56 +61,202 @@ function extractUrlsFromJsonLd(document) {
     .filter(Boolean);
 }
 
-function extractMeetupCandidates(document, baseUrl, source) {
-  const urls = collectAnchorUrls(document, baseUrl).filter((url) =>
-    /meetup\.com\/.+\/events\/\d+/i.test(url)
-  );
-
-  return unique(urls).map((url) => ({
+function buildCandidate(source, eventUrl, discoveryHint, seedData = {}) {
+  return {
     source,
-    event_url: url,
-    discovery_hint: "meetup-anchor"
-  }));
+    event_url: normalizeUrl(eventUrl),
+    discovery_hint: discoveryHint,
+    seed_data: {
+      title: String(seedData.title || "").trim(),
+      description: String(seedData.description || "").trim(),
+      start_date: String(seedData.start_date || "").trim(),
+      end_date: String(seedData.end_date || "").trim(),
+      cover_image: normalizeUrl(seedData.cover_image || "")
+    }
+  };
 }
 
-function extractEventbriteCandidates(document, baseUrl, source) {
-  const urls = collectAnchorUrls(document, baseUrl).filter((url) =>
-    /eventbrite\.[^/]+\/e\/.+tickets-/i.test(url)
-  );
+function dedupeCandidates(candidates) {
+  const merged = new Map();
 
-  return unique(urls).map((url) => ({
-    source,
-    event_url: url,
-    discovery_hint: "eventbrite-anchor"
-  }));
+  for (const candidate of candidates) {
+    if (!candidate?.event_url) {
+      continue;
+    }
+
+    const current = merged.get(candidate.event_url);
+
+    if (!current) {
+      merged.set(candidate.event_url, candidate);
+      continue;
+    }
+
+    const currentRichness = `${current.seed_data?.title || ""}${current.seed_data?.description || ""}`.length;
+    const candidateRichness = `${candidate.seed_data?.title || ""}${candidate.seed_data?.description || ""}`.length;
+
+    if (candidateRichness > currentRichness) {
+      merged.set(candidate.event_url, {
+        ...candidate,
+        seed_data: {
+          ...current.seed_data,
+          ...candidate.seed_data
+        }
+      });
+    }
+  }
+
+  return [...merged.values()];
 }
 
-function extractSymplaCandidates(document, baseUrl, source) {
-  const urls = collectAnchorUrls(document, baseUrl).filter((url) =>
-    /sympla\.com\.br\/evento\/.+\/\d+/i.test(url)
-  );
+function filterCandidatesByKeywords(candidates, source) {
+  const keywords = source.keywords || [];
 
-  return unique(urls).map((url) => ({
-    source,
-    event_url: url,
-    discovery_hint: "sympla-anchor"
-  }));
-}
+  if (!keywords.length) {
+    return candidates;
+  }
 
-function extractGenericAnchorCandidates(document, baseUrl, source) {
-  const entryHost = new URL(baseUrl).host;
-  const urls = collectAnchorUrls(document, baseUrl).filter((url) => {
-    const candidate = new URL(url);
-    const sameHost = candidate.host === entryHost;
-    const looksLikeEvent = /\/(event|events|evento|agenda|tickets|ingressos)\b/i.test(candidate.pathname);
-    return sameHost && looksLikeEvent;
+  const filtered = candidates.filter((candidate) => {
+    const candidateText = [
+      candidate.seed_data?.title || "",
+      candidate.seed_data?.description || ""
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    if (!candidateText.trim()) {
+      return true;
+    }
+
+    return matchesTechnologyKeywords(candidateText, keywords);
   });
 
-  return unique(urls).map((url) => ({
-    source,
-    event_url: url,
-    discovery_hint: "generic-anchor"
-  }));
+  return filtered.length ? filtered : candidates;
+}
+
+function extractEventUrlsByRegex(html, regex, normalizer = (url) => normalizeUrl(url)) {
+  return [...new Set((html.match(regex) || []).map((url) => normalizer(url)).filter(Boolean))];
+}
+
+function extractMeetupCandidates(document, baseUrl, source, discoveryHint) {
+  const candidates = collectAnchorData(document, baseUrl)
+    .filter((item) => /meetup\.com\/.+\/events\/\d+/i.test(item.url))
+    .map((item) =>
+      buildCandidate(source, item.url, discoveryHint, {
+        title: item.text || item.title
+      })
+    );
+
+  return filterCandidatesByKeywords(dedupeCandidates(candidates), source);
+}
+
+function extractEventbriteCandidates(document, html, baseUrl, source) {
+  const anchorCandidates = collectAnchorData(document, baseUrl)
+    .filter((item) => /eventbrite\.[^/]+\/e\/.+tickets-/i.test(item.url))
+    .map((item) =>
+      buildCandidate(source, item.url, "eventbrite-anchor", {
+        title: item.text || item.title
+      })
+    );
+
+  const regexCandidates = extractEventUrlsByRegex(
+    html,
+    /https:\/\/www\.eventbrite\.[^/]+\/e\/[^"'\\\s<]+tickets-[^"'\\\s<)]+/gi
+  ).map((url) => buildCandidate(source, url, "eventbrite-regex"));
+
+  return filterCandidatesByKeywords(dedupeCandidates([...anchorCandidates, ...regexCandidates]), source);
+}
+
+function extractSymplaCandidates(document, html, baseUrl, source) {
+  const anchorCandidates = collectAnchorData(document, baseUrl)
+    .filter((item) => /sympla\.com\.br\/evento\/.+\/\d+/i.test(item.url))
+    .map((item) =>
+      buildCandidate(source, item.url, "sympla-anchor", {
+        title: item.text || item.title
+      })
+    );
+
+  const regexCandidates = extractEventUrlsByRegex(
+    html,
+    /https:\/\/www\.sympla\.com\.br\/evento\/[^"'\\\s<)]+\/\d+/gi
+  ).map((url) => buildCandidate(source, url, "sympla-regex"));
+
+  return filterCandidatesByKeywords(dedupeCandidates([...anchorCandidates, ...regexCandidates]), source);
+}
+
+function toDoityCanonicalEventUrl(url) {
+  try {
+    const parsed = new URL(url);
+    const firstSegment = parsed.pathname.split("/").filter(Boolean)[0] || "";
+    return firstSegment ? `${parsed.origin}/${firstSegment}` : "";
+  } catch {
+    return "";
+  }
+}
+
+function extractDoityCandidates(document, html, baseUrl, source) {
+  const anchorCandidates = collectAnchorData(document, baseUrl)
+    .filter((item) => looksLikeDoityEventUrl(item.url))
+    .map((item) =>
+      buildCandidate(source, toDoityCanonicalEventUrl(item.url), "doity-anchor", {
+        title: item.text || item.title
+      })
+    );
+
+  const regexCandidates = extractEventUrlsByRegex(
+    html,
+    /https:\/\/doity\.com\.br\/[^"'\\\s<)]+/gi,
+    toDoityCanonicalEventUrl
+  ).map((url) => buildCandidate(source, url, "doity-regex"));
+
+  return filterCandidatesByKeywords(dedupeCandidates([...anchorCandidates, ...regexCandidates]), source);
+}
+
+function extractEven3Candidates(document, html, baseUrl, source) {
+  const anchorCandidates = collectAnchorData(document, baseUrl)
+    .filter((item) => looksLikeEven3EventUrl(item.url))
+    .map((item) =>
+      buildCandidate(source, item.url, "even3-anchor", {
+        title: item.text || item.title
+      })
+    );
+
+  const regexCandidates = extractEventUrlsByRegex(
+    html,
+    /https:\/\/www\.even3\.com\.br\/[^"'\\\s<)]+/gi
+  )
+    .filter((url) => looksLikeEven3EventUrl(url))
+    .map((url) => buildCandidate(source, url, "even3-regex"));
+
+  return filterCandidatesByKeywords(dedupeCandidates([...anchorCandidates, ...regexCandidates]), source);
+}
+
+function extractGenericCandidates(document, html, baseUrl, source) {
+  const candidates = [
+    ...collectAnchorData(document, baseUrl)
+      .filter((item) => looksLikeGenericCommunityEventUrl(item.url, baseUrl))
+      .map((item) =>
+        buildCandidate(source, item.url, "generic-anchor", {
+          title: item.text || item.title
+        })
+      ),
+    ...extractUrlsFromJsonLd(document).map((url) => buildCandidate(source, url, "json-ld")),
+    ...extractEventUrlsByRegex(
+      html,
+      /https:\/\/(?:www\.)?(?:sympla\.com\.br\/evento\/[^"'\\\s<)]+\/\d+|www\.eventbrite\.[^/]+\/e\/[^"'\\\s<)]+tickets-[^"'\\\s<)]+|www\.meetup\.com\/[^"'\\\s<)]+\/events\/\d+|doity\.com\.br\/[^"'\\\s<)]+|www\.even3\.com\.br\/[^"'\\\s<)]+)/gi
+    )
+      .filter((url) => {
+        return (
+          /sympla\.com\.br\/evento\//i.test(url) ||
+          /eventbrite\.[^/]+\/e\//i.test(url) ||
+          /meetup\.com\/.+\/events\/\d+/i.test(url) ||
+          looksLikeDoityEventUrl(url) ||
+          looksLikeEven3EventUrl(url)
+        );
+      })
+      .map((url) => buildCandidate(source, url, "generic-regex"))
+  ];
+
+  return filterCandidatesByKeywords(dedupeCandidates(candidates), source);
 }
 
 function extractGdgApiUrl(html, source) {
@@ -133,7 +290,7 @@ async function extractGdgCandidates(page, source, fetchPage) {
   const apiUrl = extractGdgApiUrl(page.html, source);
 
   if (!apiUrl) {
-    return extractGenericAnchorCandidates(getDocument(page.html, page.final_url), page.final_url, source);
+    return extractGenericCandidates(getDocument(page.html, page.final_url), page.html, page.final_url, source);
   }
 
   const apiPage = await fetchPage(apiUrl, { fetch_mode: "http" });
@@ -145,60 +302,50 @@ async function extractGdgCandidates(page, source, fetchPage) {
     return [];
   }
 
-  return (payload.results || [])
-    .map((item) => ({
-      source,
-      event_url: normalizeUrl(item.cohost_registration_url || item.url || ""),
-      discovery_hint: "gdg-api",
-      seed_data: {
-        title: item.title || "",
-        description: item.description_short || item.description || "",
-        start_date: item.start_date || "",
-        cover_image: item.cropped_banner_url || item.cropped_picture_url || ""
-      }
-    }))
-    .filter((item) => item.event_url);
+  return dedupeCandidates(
+    (payload.results || [])
+      .map((item) =>
+        buildCandidate(source, item.cohost_registration_url || item.url || "", "gdg-api", {
+          title: item.title || "",
+          description: item.description_short || item.description || "",
+          start_date: item.start_date || "",
+          cover_image: item.cropped_banner_url || item.cropped_picture_url || ""
+        })
+      )
+      .filter((item) => item.event_url)
+  );
 }
 
 export async function discoverCandidatesForSource(source, page, fetchPage) {
-  if (source.source_type === "doity-page") {
-    return [
-      {
-        source,
-        event_url: normalizeUrl(source.entry_url),
-        discovery_hint: "direct-doity-page"
-      }
-    ];
-  }
-
   const document = getDocument(page.html, page.final_url);
 
   if (source.source_type === "meetup-group") {
-    return extractMeetupCandidates(document, page.final_url, source);
+    return extractMeetupCandidates(document, page.final_url, source, "meetup-group-anchor");
   }
 
-  if (source.source_type === "eventbrite-organizer") {
-    return extractEventbriteCandidates(document, page.final_url, source);
+  if (source.source_type === "meetup-search") {
+    return extractMeetupCandidates(document, page.final_url, source, "meetup-search-anchor");
   }
 
-  if (source.source_type === "sympla-organizer") {
-    return extractSymplaCandidates(document, page.final_url, source);
+  if (source.source_type === "eventbrite-search") {
+    return extractEventbriteCandidates(document, page.html, page.final_url, source);
   }
 
-  if (/gdg\.community\.dev/i.test(source.entry_url)) {
+  if (source.source_type === "sympla-search") {
+    return extractSymplaCandidates(document, page.html, page.final_url, source);
+  }
+
+  if (source.source_type === "doity-search") {
+    return extractDoityCandidates(document, page.html, page.final_url, source);
+  }
+
+  if (source.source_type === "even3-search") {
+    return extractEven3Candidates(document, page.html, page.final_url, source);
+  }
+
+  if (source.source_type === "gdg-chapter" || /gdg\.community\.dev/i.test(source.entry_url)) {
     return extractGdgCandidates(page, source, fetchPage);
   }
 
-  const generic = [
-    ...extractGenericAnchorCandidates(document, page.final_url, source),
-    ...extractUrlsFromJsonLd(document).map((url) => ({
-      source,
-      event_url: url,
-      discovery_hint: "json-ld"
-    }))
-  ];
-
-  return unique(generic.map((item) => item.event_url)).map((url) => {
-    return generic.find((item) => item.event_url === url);
-  });
+  return extractGenericCandidates(document, page.html, page.final_url, source);
 }
