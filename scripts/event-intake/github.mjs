@@ -45,6 +45,45 @@ async function githubRequest({
   return response.json();
 }
 
+async function requestReviewerIfEligible({
+  token,
+  repo,
+  apiUrl,
+  prNumber,
+  reviewer,
+  prAuthorLogin
+}) {
+  const normalizedReviewer = String(reviewer || "").trim().toLowerCase();
+  const normalizedAuthor = String(prAuthorLogin || "").trim().toLowerCase();
+
+  if (!normalizedReviewer) {
+    return { requested: false, skipped: true, reason: "missing_reviewer" };
+  }
+
+  if (normalizedReviewer && normalizedReviewer === normalizedAuthor) {
+    return { requested: false, skipped: true, reason: "reviewer_is_pr_author" };
+  }
+
+  try {
+    await githubRequest({
+      token,
+      apiUrl,
+      method: "POST",
+      path: `/repos/${repo}/pulls/${prNumber}/requested_reviewers`,
+      body: { reviewers: [reviewer] }
+    });
+    return { requested: true, skipped: false, reason: "" };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+
+    if (message.includes("Review cannot be requested from pull request author")) {
+      return { requested: false, skipped: true, reason: "reviewer_is_pr_author" };
+    }
+
+    throw error;
+  }
+}
+
 function toBase64(value) {
   return Buffer.from(value).toString("base64");
 }
@@ -207,12 +246,13 @@ async function upsertPullRequest({
     });
 
     if (reviewer) {
-      await githubRequest({
+      await requestReviewerIfEligible({
         token,
+        repo,
         apiUrl,
-        method: "POST",
-        path: `/repos/${repo}/pulls/${existing.number}/requested_reviewers`,
-        body: { reviewers: [reviewer] }
+        prNumber: existing.number,
+        reviewer,
+        prAuthorLogin: existing.user?.login || ""
       });
     }
 
@@ -233,12 +273,13 @@ async function upsertPullRequest({
   });
 
   if (reviewer) {
-    await githubRequest({
+    await requestReviewerIfEligible({
       token,
+      repo,
       apiUrl,
-      method: "POST",
-      path: `/repos/${repo}/pulls/${created.number}/requested_reviewers`,
-      body: { reviewers: [reviewer] }
+      prNumber: created.number,
+      reviewer,
+      prAuthorLogin: created.user?.login || ""
     });
   }
 

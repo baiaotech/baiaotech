@@ -73,7 +73,7 @@ describe("event intake github client", () => {
         ["GET https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md?ref=event-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(404, { message: "Not Found" })],
         ["PUT https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md", makeJsonResponse(200, { content: { sha: "content123" } })],
         ["GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=open&head=baiaotech%3Aevent-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, [])],
-        ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls", makeJsonResponse(201, { number: 42 })],
+        ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls", makeJsonResponse(201, { number: 42, user: { login: "baiaotech-bot" } })],
         ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls/42/requested_reviewers", makeJsonResponse(201, { ok: true })]
       ])
     );
@@ -99,6 +99,48 @@ describe("event intake github client", () => {
       branch: "event-intake/build-with-ai-fortaleza-6ef33f22",
       pr_number: 42
     });
+  });
+
+  it("nao tenta pedir review quando o reviewer ja e o autor do PR", async () => {
+    const fetchMock = makeFetch(
+      new Map([
+        ["GET https://api.github.com/repos/baiaotech/baiaotech", makeJsonResponse(200, { default_branch: "main", pushed_at: "2026-03-28T00:00:00Z" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/event-intake/build-with-ai-fortaleza-6ef33f22", makeJsonResponse(404, { message: "Not Found" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/main", makeJsonResponse(200, { object: { sha: "base123" } })],
+        ["POST https://api.github.com/repos/baiaotech/baiaotech/git/refs", makeJsonResponse(201, { object: { sha: "base123" } })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md?ref=event-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(404, { message: "Not Found" })],
+        ["PUT https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md", makeJsonResponse(200, { content: { sha: "content123" } })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=open&head=baiaotech%3Aevent-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, [])],
+        ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls", makeJsonResponse(201, { number: 42, user: { login: "gabrielldn" } })]
+      ])
+    );
+    globalThis.fetch = fetchMock;
+
+    const { createOrUpdateEventPr } = await importModule();
+    const result = await createOrUpdateEventPr({
+      token: "token",
+      repo: "baiaotech/baiaotech",
+      filePath: "src/content/events/build-with-ai-fortaleza.md",
+      content: "---\ntitle: \"Build with AI Fortaleza\"\n---\n",
+      candidate: {
+        title: "Build with AI Fortaleza",
+        source_url: "https://gdg.community.dev/events/details/build-with-ai-fortaleza/"
+      },
+      prTitle: "feat(events): add Build with AI Fortaleza",
+      prBody: "body",
+      reviewer: "gabrielldn"
+    });
+
+    expect(result).toEqual({
+      action: "updated",
+      branch: "event-intake/build-with-ai-fortaleza-6ef33f22",
+      pr_number: 42
+    });
+    expect(
+      fetchMock.mock.calls.some(([url]) =>
+        String(url).includes("/pulls/42/requested_reviewers")
+      )
+    ).toBe(false);
   });
 
   it("atualiza issue existente por marcador e consegue fecha-la depois", async () => {
