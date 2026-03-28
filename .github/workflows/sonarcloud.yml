@@ -11,9 +11,6 @@ on:
       - reopened
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
-
 permissions:
   contents: read
 
@@ -22,31 +19,26 @@ jobs:
     name: SonarQube Scan
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    env:
+      SONAR_SCANNER_VERSION: 8.0.1.6346
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - name: Cache SonarQube packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+      - name: Install SonarScanner CLI
+        run: |
+          curl -fsSL \
+            "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux-x64.zip" \
+            -o "$RUNNER_TEMP/sonar-scanner.zip"
+          unzip -q -o "$RUNNER_TEMP/sonar-scanner.zip" -d "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/sonar-scanner-${SONAR_SCANNER_VERSION}-linux-x64/bin" >> "$GITHUB_PATH"
 
       - name: Run SonarQube scan
-        uses: SonarSource/sonarqube-scan-action@v7
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
           SONAR_ROOT_CERT: ${{ secrets.SONAR_ROOT_CERT }}
-
-  skip-fork-pr:
-    name: SonarQube Scan
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
-    runs-on: ubuntu-latest
-    steps:
-      - name: Explain skipped analysis for fork
         run: |
-          echo "SonarQube scan skipped for fork pull requests because repository secrets are not exposed."
+          sonar-scanner -Dsonar.projectBaseDir=.
