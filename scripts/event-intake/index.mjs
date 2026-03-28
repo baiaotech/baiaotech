@@ -39,10 +39,14 @@ import {
   fingerprintTitle,
   findExistingEvent,
   hashString,
+  inferDeterministicNortheastLocation,
   loadCategories,
   loadEventSources,
   loadExistingEvents,
+  looksLikeGenericDirectoryPage,
+  looksLikeMeetupListingUrl,
   normalizedEventSchema,
+  normalizeStateCode,
   normalizeUrl,
   scoreNormalizedEvent,
   slugify,
@@ -572,6 +576,7 @@ function createEmptyCounts() {
     non_northeast: 0,
     online_only: 0,
     non_tech: 0,
+    not_event_page: 0,
     low_confidence: 0,
     tech_low_confidence: 0,
     errors: 0
@@ -726,6 +731,34 @@ function annotateLowConfidence(normalized, scoreResult) {
       ...scoreResult.blockingAmbiguities
     ]
   };
+}
+
+function hasConfirmedNortheastLocationEvidence(deterministic = {}, normalized = {}) {
+  const location = inferDeterministicNortheastLocation(deterministic);
+  const normalizedState = normalizeStateCode(normalized.state || "");
+
+  if (!location.state) {
+    return false;
+  }
+
+  if (normalizedState && normalizedState !== location.state) {
+    return false;
+  }
+
+  return true;
+}
+
+function looksLikeEventListingCandidate(normalized = {}, deterministic = {}) {
+  const url = normalizeUrl(normalized.source_url || normalized.ticket_url || deterministic.source_url || "");
+
+  if (looksLikeMeetupListingUrl(url)) {
+    return true;
+  }
+
+  return looksLikeGenericDirectoryPage({
+    ...deterministic,
+    ...normalized
+  });
 }
 
 function createPastDisposition(candidate, todayKey) {
@@ -1390,7 +1423,59 @@ export async function runEventIntake(options = {}) {
     await measurePhase(report.performance, "persist_ms", async () => {
       for (const item of normalizedResults.filter(Boolean)) {
         const normalized = item.normalized;
+        const locationConfirmed = hasConfirmedNortheastLocationEvidence(item.deterministic, normalized);
+        const listingPageCandidate = looksLikeEventListingCandidate(normalized, item.deterministic);
         const dedupeKey = normalized.source_url || normalized.ticket_url;
+
+        if (!locationConfirmed) {
+          addSummaryCount(report, "non_northeast");
+          report.skipped_policy.push({
+            title: normalized.title,
+            source_name: item.source.source_name,
+            source_url: normalized.source_url,
+            reason: "non_northeast",
+            rejection_reason: "location_not_confirmed_in_event_page",
+            tech_evidence: normalized.tech_evidence
+          });
+
+          const update = upsertBlacklistEntry(blacklist, normalized, {
+            todayKey,
+            reason: "non_northeast",
+            details: "location_not_confirmed_in_event_page",
+            origin: "policy"
+          });
+          blacklist = update.blacklist;
+          blacklistChanged ||= update.changed;
+          if (update.entry) {
+            updateBlacklistIndex(blacklistIndex, update.entry);
+          }
+          continue;
+        }
+
+        if (listingPageCandidate) {
+          addSummaryCount(report, "not_event_page");
+          report.skipped_policy.push({
+            title: normalized.title,
+            source_name: item.source.source_name,
+            source_url: normalized.source_url,
+            reason: "not_event_page",
+            rejection_reason: "listing_or_directory_page",
+            tech_evidence: normalized.tech_evidence
+          });
+
+          const update = upsertBlacklistEntry(blacklist, normalized, {
+            todayKey,
+            reason: "not_event_page",
+            details: "listing_or_directory_page",
+            origin: "policy"
+          });
+          blacklist = update.blacklist;
+          blacklistChanged ||= update.changed;
+          if (update.entry) {
+            updateBlacklistIndex(blacklistIndex, update.entry);
+          }
+          continue;
+        }
 
         if (dedupeKey && seenNormalizedUrls.has(dedupeKey)) {
           addSummaryCount(report, "duplicates");

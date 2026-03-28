@@ -13,10 +13,13 @@ import {
   findExistingEvent,
   hashString,
   htmlToText,
+  inferDeterministicNortheastLocation,
   inferCategoriesFromText,
   inferEventFormat,
   inferEventKind,
   inferNortheastLocationFromText,
+  looksLikeGenericDirectoryPage,
+  looksLikeMeetupListingUrl,
   looksLikeDoityEventUrl,
   looksLikeEven3EventUrl,
   looksLikeGenericCommunityEventUrl,
@@ -88,6 +91,21 @@ describe("event intake shared helpers", () => {
     expect(
       looksLikeGenericCommunityEventUrl("/blog/post", "https://frontendce.com.br")
     ).toBe(false);
+    expect(looksLikeMeetupListingUrl("https://www.meetup.com/pt-BR/owasp-fortaleza/events")).toBe(true);
+    expect(looksLikeMeetupListingUrl("https://www.meetup.com/fortaleza-js/events/313900001")).toBe(false);
+    expect(
+      looksLikeGenericDirectoryPage({
+        title: "OWASP Fortaleza Chapter | Meetup",
+        description:
+          "Encontre eventos Meetup para fazer mais do que é importante para você. Ou crie seu próprio grupo."
+      })
+    ).toBe(true);
+    expect(
+      looksLikeGenericDirectoryPage({
+        title: "Build With AI Fortaleza",
+        description: "Workshop presencial com foco em IA generativa."
+      })
+    ).toBe(false);
 
     expect(inferEventKind("Security Summit Nordeste", "Forum presencial")).toBe("summit");
     expect(inferEventKind("Hackathon Cariri", "CTF e game jam")).toBe("hackathon");
@@ -102,6 +120,16 @@ describe("event intake shared helpers", () => {
     expect(inferCategoriesFromText("Trilha de React, cloud e UX", ["frontend", "cloud", "ux"])).toEqual(
       expect.arrayContaining(["frontend", "cloud", "ux"])
     );
+    expect(
+      inferDeterministicNortheastLocation({
+        page_title: "Evento em Fortaleza",
+        raw_text: "Hub de Inovacao - Fortaleza - CE"
+      })
+    ).toEqual({
+      city: "FORTALEZA",
+      state: "CE",
+      matched_text: "FORTALEZA"
+    });
   });
 
   it("deduplica por source_url e por similaridade", () => {

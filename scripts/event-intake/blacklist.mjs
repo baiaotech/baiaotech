@@ -5,7 +5,7 @@ import { fingerprintTitle, getRootDir, hashString, normalizeUrl } from "./shared
 
 export const EVENT_BLACKLIST_PATH = "data/event-intake-blacklist.ndjson";
 export const LEGACY_EVENT_BLACKLIST_PATH = "data/event-intake-blacklist.json";
-export const BLACKLISTABLE_REASONS = ["past", "online_only", "non_northeast", "non_tech"];
+export const BLACKLISTABLE_REASONS = ["past", "online_only", "non_northeast", "non_tech", "not_event_page"];
 
 export function createEmptyBlacklist() {
   return {

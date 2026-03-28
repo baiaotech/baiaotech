@@ -654,6 +654,63 @@ export function inferNortheastLocationFromText(value) {
   };
 }
 
+export function inferDeterministicNortheastLocation(candidate = {}) {
+  const inferred = inferNortheastLocationFromText(
+    [
+      candidate.city || "",
+      candidate.state || "",
+      candidate.venue || "",
+      candidate.page_title || "",
+      candidate.page_description || "",
+      candidate.description || "",
+      candidate.summary || "",
+      candidate.raw_text || ""
+    ]
+      .filter(Boolean)
+      .join("\n")
+  );
+
+  return {
+    city: String(candidate.city || inferred.city || "").trim(),
+    state: normalizeStateCode(candidate.state || inferred.state || ""),
+    matched_text: inferred.matched_text || ""
+  };
+}
+
+export function looksLikeMeetupListingUrl(value) {
+  try {
+    const url = new URL(normalizeUrl(value));
+    const pathname = url.pathname.replace(/\/+$/, "").toLowerCase();
+    return /(?:^|\.)meetup\.com$/i.test(url.hostname) && /\/events$/.test(pathname);
+  } catch {
+    return false;
+  }
+}
+
+export function looksLikeGenericDirectoryPage(candidate = {}) {
+  const combinedText = normalizeText(
+    [
+      candidate.title || "",
+      candidate.page_title || "",
+      candidate.description || "",
+      candidate.summary || "",
+      candidate.raw_text || ""
+    ]
+      .filter(Boolean)
+      .join("\n")
+  );
+
+  if (!combinedText) {
+    return false;
+  }
+
+  return (
+    combinedText.includes("encontre eventos meetup") ||
+    combinedText.includes("ou crie seu proprio grupo") ||
+    combinedText.includes("que compartilham seus interesses")
+  );
+}
+
 export function matchesTechnologyKeywords(text, keywords = TECHNOLOGY_KEYWORDS) {
   const haystack = normalizeText(text);
 

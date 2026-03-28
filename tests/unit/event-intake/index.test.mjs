@@ -283,6 +283,141 @@ describe("event intake orchestrator", () => {
     expect(["online_only", "non_northeast"]).toContain(report.skipped_policy[0].reason);
   });
 
+  it("nao deixa o Gemini promover evento de fora do Nordeste so por causa do contexto da fonte", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "ia", name: "IA" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    globalThis.fetch = makeFetchMock(
+      new Map([
+        [
+          "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+          '<html><body><a href="https://www.meetup.com/gilbert-business-owners-ai-adoption-chapter/events/313928243/">Gilbert Monthly AI Roundtable</a></body></html>'
+        ],
+        [
+          "https://www.meetup.com/gilbert-business-owners-ai-adoption-chapter/events/313928243",
+          "<html><head><title>Gilbert Monthly AI Roundtable</title></head><body>Attend in person or digitally. Gilbert Monthly AI Roundtable para business owners em Gilbert.</body></html>"
+        ]
+      ]),
+      {
+        title: "Gilbert Monthly AI Roundtable",
+        start_date: "2026-03-29",
+        end_date: "2026-03-29",
+        kind: "meetup",
+        format: "hybrid",
+        city: "Fortaleza",
+        state: "CE",
+        organizer: "Meetup Fortaleza",
+        venue: "",
+        ticket_url: "https://www.meetup.com/gilbert-business-owners-ai-adoption-chapter/events/313928243",
+        categories: ["ia"],
+        cover_image: "",
+        price: "Free",
+        description: "AI roundtable para business owners em Gilbert.",
+        summary: "AI roundtable para business owners em Gilbert.",
+        source_url: "https://www.meetup.com/gilbert-business-owners-ai-adoption-chapter/events/313928243",
+        source_name: "Meetup Fortaleza",
+        tech_relevance: "direct",
+        tech_audience: "mixed",
+        tech_topics: ["ia"],
+        tech_evidence: ["AI"],
+        rejection_reason: "",
+        ambiguities: ["location inferred from source context"]
+      }
+    );
+
+    const { runEventIntake } = await importModule();
+    const report = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(report.created_prs).toHaveLength(0);
+    expect(report.created_issues).toHaveLength(0);
+    expect(report.summary.counts.non_northeast).toBe(1);
+    expect(report.skipped_policy[0].rejection_reason).toBe("location_not_confirmed_in_event_page");
+  });
+
+  it("nao abre issue para pagina de listagem do Meetup sem data de evento", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "seguranca", name: "Seguranca" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "OWASP Fortaleza",
+        source_type: "generic-html",
+        entry_url: "https://www.meetup.com/pt-BR/owasp-fortaleza/events",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    globalThis.fetch = makeFetchMock(
+      new Map([
+        [
+          "https://www.meetup.com/pt-BR/owasp-fortaleza/events",
+          "<html><head><title>OWASP Fortaleza Chapter | Meetup</title><meta name=\"description\" content=\"Encontre eventos Meetup para fazer mais do que é importante para você. Ou crie seu próprio grupo e conheça pessoas perto de você que compartilham seus interesses.\"></head><body>Encontre eventos Meetup para fazer mais do que é importante para você. Ou crie seu próprio grupo.</body></html>"
+        ]
+      ]),
+      {
+        title: "OWASP Fortaleza Chapter | Meetup",
+        start_date: "",
+        end_date: "",
+        kind: "meetup",
+        format: "in-person",
+        city: "Fortaleza",
+        state: "CE",
+        organizer: "OWASP Fortaleza",
+        venue: "",
+        ticket_url: "https://www.meetup.com/pt-BR/owasp-fortaleza/events",
+        categories: ["seguranca"],
+        cover_image: "",
+        price: "",
+        description:
+          "Encontre eventos Meetup para fazer mais do que é importante para você. Ou crie seu próprio grupo e conheça pessoas perto de você que compartilham seus interesses.",
+        summary:
+          "Encontre eventos Meetup para fazer mais do que é importante para você. Ou crie seu próprio grupo e conheça pessoas perto de você que compartilham seus interesses.",
+        source_url: "https://www.meetup.com/pt-BR/owasp-fortaleza/events",
+        source_name: "OWASP Fortaleza",
+        tech_relevance: "direct",
+        tech_audience: "mixed",
+        tech_topics: ["seguranca"],
+        tech_evidence: ["OWASP Fortaleza Chapter"],
+        rejection_reason: "",
+        ambiguities: []
+      }
+    );
+
+    const { runEventIntake } = await importModule();
+    const report = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(report.created_prs).toHaveLength(0);
+    expect(report.created_issues).toHaveLength(0);
+    expect(report.summary.counts.issues).toBe(0);
+  });
+
   it("em dry-run registra issue quando o evento fica em baixa confiança", async () => {
     const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
     await writeJson(path.join(tempDir, "src/_data/categories.json"), [
