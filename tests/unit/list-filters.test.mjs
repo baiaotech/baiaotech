@@ -107,4 +107,16 @@ describe("list filters", () => {
 
     cleanups.forEach((cleanup) => cleanup());
   });
+
+  it("retorna vazio quando nao existe document para inicializar", () => {
+    const { bootListFilters } = loadModule();
+    const previousDocument = globalThis.document;
+
+    Reflect.deleteProperty(globalThis, "document");
+    try {
+      expect(bootListFilters()).toEqual([]);
+    } finally {
+      globalThis.document = previousDocument;
+    }
+  });
 });

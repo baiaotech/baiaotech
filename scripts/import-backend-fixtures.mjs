@@ -434,6 +434,7 @@ export {
   parseEventLocation,
   resolveGhBinary,
   slugify,
+  toDateOnly,
   toFrontMatter,
   uniqueSlug,
   yamlValue

@@ -18,6 +18,7 @@ describe("site.config", () => {
   it("prioriza PATH_PREFIX e trata SITE_URL com fallback seguro", () => {
     expect(siteConfig.getPathPrefix({ PATH_PREFIX: "agenda" })).toBe("/agenda/");
     expect(siteConfig.getPathPrefix({ SITE_URL: "https://baiaotech.github.io/baiaotech" })).toBe("/");
+    expect(siteConfig.getPathPrefix({ SITE_URL: "https://agenda.baiaotech.org" })).toBe("/");
     expect(siteConfig.getPathPrefix({ SITE_URL: "::::" })).toBe("/");
   });
 

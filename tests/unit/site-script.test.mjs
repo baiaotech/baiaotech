@@ -88,4 +88,42 @@ describe("site script", () => {
 
     expect(document.body.classList.contains("is-scrolled")).toBe(false);
   });
+
+  it("faz fallback quando matchMedia nao existe e quando nao ha observer", () => {
+    const { bootSite, getPrefersReducedMotion, setupHeaderState, setupHeroProgress, setupReveals } = loadModule();
+
+    window.matchMedia = undefined;
+
+    expect(getPrefersReducedMotion(window)).toEqual({ matches: false });
+    const previousDocument = globalThis.document;
+    const previousWindow = globalThis.window;
+
+    Reflect.deleteProperty(globalThis, "document");
+    Reflect.deleteProperty(globalThis, "window");
+    try {
+      expect(bootSite()).toEqual([]);
+    } finally {
+      globalThis.document = previousDocument;
+      globalThis.window = previousWindow;
+    }
+
+    expect(setupHeaderState({ documentRef: document, windowRef: window })()).toBeUndefined();
+
+    document.body.innerHTML = `<header></header>`;
+    expect(
+      setupHeroProgress({
+        documentRef: document,
+        windowRef: window,
+        prefersReducedMotion: { matches: false }
+      })()
+    ).toBeUndefined();
+    expect(
+      setupReveals({
+        documentRef: document,
+        windowRef: window,
+        prefersReducedMotion: { matches: false },
+        Observer: null
+      })()
+    ).toBeUndefined();
+  });
 });

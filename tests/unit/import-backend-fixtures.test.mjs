@@ -36,6 +36,14 @@ describe("import backend fixtures", () => {
     expect(resolveGhBinary(process.env)).toBe(ghPath);
   });
 
+  it("falha quando GH_BIN absoluto nao existe", async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "gh-home-"));
+    const ghPath = path.join(tempDir, "gh");
+    process.env.GH_BIN = ghPath;
+    const { resolveGhBinary } = await importModule();
+    expect(() => resolveGhBinary(process.env)).toThrow(`GH_BIN nao encontrado: ${ghPath}`);
+  });
+
   it("usa o binario resolvido ao buscar json do repositorio", async () => {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "gh-bin-"));
     const ghPath = path.join(tempDir, "gh");
@@ -104,5 +112,6 @@ describe("import backend fixtures", () => {
     expect(importedModule.inferCommunityTags("React Ladies", "comunidade women in tech", "https://react.dev")).toEqual(
       expect.arrayContaining(["frontend", "diversidade"])
     );
+    expect(importedModule.toDateOnly("2026-08-21T12:00:00Z")).toBe("2026-08-21");
   });
 });
