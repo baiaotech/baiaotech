@@ -41,10 +41,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
           SONAR_ROOT_CERT: ${{ secrets.SONAR_ROOT_CERT }}
-        with:
-          args: >
-            -Dsonar.qualitygate.wait=true
-            -Dsonar.qualitygate.timeout=300
 
   skip-fork-pr:
     name: SonarQube Scan
