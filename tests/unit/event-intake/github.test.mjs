@@ -131,4 +131,71 @@ describe("event intake github client", () => {
     expect(issueResult).toEqual({ action: "updated", issue_number: 7 });
     expect(closed).toBe(7);
   });
+
+  it("cria issue quando o marcador nao existe e nao tenta fechar issue ausente", async () => {
+    const marker = "<!-- event-intake-source:new -->";
+    globalThis.fetch = makeFetch(
+      new Map([
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/labels/event-intake", makeJsonResponse(404, { message: "Not Found" })],
+        ["POST https://api.github.com/repos/baiaotech/baiaotech/labels", makeJsonResponse(201, { name: "event-intake" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/issues?state=open&labels=event-intake&per_page=100", makeJsonResponse(200, [])],
+        ["POST https://api.github.com/repos/baiaotech/baiaotech/issues", makeJsonResponse(201, { number: 55 })]
+      ])
+    );
+
+    const { closeIssueByMarker, upsertIssue } = await importModule();
+    const issueResult = await upsertIssue({
+      token: "token",
+      repo: "baiaotech/baiaotech",
+      label: "event-intake",
+      title: "Issue",
+      body: marker,
+      assignee: "gabrielldn",
+      marker
+    });
+    const closed = await closeIssueByMarker({
+      token: "token",
+      repo: "baiaotech/baiaotech",
+      label: "event-intake",
+      marker: "<!-- event-intake-source:missing -->"
+    });
+
+    expect(issueResult).toEqual({ action: "created", issue_number: 55 });
+    expect(closed).toBeNull();
+  });
+
+  it("reaproveita branch existente e evita regravar arquivo identico", async () => {
+    const content = "---\ntitle: \"Build with AI Fortaleza\"\n---\n";
+    const contentBase64 = Buffer.from(content).toString("base64");
+    globalThis.fetch = makeFetch(
+      new Map([
+        ["GET https://api.github.com/repos/baiaotech/baiaotech", makeJsonResponse(200, { default_branch: "main", pushed_at: "2026-03-28T00:00:00Z" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/event-intake/build-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, { object: { sha: "existing123" } })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/main", makeJsonResponse(200, { object: { sha: "base123" } })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md?ref=event-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, { sha: "content123", content: contentBase64 })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=open&head=baiaotech%3Aevent-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, [{ number: 99 }])],
+        ["PATCH https://api.github.com/repos/baiaotech/baiaotech/pulls/99", makeJsonResponse(200, { number: 99 })]
+      ])
+    );
+
+    const { createOrUpdateEventPr } = await importModule();
+    const result = await createOrUpdateEventPr({
+      token: "token",
+      repo: "baiaotech/baiaotech",
+      filePath: "src/content/events/build-with-ai-fortaleza.md",
+      content,
+      candidate: {
+        title: "Build with AI Fortaleza",
+        source_url: "https://gdg.community.dev/events/details/build-with-ai-fortaleza/"
+      },
+      prTitle: "feat(events): add Build with AI Fortaleza",
+      prBody: "body"
+    });
+
+    expect(result).toEqual({
+      action: "noop",
+      branch: "event-intake/build-with-ai-fortaleza-6ef33f22",
+      pr_number: 99
+    });
+  });
 });
