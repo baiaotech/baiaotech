@@ -131,6 +131,24 @@ describe("list filters", () => {
     cleanup();
   });
 
+  it("reseta os filtros e recalcula a lista", () => {
+    const { bindListRoot } = loadModule();
+    const root = buildDom();
+    const cleanup = bindListRoot(root, { document, window });
+    const search = root.querySelector("[data-filter-search]");
+    const reset = root.querySelector("[data-filter-reset]");
+
+    search.value = "frontend";
+    root.querySelector("[data-filter-form]").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+
+    reset.click();
+    expect(search.value).toBe("");
+    expect(root.querySelector("[data-results-count]").textContent).toBe("2");
+
+    cleanup();
+  });
+
   it("inicializa todos os roots disponiveis", () => {
     const { bootListFilters } = loadModule();
     const root = buildDom();
