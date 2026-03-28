@@ -28,10 +28,19 @@ on:
         required: false
         default: "150"
         type: string
+      cache_bust:
+        description: "Ignorar cache persistido nesta rodada"
+        required: false
+        default: false
+        type: boolean
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
   GEMINI_MODEL: gemini-2.5-flash-lite
+
+concurrency:
+  group: event-intake-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   intake:
@@ -153,6 +162,16 @@ jobs:
           npm ci --ignore-scripts
           npm rebuild esbuild
 
+      - name: Restore event intake cache
+        id: intake-cache
+        if: github.event_name != 'workflow_dispatch' || inputs.cache_bust != true
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/event-intake
+          key: event-intake-v1-${{ runner.os }}-${{ hashFiles('scripts/event-intake/**/*.mjs', 'src/_data/categories.json') }}
+          restore-keys: |
+            event-intake-v1-${{ runner.os }}-
+
       - name: Detect browser-backed sources
         id: sources
         run: |
@@ -188,12 +207,25 @@ jobs:
             SOURCE_TYPE_ARG="--source-type=${{ inputs.source_type }}"
           fi
 
+          CACHE_BUST_ARG=""
+          if [ "${{ inputs.cache_bust }}" = "true" ]; then
+            CACHE_BUST_ARG="--cache-bust"
+          fi
+
           node scripts/event-intake/index.mjs \
             "$APPLY_FLAG" \
             "$SOURCE_ARG" \
             "$SOURCE_TYPE_ARG" \
+            "$CACHE_BUST_ARG" \
             "--max-sources=${{ inputs.max_sources || '200' }}" \
             "--max-urls=${{ inputs.max_unique_urls || '150' }}"
+
+      - name: Save event intake cache
+        if: always() && (github.event_name != 'workflow_dispatch' || inputs.cache_bust != true)
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/event-intake
+          key: ${{ steps.intake-cache.outputs.cache-primary-key || format('event-intake-v1-{0}-{1}', runner.os, hashFiles('scripts/event-intake/**/*.mjs', 'src/_data/categories.json')) }}
 
       - name: Upload intake report
         if: always()

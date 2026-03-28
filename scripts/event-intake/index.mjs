@@ -15,6 +15,11 @@ import {
   saveEventBlacklist,
   upsertBlacklistEntry
 } from "./blacklist.mjs";
+import {
+  createCacheManager,
+  DEFAULT_BROWSER_DETAIL_TTL_HOURS,
+  DEFAULT_BROWSER_LISTING_TTL_HOURS
+} from "./cache.mjs";
 import { discoverCandidatesForSource } from "./discovery.mjs";
 import { extractDeterministicEventData } from "./extract.mjs";
 import {
@@ -43,6 +48,7 @@ import {
   syncRepoFileToDefaultBranch,
   upsertIssue
 } from "./github.mjs";
+import { createBucketScheduler } from "./limit.mjs";
 
 const require = createRequire(import.meta.url);
 const { EVENT_TIME_ZONE, getDateKeyInTimeZone } = require("../../lib/event-dates.js");
@@ -50,6 +56,23 @@ const { EVENT_TIME_ZONE, getDateKeyInTimeZone } = require("../../lib/event-dates
 const DEFAULT_MAX_SOURCES = Number(process.env.EVENT_INTAKE_MAX_SOURCES || 200);
 const DEFAULT_MAX_UNIQUE_URLS = Number(process.env.EVENT_INTAKE_MAX_UNIQUE_URLS || 150);
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+const DEFAULT_TOTAL_LIMITS = {
+  "discovery-http": 8,
+  "discovery-browser": 2,
+  "detail-http": 12,
+  "detail-browser": 2,
+  "gemini": 4
+};
+const DEFAULT_HOST_LIMITS = {
+  "discovery-http": 2,
+  "detail-http": 3
+};
+const BROWSER_FALLBACK_SOURCE_TYPES = new Set([
+  "sympla-search",
+  "eventbrite-search",
+  "doity-search",
+  "even3-search"
+]);
 
 let browserPromise = null;
 
@@ -60,6 +83,8 @@ function parseArgs(argv = process.argv.slice(2)) {
         options.apply = true;
       } else if (argument === "--dry-run") {
         options.apply = false;
+      } else if (argument === "--cache-bust") {
+        options.cacheBust = true;
       } else if (argument.startsWith("--source=")) {
         options.sourceName = argument.slice("--source=".length);
       } else if (argument.startsWith("--source-type=")) {
@@ -78,27 +103,10 @@ function parseArgs(argv = process.argv.slice(2)) {
       sourceType: "",
       maxSources: DEFAULT_MAX_SOURCES,
       maxUniqueUrls: DEFAULT_MAX_UNIQUE_URLS,
-      persistBlacklist: false
+      persistBlacklist: false,
+      cacheBust: false
     }
   );
-}
-
-async function fetchWithHttp(url) {
-  const response = await fetch(url, {
-    headers: {
-      "accept-language": "pt-BR,pt;q=0.9,en;q=0.8",
-      "user-agent": "Mozilla/5.0 (compatible; BaiaoTech Event Intake Bot/2.0)"
-    }
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} ao buscar ${url}`);
-  }
-
-  return {
-    final_url: response.url,
-    html: await response.text()
-  };
 }
 
 async function getBrowser() {
@@ -125,7 +133,135 @@ async function closeBrowser() {
   await browser.close();
 }
 
-async function fetchWithBrowser(url) {
+function createCooldownError(url, cooldown) {
+  const error = new Error(`Cooldown ativo para ${cooldown.host || url} ate ${cooldown.cooldownUntil}`);
+  error.code = "SOURCE_COOLDOWN";
+  error.cooldown = cooldown;
+  error.url = url;
+  return error;
+}
+
+function isCooldownError(error) {
+  return Boolean(error && typeof error === "object" && "code" in error && error.code === "SOURCE_COOLDOWN");
+}
+
+function getHostFromUrl(url) {
+  try {
+    return new URL(normalizeUrl(url)).host;
+  } catch {
+    return "";
+  }
+}
+
+function shouldForceBrowserFallback(source) {
+  return BROWSER_FALLBACK_SOURCE_TYPES.has(source?.source_type || "");
+}
+
+function getBrowserTtlHours(kind = "detail") {
+  return kind === "listing" ? DEFAULT_BROWSER_LISTING_TTL_HOURS : DEFAULT_BROWSER_DETAIL_TTL_HOURS;
+}
+
+function getResponseHeader(response, name) {
+  return response?.headers?.get?.(name) || "";
+}
+
+function recordHostFailure(performance, entry = {}) {
+  const host = String(entry.host || "").trim();
+
+  if (!host) {
+    return;
+  }
+
+  performance.host_failures[host] = {
+    status: Number(entry.status || 0) || 0,
+    failure_count: Number(entry.failureCount || 0) || 0,
+    cooldown_until: entry.cooldownUntil || "",
+    last_failure_at: entry.lastFailureAt || "",
+    source_names: [...(entry.sourceNames || [])]
+  };
+}
+
+async function fetchWithHttp(url, context) {
+  const { kind = "detail", cacheManager, performance, sourceName = "" } = context;
+  const cached = await cacheManager.readHttpCache(url);
+  const headers = {
+    "accept-language": "pt-BR,pt;q=0.9,en;q=0.8",
+    "user-agent": "Mozilla/5.0 (compatible; BaiaoTech Event Intake Bot/2.0)"
+  };
+
+  if (cached?.meta?.etag) {
+    headers["if-none-match"] = cached.meta.etag;
+  }
+
+  if (cached?.meta?.lastModified) {
+    headers["if-modified-since"] = cached.meta.lastModified;
+  }
+
+  const response = await fetch(url, { headers, redirect: "follow" });
+  const status = Number(response.status || 200) || 200;
+
+  if (status === 304 && cached) {
+    performance.http_cache_hits += 1;
+    performance.http_not_modified_304 += 1;
+    cacheManager.clearFailure(url);
+    return {
+      final_url: normalizeUrl(cached.meta?.finalUrl || cached.meta?.final_url || url),
+      html: cached.body,
+      status,
+      from_cache: true,
+      cache_kind: "http"
+    };
+  }
+
+  if (!response.ok) {
+    if (status === 403 || status === 429 || status >= 500) {
+      const failure = cacheManager.recordFailure({ url, sourceName, status });
+      recordHostFailure(performance, failure);
+    }
+
+    throw new Error(`HTTP ${status} ao buscar ${url}`);
+  }
+
+  performance.http_cache_misses += 1;
+  const html = await response.text();
+  await cacheManager.writeHttpCache({
+    url,
+    kind,
+    status,
+    contentType: getResponseHeader(response, "content-type"),
+    etag: getResponseHeader(response, "etag"),
+    lastModified: getResponseHeader(response, "last-modified"),
+    body: html,
+    finalUrl: response.url || url
+  });
+  cacheManager.clearFailure(url);
+
+  return {
+    final_url: normalizeUrl(response.url || url),
+    html,
+    status,
+    from_cache: false,
+    cache_kind: "http"
+  };
+}
+
+async function fetchWithBrowser(url, context) {
+  const { kind = "detail", cacheManager, performance, sourceName = "" } = context;
+  const ttlHours = getBrowserTtlHours(kind);
+  const cached = await cacheManager.readBrowserCache(url, ttlHours);
+
+  if (cached) {
+    performance.browser_cache_hits += 1;
+    return {
+      final_url: normalizeUrl(cached.meta?.finalUrl || cached.meta?.final_url || url),
+      html: cached.body,
+      status: 200,
+      from_cache: true,
+      cache_kind: "browser"
+    };
+  }
+
+  performance.browser_cache_misses += 1;
   const browser = await getBrowser();
   const page = await browser.newPage({
     locale: "pt-BR",
@@ -133,29 +269,77 @@ async function fetchWithBrowser(url) {
   });
 
   try {
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    const status = Number(response?.status?.() || 200) || 200;
+
+    if (status === 403 || status === 429 || status >= 500) {
+      const failure = cacheManager.recordFailure({ url, sourceName, status });
+      recordHostFailure(performance, failure);
+      throw new Error(`HTTP ${status} ao buscar ${url}`);
+    }
+
     await page.waitForLoadState("networkidle", { timeout: 90000 }).catch(() => {});
     const html = await page.content();
+    const finalUrl = page.url();
+    await cacheManager.writeBrowserCache({
+      url,
+      kind,
+      ttlHours,
+      body: html,
+      finalUrl
+    });
+    cacheManager.clearFailure(url);
 
     return {
-      final_url: page.url(),
-      html
+      final_url: normalizeUrl(finalUrl),
+      html,
+      status,
+      from_cache: false,
+      cache_kind: "browser"
     };
   } finally {
     await page.close();
   }
 }
 
-async function fetchPage(url, source) {
-  if ((source?.fetch_mode || "http") === "browser") {
-    return fetchWithBrowser(url);
+async function fetchPage(url, source, context) {
+  const { phase = "detail", kind = "detail", cacheManager, scheduler, performance } = context;
+  const requestUrl = String(url || "").trim();
+  const normalizedUrl = normalizeUrl(requestUrl);
+  const cooldown = cacheManager.getCooldown(normalizedUrl);
+
+  if (cooldown) {
+    performance.source_cooldown_skips += 1;
+    recordHostFailure(performance, cooldown);
+    throw createCooldownError(normalizedUrl, cooldown);
+  }
+
+  const host = cacheManager.getHostKey(normalizedUrl) || getHostFromUrl(normalizedUrl);
+  const preferBrowser = (source?.fetch_mode || "http") === "browser";
+  const browserBucket = phase === "discovery" ? "discovery-browser" : "detail-browser";
+  const httpBucket = phase === "discovery" ? "discovery-http" : "detail-http";
+  const requestContext = {
+    kind,
+    cacheManager,
+    performance,
+    sourceName: source?.source_name || ""
+  };
+
+  if (preferBrowser) {
+    return scheduler.schedule({ bucket: browserBucket, host }, () =>
+      fetchWithBrowser(requestUrl, requestContext)
+    );
   }
 
   try {
-    return await fetchWithHttp(url);
+    return await scheduler.schedule({ bucket: httpBucket, host }, () =>
+      fetchWithHttp(requestUrl, requestContext)
+    );
   } catch (error) {
-    if (["sympla-search", "eventbrite-search", "doity-search", "even3-search"].includes(source?.source_type || "")) {
-      return fetchWithBrowser(url);
+    if (shouldForceBrowserFallback(source) && !isCooldownError(error)) {
+      return scheduler.schedule({ bucket: browserBucket, host }, () =>
+        fetchWithBrowser(requestUrl, requestContext)
+      );
     }
 
     throw error;
@@ -329,6 +513,27 @@ function createEmptyCounts() {
   };
 }
 
+function createPerformanceMetrics() {
+  return {
+    http_cache_hits: 0,
+    http_cache_misses: 0,
+    http_not_modified_304: 0,
+    browser_cache_hits: 0,
+    browser_cache_misses: 0,
+    source_cooldown_skips: 0,
+    host_failures: {},
+    gemini_requests: 0,
+    duration_ms: 0,
+    phases: {
+      discovery_ms: 0,
+      filter_ms: 0,
+      detail_ms: 0,
+      normalize_ms: 0,
+      persist_ms: 0
+    }
+  };
+}
+
 function createReport(options, sources, todayKey) {
   return {
     apply: Boolean(options.apply),
@@ -339,7 +544,8 @@ function createReport(options, sources, todayKey) {
       source_name: options.sourceName || "",
       source_type: options.sourceType || "",
       max_sources: options.maxSources,
-      max_unique_urls: options.maxUniqueUrls
+      max_unique_urls: options.maxUniqueUrls,
+      cache_bust: Boolean(options.cacheBust)
     },
     sources_total: sources.length,
     sources_processed: [],
@@ -351,6 +557,7 @@ function createReport(options, sources, todayKey) {
     skipped_low_confidence: [],
     skipped_policy: [],
     errors: [],
+    performance: createPerformanceMetrics(),
     summary: {
       sources_total: sources.length,
       sources_processed: 0,
@@ -370,6 +577,7 @@ async function writeReportArtifacts(report) {
   const outputDir = await ensureOutputDir();
   const jsonPath = path.join(outputDir, "latest.json");
   const markdownPath = path.join(outputDir, "summary.md");
+  const perfPath = path.join(outputDir, "perf.json");
   const markdown = [
     "# Event intake summary",
     "",
@@ -385,18 +593,32 @@ async function writeReportArtifacts(report) {
     "",
     ...Object.entries(report.summary.counts).map(([key, value]) => `- ${key}: ${value}`),
     "",
+    "## Performance",
+    "",
+    `- duration_ms: ${report.performance.duration_ms}`,
+    ...Object.entries(report.performance.phases).map(([key, value]) => `- ${key}: ${value}`),
+    `- http_cache_hits: ${report.performance.http_cache_hits}`,
+    `- http_cache_misses: ${report.performance.http_cache_misses}`,
+    `- http_not_modified_304: ${report.performance.http_not_modified_304}`,
+    `- browser_cache_hits: ${report.performance.browser_cache_hits}`,
+    `- browser_cache_misses: ${report.performance.browser_cache_misses}`,
+    `- source_cooldown_skips: ${report.performance.source_cooldown_skips}`,
+    `- gemini_requests: ${report.performance.gemini_requests}`,
+    "",
     "## Fontes",
     "",
     ...report.sources_processed.map((source) => {
-      return `- ${source.source_name} [${source.source_type}]: descobertos ${source.discovered_candidates}, unicos ${source.unique_candidates}, processados ${source.processed_candidates}`;
+      return `- ${source.source_name} [${source.source_type}]: descobertos ${source.discovered_candidates}, unicos ${source.unique_candidates}, processados ${source.processed_candidates}, cooldown ${source.skipped_cooldown || 0}, erros ${source.errors || 0}`;
     })
   ].join("\n");
 
   await fs.writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
   await fs.writeFile(markdownPath, `${markdown}\n`, "utf8");
+  await fs.writeFile(perfPath, `${JSON.stringify(report.performance, null, 2)}\n`, "utf8");
 
   report.report_path = jsonPath;
   report.summary_path = markdownPath;
+  report.performance_path = perfPath;
   return report;
 }
 
@@ -427,6 +649,164 @@ function createPastDisposition(candidate, todayKey) {
   };
 }
 
+function createSourceSummary(source) {
+  return {
+    source_name: source.source_name,
+    source_type: source.source_type,
+    discovered_candidates: 0,
+    unique_candidates: 0,
+    processed_candidates: 0,
+    skipped_blacklisted: 0,
+    skipped_due_to_global_limit: 0,
+    skipped_cooldown: 0,
+    errors: 0
+  };
+}
+
+function buildBlacklistLookupKey(candidate = {}) {
+  const normalizedSourceUrl = normalizeUrl(candidate.event_url || candidate.source_url || candidate.ticket_url);
+
+  if (normalizedSourceUrl) {
+    return hashString(normalizedSourceUrl);
+  }
+
+  return hashString(
+    [
+      String(candidate.title || "").trim().toLowerCase(),
+      String(candidate.start_date || "").trim(),
+      String(candidate.source_name || "").trim().toLowerCase()
+    ].join("::")
+  );
+}
+
+function buildBlacklistIndex(blacklist) {
+  const byUrl = new Map();
+  const byKey = new Map();
+
+  for (const entry of blacklist?.entries || []) {
+    if (entry.source_url) {
+      byUrl.set(entry.source_url, entry);
+    }
+
+    if (entry.ticket_url) {
+      byUrl.set(entry.ticket_url, entry);
+    }
+
+    if (entry.key) {
+      byKey.set(entry.key, entry);
+    }
+  }
+
+  return { byUrl, byKey };
+}
+
+function findBlacklistedEventIndexed(index, blacklist, candidate = {}) {
+  const urls = [candidate.event_url, candidate.source_url, candidate.ticket_url]
+    .map((value) => normalizeUrl(value))
+    .filter(Boolean);
+
+  for (const url of urls) {
+    if (index.byUrl.has(url)) {
+      return index.byUrl.get(url);
+    }
+  }
+
+  const key = buildBlacklistLookupKey(candidate);
+  return index.byKey.get(key) || findBlacklistedEvent(blacklist, candidate);
+}
+
+function updateBlacklistIndex(index, entry = {}) {
+  if (entry.source_url) {
+    index.byUrl.set(entry.source_url, entry);
+  }
+
+  if (entry.ticket_url) {
+    index.byUrl.set(entry.ticket_url, entry);
+  }
+
+  if (entry.key) {
+    index.byKey.set(entry.key, entry);
+  }
+}
+
+function buildExistingEventIndex(existingEvents = []) {
+  const byUrl = new Map();
+  const byDate = new Map();
+
+  for (const event of existingEvents) {
+    if (event.source_url) {
+      byUrl.set(event.source_url, event);
+    }
+
+    if (event.ticket_url) {
+      byUrl.set(event.ticket_url, event);
+    }
+
+    const bucket = byDate.get(event.start_date) || [];
+    bucket.push(event);
+    byDate.set(event.start_date, bucket);
+  }
+
+  return { byUrl, byDate };
+}
+
+function findExistingEventIndexed(index, candidate) {
+  const normalizedSourceUrl = normalizeUrl(candidate.source_url || candidate.ticket_url);
+
+  if (normalizedSourceUrl && index.byUrl.has(normalizedSourceUrl)) {
+    return {
+      match: index.byUrl.get(normalizedSourceUrl),
+      reason: "source_url"
+    };
+  }
+
+  const sameDateEvents = index.byDate.get(candidate.start_date) || [];
+  return findExistingEvent(sameDateEvents, candidate);
+}
+
+function addExistingEventToIndex(index, candidate, pathValue = "") {
+  const event = {
+    path: pathValue,
+    title: candidate.title || "",
+    start_date: candidate.start_date || "",
+    end_date: candidate.end_date || "",
+    organizer: candidate.organizer || "",
+    ticket_url: normalizeUrl(candidate.ticket_url || ""),
+    source_url: normalizeUrl(candidate.source_url || ""),
+    legacy_id: null
+  };
+
+  if (event.source_url) {
+    index.byUrl.set(event.source_url, event);
+  }
+
+  if (event.ticket_url) {
+    index.byUrl.set(event.ticket_url, event);
+  }
+
+  const bucket = index.byDate.get(event.start_date) || [];
+  bucket.push(event);
+  index.byDate.set(event.start_date, bucket);
+}
+
+async function measurePhase(performance, key, task) {
+  const startedAt = Date.now();
+
+  try {
+    return await task();
+  } finally {
+    performance.phases[key] += Date.now() - startedAt;
+  }
+}
+
+function normalizeCandidateEventUrl(candidate) {
+  return normalizeUrl(candidate.event_url || candidate.source_url || candidate.ticket_url);
+}
+
+function sortSourceSummaries(sources, summaryMap) {
+  return sources.map((source) => summaryMap.get(source.entry_url) || createSourceSummary(source));
+}
+
 export async function runEventIntake(options = {}) {
   const resolvedOptions = {
     apply: Boolean(options.apply),
@@ -434,8 +814,10 @@ export async function runEventIntake(options = {}) {
     sourceType: options.sourceType || "",
     maxSources: Number(options.maxSources || DEFAULT_MAX_SOURCES) || DEFAULT_MAX_SOURCES,
     maxUniqueUrls: Number(options.maxUniqueUrls || DEFAULT_MAX_UNIQUE_URLS) || DEFAULT_MAX_UNIQUE_URLS,
-    persistBlacklist: Boolean(options.persistBlacklist || options.apply)
+    persistBlacklist: Boolean(options.persistBlacklist || options.apply),
+    cacheBust: Boolean(options.cacheBust)
   };
+  const startedAt = Date.now();
   const categories = await loadCategories();
   const categorySlugs = categories.map((item) => item.slug);
   const allSources = await loadEventSources();
@@ -445,45 +827,138 @@ export async function runEventIntake(options = {}) {
     .filter((source) => !resolvedOptions.sourceType || source.source_type === resolvedOptions.sourceType)
     .slice(0, resolvedOptions.maxSources);
   const existingEvents = await loadExistingEvents();
+  const existingEventIndex = buildExistingEventIndex(existingEvents);
   let blacklist = await loadEventBlacklist();
+  let blacklistIndex = buildBlacklistIndex(blacklist);
   const todayKey = getDateKeyInTimeZone(new Date(), EVENT_TIME_ZONE);
   const report = createReport(resolvedOptions, sources, todayKey);
-  const seenCandidateUrls = new Set();
+  const sourceSummaryMap = new Map(sources.map((source) => [source.entry_url, createSourceSummary(source)]));
   const seenNormalizedUrls = new Set();
   let blacklistChanged = false;
 
+  const cacheManager = await createCacheManager({
+    cwd: process.cwd(),
+    cacheBust: resolvedOptions.cacheBust
+  });
+  const scheduler = createBucketScheduler({
+    totalLimits: DEFAULT_TOTAL_LIMITS,
+    hostLimits: DEFAULT_HOST_LIMITS,
+    defaultTotalLimit: 1,
+    defaultHostLimit: 1
+  });
+
   try {
-    for (const source of sources) {
-      if (report.summary.processed_candidates >= resolvedOptions.maxUniqueUrls) {
-        break;
-      }
+    const discoveryResults = await measurePhase(report.performance, "discovery_ms", async () => {
+      return Promise.all(
+        sources.map(async (source) => {
+          const sourceSummary = sourceSummaryMap.get(source.entry_url);
 
-      try {
-        const sourcePage = await fetchPage(source.entry_url, source);
-        const discoveredCandidates = await discoverCandidatesForSource(source, sourcePage, fetchPage);
-        report.summary.sources_processed += 1;
-        report.summary.discovered_candidates += discoveredCandidates.length;
+          try {
+            const sourcePage = await fetchPage(source.entry_url, source, {
+              phase: "discovery",
+              kind: "listing",
+              cacheManager,
+              scheduler,
+              performance: report.performance
+            });
+            const discoveredCandidates = await discoverCandidatesForSource(source, sourcePage, (url, nestedSource = {}) =>
+              fetchPage(
+                url,
+                {
+                  ...source,
+                  ...nestedSource,
+                  source_name: nestedSource.source_name || source.source_name,
+                  source_type: nestedSource.source_type || source.source_type
+                },
+                {
+                  phase: "discovery",
+                  kind: "listing",
+                  cacheManager,
+                  scheduler,
+                  performance: report.performance
+                }
+              )
+            );
 
-        const uniqueCandidates = discoveredCandidates.filter((candidate) => {
-          if (!candidate.event_url || seenCandidateUrls.has(candidate.event_url)) {
-            return false;
+            sourceSummary.discovered_candidates = discoveredCandidates.length;
+            sourceSummary.unique_candidates = new Set(
+              discoveredCandidates.map((candidate) => normalizeCandidateEventUrl(candidate))
+            ).size;
+            report.summary.discovered_candidates += discoveredCandidates.length;
+
+            return {
+              source,
+              sourcePage,
+              discoveredCandidates
+            };
+          } catch (error) {
+            if (isCooldownError(error)) {
+              sourceSummary.skipped_cooldown += 1;
+              return {
+                source,
+                sourcePage: null,
+                discoveredCandidates: [],
+                skipped: true
+              };
+            }
+
+            sourceSummary.errors += 1;
+            addSummaryCount(report, "errors");
+            report.errors.push({
+              source_name: source.source_name,
+              message: error instanceof Error ? error.message : String(error)
+            });
+
+            return {
+              source,
+              sourcePage: null,
+              discoveredCandidates: [],
+              error
+            };
+          }
+        })
+      );
+    });
+
+    report.summary.sources_processed = discoveryResults.filter((result) => !result.error && !result.skipped).length;
+
+    const selectedCandidates = await measurePhase(report.performance, "filter_ms", async () => {
+      const globalCandidateUrls = new Set();
+      const nextCandidates = [];
+
+      for (const result of discoveryResults) {
+        const sourceSummary = sourceSummaryMap.get(result.source.entry_url);
+
+        for (const candidate of result.discoveredCandidates) {
+          const eventUrl = normalizeCandidateEventUrl(candidate);
+
+          if (!eventUrl) {
+            continue;
           }
 
-          seenCandidateUrls.add(candidate.event_url);
-          return true;
-        });
+          if (globalCandidateUrls.has(eventUrl)) {
+            addSummaryCount(report, "duplicates");
+            report.skipped_duplicates.push({
+              title: candidate.seed_data?.title || eventUrl,
+              reason: "same_run_candidate_url",
+              matched_path: "",
+              source_url: eventUrl
+            });
+            continue;
+          }
 
-        const eligibleCandidates = [];
+          globalCandidateUrls.add(eventUrl);
+          report.summary.unique_candidates += 1;
 
-        for (const candidate of uniqueCandidates) {
-          const blacklisted = findBlacklistedEvent(blacklist, candidate);
+          const blacklisted = findBlacklistedEventIndexed(blacklistIndex, blacklist, candidate);
 
           if (blacklisted) {
+            sourceSummary.skipped_blacklisted += 1;
             addSummaryCount(report, "blacklisted");
             report.skipped_blacklist.push({
-              title: candidate.seed_data?.title || candidate.event_url,
-              source_name: source.source_name,
-              source_url: candidate.event_url,
+              title: candidate.seed_data?.title || eventUrl,
+              source_name: result.source.source_name,
+              source_url: eventUrl,
               reason: blacklisted.reason,
               first_seen_on: blacklisted.first_seen_on,
               last_seen_on: blacklisted.last_seen_on
@@ -491,236 +966,320 @@ export async function runEventIntake(options = {}) {
             continue;
           }
 
-          eligibleCandidates.push(candidate);
+          const seededPastDisposition = createPastDisposition(candidate.seed_data || {}, todayKey);
+
+          if (seededPastDisposition) {
+            addSummaryCount(report, seededPastDisposition.reason);
+            report.skipped_policy.push({
+              title: candidate.seed_data?.title || eventUrl,
+              source_name: result.source.source_name,
+              source_url: eventUrl,
+              reason: seededPastDisposition.reason
+            });
+
+            const update = upsertBlacklistEntry(
+              blacklist,
+              {
+                title: candidate.seed_data?.title || "",
+                source_name: result.source.source_name,
+                source_url: eventUrl,
+                start_date: toDateOnly(candidate.seed_data?.start_date || ""),
+                end_date: toDateOnly(candidate.seed_data?.end_date || "")
+              },
+              { todayKey, reason: seededPastDisposition.reason, details: "seed_data" }
+            );
+            blacklist = update.blacklist;
+            blacklistChanged ||= update.changed;
+            if (update.entry) {
+              updateBlacklistIndex(blacklistIndex, update.entry);
+            }
+            continue;
+          }
+
+          if (nextCandidates.length >= resolvedOptions.maxUniqueUrls) {
+            sourceSummary.skipped_due_to_global_limit += 1;
+            continue;
+          }
+
+          sourceSummary.processed_candidates += 1;
+          nextCandidates.push({
+            source: result.source,
+            sourcePage: result.sourcePage,
+            candidate: {
+              ...candidate,
+              event_url: eventUrl
+            }
+          });
         }
+      }
 
-        const availableSlots = Math.max(0, resolvedOptions.maxUniqueUrls - report.summary.processed_candidates);
-        const selectedCandidates = eligibleCandidates.slice(0, availableSlots);
-        report.summary.unique_candidates += uniqueCandidates.length;
-        report.sources_processed.push({
-          source_name: source.source_name,
-          source_type: source.source_type,
-          discovered_candidates: discoveredCandidates.length,
-          unique_candidates: uniqueCandidates.length,
-          processed_candidates: selectedCandidates.length,
-          skipped_blacklisted: uniqueCandidates.length - eligibleCandidates.length,
-          skipped_due_to_global_limit: Math.max(0, eligibleCandidates.length - selectedCandidates.length)
-        });
+      return nextCandidates;
+    });
 
-        for (const candidate of selectedCandidates) {
+    const detailResults = await measurePhase(report.performance, "detail_ms", async () => {
+      return Promise.all(
+        selectedCandidates.map(async (entry) => {
+          const sourceSummary = sourceSummaryMap.get(entry.source.entry_url);
+
           try {
-            const seededPastDisposition = createPastDisposition(candidate.seed_data || {}, todayKey);
+            const sourcePageUrl = normalizeUrl(entry.sourcePage?.final_url || "");
+            const eventPage =
+              entry.sourcePage && entry.candidate.event_url === sourcePageUrl
+                ? entry.sourcePage
+                : await fetchPage(entry.candidate.event_url, entry.source, {
+                  phase: "detail",
+                  kind: "detail",
+                  cacheManager,
+                  scheduler,
+                  performance: report.performance
+                });
+            const deterministic = extractDeterministicEventData(eventPage, entry.candidate);
+            const deterministicPastDisposition = createPastDisposition(deterministic, todayKey);
 
-            if (seededPastDisposition) {
-              addSummaryCount(report, seededPastDisposition.reason);
+            if (deterministicPastDisposition) {
+              addSummaryCount(report, deterministicPastDisposition.reason);
               report.skipped_policy.push({
-                title: candidate.seed_data?.title || candidate.event_url,
-                source_name: source.source_name,
-                source_url: candidate.event_url,
-                reason: seededPastDisposition.reason
+                title: deterministic.title || entry.candidate.seed_data?.title || entry.candidate.event_url,
+                source_name: entry.source.source_name,
+                source_url: deterministic.source_url || entry.candidate.event_url,
+                reason: deterministicPastDisposition.reason
               });
 
-              const update = upsertBlacklistEntry(
-                blacklist,
-                {
-                  title: candidate.seed_data?.title || "",
-                  source_name: source.source_name,
-                  source_url: candidate.event_url,
-                  start_date: toDateOnly(candidate.seed_data?.start_date || ""),
-                  end_date: toDateOnly(candidate.seed_data?.end_date || "")
-                },
-                { todayKey, reason: seededPastDisposition.reason, details: "seed_data" }
-              );
+              const update = upsertBlacklistEntry(blacklist, deterministic, {
+                todayKey,
+                reason: deterministicPastDisposition.reason
+              });
               blacklist = update.blacklist;
               blacklistChanged ||= update.changed;
-              continue;
+              if (update.entry) {
+                updateBlacklistIndex(blacklistIndex, update.entry);
+              }
+              return null;
             }
 
             report.summary.processed_candidates += 1;
-            const eventPage =
-              candidate.event_url === normalizeUrl(sourcePage.final_url)
-                ? sourcePage
-                : await fetchPage(candidate.event_url, source);
-            const deterministic = extractDeterministicEventData(eventPage, candidate);
-            const aiNormalized = await normalizeWithGemini({
-              apiKey: process.env.GEMINI_API_KEY,
-              model: GEMINI_MODEL,
-              source,
-              deterministic,
-              categorySlugs
+            return {
+              ...entry,
+              eventPage,
+              deterministic
+            };
+          } catch (error) {
+            if (isCooldownError(error)) {
+              sourceSummary.skipped_cooldown += 1;
+              return null;
+            }
+
+            sourceSummary.errors += 1;
+            addSummaryCount(report, "errors");
+            report.errors.push({
+              source_name: entry.source.source_name,
+              event_url: entry.candidate.event_url,
+              message: error instanceof Error ? error.message : String(error)
             });
-            const normalized = ensureEventDefaults(
-              {
-                ...deterministic,
-                ...aiNormalized,
-                source_url: normalizeUrl(aiNormalized.source_url || deterministic.source_url),
-                ticket_url: normalizeUrl(aiNormalized.ticket_url || deterministic.ticket_url),
-                source_name: source.source_name
-              },
-              categorySlugs
-            );
-            const dedupeKey = normalized.source_url || normalized.ticket_url;
+            return null;
+          }
+        })
+      );
+    });
 
-            if (dedupeKey && seenNormalizedUrls.has(dedupeKey)) {
-              addSummaryCount(report, "duplicates");
-              report.skipped_duplicates.push({
-                title: normalized.title,
-                reason: "same_run_source_url",
-                matched_path: "",
-                source_url: dedupeKey
-              });
-              continue;
-            }
-
-            const existing = findExistingEvent(existingEvents, normalized);
-
-            if (existing) {
-              addSummaryCount(report, "duplicates");
-              report.skipped_duplicates.push({
-                title: normalized.title,
-                reason: existing.reason,
-                matched_path: existing.match.path,
-                source_url: normalized.source_url
-              });
-              continue;
-            }
-
-            if (dedupeKey) {
-              seenNormalizedUrls.add(dedupeKey);
-            }
-
-            const scoreResult = scoreNormalizedEvent(normalized);
-            const disposition = classifyIntakeCandidate(normalized, scoreResult, { todayKey });
-
-            if (disposition.action === "skip") {
-              addSummaryCount(report, disposition.reason);
-              report.skipped_policy.push({
-                title: normalized.title,
-                source_name: source.source_name,
-                source_url: normalized.source_url,
-                reason: disposition.reason
-              });
-
-              if (isBlacklistableReason(disposition.reason)) {
-                const update = upsertBlacklistEntry(blacklist, normalized, {
-                  todayKey,
-                  reason: disposition.reason
-                });
-                blacklist = update.blacklist;
-                blacklistChanged ||= update.changed;
+    const normalizedResults = await measurePhase(report.performance, "normalize_ms", async () => {
+      return Promise.all(
+        detailResults
+          .filter(Boolean)
+          .map((detail) =>
+            scheduler.schedule({ bucket: "gemini", host: "" }, async () => {
+              if (process.env.GEMINI_API_KEY) {
+                report.performance.gemini_requests += 1;
               }
 
-              continue;
-            }
-
-            if (disposition.action === "issue") {
-              addSummaryCount(report, "issues");
-              addSummaryCount(report, "low_confidence");
-              const issuePayload = annotateLowConfidence(normalized, scoreResult);
-              report.skipped_low_confidence.push(issuePayload);
-
-              if (resolvedOptions.apply) {
-                const issueMarker = `<!-- event-intake-source:${hashString(
-                  normalized.source_url || normalized.ticket_url
-                )} -->`;
-                const issueResult = await upsertIssue({
-                  token: process.env.TOKEN_FOR_CI_EVENTS,
-                  repo: process.env.GITHUB_REPOSITORY,
-                  apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
-                  label: "event-intake",
-                  title: buildIssueTitle(normalized),
-                  body: buildIssueBody(normalized, scoreResult),
-                  assignee: "gabrielldn",
-                  marker: issueMarker
-                });
-
-                report.created_issues.push({
-                  title: normalized.title,
-                  issue_number: issueResult.issue_number,
-                  action: issueResult.action,
-                  source_url: normalized.source_url
-                });
-              } else {
-                report.created_issues.push({
-                  title: normalized.title,
-                  source_url: normalized.source_url,
-                  dry_run: true
-                });
-              }
-
-              continue;
-            }
-
-            const markdown = buildEventMarkdown(normalized);
-            const filePath = buildEventFilePath(normalized);
-
-            addSummaryCount(report, "prs");
-
-            if (!resolvedOptions.apply) {
-              report.created_prs.push({
-                title: normalized.title,
-                branch: buildBranchName(normalized),
-                file_path: filePath,
-                dry_run: true
+              const aiNormalized = await normalizeWithGemini({
+                apiKey: process.env.GEMINI_API_KEY,
+                model: GEMINI_MODEL,
+                source: detail.source,
+                deterministic: detail.deterministic,
+                categorySlugs
               });
-              continue;
-            }
+              const normalized = ensureEventDefaults(
+                {
+                  ...detail.deterministic,
+                  ...aiNormalized,
+                  source_url: normalizeUrl(aiNormalized.source_url || detail.deterministic.source_url),
+                  ticket_url: normalizeUrl(aiNormalized.ticket_url || detail.deterministic.ticket_url),
+                  source_name: detail.source.source_name
+                },
+                categorySlugs
+              );
 
-            const prResult = await createOrUpdateEventPr({
-              token: process.env.TOKEN_FOR_CI_EVENTS,
-              repo: process.env.GITHUB_REPOSITORY,
-              apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
-              filePath,
-              content: markdown,
-              candidate: normalized,
-              prTitle: buildPrTitle(normalized),
-              prBody: buildPrBody(normalized, scoreResult),
-              reviewer: "gabrielldn"
+              return {
+                ...detail,
+                normalized
+              };
+            })
+          )
+      );
+    });
+
+    await measurePhase(report.performance, "persist_ms", async () => {
+      for (const item of normalizedResults.filter(Boolean)) {
+        const normalized = item.normalized;
+        const dedupeKey = normalized.source_url || normalized.ticket_url;
+
+        if (dedupeKey && seenNormalizedUrls.has(dedupeKey)) {
+          addSummaryCount(report, "duplicates");
+          report.skipped_duplicates.push({
+            title: normalized.title,
+            reason: "same_run_source_url",
+            matched_path: "",
+            source_url: dedupeKey
+          });
+          continue;
+        }
+
+        const existing = findExistingEventIndexed(existingEventIndex, normalized);
+
+        if (existing) {
+          addSummaryCount(report, "duplicates");
+          report.skipped_duplicates.push({
+            title: normalized.title,
+            reason: existing.reason,
+            matched_path: existing.match.path,
+            source_url: normalized.source_url
+          });
+          continue;
+        }
+
+        if (dedupeKey) {
+          seenNormalizedUrls.add(dedupeKey);
+        }
+
+        const scoreResult = scoreNormalizedEvent(normalized);
+        const disposition = classifyIntakeCandidate(normalized, scoreResult, { todayKey });
+
+        if (disposition.action === "skip") {
+          addSummaryCount(report, disposition.reason);
+          report.skipped_policy.push({
+            title: normalized.title,
+            source_name: item.source.source_name,
+            source_url: normalized.source_url,
+            reason: disposition.reason
+          });
+
+          if (isBlacklistableReason(disposition.reason)) {
+            const update = upsertBlacklistEntry(blacklist, normalized, {
+              todayKey,
+              reason: disposition.reason
             });
+            blacklist = update.blacklist;
+            blacklistChanged ||= update.changed;
+            if (update.entry) {
+              updateBlacklistIndex(blacklistIndex, update.entry);
+            }
+          }
 
-            await closeIssueByMarker({
+          continue;
+        }
+
+        if (disposition.action === "issue") {
+          addSummaryCount(report, "issues");
+          addSummaryCount(report, "low_confidence");
+          const issuePayload = annotateLowConfidence(normalized, scoreResult);
+          report.skipped_low_confidence.push(issuePayload);
+
+          if (resolvedOptions.apply) {
+            const issueMarker = `<!-- event-intake-source:${hashString(
+              normalized.source_url || normalized.ticket_url
+            )} -->`;
+            const issueResult = await upsertIssue({
               token: process.env.TOKEN_FOR_CI_EVENTS,
               repo: process.env.GITHUB_REPOSITORY,
               apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
               label: "event-intake",
-              marker: `<!-- event-intake-source:${hashString(
-                normalized.source_url || normalized.ticket_url
-              )} -->`
+              title: buildIssueTitle(normalized),
+              body: buildIssueBody(normalized, scoreResult),
+              assignee: "gabrielldn",
+              marker: issueMarker
             });
 
-            if (prResult.action === "updated") {
-              report.updated_prs.push({
-                title: normalized.title,
-                pr_number: prResult.pr_number,
-                branch: prResult.branch
-              });
-            } else {
-              report.created_prs.push({
-                title: normalized.title,
-                pr_number: prResult.pr_number,
-                branch: prResult.branch
-              });
-            }
-          } catch (error) {
-            addSummaryCount(report, "errors");
-            report.errors.push({
-              source_name: source.source_name,
-              event_url: candidate.event_url,
-              message: error instanceof Error ? error.message : String(error)
+            report.created_issues.push({
+              title: normalized.title,
+              issue_number: issueResult.issue_number,
+              action: issueResult.action,
+              source_url: normalized.source_url
+            });
+          } else {
+            report.created_issues.push({
+              title: normalized.title,
+              source_url: normalized.source_url,
+              dry_run: true
             });
           }
+
+          addExistingEventToIndex(existingEventIndex, normalized, "");
+          continue;
         }
-      } catch (error) {
-        addSummaryCount(report, "errors");
-        report.errors.push({
-          source_name: source.source_name,
-          message: error instanceof Error ? error.message : String(error)
+
+        const markdown = buildEventMarkdown(normalized);
+        const filePath = buildEventFilePath(normalized);
+
+        addSummaryCount(report, "prs");
+
+        if (!resolvedOptions.apply) {
+          report.created_prs.push({
+            title: normalized.title,
+            branch: buildBranchName(normalized),
+            file_path: filePath,
+            dry_run: true
+          });
+          addExistingEventToIndex(existingEventIndex, normalized, filePath);
+          continue;
+        }
+
+        const prResult = await createOrUpdateEventPr({
+          token: process.env.TOKEN_FOR_CI_EVENTS,
+          repo: process.env.GITHUB_REPOSITORY,
+          apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
+          filePath,
+          content: markdown,
+          candidate: normalized,
+          prTitle: buildPrTitle(normalized),
+          prBody: buildPrBody(normalized, scoreResult),
+          reviewer: "gabrielldn"
         });
+
+        await closeIssueByMarker({
+          token: process.env.TOKEN_FOR_CI_EVENTS,
+          repo: process.env.GITHUB_REPOSITORY,
+          apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
+          label: "event-intake",
+          marker: `<!-- event-intake-source:${hashString(
+            normalized.source_url || normalized.ticket_url
+          )} -->`
+        });
+
+        if (prResult.action === "updated") {
+          report.updated_prs.push({
+            title: normalized.title,
+            pr_number: prResult.pr_number,
+            branch: prResult.branch
+          });
+        } else {
+          report.created_prs.push({
+            title: normalized.title,
+            pr_number: prResult.pr_number,
+            branch: prResult.branch
+          });
+        }
+
+        addExistingEventToIndex(existingEventIndex, normalized, filePath);
       }
-    }
+    });
   } finally {
+    await cacheManager.persistHealth();
+    report.performance.host_failures = cacheManager.getSourceHealthSnapshot().hosts || {};
     await closeBrowser();
   }
+
+  report.sources_processed = sortSourceSummaries(sources, sourceSummaryMap);
 
   if (resolvedOptions.persistBlacklist && blacklistChanged) {
     report.blacklist_path = await saveEventBlacklist(blacklist);
@@ -742,6 +1301,7 @@ export async function runEventIntake(options = {}) {
     report.blacklist_changed = false;
   }
 
+  report.performance.duration_ms = Date.now() - startedAt;
   await writeReportArtifacts(report);
   return report;
 }

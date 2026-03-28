@@ -73,6 +73,8 @@ Como funciona:
 
 - a descoberta combina buscas regionais em plataformas e seeds curadas de comunidades
 - nao existe mais limite por fonte; o intake processa todos os candidatos descobertos em cada fonte e respeita apenas o teto global de URLs unicas por rodada
+- o runtime usa cache persistido em `.cache/event-intake/` com `ETag`/`Last-Modified` para HTTP e snapshots com TTL para fontes renderizadas via browser
+- hosts que responderem com `403`, `429` ou `5xx` entram em cooldown temporario para reduzir retries inutilmente caros
 - o pipeline deduplica contra os eventos ja existentes em `src/content/events/` antes de abrir PR
 - eventos rejeitados por politica (`past`, `online_only`, `non_northeast`, `non_tech`) entram no blacklist versionado e deixam de ser reprocessados nas rodadas seguintes
 - o corte de data usa `America/Fortaleza` e descarta eventos cujo `end_date` ou `start_date` ja esteja antes da data atual
@@ -91,7 +93,9 @@ Para testar manualmente no GitHub:
 
 - execute `Event Intake` via `workflow_dispatch`
 - com `apply=false`, o workflow roda em dry-run e publica artefatos em `output/event-intake/`
+- com `cache_bust=true`, o workflow ignora o cache persistido daquela rodada manual
 - com `apply=true`, alem dos PRs/issues do intake, o workflow pode sincronizar o blacklist `NDJSON` no repo quando houver novos descartes por politica
+- o artifact inclui `latest.json`, `summary.md` e `perf.json` com hits de cache, `304`, cooldowns e duracao por fase
 
 Para testar localmente:
 

@@ -37,6 +37,20 @@ async function writeEvent(tempDir, fileName, frontMatter) {
   await fs.writeFile(targetPath, `---\n${frontMatter}\n---\n\nDescricao.\n`, "utf8");
 }
 
+function makeTextResponse(url, body, status = 200, headers = {}) {
+  return {
+    ok: status >= 200 && status < 300,
+    status,
+    url,
+    headers: {
+      get(name) {
+        return headers[String(name || "").toLowerCase()] || "";
+      }
+    },
+    text: async () => body
+  };
+}
+
 function makeFetchMock(routeMap, geminiJson) {
   return vi.fn(async (url) => {
     const requestUrl = String(url);
@@ -44,6 +58,7 @@ function makeFetchMock(routeMap, geminiJson) {
     if (requestUrl.includes("generativelanguage.googleapis.com")) {
       return {
         ok: true,
+        status: 200,
         json: async () => ({
           candidates: [
             {
@@ -61,11 +76,7 @@ function makeFetchMock(routeMap, geminiJson) {
       throw new Error(`URL nao mockada: ${requestUrl}`);
     }
 
-    return {
-      ok: true,
-      url: requestUrl,
-      text: async () => body
-    };
+    return makeTextResponse(requestUrl, body);
   });
 }
 
@@ -484,6 +495,437 @@ describe("event intake orchestrator", () => {
     expect(report.summary.counts.blacklisted).toBe(1);
     expect(report.skipped_blacklist).toHaveLength(1);
     expect(report.summary.processed_candidates).toBe(0);
+  });
+
+  it("revalida paginas HTTP com ETag e reaproveita o cache em respostas 304", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    const listingUrl = "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR";
+    const eventUrl = "https://www.meetup.com/fortaleza-js/events/313900001";
+    const callCount = new Map();
+
+    globalThis.fetch = vi.fn(async (url, options = {}) => {
+      const requestUrl = String(url);
+
+      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            candidates: [
+              {
+                content: {
+                  parts: [
+                    {
+                      text: JSON.stringify({
+                        title: "Cloud AI Nordeste Fortaleza",
+                        start_date: "2026-04-20",
+                        end_date: "2026-04-20",
+                        kind: "conference",
+                        format: "in-person",
+                        city: "Fortaleza",
+                        state: "CE",
+                        organizer: "Comunidade Cloud CE",
+                        venue: "Hub de Inovacao",
+                        ticket_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        categories: ["cloud"],
+                        cover_image: "",
+                        price: "",
+                        description: "Evento de cloud e ia.",
+                        summary: "Evento de cloud e ia.",
+                        source_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        source_name: "Meetup Fortaleza",
+                        ambiguities: []
+                      })
+                    }
+                  ]
+                }
+              }
+            ]
+          })
+        };
+      }
+
+      const seen = callCount.get(requestUrl) || 0;
+      callCount.set(requestUrl, seen + 1);
+
+      if (requestUrl === listingUrl) {
+        if (seen === 0) {
+          return makeTextResponse(
+            requestUrl,
+            `<html><body><a href="${eventUrl}/">Cloud AI Nordeste Fortaleza</a></body></html>`,
+            200,
+            {
+              etag: "listing-v1",
+              "last-modified": "Wed, 01 Jan 2026 00:00:00 GMT"
+            }
+          );
+        }
+
+        expect(options.headers["if-none-match"]).toBe("listing-v1");
+        expect(options.headers["if-modified-since"]).toBe("Wed, 01 Jan 2026 00:00:00 GMT");
+        return {
+          ok: false,
+          status: 304,
+          url: requestUrl,
+          headers: { get: () => "" },
+          text: async () => ""
+        };
+      }
+
+      if (requestUrl === eventUrl) {
+        if (seen === 0) {
+          return makeTextResponse(
+            requestUrl,
+            '<html><head><script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Cloud AI Nordeste Fortaleza","startDate":"2026-04-20T19:00:00-03:00","endDate":"2026-04-20T22:00:00-03:00","organizer":{"@type":"Organization","name":"Comunidade Cloud CE"},"location":{"@type":"Place","name":"Hub de Inovacao","address":{"@type":"PostalAddress","addressLocality":"Fortaleza","addressRegion":"CE"}},"offers":{"@type":"Offer","url":"https://www.meetup.com/fortaleza-js/events/313900001/"}}</script></head><body>Evento cloud.</body></html>',
+            200,
+            {
+              etag: "event-v1",
+              "last-modified": "Wed, 01 Jan 2026 01:00:00 GMT"
+            }
+          );
+        }
+
+        expect(options.headers["if-none-match"]).toBe("event-v1");
+        expect(options.headers["if-modified-since"]).toBe("Wed, 01 Jan 2026 01:00:00 GMT");
+        return {
+          ok: false,
+          status: 304,
+          url: requestUrl,
+          headers: { get: () => "" },
+          text: async () => ""
+        };
+      }
+
+      throw new Error(`URL nao mockada: ${requestUrl}`);
+    });
+
+    const { runEventIntake } = await importModule();
+    const firstReport = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+    const secondReport = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(firstReport.performance.http_cache_misses).toBeGreaterThanOrEqual(2);
+    expect(secondReport.performance.http_cache_hits).toBeGreaterThanOrEqual(2);
+    expect(secondReport.performance.http_not_modified_304).toBeGreaterThanOrEqual(2);
+  });
+
+  it("ignora o cache persistido quando cacheBust=true", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    const listingUrl = "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR";
+    const eventUrl = "https://www.meetup.com/fortaleza-js/events/313900001";
+
+    globalThis.fetch = makeFetchMock(
+      new Map([
+        [
+          listingUrl,
+          `<html><body><a href="${eventUrl}/">Cloud AI Nordeste Fortaleza</a></body></html>`
+        ],
+        [
+          eventUrl,
+          '<html><head><script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Cloud AI Nordeste Fortaleza","startDate":"2026-04-20T19:00:00-03:00","endDate":"2026-04-20T22:00:00-03:00","organizer":{"@type":"Organization","name":"Comunidade Cloud CE"},"location":{"@type":"Place","name":"Hub de Inovacao","address":{"@type":"PostalAddress","addressLocality":"Fortaleza","addressRegion":"CE"}},"offers":{"@type":"Offer","url":"https://www.meetup.com/fortaleza-js/events/313900001/"}}</script></head><body>Evento cloud.</body></html>'
+        ]
+      ]),
+      {
+        title: "Cloud AI Nordeste Fortaleza",
+        start_date: "2026-04-20",
+        end_date: "2026-04-20",
+        kind: "conference",
+        format: "in-person",
+        city: "Fortaleza",
+        state: "CE",
+        organizer: "Comunidade Cloud CE",
+        venue: "Hub de Inovacao",
+        ticket_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+        categories: ["cloud"],
+        cover_image: "",
+        price: "",
+        description: "Evento de cloud e ia.",
+        summary: "Evento de cloud e ia.",
+        source_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+        source_name: "Meetup Fortaleza",
+        ambiguities: []
+      }
+    );
+
+    const { runEventIntake } = await importModule();
+    await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    globalThis.fetch = vi.fn(async (url, options = {}) => {
+      const requestUrl = String(url);
+
+      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            candidates: [
+              {
+                content: {
+                  parts: [
+                    {
+                      text: JSON.stringify({
+                        title: "Cloud AI Nordeste Fortaleza",
+                        start_date: "2026-04-20",
+                        end_date: "2026-04-20",
+                        kind: "conference",
+                        format: "in-person",
+                        city: "Fortaleza",
+                        state: "CE",
+                        organizer: "Comunidade Cloud CE",
+                        venue: "Hub de Inovacao",
+                        ticket_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        categories: ["cloud"],
+                        cover_image: "",
+                        price: "",
+                        description: "Evento de cloud e ia.",
+                        summary: "Evento de cloud e ia.",
+                        source_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        source_name: "Meetup Fortaleza",
+                        ambiguities: []
+                      })
+                    }
+                  ]
+                }
+              }
+            ]
+          })
+        };
+      }
+
+      expect(options.headers?.["if-none-match"]).toBeUndefined();
+      expect(options.headers?.["if-modified-since"]).toBeUndefined();
+
+      if (requestUrl === listingUrl) {
+        return makeTextResponse(
+          requestUrl,
+          `<html><body><a href="${eventUrl}/">Cloud AI Nordeste Fortaleza</a></body></html>`
+        );
+      }
+
+      if (requestUrl === eventUrl) {
+        return makeTextResponse(
+          requestUrl,
+          '<html><head><script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Cloud AI Nordeste Fortaleza","startDate":"2026-04-20T19:00:00-03:00","endDate":"2026-04-20T22:00:00-03:00","organizer":{"@type":"Organization","name":"Comunidade Cloud CE"},"location":{"@type":"Place","name":"Hub de Inovacao","address":{"@type":"PostalAddress","addressLocality":"Fortaleza","addressRegion":"CE"}},"offers":{"@type":"Offer","url":"https://www.meetup.com/fortaleza-js/events/313900001/"}}</script></head><body>Evento cloud.</body></html>'
+        );
+      }
+
+      throw new Error(`URL nao mockada: ${requestUrl}`);
+    });
+
+    const report = await runEventIntake({
+      apply: false,
+      cacheBust: true,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(report.performance.http_cache_hits).toBe(0);
+    expect(report.performance.http_not_modified_304).toBe(0);
+    expect(report.performance.http_cache_misses).toBeGreaterThanOrEqual(2);
+  });
+
+  it("entra em cooldown apos 429 e evita nova tentativa no host ate expirar", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    globalThis.fetch = vi.fn(async (url) => {
+      const requestUrl = String(url);
+      return {
+        ok: false,
+        status: 429,
+        url: requestUrl,
+        headers: { get: () => "" },
+        text: async () => "Too many requests"
+      };
+    });
+
+    const { runEventIntake } = await importModule();
+    const firstReport = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(firstReport.summary.counts.errors).toBe(1);
+    expect(firstReport.performance.host_failures["www.meetup.com"]?.status).toBe(429);
+
+    globalThis.fetch = vi.fn(async () => {
+      throw new Error("Nao deveria buscar novamente durante o cooldown");
+    });
+
+    const secondReport = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(secondReport.performance.source_cooldown_skips).toBe(1);
+    expect(secondReport.summary.sources_processed).toBe(0);
+    expect(globalThis.fetch).not.toHaveBeenCalled();
+  });
+
+  it("deduplica candidatos identicos entre fontes e busca o detalhe uma unica vez", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      },
+      {
+        source_name: "Meetup Ceara",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Ceara,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    const eventUrl = "https://www.meetup.com/fortaleza-js/events/313900001";
+    let detailFetches = 0;
+
+    globalThis.fetch = vi.fn(async (url) => {
+      const requestUrl = String(url);
+
+      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            candidates: [
+              {
+                content: {
+                  parts: [
+                    {
+                      text: JSON.stringify({
+                        title: "Cloud AI Nordeste Fortaleza",
+                        start_date: "2026-04-20",
+                        end_date: "2026-04-20",
+                        kind: "conference",
+                        format: "in-person",
+                        city: "Fortaleza",
+                        state: "CE",
+                        organizer: "Comunidade Cloud CE",
+                        venue: "Hub de Inovacao",
+                        ticket_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        categories: ["cloud"],
+                        cover_image: "",
+                        price: "",
+                        description: "Evento de cloud e ia.",
+                        summary: "Evento de cloud e ia.",
+                        source_url: "https://www.meetup.com/fortaleza-js/events/313900001/",
+                        source_name: "Meetup Fortaleza",
+                        ambiguities: []
+                      })
+                    }
+                  ]
+                }
+              }
+            ]
+          })
+        };
+      }
+
+      if (requestUrl === "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR") {
+        return makeTextResponse(
+          requestUrl,
+          `<html><body><a href="${eventUrl}/">Cloud AI Nordeste Fortaleza</a></body></html>`
+        );
+      }
+
+      if (requestUrl === "https://www.meetup.com/find/?keywords=tecnologia&location=Ceara,%20BR") {
+        return makeTextResponse(
+          requestUrl,
+          `<html><body><a href="${eventUrl}/">Cloud AI Nordeste Fortaleza</a></body></html>`
+        );
+      }
+
+      if (requestUrl === eventUrl) {
+        detailFetches += 1;
+        return makeTextResponse(
+          requestUrl,
+          '<html><head><script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Cloud AI Nordeste Fortaleza","startDate":"2026-04-20T19:00:00-03:00","endDate":"2026-04-20T22:00:00-03:00","organizer":{"@type":"Organization","name":"Comunidade Cloud CE"},"location":{"@type":"Place","name":"Hub de Inovacao","address":{"@type":"PostalAddress","addressLocality":"Fortaleza","addressRegion":"CE"}},"offers":{"@type":"Offer","url":"https://www.meetup.com/fortaleza-js/events/313900001/"}}</script></head><body>Evento cloud.</body></html>'
+        );
+      }
+
+      throw new Error(`URL nao mockada: ${requestUrl}`);
+    });
+
+    const { runEventIntake } = await importModule();
+    const report = await runEventIntake({
+      apply: false,
+      maxSources: 2,
+      maxUniqueUrls: 10
+    });
+
+    expect(detailFetches).toBe(1);
+    expect(report.summary.counts.prs).toBe(1);
+    expect(report.summary.counts.duplicates).toBe(1);
   });
 
   it("em modo apply cria PR real do intake usando o cliente GitHub", async () => {
