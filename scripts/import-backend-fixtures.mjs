@@ -1,7 +1,9 @@
 import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 
 const ROOT = process.cwd();
 const BACKEND_REPO = process.env.BACKEND_REPO || "baiaotech/BackendBaiaoTech";
@@ -68,9 +70,44 @@ function decodeContent(content) {
   return Buffer.from(content.replace(/\n/g, ""), "base64").toString("utf8");
 }
 
-function fetchRepoJson(repo, filepath, ref) {
+function resolveGhBinary(env = process.env) {
+  if (env.GH_BIN) {
+    if (!path.isAbsolute(env.GH_BIN)) {
+      throw new Error("GH_BIN precisa ser um caminho absoluto.");
+    }
+
+    if (existsSync(env.GH_BIN)) {
+      return env.GH_BIN;
+    }
+
+    throw new Error(`GH_BIN nao encontrado: ${env.GH_BIN}`);
+  }
+
+  const candidates =
+    process.platform === "win32"
+      ? [
+          "C:\\Program Files\\GitHub CLI\\gh.exe",
+          "C:\\Program Files (x86)\\GitHub CLI\\gh.exe"
+        ]
+      : [
+          "/usr/bin/gh",
+          "/usr/local/bin/gh",
+          env.HOME ? path.join(env.HOME, ".local", "bin", "gh") : ""
+        ];
+
+  for (const candidate of candidates) {
+    if (candidate && existsSync(candidate)) {
+      return candidate;
+    }
+  }
+
+  throw new Error("Nao foi possivel localizar o binario do GitHub CLI. Defina GH_BIN com um caminho absoluto.");
+}
+
+function fetchRepoJson(repo, filepath, ref, env = process.env) {
+  const ghBinary = resolveGhBinary(env);
   const output = execFileSync(
-    "gh",
+    ghBinary,
     [
       "api",
       `repos/${repo}/contents/${filepath}?ref=${ref}`,
@@ -374,8 +411,30 @@ async function main() {
   );
 }
 
-main().catch((error) => {
-  console.error("\nFalha ao importar fixtures do backend.\n");
-  console.error(error instanceof Error ? error.message : error);
-  process.exitCode = 1;
-});
+const entrypoint = process.argv[1] ? path.resolve(process.argv[1]) : "";
+
+if (entrypoint && fileURLToPath(import.meta.url) === entrypoint) {
+  main().catch((error) => {
+    console.error("\nFalha ao importar fixtures do backend.\n");
+    console.error(error instanceof Error ? error.message : error);
+    process.exitCode = 1;
+  });
+}
+
+export {
+  decodeContent,
+  fetchRepoJson,
+  inferCommunityCity,
+  inferCommunityTags,
+  inferEventFormat,
+  inferEventKind,
+  main,
+  normalizeText,
+  normalizeUrl,
+  parseEventLocation,
+  resolveGhBinary,
+  slugify,
+  toFrontMatter,
+  uniqueSlug,
+  yamlValue
+};

@@ -11,6 +11,8 @@
     "build": "npm run validate && eleventy",
     "build:site": "eleventy",
     "build:e2e": "node scripts/build-e2e.mjs",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "test:e2e:install": "node scripts/playwright-install.mjs",
     "test:e2e": "npm run build:e2e && node scripts/playwright-run.mjs test",
     "test:e2e:headed": "npm run build:e2e && node scripts/playwright-run.mjs test --headed",
@@ -26,6 +28,9 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
-    "serve": "^14.2.6"
+    "@vitest/coverage-v8": "^4.1.2",
+    "jsdom": "^29.0.1",
+    "serve": "^14.2.6",
+    "vitest": "^4.1.2"
   }
 }

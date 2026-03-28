@@ -2,5 +2,6 @@ node_modules/
 _site/
 .cache/
 output/
+coverage/
 .DS_Store
 npm-debug.log*

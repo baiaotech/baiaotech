@@ -14,6 +14,8 @@ Agenda de eventos e diretório de comunidades de tecnologia, construída com Ele
 - `npm run dev` inicia o servidor local
 - `npm run validate` valida o conteúdo em Markdown
 - `npm run build` valida e gera o site em `_site`
+- `npm run test:unit` roda os testes unitários com Vitest
+- `npm run test:coverage` gera cobertura LCOV em `coverage/lcov.info`
 - `npm run test:e2e:install` instala o Chromium do Playwright e tenta preparar dependências nativas
 - `npm run test:e2e` gera o site e roda a suíte smoke E2E
 - `npm run test:e2e:headed` gera o site e roda a suíte smoke em modo visual
@@ -42,6 +44,16 @@ Observações de ambiente:
 - Em Linux, o instalador tenta usar `npx playwright install --with-deps chromium`
 - Se `sudo` não estiver disponível de forma não interativa, o bootstrap cai para `npx playwright install chromium` e prepara bibliotecas locais em `.cache/playwright-linux-libs`
 - Artefatos de falha ficam em `output/playwright/`
+
+## Cobertura e SonarCloud
+
+O SonarCloud importa cobertura a partir de `coverage/lcov.info`.
+
+Fluxo recomendado antes de subir mudanças de JavaScript:
+
+- `npm run test:unit`
+- `npm run test:coverage`
+- `npm run test:e2e`
 
 ## Estrutura editorial
 

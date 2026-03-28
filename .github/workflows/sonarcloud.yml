@@ -30,10 +30,37 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci --ignore-scripts
+          npm rebuild esbuild
+
+      - name: Generate coverage report
+        run: npm run test:coverage
+
       - name: Install SonarScanner CLI
         run: |
+          SCANNER_ZIP_URL="https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux-x64.zip"
+
+          case "$SCANNER_ZIP_URL" in
+            https://*) ;;
+            *)
+              echo "O download do SonarScanner deve usar HTTPS." >&2
+              exit 1
+              ;;
+          esac
+
           curl -fsSL \
-            "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux-x64.zip" \
+            --proto '=https' \
+            --tlsv1.2 \
+            --location \
+            "$SCANNER_ZIP_URL" \
             -o "$RUNNER_TEMP/sonar-scanner.zip"
           unzip -q -o "$RUNNER_TEMP/sonar-scanner.zip" -d "$RUNNER_TEMP"
           echo "$RUNNER_TEMP/sonar-scanner-${SONAR_SCANNER_VERSION}-linux-x64/bin" >> "$GITHUB_PATH"
