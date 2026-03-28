@@ -11,6 +11,15 @@ import {
   findExistingEvent,
   hashString,
   htmlToText,
+  inferCategoriesFromText,
+  inferEventFormat,
+  inferEventKind,
+  inferNortheastLocationFromText,
+  looksLikeDoityEventUrl,
+  looksLikeEven3EventUrl,
+  looksLikeGenericCommunityEventUrl,
+  matchesTechnologyKeywords,
+  parseLocationParts,
   parseEventSources,
   normalizeUrl,
   normalizeStateCode,
@@ -45,6 +54,51 @@ describe("event intake shared helpers", () => {
 
     expect(sources).toHaveLength(1);
     expect(sources[0].source_type).toBe("meetup-search");
+  });
+
+  it("reconhece localizacao, formato, categorias e URLs de plataformas", () => {
+    expect(
+      inferNortheastLocationFromText("Workshop presencial em Recife, Pernambuco")
+    ).toEqual({
+      city: "RECIFE",
+      state: "PE",
+      matched_text: "RECIFE"
+    });
+    expect(
+      inferNortheastLocationFromText("Comunidade distribuida no Brasil inteiro")
+    ).toEqual({
+      city: "",
+      state: "",
+      matched_text: ""
+    });
+
+    expect(matchesTechnologyKeywords("Encontro de cloud, dados e IA no Nordeste")).toBe(true);
+    expect(matchesTechnologyKeywords("Festival gastronomico na praia")).toBe(false);
+
+    expect(looksLikeEven3EventUrl("https://www.even3.com.br/devops-day-nordeste")).toBe(true);
+    expect(looksLikeEven3EventUrl("https://www.even3.com.br/eventos")).toBe(false);
+    expect(looksLikeDoityEventUrl("https://doity.com.br/devops-summit")).toBe(true);
+    expect(looksLikeDoityEventUrl("https://doity.com.br/eventos")).toBe(false);
+    expect(
+      looksLikeGenericCommunityEventUrl("/agenda/devops-day", "https://frontendce.com.br")
+    ).toBe(true);
+    expect(
+      looksLikeGenericCommunityEventUrl("/blog/post", "https://frontendce.com.br")
+    ).toBe(false);
+
+    expect(inferEventKind("Security Summit Nordeste", "Forum presencial")).toBe("summit");
+    expect(inferEventKind("Hackathon Cariri", "CTF e game jam")).toBe("hackathon");
+    expect(inferEventFormat("Evento hibrido com transmissao online", "Hub")).toBe("online");
+    expect(inferEventFormat("Evento presencial", "Hub central")).toBe("in-person");
+
+    expect(parseLocationParts("Hub de Inovacao - Fortaleza - CE")).toEqual({
+      venue: "Hub de Inovacao - Fortaleza - CE",
+      city: "Fortaleza",
+      state: "CE"
+    });
+    expect(inferCategoriesFromText("Trilha de React, cloud e UX", ["frontend", "cloud", "ux"])).toEqual(
+      expect.arrayContaining(["frontend", "cloud", "ux"])
+    );
   });
 
   it("deduplica por source_url e por similaridade", () => {
