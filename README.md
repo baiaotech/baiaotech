@@ -1,149 +1,233 @@
 # Baião Tech
 
-Agenda de eventos e diretório de comunidades de tecnologia, construída com Eleventy.
+Agenda de eventos e diretório de comunidades de tecnologia do Nordeste, gerado com Eleventy e publicado no GitHub Pages.
+
+## Visão geral
+
+- conteúdo editorial em Markdown dentro de `src/content/events/` e `src/content/communities/`
+- categorias centralizadas em `src/_data/categories.json`
+- validação local e em CI antes do build
+- suíte smoke E2E com Playwright contra o site já buildado
+- intake automático de eventos com fontes curadas, Gemini e PRs automáticos
+- limpeza automática de eventos passados com base em `America/Fortaleza`
 
 ## Stack
 
-- Eleventy para geração estática
-- Markdown por item em `src/content/events/` e `src/content/communities/`
-- Categorias centralizadas em `src/_data/categories.json`
-- GitHub Actions para validação e deploy
+- Node.js 20+
+- Eleventy
+- Vitest + cobertura LCOV
+- Playwright
+- GitHub Actions
+- SonarQube Cloud
+
+## Estrutura do projeto
+
+- `src/content/events/`: eventos em Markdown
+- `src/content/communities/`: comunidades em Markdown
+- `src/_data/categories.json`: taxonomia oficial de categorias dos eventos
+- `src/assets/`: CSS, JS, favicon e capas locais
+- `scripts/`: validação, intake, prune e automações auxiliares
+- `.github/workflows/`: CI, deploy, Sonar, intake e prune
+- `docs/templates/`: modelos de front matter para eventos e comunidades
 
 ## Scripts
 
-- `npm run dev` inicia o servidor local
-- `npm run validate` valida o conteúdo em Markdown
-- `npm run build` valida e gera o site em `_site`
-- `npm run event-intake` roda o intake de eventos em modo dry-run
-- `npm run event-sources:candidates` regenera a lista inicial de fontes candidatas a partir das comunidades atuais
-- `npm run events:prune:check` lista quais eventos ja passaram e seriam removidos
-- `npm run events:prune` apaga arquivos de eventos com `end_date` anterior a hoje em `America/Fortaleza`
-- `npm run test:unit` roda os testes unitários com Vitest
-- `npm run test:coverage` gera cobertura LCOV em `coverage/lcov.info`
-- `npm run test:e2e:install` instala o Chromium do Playwright e tenta preparar dependências nativas
-- `npm run test:e2e` gera o site e roda a suíte smoke E2E
-- `npm run test:e2e:headed` gera o site e roda a suíte smoke em modo visual
-- `npm run import:backend` importa os fixtures iniciais de `baiaotech/BackendBaiaoTech`
-- `npm run sync:community-covers` baixa as capas de comunidades do WordPress atual para assets locais
+- `npm run dev`: sobe o site local com Eleventy
+- `npm run validate`: valida front matter e corpo Markdown
+- `npm run build`: valida e gera o site em `_site`
+- `npm run build:site`: gera o site sem rodar a validação antes
+- `npm run build:e2e`: build isolado para a suíte E2E
+- `npm run test:unit`: roda os testes unitários
+- `npm run test:coverage`: roda a suíte unitária com LCOV em `coverage/lcov.info`
+- `npm run test:e2e:install`: instala o Chromium do Playwright e tenta preparar dependências nativas
+- `npm run test:e2e`: roda a suíte smoke contra `_site`
+- `npm run test:e2e:headed`: roda a suíte smoke com browser visível
+- `npm run event-intake`: roda o intake de eventos em dry-run local
+- `npm run event-sources:candidates`: regenera a lista auxiliar de fontes candidatas a partir das comunidades
+- `npm run events:prune:check`: mostra quais eventos já expiraram
+- `npm run events:prune`: remove eventos com `end_date` anterior à data atual em `America/Fortaleza`
+- `npm run import:backend`: importador legado de bootstrap a partir de `BackendBaiaoTech`
+- `npm run sync:community-covers`: baixa capas de comunidades para assets locais
 
-## Testes E2E
+## Fluxo local recomendado
 
-A suíte E2E usa Playwright contra o site já buildado em `_site`, servido localmente em HTTP simples.
+Para mudanças de conteúdo:
 
-Fluxo recomendado:
+- `npm run validate`
+- `npm run build`
 
-- `npm run test:e2e:install`
-- `npm run test:e2e`
-
-Para depuração local com browser aberto:
-
-- `npm run test:e2e:headed`
-
-Para abrir o relatório HTML após uma execução:
-
-- `npx playwright show-report output/playwright/report`
-
-Observações de ambiente:
-
-- Em Linux, o instalador tenta usar `npx playwright install --with-deps chromium`
-- Se `sudo` não estiver disponível de forma não interativa, o bootstrap cai para `npx playwright install chromium` e prepara bibliotecas locais em `.cache/playwright-linux-libs`
-- Artefatos de falha ficam em `output/playwright/`
-
-## Cobertura e SonarCloud
-
-O SonarCloud importa cobertura a partir de `coverage/lcov.info`.
-
-Fluxo recomendado antes de subir mudanças de JavaScript:
+Para mudanças em JS, templates, workflows ou intake:
 
 - `npm run test:unit`
 - `npm run test:coverage`
 - `npm run test:e2e`
 
+Para abrir o relatório HTML do Playwright:
+
+- `npx playwright show-report output/playwright/report`
+
+## Regras editoriais
+
+### Eventos
+
+Cada arquivo em `src/content/events/` precisa de:
+
+- `title`
+- `start_date` e `end_date` em `YYYY-MM-DD`
+- `kind`
+- `format`
+- `city`
+- `state`
+- `organizer`
+- `venue`
+- `ticket_url`
+- ao menos uma categoria existente em `src/_data/categories.json`
+- corpo Markdown não vazio
+
+Campos aceitos e úteis:
+
+- `featured`
+- `cover_image`
+- `price`
+- `source_name`
+- `source_url`
+
+Observações:
+
+- se `source_url` estiver presente, `source_name` também é obrigatório
+- `cover_image` pode ser URL externa ou caminho local em `/assets/`
+- para contribuições manuais, prefira capas locais quando possível
+
+### Comunidades
+
+Cada arquivo em `src/content/communities/` precisa de:
+
+- `title`
+- `state`
+- `city`
+- corpo Markdown não vazio
+
+Campos opcionais:
+
+- `website`
+- `instagram`
+- `linkedin`
+- `telegram`
+- `whatsapp`
+- `tags`
+- `featured`
+- `cover_image`
+
+## Modelos de conteúdo
+
+- [Template de evento](/home/gaellopes/baiaotech/docs/templates/event-template.md)
+- [Template de comunidade](/home/gaellopes/baiaotech/docs/templates/community-template.md)
+
+## GitHub Actions
+
+### CI
+
+Workflow: `.github/workflows/ci.yml`
+
+- instala dependências com `npm ci --ignore-scripts`
+- roda `npm run validate`
+- roda `npm run test:unit`
+- roda smoke E2E com Playwright
+- publica artefatos do Playwright em caso de falha
+
+### Deploy GitHub Pages
+
+Workflow: `.github/workflows/deploy-pages.yml`
+
+- usa `actions/configure-pages` para obter `base_url` e `base_path`
+- builda o site com o contexto correto de Pages
+- publica `_site` no GitHub Pages
+
+### SonarQube Cloud
+
+Workflow: `.github/workflows/sonarcloud.yml`
+
+- gera LCOV com `npm run test:coverage`
+- executa o scanner
+- alimenta o check `SonarCloud Code Analysis`
+
+### Event Intake
+
+Workflow: `.github/workflows/event-intake.yml`
+
+- roda por cron e por `workflow_dispatch`
+- usa a lista de fontes inline no próprio workflow
+- usa `GEMINI_API_KEY` com `gemini-2.5-flash-lite`
+- usa `TOKEN_FOR_CI_EVENTS` para PRs, issues e sincronização do blacklist
+
+### Prune Past Events
+
+Workflow: `.github/workflows/prune-past-events.yml`
+
+- roda diariamente
+- remove eventos vencidos em `src/content/events/`
+- valida e faz commit automático se houver limpeza
+
 ## Intake automático de eventos
 
-O repo agora inclui uma trilha de intake automático baseada em fontes confiáveis:
+O intake foi desenhado para buscar eventos do Nordeste com foco em tecnologia ou carreira em tecnologia.
 
-- registro inline de fontes dentro de `.github/workflows/event-intake.yml`
-- candidatos derivados das comunidades atuais em `data/event-source-candidates.json` como referência auxiliar
-- blacklist versionado em `data/event-intake-blacklist.ndjson`
-- pipeline em `scripts/event-intake/`
-- workflow agendado em `.github/workflows/event-intake.yml`
+### O que ele faz
 
-Como funciona:
+- combina buscas regionais e seeds curadas
+- tenta extrair dados determinísticos antes de chamar IA
+- normaliza o evento com Gemini
+- deduplica contra os eventos já existentes no repositório
+- usa blacklist versionado em `data/event-intake-blacklist.ndjson`
+- usa feedback humano anterior para não reabrir lixo já rejeitado
 
-- a descoberta combina buscas regionais em plataformas e seeds curadas de comunidades
-- nao existe mais limite por fonte; o intake processa todos os candidatos descobertos em cada fonte e respeita apenas o teto global de URLs unicas por rodada
-- o runtime usa cache persistido em `.cache/event-intake/` com `ETag`/`Last-Modified` para HTTP e snapshots com TTL para fontes renderizadas via browser
-- hosts que responderem com `403`, `429` ou `5xx` entram em cooldown temporario para reduzir retries inutilmente caros
-- o pipeline deduplica contra os eventos ja existentes em `src/content/events/` antes de abrir PR
-- eventos rejeitados por politica (`past`, `online_only`, `non_northeast`, `non_tech`) entram no blacklist versionado e deixam de ser reprocessados nas rodadas seguintes
-- o intake so aceita eventos cujo tema central seja tecnologia ou carreira em tecnologia; congressos e eventos de outras areas nao entram so por citar tecnologia
-- issues `event-intake` fechadas e PRs `event-intake/*` fechadas sem merge alimentam automaticamente o filtro de rejeicao do intake
-- o corte de data usa `America/Fortaleza` e descarta eventos cujo `end_date` ou `start_date` ja esteja antes da data atual
-- o workflow busca eventos apenas no Nordeste e só cria PR para eventos `in-person` ou `hybrid`
-- parsers determinísticos tentam extrair links e metadados antes da IA
-- o Gemini 2.5 Flash Lite normaliza o evento para o schema do repo
-- alta confiança abre um PR por evento com reviewer `gabrielldn`
-- baixa confiança abre uma issue com label `event-intake`
+### Regras atuais
 
-Segredos usados no workflow:
+- só considera eventos do Nordeste
+- só aceita eventos `in-person` ou `hybrid`
+- descarta eventos passados usando `America/Fortaleza`
+- só aceita eventos cujo tema central seja tecnologia ou carreira em tecnologia
+- temas ambíguos ou não-tech entram como descarte, não como issue
+- páginas de listagem e grupos sem evento concreto não devem virar issue
+- eventos fora do Nordeste só entram se a localização estiver confirmada deterministicamente na página do evento
 
-- `GEMINI_API_KEY`
-- `TOKEN_FOR_CI_EVENTS`
+### Saída
 
-Para testar manualmente no GitHub:
+- alta confiança: abre ou atualiza PR de evento
+- baixa confiança, mas ainda tech: abre issue `event-intake`
+- descartes por política entram no blacklist
 
-- execute `Event Intake` via `workflow_dispatch`
-- com `apply=false`, o workflow roda em dry-run e publica artefatos em `output/event-intake/`
-- com `cache_bust=true`, o workflow ignora o cache persistido daquela rodada manual
-- com `apply=true`, alem dos PRs/issues do intake, o workflow pode sincronizar o blacklist `NDJSON` no repo quando houver novos descartes por politica
-- o artifact inclui `latest.json`, `summary.md` e `perf.json` com hits de cache, `304`, cooldowns e duracao por fase
+### Observação sobre reviewer
 
-Para testar localmente:
+O workflow tenta usar `gabrielldn` como reviewer padrão, mas o GitHub não permite pedir review do próprio autor da PR. Se `TOKEN_FOR_CI_EVENTS` pertencer ao mesmo usuário que abre a PR, o pedido de review será ignorado pelo GitHub.
 
-- exporte `EVENT_INTAKE_SOURCES_JSON` com um array JSON de fontes
-- rode `npm run event-intake`
+### Rodando manualmente no GitHub
 
-## Estrutura editorial
+No `workflow_dispatch` do `Event Intake`:
 
-- Novo evento: adicionar um arquivo Markdown em `src/content/events/`
-- Nova comunidade: adicionar um arquivo Markdown em `src/content/communities/`
-- Categorias: editar `src/_data/categories.json`
-- Capas de comunidade: usar assets locais em `src/assets/covers/communities/`
-- Capas de evento: opcionais; se não houver asset local, o layout continua sem imagem
+- `apply=false`: só simula e publica artefatos
+- `apply=true`: persiste PRs/issues e pode sincronizar o blacklist no `main`
+- `cache_bust=true`: ignora o cache persistido daquela rodada
 
-Modelos de conteúdo:
+Os artefatos do intake ficam em `output/event-intake/`:
 
-- `docs/templates/event-template.md`
-- `docs/templates/community-template.md`
+- `latest.json`
+- `summary.md`
+- `perf.json`
 
-## Importação inicial
+## Importação inicial do backend
 
-O script `npm run import:backend` usa o `gh` CLI autenticado para buscar:
+O script `npm run import:backend` ainda existe como bootstrap legado, mas o fluxo principal do projeto já não depende dele.
 
-- `eventos/fixtures/categorias.json`
-- `eventos/fixtures/eventos.json`
-- `eventos/fixtures/comunidades.json`
-
-Por padrão, a origem é `baiaotech/BackendBaiaoTech@main`.
+Ele usa `gh` autenticado para buscar fixtures do repositório `baiaotech/BackendBaiaoTech`.
 
 Variáveis opcionais:
 
 - `BACKEND_REPO`
 - `BACKEND_REF`
 
-## GitHub Pages
+## Domínio e publicação
 
-O deploy usa workflow customizado com GitHub Actions.
-
-- O workflow lê `base_url` e `base_path` diretamente do `actions/configure-pages`
-- Em domínio customizado, o build passa a usar automaticamente a origem do domínio e `PATH_PREFIX=/`
-- Em project site padrão do GitHub Pages, o build usa automaticamente o subpath do repositório
-
-## Limpeza automática de eventos
-
-O repositório tem um workflow agendado em `.github/workflows/prune-past-events.yml`.
-
-- Ele roda diariamente às `03:15 UTC`, equivalente a `00:15` em `America/Fortaleza`
-- Remove arquivos em `src/content/events/` cujo `end_date` seja anterior à data atual no timezone `America/Fortaleza`
-- Valida e recompila o site antes de criar um commit automático com a limpeza
+- o deploy em Pages funciona tanto para project site quanto para domínio customizado
+- no domínio customizado, o build usa `PATH_PREFIX=/`
+- no project site padrão do GitHub Pages, o build usa automaticamente o subpath do repositório
