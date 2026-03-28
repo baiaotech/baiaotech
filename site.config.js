@@ -11,8 +11,19 @@ function getPathPrefix() {
     return ensureSlashes(process.env.PATH_PREFIX);
   }
 
-  if (process.env.SITE_URL && !process.env.SITE_URL.includes("github.io")) {
-    return "/";
+  if (process.env.SITE_URL) {
+    try {
+      const siteUrl = new URL(process.env.SITE_URL);
+      const hostname = siteUrl.hostname.toLowerCase();
+      const isGitHubPagesHost =
+        hostname === "github.io" || hostname.endsWith(".github.io");
+      if (!isGitHubPagesHost) {
+        return "/";
+      }
+    } catch (e) {
+      // If SITE_URL is not a valid URL, fall back to default prefix
+      return "/";
+    }
   }
 
   if (process.env.GITHUB_ACTIONS === "true" && process.env.GITHUB_REPOSITORY) {
