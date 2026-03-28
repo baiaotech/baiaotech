@@ -1,7 +1,14 @@
 import { buildBranchName } from "./shared.mjs";
 
 function getApiBase(apiUrl) {
-  return String(apiUrl || "https://api.github.com").replace(/\/+$/, "");
+  const input = String(apiUrl || "https://api.github.com");
+  let endIndex = input.length;
+
+  while (endIndex > 0 && input.charCodeAt(endIndex - 1) === 47) {
+    endIndex -= 1;
+  }
+
+  return endIndex === input.length ? input : input.slice(0, endIndex);
 }
 
 async function githubRequest({

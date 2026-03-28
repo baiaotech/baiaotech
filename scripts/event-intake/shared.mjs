@@ -229,6 +229,84 @@ function removeTrackingParams(url) {
   return url;
 }
 
+function trimTrailingSlashes(value) {
+  const input = String(value || "");
+
+  if (!input || input === "/") {
+    return input;
+  }
+
+  let endIndex = input.length;
+
+  while (endIndex > 1 && input.charCodeAt(endIndex - 1) === 47) {
+    endIndex -= 1;
+  }
+
+  return endIndex === input.length ? input : input.slice(0, endIndex);
+}
+
+function stripHtmlTags(value) {
+  const input = String(value || "");
+  let result = "";
+  let insideTag = false;
+
+  for (const char of input) {
+    if (char === "<") {
+      insideTag = true;
+      continue;
+    }
+
+    if (char === ">") {
+      insideTag = false;
+      continue;
+    }
+
+    if (!insideTag) {
+      result += char;
+    }
+  }
+
+  return result;
+}
+
+function collapseWhitespacePreservingParagraphs(value) {
+  const input = String(value || "");
+  let result = "";
+  let pendingSpace = false;
+  let pendingNewlines = 0;
+
+  for (const char of input) {
+    if (char === "\r") {
+      continue;
+    }
+
+    if (char === "\n") {
+      pendingSpace = false;
+      pendingNewlines = Math.min(pendingNewlines + 1, 2);
+      continue;
+    }
+
+    if (char === " " || char === "\t") {
+      if (!pendingNewlines && result) {
+        pendingSpace = true;
+      }
+      continue;
+    }
+
+    if (pendingNewlines) {
+      result += "\n".repeat(pendingNewlines);
+      pendingNewlines = 0;
+    } else if (pendingSpace && result && !result.endsWith("\n")) {
+      result += " ";
+    }
+
+    pendingSpace = false;
+    result += char;
+  }
+
+  return result.trim();
+}
+
 export function normalizeUrl(value, baseUrl = "") {
   if (!value) {
     return "";
@@ -240,7 +318,7 @@ export function normalizeUrl(value, baseUrl = "") {
     removeTrackingParams(url);
 
     if (url.pathname !== "/") {
-      url.pathname = url.pathname.replace(/\/+$/, "");
+      url.pathname = trimTrailingSlashes(url.pathname);
     }
 
     return url.toString();
@@ -279,7 +357,7 @@ export function slugify(value) {
 }
 
 export function hashString(value) {
-  return crypto.createHash("sha1").update(String(value)).digest("hex");
+  return crypto.createHash("sha256").update(String(value)).digest("hex");
 }
 
 export function toDateOnly(value) {
@@ -307,17 +385,14 @@ export function decodeHtmlEntities(value) {
 
 export function htmlToText(value) {
   return decodeHtmlEntities(
-    String(value || "")
-      .replace(/<br\s*\/?>/gi, "\n")
-      .replace(/<\/p>/gi, "\n\n")
-      .replace(/<\/li>/gi, "\n")
-      .replace(/<[^>]+>/g, " ")
-      .replace(/\r/g, "")
-      .replace(/\n{3,}/g, "\n\n")
-      .replace(/[ \t]+\n/g, "\n")
-      .replace(/\n[ \t]+/g, "\n")
-      .replace(/[ \t]{2,}/g, " ")
-      .trim()
+    collapseWhitespacePreservingParagraphs(
+      stripHtmlTags(
+        String(value || "")
+          .replace(/<br\s*\/?>/gi, "\n")
+          .replace(/<\/p>/gi, "\n\n")
+          .replace(/<\/li>/gi, "\n")
+      )
+    )
   );
 }
 

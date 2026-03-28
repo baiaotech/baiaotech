@@ -15,8 +15,8 @@ export const SOURCE_HEALTH_PATH = "source-health.json";
 export const DEFAULT_BROWSER_LISTING_TTL_HOURS = 6;
 export const DEFAULT_BROWSER_DETAIL_TTL_HOURS = 24;
 
-function sha1(value) {
-  return crypto.createHash("sha1").update(String(value || "")).digest("hex");
+function sha256(value) {
+  return crypto.createHash("sha256").update(String(value || "")).digest("hex");
 }
 
 function resolveCacheRoot(cwd = process.cwd()) {
@@ -179,7 +179,7 @@ export async function createCacheManager({
       return null;
     }
 
-    const key = sha1(normalizeUrl(url));
+    const key = sha256(normalizeUrl(url));
     const { metaPath, bodyPath } = buildHttpPaths(cacheRoot, key);
 
     try {
@@ -206,7 +206,7 @@ export async function createCacheManager({
     finalUrl = ""
   }) {
     const normalizedUrl = normalizeUrl(url);
-    const key = sha1(normalizedUrl);
+    const key = sha256(normalizedUrl);
     const { metaPath, bodyPath } = buildHttpPaths(cacheRoot, key);
     const metadata = {
       url: normalizedUrl,
@@ -231,7 +231,7 @@ export async function createCacheManager({
     }
 
     const normalizedUrl = normalizeUrl(url);
-    const key = sha1(normalizedUrl);
+    const key = sha256(normalizedUrl);
     const { metaPath, bodyPath } = buildBrowserPaths(cacheRoot, key);
 
     try {
@@ -262,7 +262,7 @@ export async function createCacheManager({
     finalUrl = ""
   }) {
     const normalizedUrl = normalizeUrl(url);
-    const key = sha1(normalizedUrl);
+    const key = sha256(normalizedUrl);
     const { metaPath, bodyPath } = buildBrowserPaths(cacheRoot, key);
     const metadata = {
       url: normalizedUrl,

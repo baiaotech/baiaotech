@@ -9,6 +9,8 @@ import {
   classifyIntakeCandidate,
   ensureEventDefaults,
   findExistingEvent,
+  hashString,
+  htmlToText,
   parseEventSources,
   normalizeUrl,
   normalizeStateCode,
@@ -20,6 +22,14 @@ describe("event intake shared helpers", () => {
     expect(
       normalizeUrl("https://example.com/evento/?utm_source=x&fbclid=y#section")
     ).toBe("https://example.com/evento");
+  });
+
+  it("gera hashes determinísticos em sha256 e saneia HTML sem regex custosa", () => {
+    expect(hashString("https://example.com/evento")).toHaveLength(64);
+    expect(hashString("https://example.com/evento")).toBe(hashString("https://example.com/evento"));
+    expect(
+      htmlToText("<p>Oi</p>   <ul><li>Primeiro</li><li>Segundo</li></ul><div>  Fim </div>")
+    ).toBe("Oi\n\nPrimeiro\nSegundo\nFim");
   });
 
   it("faz parse do registro inline de fontes", () => {

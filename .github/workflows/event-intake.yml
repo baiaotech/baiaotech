@@ -191,24 +191,28 @@ jobs:
           TOKEN_FOR_CI_EVENTS: ${{ secrets.TOKEN_FOR_CI_EVENTS }}
           EVENT_INTAKE_MAX_SOURCES: ${{ inputs.max_sources || '200' }}
           EVENT_INTAKE_MAX_UNIQUE_URLS: ${{ inputs.max_unique_urls || '150' }}
+          INPUT_APPLY: ${{ inputs.apply || false }}
+          INPUT_SOURCE_NAME: ${{ inputs.source_name || '' }}
+          INPUT_SOURCE_TYPE: ${{ inputs.source_type || '' }}
+          INPUT_CACHE_BUST: ${{ inputs.cache_bust || false }}
         run: |
           APPLY_FLAG="--dry-run"
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.apply }}" = "true" ]; then
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ] || [ "${INPUT_APPLY}" = "true" ]; then
             APPLY_FLAG="--apply"
           fi
 
           SOURCE_ARG=""
-          if [ -n "${{ inputs.source_name }}" ]; then
-            SOURCE_ARG="--source=${{ inputs.source_name }}"
+          if [ -n "${INPUT_SOURCE_NAME}" ]; then
+            SOURCE_ARG="--source=${INPUT_SOURCE_NAME}"
           fi
 
           SOURCE_TYPE_ARG=""
-          if [ -n "${{ inputs.source_type }}" ]; then
-            SOURCE_TYPE_ARG="--source-type=${{ inputs.source_type }}"
+          if [ -n "${INPUT_SOURCE_TYPE}" ]; then
+            SOURCE_TYPE_ARG="--source-type=${INPUT_SOURCE_TYPE}"
           fi
 
           CACHE_BUST_ARG=""
-          if [ "${{ inputs.cache_bust }}" = "true" ]; then
+          if [ "${INPUT_CACHE_BUST}" = "true" ]; then
             CACHE_BUST_ARG="--cache-bust"
           fi
 
@@ -217,8 +221,8 @@ jobs:
             "$SOURCE_ARG" \
             "$SOURCE_TYPE_ARG" \
             "$CACHE_BUST_ARG" \
-            "--max-sources=${{ inputs.max_sources || '200' }}" \
-            "--max-urls=${{ inputs.max_unique_urls || '150' }}"
+            "--max-sources=${EVENT_INTAKE_MAX_SOURCES}" \
+            "--max-urls=${EVENT_INTAKE_MAX_UNIQUE_URLS}"
 
       - name: Save event intake cache
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.cache_bust != true)

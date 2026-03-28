@@ -67,12 +67,12 @@ describe("event intake github client", () => {
     globalThis.fetch = makeFetch(
       new Map([
         ["GET https://api.github.com/repos/baiaotech/baiaotech", makeJsonResponse(200, { default_branch: "main", pushed_at: "2026-03-28T00:00:00Z" })],
-        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/event-intake/build-with-ai-fortaleza-e2e25124", makeJsonResponse(404, { message: "Not Found" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/event-intake/build-with-ai-fortaleza-6ef33f22", makeJsonResponse(404, { message: "Not Found" })],
         ["GET https://api.github.com/repos/baiaotech/baiaotech/git/ref/heads/main", makeJsonResponse(200, { object: { sha: "base123" } })],
         ["POST https://api.github.com/repos/baiaotech/baiaotech/git/refs", makeJsonResponse(201, { object: { sha: "base123" } })],
-        ["GET https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md?ref=event-intake%2Fbuild-with-ai-fortaleza-e2e25124", makeJsonResponse(404, { message: "Not Found" })],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md?ref=event-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(404, { message: "Not Found" })],
         ["PUT https://api.github.com/repos/baiaotech/baiaotech/contents/src/content/events/build-with-ai-fortaleza.md", makeJsonResponse(200, { content: { sha: "content123" } })],
-        ["GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=open&head=baiaotech%3Aevent-intake%2Fbuild-with-ai-fortaleza-e2e25124", makeJsonResponse(200, [])],
+        ["GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=open&head=baiaotech%3Aevent-intake%2Fbuild-with-ai-fortaleza-6ef33f22", makeJsonResponse(200, [])],
         ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls", makeJsonResponse(201, { number: 42 })],
         ["POST https://api.github.com/repos/baiaotech/baiaotech/pulls/42/requested_reviewers", makeJsonResponse(201, { ok: true })]
       ])
@@ -82,6 +82,7 @@ describe("event intake github client", () => {
     const result = await createOrUpdateEventPr({
       token: "token",
       repo: "baiaotech/baiaotech",
+      apiUrl: "https://api.github.com///",
       filePath: "src/content/events/build-with-ai-fortaleza.md",
       content: "---\ntitle: \"Build with AI Fortaleza\"\n---\n",
       candidate: {
@@ -95,7 +96,7 @@ describe("event intake github client", () => {
 
     expect(result).toEqual({
       action: "updated",
-      branch: "event-intake/build-with-ai-fortaleza-e2e25124",
+      branch: "event-intake/build-with-ai-fortaleza-6ef33f22",
       pr_number: 42
     });
   });
