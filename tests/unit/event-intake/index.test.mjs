@@ -1228,6 +1228,52 @@ describe("event intake orchestrator", () => {
     expect(report.errors[0].event_url).toBe("https://www.meetup.com/fortaleza-js/events/313900001");
   });
 
+  it("o main nao falha quando existem apenas erros recuperaveis de coleta", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Meetup Fortaleza",
+        source_type: "meetup-search",
+        entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    globalThis.fetch = vi.fn(async (url) => {
+      const requestUrl = String(url);
+
+      if (requestUrl === "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR") {
+        return {
+          ok: true,
+          url: requestUrl,
+          text: async () =>
+            '<html><body><a href="https://www.meetup.com/fortaleza-js/events/313900001/">Cloud AI Nordeste Fortaleza</a></body></html>'
+        };
+      }
+
+      throw new Error("fetch failed");
+    });
+
+    const consoleLogSpy = vi.spyOn(console, "log").mockImplementation(() => {});
+    const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const { main } = await importModule();
+
+    process.exitCode = undefined;
+    await expect(main(["--dry-run", "--max-sources=1", "--max-urls=10"])).resolves.toBeUndefined();
+
+    expect(process.exitCode).toBeUndefined();
+    expect(consoleLogSpy).toHaveBeenCalledOnce();
+    expect(consoleWarnSpy).toHaveBeenCalledOnce();
+    expect(consoleWarnSpy.mock.calls[0][0]).toContain("erro(s) recuperavel(is)");
+  });
+
   it("o main interpreta os argumentos de dry-run e imprime o relatorio final", async () => {
     const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
     await writeJson(path.join(tempDir, "src/_data/categories.json"), [

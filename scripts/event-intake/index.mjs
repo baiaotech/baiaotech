@@ -1317,7 +1317,9 @@ export async function main(argv = process.argv.slice(2)) {
   console.log(JSON.stringify(report, null, 2));
 
   if (report.errors.length) {
-    process.exitCode = 1;
+    console.warn(
+      `Event intake finalizou com ${report.errors.length} erro(s) recuperavel(is). Consulte output/event-intake/latest.json para detalhes.`
+    );
   }
 }
 
