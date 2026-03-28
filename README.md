@@ -77,6 +77,8 @@ Como funciona:
 - hosts que responderem com `403`, `429` ou `5xx` entram em cooldown temporario para reduzir retries inutilmente caros
 - o pipeline deduplica contra os eventos ja existentes em `src/content/events/` antes de abrir PR
 - eventos rejeitados por politica (`past`, `online_only`, `non_northeast`, `non_tech`) entram no blacklist versionado e deixam de ser reprocessados nas rodadas seguintes
+- o intake so aceita eventos cujo tema central seja tecnologia ou carreira em tecnologia; congressos e eventos de outras areas nao entram so por citar tecnologia
+- issues `event-intake` fechadas e PRs `event-intake/*` fechadas sem merge alimentam automaticamente o filtro de rejeicao do intake
 - o corte de data usa `America/Fortaleza` e descarta eventos cujo `end_date` ou `start_date` ja esteja antes da data atual
 - o workflow busca eventos apenas no Nordeste e só cria PR para eventos `in-person` ou `hybrid`
 - parsers determinísticos tentam extrair links e metadados antes da IA

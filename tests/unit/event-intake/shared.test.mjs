@@ -7,7 +7,9 @@ import {
   buildPrBody,
   buildPrTitle,
   classifyIntakeCandidate,
+  evaluateTechRelevanceDeterministic,
   ensureEventDefaults,
+  fingerprintTitle,
   findExistingEvent,
   hashString,
   htmlToText,
@@ -36,6 +38,7 @@ describe("event intake shared helpers", () => {
   it("gera hashes determinísticos em sha256 e saneia HTML sem regex custosa", () => {
     expect(hashString("https://example.com/evento")).toHaveLength(64);
     expect(hashString("https://example.com/evento")).toBe(hashString("https://example.com/evento"));
+    expect(fingerprintTitle("Build With AI Fortaleza")).toBe(fingerprintTitle("build with ai fortaleza"));
     expect(
       htmlToText("<p>Oi</p>   <ul><li>Primeiro</li><li>Segundo</li></ul><div>  Fim </div>")
     ).toBe("Oi\n\nPrimeiro\nSegundo\nFim");
@@ -154,6 +157,53 @@ describe("event intake shared helpers", () => {
     expect(scoreNormalizedEvent({ ...normalized, categories: [] }).isHighConfidence).toBe(false);
   });
 
+  it("distingue eventos tech claros de eventos academicos fora do escopo", () => {
+    const direct = evaluateTechRelevanceDeterministic(
+      {
+        title: "Build With AI Fortaleza",
+        description: "Workshop presencial para desenvolvedores sobre IA generativa, cloud e software.",
+        organizer: "GDG Fortaleza"
+      },
+      {
+        source_name: "GDG Fortaleza",
+        source_type: "gdg-chapter",
+        keywords: ["ai", "cloud"]
+      }
+    );
+    const nonTech = evaluateTechRelevanceDeterministic(
+      {
+        title: "XVI Fórum Internacional de Pedagogia",
+        description: "Congresso acadêmico de pedagogia, educação e práticas docentes.",
+        organizer: "Universidade"
+      },
+      {
+        source_name: "Even3 Eventos",
+        source_type: "even3-search",
+        keywords: ["tecnologia"]
+      }
+    );
+    const adjacent = evaluateTechRelevanceDeterministic(
+      {
+        title: "Product Design para times digitais",
+        description: "Encontro para designers de produto e PMs de plataformas digitais.",
+        organizer: "Comunidade de Produto"
+      },
+      {
+        source_name: "Meetup Produto",
+        source_type: "meetup-group",
+        keywords: ["product design", "ux"]
+      }
+    );
+
+    expect(direct.tech_relevance).toBe("direct");
+    expect(direct.tech_audience).toBe("tech");
+    expect(direct.tech_topics).toEqual(expect.arrayContaining(["ia", "cloud"]));
+    expect(nonTech.tech_relevance).toBe("non_tech");
+    expect(nonTech.rejection_reason).toContain("deny_terms");
+    expect(adjacent.tech_relevance).toBe("adjacent");
+    expect(adjacent.tech_audience).toBe("tech");
+  });
+
   it("classifica corretamente PR, issue e descartes de politica", () => {
     const baseCandidate = ensureEventDefaults(
       {
@@ -170,7 +220,11 @@ describe("event intake shared helpers", () => {
         ticket_url: "https://example.com/evento",
         categories: ["cloud"],
         description: "Evento de cloud, ia e software no Nordeste.",
-        source_name: "Source"
+        source_name: "Source",
+        tech_relevance: "direct",
+        tech_audience: "tech",
+        tech_topics: ["cloud", "ia"],
+        tech_evidence: ["cloud", "ia"]
       },
       ["cloud"]
     );
@@ -185,6 +239,10 @@ describe("event intake shared helpers", () => {
     expect(classifyIntakeCandidate({ ...baseCandidate, state: "SP" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
       action: "skip",
       reason: "non_northeast"
+    });
+    expect(classifyIntakeCandidate({ ...baseCandidate, tech_relevance: "non_tech", tech_audience: "non_tech" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
+      action: "skip",
+      reason: "non_tech"
     });
     expect(classifyIntakeCandidate({ ...baseCandidate, end_date: "2026-03-01" }, baseScore, { todayKey: "2026-03-28" })).toEqual({
       action: "skip",
@@ -220,7 +278,11 @@ describe("event intake shared helpers", () => {
         source_name: "GDG Fortaleza",
         categories: ["ia"],
         description: "Evento sobre IA generativa.",
-        summary: "Resumo curto"
+        summary: "Resumo curto",
+        tech_relevance: "direct",
+        tech_audience: "tech",
+        tech_topics: ["ia"],
+        tech_evidence: ["ia", "cloud"]
       },
       ["ia"]
     );
@@ -230,6 +292,7 @@ describe("event intake shared helpers", () => {
     expect(buildPrTitle(candidate)).toBe("feat(events): add Build with AI Fortaleza");
     expect(buildEventMarkdown(candidate)).toContain('source_url: "https://gdg.community.dev/events/details/build-with-ai-fortaleza"');
     expect(buildPrBody(candidate, scoreResult)).toContain("event-intake-source:");
+    expect(buildPrBody(candidate, scoreResult)).toContain("Relevancia tech");
     expect(buildIssueBody(candidate, scoreResult)).toContain("JSON extraido");
   });
 });

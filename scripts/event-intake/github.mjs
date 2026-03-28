@@ -1,4 +1,4 @@
-import { buildBranchName } from "./shared.mjs";
+import { buildBranchName, normalizeUrl } from "./shared.mjs";
 
 function getApiBase(apiUrl) {
   const input = String(apiUrl || "https://api.github.com");
@@ -43,6 +43,101 @@ async function githubRequest({
   }
 
   return response.json();
+}
+
+function extractTitleFromFeedbackTitle(title = "") {
+  const issueMatch = String(title).match(/^Event intake needs review:\s*(.+?)\s*\([0-9a-f]{8}\)$/i);
+
+  if (issueMatch) {
+    return issueMatch[1].trim();
+  }
+
+  const prMatch = String(title).match(/^feat\(events\): add\s+(.+)$/i);
+  return prMatch ? prMatch[1].trim() : String(title || "").trim();
+}
+
+function extractCandidateFromFeedbackBody(body = "") {
+  const sourceUrlMatch = String(body).match(/- (?:URL|Fonte): .*?\((https?:\/\/[^\s)]+)\)|- URL:\s+(https?:\/\/\S+)/i);
+  const ticketUrlMatch = String(body).match(/- Ticket URL:\s+\[(https?:\/\/[^\]]+)\]\((https?:\/\/[^)]+)\)/i);
+  const jsonBlockMatch = String(body).match(/```json\s*([\s\S]*?)```/i);
+
+  if (jsonBlockMatch) {
+    try {
+      const parsed = JSON.parse(jsonBlockMatch[1]);
+      return {
+        title: parsed.title || "",
+        source_name: parsed.source_name || "",
+        source_url: normalizeUrl(parsed.source_url || ""),
+        ticket_url: normalizeUrl(parsed.ticket_url || ""),
+        start_date: parsed.start_date || "",
+        end_date: parsed.end_date || ""
+      };
+    } catch {
+      // ignore malformed JSON feedback bodies
+    }
+  }
+
+  return {
+    title: "",
+    source_name: "",
+    source_url: normalizeUrl(sourceUrlMatch?.[1] || sourceUrlMatch?.[2] || ""),
+    ticket_url: normalizeUrl(ticketUrlMatch?.[2] || ticketUrlMatch?.[1] || ""),
+    start_date: "",
+    end_date: ""
+  };
+}
+
+export async function listClosedEventIntakeFeedback({
+  token,
+  repo,
+  apiUrl = "https://api.github.com"
+}) {
+  const [issues, pulls] = await Promise.all([
+    githubRequest({
+      token,
+      apiUrl,
+      path: `/repos/${repo}/issues?state=closed&labels=${encodeURIComponent("event-intake")}&per_page=100`
+    }),
+    githubRequest({
+      token,
+      apiUrl,
+      path: `/repos/${repo}/pulls?state=closed&per_page=100`
+    })
+  ]);
+
+  const issueFeedback = (issues || [])
+    .filter((issue) => !issue.pull_request)
+    .map((issue) => {
+      const extracted = extractCandidateFromFeedbackBody(issue.body || "");
+      return {
+        title: extracted.title || extractTitleFromFeedbackTitle(issue.title),
+        source_name: extracted.source_name || "",
+        source_url: extracted.source_url || "",
+        ticket_url: extracted.ticket_url || "",
+        start_date: extracted.start_date || "",
+        end_date: extracted.end_date || "",
+        feedback_url: issue.html_url || issue.url || "",
+        details: "closed_issue"
+      };
+    });
+
+  const pullFeedback = (pulls || [])
+    .filter((pull) => String(pull.head?.ref || "").startsWith("event-intake/") && !pull.merged_at)
+    .map((pull) => {
+      const extracted = extractCandidateFromFeedbackBody(pull.body || "");
+      return {
+        title: extracted.title || extractTitleFromFeedbackTitle(pull.title),
+        source_name: extracted.source_name || "",
+        source_url: extracted.source_url || "",
+        ticket_url: extracted.ticket_url || "",
+        start_date: extracted.start_date || "",
+        end_date: extracted.end_date || "",
+        feedback_url: pull.html_url || pull.url || "",
+        details: "closed_unmerged_pr"
+      };
+    });
+
+  return [...issueFeedback, ...pullFeedback].filter((entry) => entry.title || entry.source_url || entry.ticket_url);
 }
 
 async function requestReviewerIfEligible({

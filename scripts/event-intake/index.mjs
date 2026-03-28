@@ -30,7 +30,9 @@ import {
   buildPrBody,
   buildPrTitle,
   classifyIntakeCandidate,
+  evaluateTechRelevanceDeterministic,
   ensureEventDefaults,
+  fingerprintTitle,
   findExistingEvent,
   hashString,
   loadCategories,
@@ -45,6 +47,7 @@ import {
 import {
   closeIssueByMarker,
   createOrUpdateEventPr,
+  listClosedEventIntakeFeedback,
   syncRepoFileToDefaultBranch,
   upsertIssue
 } from "./github.mjs";
@@ -370,6 +373,17 @@ function eventSchemaForGemini(categorySlugs) {
       summary: { type: "string" },
       source_url: { type: "string" },
       source_name: { type: "string" },
+      tech_relevance: { type: "string", enum: ["direct", "adjacent", "non_tech"] },
+      tech_audience: { type: "string", enum: ["tech", "mixed", "non_tech"] },
+      tech_topics: {
+        type: "array",
+        items: { type: "string" }
+      },
+      tech_evidence: {
+        type: "array",
+        items: { type: "string" }
+      },
+      rejection_reason: { type: "string" },
       ambiguities: {
         type: "array",
         items: { type: "string" }
@@ -393,12 +407,17 @@ function eventSchemaForGemini(categorySlugs) {
       "summary",
       "source_url",
       "source_name",
+      "tech_relevance",
+      "tech_audience",
+      "tech_topics",
+      "tech_evidence",
+      "rejection_reason",
       "ambiguities"
     ]
   };
 }
 
-function buildGeminiPrompt({ source, deterministic, categorySlugs }) {
+function buildGeminiPrompt({ source, deterministic, techAssessment, categorySlugs }) {
   return [
     "Extraia e normalize um evento para o front matter do repo Baião Tech.",
     "Responda apenas em JSON no schema fornecido.",
@@ -409,6 +428,9 @@ function buildGeminiPrompt({ source, deterministic, categorySlugs }) {
     "",
     "Dados determinísticos já extraídos da página:",
     JSON.stringify(deterministic, null, 2),
+    "",
+    "Sinais determinísticos de relevância tech:",
+    JSON.stringify(techAssessment, null, 2),
     "",
     "Contexto da fonte:",
     JSON.stringify(
@@ -430,12 +452,20 @@ function buildGeminiPrompt({ source, deterministic, categorySlugs }) {
     "- ticket_url deve ser a URL do ingresso ou a propria pagina do evento se nao houver outra.",
     "- source_url deve ser a URL canonica da pagina do evento.",
     "- source_name deve manter o nome da fonte curada.",
+    "- tech_relevance deve ser direct, adjacent ou non_tech.",
+    "- tech_audience deve ser tech, mixed ou non_tech.",
+    "- tech_topics deve listar topicos curtos diretamente relacionados a tecnologia.",
+    "- tech_evidence deve listar evidencias curtas, preferindo frases ou termos da pagina.",
+    "- rejection_reason deve explicar por que o evento nao entra no escopo quando tech_relevance for non_tech.",
     "- se categoria, local ou formato estiverem duvidosos, anote em ambiguities.",
-    "- se o evento parecer online ou fora do Nordeste, registre isso em ambiguities."
+    "- se o evento parecer online ou fora do Nordeste, registre isso em ambiguities.",
+    "- Nao classifique como tech eventos de historia, biologia, psicologia, pedagogia, saude, sociologia, letras, educacao geral ou congressos academicos de outras areas so porque usam tecnologia.",
+    "- Eventos adjacentes so podem ser adjacent quando forem claramente para publico de tecnologia, como produto digital, UX/UI digital, agilidade em times tech, gestao tech ou recrutamento tech.",
+    "- Se o tema principal nao for tecnologia ou carreira em tecnologia, devolva tech_relevance=non_tech."
   ].join("\n");
 }
 
-async function normalizeWithGemini({ apiKey, model, source, deterministic, categorySlugs }) {
+async function normalizeWithGemini({ apiKey, model, source, deterministic, techAssessment, categorySlugs }) {
   if (!apiKey) {
     return {
       ...deterministic,
@@ -454,7 +484,7 @@ async function normalizeWithGemini({ apiKey, model, source, deterministic, categ
         contents: [
           {
             role: "user",
-            parts: [{ text: buildGeminiPrompt({ source, deterministic, categorySlugs }) }]
+            parts: [{ text: buildGeminiPrompt({ source, deterministic, techAssessment, categorySlugs }) }]
           }
         ],
         generationConfig: {
@@ -504,11 +534,13 @@ function createEmptyCounts() {
     issues: 0,
     duplicates: 0,
     blacklisted: 0,
+    rejected_by_feedback: 0,
     past: 0,
     non_northeast: 0,
     online_only: 0,
     non_tech: 0,
     low_confidence: 0,
+    tech_low_confidence: 0,
     errors: 0
   };
 }
@@ -573,11 +605,26 @@ function addSummaryCount(report, key) {
   report.summary.counts[key] = (report.summary.counts[key] || 0) + 1;
 }
 
+function formatPolicyExample(item = {}) {
+  const details = [
+    item.title ? `titulo: ${item.title}` : "",
+    item.source_name ? `fonte: ${item.source_name}` : "",
+    item.reason ? `motivo: ${item.reason}` : "",
+    item.rejection_reason ? `detalhe: ${item.rejection_reason}` : "",
+    (item.tech_evidence || []).length ? `evidencias: ${item.tech_evidence.join(", ")}` : "",
+    item.feedback_url ? `feedback: ${item.feedback_url}` : ""
+  ].filter(Boolean);
+
+  return `- ${details.join(" | ")}`;
+}
+
 async function writeReportArtifacts(report) {
   const outputDir = await ensureOutputDir();
   const jsonPath = path.join(outputDir, "latest.json");
   const markdownPath = path.join(outputDir, "summary.md");
   const perfPath = path.join(outputDir, "perf.json");
+  const nonTechExamples = report.skipped_policy.filter((item) => item.reason === "non_tech").slice(0, 10);
+  const feedbackExamples = report.skipped_blacklist.filter((item) => item.origin === "review_feedback").slice(0, 10);
   const markdown = [
     "# Event intake summary",
     "",
@@ -588,6 +635,7 @@ async function writeReportArtifacts(report) {
     `- Candidatos descobertos: ${report.summary.discovered_candidates}`,
     `- Candidatos unicos: ${report.summary.unique_candidates}`,
     `- Candidatos processados: ${report.summary.processed_candidates}`,
+    `- Feedback historico carregado: ${report.feedback_seeded || 0}`,
     "",
     "## Contagens",
     "",
@@ -609,7 +657,15 @@ async function writeReportArtifacts(report) {
     "",
     ...report.sources_processed.map((source) => {
       return `- ${source.source_name} [${source.source_type}]: descobertos ${source.discovered_candidates}, unicos ${source.unique_candidates}, processados ${source.processed_candidates}, cooldown ${source.skipped_cooldown || 0}, erros ${source.errors || 0}`;
-    })
+    }),
+    "",
+    "## Exemplos rejeitados por non_tech",
+    "",
+    ...(nonTechExamples.length ? nonTechExamples.map(formatPolicyExample) : ["- nenhum"]),
+    "",
+    "## Rejeitados por feedback humano",
+    "",
+    ...(feedbackExamples.length ? feedbackExamples.map(formatPolicyExample) : ["- nenhum"])
   ].join("\n");
 
   await fs.writeFile(jsonPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
@@ -626,6 +682,10 @@ function annotateLowConfidence(normalized, scoreResult) {
   return {
     title: normalized.title,
     source_url: normalized.source_url,
+    tech_relevance: normalized.tech_relevance,
+    tech_audience: normalized.tech_audience,
+    tech_topics: normalized.tech_topics,
+    tech_evidence: normalized.tech_evidence,
     reasons: [
       ...(scoreResult.missingRequired ? ["missing_required_fields"] : []),
       ...(scoreResult.missingCategory ? ["missing_category"] : []),
@@ -682,6 +742,7 @@ function buildBlacklistLookupKey(candidate = {}) {
 function buildBlacklistIndex(blacklist) {
   const byUrl = new Map();
   const byKey = new Map();
+  const byTitleFingerprint = new Map();
 
   for (const entry of blacklist?.entries || []) {
     if (entry.source_url) {
@@ -695,9 +756,13 @@ function buildBlacklistIndex(blacklist) {
     if (entry.key) {
       byKey.set(entry.key, entry);
     }
+
+    if (entry.title_fingerprint) {
+      byTitleFingerprint.set(entry.title_fingerprint, entry);
+    }
   }
 
-  return { byUrl, byKey };
+  return { byUrl, byKey, byTitleFingerprint };
 }
 
 function findBlacklistedEventIndexed(index, blacklist, candidate = {}) {
@@ -712,7 +777,12 @@ function findBlacklistedEventIndexed(index, blacklist, candidate = {}) {
   }
 
   const key = buildBlacklistLookupKey(candidate);
-  return index.byKey.get(key) || findBlacklistedEvent(blacklist, candidate);
+  const titleFingerprint = fingerprintTitle(candidate.title);
+  return (
+    index.byKey.get(key) ||
+    (titleFingerprint ? index.byTitleFingerprint.get(titleFingerprint) : null) ||
+    findBlacklistedEvent(blacklist, candidate)
+  );
 }
 
 function updateBlacklistIndex(index, entry = {}) {
@@ -726,6 +796,10 @@ function updateBlacklistIndex(index, entry = {}) {
 
   if (entry.key) {
     index.byKey.set(entry.key, entry);
+  }
+
+  if (entry.title_fingerprint) {
+    index.byTitleFingerprint.set(entry.title_fingerprint, entry);
   }
 }
 
@@ -807,6 +881,57 @@ function sortSourceSummaries(sources, summaryMap) {
   return sources.map((source) => summaryMap.get(source.entry_url) || createSourceSummary(source));
 }
 
+async function seedBlacklistFromReviewFeedback({
+  blacklist,
+  blacklistIndex,
+  todayKey,
+  report
+}) {
+  if (!process.env.TOKEN_FOR_CI_EVENTS || !process.env.GITHUB_REPOSITORY) {
+    return { blacklist, blacklistIndex, changed: false };
+  }
+
+  try {
+    const feedbackEntries = await listClosedEventIntakeFeedback({
+      token: process.env.TOKEN_FOR_CI_EVENTS,
+      repo: process.env.GITHUB_REPOSITORY,
+      apiUrl: process.env.GITHUB_API_URL || "https://api.github.com"
+    });
+
+    let nextBlacklist = blacklist;
+    let changed = false;
+
+    for (const entry of feedbackEntries) {
+      const update = upsertBlacklistEntry(
+        nextBlacklist,
+        entry,
+        {
+          todayKey,
+          reason: "non_tech",
+          origin: "review_feedback",
+          feedbackUrl: entry.feedback_url,
+          details: entry.details || "review_feedback"
+        }
+      );
+      nextBlacklist = update.blacklist;
+      changed ||= update.changed;
+      if (update.entry) {
+        updateBlacklistIndex(blacklistIndex, update.entry);
+      }
+    }
+
+    report.feedback_seeded = feedbackEntries.length;
+    return { blacklist: nextBlacklist, blacklistIndex, changed };
+  } catch (error) {
+    report.errors.push({
+      source_name: "review-feedback",
+      event_url: "",
+      message: error instanceof Error ? error.message : String(error)
+    });
+    return { blacklist, blacklistIndex, changed: false };
+  }
+}
+
 export async function runEventIntake(options = {}) {
   const resolvedOptions = {
     apply: Boolean(options.apply),
@@ -835,6 +960,16 @@ export async function runEventIntake(options = {}) {
   const sourceSummaryMap = new Map(sources.map((source) => [source.entry_url, createSourceSummary(source)]));
   const seenNormalizedUrls = new Set();
   let blacklistChanged = false;
+
+  const feedbackSeed = await seedBlacklistFromReviewFeedback({
+    blacklist,
+    blacklistIndex,
+    todayKey,
+    report
+  });
+  blacklist = feedbackSeed.blacklist;
+  blacklistIndex = feedbackSeed.blacklistIndex;
+  blacklistChanged ||= feedbackSeed.changed;
 
   const cacheManager = await createCacheManager({
     cwd: process.cwd(),
@@ -955,11 +1090,17 @@ export async function runEventIntake(options = {}) {
           if (blacklisted) {
             sourceSummary.skipped_blacklisted += 1;
             addSummaryCount(report, "blacklisted");
+            if (blacklisted.origin === "review_feedback") {
+              addSummaryCount(report, "rejected_by_feedback");
+            }
             report.skipped_blacklist.push({
               title: candidate.seed_data?.title || eventUrl,
               source_name: result.source.source_name,
               source_url: eventUrl,
               reason: blacklisted.reason,
+              origin: blacklisted.origin || "policy",
+              feedback_url: blacklisted.feedback_url || "",
+              rejection_reason: blacklisted.details || "",
               first_seen_on: blacklisted.first_seen_on,
               last_seen_on: blacklisted.last_seen_on
             });
@@ -1057,11 +1198,46 @@ export async function runEventIntake(options = {}) {
               return null;
             }
 
+            const deterministicTechAssessment = evaluateTechRelevanceDeterministic(deterministic, entry.source);
+
+            if (deterministicTechAssessment.should_skip_before_gemini) {
+              addSummaryCount(report, "non_tech");
+              report.skipped_policy.push({
+                title: deterministic.title || entry.candidate.seed_data?.title || entry.candidate.event_url,
+                source_name: entry.source.source_name,
+                source_url: deterministic.source_url || entry.candidate.event_url,
+                reason: "non_tech",
+                rejection_reason: deterministicTechAssessment.rejection_reason,
+                tech_evidence: deterministicTechAssessment.tech_evidence
+              });
+
+              const update = upsertBlacklistEntry(
+                blacklist,
+                {
+                  ...deterministic,
+                  source_name: entry.source.source_name
+                },
+                {
+                  todayKey,
+                  reason: "non_tech",
+                  details: deterministicTechAssessment.rejection_reason,
+                  origin: "policy"
+                }
+              );
+              blacklist = update.blacklist;
+              blacklistChanged ||= update.changed;
+              if (update.entry) {
+                updateBlacklistIndex(blacklistIndex, update.entry);
+              }
+              return null;
+            }
+
             report.summary.processed_candidates += 1;
             return {
               ...entry,
               eventPage,
-              deterministic
+              deterministic,
+              deterministicTechAssessment
             };
           } catch (error) {
             if (isCooldownError(error)) {
@@ -1097,12 +1273,28 @@ export async function runEventIntake(options = {}) {
                 model: GEMINI_MODEL,
                 source: detail.source,
                 deterministic: detail.deterministic,
+                techAssessment: detail.deterministicTechAssessment,
                 categorySlugs
               });
               const normalized = ensureEventDefaults(
                 {
                   ...detail.deterministic,
+                  ...detail.deterministicTechAssessment,
                   ...aiNormalized,
+                  tech_relevance:
+                    aiNormalized.tech_relevance || detail.deterministicTechAssessment.tech_relevance,
+                  tech_audience:
+                    aiNormalized.tech_audience || detail.deterministicTechAssessment.tech_audience,
+                  tech_topics:
+                    (aiNormalized.tech_topics || []).length
+                      ? aiNormalized.tech_topics
+                      : detail.deterministicTechAssessment.tech_topics,
+                  tech_evidence:
+                    (aiNormalized.tech_evidence || []).length
+                      ? aiNormalized.tech_evidence
+                      : detail.deterministicTechAssessment.tech_evidence,
+                  rejection_reason:
+                    aiNormalized.rejection_reason || detail.deterministicTechAssessment.rejection_reason,
                   source_url: normalizeUrl(aiNormalized.source_url || detail.deterministic.source_url),
                   ticket_url: normalizeUrl(aiNormalized.ticket_url || detail.deterministic.ticket_url),
                   source_name: detail.source.source_name
@@ -1161,13 +1353,17 @@ export async function runEventIntake(options = {}) {
             title: normalized.title,
             source_name: item.source.source_name,
             source_url: normalized.source_url,
-            reason: disposition.reason
+            reason: disposition.reason,
+            rejection_reason: normalized.rejection_reason,
+            tech_evidence: normalized.tech_evidence
           });
 
           if (isBlacklistableReason(disposition.reason)) {
             const update = upsertBlacklistEntry(blacklist, normalized, {
               todayKey,
-              reason: disposition.reason
+              reason: disposition.reason,
+              details: normalized.rejection_reason,
+              origin: "policy"
             });
             blacklist = update.blacklist;
             blacklistChanged ||= update.changed;
@@ -1182,6 +1378,7 @@ export async function runEventIntake(options = {}) {
         if (disposition.action === "issue") {
           addSummaryCount(report, "issues");
           addSummaryCount(report, "low_confidence");
+          addSummaryCount(report, "tech_low_confidence");
           const issuePayload = annotateLowConfidence(normalized, scoreResult);
           report.skipped_low_confidence.push(issuePayload);
 

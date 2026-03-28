@@ -103,6 +103,197 @@ const TECHNOLOGY_KEYWORDS = [
   "meetup tech",
   "hackathon"
 ];
+const DIRECT_TECH_KEYWORDS = [
+  "software",
+  "programacao",
+  "programação",
+  "programming",
+  "developer",
+  "developers",
+  "desenvolvedor",
+  "desenvolvedores",
+  "engenheiro de software",
+  "engenharia de software",
+  "frontend",
+  "backend",
+  "fullstack",
+  "full stack",
+  "mobile",
+  "android",
+  "ios",
+  "flutter",
+  "react",
+  "angular",
+  "vue",
+  "javascript",
+  "typescript",
+  "node",
+  "node js",
+  "python",
+  "java",
+  "golang",
+  "rust",
+  "php",
+  "cloud",
+  "aws",
+  "azure",
+  "gcp",
+  "google cloud",
+  "firebase",
+  "kubernetes",
+  "docker",
+  "devops",
+  "sre",
+  "platform engineering",
+  "data science",
+  "big data",
+  "engenharia de dados",
+  "analytics",
+  "dados",
+  "machine learning",
+  "ai",
+  "ia",
+  "inteligencia artificial",
+  "inteligência artificial",
+  "llm",
+  "seguranca",
+  "segurança",
+  "security",
+  "cybersecurity",
+  "cyber",
+  "owasp",
+  "opensource",
+  "open source",
+  "blockchain",
+  "web3",
+  "hackathon",
+  "game dev",
+  "desenvolvimento de jogos",
+  "games"
+];
+const ADJACENT_TECH_KEYWORDS = [
+  "produto digital",
+  "product design",
+  "product management",
+  "product manager",
+  "ux",
+  "ui",
+  "ux ui",
+  "design system",
+  "design de produto",
+  "agilidade",
+  "scrum",
+  "kanban",
+  "gestao tech",
+  "gestao de tecnologia",
+  "lideranca tech",
+  "tech recruiter",
+  "tech recruitment",
+  "recrutamento tech",
+  "recrutamento para tecnologia",
+  "talentos tech"
+];
+const TECH_AUDIENCE_KEYWORDS = [
+  "comunidade tech",
+  "comunidade de tecnologia",
+  "comunidade de desenvolvedores",
+  "desenvolvedor",
+  "desenvolvedores",
+  "developer",
+  "developers",
+  "engenheiro de software",
+  "engenheiros de software",
+  "programador",
+  "programadores",
+  "profissionais de tecnologia",
+  "times de tecnologia",
+  "times de software",
+  "product manager",
+  "product managers",
+  "designers de produto",
+  "designers digitais",
+  "tech recruiter",
+  "tech recruiters",
+  "recrutadores tech",
+  "agilistas de tecnologia"
+];
+const DIGITAL_CONTEXT_KEYWORDS = [
+  "digital",
+  "software",
+  "aplicativo",
+  "app",
+  "plataforma",
+  "startup",
+  "saas",
+  "web",
+  "mobile",
+  "produto digital",
+  "sistema",
+  "sistemas"
+];
+const NON_TECH_KEYWORDS = [
+  "historia",
+  "história",
+  "biologia",
+  "psicologia",
+  "pedagogia",
+  "arteterapia",
+  "sociologia",
+  "gerontologia",
+  "neuroaprendizagem",
+  "medicina",
+  "odontologia",
+  "enfermagem",
+  "saude",
+  "saúde",
+  "fisioterapia",
+  "fonoaudiologia",
+  "direito",
+  "matematica",
+  "matemática",
+  "letras",
+  "linguistica",
+  "linguística",
+  "educacao",
+  "educação",
+  "educacional",
+  "rural",
+  "agronomia",
+  "zootecnia",
+  "veterinaria",
+  "veterinária",
+  "geografia",
+  "quimica",
+  "química",
+  "fisica",
+  "física",
+  "bioinformatica",
+  "bioinformática",
+  "terapia ocupacional",
+  "congresso brasileiro de",
+  "forum internacional de pedagogia",
+  "ensino de historia",
+  "ensino de matemática",
+  "simposio regional de genero",
+  "simpósio regional de gênero"
+];
+const DIRECT_TECH_TOPICS = [
+  ["cloud", ["cloud", "aws", "azure", "gcp", "google cloud", "firebase", "kubernetes", "docker"]],
+  ["ia", ["ai", "ia", "machine learning", "inteligencia artificial", "inteligência artificial", "llm"]],
+  ["frontend", ["frontend", "react", "angular", "vue", "javascript", "typescript"]],
+  ["backend", ["backend", "node", "node js", "python", "java", "golang", "rust", "php"]],
+  ["mobile", ["mobile", "android", "ios", "flutter"]],
+  ["devops", ["devops", "sre", "platform engineering"]],
+  ["seguranca", ["security", "seguranca", "segurança", "cybersecurity", "cyber", "owasp"]],
+  ["data-science", ["data science", "big data", "engenharia de dados", "analytics", "dados"]],
+  ["blockchain", ["blockchain", "web3"]],
+  ["opensource", ["opensource", "open source"]],
+  ["games", ["game dev", "desenvolvimento de jogos", "games"]],
+  ["ux", ["ux", "design system", "design de produto", "product design"]],
+  ["ui", ["ui", "design system"]],
+  ["gestao-po-pm-tech-recruiter", ["product management", "product manager", "tech recruiter", "recrutamento tech"]],
+  ["agilidade", ["agilidade", "scrum", "kanban"]]
+];
 const RESERVED_EVEN3_SEGMENTS = new Set([
   "",
   "#organization",
@@ -194,6 +385,11 @@ export const normalizedEventSchema = z.object({
   summary: z.string().default(""),
   source_url: z.string().default(""),
   source_name: z.string().default(""),
+  tech_relevance: z.enum(["direct", "adjacent", "non_tech"]).or(z.literal("")).default(""),
+  tech_audience: z.enum(["tech", "mixed", "non_tech"]).or(z.literal("")).default(""),
+  tech_topics: z.array(z.string()).default([]),
+  tech_evidence: z.array(z.string()).default([]),
+  rejection_reason: z.string().default(""),
   ambiguities: z.array(z.string()).default([])
 });
 
@@ -360,6 +556,11 @@ export function hashString(value) {
   return crypto.createHash("sha256").update(String(value)).digest("hex");
 }
 
+export function fingerprintTitle(value) {
+  const normalized = normalizeText(value);
+  return normalized ? hashString(normalized) : "";
+}
+
 export function toDateOnly(value) {
   if (!value) {
     return "";
@@ -474,6 +675,112 @@ export function matchesTechnologyKeywords(text, keywords = TECHNOLOGY_KEYWORDS) 
     const pattern = new RegExp(`(^|\\b)${escapeRegExp(normalizedKeyword)}(\\b|$)`, "i");
     return pattern.test(haystack);
   });
+}
+
+export function findKeywordMatches(text, keywords = []) {
+  const haystack = normalizeText(text);
+
+  if (!haystack) {
+    return [];
+  }
+
+  return unique(
+    keywords.flatMap((keyword) => {
+      const normalizedKeyword = normalizeText(keyword);
+
+      if (!normalizedKeyword) {
+        return [];
+      }
+
+      if (normalizedKeyword.includes(" ")) {
+        return haystack.includes(normalizedKeyword) ? [normalizedKeyword] : [];
+      }
+
+      const pattern = new RegExp(`(^|\\b)${escapeRegExp(normalizedKeyword)}(\\b|$)`, "i");
+      return pattern.test(haystack) ? [normalizedKeyword] : [];
+    })
+  );
+}
+
+function inferTechTopics(matches = []) {
+  return unique(
+    DIRECT_TECH_TOPICS.flatMap(([topic, topicMatches]) => {
+      return topicMatches.some((term) => matches.includes(normalizeText(term))) ? [topic] : [];
+    })
+  );
+}
+
+export function evaluateTechRelevanceDeterministic(candidate = {}, source = {}) {
+  const contentText = [
+    candidate.title,
+    candidate.summary,
+    candidate.description,
+    candidate.organizer,
+    candidate.venue
+  ]
+    .filter(Boolean)
+    .join("\n");
+  const audienceText = [
+    contentText,
+    source.source_name,
+    (source.keywords || []).join(" ")
+  ]
+    .filter(Boolean)
+    .join("\n");
+  const strongTechSource = ["meetup-group", "gdg-chapter"].includes(source.source_type || "");
+  const directMatches = unique([
+    ...findKeywordMatches(contentText, DIRECT_TECH_KEYWORDS),
+    ...(strongTechSource
+      ? findKeywordMatches((source.keywords || []).join(" "), DIRECT_TECH_KEYWORDS)
+      : [])
+  ]);
+  const adjacentMatches = findKeywordMatches(contentText, ADJACENT_TECH_KEYWORDS);
+  const audienceMatches = findKeywordMatches(audienceText, TECH_AUDIENCE_KEYWORDS);
+  const digitalContextMatches = findKeywordMatches(audienceText, DIGITAL_CONTEXT_KEYWORDS);
+  const denyMatches = findKeywordMatches(contentText, NON_TECH_KEYWORDS);
+  const hasDirectMatches = directMatches.length > 0;
+  const hasAdjacentMatches = adjacentMatches.length > 0;
+  const hasTechAudience = strongTechSource || audienceMatches.length > 0;
+  const hasDigitalContext = digitalContextMatches.length > 0;
+  const hasExplicitTechAgenda = hasDirectMatches || (hasAdjacentMatches && hasTechAudience && hasDigitalContext);
+
+  let techRelevance = "";
+  let techAudience = "non_tech";
+  let rejectionReason = "";
+
+  if (hasDirectMatches) {
+    techRelevance = "direct";
+    techAudience = hasTechAudience ? "tech" : "mixed";
+  } else if (hasAdjacentMatches && (hasTechAudience || hasDigitalContext)) {
+    techRelevance = "adjacent";
+    techAudience = hasTechAudience ? "tech" : "mixed";
+  } else {
+    techRelevance = "non_tech";
+    rejectionReason = hasAdjacentMatches ? "adjacent_without_tech_audience" : "no_explicit_tech_agenda";
+  }
+
+  if (denyMatches.length && !hasExplicitTechAgenda) {
+    techRelevance = "non_tech";
+    techAudience = "non_tech";
+    rejectionReason = `deny_terms:${denyMatches.join(", ")}`;
+  } else if (denyMatches.length && techRelevance === "adjacent" && techAudience !== "tech") {
+    techRelevance = "non_tech";
+    techAudience = "non_tech";
+    rejectionReason = `ambiguous_non_tech_context:${denyMatches.join(", ")}`;
+  }
+
+  return {
+    tech_relevance: techRelevance,
+    tech_audience: techAudience,
+    tech_topics: inferTechTopics([...directMatches, ...adjacentMatches]),
+    tech_evidence: unique([...directMatches, ...adjacentMatches, ...audienceMatches]).slice(0, 6),
+    rejection_reason: rejectionReason,
+    direct_matches: directMatches,
+    adjacent_matches: adjacentMatches,
+    audience_matches: audienceMatches,
+    deny_matches: denyMatches,
+    should_skip_before_gemini: techRelevance === "non_tech"
+  };
 }
 
 export function looksLikeEven3EventUrl(url) {
@@ -823,7 +1130,6 @@ export function classifyIntakeCandidate(candidate, scoreResult, options = {}) {
   const boundaryKey = candidate.end_date || candidate.start_date || "";
   const state = normalizeStateCode(candidate.state || NORTHEAST_CITY_TO_STATE[candidate.city] || "");
   const format = candidate.format || "";
-  const titleDescription = `${candidate.title || ""}\n${candidate.description || ""}\n${candidate.organizer || ""}`;
 
   if (DATE_PATTERN.test(boundaryKey) && todayKey && boundaryKey < todayKey) {
     return { action: "skip", reason: "past" };
@@ -837,7 +1143,11 @@ export function classifyIntakeCandidate(candidate, scoreResult, options = {}) {
     return { action: "skip", reason: "non_northeast" };
   }
 
-  if (!(candidate.categories || []).length && !matchesTechnologyKeywords(titleDescription)) {
+  if (
+    candidate.tech_relevance === "non_tech" ||
+    !candidate.tech_relevance ||
+    (candidate.tech_relevance === "adjacent" && candidate.tech_audience !== "tech")
+  ) {
     return { action: "skip", reason: "non_tech" };
   }
 
@@ -934,6 +1244,10 @@ export function buildPrBody(candidate, scoreResult) {
     `- Datas: ${candidate.start_date} -> ${candidate.end_date}`,
     `- Organizador: ${candidate.organizer}`,
     `- Categorias: ${categoryList}`,
+    `- Relevancia tech: ${candidate.tech_relevance || "_nao classificada_"}`,
+    `- Publico tech: ${candidate.tech_audience || "_nao classificado_"}`,
+    `- Topicos tech: ${(candidate.tech_topics || []).length ? candidate.tech_topics.map((item) => `\`${item}\``).join(", ") : "_nenhum_"}`,
+    `- Evidencias tech: ${(candidate.tech_evidence || []).length ? candidate.tech_evidence.join(", ") : "_nenhuma_"}`,
     "",
     "## Resumo",
     "",
@@ -964,6 +1278,10 @@ export function buildIssueBody(candidate, scoreResult) {
     `- Score: ${scoreResult.score}/100`,
     `- Datas: ${candidate.start_date || "_?"} -> ${candidate.end_date || "_?"}`,
     `- Organizador: ${candidate.organizer || "_?"}`,
+    `- Relevancia tech: ${candidate.tech_relevance || "_nao classificada_"}`,
+    `- Publico tech: ${candidate.tech_audience || "_nao classificado_"}`,
+    `- Topicos tech: ${(candidate.tech_topics || []).length ? candidate.tech_topics.join(", ") : "_nenhum_"}`,
+    `- Evidencias tech: ${(candidate.tech_evidence || []).length ? candidate.tech_evidence.join(", ") : "_nenhuma_"}`,
     "",
     "## Motivos da baixa confiança",
     "",
@@ -972,6 +1290,7 @@ export function buildIssueBody(candidate, scoreResult) {
     ...((candidate.ambiguities || []).filter(
       (item) => !scoreResult.blockingAmbiguities.includes(item)
     ).map((item) => `- ${item}`)),
+    ...(candidate.rejection_reason ? [`- ${candidate.rejection_reason}`] : []),
     "",
     "## JSON extraido",
     "",
@@ -1013,6 +1332,9 @@ export function ensureEventDefaults(candidate, categorySlugs = []) {
 
   normalized.description = truncateText(normalized.description, 6000);
   normalized.summary = truncateText(normalized.summary || normalized.description, 400);
+  normalized.tech_topics = unique((normalized.tech_topics || []).map((item) => normalizeText(item)).filter(Boolean)).slice(0, 6);
+  normalized.tech_evidence = unique((normalized.tech_evidence || []).map((item) => truncateText(item, 120)).filter(Boolean)).slice(0, 6);
+  normalized.rejection_reason = truncateText(normalized.rejection_reason || "", 240);
 
   return normalized;
 }

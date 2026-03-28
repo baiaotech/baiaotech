@@ -206,6 +206,74 @@ describe("event intake github client", () => {
     expect(closed).toBeNull();
   });
 
+  it("lista feedback negativo de issues fechadas e PRs fechadas sem merge", async () => {
+    globalThis.fetch = makeFetch(
+      new Map([
+        [
+          "GET https://api.github.com/repos/baiaotech/baiaotech/issues?state=closed&labels=event-intake&per_page=100",
+          makeJsonResponse(200, [
+            {
+              title: "Event intake needs review: XVI Fórum Internacional de Pedagogia (f755c8f3)",
+              body: [
+                "<!-- event-intake-source:abc -->",
+                "# Event intake precisa de revisão",
+                "",
+                "## JSON extraido",
+                "",
+                "```json",
+                JSON.stringify({
+                  title: "XVI Fórum Internacional de Pedagogia",
+                  source_name: "Even3 Eventos",
+                  source_url: "https://even3.com.br/fiped",
+                  ticket_url: "https://even3.com.br/fiped",
+                  start_date: "2026-08-10",
+                  end_date: "2026-08-12"
+                }),
+                "```"
+              ].join("\n"),
+              html_url: "https://github.com/baiaotech/baiaotech/issues/10"
+            }
+          ])
+        ],
+        [
+          "GET https://api.github.com/repos/baiaotech/baiaotech/pulls?state=closed&per_page=100",
+          makeJsonResponse(200, [
+            {
+              title: "feat(events): add XV Encontro Nacional de Pesquisadores do Ensino de História",
+              body: [
+                "## Event intake",
+                "",
+                "- Fonte: [Even3 Eventos](https://even3.com.br/historia)",
+                "- Ticket URL: [https://even3.com.br/historia](https://even3.com.br/historia)"
+              ].join("\n"),
+              merged_at: null,
+              head: { ref: "event-intake/historia-12345678" },
+              html_url: "https://github.com/baiaotech/baiaotech/pull/14"
+            }
+          ])
+        ]
+      ])
+    );
+
+    const { listClosedEventIntakeFeedback } = await importModule();
+    const feedback = await listClosedEventIntakeFeedback({
+      token: "token",
+      repo: "baiaotech/baiaotech"
+    });
+
+    expect(feedback).toHaveLength(2);
+    expect(feedback[0]).toMatchObject({
+      title: "XVI Fórum Internacional de Pedagogia",
+      source_url: "https://even3.com.br/fiped",
+      details: "closed_issue"
+    });
+    expect(feedback[1]).toMatchObject({
+      title: "XV Encontro Nacional de Pesquisadores do Ensino de História",
+      source_url: "https://even3.com.br/historia",
+      details: "closed_unmerged_pr"
+    });
+  });
+
   it("reaproveita branch existente e evita regravar arquivo identico", async () => {
     const content = "---\ntitle: \"Build with AI Fortaleza\"\n---\n";
     const contentBase64 = Buffer.from(content).toString("base64");

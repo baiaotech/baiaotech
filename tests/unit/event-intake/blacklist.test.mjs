@@ -50,6 +50,32 @@ describe("event intake blacklist", () => {
     })?.reason).toBe("non_northeast");
   });
 
+  it("preserva origem de review feedback e encontra por fingerprint de titulo", () => {
+    const created = upsertBlacklistEntry(
+      createEmptyBlacklist(),
+      {
+        title: "XVI Fórum Internacional de Pedagogia",
+        source_name: "Even3 Eventos",
+        source_url: "https://even3.com.br/fiped"
+      },
+      {
+        todayKey: "2026-03-28",
+        reason: "non_tech",
+        origin: "review_feedback",
+        feedbackUrl: "https://github.com/baiaotech/baiaotech/issues/10"
+      }
+    );
+
+    expect(created.entry.origin).toBe("review_feedback");
+    expect(created.entry.feedback_url).toBe("https://github.com/baiaotech/baiaotech/issues/10");
+    expect(
+      findBlacklistedEvent(created.blacklist, {
+        title: "xvi forum internacional de pedagogia",
+        source_name: "Another source"
+      })?.origin
+    ).toBe("review_feedback");
+  });
+
   it("atualiza hits e mantem somente a versao mais recente em memoria", async () => {
     const initial = upsertBlacklistEntry(
       createEmptyBlacklist(),

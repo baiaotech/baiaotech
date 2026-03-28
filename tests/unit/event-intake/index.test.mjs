@@ -297,7 +297,8 @@ describe("event intake orchestrator", () => {
         source_type: "gdg-chapter",
         entry_url: "https://gdg.community.dev/gdg-fortaleza/",
         enabled: true,
-        fetch_mode: "http"
+        fetch_mode: "http",
+        keywords: ["google", "ai", "cloud"]
       }
     ]);
 
@@ -495,6 +496,132 @@ describe("event intake orchestrator", () => {
     expect(report.summary.counts.blacklisted).toBe(1);
     expect(report.skipped_blacklist).toHaveLength(1);
     expect(report.summary.processed_candidates).toBe(0);
+  });
+
+  it("usa feedback humano fechado para barrar eventos rejeitados sem reabrir PR ou issue", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.TOKEN_FOR_CI_EVENTS = "token";
+    process.env.GITHUB_REPOSITORY = "baiaotech/baiaotech";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Even3 Eventos",
+        source_type: "even3-search",
+        entry_url: "https://www.even3.com.br/eventos/",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    vi.doMock(githubModulePath, () => ({
+      createOrUpdateEventPr: vi.fn(async () => ({ action: "updated", branch: "x", pr_number: 1 })),
+      closeIssueByMarker: vi.fn(async () => null),
+      listClosedEventIntakeFeedback: vi.fn(async () => [
+        {
+          title: "XVI Fórum Internacional de Pedagogia",
+          source_name: "Even3 Eventos",
+          source_url: "https://www.even3.com.br/fiped",
+          ticket_url: "https://www.even3.com.br/fiped",
+          feedback_url: "https://github.com/baiaotech/baiaotech/issues/10",
+          details: "closed_issue"
+        }
+      ]),
+      upsertIssue: vi.fn(async () => ({ action: "created", issue_number: 1 })),
+      syncRepoFileToDefaultBranch: vi.fn(async () => ({ changed: false, branch: "main" }))
+    }));
+
+    globalThis.fetch = vi.fn(async (url) => {
+      const requestUrl = String(url);
+
+      if (requestUrl === "https://www.even3.com.br/eventos/") {
+        return makeTextResponse(
+          requestUrl,
+          '<html><body><a href="https://www.even3.com.br/fiped/">XVI Fórum Internacional de Pedagogia</a></body></html>'
+        );
+      }
+
+      throw new Error(`Nao deveria buscar detalhe de evento rejeitado por feedback: ${requestUrl}`);
+    });
+
+    const { runEventIntake } = await importModule();
+    const report = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(report.feedback_seeded).toBe(1);
+    expect(report.summary.counts.blacklisted).toBe(1);
+    expect(report.summary.counts.rejected_by_feedback).toBe(1);
+    expect(report.created_prs).toEqual([]);
+    expect(report.created_issues).toEqual([]);
+    expect(report.skipped_blacklist[0]).toMatchObject({
+      title: "XVI Fórum Internacional de Pedagogia",
+      origin: "review_feedback"
+    });
+  });
+
+  it("descarta evento academico fora do escopo tech antes de chamar Gemini", async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
+    await writeJson(path.join(tempDir, "src/_data/categories.json"), [
+      { slug: "ia", name: "IA" },
+      { slug: "cloud", name: "Cloud" }
+    ]);
+
+    process.chdir(tempDir);
+    process.env.GEMINI_API_KEY = "test-key";
+    process.env.EVENT_INTAKE_SOURCES_JSON = JSON.stringify([
+      {
+        source_name: "Even3 Eventos",
+        source_type: "even3-search",
+        entry_url: "https://www.even3.com.br/eventos/",
+        enabled: true,
+        fetch_mode: "http"
+      }
+    ]);
+
+    globalThis.fetch = vi.fn(async (url) => {
+      const requestUrl = String(url);
+
+      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+        throw new Error("Nao deveria chamar Gemini para evento non_tech evidente");
+      }
+
+      if (requestUrl === "https://www.even3.com.br/eventos/") {
+        return makeTextResponse(
+          requestUrl,
+          '<html><body><a href="https://www.even3.com.br/fiped/">Fórum Internacional de Pedagogia e Tecnologia Educacional</a></body></html>'
+        );
+      }
+
+      if (requestUrl === "https://www.even3.com.br/fiped") {
+        return makeTextResponse(
+          requestUrl,
+          "<html><body><h1>Fórum Internacional de Pedagogia e Tecnologia Educacional</h1><p>Congresso acadêmico sobre pedagogia, educação e práticas docentes. Uso de tecnologia educacional em sala de aula.</p></body></html>"
+        );
+      }
+
+      throw new Error(`URL nao mockada: ${requestUrl}`);
+    });
+
+    const { runEventIntake } = await importModule();
+    const report = await runEventIntake({
+      apply: false,
+      maxSources: 1,
+      maxUniqueUrls: 10
+    });
+
+    expect(report.summary.counts.non_tech).toBe(1);
+    expect(report.created_prs).toEqual([]);
+    expect(report.created_issues).toEqual([]);
+    expect(report.skipped_policy[0]).toMatchObject({
+      reason: "non_tech"
+    });
   });
 
   it("revalida paginas HTTP com ETag e reaproveita o cache em respostas 304", async () => {
@@ -959,6 +1086,7 @@ describe("event intake orchestrator", () => {
     vi.doMock(githubModulePath, () => ({
       createOrUpdateEventPr,
       closeIssueByMarker,
+      listClosedEventIntakeFeedback: vi.fn(async () => []),
       upsertIssue,
       syncRepoFileToDefaultBranch
     }));
@@ -1041,6 +1169,7 @@ describe("event intake orchestrator", () => {
     vi.doMock(githubModulePath, () => ({
       createOrUpdateEventPr: vi.fn(async () => ({ action: "updated", branch: "x", pr_number: 1 })),
       closeIssueByMarker: vi.fn(async () => null),
+      listClosedEventIntakeFeedback: vi.fn(async () => []),
       upsertIssue: vi.fn(async () => ({ action: "created", issue_number: 1 })),
       syncRepoFileToDefaultBranch
     }));
@@ -1116,50 +1245,117 @@ describe("event intake orchestrator", () => {
         source_type: "gdg-chapter",
         entry_url: "https://gdg.community.dev/gdg-fortaleza/",
         enabled: true,
-        fetch_mode: "http"
+        fetch_mode: "http",
+        keywords: ["google", "ai", "cloud"]
       }
     ]);
+    vi.doUnmock(githubModulePath);
 
-    const upsertIssue = vi.fn(async () => ({ action: "created", issue_number: 88 }));
-    vi.doMock(githubModulePath, () => ({
-      createOrUpdateEventPr: vi.fn(async () => ({ action: "updated", branch: "x", pr_number: 1 })),
-      closeIssueByMarker: vi.fn(async () => null),
-      upsertIssue,
-      syncRepoFileToDefaultBranch: vi.fn(async () => ({ changed: false, branch: "main" }))
-    }));
+    globalThis.fetch = vi.fn(async (url, options = {}) => {
+      const requestUrl = String(url);
+      const method = options.method || "GET";
 
-    globalThis.fetch = makeFetchMock(
-      new Map([
-        [
-          "https://gdg.community.dev/gdg-fortaleza/",
-          '<html><body><a href="https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/">Evento</a></body></html>'
-        ],
-        [
-          "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza",
-          '<html><body>Evento.</body></html>'
-        ]
-      ]),
-      {
-        title: "Build With AI Fortaleza",
-        start_date: "2026-04-10",
-        end_date: "2026-04-10",
-        kind: "workshop",
-        format: "in-person",
-        city: "",
-        state: "",
-        organizer: "GDG Fortaleza",
-        venue: "",
-        ticket_url: "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/",
-        categories: [],
-        cover_image: "",
-        price: "",
-        description: "Evento de ia generativa para a comunidade.",
-        summary: "Evento de ia generativa para a comunidade.",
-        source_url: "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/",
-        source_name: "GDG Fortaleza",
-        ambiguities: ["category_uncertain", "location_uncertain"]
+      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => ({
+            candidates: [
+              {
+                content: {
+                  parts: [
+                    {
+                      text: JSON.stringify({
+                        title: "Build With AI Fortaleza",
+                        start_date: "2026-04-10",
+                        end_date: "2026-04-10",
+                        kind: "workshop",
+                        format: "in-person",
+                        city: "",
+                        state: "",
+                        organizer: "GDG Fortaleza",
+                        venue: "",
+                        ticket_url: "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/",
+                        categories: [],
+                        cover_image: "",
+                        price: "",
+                        description: "Evento de ia generativa para a comunidade.",
+                        summary: "Evento de ia generativa para a comunidade.",
+                        source_url: "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/",
+                        source_name: "GDG Fortaleza",
+                        ambiguities: ["category_uncertain", "location_uncertain"]
+                      })
+                    }
+                  ]
+                }
+              }
+            ]
+          })
+        };
       }
-    );
+
+      if (requestUrl === "https://gdg.community.dev/gdg-fortaleza/") {
+        return makeTextResponse(
+          requestUrl,
+          '<html><body><a href="https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza/">Evento</a></body></html>'
+        );
+      }
+
+      if (requestUrl === "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza") {
+        return makeTextResponse(requestUrl, "<html><body>Evento.</body></html>");
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/issues?state=closed&labels=event-intake&per_page=100") {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => []
+        };
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/pulls?state=closed&per_page=100") {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => []
+        };
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/labels/event-intake") {
+        return {
+          ok: false,
+          status: 404,
+          json: async () => ({ message: "Not Found" }),
+          text: async () => "{\"message\":\"Not Found\"}"
+        };
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/labels" && method === "POST") {
+        return {
+          ok: true,
+          status: 201,
+          json: async () => ({ name: "event-intake" })
+        };
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/issues?state=open&labels=event-intake&per_page=100") {
+        return {
+          ok: true,
+          status: 200,
+          json: async () => []
+        };
+      }
+
+      if (requestUrl === "https://api.github.com/repos/baiaotech/baiaotech/issues" && method === "POST") {
+        return {
+          ok: true,
+          status: 201,
+          json: async () => ({ number: 88 })
+        };
+      }
+
+      throw new Error(`URL nao mockada: ${method} ${requestUrl}`);
+    });
 
     const { runEventIntake } = await importModule();
     const report = await runEventIntake({
@@ -1176,7 +1372,12 @@ describe("event intake orchestrator", () => {
         source_url: "https://gdg.community.dev/events/details/google-gdg-fortaleza-presents-build-with-ai-fortaleza"
       }
     ]);
-    expect(upsertIssue).toHaveBeenCalledTimes(1);
+    expect(
+      globalThis.fetch.mock.calls.some(([url, options = {}]) =>
+        String(url) === "https://api.github.com/repos/baiaotech/baiaotech/issues" &&
+        (options.method || "GET") === "POST"
+      )
+    ).toBe(true);
   });
 
   it("registra erro por candidato quando a pagina do evento falha", async () => {
