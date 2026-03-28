@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/guru_ce/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - ruby
+  - backend
 featured: false
 cover_image: /assets/covers/communities/guru-ce.png
 legacy_id: 28

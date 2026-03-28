@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/meetupdevopsce/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - devops
+  - cloud
 featured: false
 cover_image: /assets/covers/communities/devops-ce.png
 legacy_id: 36

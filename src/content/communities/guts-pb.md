@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - qa
+  - agilidade
 featured: false
 cover_image: /assets/covers/communities/guts-pb.png
 legacy_id: 50

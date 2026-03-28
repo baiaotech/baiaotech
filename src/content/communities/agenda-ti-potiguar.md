@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/agendatipotiguar/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - inovacao
+  - fullstack
 featured: false
 cover_image: /assets/covers/communities/agenda-ti-potiguar.png
 legacy_id: 83

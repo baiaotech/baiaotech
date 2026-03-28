@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/dodjoaopessoa/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - devops
+  - cloud
 featured: false
 cover_image: /assets/covers/communities/devops-jp.png
 legacy_id: 47

@@ -7,7 +7,10 @@ instagram: 'https://www.instagram.com/wpfortaleza/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - wordpress
+  - frontend
+  - backend
 featured: false
 cover_image: /assets/covers/communities/wordpress-fortaleza.png
 legacy_id: 34

@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - javascript
+  - frontend
 featured: false
 cover_image: /assets/covers/communities/paraiba-js.png
 legacy_id: 54

@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: 'https://t.me/dotnetfortaleza'
 whatsapp: ''
-tags: []
+tags:
+  - dotnet
+  - backend
 featured: false
 cover_image: /assets/covers/communities/net-ceara.png
 legacy_id: 31

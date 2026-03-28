@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/comunidademanguezal/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - startups
+  - inovacao
 featured: false
 cover_image: ''
 legacy_id: 65

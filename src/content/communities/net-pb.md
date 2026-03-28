@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - dotnet
+  - backend
 featured: false
 cover_image: /assets/covers/communities/net-pb.png
 legacy_id: 46

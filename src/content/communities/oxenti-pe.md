@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - inovacao
+  - fullstack
 featured: false
 cover_image: /assets/covers/communities/oxenti-pe.png
 legacy_id: 66

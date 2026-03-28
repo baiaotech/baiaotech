@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/allsaintsbayssa/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - startups
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/all-saints-bay.jpg
 legacy_id: 5

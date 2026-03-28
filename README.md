@@ -114,9 +114,13 @@ Campos opcionais:
 - `linkedin`
 - `telegram`
 - `whatsapp`
-- `tags`
 - `featured`
 - `cover_image`
+
+Regras editoriais:
+
+- `tags` e obrigatório e nao pode ficar vazio
+- use preferencialmente de `2` a `4` tags curtas e consistentes, como `python`, `cloud`, `frontend`, `diversidade` ou `startups`
 
 ## Modelos de conteúdo
 

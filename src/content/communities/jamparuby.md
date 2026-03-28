@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/jamparuby/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - ruby
+  - backend
 featured: false
 cover_image: /assets/covers/communities/jamparuby.png
 legacy_id: 51

@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/comunidadehousejs/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - javascript
+  - fullstack
 featured: false
 cover_image: /assets/covers/communities/housejs.png
 legacy_id: 25

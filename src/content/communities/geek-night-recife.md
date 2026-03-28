@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/geeknightrecife/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - fullstack
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/geek-night-recife.png
 legacy_id: 61

@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/meetiapb/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - ia
+  - dados
 featured: false
 cover_image: /assets/covers/communities/meetia-pb.png
 legacy_id: 52

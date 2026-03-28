@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/ghcfortaleza/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - open-source
+  - devops
 featured: false
 cover_image: /assets/covers/communities/github-community-fortaleza.jpg
 legacy_id: 30

@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/codar_app/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - open-source
+  - fullstack
 featured: false
 cover_image: /assets/covers/communities/codar-salvador.png
 legacy_id: 7

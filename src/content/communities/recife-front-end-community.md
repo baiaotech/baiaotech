@@ -7,7 +7,10 @@ instagram: 'https://www.instagram.com/rfecommunity/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - frontend
+  - ux
+  - ui
 featured: false
 cover_image: /assets/covers/communities/recife-front-end-community.png
 legacy_id: 71

@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/grude4joficial/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - java
+  - backend
 featured: false
 cover_image: /assets/covers/communities/grude4j.png
 legacy_id: 49

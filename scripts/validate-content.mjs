@@ -81,7 +81,7 @@ const communitySchema = z.object({
   linkedin: optionalUrl,
   telegram: optionalUrl,
   whatsapp: optionalUrl,
-  tags: z.array(z.string()).default([]),
+  tags: z.array(z.string()).min(1, "adicione ao menos uma tag"),
   featured: z.boolean().default(false),
   cover_image: optionalUrl,
   legacy_id: z.number().optional()

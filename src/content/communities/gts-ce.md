@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/gts.ce/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - qa
+  - agilidade
 featured: false
 cover_image: /assets/covers/communities/gts-ce.png
 legacy_id: 37

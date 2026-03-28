@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: 'https://t.me/dotnetrecife'
 whatsapp: ''
-tags: []
+tags:
+  - dotnet
+  - backend
 featured: false
 cover_image: /assets/covers/communities/dotnet-recife.png
 legacy_id: 59

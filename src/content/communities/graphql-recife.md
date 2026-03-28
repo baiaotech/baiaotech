@@ -7,7 +7,10 @@ instagram: ''
 linkedin: ''
 telegram: 'https://t.me/graphqlrecife'
 whatsapp: ''
-tags: []
+tags:
+  - graphql
+  - backend
+  - frontend
 featured: false
 cover_image: /assets/covers/communities/graphql-recife.png
 legacy_id: 63

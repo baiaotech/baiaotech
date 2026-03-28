@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/conecta.nordeste/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - startups
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/conecta-nordeste.png
 legacy_id: 93

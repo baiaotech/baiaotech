@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - agilidade
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/agile-maranhao.png
 legacy_id: 39

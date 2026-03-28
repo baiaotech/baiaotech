@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/soluises.ma/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - startups
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/soluises.png
 legacy_id: 43

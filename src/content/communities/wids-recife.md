@@ -7,7 +7,10 @@ instagram: 'https://www.instagram.com/widsrecife/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - dados
+  - ia
+  - diversidade
 featured: false
 cover_image: /assets/covers/communities/wids-recife.png
 legacy_id: 72

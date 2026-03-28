@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/awsug_jp/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - cloud
+  - devops
 featured: false
 cover_image: /assets/covers/communities/aws-user-group-joao-pessoa.webp
 legacy_id: 48

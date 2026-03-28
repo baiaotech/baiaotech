@@ -7,7 +7,9 @@ instagram: ''
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - cloud
+  - devops
 featured: false
 cover_image: /assets/covers/communities/aws-user-group-ceara.webp
 legacy_id: 32

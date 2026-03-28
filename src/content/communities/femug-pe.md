@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/femugpe/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - frontend
+  - javascript
 featured: false
 cover_image: /assets/covers/communities/femug-pe.png
 legacy_id: 60

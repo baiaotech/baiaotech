@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/grudepb/'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - fullstack
+  - inovacao
 featured: false
 cover_image: /assets/covers/communities/grudepb-crudpb.png
 legacy_id: 44

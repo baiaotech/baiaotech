@@ -7,7 +7,9 @@ instagram: 'https://www.instagram.com/elug_ce'
 linkedin: ''
 telegram: ''
 whatsapp: ''
-tags: []
+tags:
+  - elixir
+  - backend
 featured: false
 cover_image: /assets/covers/communities/elug-ce.png
 legacy_id: 33
