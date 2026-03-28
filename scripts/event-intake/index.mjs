@@ -20,7 +20,11 @@ import {
   DEFAULT_BROWSER_DETAIL_TTL_HOURS,
   DEFAULT_BROWSER_LISTING_TTL_HOURS
 } from "./cache.mjs";
-import { discoverCandidatesForSource } from "./discovery.mjs";
+import {
+  dedupeDiscoveredCandidates,
+  discoverCandidatesForSource,
+  expandDiscoveryInputsForSource
+} from "./discovery.mjs";
 import { extractDeterministicEventData } from "./extract.mjs";
 import {
   buildBranchName,
@@ -987,44 +991,87 @@ export async function runEventIntake(options = {}) {
       return Promise.all(
         sources.map(async (source) => {
           const sourceSummary = sourceSummaryMap.get(source.entry_url);
+          const discoveryInputs = expandDiscoveryInputsForSource(source);
+          const aggregatedCandidates = [];
+          let successfulDiscoveryInputs = 0;
 
           try {
-            const sourcePage = await fetchPage(source.entry_url, source, {
-              phase: "discovery",
-              kind: "listing",
-              cacheManager,
-              scheduler,
-              performance: report.performance
-            });
-            const discoveredCandidates = await discoverCandidatesForSource(source, sourcePage, (url, nestedSource = {}) =>
-              fetchPage(
-                url,
-                {
-                  ...source,
-                  ...nestedSource,
-                  source_name: nestedSource.source_name || source.source_name,
-                  source_type: nestedSource.source_type || source.source_type
-                },
-                {
+            for (const discoverySource of discoveryInputs) {
+              try {
+                const sourcePage = await fetchPage(discoverySource.entry_url, discoverySource, {
                   phase: "discovery",
                   kind: "listing",
                   cacheManager,
                   scheduler,
                   performance: report.performance
+                });
+                const discoveredCandidates = await discoverCandidatesForSource(
+                  discoverySource,
+                  sourcePage,
+                  (url, nestedSource = {}) =>
+                    fetchPage(
+                      url,
+                      {
+                        ...discoverySource,
+                        ...nestedSource,
+                        source_name: nestedSource.source_name || discoverySource.source_name,
+                        source_type: nestedSource.source_type || discoverySource.source_type
+                      },
+                      {
+                        phase: "discovery",
+                        kind: "listing",
+                        cacheManager,
+                        scheduler,
+                        performance: report.performance
+                        }
+                      )
+                );
+                aggregatedCandidates.push(...discoveredCandidates);
+                successfulDiscoveryInputs += 1;
+              } catch (error) {
+                if (isCooldownError(error)) {
+                  sourceSummary.skipped_cooldown += 1;
+                  continue;
                 }
-              )
-            );
 
-            sourceSummary.discovered_candidates = discoveredCandidates.length;
+                sourceSummary.errors += 1;
+                addSummaryCount(report, "errors");
+                report.errors.push({
+                  source_name: discoverySource.source_name,
+                  message: error instanceof Error ? error.message : String(error)
+                });
+              }
+            }
+
+            if (!successfulDiscoveryInputs) {
+              if (sourceSummary.skipped_cooldown >= discoveryInputs.length) {
+                return {
+                  source,
+                  sourcePage: null,
+                  discoveredCandidates: [],
+                  skipped: true
+                };
+              }
+
+              return {
+                source,
+                sourcePage: null,
+                discoveredCandidates: [],
+                error: new Error("all_discovery_inputs_failed")
+              };
+            }
+
+            const mergedCandidates = dedupeDiscoveredCandidates(aggregatedCandidates);
+            sourceSummary.discovered_candidates = aggregatedCandidates.length;
             sourceSummary.unique_candidates = new Set(
-              discoveredCandidates.map((candidate) => normalizeCandidateEventUrl(candidate))
+              mergedCandidates.map((candidate) => normalizeCandidateEventUrl(candidate))
             ).size;
-            report.summary.discovered_candidates += discoveredCandidates.length;
+            report.summary.discovered_candidates += aggregatedCandidates.length;
 
             return {
               source,
-              sourcePage,
-              discoveredCandidates
+              sourcePage: null,
+              discoveredCandidates: mergedCandidates
             };
           } catch (error) {
             if (isCooldownError(error)) {

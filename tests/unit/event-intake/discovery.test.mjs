@@ -3,19 +3,76 @@ import path from "node:path";
 
 import { describe, expect, it } from "vitest";
 
-import { discoverCandidatesForSource } from "../../../scripts/event-intake/discovery.mjs";
+import {
+  dedupeDiscoveredCandidates,
+  discoverCandidatesForSource,
+  expandDiscoveryInputsForSource
+} from "../../../scripts/event-intake/discovery.mjs";
 
 async function readFixture(name) {
   return fs.readFile(path.resolve("tests/fixtures/event-intake", name), "utf8");
 }
 
 describe("event intake discovery", () => {
+  it("expande fontes de busca urbanas para queries tech de maior sinal", () => {
+    const inputs = expandDiscoveryInputsForSource({
+      source_name: "Sympla Fortaleza",
+      source_type: "sympla-search",
+      entry_url: "https://www.sympla.com.br/eventos?s=tecnologia&c=Fortaleza%2C%20CE",
+      city: "Fortaleza",
+      state: "CE",
+      keywords: ["cloud", "ia", "frontend", "devops", "dados"]
+    });
+
+    expect(inputs.length).toBeGreaterThan(1);
+    expect(inputs.some((input) => input.entry_url.includes("s=cloud"))).toBe(true);
+    expect(inputs.some((input) => input.entry_url.includes("inteligencia+artificial"))).toBe(true);
+  });
+
   it("descobre links de eventos futuros em páginas do Meetup e filtra por keywords", async () => {
     const html = await readFixture("meetup-search.html");
     const source = {
       source_name: "Meetup Fortaleza",
       source_type: "meetup-search",
       entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+      keywords: ["cloud", "ia", "frontend", "devops"]
+    };
+
+    const candidates = await discoverCandidatesForSource(
+      source,
+      {
+        html,
+        final_url: source.entry_url
+      },
+      async () => {
+        throw new Error("fetchPage nao deveria ser chamado para Meetup");
+      }
+    );
+
+    expect(candidates).toHaveLength(1);
+    expect(candidates[0].event_url).toContain("/events/313900001");
+  });
+
+  it("descarta resultados globais de busca quando o card explicita local fora da fonte", async () => {
+    const html = `
+      <!doctype html>
+      <html lang="pt-BR">
+        <body>
+          <a href="https://www.meetup.com/chicago-cloud-native-x-ai-tech-group/events/313327536/">
+            Building Trusted AI on Cloud Native Platforms [Chicago Meetup]
+          </a>
+          <a href="https://www.meetup.com/fortaleza-js/events/313900001/">
+            Fortaleza JS: Cloud, IA e Frontend
+          </a>
+        </body>
+      </html>
+    `;
+    const source = {
+      source_name: "Meetup Fortaleza",
+      source_type: "meetup-search",
+      entry_url: "https://www.meetup.com/find/?keywords=tecnologia&location=Fortaleza,%20BR",
+      city: "Fortaleza",
+      state: "CE",
       keywords: ["cloud", "ia", "frontend", "devops"]
     };
 
@@ -56,6 +113,59 @@ describe("event intake discovery", () => {
 
     expect(candidates).toHaveLength(2);
     expect(candidates[0].event_url).toContain("/evento/frontend-and-ai-fortaleza/3300012");
+  });
+
+  it("aproveita metadados estruturados do Sympla para filtrar pela regiao da fonte", async () => {
+    const html = `
+      <!doctype html>
+      <html lang="pt-BR">
+        <body>
+          <script>
+            window.__STATE__ = {
+              "events": [
+                {
+                  "url":"https:\\/\\/www.sympla.com.br\\/evento\\/cloud-fortaleza\\/3300012",
+                  "organizer":{"name":"Comunidade Cloud CE"},
+                  "name":"Cloud Fortaleza 2026",
+                  "location":{"name":"Hub de Tecnologia","city":"Fortaleza","state":"CE"},
+                  "start_date":"2026-05-10T18:00:00+00:00"
+                },
+                {
+                  "url":"https:\\/\\/www.sympla.com.br\\/evento\\/cloud-sao-paulo\\/3300099",
+                  "organizer":{"name":"Comunidade Cloud SP"},
+                  "name":"Cloud Sao Paulo 2026",
+                  "location":{"name":"Centro de Eventos","city":"Sao Paulo","state":"SP"},
+                  "start_date":"2026-05-12T18:00:00+00:00"
+                }
+              ]
+            };
+          </script>
+        </body>
+      </html>
+    `;
+    const source = {
+      source_name: "Sympla Fortaleza",
+      source_type: "sympla-search",
+      entry_url: "https://www.sympla.com.br/eventos?s=cloud&c=Fortaleza%2C%20CE",
+      city: "Fortaleza",
+      state: "CE",
+      keywords: ["cloud", "software"]
+    };
+
+    const candidates = await discoverCandidatesForSource(
+      source,
+      {
+        html,
+        final_url: source.entry_url
+      },
+      async () => {
+        throw new Error("fetchPage nao deveria ser chamado para Sympla");
+      }
+    );
+
+    expect(candidates).toHaveLength(1);
+    expect(candidates[0].seed_data.title).toBe("Cloud Fortaleza 2026");
+    expect(candidates[0].event_url).toContain("cloud-fortaleza");
   });
 
   it("descobre eventos do Eventbrite a partir dos cards renderizados", async () => {
@@ -159,5 +269,21 @@ describe("event intake discovery", () => {
     expect(candidates).toHaveLength(1);
     expect(candidates[0].event_url).toContain("build-with-ai-fortaleza");
     expect(candidates[0].seed_data.title).toBe("Build with AI Fortaleza");
+  });
+
+  it("deduplica candidatos mantendo o seed mais rico ao combinar variantes", () => {
+    const merged = dedupeDiscoveredCandidates([
+      {
+        event_url: "https://www.sympla.com.br/evento/cloud-fortaleza/3300012",
+        seed_data: { title: "Cloud Fortaleza", description: "" }
+      },
+      {
+        event_url: "https://www.sympla.com.br/evento/cloud-fortaleza/3300012",
+        seed_data: { title: "Cloud Fortaleza", description: "Fortaleza, CE\nComunidade Cloud CE" }
+      }
+    ]);
+
+    expect(merged).toHaveLength(1);
+    expect(merged[0].seed_data.description).toContain("Fortaleza, CE");
   });
 });
