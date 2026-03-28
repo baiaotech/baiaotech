@@ -10,9 +10,10 @@
     "dev": "eleventy --serve",
     "build": "npm run validate && eleventy",
     "build:site": "eleventy",
+    "build:e2e": "node scripts/build-e2e.mjs",
     "test:e2e:install": "node scripts/playwright-install.mjs",
-    "test:e2e": "npm run build && node scripts/playwright-run.mjs test",
-    "test:e2e:headed": "npm run build && node scripts/playwright-run.mjs test --headed",
+    "test:e2e": "npm run build:e2e && node scripts/playwright-run.mjs test",
+    "test:e2e:headed": "npm run build:e2e && node scripts/playwright-run.mjs test --headed",
     "validate": "node scripts/validate-content.mjs",
     "import:backend": "node scripts/import-backend-fixtures.mjs",
     "sync:community-covers": "node scripts/sync-community-covers.mjs"

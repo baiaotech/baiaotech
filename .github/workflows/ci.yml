@@ -30,10 +30,14 @@ jobs:
       - name: Validate content
         run: npm run validate
 
+      - name: Show effective build contexts
+        run: |
+          echo "Deploy SITE_URL=${{ vars.SITE_URL }}"
+          echo "Deploy PATH_PREFIX=${{ vars.PATH_PREFIX }}"
+          echo "Smoke SITE_URL=http://127.0.0.1:4173"
+          echo "Smoke PATH_PREFIX=/"
+
       - name: Run smoke E2E
-        env:
-          SITE_URL: ${{ vars.SITE_URL }}
-          PATH_PREFIX: ${{ vars.PATH_PREFIX }}
         run: npm run test:e2e
 
       - name: Upload Playwright artifacts
