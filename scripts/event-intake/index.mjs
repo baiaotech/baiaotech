@@ -74,6 +74,10 @@ const DEFAULT_HOST_LIMITS = {
   "discovery-http": 2,
   "detail-http": 3
 };
+const DEFAULT_HTTP_TIMEOUT_MS = {
+  listing: 20000,
+  detail: 30000
+};
 const BROWSER_FALLBACK_SOURCE_TYPES = new Set([
   "sympla-search",
   "eventbrite-search",
@@ -172,6 +176,17 @@ function getResponseHeader(response, name) {
   return response?.headers?.get?.(name) || "";
 }
 
+function getHttpTimeoutMs(kind = "detail") {
+  return kind === "listing" ? DEFAULT_HTTP_TIMEOUT_MS.listing : DEFAULT_HTTP_TIMEOUT_MS.detail;
+}
+
+function isRequestTimeoutError(error) {
+  return (
+    Boolean(error && typeof error === "object") &&
+    ("name" in error && (error.name === "AbortError" || error.name === "TimeoutError"))
+  );
+}
+
 function recordHostFailure(performance, entry = {}) {
   const host = String(entry.host || "").trim();
 
@@ -204,7 +219,21 @@ async function fetchWithHttp(url, context) {
     headers["if-modified-since"] = cached.meta.lastModified;
   }
 
-  const response = await fetch(url, { headers, redirect: "follow" });
+  let response;
+
+  try {
+    response = await fetch(url, {
+      headers,
+      redirect: "follow",
+      signal: AbortSignal.timeout(getHttpTimeoutMs(kind))
+    });
+  } catch (error) {
+    if (isRequestTimeoutError(error)) {
+      throw new Error(`HTTP timeout ao buscar ${url}`);
+    }
+
+    throw error;
+  }
   const status = Number(response.status || 200) || 200;
 
   if (status === 304 && cached) {
