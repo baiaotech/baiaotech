@@ -16,8 +16,15 @@ categories:
   - "cloud"
 featured: false
 cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_900,q_auto:good,w_1200/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_SocialSharingThumbnail_KFxxrrs.png"
-price: "0"
+price: "Gratuito"
 ---
 
 Build With AI - Fortaleza
-A revolução da Inteligência Artificial já começou, e a comunidade de Fortaleza não vai ficar de fora!
+A revolução da Inteligência Artificial já começou, e a comunidade de Fortaleza não vai ficar de fora! Junte-se a nós para um evento prático onde exploraremos o poder da IA com um Expert Google.
+
+O que esperar:
+* Palestras e demonstrações sobre IA na prática.
+* Insights de um Expert Google.
+* Oportunidades de networking com outros entusiastas de IA.
+
+Este evento é ideal para desenvolvedores, estudantes e profissionais que desejam entender e aplicar a Inteligência Artificial em seus projetos.
