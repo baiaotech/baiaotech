@@ -20,11 +20,4 @@ price: "Gratuito"
 ---
 
 Build With AI - Fortaleza
-A revolução da Inteligência Artificial já começou, e a comunidade de Fortaleza não vai ficar de fora! Junte-se a nós para um evento prático onde exploraremos o poder da IA com um Expert Google.
-
-O que esperar:
-* Palestras e demonstrações sobre IA na prática.
-* Insights de um Expert Google.
-* Oportunidades de networking com outros entusiastas de IA.
-
-Este evento é ideal para desenvolvedores, estudantes e profissionais que desejam entender e aplicar a Inteligência Artificial em seus projetos.
+A revolução da Inteligência Artificial já começou, e a comunidade de Fortaleza não vai ficar de fora! Junte-se a nós para um evento prático onde exploraremos o poder da IA com um Expert do Google.
