@@ -1,5 +1,5 @@
 ---
-title: "A na Prática: Construindo Aplicações com a IDE Antigravity"
+title: "IA na Prática: Construindo Aplicações com a IDE Antigravity"
 start_date: "2026-05-16"
 end_date: "2026-05-16"
 kind: "workshop"
