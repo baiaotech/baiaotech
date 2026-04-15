@@ -19,8 +19,4 @@ cover_image: "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
 price: "Grátis"
 ---
 
-Workshop presencial sobre Inteligência Artificial para Empreendedores.
-
-Local: Sebrae Presidente Dutra, Presidente Dutra - MA
-Datas: 20 e 21 de Abril de 2026
-Horário: 18:30 às 22:00
+Compre ingressos para Workshop: Inteligência Artificial para Empreendedores em Presidente Dutra dia 20/04. Confira os melhores eventos da Sympla!
