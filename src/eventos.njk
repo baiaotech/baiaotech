@@ -17,7 +17,7 @@ pageScripts:
     <p class="eyebrow">Agenda</p>
     <h1>Encontre o próximo evento em poucos segundos.</h1>
     <p>
-      Busque por nome, organizador, formato, categoria, estado e mês sem atravessar uma interface carregada.
+      Busque por nome, organizador, formato, categoria, estado e mês com resultado imediato.
     </p>
   </div>
 </section>
@@ -26,11 +26,16 @@ pageScripts:
   <div class="container listing-shell__toolbar" data-reveal>
     <div>
       <p class="eyebrow">Índice</p>
-      <h2><span data-results-count>{{ allEvents.length }}</span> eventos</h2>
+      <h2><span data-results-count aria-live="polite">{{ allEvents.length }}</span> eventos</h2>
     </div>
     <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="event-filters">
       Filtrar
     </button>
+  </div>
+
+  <div class="container filter-status" data-filter-status hidden>
+    <div class="filter-status__chips" data-filter-chips aria-live="polite"></div>
+    <button class="text-link text-link--touch" type="button" data-filter-reset>Limpar filtros</button>
   </div>
 
   <div class="filter-backdrop" data-filter-backdrop hidden></div>
@@ -45,7 +50,7 @@ pageScripts:
       <form class="filter-form" aria-label="Filtros de eventos" data-filter-form>
         <label>
           <span>Buscar</span>
-          <input type="search" placeholder="Titulo, cidade, organizacao..." data-filter-search>
+          <input type="search" placeholder="Título, cidade, organização..." data-filter-search>
         </label>
         <label>
           <span>Tipo</span>
@@ -84,7 +89,7 @@ pageScripts:
           </select>
         </label>
         <label>
-          <span>Mes</span>
+          <span>Mês</span>
           <select data-filter-key="month">
             <option value="">Todos</option>
             {% for month in monthOptions %}
@@ -104,7 +109,7 @@ pageScripts:
         <div class="listing-block__header">
           <div>
             <p class="eyebrow">Próximos</p>
-            <h2>Proximos</h2>
+            <h2>Próximos</h2>
           </div>
           <p>{{ futureEvents.length }} no radar</p>
         </div>
@@ -113,7 +118,7 @@ pageScripts:
             {% include "partials/event-card.njk" %}
           {% endfor %}
         </div>
-        <p class="empty-inline" data-section-empty hidden>Nenhum proximo evento combina com os filtros.</p>
+        <p class="empty-inline" data-section-empty hidden>Nenhum próximo evento combina com os filtros.</p>
       </section>
 
       <section class="listing-block listing-block--subdued" data-filter-section>

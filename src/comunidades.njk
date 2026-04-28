@@ -14,7 +14,7 @@ pageScripts:
     <p class="eyebrow">Diretório</p>
     <h1>Encontre comunidades tech por estado, cidade ou tema.</h1>
     <p>
-      Busque por nome, filtre por estado e abra os links principais com uma leitura direta.
+      Busque por nome, filtre por estado e abra os links principais sem percorrer o diretório inteiro.
     </p>
   </div>
 </section>
@@ -23,11 +23,16 @@ pageScripts:
   <div class="container listing-shell__toolbar" data-reveal>
     <div>
       <p class="eyebrow">Índice</p>
-      <h2><span data-results-count>{{ allCommunities.length }}</span> comunidades</h2>
+      <h2><span data-results-count aria-live="polite">{{ allCommunities.length }}</span> comunidades</h2>
     </div>
     <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="community-filters">
       Filtrar
     </button>
+  </div>
+
+  <div class="container filter-status" data-filter-status hidden>
+    <div class="filter-status__chips" data-filter-chips aria-live="polite"></div>
+    <button class="text-link text-link--touch" type="button" data-filter-reset>Limpar filtros</button>
   </div>
 
   <div class="filter-backdrop" data-filter-backdrop hidden></div>

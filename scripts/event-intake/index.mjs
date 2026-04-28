@@ -1021,7 +1021,10 @@ export async function runEventIntake(options = {}) {
   const existingEventIndex = buildExistingEventIndex(existingEvents);
   let blacklist = await loadEventBlacklist();
   let blacklistIndex = buildBlacklistIndex(blacklist);
-  const todayKey = getDateKeyInTimeZone(new Date(), EVENT_TIME_ZONE);
+  const todayKey =
+    resolvedOptions.todayKey ||
+    process.env.EVENT_INTAKE_TODAY_KEY ||
+    getDateKeyInTimeZone(new Date(), EVENT_TIME_ZONE);
   const report = createReport(resolvedOptions, sources, todayKey);
   const sourceSummaryMap = new Map(sources.map((source) => [source.entry_url, createSourceSummary(source)]));
   const seenNormalizedUrls = new Set();

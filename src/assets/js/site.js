@@ -49,17 +49,72 @@ function setupHeroProgress({ documentRef, windowRef, prefersReducedMotion }) {
   };
 }
 
+function setupMobileNav({ documentRef }) {
+  const toggle = documentRef?.querySelector("[data-nav-toggle]");
+  const nav = documentRef?.querySelector("[data-site-nav]");
+  const backdrop = documentRef?.querySelector("[data-nav-backdrop]");
+
+  if (!toggle || !nav || !backdrop) {
+    return () => {};
+  }
+
+  const setOpen = (open, { returnFocus = true } = {}) => {
+    documentRef.body.classList.toggle("nav-open", open);
+    documentRef.body.classList.toggle("has-nav-panel", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    backdrop.hidden = !open;
+
+    if (open) {
+      nav.querySelector("a")?.focus();
+    } else if (returnFocus) {
+      toggle.focus();
+    }
+  };
+
+  const toggleNav = () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  };
+  const closeNav = () => setOpen(false);
+  const closeOnEscape = (event) => {
+    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
+    }
+  };
+  const closeFromLink = (event) => {
+    if (event.target.closest("a")) {
+      setOpen(false, { returnFocus: false });
+    }
+  };
+
+  toggle.addEventListener("click", toggleNav);
+  backdrop.addEventListener("click", closeNav);
+  documentRef.addEventListener("keydown", closeOnEscape);
+  nav.addEventListener("click", closeFromLink);
+
+  return () => {
+    toggle.removeEventListener("click", toggleNav);
+    backdrop.removeEventListener("click", closeNav);
+    documentRef.removeEventListener("keydown", closeOnEscape);
+    nav.removeEventListener("click", closeFromLink);
+  };
+}
+
 function setupReveals({ documentRef, windowRef, prefersReducedMotion, Observer }) {
-  if (prefersReducedMotion.matches) {
+  const revealAll = () => {
     documentRef?.querySelectorAll("[data-reveal]").forEach((node) => {
       node.classList.add("is-visible");
     });
+  };
+
+  if (prefersReducedMotion.matches) {
+    revealAll();
     return () => {};
   }
 
   const ObserverCtor = Observer || windowRef?.IntersectionObserver;
 
   if (!ObserverCtor || !documentRef) {
+    revealAll();
     return () => {};
   }
 
@@ -93,10 +148,13 @@ function bootSite(refs = {}) {
     return [];
   }
 
+  documentRef.documentElement.classList.add("js");
+
   const prefersReducedMotion = refs.prefersReducedMotion || getPrefersReducedMotion(windowRef);
 
   return [
     setupHeaderState({ documentRef, windowRef }),
+    setupMobileNav({ documentRef }),
     setupHeroProgress({ documentRef, windowRef, prefersReducedMotion }),
     setupReveals({
       documentRef,
@@ -113,6 +171,7 @@ if (typeof module !== "undefined" && module.exports) {
     getPrefersReducedMotion,
     setupHeaderState,
     setupHeroProgress,
+    setupMobileNav,
     setupReveals
   };
 }

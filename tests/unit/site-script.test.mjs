@@ -16,6 +16,9 @@ describe("site script", () => {
     document.body.className = "";
     document.body.innerHTML = `
       <header data-site-header></header>
+      <button data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" data-site-nav><a href="/">Inicio</a></nav>
+      <div data-nav-backdrop hidden></div>
       <section data-hero></section>
       <div data-reveal></div>
     `;
@@ -39,6 +42,7 @@ describe("site script", () => {
     window.dispatchEvent(new Event("scroll"));
 
     expect(document.body.classList.contains("is-scrolled")).toBe(true);
+    expect(document.documentElement.classList.contains("js")).toBe(true);
     expect(document.querySelector("[data-hero]").style.getPropertyValue("--hero-progress")).toBe("0.171");
 
     cleanups.forEach((cleanup) => cleanup());
@@ -81,6 +85,26 @@ describe("site script", () => {
     expect(document.querySelector("[data-reveal]").classList.contains("is-visible")).toBe(true);
   });
 
+  it("controla o menu mobile", () => {
+    const { setupMobileNav } = loadModule();
+    const cleanup = setupMobileNav({ documentRef: document });
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const backdrop = document.querySelector("[data-nav-backdrop]");
+
+    toggle.click();
+
+    expect(document.body.classList.contains("nav-open")).toBe(true);
+    expect(document.body.classList.contains("has-nav-panel")).toBe(true);
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(backdrop.hidden).toBe(false);
+
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    expect(document.body.classList.contains("nav-open")).toBe(false);
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+
+    cleanup();
+  });
+
   it("auto inicia quando o opt-out nao esta ativo", () => {
     window.__BAIAOTECH_DISABLE_AUTOBOOT__ = false;
     delete require.cache[require.resolve("../../src/assets/js/site.js")];
@@ -109,7 +133,7 @@ describe("site script", () => {
 
     expect(setupHeaderState({ documentRef: document, windowRef: window })()).toBeUndefined();
 
-    document.body.innerHTML = `<header></header>`;
+    document.body.innerHTML = `<header></header><div data-reveal></div>`;
     expect(
       setupHeroProgress({
         documentRef: document,
@@ -125,5 +149,6 @@ describe("site script", () => {
         Observer: null
       })()
     ).toBeUndefined();
+    expect(document.querySelector("[data-reveal]").classList.contains("is-visible")).toBe(true);
   });
 });

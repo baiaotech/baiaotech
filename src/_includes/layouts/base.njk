@@ -1,22 +1,26 @@
 <!doctype html>
 <html lang="{{ site.locale }}">
   <head>
+    {% set metaDescription = description or (content | summaryText) or site.description %}
+    {% set metaImage = (openGraphImage or cover_image or site.socialImage) | absoluteImage %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ description or site.description }}">
+    <meta name="description" content="{{ metaDescription }}">
     <meta name="theme-color" content="#2f4fda">
     <meta property="og:title" content="{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:locale" content="{{ site.locale }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | absoluteUrl }}">
+    <meta property="og:image" content="{{ metaImage }}">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="{{ page.url | absoluteUrl }}">
     <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | url }}">
     <link rel="apple-touch-icon" href="{{ '/assets/favicon.png' | url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+    {% block headExtra %}{% endblock %}
   </head>
   <body class="{{ bodyClass or '' }}">
     <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
@@ -28,7 +32,14 @@
           <span class="site-brand__sub">eventos e comunidades</span>
         </a>
 
-        <nav class="site-nav" aria-label="Principal">
+        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Abrir menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav aria-label="Principal">
           {% set nav = [
             { "href": "/", "label": "Inicio" },
             { "href": "/eventos/", "label": "Eventos" },
@@ -41,6 +52,7 @@
             </a>
           {% endfor %}
         </nav>
+        <div class="site-nav-backdrop" data-nav-backdrop hidden></div>
       </div>
     </header>
 

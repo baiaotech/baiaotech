@@ -13,9 +13,10 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /Encontre eventos e comunidades tech/i
+      name: "Baião Tech"
     })
   ).toBeVisible();
+  await expect(page.getByText(/Próximo evento/i)).toBeVisible();
 
   const nav = page.getByRole("navigation", { name: "Principal" });
   await nav.getByRole("link", { name: "Eventos" }).click();
@@ -38,6 +39,35 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("home mantém conteúdo essencial visível sem JavaScript", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+
+  await page.goto("/");
+
+  await expect(page.getByRole("heading", { level: 1, name: "Baião Tech" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver eventos" })).toBeVisible();
+
+  await context.close();
+});
+
+test.describe("navegacao mobile", () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test("abre o menu hamburguer e navega", async ({ page }) => {
+    await page.goto("/");
+
+    const toggle = page.getByRole("button", { name: "Abrir menu" });
+    await toggle.click();
+
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await page.getByRole("navigation", { name: "Principal" }).getByRole("link", { name: "Comunidades" }).click();
+
+    await expect(page).toHaveURL(/\/comunidades\/$/);
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  });
+});
+
 test("eventos desktop filtra por busca e abre detalhes", async ({ page }) => {
   await page.goto("/eventos/");
 
@@ -47,7 +77,7 @@ test("eventos desktop filtra por busca e abre detalhes", async ({ page }) => {
 
   const firstTitle = await getFirstVisibleCardTitle(root);
   await page.locator("[data-filter-search]").fill(firstTitle);
-  await page.getByRole("button", { name: "Aplicar filtros" }).click();
+  await expect(page.locator("[data-results-count]")).toHaveText("1");
 
   const filteredVisible = await expectResultsCountMatches(root);
   expect(filteredVisible).toBeGreaterThan(0);
@@ -91,7 +121,7 @@ test("comunidades desktop filtra por busca e abre detalhes", async ({ page }) =>
 
   const firstTitle = await getFirstVisibleCardTitle(root);
   await page.locator("[data-filter-search]").fill(firstTitle);
-  await page.getByRole("button", { name: "Aplicar filtros" }).click();
+  await expect(page.locator("[data-results-count]")).toHaveText("1");
 
   const filteredVisible = await expectResultsCountMatches(root);
   expect(filteredVisible).toBeGreaterThan(0);

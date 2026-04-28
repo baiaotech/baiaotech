@@ -1,7 +1,39 @@
 {% extends "layouts/base.njk" %}
 
+{% block headExtra %}
+  {% set eventImage = cover_image | absoluteImage %}
+  {% set attendanceMode = "https://schema.org/OfflineEventAttendanceMode" %}
+  {% if format == "online" %}
+    {% set attendanceMode = "https://schema.org/OnlineEventAttendanceMode" %}
+  {% elseif format == "hybrid" %}
+    {% set attendanceMode = "https://schema.org/MixedEventAttendanceMode" %}
+  {% endif %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": {{ title | jsonify | safe }},
+      "description": {{ (content | summaryText) | jsonify | safe }},
+      "url": {{ (page.url | absoluteUrl) | jsonify | safe }},
+      "image": {{ eventImage | jsonify | safe }},
+      "startDate": {{ start_date | jsonify | safe }},
+      "endDate": {{ (end_date or start_date) | jsonify | safe }},
+      "eventAttendanceMode": {{ attendanceMode | jsonify | safe }},
+      "organizer": {
+        "@type": "Organization",
+        "name": {{ organizer | jsonify | safe }}
+      },
+      "location": {
+        "@type": "Place",
+        "name": {{ venue | jsonify | safe }},
+        "address": {{ ([city, state] | join(", ")) | jsonify | safe }}
+      }
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
-  {% set cover = cover_image | localAsset %}
+  {% set cover = (cover_image | localAsset | displayImage) or ('/assets/editorial/social-card.png' | url) %}
   {% set categoryLabels = page.inputPath | eventCategoryLabels(categoriesBySlug) %}
   <article class="detail-page detail-page--event">
     <section class="detail-intro">
@@ -21,7 +53,9 @@
         </div>
 
         {% if cover %}
-          <div class="detail-intro__media" data-reveal style="--detail-image: url('{{ cover | url }}');"></div>
+          <figure class="detail-intro__media" data-reveal>
+            <img src="{{ cover }}" alt="Imagem de capa de {{ title }}" width="960" height="560" decoding="async">
+          </figure>
         {% endif %}
       </div>
     </section>
@@ -29,7 +63,7 @@
     <section class="detail-body">
       <div class="container detail-body__grid">
         <aside class="detail-aside" data-reveal>
-          <p class="eyebrow">Acesso rápido</p>
+          <p class="eyebrow">Acesso</p>
           <dl class="detail-facts">
             <div>
               <dt>Organização</dt>
@@ -51,7 +85,7 @@
             {% endif %}
           </dl>
           {% if ticket_url %}
-            <a class="button button--primary" href="{{ ticket_url }}">Abrir inscrição</a>
+            <a class="button button--primary button--wide" href="{{ ticket_url }}" rel="noopener">Abrir inscrição</a>
           {% endif %}
         </aside>
         <div class="prose" data-reveal>

@@ -18,6 +18,10 @@ function buildDom() {
       <div data-filter-panel></div>
       <button type="button" data-filter-close>Fechar</button>
       <div data-filter-backdrop hidden></div>
+      <div data-filter-status hidden>
+        <div data-filter-chips></div>
+        <button type="button" data-filter-reset>Limpar filtros ativos</button>
+      </div>
       <form data-filter-form>
         <input data-filter-search value="" />
         <select data-filter-key="state">
@@ -62,6 +66,8 @@ describe("list filters", () => {
     expect(cards[0].hidden).toBe(false);
     expect(cards[1].hidden).toBe(true);
     expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+    expect(root.querySelector("[data-filter-status]").hidden).toBe(false);
+    expect(root.querySelector("[data-filter-chips]").textContent).toContain("Busca: frontend");
   });
 
   it("suporta dataset com multiplos valores e lida com estrutura incompleta", () => {
@@ -102,16 +108,18 @@ describe("list filters", () => {
   it("controla o painel e os eventos de interacao", () => {
     const { bindListRoot, setFilterPanelState } = loadModule();
     const root = buildDom();
-    const cleanup = bindListRoot(root, { document, window });
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
     const toggle = root.querySelector("[data-filter-toggle]");
     const backdrop = root.querySelector("[data-filter-backdrop]");
     const form = root.querySelector("[data-filter-form]");
     const select = root.querySelector("[data-filter-key='state']");
+    const search = root.querySelector("[data-filter-search]");
 
     setFilterPanelState(root, true, { document, window });
     expect(root.classList.contains("filters-open")).toBe(true);
     expect(document.body.classList.contains("has-filter-panel")).toBe(true);
     expect(backdrop.hidden).toBe(false);
+    expect(document.activeElement).toBe(search);
 
     window.innerWidth = 800;
     select.value = "PE";
@@ -122,6 +130,7 @@ describe("list filters", () => {
     toggle.click();
     document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
     expect(root.classList.contains("filters-open")).toBe(false);
+    expect(document.activeElement).toBe(toggle);
 
     toggle.click();
     window.innerWidth = 1200;
@@ -134,17 +143,38 @@ describe("list filters", () => {
   it("reseta os filtros e recalcula a lista", () => {
     const { bindListRoot } = loadModule();
     const root = buildDom();
-    const cleanup = bindListRoot(root, { document, window });
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
     const search = root.querySelector("[data-filter-search]");
-    const reset = root.querySelector("[data-filter-reset]");
+    const reset = root.querySelector("[data-filter-status] [data-filter-reset]");
 
     search.value = "frontend";
     root.querySelector("[data-filter-form]").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
     expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+    expect(root.querySelector("[data-filter-status]").hidden).toBe(false);
 
     reset.click();
     expect(search.value).toBe("");
     expect(root.querySelector("[data-results-count]").textContent).toBe("2");
+    expect(root.querySelector("[data-filter-status]").hidden).toBe(true);
+
+    cleanup();
+  });
+
+  it("filtra enquanto o usuario digita e muda selects", () => {
+    const { bindListRoot } = loadModule();
+    const root = buildDom();
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
+    const search = root.querySelector("[data-filter-search]");
+    const select = root.querySelector("[data-filter-key='state']");
+
+    search.value = "salvador";
+    search.dispatchEvent(new Event("input", { bubbles: true }));
+    expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+
+    select.value = "PE";
+    select.dispatchEvent(new Event("change", { bubbles: true }));
+    expect(root.querySelector("[data-results-count]").textContent).toBe("0");
+    expect(root.querySelector("[data-section-empty]").hidden).toBe(false);
 
     cleanup();
   });

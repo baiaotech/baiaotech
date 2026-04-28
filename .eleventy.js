@@ -70,6 +70,71 @@ function formatMonthLabel(date) {
   }).format(date);
 }
 
+function stripHtml(value) {
+  return String(value || "")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function summarizeText(value, maxLength = 156) {
+  const text = stripHtml(value);
+
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  const slice = text.slice(0, maxLength - 1);
+  const lastSpace = slice.lastIndexOf(" ");
+  return `${slice.slice(0, lastSpace > 80 ? lastSpace : slice.length).trim()}...`;
+}
+
+function isHttpsUrl(value) {
+  try {
+    return new URL(value).protocol === "https:";
+  } catch (e) {
+    return false;
+  }
+}
+
+function getPrefixedAsset(value) {
+  if (typeof value !== "string" || !value.startsWith("/assets/")) {
+    return "";
+  }
+
+  if (site.pathPrefix === "/") {
+    return value;
+  }
+
+  return `${site.pathPrefix.slice(0, -1)}${value}`;
+}
+
+function getDisplayImage(value) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  if (value.startsWith("/assets/")) {
+    return getPrefixedAsset(value);
+  }
+
+  return isHttpsUrl(value) ? value : "";
+}
+
+function getAbsoluteImage(value) {
+  if (typeof value !== "string") {
+    return "";
+  }
+
+  if (value.startsWith("/assets/")) {
+    return new URL(value, `${site.siteUrl}/`).toString();
+  }
+
+  return isHttpsUrl(value) ? value : "";
+}
+
 const eventFrontMatterCache = new Map();
 
 function getEventFrontMatter(inputPath) {
@@ -118,6 +183,13 @@ module.exports = function (eleventyConfig) {
       .sort(sortByCommunity);
     const featured = communities.filter((item) => item.data.featured);
     return (featured.length ? featured : communities).slice(0, 6);
+  });
+
+  eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
+    return collectionApi
+      .getAll()
+      .filter((item) => item.url && !item.data.excludeFromSitemap)
+      .sort((a, b) => a.url.localeCompare(b.url, "pt-BR"));
   });
 
   eleventyConfig.addFilter("readableDate", (value) => {
@@ -261,6 +333,20 @@ module.exports = function (eleventyConfig) {
     }
 
     return value.startsWith("/assets/") ? value : "";
+  });
+
+  eleventyConfig.addFilter("displayImage", getDisplayImage);
+
+  eleventyConfig.addFilter("absoluteImage", (value) => {
+    return getAbsoluteImage(value) || getAbsoluteImage(site.socialImage);
+  });
+
+  eleventyConfig.addFilter("plainText", stripHtml);
+
+  eleventyConfig.addFilter("summaryText", summarizeText);
+
+  eleventyConfig.addFilter("jsonify", (value) => {
+    return JSON.stringify(value);
   });
 
   eleventyConfig.addFilter("eventCategorySlugs", (inputPath) => {

@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-  {% set cover = cover_image | localAsset %}
+  {% set cover = cover_image | localAsset | displayImage %}
   <article class="detail-page detail-page--community">
     <section class="detail-intro">
       <div class="container detail-intro__grid {{ 'detail-intro__grid--single' if not cover }}">
@@ -21,7 +21,9 @@
         </div>
 
         {% if cover %}
-          <div class="detail-intro__media" data-reveal style="--detail-image: url('{{ cover | url }}');"></div>
+          <figure class="detail-intro__media" data-reveal>
+            <img src="{{ cover }}" alt="Imagem de capa de {{ title }}" width="960" height="560" decoding="async">
+          </figure>
         {% endif %}
       </div>
     </section>
@@ -31,11 +33,11 @@
         <aside class="detail-aside" data-reveal>
           <p class="eyebrow">Links</p>
           <div class="detail-links">
-            {% if website %}<a class="button button--primary" href="{{ website }}">Site oficial</a>{% endif %}
-            {% if instagram %}<a class="button button--ghost" href="{{ instagram }}">Instagram</a>{% endif %}
-            {% if linkedin %}<a class="button button--ghost" href="{{ linkedin }}">LinkedIn</a>{% endif %}
-            {% if telegram %}<a class="button button--ghost" href="{{ telegram }}">Telegram</a>{% endif %}
-            {% if whatsapp %}<a class="button button--ghost" href="{{ whatsapp }}">WhatsApp</a>{% endif %}
+            {% if website %}<a class="button button--primary button--wide" href="{{ website }}" rel="noopener">Site oficial</a>{% endif %}
+            {% if instagram %}<a class="button button--ghost button--wide" href="{{ instagram }}" rel="noopener">Instagram</a>{% endif %}
+            {% if linkedin %}<a class="button button--ghost button--wide" href="{{ linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
+            {% if telegram %}<a class="button button--ghost button--wide" href="{{ telegram }}" rel="noopener">Telegram</a>{% endif %}
+            {% if whatsapp %}<a class="button button--ghost button--wide" href="{{ whatsapp }}" rel="noopener">WhatsApp</a>{% endif %}
           </div>
         </aside>
         <div class="prose" data-reveal>

@@ -28,16 +28,77 @@ function setFilterPanelState(root, open, refs = {}) {
     return;
   }
 
+  if (open) {
+    root.__lastFilterFocus = doc?.activeElement;
+  }
+
   root.classList.toggle("filters-open", open);
   backdrop.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
   doc?.body.classList.toggle("has-filter-panel", open);
 
   if (open) {
-    searchInput?.focus();
-  } else {
-    toggle.focus();
+    if (!panel.hasAttribute("tabindex")) {
+      panel.setAttribute("tabindex", "-1");
+    }
+    (searchInput || panel).focus();
+  } else if (refs.returnFocus !== false) {
+    const focusTarget =
+      root.__lastFilterFocus && root.contains(root.__lastFilterFocus)
+        ? root.__lastFilterFocus
+        : toggle;
+    focusTarget?.focus();
   }
+}
+
+function getFilterLabel(input) {
+  return input.closest("label")?.querySelector("span")?.textContent?.trim() || "Filtro";
+}
+
+function getActiveFilters(root) {
+  const searchInput = root.querySelector("[data-filter-search]");
+  const selectInputs = [...root.querySelectorAll("[data-filter-key]")];
+  const filters = [];
+
+  if (searchInput?.value?.trim()) {
+    filters.push({
+      label: "Busca",
+      value: searchInput.value.trim()
+    });
+  }
+
+  selectInputs.forEach((input) => {
+    if (!input.value) {
+      return;
+    }
+
+    filters.push({
+      label: getFilterLabel(input),
+      value: input.selectedOptions?.[0]?.textContent?.trim() || input.value
+    });
+  });
+
+  return filters;
+}
+
+function updateFilterStatus(root) {
+  const status = root.querySelector("[data-filter-status]");
+  const chips = root.querySelector("[data-filter-chips]");
+
+  if (!status || !chips) {
+    return;
+  }
+
+  const activeFilters = getActiveFilters(root);
+  status.hidden = activeFilters.length === 0;
+  chips.replaceChildren(
+    ...activeFilters.map((filter) => {
+      const chip = (root.ownerDocument || document).createElement("span");
+      chip.className = "filter-chip";
+      chip.textContent = `${filter.label}: ${filter.value}`;
+      return chip;
+    })
+  );
 }
 
 function applyFilters(root) {
@@ -91,6 +152,8 @@ function applyFilters(root) {
       emptyNode.hidden = hasVisibleCards;
     }
   });
+
+  updateFilterStatus(root);
 }
 
 function bindListRoot(root, refs = {}) {
@@ -98,18 +161,45 @@ function bindListRoot(root, refs = {}) {
   const toggle = root.querySelector("[data-filter-toggle]");
   const close = root.querySelector("[data-filter-close]");
   const backdrop = root.querySelector("[data-filter-backdrop]");
-  const reset = root.querySelector("[data-filter-reset]");
+  const resets = [...root.querySelectorAll("[data-filter-reset]")];
+  const searchInput = root.querySelector("[data-filter-search]");
+  const selectInputs = [...root.querySelectorAll("[data-filter-key]")];
   const doc = getDocument(root, refs);
   const win = getWindow(refs);
+  const debounceMs = refs.debounceMs ?? 120;
+  let applyTimer;
   const openPanel = () => setFilterPanelState(root, true, { document: doc, window: win });
   const closePanel = () => setFilterPanelState(root, false, { document: doc, window: win });
+  const runFilters = () => {
+    if (applyTimer) {
+      win?.clearTimeout?.(applyTimer);
+      applyTimer = undefined;
+    }
+    applyFilters(root);
+  };
+  const scheduleFilters = () => {
+    if (applyTimer) {
+      win?.clearTimeout?.(applyTimer);
+    }
+
+    if (!debounceMs) {
+      runFilters();
+      return;
+    }
+
+    applyTimer = win?.setTimeout ? win.setTimeout(runFilters, debounceMs) : undefined;
+
+    if (!applyTimer) {
+      runFilters();
+    }
+  };
   const resetFilters = () => {
     form?.reset();
-    applyFilters(root);
+    runFilters();
   };
   const submitFilters = (event) => {
     event.preventDefault();
-    applyFilters(root);
+    runFilters();
 
     if (win?.innerWidth <= 900) {
       setFilterPanelState(root, false, { document: doc, window: win });
@@ -129,7 +219,9 @@ function bindListRoot(root, refs = {}) {
   toggle?.addEventListener("click", openPanel);
   close?.addEventListener("click", closePanel);
   backdrop?.addEventListener("click", closePanel);
-  reset?.addEventListener("click", resetFilters);
+  resets.forEach((reset) => reset.addEventListener("click", resetFilters));
+  searchInput?.addEventListener("input", scheduleFilters);
+  selectInputs.forEach((input) => input.addEventListener("change", scheduleFilters));
   form?.addEventListener("submit", submitFilters);
   doc?.addEventListener("keydown", closeOnEscape);
   win?.addEventListener("resize", syncDesktopState);
@@ -140,10 +232,15 @@ function bindListRoot(root, refs = {}) {
     toggle?.removeEventListener("click", openPanel);
     close?.removeEventListener("click", closePanel);
     backdrop?.removeEventListener("click", closePanel);
-    reset?.removeEventListener("click", resetFilters);
+    resets.forEach((reset) => reset.removeEventListener("click", resetFilters));
+    searchInput?.removeEventListener("input", scheduleFilters);
+    selectInputs.forEach((input) => input.removeEventListener("change", scheduleFilters));
     form?.removeEventListener("submit", submitFilters);
     doc?.removeEventListener("keydown", closeOnEscape);
     win?.removeEventListener("resize", syncDesktopState);
+    if (applyTimer) {
+      win?.clearTimeout?.(applyTimer);
+    }
   };
 }
 
@@ -164,9 +261,11 @@ if (typeof module !== "undefined" && module.exports) {
     applyFilters,
     bindListRoot,
     bootListFilters,
+    getActiveFilters,
     setFilterPanelState,
     splitDataset,
-    tokenize
+    tokenize,
+    updateFilterStatus
   };
 }
 

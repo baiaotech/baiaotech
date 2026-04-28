@@ -3,7 +3,7 @@ import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const modulePath = pathToFileURL(path.resolve("scripts/event-intake/index.mjs")).href;
 const githubModulePath = pathToFileURL(path.resolve("scripts/event-intake/github.mjs")).href;
@@ -80,13 +80,17 @@ function makeFetchMock(routeMap, geminiJson) {
   });
 }
 
-  afterEach(() => {
-    vi.restoreAllMocks();
-    vi.resetModules();
-    process.env = { ...originalEnv };
-    process.chdir(originalCwd);
-    globalThis.fetch = originalFetch;
-  });
+beforeEach(() => {
+  process.env.EVENT_INTAKE_TODAY_KEY = "2026-03-28";
+});
+
+afterEach(() => {
+  vi.restoreAllMocks();
+  vi.resetModules();
+  process.env = { ...originalEnv };
+  process.chdir(originalCwd);
+  globalThis.fetch = originalFetch;
+});
 
 describe("event intake orchestrator", () => {
   it("em dry-run lista um PR para evento de alta confiança", async () => {

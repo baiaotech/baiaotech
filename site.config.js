@@ -84,6 +84,7 @@ function getSiteConfig(env = process.env) {
     description:
       "Acompanhe eventos e encontre comunidades de tecnologia em um só lugar.",
     locale: "pt-BR",
+    socialImage: "/assets/editorial/social-card.png",
     pathPrefix,
     siteUrl: getSiteUrl(pathPrefix, env),
     repoUrl: "https://github.com/baiaotech/baiaotech",
