@@ -8,14 +8,20 @@ city: "Joao Pessoa"
 state: "PB"
 organizer: "Comunidade Agil"
 venue: "Joao Pessoa"
-ticket_url: "https://www.sympla.com.br/eventos/joao-pessoa-pb/tecnologia"
+ticket_url: "https://www.sympla.com.br/evento/agile-jampa-2026/3360793"
 source_name: "Sympla Joao Pessoa"
-source_url: "https://www.sympla.com.br/eventos/joao-pessoa-pb/tecnologia"
+source_url: "https://www.sympla.com.br/evento/agile-jampa-2026/3360793"
 categories: 
   - "agilidade"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6851aeaab0cd7-lg.png"
 price: ""
 ---
 
-Evento presencial de agilidade em Joao Pessoa listado na agenda publica de tecnologia da Sympla. A proposta se encaixa no calendario regional de praticantes de agilidade, produto e tecnologia.
+"Inteligência Artificial, Agilidade e Inovação: Liderando a Nova Era Digital"
+
+A Nova Era da Inovação Empresarial está começando em João Pessoa!
+
+Prepare-se para o maior circuito de palestras de Agilidade, Gestão de Projetos e Produtos, IA e Inovação da Paraíba!
+
+João Pessoa será, mais uma vez, o palco do Agile Jampa — que chega à sua 5ª edição como o evento mais aguardado pelos profissionais de tecnologia, agilidade e inovação do Nordeste. Um encontro para quem quer sair do lugar comum, expandir conexões e liderar o futuro!
