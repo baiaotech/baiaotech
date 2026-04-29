@@ -14,7 +14,7 @@ source_url: "https://www.bsidesrecife.com.br/"
 categories: 
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://www.bsidesrecife.com.br/medias/bsidesreclogonova.png"
 price: ""
 ---
 
