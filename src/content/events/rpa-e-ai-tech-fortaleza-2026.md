@@ -16,7 +16,7 @@ categories:
   - "data-science"
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/691dbbc25a9e7-lg.png"
 price: ""
 ---
 
