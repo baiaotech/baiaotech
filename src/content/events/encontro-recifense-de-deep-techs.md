@@ -8,14 +8,14 @@ city: "Recife"
 state: "PE"
 organizer: "Ecossistema de Deep Techs Recife"
 venue: "Auditorio do C.E.S.A.R - Moinho Recife"
-ticket_url: "https://www.sympla.com.br/eventos/carpina-pe/tecnologia"
+ticket_url: "https://www.sympla.com.br/evento/encontro-recifense-de-deep-techs/3381692"
 source_name: "Sympla Recife"
-source_url: "https://www.sympla.com.br/eventos/carpina-pe/tecnologia"
+source_url: "https://www.sympla.com.br/evento/encontro-recifense-de-deep-techs/3381692"
 categories: 
   - "inovacao"
   - "ia"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/69ea3aae1ac6e-lg.png"
 price: ""
 ---
 
