@@ -36,6 +36,7 @@
   {% set fallbackCover = '/assets/editorial/social-card.png' | url %}
   {% set cover = (cover_image | displayImage) or fallbackCover %}
   {% set categoryLabels = page.inputPath | eventCategoryLabels(categoriesBySlug) %}
+  {% set eventDescription = content | summaryText %}
   <article class="detail-page detail-page--event">
     <section class="detail-intro">
       <div class="container detail-intro__grid">
@@ -83,9 +84,14 @@
               </div>
             {% endif %}
           </dl>
-          {% if ticket_url %}
-            <a class="button button--primary button--wide" href="{{ ticket_url }}" rel="noopener">Abrir inscrição</a>
-          {% endif %}
+          <div class="detail-actions" role="group" aria-label="Ações do evento">
+            {% if ticket_url %}
+              <a class="button button--primary button--wide" href="{{ ticket_url }}" rel="noopener">Abrir inscrição</a>
+            {% endif %}
+            <a class="button button--ghost button--wide" href="{{ page.url | googleCalendarUrl(title, start_date, end_date, eventDescription, venue, city, state) }}" rel="noopener">Adicionar ao Google Agenda</a>
+            <a class="button button--ghost button--wide" href="{{ page.url | eventIcsPath | url }}" download>Baixar .ics</a>
+            <a class="button button--ghost button--wide" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
+          </div>
         </aside>
         <div class="prose" data-reveal>
           {{ content | safe }}

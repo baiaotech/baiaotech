@@ -130,6 +130,23 @@ test("eventos desktop filtra por busca e abre detalhes", async ({ page }) => {
     };
   });
   expect(detailLayout.overlaps).toBe(false);
+
+  const eventShareHref = await page.getByRole("link", { name: "Compartilhar no WhatsApp" }).getAttribute("href");
+  const eventShareUrl = new URL(eventShareHref);
+  expect(`${eventShareUrl.origin}${eventShareUrl.pathname}`).toBe("https://wa.me/");
+  expect(eventShareUrl.searchParams.get("text")).toContain(firstTitle);
+
+  const googleAgendaHref = await page.getByRole("link", { name: "Adicionar ao Google Agenda" }).getAttribute("href");
+  const googleAgendaUrl = new URL(googleAgendaHref);
+  expect(googleAgendaUrl.origin).toBe("https://calendar.google.com");
+  expect(googleAgendaUrl.searchParams.get("action")).toBe("TEMPLATE");
+  expect(googleAgendaUrl.searchParams.get("dates")).toMatch(/^\d{8}\/\d{8}$/);
+
+  const icsHref = await page.getByRole("link", { name: "Baixar .ics" }).getAttribute("href");
+  expect(icsHref).toMatch(/\/eventos\/[^/]+\/agenda\.ics$/);
+  const icsResponse = await page.request.get(new URL(icsHref, page.url()).toString());
+  expect(icsResponse.ok()).toBe(true);
+  expect(await icsResponse.text()).toContain("BEGIN:VCALENDAR");
 });
 
 test.describe("eventos mobile", () => {
@@ -174,6 +191,11 @@ test("comunidades desktop filtra por busca e abre detalhes", async ({ page }) =>
 
   await root.locator("[data-card]:not([hidden]) .text-link", { hasText: "Detalhes" }).first().click();
   await expect(page.getByRole("heading", { level: 1, name: firstTitle })).toBeVisible();
+
+  const communityShareHref = await page.getByRole("link", { name: "Compartilhar no WhatsApp" }).getAttribute("href");
+  const communityShareUrl = new URL(communityShareHref);
+  expect(`${communityShareUrl.origin}${communityShareUrl.pathname}`).toBe("https://wa.me/");
+  expect(communityShareUrl.searchParams.get("text")).toContain(firstTitle);
 });
 
 test("comunidades desktop aplica filtro de estado real", async ({ page }) => {

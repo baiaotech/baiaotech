@@ -34,6 +34,7 @@
           <p class="eyebrow">Links</p>
           <div class="detail-links">
             {% if website %}<a class="button button--primary button--wide" href="{{ website }}" rel="noopener">Site oficial</a>{% endif %}
+            <a class="button button--ghost button--wide" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
             {% if instagram %}<a class="button button--ghost button--wide" href="{{ instagram }}" rel="noopener">Instagram</a>{% endif %}
             {% if linkedin %}<a class="button button--ghost button--wide" href="{{ linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
             {% if telegram %}<a class="button button--ghost button--wide" href="{{ telegram }}" rel="noopener">Telegram</a>{% endif %}

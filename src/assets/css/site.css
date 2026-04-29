@@ -857,11 +857,16 @@ body.is-scrolled .site-header {
   gap: 0.45rem;
 }
 
+.detail-actions,
 .detail-links {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+.detail-actions {
+  margin-top: 1.25rem;
 }
 
 .prose {

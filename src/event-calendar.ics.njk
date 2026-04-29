@@ -1,0 +1,11 @@
+---
+pagination:
+  data: collections.eventsSorted
+  size: 1
+  alias: event
+permalink: "{{ event.url }}agenda.ics"
+layout: null
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+{{ event | eventIcs | safe }}

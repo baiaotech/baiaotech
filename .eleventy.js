@@ -4,6 +4,12 @@ const matter = require("gray-matter");
 const {
   isFutureOrCurrentEventByDate
 } = require("./lib/event-dates.js");
+const {
+  buildEventIcsPath,
+  buildGoogleCalendarUrl,
+  buildIcsEvent,
+  buildWhatsAppShareUrl
+} = require("./lib/calendar-actions.js");
 const { getSiteConfig } = require("./site.config.js");
 
 const site = getSiteConfig();
@@ -229,6 +235,15 @@ function getAbsoluteImage(value) {
   return isHttpsUrl(value) ? value : "";
 }
 
+function getAbsoluteUrl(path) {
+  return new URL(path, `${site.siteUrl}/`).toString();
+}
+
+function getLocationLabel(venue, city, state) {
+  const territory = [city, stateNames[state] || state].filter(Boolean).join(", ");
+  return [venue, territory].filter(Boolean).join(" - ");
+}
+
 const eventFrontMatterCache = new Map();
 
 function getEventFrontMatter(inputPath) {
@@ -417,8 +432,38 @@ module.exports = function (eleventyConfig) {
     (value) => formatLabels[value] || value || ""
   );
 
-  eleventyConfig.addFilter("absoluteUrl", (path) => {
-    return new URL(path, `${site.siteUrl}/`).toString();
+  eleventyConfig.addFilter("absoluteUrl", getAbsoluteUrl);
+
+  eleventyConfig.addFilter("whatsAppShareUrl", (path, title) => {
+    return buildWhatsAppShareUrl(title, getAbsoluteUrl(path));
+  });
+
+  eleventyConfig.addFilter(
+    "googleCalendarUrl",
+    (path, title, startDate, endDate, description, venue, city, state) => {
+      return buildGoogleCalendarUrl({
+        description,
+        endDate,
+        location: getLocationLabel(venue, city, state),
+        startDate,
+        title,
+        url: getAbsoluteUrl(path)
+      });
+    }
+  );
+
+  eleventyConfig.addFilter("eventIcsPath", buildEventIcsPath);
+
+  eleventyConfig.addFilter("eventIcs", (event) => {
+    return buildIcsEvent({
+      description: summarizeText(event.templateContent),
+      endDate: event.data.end_date,
+      location: getLocationLabel(event.data.venue, event.data.city, event.data.state),
+      slug: event.fileSlug,
+      startDate: event.data.start_date,
+      title: event.data.title,
+      url: getAbsoluteUrl(event.url)
+    });
   });
 
   eleventyConfig.addFilter("localAsset", (value) => {
