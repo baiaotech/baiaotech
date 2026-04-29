@@ -8,15 +8,15 @@ city: "Fortaleza"
 state: "CE"
 organizer: "Digital College"
 venue: "Digital College Sul"
-ticket_url: "https://www.sympla.com.br/eventos/horizonte-ce/tecnologia"
+ticket_url: "https://www.sympla.com.br/evento/hackathon-showcase-digital-college/3396596"
 source_name: "Sympla Fortaleza"
-source_url: "https://www.sympla.com.br/eventos/horizonte-ce/tecnologia"
+source_url: "https://www.sympla.com.br/evento/hackathon-showcase-digital-college/3396596"
 categories: 
   - "backend"
   - "frontend"
   - "inovacao"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/69ea73381ed15-lg.png"
 price: ""
 ---
 
