@@ -108,8 +108,11 @@ pre {
   position: fixed;
   inset: 0 0 auto;
   z-index: 40;
-  padding: 0.9rem 0 0;
-  transition: padding 180ms ease;
+  padding: 0;
+  background: rgba(246, 242, 232, 0.9);
+  border-bottom: 1px solid rgba(16, 20, 31, 0.08);
+  backdrop-filter: blur(18px);
+  transition: background 180ms ease, box-shadow 180ms ease;
 }
 
 .site-header__inner {
@@ -118,18 +121,12 @@ pre {
   align-items: center;
   gap: 1.2rem;
   padding: 0.7rem 0;
-  border-bottom: 1px solid transparent;
-  transition: background 180ms ease, border-color 180ms ease, padding 180ms ease;
+  transition: padding 180ms ease;
 }
 
 body.is-scrolled .site-header {
-  padding-top: 0;
-}
-
-body.is-scrolled .site-header__inner {
-  background: rgba(246, 242, 232, 0.82);
-  backdrop-filter: blur(18px);
-  border-bottom-color: rgba(16, 20, 31, 0.08);
+  background: rgba(246, 242, 232, 0.94);
+  box-shadow: 0 12px 28px rgba(16, 20, 31, 0.06);
 }
 
 .site-brand {
@@ -693,6 +690,10 @@ body.is-scrolled .site-header__inner {
   position: sticky;
   top: 6rem;
   align-self: start;
+  max-height: calc(100svh - 11rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
   padding: 1rem;
   border-radius: var(--radius);
   background: var(--surface);
@@ -707,7 +708,7 @@ body.is-scrolled .site-header__inner {
 }
 
 .filter-actions {
-  display: grid;
+  display: none;
   gap: 0.7rem;
   margin-top: 0.3rem;
 }
@@ -772,6 +773,7 @@ body.is-scrolled .site-header__inner {
 }
 
 .detail-intro__grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   align-items: stretch;
 }
 
@@ -780,7 +782,14 @@ body.is-scrolled .site-header__inner {
 }
 
 .detail-intro__content {
+  min-width: 0;
   padding-top: 0.3rem;
+}
+
+.detail-intro h1 {
+  font-size: clamp(2.7rem, 3.15vw, 3rem);
+  overflow-wrap: break-word;
+  hyphens: manual;
 }
 
 .detail-intro__lead {
@@ -795,7 +804,9 @@ body.is-scrolled .site-header__inner {
 }
 
 .detail-intro__media {
-  min-height: 24rem;
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
   margin: 0;
   border-radius: var(--radius);
   overflow: hidden;
@@ -1077,6 +1088,10 @@ body.is-scrolled .site-header__inner {
     font-weight: 800;
   }
 
+  .filter-actions {
+    display: grid;
+  }
+
   .compact-item,
   .listing-row {
     grid-template-columns: 70px minmax(0, 1fr);
@@ -1108,7 +1123,7 @@ body.is-scrolled .site-header__inner {
   }
 
   .site-header {
-    padding-top: 0.45rem;
+    padding-top: 0;
   }
 
   .section-head,

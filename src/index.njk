@@ -18,9 +18,11 @@ bodyClass: page-home
   {% set supportEvents = collections.eventsPast.slice(0, 3) %}
 {% endif %}
 {% if heroEvent %}
-  {% set heroEventCover = heroEvent.data.cover_image | localAsset | displayImage %}
-  {% set homeFeatureImage = heroEventCover or ('/assets/editorial/social-card.png' | url) %}
+  {% set fallbackCover = '/assets/editorial/social-card.png' | url %}
+  {% set heroEventCover = heroEvent.data.cover_image | displayImage %}
+  {% set homeFeatureImage = heroEventCover or fallbackCover %}
 {% else %}
+  {% set fallbackCover = '/assets/editorial/social-card.png' | url %}
   {% set homeFeatureImage = '/assets/editorial/social-card.png' | url %}
 {% endif %}
 
@@ -72,7 +74,7 @@ bodyClass: page-home
     <div class="feature-panel" data-reveal>
       {% if heroEvent %}
         <a class="feature-panel__media" href="{{ heroEvent.url | url }}" aria-label="Abrir {{ heroEvent.data.title }}">
-          <img src="{{ homeFeatureImage }}" alt="Capa de {{ heroEvent.data.title }}" width="720" height="520" loading="lazy" decoding="async">
+          <img src="{{ homeFeatureImage }}" alt="Capa de {{ heroEvent.data.title }}" width="720" height="520" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{{ fallbackCover }}';">
         </a>
         <div class="feature-panel__body">
           <p class="eyebrow">Próximo destaque</p>

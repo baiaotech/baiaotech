@@ -18,6 +18,17 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByText(/Próximo evento/i)).toBeVisible();
 
+  const headerMetrics = await page.locator(".site-header").evaluate((header) => {
+    const rect = header.getBoundingClientRect();
+    return {
+      left: rect.left,
+      right: rect.right,
+      viewport: document.documentElement.clientWidth
+    };
+  });
+  expect(headerMetrics.left).toBe(0);
+  expect(headerMetrics.right).toBeGreaterThanOrEqual(headerMetrics.viewport - 1);
+
   const nav = page.getByRole("navigation", { name: "Principal" });
   await nav.getByRole("link", { name: "Eventos" }).click();
   await expect(page).toHaveURL(/\/eventos\/$/);
@@ -72,6 +83,19 @@ test("eventos desktop filtra por busca e abre detalhes", async ({ page }) => {
   await page.goto("/eventos/");
 
   const root = page.locator("[data-list-root]");
+  await page.locator(".listing-shell").scrollIntoViewIfNeeded();
+
+  const filterPanelMetrics = await page.locator(".filter-panel").evaluate((panel) => {
+    const rect = panel.getBoundingClientRect();
+    return {
+      bottom: rect.bottom,
+      overflowY: getComputedStyle(panel).overflowY,
+      viewport: window.innerHeight
+    };
+  });
+  expect(filterPanelMetrics.bottom).toBeLessThanOrEqual(filterPanelMetrics.viewport + 1);
+  expect(filterPanelMetrics.overflowY).toBe("auto");
+
   const initialVisible = await expectResultsCountMatches(root);
   expect(initialVisible).toBeGreaterThan(0);
 
@@ -86,6 +110,26 @@ test("eventos desktop filtra por busca e abre detalhes", async ({ page }) => {
 
   await root.locator("[data-card]:not([hidden]) .text-link", { hasText: "Detalhes" }).first().click();
   await expect(page.getByRole("heading", { level: 1, name: firstTitle })).toBeVisible();
+
+  const detailImage = page.locator(".detail-intro__media img");
+  await expect(detailImage).toBeVisible();
+  await expect.poll(async () => detailImage.evaluate((img) => img.naturalWidth)).toBeGreaterThan(0);
+
+  const detailLayout = await page.evaluate(() => {
+    const title = document.querySelector(".detail-intro h1");
+    const media = document.querySelector(".detail-intro__media");
+    const titleRect = title.getBoundingClientRect();
+    const mediaRect = media.getBoundingClientRect();
+
+    return {
+      overlaps:
+        titleRect.right > mediaRect.left &&
+        titleRect.left < mediaRect.right &&
+        titleRect.bottom > mediaRect.top &&
+        titleRect.top < mediaRect.bottom
+    };
+  });
+  expect(detailLayout.overlaps).toBe(false);
 });
 
 test.describe("eventos mobile", () => {
@@ -140,7 +184,6 @@ test("comunidades desktop aplica filtro de estado real", async ({ page }) => {
   const stateOption = await pickFirstNonEmptyOption(stateSelect);
 
   await stateSelect.selectOption(stateOption.value);
-  await page.getByRole("button", { name: "Aplicar filtros" }).click();
 
   await expectResultsCountMatches(root);
   await expectVisibleCardsToMatchDataset(root, "state", stateOption.value);
