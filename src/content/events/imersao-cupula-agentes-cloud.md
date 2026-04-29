@@ -18,4 +18,4 @@ cover_image: "https://images.sympla.com.br/69f133deb64f3-xs.png"
 price: "R$ 26,01"
 ---
 
-Compre ingressos para Imersão Cúpula: Agentes Cloud em Fortaleza dia 04/05. Confira os melhores eventos da Sympla!
+O Cúpula é a maior fraternidade de empresários do Estado do Ceará e conta com algumas das maiores mentes empreendedoras do Nordeste. O objetivo do Cúpula Club é melhorar o ambiente de negócios do estado, gerar prosperidade para os membros, fomentar empreendedorismo entre os jovens do estado e fazer networking com pessoas altamente seletas.
