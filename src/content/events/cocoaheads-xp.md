@@ -8,14 +8,14 @@ city: "Fortaleza"
 state: "CE"
 organizer: "CocoaHeads"
 venue: "Unifor Hub"
-ticket_url: "https://www.sympla.com.br/eventos/fortaleza-ce/tecnologia"
+ticket_url: "https://www.sympla.com.br/evento/cocoaheads-xp/3349386"
 source_name: "Sympla Fortaleza"
-source_url: "https://www.sympla.com.br/eventos/fortaleza-ce/tecnologia"
+source_url: "https://www.sympla.com.br/evento/cocoaheads-xp/3349386"
 categories: 
   - "mobile"
   - "backend"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/69b85def5d271-lg.png"
 price: ""
 ---
 
