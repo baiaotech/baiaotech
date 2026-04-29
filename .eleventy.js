@@ -70,13 +70,107 @@ function formatMonthLabel(date) {
   }).format(date);
 }
 
+function isTagNameChar(char) {
+  if (!char) {
+    return false;
+  }
+
+  const code = char.charCodeAt(0);
+
+  return (
+    (code >= 48 && code <= 57) ||
+    (code >= 65 && code <= 90) ||
+    (code >= 97 && code <= 122) ||
+    char === ":" ||
+    char === "-"
+  );
+}
+
+function isWhitespace(char) {
+  return char === " " || char === "\n" || char === "\r" || char === "\t" || char === "\f";
+}
+
+function readHtmlTag(input, startIndex) {
+  if (input[startIndex] !== "<") {
+    return null;
+  }
+
+  const endIndex = input.indexOf(">", startIndex + 1);
+
+  if (endIndex === -1) {
+    return null;
+  }
+
+  let cursor = startIndex + 1;
+
+  while (cursor < endIndex && isWhitespace(input[cursor])) {
+    cursor += 1;
+  }
+
+  const closing = input[cursor] === "/";
+
+  if (closing) {
+    cursor += 1;
+  }
+
+  while (cursor < endIndex && isWhitespace(input[cursor])) {
+    cursor += 1;
+  }
+
+  const nameStart = cursor;
+
+  while (cursor < endIndex && isTagNameChar(input[cursor])) {
+    cursor += 1;
+  }
+
+  return {
+    closing,
+    endIndex,
+    name: input.slice(nameStart, cursor).toLowerCase()
+  };
+}
+
 function stripHtml(value) {
-  return String(value || "")
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  const input = String(value || "");
+  let output = "";
+  let rawTextTag = "";
+  let index = 0;
+
+  while (index < input.length) {
+    if (rawTextTag) {
+      if (input[index] === "<") {
+        const tag = readHtmlTag(input, index);
+
+        if (tag?.closing && tag.name === rawTextTag) {
+          rawTextTag = "";
+          index = tag.endIndex + 1;
+          continue;
+        }
+      }
+
+      index += 1;
+      continue;
+    }
+
+    if (input[index] === "<") {
+      const tag = readHtmlTag(input, index);
+
+      if (tag) {
+        if (!tag.closing && (tag.name === "script" || tag.name === "style")) {
+          rawTextTag = tag.name;
+        }
+
+        output += " ";
+        index = tag.endIndex + 1;
+        continue;
+      }
+    }
+
+    output += input[index];
+    index += 1;
+  }
+
+  return output.replace(/\s+/g, " ").trim();
 }
 
 function summarizeText(value, maxLength = 156) {

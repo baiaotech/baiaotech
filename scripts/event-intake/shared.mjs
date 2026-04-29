@@ -575,13 +575,18 @@ export function toDateOnly(value) {
 }
 
 export function decodeHtmlEntities(value) {
-  return String(value || "")
-    .replace(/&nbsp;/gi, " ")
-    .replace(/&amp;/gi, "&")
-    .replace(/&quot;/gi, '"')
-    .replace(/&#39;/gi, "'")
-    .replace(/&lt;/gi, "<")
-    .replace(/&gt;/gi, ">");
+  const entities = {
+    nbsp: " ",
+    amp: "&",
+    quot: '"',
+    "#39": "'",
+    lt: "<",
+    gt: ">"
+  };
+
+  return String(value || "").replace(/&(nbsp|amp|quot|#39|lt|gt);/gi, (match, entity) => {
+    return entities[String(entity).toLowerCase()] || match;
+  });
 }
 
 export function htmlToText(value) {

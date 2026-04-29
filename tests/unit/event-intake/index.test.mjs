@@ -51,11 +51,19 @@ function makeTextResponse(url, body, status = 200, headers = {}) {
   };
 }
 
+function isGeminiRequest(url) {
+  try {
+    return new URL(String(url)).hostname === "generativelanguage.googleapis.com";
+  } catch {
+    return false;
+  }
+}
+
 function makeFetchMock(routeMap, geminiJson) {
   return vi.fn(async (url) => {
     const requestUrl = String(url);
 
-    if (requestUrl.includes("generativelanguage.googleapis.com")) {
+    if (isGeminiRequest(requestUrl)) {
       return {
         ok: true,
         status: 200,
@@ -93,6 +101,12 @@ afterEach(() => {
 });
 
 describe("event intake orchestrator", () => {
+  it("reconhece o endpoint Gemini somente pelo hostname exato", () => {
+    expect(isGeminiRequest("https://generativelanguage.googleapis.com/v1beta/models/test")).toBe(true);
+    expect(isGeminiRequest("https://generativelanguage.googleapis.com.attacker.test/v1beta/models/test")).toBe(false);
+    expect(isGeminiRequest("not a url")).toBe(false);
+  });
+
   it("em dry-run lista um PR para evento de alta confiança", async () => {
     const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "baiaotech-intake-"));
     await writeJson(path.join(tempDir, "src/_data/categories.json"), [
@@ -727,7 +741,7 @@ describe("event intake orchestrator", () => {
     globalThis.fetch = vi.fn(async (url) => {
       const requestUrl = String(url);
 
-      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+      if (isGeminiRequest(requestUrl)) {
         throw new Error("Nao deveria chamar Gemini para evento non_tech evidente");
       }
 
@@ -788,7 +802,7 @@ describe("event intake orchestrator", () => {
     globalThis.fetch = vi.fn(async (url, options = {}) => {
       const requestUrl = String(url);
 
-      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+      if (isGeminiRequest(requestUrl)) {
         return {
           ok: true,
           status: 200,
@@ -962,7 +976,7 @@ describe("event intake orchestrator", () => {
     globalThis.fetch = vi.fn(async (url, options = {}) => {
       const requestUrl = String(url);
 
-      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+      if (isGeminiRequest(requestUrl)) {
         return {
           ok: true,
           status: 200,
@@ -1118,7 +1132,7 @@ describe("event intake orchestrator", () => {
     globalThis.fetch = vi.fn(async (url) => {
       const requestUrl = String(url);
 
-      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+      if (isGeminiRequest(requestUrl)) {
         return {
           ok: true,
           status: 200,
@@ -1394,7 +1408,7 @@ describe("event intake orchestrator", () => {
       const requestUrl = String(url);
       const method = options.method || "GET";
 
-      if (requestUrl.includes("generativelanguage.googleapis.com")) {
+      if (isGeminiRequest(requestUrl)) {
         return {
           ok: true,
           status: 200,

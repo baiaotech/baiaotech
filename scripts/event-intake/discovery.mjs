@@ -168,6 +168,233 @@ function decodeEmbeddedJsonString(value) {
   }
 }
 
+function skipWhitespace(value, startIndex, endIndex = value.length) {
+  let cursor = startIndex;
+
+  while (cursor < endIndex) {
+    const char = value[cursor];
+
+    if (char !== " " && char !== "\n" && char !== "\r" && char !== "\t") {
+      break;
+    }
+
+    cursor += 1;
+  }
+
+  return cursor;
+}
+
+function readJsonStringLiteral(value, quoteIndex, endIndex = value.length) {
+  if (value[quoteIndex] !== '"') {
+    return null;
+  }
+
+  let cursor = quoteIndex + 1;
+
+  while (cursor < endIndex) {
+    const char = value[cursor];
+
+    if (char === "\\") {
+      cursor += 2;
+      continue;
+    }
+
+    if (char === '"') {
+      return {
+        raw: value.slice(quoteIndex + 1, cursor),
+        endIndex: cursor + 1
+      };
+    }
+
+    cursor += 1;
+  }
+
+  return null;
+}
+
+function findJsonStringValue(value, key, startIndex = 0, endIndex = value.length) {
+  const needle = `"${key}"`;
+  let cursor = startIndex;
+
+  while (cursor < endIndex) {
+    const keyIndex = value.indexOf(needle, cursor);
+
+    if (keyIndex === -1 || keyIndex >= endIndex) {
+      return null;
+    }
+
+    let valueIndex = skipWhitespace(value, keyIndex + needle.length, endIndex);
+
+    if (value[valueIndex] !== ":") {
+      cursor = keyIndex + needle.length;
+      continue;
+    }
+
+    valueIndex = skipWhitespace(value, valueIndex + 1, endIndex);
+
+    if (value[valueIndex] !== '"') {
+      cursor = keyIndex + needle.length;
+      continue;
+    }
+
+    const literal = readJsonStringLiteral(value, valueIndex, endIndex);
+
+    if (!literal) {
+      return null;
+    }
+
+    return {
+      keyIndex,
+      valueEnd: literal.endIndex,
+      raw: literal.raw,
+      value: decodeEmbeddedJsonString(literal.raw)
+    };
+  }
+
+  return null;
+}
+
+function findJsonObjectValue(value, key, startIndex = 0, endIndex = value.length) {
+  const needle = `"${key}"`;
+  let cursor = startIndex;
+
+  while (cursor < endIndex) {
+    const keyIndex = value.indexOf(needle, cursor);
+
+    if (keyIndex === -1 || keyIndex >= endIndex) {
+      return null;
+    }
+
+    let valueIndex = skipWhitespace(value, keyIndex + needle.length, endIndex);
+
+    if (value[valueIndex] !== ":") {
+      cursor = keyIndex + needle.length;
+      continue;
+    }
+
+    valueIndex = skipWhitespace(value, valueIndex + 1, endIndex);
+
+    if (value[valueIndex] !== "{") {
+      cursor = keyIndex + needle.length;
+      continue;
+    }
+
+    let depth = 0;
+    let inString = false;
+
+    for (let index = valueIndex; index < endIndex; index += 1) {
+      const char = value[index];
+
+      if (inString) {
+        if (char === "\\") {
+          index += 1;
+        } else if (char === '"') {
+          inString = false;
+        }
+
+        continue;
+      }
+
+      if (char === '"') {
+        inString = true;
+        continue;
+      }
+
+      if (char === "{") {
+        depth += 1;
+        continue;
+      }
+
+      if (char === "}") {
+        depth -= 1;
+
+        if (depth === 0) {
+          return {
+            keyIndex,
+            endIndex: index + 1,
+            value: value.slice(valueIndex, index + 1)
+          };
+        }
+      }
+    }
+
+    return null;
+  }
+
+  return null;
+}
+
+function collectJsonStringValues(value, key) {
+  const values = [];
+  let cursor = 0;
+
+  while (cursor < value.length) {
+    const entry = findJsonStringValue(value, key, cursor);
+
+    if (!entry) {
+      break;
+    }
+
+    values.push(entry.value);
+    cursor = entry.valueEnd;
+  }
+
+  return values;
+}
+
+function isDigitString(value) {
+  const input = String(value || "");
+
+  if (!input) {
+    return false;
+  }
+
+  for (const char of input) {
+    if (char < "0" || char > "9") {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function isSymplaEventUrl(value) {
+  try {
+    const url = new URL(value);
+    const segments = url.pathname.split("/").filter(Boolean);
+
+    return (
+      url.protocol === "https:" &&
+      url.hostname === "www.sympla.com.br" &&
+      segments[0] === "evento" &&
+      segments.length >= 3 &&
+      isDigitString(segments.at(-1))
+    );
+  } catch {
+    return false;
+  }
+}
+
+function findNextSymplaEventUrlEntry(value, startIndex = 0) {
+  let cursor = startIndex;
+
+  while (cursor < value.length) {
+    const entry = findJsonStringValue(value, "url", cursor);
+
+    if (!entry) {
+      return null;
+    }
+
+    if (isSymplaEventUrl(entry.value)) {
+      return entry;
+    }
+
+    cursor = entry.valueEnd;
+  }
+
+  return null;
+}
+
 function buildCandidate(source, eventUrl, discoveryHint, seedData = {}) {
   return {
     source,
@@ -370,36 +597,39 @@ function extractJsonLdEventCandidates(document, source, discoveryHint) {
 
 function extractSymplaStructuredCandidates(html, source) {
   const candidates = [];
-  const pattern =
-    /"url":"(https:\\\/\\\/www\.sympla\.com\.br\\\/evento\\\/[^"]+?\\\/\d+)"[\s\S]{0,3200}?"location":\{[\s\S]{0,1200}?"city":"((?:\\.|[^"])*)"[\s\S]{0,400}?"state":"((?:\\.|[^"])*)"[\s\S]{0,2200}?"start_date":"((?:\\.|[^"])*)"/gi;
+  let urlEntry = findNextSymplaEventUrlEntry(html);
 
-  for (const match of html.matchAll(pattern)) {
-    const fragment = match[0];
-    const organizerMatch = fragment.match(/"organizer":\{[\s\S]{0,800}?"name":"((?:\\.|[^"])*)"/i);
-    const venueMatch = fragment.match(/"location":\{[\s\S]{0,800}?"name":"((?:\\.|[^"])*)"/i);
-    const imageMatch = fragment.match(/"images":\{[\s\S]{0,600}?"original":"((?:\\.|[^"])*)"/i);
-    const endDateMatch = fragment.match(/"end_date":"((?:\\.|[^"])*)"/i);
-    const city = decodeEmbeddedJsonString(match[2]);
-    const state = decodeEmbeddedJsonString(match[3]);
-    const organizer = decodeEmbeddedJsonString(organizerMatch?.[1] || "");
-    const venue = decodeEmbeddedJsonString(venueMatch?.[1] || "");
-    const nameCandidates = [...fragment.matchAll(/"name":"((?:\\.|[^"])*)"/g)]
-      .map((nameMatch) => decodeEmbeddedJsonString(nameMatch[1]))
-      .filter(Boolean);
+  while (urlEntry) {
+    const nextUrlEntry = findNextSymplaEventUrlEntry(html, urlEntry.valueEnd);
+    const fragmentEnd = Math.min(nextUrlEntry?.keyIndex || html.length, urlEntry.valueEnd + 6000);
+    const fragment = html.slice(urlEntry.keyIndex, fragmentEnd);
+    const organizerObject = findJsonObjectValue(fragment, "organizer");
+    const locationObject = findJsonObjectValue(fragment, "location");
+    const imageObject = findJsonObjectValue(fragment, "images");
+    const organizer = findJsonStringValue(organizerObject?.value || "", "name")?.value || "";
+    const venue = findJsonStringValue(locationObject?.value || "", "name")?.value || "";
+    const city = findJsonStringValue(locationObject?.value || "", "city")?.value || "";
+    const state = findJsonStringValue(locationObject?.value || "", "state")?.value || "";
+    const startDate = findJsonStringValue(fragment, "start_date")?.value || "";
+    const endDate = findJsonStringValue(fragment, "end_date")?.value || "";
+    const coverImage = findJsonStringValue(imageObject?.value || "", "original")?.value || "";
+    const nameCandidates = collectJsonStringValues(fragment, "name").filter(Boolean);
     const eventTitle =
       nameCandidates.find((name) => name !== organizer && name !== venue) ||
       nameCandidates.at(0) ||
       "";
 
     candidates.push(
-      buildCandidate(source, decodeEmbeddedJsonString(match[1]), "sympla-structured", {
+      buildCandidate(source, urlEntry.value, "sympla-structured", {
         title: eventTitle,
         description: [venue, city && state ? `${city}, ${state}` : "", organizer].filter(Boolean).join("\n"),
-        start_date: toDateOnly(decodeEmbeddedJsonString(match[4])),
-        end_date: toDateOnly(decodeEmbeddedJsonString(endDateMatch?.[1] || "")),
-        cover_image: decodeEmbeddedJsonString(imageMatch?.[1] || "")
+        start_date: toDateOnly(startDate),
+        end_date: toDateOnly(endDate),
+        cover_image: coverImage
       })
     );
+
+    urlEntry = nextUrlEntry;
   }
 
   return candidates;

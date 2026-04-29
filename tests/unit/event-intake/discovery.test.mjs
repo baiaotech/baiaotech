@@ -128,7 +128,9 @@ describe("event intake discovery", () => {
                   "organizer":{"name":"Comunidade Cloud CE"},
                   "name":"Cloud Fortaleza 2026",
                   "location":{"name":"Hub de Tecnologia","city":"Fortaleza","state":"CE"},
-                  "start_date":"2026-05-10T18:00:00+00:00"
+                  "images":{"original":"https:\\/\\/images.sympla.com.br\\/cloud-fortaleza.png"},
+                  "start_date":"2026-05-10T18:00:00+00:00",
+                  "end_date":"2026-05-10T22:00:00+00:00"
                 },
                 {
                   "url":"https:\\/\\/www.sympla.com.br\\/evento\\/cloud-sao-paulo\\/3300099",
@@ -165,6 +167,9 @@ describe("event intake discovery", () => {
 
     expect(candidates).toHaveLength(1);
     expect(candidates[0].seed_data.title).toBe("Cloud Fortaleza 2026");
+    expect(candidates[0].seed_data.start_date).toBe("2026-05-10");
+    expect(candidates[0].seed_data.end_date).toBe("2026-05-10");
+    expect(candidates[0].seed_data.cover_image).toBe("https://images.sympla.com.br/cloud-fortaleza.png");
     expect(candidates[0].event_url).toContain("cloud-fortaleza");
   });
 

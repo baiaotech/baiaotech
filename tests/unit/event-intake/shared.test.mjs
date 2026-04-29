@@ -7,6 +7,7 @@ import {
   buildPrBody,
   buildPrTitle,
   classifyIntakeCandidate,
+  decodeHtmlEntities,
   evaluateTechRelevanceDeterministic,
   ensureEventDefaults,
   fingerprintTitle,
@@ -45,6 +46,9 @@ describe("event intake shared helpers", () => {
     expect(
       htmlToText("<p>Oi</p>   <ul><li>Primeiro</li><li>Segundo</li></ul><div>  Fim </div>")
     ).toBe("Oi\n\nPrimeiro\nSegundo\nFim");
+    expect(decodeHtmlEntities("&nbsp;&quot;&#39;&lt;&gt;&amp;")).toBe(" \"'<>&");
+    expect(decodeHtmlEntities("&amp;lt;script&amp;gt;")).toBe("&lt;script&gt;");
+    expect(htmlToText("<p>&amp;lt;script&amp;gt;</p>")).toBe("&lt;script&gt;");
   });
 
   it("faz parse do registro inline de fontes", () => {
