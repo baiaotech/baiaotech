@@ -15,8 +15,9 @@ categories:
   - "seguranca"
   - "cloud"
 featured: false
-cover_image: ""
-price: ""
+cover_image: "<img width="797" height="364" alt="image" src="https://github.com/user-attachments/assets/acc46051-5216-4cea-a3ec-cce429be0817" />
+"
+price: "R$ 40"
 ---
 
 Conferencia de ciberseguranca do Nordeste com trilhas tecnica e gerencial. A programacao e voltada a profissionais de AppSec, Red Team, DevSecOps, Cloud Security, privacidade e liderancas de seguranca digital.
