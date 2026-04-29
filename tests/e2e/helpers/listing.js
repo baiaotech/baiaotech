@@ -21,9 +21,13 @@ async function getFirstVisibleCardTitle(root) {
 }
 
 async function expectResultsCountMatches(root) {
-  const visibleCardCount = await countVisibleCards(root);
-  await expect(root.locator("[data-results-count]")).toHaveText(String(visibleCardCount));
-  return visibleCardCount;
+  await expect.poll(async () => {
+    const visibleCardCount = await countVisibleCards(root);
+    const renderedCount = await root.locator("[data-results-count]").textContent();
+    return renderedCount === String(visibleCardCount);
+  }).toBe(true);
+
+  return await countVisibleCards(root);
 }
 
 async function expectVisibleCardTitlesToContain(root, query) {

@@ -33,6 +33,11 @@ on:
         required: false
         default: false
         type: boolean
+      manual_events_json:
+        description: "JSON manual de eventos aprovados para abrir PRs pelo bot"
+        required: false
+        default: ""
+        type: string
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -174,8 +179,14 @@ jobs:
 
       - name: Detect browser-backed sources
         id: sources
+        env:
+          INPUT_MANUAL_EVENTS_JSON: ${{ inputs.manual_events_json || '' }}
         run: |
           node - <<'NODE' >> "$GITHUB_OUTPUT"
+          if (String(process.env.INPUT_MANUAL_EVENTS_JSON || "").trim()) {
+            process.stdout.write("needs_browser=false\n");
+            process.exit(0);
+          }
           const sources = JSON.parse(process.env.EVENT_INTAKE_SOURCES_JSON || "[]");
           const needsBrowser = sources.some((source) => source.fetch_mode === "browser");
           process.stdout.write(`needs_browser=${needsBrowser}\n`);
@@ -195,10 +206,18 @@ jobs:
           INPUT_SOURCE_NAME: ${{ inputs.source_name || '' }}
           INPUT_SOURCE_TYPE: ${{ inputs.source_type || '' }}
           INPUT_CACHE_BUST: ${{ inputs.cache_bust || false }}
+          MANUAL_EVENT_INTAKE_JSON: ${{ inputs.manual_events_json || '' }}
         run: |
           APPLY_FLAG="--dry-run"
           if [ "${GITHUB_EVENT_NAME}" = "schedule" ] || [ "${INPUT_APPLY}" = "true" ]; then
             APPLY_FLAG="--apply"
+          fi
+
+          if [ -n "${MANUAL_EVENT_INTAKE_JSON}" ]; then
+            node scripts/event-intake/manual.mjs \
+              "$APPLY_FLAG" \
+              "--today=2026-04-29"
+            exit 0
           fi
 
           SOURCE_ARG=""

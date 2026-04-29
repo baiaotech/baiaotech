@@ -500,7 +500,8 @@ export async function createOrUpdateEventPr({
   candidate,
   prTitle,
   prBody,
-  reviewer
+  reviewer,
+  commitMessage
 }) {
   const repoInfo = await getRepoInfo({ token, repo, apiUrl });
   const branchName = buildBranchName(candidate);
@@ -526,7 +527,7 @@ export async function createOrUpdateEventPr({
     filePath,
     branchName,
     content,
-    commitMessage: `feat(events): add ${candidate.title}`
+    commitMessage: commitMessage || `feat(events): add ${candidate.title}`
   });
 
   const prNumber = await upsertPullRequest({
