@@ -8,14 +8,14 @@ city: "Parnaiba"
 state: "PI"
 organizer: "Porto Indie"
 venue: "UNINASSAU Parnaiba"
-ticket_url: "https://www.portoindie.com.br/"
+ticket_url: "https://www.sympla.com.br/evento/phb-indie-summit-2026/3327135"
 source_name: "Porto Indie"
-source_url: "https://www.portoindie.com.br/"
+source_url: "https://www.sympla.com.br/evento/phb-indie-summit-2026/3327135"
 categories: 
   - "games"
   - "blockchain"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/69d97c2754231-lg.png"
 price: ""
 ---
 
