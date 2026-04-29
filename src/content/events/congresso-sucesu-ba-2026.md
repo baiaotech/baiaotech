@@ -8,15 +8,15 @@ city: "Salvador"
 state: "BA"
 organizer: "SUCESU BA"
 venue: "Hotel Deville Prime Salvador"
-ticket_url: "https://www.sympla.com.br/eventos/salvador-ba/tecnologia"
+ticket_url: "https://www.sympla.com.br/evento/congresso-sucesu-ba-2026/3355261"
 source_name: "Sympla Salvador"
-source_url: "https://www.sympla.com.br/eventos/salvador-ba/tecnologia"
+source_url: "https://www.sympla.com.br/evento/congresso-sucesu-ba-2026/3355261"
 categories: 
   - "cloud"
   - "gestao-po-pm-tech-recruiter"
   - "inovacao"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/69bd782a405ed-lg.png"
 price: ""
 ---
 
