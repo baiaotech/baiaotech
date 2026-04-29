@@ -8,13 +8,13 @@ city: "Aracaju"
 state: "SE"
 organizer: "CajuSec"
 venue: "Memorial de Sergipe - Prof. Jouberto Uchoa"
-ticket_url: "https://www.sympla.com.br/eventos/ribeiropolis-se/tecnologia"
+ticket_url: "https://www.cajusec.com.br/"
 source_name: "Sympla Sergipe"
-source_url: "https://www.sympla.com.br/eventos/ribeiropolis-se/tecnologia"
+source_url: "https://www.cajusec.com.br/"
 categories: 
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://www.cajusec.com.br/assets/logo-BpL0yJHS.png"
 price: ""
 ---
 
