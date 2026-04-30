@@ -1,0 +1,97 @@
+name: Notify New Events
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/content/events/*.md"
+  workflow_dispatch:
+    inputs:
+      event_files:
+        description: "Arquivos de eventos para notificar, um por linha"
+        required: false
+        default: ""
+        type: string
+      delay_seconds:
+        description: "Atraso antes do envio"
+        required: false
+        default: "1800"
+        type: string
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Detect added event files
+        id: events
+        env:
+          BEFORE_SHA: ${{ github.event.before || '' }}
+          MANUAL_EVENT_FILES: ${{ github.event.inputs.event_files || '' }}
+        run: |
+          if [ -n "${MANUAL_EVENT_FILES}" ]; then
+            printf '%s\n' "${MANUAL_EVENT_FILES}" |
+              awk '/^src\/content\/events\/[^/]+\.md$/ { print }' > new-event-files.txt
+          elif [ -z "${BEFORE_SHA}" ] || printf '%s' "${BEFORE_SHA}" | grep -Eq '^0+$'; then
+            git diff-tree --no-commit-id --name-status -r "${GITHUB_SHA}" |
+              awk '$1 == "A" && $2 ~ /^src\/content\/events\/[^/]+\.md$/ { print $2 }' > new-event-files.txt
+          else
+            git diff --name-status "${BEFORE_SHA}" "${GITHUB_SHA}" |
+              awk '$1 == "A" && $2 ~ /^src\/content\/events\/[^/]+\.md$/ { print $2 }' > new-event-files.txt
+          fi
+
+          if [ -s new-event-files.txt ]; then
+            sort -u new-event-files.txt -o new-event-files.txt
+          fi
+
+          count="$(grep -c . new-event-files.txt || true)"
+          echo "count=${count}" >> "${GITHUB_OUTPUT}"
+
+          if [ "${count}" -gt 0 ]; then
+            cat new-event-files.txt
+          else
+            echo "Nenhum evento novo detectado."
+          fi
+
+      - name: Install dependencies
+        if: steps.events.outputs.count != '0'
+        run: npm ci --ignore-scripts
+
+      - name: Wait before notification
+        if: steps.events.outputs.count != '0'
+        env:
+          DELAY_SECONDS: ${{ github.event.inputs.delay_seconds || '1800' }}
+        run: |
+          case "${DELAY_SECONDS}" in
+            ''|*[!0-9]*)
+              echo "delay_seconds precisa ser um numero inteiro em segundos."
+              exit 1
+              ;;
+          esac
+
+          if [ "${DELAY_SECONDS}" -gt 0 ]; then
+            sleep "${DELAY_SECONDS}"
+          fi
+
+      - name: Send Zapier notifications
+        if: steps.events.outputs.count != '0'
+        env:
+          EVENT_NOTIFICATION_WEBHOOK_URL: ${{ secrets.EVENT_NOTIFICATION_WEBHOOK_URL }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://baiaotech.org' }}
+          PATH_PREFIX: ${{ vars.PATH_PREFIX || '/' }}
+        run: |
+          node scripts/notify-new-events.mjs \
+            --file-list new-event-files.txt \
+            --repository "${GITHUB_REPOSITORY}" \
+            --commit-sha "${GITHUB_SHA}"

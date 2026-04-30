@@ -164,6 +164,16 @@ Workflow: `.github/workflows/event-intake.yml`
 - usa `GEMINI_API_KEY` com `gemini-2.5-flash-lite`
 - usa `TOKEN_FOR_CI_EVENTS` para PRs, issues e sincronização do blacklist
 
+### Notify New Events
+
+Workflow: `.github/workflows/notify-new-events.yml`
+
+- roda em `push` para `main` quando um arquivo novo entra em `src/content/events/`
+- espera 30 minutos antes de enviar a notificação
+- envia um POST por evento novo com `event_name`, `event_link` e os principais campos do front matter
+- usa o secret `EVENT_NOTIFICATION_WEBHOOK_URL` para a URL do webhook
+- usa `SITE_URL` e `PATH_PREFIX` como variáveis opcionais do repositório; se `SITE_URL` não existir, assume `https://baiaotech.org`
+
 ### Prune Past Events
 
 Workflow: `.github/workflows/prune-past-events.yml`
