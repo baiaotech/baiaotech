@@ -15,8 +15,7 @@ categories:
   - "seguranca"
   - "cloud"
 featured: false
-cover_image: "<img width="797" height="364" alt="image" src="https://github.com/user-attachments/assets/acc46051-5216-4cea-a3ec-cce429be0817" />
-"
+cover_image: "https://github.com/user-attachments/assets/acc46051-5216-4cea-a3ec-cce429be0817"
 price: "R$ 40"
 ---
 
