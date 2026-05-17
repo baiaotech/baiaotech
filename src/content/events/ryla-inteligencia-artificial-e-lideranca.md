@@ -13,7 +13,6 @@ source_name: "Sympla Fortaleza"
 source_url: "https://www.sympla.com.br/evento/ryla-inteligencia-artificial-e-lideranca/3424165"
 categories: 
   - "ia"
-  - "gestao-po-pm-tech-recruiter"
 featured: false
 cover_image: "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
 price: "Grátis"
