@@ -19,4 +19,4 @@ cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2
 price: "Gratuito"
 ---
 
-Prepare-se para tirar as ideias do papel e colocá-las direto na nuvem! A Caravana BWAI GDG.REC é uma série de workshops que visa capacitar desenvolvedores e entusiastas de tecnologia a utilizarem as ferramentas e serviços do Google Cloud Platform (GCP) para construir e implantar soluções inovadoras. Aprenda a criar aplicações escaláveis, a gerenciar dados de forma eficiente e a explorar o potencial da inteligência artificial na nuvem.
+Prepare-se para tirar as ideias do papel e colocá-las direto na nuvem! A Caravana BWAI GDG.REC é uma série de workshops ...
