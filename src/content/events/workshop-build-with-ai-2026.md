@@ -19,4 +19,4 @@ cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2
 price: "Free"
 ---
 
-O Build With AI 2026 (Construindo com IA) é um evento global que conecta a comunidade tecnológica local com as últimas tendências em Inteligência Artificial.
+O Build With AI 2026 (Construindo com IA) é um evento global que conecta a comunidade tecnológica local com as últimas tendências em inteligência artificial.
