@@ -18,4 +18,4 @@ cover_image: "https://www.sympla.com.br/images/logo-sympla-for-facebook.png"
 price: "Grátis"
 ---
 
-Compre ingressos para RYLA - Inteligência Artificial e Liderança em Ilhéus dia 30/05. Confira os melhores eventos da Sympla!
+RYLA - Inteligência Artificial e Liderança em Ilhéus dia 30/05. Evento presencial no Edifício Premier.
