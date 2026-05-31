@@ -2,7 +2,7 @@
 title: "SAP Cloud ERP Public: Inovação, Escala e Resultado"
 start_date: "2026-06-08"
 end_date: "2026-06-09"
-kind: "other"
+kind: "conference"
 format: "in-person"
 city: "Natal"
 state: "RN"
