@@ -14,8 +14,9 @@ source_url: "https://www.sympla.com.br/evento/imersao-data-pipeline-de-dados-na-
 categories: 
   - "data-science"
   - "cloud"
-  - "big-data"
   - "ia"
+  - "big-data"
+  - "backend"
 featured: false
 cover_image: "https://images.sympla.com.br/6a1879a510ff3-xs.png"
 price: "Grátis"
@@ -29,4 +30,3 @@ Uma aula gratuita e 100% prática para você conhecer nossa metodologia, nossos 
 
 Data: 18/06/2026 (Quinta feira)
 Horário: 19h às 22h - Unidade Sul
-VAGAS LIMITADAS
