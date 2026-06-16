@@ -14,15 +14,16 @@ source_url: "https://www.sympla.com.br/evento/imersao-data-pipeline-de-dados-na-
 categories: 
   - "data-science"
   - "cloud"
-  - "ia"
   - "big-data"
-  - "backend"
+  - "ia"
 featured: false
 cover_image: "https://images.sympla.com.br/6a1879a510ff3-xs.png"
 price: "Grátis"
 ---
 
-Os dados são o novo combustível do mercado digital mas saber construir um pipeline inteligente é o que realmente gera valor. Na imersão “Pipeline de dados na prática: Python + Big Data + Cloud + IA”, você vai entender como funciona, na prática, o fluxo de dados utilizado pelas empresas mais inovadoras do mercado, integrando tecnologia, automação e inteligência artificial. Explore como ferramentas e conceitos de Python, Big Data, Cloud Computing e IA se conectam para transformar dados em decisões estratégicas e soluções escaláveis.
+Os dados são o novo combustível do mercado digital, mas saber construir um pipeline inteligente é o que realmente gera valor. Na imersão “Pipeline de dados na prática: Python + Big Data + Cloud + IA”, você vai entender como funciona, na prática, o fluxo de dados utilizado pelas empresas mais inovadoras do mercado, integrando tecnologia, automação e inteligência artificial.
+
+Explore como ferramentas e conceitos de Python, Big Data, Cloud Computing e IA se conectam para transformar dados em decisões estratégicas e soluções escaláveis.
 
 O mercado de dados cresce cada vez mais e profissionais capazes de estruturar pipelines modernos e inteligentes estão entre os mais requisitados da área tech.
 
@@ -30,3 +31,4 @@ Uma aula gratuita e 100% prática para você conhecer nossa metodologia, nossos 
 
 Data: 18/06/2026 (Quinta feira)
 Horário: 19h às 22h - Unidade Sul
+VAGAS LIMITADAS
