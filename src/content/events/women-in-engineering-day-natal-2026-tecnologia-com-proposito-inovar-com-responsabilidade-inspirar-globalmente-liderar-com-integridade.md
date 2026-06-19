@@ -13,7 +13,7 @@ source_name: "GDG Natal"
 source_url: "https://gdg.community.dev/events/details/google-gdg-natal-presents-women-in-engineering-day-natal-2026-tecnologia-com-proposito-inovar-com-responsabilidade-inspirar-globalmente-liderar-com-integridade"
 categories: 
   - "inovacao"
-  - "gestao-po-pm-tech-recruiter"
+  - "outros"
 featured: false
 cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_GjG9AMh"
 price: ""
