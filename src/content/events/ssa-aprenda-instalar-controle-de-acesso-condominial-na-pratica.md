@@ -21,13 +21,15 @@ price: "Gratuito"
 Este curso tem como objetivo capacitar profissionais para a instalação e configuração de dispositivos de controle de acesso, com foco em soluções para condomínios. Os participantes aprenderão a explorar as funcionalidades dos dispositivos, atendendo às necessidades específicas de moradores e administradores. Além disso, serão guiados na operação e configuração dos equipamentos utilizando o software InControl Web, garantindo eficiência na gestão e segurança do ambiente condominial.
 
 **Pré-Requisitos:**
-Para um melhor aprendizado, recomendamos a realização prévia dos seguintes cursos: • Instale controle de acesso para pequenos cenários • Instalando e configurando as controladoras faciais • Conceitos em controle de acesso
+Para um melhor aprendizado, recomendamos a realização prévia dos seguintes cursos: • Instale controle de acesso para pequenos cenários • Instalando e configurando as controladoras faciais • Conceitos em controle de acesso.
 
 **Público-alvo:**
 Esse curso é voltado para técnicos, instaladores e integradores.
 
 **Objetivos de aprendizagem:**
-O objetivo é entender como funciona, quais são as características e como instalar de forma eficiente um sistema de controle de acesso em ambientes condominiais. Ao final do curso o aluno será capaz de:
+O objetivo é entender como funciona, quais são as características e como instalar de forma eficiente um sistema de controle de acesso em ambientes condominiais.
+
+Ao final do curso o aluno será capaz de:
 • Entender os componentes necessários para aplicar controle de acesso ao ambiente.
 • Conhecer cenários de aplicação de controladoras de acesso em condomínios.
 • Aprender funções das controladoras que atendem necessidades de condomínios.
