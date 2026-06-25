@@ -12,7 +12,7 @@ ticket_url: "https://www.instagram.com/wtadswinfo"
 source_name: "GDG Natal"
 source_url: "https://gdg.community.dev/events/details/google-gdg-natal-presents-22o-edicao-wtadswinfo"
 categories: 
-  - "outros"
+  - "ia"
 featured: false
 cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_aWqMaCg"
 price: ""
