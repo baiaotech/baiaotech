@@ -27,13 +27,11 @@ Para um melhor aprendizado, recomendamos a realização prévia dos seguintes cu
 Esse curso é voltado para técnicos, instaladores e integradores.
 
 **Objetivos de aprendizagem:**
-O objetivo é entender como funciona, quais são as características e como instalar de forma eficiente um sistema de controle de acesso em ambientes condominiais.
-
-Ao final do curso o aluno será capaz de:
+O objetivo é entender como funciona, quais são as características e como instalar de forma eficiente um sistema de controle de acesso em ambientes condominiais. Ao final do curso o aluno será capaz de:
 • Entender os componentes necessários para aplicar controle de acesso ao ambiente.
 • Conhecer cenários de aplicação de controladoras de acesso em condomínios.
 • Aprender funções das controladoras que atendem necessidades de condomínios.
-• Configurar e criar as regras de acesso no software InControl Web
+• Configurar e criar as regras de acesso no software InControl Web.
 
 **Aulas:**
 Durante este curso serão abordados os seguintes tópicos:
