@@ -12,7 +12,8 @@ ticket_url: "https://www.sympla.com.br/evento/jqe-controle-de-acesso-com-reconhe
 source_name: "Sympla Fortaleza"
 source_url: "https://www.sympla.com.br/evento/jqe-controle-de-acesso-com-reconhecimento-facial/3475775"
 categories: 
-  - "outros"
+  - "devops"
+  - "seguranca"
 featured: false
 cover_image: "https://images.sympla.com.br/6a3a90fb71195-xs.png"
 price: ""
