@@ -39,3 +39,8 @@ Durante este curso serão abordados os seguintes tópicos:
 • Módulo 2: Cenários de aplicação, instalação e configuração das controladoras faciais
 • Módulo 3: Cenários de aplicação, instalação e configuração da CT 3000
 • Módulo 4: Configuração e operação no InControl Web
+
+**Metodologia de ensino:**
+Este curso foi desenvolvido com base nas metodologias ativas de ensino e aprendizagem - metodologias ágeis, imersivas e analíticas. Nele o conteúdo é apresentado de forma expositiva dialogada pelo instrutor, com o apoio de materiais didáticos.
+
+Ao término do curso será aplicada uma avaliação de aprendizagem e uma pesquisa de satisfação sobre o conteúdo do treinamento. Após a avaliação e a pesquisa será disponibilizado o certificado de conclusão do curso.
