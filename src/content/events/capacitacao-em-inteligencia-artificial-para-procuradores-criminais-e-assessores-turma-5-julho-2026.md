@@ -30,6 +30,10 @@ Vagas: 12
 
 Conteúdo programático:
 Módulo 1 | Fundamentos e Metodologia
+Nivelamento estratégico sobre conceitos e aplicação da IA no ecossistema jurídico, priorizando as demandas rotineiras e a celeridade necessária à atuação dos membros do MPPE.
 Módulo 2 | Potencializando a Escrita com o Gemini
+Imersão prática no uso do Gemini para a redação jurídica. Desenvolvimento de Gems personalizados (assistentes customizados) e disponibilização de Modelos (Templates) permitindo aplicação imediata do aprendizado.
 Módulo 3 | Gestão de Conhecimento com NotebookLM
+Análise inteligente de dados e documentos complexos. Foco na superação do desafio do volume processual em autos extensos, com técnicas para síntese, consulta contextualizada e elaboração de minutas de pareceres rigorosamente restritas ao conteúdo dos autos (IA de fonte fechada).
 Módulo 4 | Fluxo de Trabalho Integrado e Seguro
+Consolidação das ferramentas em um ecossistema operacional único. Workshop prático de integração para a construção de um workflow de trabalho completo, otimizado e seguro.
