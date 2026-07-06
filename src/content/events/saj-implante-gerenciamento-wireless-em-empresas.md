@@ -47,8 +47,7 @@ Este curso foi desenvolvido com base nas metodologias ativas de ensino e aprendi
 
 Ao término do curso será aplicada uma avaliação de aprendizagem e uma pesquisa de satisfação sobre o conteúdo do treinamento. Após a avaliação e a pesquisa será disponibilizado o certificado de conclusão do curso.
 
-**O que você terá:** 
-
-- Certificado 
+**O que você terá:**
+- Certificado
 - Coffe-Break
 - Networking
