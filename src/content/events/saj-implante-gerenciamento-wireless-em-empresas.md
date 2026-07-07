@@ -13,6 +13,7 @@ source_name: "Sympla Fortaleza"
 source_url: "https://www.sympla.com.br/evento/saj-implante-gerenciamento-wireless-em-empresas/3489340"
 categories: 
   - "cloud"
+  - "outros"
 featured: false
 cover_image: "https://images.sympla.com.br/6a47d9ccbb8d0-xs.png"
 price: "Grátis"
@@ -41,13 +42,3 @@ Módulo 3 – Configuração de switches, VLANs e Link Aggregation
 Módulo 4 – Dimensionamento da rede wireless
 Módulo 5 – Configuração da rede wireless
 Módulo 6 – Configuração de painéis de monitoramento
-
-**Metodologia de ensino:**
-Este curso foi desenvolvido com base nas metodologias ativas de ensino e aprendizagem - metodologias ágeis, imersivas e analíticas. Nele o conteúdo é apresentado de forma expositiva dialogada pelo instrutor, com o apoio de materiais didáticos.
-
-Ao término do curso será aplicada uma avaliação de aprendizagem e uma pesquisa de satisfação sobre o conteúdo do treinamento. Após a avaliação e a pesquisa será disponibilizado o certificado de conclusão do curso.
-
-**O que você terá:**
-- Certificado
-- Coffe-Break
-- Networking
