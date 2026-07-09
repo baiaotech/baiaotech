@@ -20,10 +20,7 @@ price: "Grátis"
 ---
 
 Invista nas suas férias. Invista no seu futuro!
-
 As férias são o momento ideal para aprender algo novo, fortalecer o currículo e desenvolver competências que fazem a diferença no mercado de trabalho. Pensando nisso, a UniRuy Wyden preparou uma programação especial de Cursos de Férias 100% gratuitos, com temas atuais e ministrados por profissionais qualificados.
-
 Período: 20 a 30 de julho
 Gratuito
-
 Garanta sua vaga e faça das suas férias um passo importante para o seu sucesso profissional!
