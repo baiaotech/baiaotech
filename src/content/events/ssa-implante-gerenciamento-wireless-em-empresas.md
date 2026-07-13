@@ -13,7 +13,7 @@ source_name: "Sympla Fortaleza"
 source_url: "https://www.sympla.com.br/evento/ssa-implante-gerenciamento-wireless-em-empresas/3489315"
 categories: 
   - "cloud"
-  - "outros"
+  - "devops"
 featured: false
 cover_image: "https://images.sympla.com.br/6a47d59197bf6-xs.png"
 price: "Gratuito"
