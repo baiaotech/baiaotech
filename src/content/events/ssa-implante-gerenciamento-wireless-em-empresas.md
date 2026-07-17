@@ -13,9 +13,10 @@ source_name: "Sympla Fortaleza"
 source_url: "https://www.sympla.com.br/evento/ssa-implante-gerenciamento-wireless-em-empresas/3489315"
 categories: 
   - "cloud"
+  - "outros"
 featured: false
 cover_image: "https://images.sympla.com.br/6a47d59197bf6-xs.png"
-price: "Evento gratuito!"
+price: "Gratuito"
 ---
 
 Neste curso, você aprenderá a implantar e gerenciar redes corporativas de forma centralizada utilizando o INC Cloud, desde a estruturação do ambiente até o monitoramento avançado da rede. Ao longo das aulas, será apresentado um cenário prático completo, simulando uma empresa real, onde você irá configurar switches, VLANs, Link Aggregation, redes Wi-Fi, controle de acesso e painéis de monitoramento.
@@ -36,7 +37,6 @@ Ao final do curso o aluno será capaz de:
 
 **Aulas:**
 Durante este curso serão abordados os seguintes tópicos:
-
 Módulo 1 – Apresentação da topologia
 Módulo 2 – Revisão do INC Cloud
 Módulo 3 – Configuração de switches, VLANs e Link Aggregation
@@ -52,3 +52,5 @@ Ao término do curso será aplicada uma avaliação de aprendizagem e uma pesqui
 **O que você terá:**
 - Coffe-Break
 - Networking
+
+Evento gratuito!
