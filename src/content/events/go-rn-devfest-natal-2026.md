@@ -2,7 +2,7 @@
 title: "GO!RN + DevFest Natal 2026"
 start_date: "2026-09-18"
 end_date: "2026-09-20"
-kind: "conference"
+kind: "other"
 format: "in-person"
 city: "Natal"
 state: "RN"
