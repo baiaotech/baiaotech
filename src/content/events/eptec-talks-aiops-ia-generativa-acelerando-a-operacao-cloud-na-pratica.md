@@ -25,4 +25,4 @@ Como transformar a operação de nuvem em um motor de eficiência e segurança (
 O Palestrante:
 Gustavo Ribeiro
 CEO da Veezor & Especialista em Cloud Strategy e AIOps
-Profissional com mais de 20 anos de experiência como executivo e consultor nas áreas de Infraestrutura de TI, Gestão de TI e Computação em Nuvem, atuando em projetos com AWS desde 2010.
+Profissional com mais de 20 anos de experiência como executivo e consultor nas áreas de Infraestrutura de TI, Gestão de TI e Computação em Nuvem, atuando em projetos com AWS desde 2010. É Técnico em Informática com ênfase em Processamento pelo IFRN, Bacharel em Ciências da Computação e Especialista em Gestão de TI pela UFRN.
