@@ -21,7 +21,5 @@ price: ""
 ---
 
 DevFest João Pessoa 2026
-Onde a comunidade que constrói tecnologia se encontra.
-O DevFest faz parte da maior série de conferências do Google Developer Groups (GDG) no mundo.
-
-O evento é uma oportunidade para desenvolvedores, estudantes e entusiastas de tecnologia se conectarem, aprenderem e compartilharem conhecimentos sobre as últimas tendências e tecnologias do Google e do ecossistema de desenvolvimento.
+Onde a comunidade que constrói tecnologia se encontra
+O DevFest faz parte da maior série de conferências do Google para desenvolvedores.
