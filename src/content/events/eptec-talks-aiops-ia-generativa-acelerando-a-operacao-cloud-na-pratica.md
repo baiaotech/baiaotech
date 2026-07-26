@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/eptec-talks-aiops-ia-generativa-ac
 categories: 
   - "cloud"
   - "ia"
-  - "devops"
+  - "seguranca"
 featured: false
 cover_image: "https://images.sympla.com.br/6a5f61850692c-xs.png"
 price: "R$ 30,00"
@@ -25,4 +25,4 @@ Como transformar a operação de nuvem em um motor de eficiência e segurança (
 O Palestrante:
 Gustavo Ribeiro
 CEO da Veezor & Especialista em Cloud Strategy e AIOps
-Profissional com mais de 20 anos de experiência como executivo e consultor nas áreas de Infraestrutura de TI, Gestão de TI e Computação em Nuvem, atuando em projetos com AWS desde 2010. É Técnico em Informática com ênfase em Processamento pelo IFRN, Bacharel em Ciências da Computação e Especialista em Gestão de TI pela UFRN.
+Profissional com mais de 20 anos de experiência como executivo e consultor nas áreas de Infraestrutura de TI, Gestão de TI e Computação em Nuvem, atuando em projetos com AWS desde 2010.
