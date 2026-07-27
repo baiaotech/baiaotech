@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/eptec-talks-aiops-ia-generativa-ac
 categories: 
   - "cloud"
   - "ia"
-  - "seguranca"
+  - "devops"
 featured: false
 cover_image: "https://images.sympla.com.br/6a5f61850692c-xs.png"
 price: "R$ 30,00"
