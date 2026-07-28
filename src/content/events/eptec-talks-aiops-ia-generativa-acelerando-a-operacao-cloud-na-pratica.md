@@ -20,7 +20,7 @@ cover_image: "https://images.sympla.com.br/6a5f61850692c-xs.png"
 price: "R$ 30,00"
 ---
 
-Como transformar a operação de nuvem em um motor de eficiência e segurança (sem inflar os custos e a equipe). Nesta edição a Eptec Talks, vai direto ao ponto: AIOps: IA Generativa acelerando a operação cloud na prática. Vamos debater como a integração de GenAI na nuvem acelera a maturidade operacional, otimiza infraestruturas e fortalece a segurança em ambientes reais.
+Como transformar a operação de nuvem em um motor de eficiência e segurança (sem inflar os custos e a equipe). Nesta edição, a Eptec Talks vai direto ao ponto: AIOps: IA Generativa acelerando a operação cloud na prática. Vamos debater como a integração de GenAI na nuvem acelera a maturidade operacional, otimiza infraestruturas e fortalece a segurança em ambientes reais.
 
 O Palestrante:
 Gustavo Ribeiro
