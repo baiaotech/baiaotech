@@ -12,10 +12,14 @@ ticket_url: "https://doity.com.br/devfest-joao-pessoa"
 source_name: "GDG Joao Pessoa"
 source_url: "https://gdg.community.dev/events/details/google-gdg-joao-pessoa-presents-devfest-joao-pessoa-2026"
 categories: 
+  - "cloud"
   - "ia"
+  - "mobile"
 featured: false
 cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_MF2GjYZ.png"
 price: ""
 ---
 
-DevFest João Pessoa 2026Onde a comunidade que constrói tecnologia se encontraO DevFest faz parte da maior série de confe...
+DevFest João Pessoa 2026
+Onde a comunidade que constrói tecnologia se encontra
+O DevFest faz parte da maior série de conferências do Google para desenvolvedores.
