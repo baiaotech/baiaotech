@@ -9,7 +9,7 @@ state: "AL"
 organizer: "Microsoft Reactor San Francisco"
 venue: ""
 ticket_url: "https://www.meetup.com/microsoft-reactor-san-francisco/events/315286689"
-source_name: "Meetup Fortaleza"
+source_name: "Meetup Maceio"
 source_url: "https://www.meetup.com/microsoft-reactor-san-francisco/events/315286689"
 categories: 
   - "ia"
