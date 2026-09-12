@@ -71,6 +71,7 @@ function isFutureEvent(item) {
 
 function formatMonthLabel(date) {
   return new Intl.DateTimeFormat("pt-BR", {
+    timeZone: "UTC",
     month: "long",
     year: "numeric"
   }).format(date);
@@ -307,6 +308,7 @@ module.exports = function (eleventyConfig) {
     }
 
     return new Intl.DateTimeFormat("pt-BR", {
+      timeZone: "UTC",
       day: "2-digit",
       month: "short",
       year: "numeric"
@@ -322,21 +324,23 @@ module.exports = function (eleventyConfig) {
     const endDate = parseDate(end || start);
 
     const formatter = new Intl.DateTimeFormat("pt-BR", {
+      timeZone: "UTC",
       day: "2-digit",
       month: "short",
       year: "numeric"
     });
 
-    if (startDate.toDateString() === endDate.toDateString()) {
+    if (startDate.toISOString().slice(0, 10) === endDate.toISOString().slice(0, 10)) {
       return formatter.format(startDate);
     }
 
     const sameMonth =
-      startDate.getMonth() === endDate.getMonth() &&
-      startDate.getFullYear() === endDate.getFullYear();
+      startDate.getUTCMonth() === endDate.getUTCMonth() &&
+      startDate.getUTCFullYear() === endDate.getUTCFullYear();
 
     if (sameMonth) {
       return `${new Intl.DateTimeFormat("pt-BR", {
+        timeZone: "UTC",
         day: "2-digit"
       }).format(startDate)}–${formatter.format(endDate)}`;
     }
@@ -352,6 +356,7 @@ module.exports = function (eleventyConfig) {
     const date = parseDate(value);
     return date
       ? new Intl.DateTimeFormat("pt-BR", {
+          timeZone: "UTC",
           day: "2-digit"
         }).format(date)
       : "";
@@ -361,6 +366,7 @@ module.exports = function (eleventyConfig) {
     const date = parseDate(value);
     return date
       ? new Intl.DateTimeFormat("pt-BR", {
+          timeZone: "UTC",
           month: "short"
         }).format(date)
       : "";
