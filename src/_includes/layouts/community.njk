@@ -4,46 +4,39 @@
   {% set cover = cover_image | localAsset | displayImage %}
   <article class="detail-page detail-page--community">
     <section class="detail-intro">
-      <div class="container detail-intro__grid {{ 'detail-intro__grid--single' if not cover }}">
-        <div class="detail-intro__content" data-reveal>
-          <p class="eyebrow">Comunidade</p>
-          <h1>{{ title }}</h1>
-          <p class="detail-intro__lead">
-            {{ state | stateName }}{% if city %} · {{ city }}{% endif %}
-          </p>
-          {% if tags.length %}
-            <div class="meta-pills">
-              {% for tag in tags.slice(0, 4) %}
-                <span>{{ tag }}</span>
-              {% endfor %}
-            </div>
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="{{ '/comunidades/' | url }}">Comunidades</a><span aria-hidden="true">/</span><span aria-current="page">{{ title }}</span></nav>
+        <div class="detail-intro__grid {{ 'detail-intro__grid--single' if not cover }}">
+          <div class="detail-intro__content" data-reveal>
+            <p class="eyebrow eyebrow--light">Comunidade · {{ state | stateName }}</p>
+            <h1>{{ title }}</h1>
+            <p class="detail-intro__lead">{{ city if city else 'Atuação regional' }}</p>
+            {% if tags.length %}<div class="meta-pills">{% for tag in tags %}<span>{{ tag | tagLabel }}</span>{% endfor %}</div>{% endif %}
+          </div>
+          {% if cover %}
+            <figure class="detail-intro__media detail-intro__media--logo" data-reveal>
+              <img src="{{ cover }}" alt="Logotipo de {{ title }}" width="960" height="560" decoding="async">
+            </figure>
           {% endif %}
         </div>
-
-        {% if cover %}
-          <figure class="detail-intro__media" data-reveal>
-            <img src="{{ cover }}" alt="Imagem de capa de {{ title }}" width="960" height="560" decoding="async">
-          </figure>
-        {% endif %}
       </div>
     </section>
 
     <section class="detail-body">
       <div class="container detail-body__grid">
-        <aside class="detail-aside" data-reveal>
-          <p class="eyebrow">Links</p>
+        <div class="prose"><h2 class="eyebrow detail-section-title">Sobre a comunidade</h2>{{ content | safe }}</div>
+        <aside class="detail-aside" aria-label="Links da comunidade">
+          <h2 class="eyebrow detail-section-title">Participe</h2>
+          <p class="detail-aside__intro">Acompanhe os canais oficiais e conheça as próximas atividades.</p>
           <div class="detail-links">
-            {% if website %}<a class="button button--primary button--wide" href="{{ website }}" rel="noopener">Site oficial</a>{% endif %}
-            <a class="button button--ghost button--wide" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
-            {% if instagram %}<a class="button button--ghost button--wide" href="{{ instagram }}" rel="noopener">Instagram</a>{% endif %}
-            {% if linkedin %}<a class="button button--ghost button--wide" href="{{ linkedin }}" rel="noopener">LinkedIn</a>{% endif %}
-            {% if telegram %}<a class="button button--ghost button--wide" href="{{ telegram }}" rel="noopener">Telegram</a>{% endif %}
-            {% if whatsapp %}<a class="button button--ghost button--wide" href="{{ whatsapp }}" rel="noopener">WhatsApp</a>{% endif %}
+            {% if website %}<a class="button button--primary button--wide" href="{{ website }}" rel="noopener">Visitar site oficial</a>{% endif %}
+            {% if instagram %}<a class="button button--secondary button--wide" href="{{ instagram }}" rel="noopener">Abrir Instagram</a>{% endif %}
+            {% if telegram %}<a class="text-link text-link--touch" href="{{ telegram }}" rel="noopener">Entrar no Telegram</a>{% endif %}
+            {% if whatsapp %}<a class="text-link text-link--touch" href="{{ whatsapp }}" rel="noopener">Entrar no WhatsApp</a>{% endif %}
+            {% if linkedin %}<a class="text-link text-link--touch" href="{{ linkedin }}" rel="noopener">Abrir LinkedIn</a>{% endif %}
+            <a class="text-link text-link--touch" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
           </div>
         </aside>
-        <div class="prose" data-reveal>
-          {{ content | safe }}
-        </div>
       </div>
     </section>
   </article>

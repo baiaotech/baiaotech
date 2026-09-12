@@ -1,6 +1,6 @@
 module.exports = {
   kinds: [
-    { value: "conference", label: "Conferencia" },
+    { value: "conference", label: "Conferência" },
     { value: "meetup", label: "Meetup" },
     { value: "hackathon", label: "Hackathon" },
     { value: "workshop", label: "Workshop" },
@@ -10,6 +10,6 @@ module.exports = {
   formats: [
     { value: "in-person", label: "Presencial" },
     { value: "online", label: "Online" },
-    { value: "hybrid", label: "Hibrido" }
+    { value: "hybrid", label: "Híbrido" }
   ]
 };

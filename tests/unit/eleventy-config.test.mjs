@@ -48,4 +48,31 @@ describe("eleventy config filters", () => {
     expect(eventDateRange("2026-09-16", "2026-09-17")).toContain("17");
     expect(dayNumber("2026-09-16")).toBe("16");
   });
+
+  it("formata datas editoriais no dia UTC sem deslocamento de fuso", () => {
+    const filters = getFilters();
+
+    expect(filters.get("readableDate")("2026-09-16")).toBe("16 de set. de 2026");
+    expect(filters.get("eventDateRange")("2026-09-16", "2026-09-17")).toBe(
+      "16–17 de set. de 2026"
+    );
+    expect(filters.get("eventDayRange")("2026-09-16", "2026-09-17")).toBe("16–17");
+    expect(filters.get("eventDayRange")("2026-09-30", "2026-10-16")).toBe(
+      "30/09–16/10"
+    );
+    expect(filters.get("eventSpansMonths")("2026-09-30", "2026-10-16")).toBe(true);
+    expect(filters.get("dayNumber")("2026-09-16")).toBe("16");
+  });
+
+  it("mantem acentos nos rotulos de estado e formato", () => {
+    const filters = getFilters();
+
+    expect(filters.get("stateName")("CE")).toBe("Ceará");
+    expect(filters.get("stateName")("PI")).toBe("Piauí");
+    expect(filters.get("kindLabel")("conference")).toBe("Conferência");
+    expect(filters.get("formatLabel")("hybrid")).toBe("Híbrido");
+    expect(filters.get("tagLabel")("inovacao")).toBe("Inovação");
+    expect(filters.get("tagLabel")("open-source")).toBe("Open source");
+    expect(filters.get("tagLabel")("ia")).toBe("IA");
+  });
 });

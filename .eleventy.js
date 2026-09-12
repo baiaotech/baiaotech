@@ -17,11 +17,11 @@ const site = getSiteConfig();
 const stateNames = {
   AL: "Alagoas",
   BA: "Bahia",
-  CE: "Ceara",
-  MA: "Maranhao",
-  PB: "Paraiba",
+  CE: "Ceará",
+  MA: "Maranhão",
+  PB: "Paraíba",
   PE: "Pernambuco",
-  PI: "Piaui",
+  PI: "Piauí",
   RN: "Rio Grande do Norte",
   SE: "Sergipe",
   Nacional: "Nacional",
@@ -29,7 +29,7 @@ const stateNames = {
 };
 
 const kindLabels = {
-  conference: "Conferencia",
+  conference: "Conferência",
   meetup: "Meetup",
   hackathon: "Hackathon",
   workshop: "Workshop",
@@ -40,8 +40,47 @@ const kindLabels = {
 const formatLabels = {
   "in-person": "Presencial",
   online: "Online",
-  hybrid: "Hibrido"
+  hybrid: "Híbrido"
 };
+
+const tagLabels = {
+  agilidade: "Agilidade",
+  backend: "Backend",
+  cloud: "Cloud",
+  dados: "Dados",
+  devops: "DevOps",
+  diversidade: "Diversidade",
+  dotnet: ".NET",
+  elixir: "Elixir",
+  frontend: "Front-end",
+  fullstack: "Full stack",
+  games: "Games",
+  google: "Google",
+  graphql: "GraphQL",
+  ia: "IA",
+  inovacao: "Inovação",
+  java: "Java",
+  javascript: "JavaScript",
+  "open-source": "Open source",
+  php: "PHP",
+  python: "Python",
+  qa: "QA",
+  ruby: "Ruby",
+  seguranca: "Segurança",
+  startups: "Startups",
+  ui: "UI",
+  ux: "UX",
+  wordpress: "WordPress"
+};
+
+const EVENT_ARTWORK = {
+  health: "/assets/editorial/events/saude-digital.webp",
+  innovation: "/assets/editorial/events/hackathon-inovacao.webp",
+  interface: "/assets/editorial/events/ux-interface.webp"
+};
+
+const HEALTH_CATEGORIES = new Set(["saude"]);
+const INTERFACE_CATEGORIES = new Set(["design", "frontend", "ui", "ux"]);
 
 function parseDate(value) {
   if (!value) {
@@ -71,10 +110,64 @@ function isFutureEvent(item) {
 
 function formatMonthLabel(date) {
   return new Intl.DateTimeFormat("pt-BR", {
-    timeZone: "UTC",
     month: "long",
-    year: "numeric"
+    year: "numeric",
+    timeZone: "UTC"
   }).format(date);
+}
+
+function formatUtc(date, options) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    ...options,
+    timeZone: "UTC"
+  }).format(date);
+}
+
+function spansCalendarMonth(start, end) {
+  const startDate = parseDate(start);
+  const endDate = parseDate(end || start);
+
+  if (!startDate || !endDate) {
+    return false;
+  }
+
+  return (
+    startDate.getUTCMonth() !== endDate.getUTCMonth() ||
+    startDate.getUTCFullYear() !== endDate.getUTCFullYear()
+  );
+}
+
+function getTagLabel(value) {
+  if (!value) {
+    return "";
+  }
+
+  if (tagLabels[value]) {
+    return tagLabels[value];
+  }
+
+  const words = String(value).replace(/[-_]+/g, " ").trim();
+  return words ? `${words.charAt(0).toLocaleUpperCase("pt-BR")}${words.slice(1)}` : "";
+}
+
+function getEventArtworkPath(inputPath) {
+  const categories = getEventFrontMatter(inputPath).categories;
+  const slugs = Array.isArray(categories) ? categories : [];
+  const normalizedPath = String(inputPath || "").toLowerCase();
+
+  if (normalizedPath.includes("saude") || slugs.some((slug) => HEALTH_CATEGORIES.has(slug))) {
+    return EVENT_ARTWORK.health;
+  }
+
+  if (slugs.some((slug) => INTERFACE_CATEGORIES.has(slug))) {
+    return EVENT_ARTWORK.interface;
+  }
+
+  return EVENT_ARTWORK.innovation;
+}
+
+function getEventArtwork(inputPath) {
+  return getPrefixedAsset(getEventArtworkPath(inputPath));
 }
 
 function isTagNameChar(char) {
@@ -230,14 +323,19 @@ function getAbsoluteImage(value) {
   }
 
   if (value.startsWith("/assets/")) {
-    return new URL(value, `${site.siteUrl}/`).toString();
+    return getAbsoluteUrl(value);
   }
 
   return isHttpsUrl(value) ? value : "";
 }
 
 function getAbsoluteUrl(path) {
-  return new URL(path, `${site.siteUrl}/`).toString();
+  if (isHttpsUrl(path)) {
+    return path;
+  }
+
+  const relativePath = String(path || "").replace(/^\/+/, "");
+  return new URL(relativePath, `${site.siteUrl}/`).toString();
 }
 
 function getLocationLabel(venue, city, state) {
@@ -292,7 +390,20 @@ module.exports = function (eleventyConfig) {
       .getFilteredByGlob("src/content/communities/*.md")
       .sort(sortByCommunity);
     const featured = communities.filter((item) => item.data.featured);
-    return (featured.length ? featured : communities).slice(0, 6);
+
+    if (featured.length) {
+      return featured.slice(0, 6);
+    }
+
+    const firstByState = new Map();
+
+    communities.forEach((item) => {
+      if (!firstByState.has(item.data.state)) {
+        firstByState.set(item.data.state, item);
+      }
+    });
+
+    return [...firstByState.values()].slice(0, 6);
   });
 
   eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
@@ -307,12 +418,11 @@ module.exports = function (eleventyConfig) {
       return "";
     }
 
-    return new Intl.DateTimeFormat("pt-BR", {
-      timeZone: "UTC",
+    return formatUtc(parseDate(value), {
       day: "2-digit",
       month: "short",
       year: "numeric"
-    }).format(parseDate(value));
+    });
   });
 
   eleventyConfig.addFilter("eventDateRange", (start, end) => {
@@ -323,15 +433,14 @@ module.exports = function (eleventyConfig) {
     const startDate = parseDate(start);
     const endDate = parseDate(end || start);
 
-    const formatter = new Intl.DateTimeFormat("pt-BR", {
-      timeZone: "UTC",
+    const formatterOptions = {
       day: "2-digit",
       month: "short",
       year: "numeric"
-    });
+    };
 
     if (startDate.toISOString().slice(0, 10) === endDate.toISOString().slice(0, 10)) {
-      return formatter.format(startDate);
+      return formatUtc(startDate, formatterOptions);
     }
 
     const sameMonth =
@@ -339,14 +448,39 @@ module.exports = function (eleventyConfig) {
       startDate.getUTCFullYear() === endDate.getUTCFullYear();
 
     if (sameMonth) {
-      return `${new Intl.DateTimeFormat("pt-BR", {
-        timeZone: "UTC",
+      return `${formatUtc(startDate, {
         day: "2-digit"
-      }).format(startDate)}–${formatter.format(endDate)}`;
+      })}–${formatUtc(endDate, formatterOptions)}`;
     }
 
-    return `${formatter.format(startDate)} – ${formatter.format(endDate)}`;
+    return `${formatUtc(startDate, formatterOptions)} – ${formatUtc(endDate, formatterOptions)}`;
   });
+
+  eleventyConfig.addFilter("eventDayRange", (start, end) => {
+    if (!start) {
+      return "";
+    }
+
+    const startDate = parseDate(start);
+    const endDate = parseDate(end || start);
+    const startDay = formatUtc(startDate, { day: "2-digit" });
+    const endDay = formatUtc(endDate, { day: "2-digit" });
+    const sameMonth =
+      startDate.getUTCMonth() === endDate.getUTCMonth() &&
+      startDate.getUTCFullYear() === endDate.getUTCFullYear();
+
+    if (!sameMonth) {
+      const numericDate = (date) =>
+        `${String(date.getUTCDate()).padStart(2, "0")}/${String(
+          date.getUTCMonth() + 1
+        ).padStart(2, "0")}`;
+      return `${numericDate(startDate)}–${numericDate(endDate)}`;
+    }
+
+    return sameMonth && startDay !== endDay ? `${startDay}–${endDay}` : startDay;
+  });
+
+  eleventyConfig.addFilter("eventSpansMonths", spansCalendarMonth);
 
   eleventyConfig.addFilter("stateName", (value) => {
     return stateNames[value] || value || "";
@@ -355,20 +489,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dayNumber", (value) => {
     const date = parseDate(value);
     return date
-      ? new Intl.DateTimeFormat("pt-BR", {
-          timeZone: "UTC",
+      ? formatUtc(date, {
           day: "2-digit"
-        }).format(date)
+        })
       : "";
   });
 
   eleventyConfig.addFilter("monthShort", (value) => {
     const date = parseDate(value);
     return date
-      ? new Intl.DateTimeFormat("pt-BR", {
-          timeZone: "UTC",
+      ? formatUtc(date, {
           month: "short"
-        }).format(date)
+        })
       : "";
   });
 
@@ -406,6 +538,15 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  eleventyConfig.addFilter("uniqueTags", (items) => {
+    const tags = items.flatMap((item) => (Array.isArray(item.data.tags) ? item.data.tags : []));
+    return [...new Set(tags)].sort((a, b) =>
+      getTagLabel(a).localeCompare(getTagLabel(b), "pt-BR")
+    );
+  });
+
+  eleventyConfig.addFilter("tagLabel", getTagLabel);
+
   eleventyConfig.addFilter("priceLabel", (value) => {
     if (value === undefined || value === null || value === "") {
       return "";
@@ -439,6 +580,14 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("absoluteUrl", getAbsoluteUrl);
+
+  eleventyConfig.addFilter("isNavCurrent", (pageUrl, itemHref) => {
+    if (itemHref === "/") {
+      return pageUrl === "/";
+    }
+
+    return typeof pageUrl === "string" && pageUrl.startsWith(itemHref);
+  });
 
   eleventyConfig.addFilter("whatsAppShareUrl", (path, title) => {
     return buildWhatsAppShareUrl(title, getAbsoluteUrl(path));
@@ -507,6 +656,16 @@ module.exports = function (eleventyConfig) {
     }
 
     return categorySlugs.map((slug) => categoriesBySlug?.[slug]?.name || slug);
+  });
+
+  eleventyConfig.addFilter("eventArtwork", getEventArtwork);
+
+  eleventyConfig.addFilter("eventArtworkThumb", (inputPath) => {
+    return getPrefixedAsset(getEventArtworkPath(inputPath).replace(".webp", "-thumb.webp"));
+  });
+
+  eleventyConfig.addFilter("eventArtworkAbsolute", (inputPath) => {
+    return getAbsoluteImage(getEventArtworkPath(inputPath));
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

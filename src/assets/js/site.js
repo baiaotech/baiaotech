@@ -1,9 +1,50 @@
+const NAV_DRAWER_MAX_WIDTH = 720;
+const NAV_FOCUSABLE_SELECTOR = [
+  "a[href]",
+  "button:not([disabled])",
+  "input:not([disabled])",
+  "select:not([disabled])",
+  "textarea:not([disabled])",
+  "[tabindex]:not([tabindex='-1'])"
+].join(",");
+
 function getPrefersReducedMotion(windowRef) {
   if (!windowRef?.matchMedia) {
     return { matches: false };
   }
 
   return windowRef.matchMedia("(prefers-reduced-motion: reduce)");
+}
+
+function getFocusable(container) {
+  if (!container) {
+    return [];
+  }
+
+  return [...container.querySelectorAll(NAV_FOCUSABLE_SELECTOR)].filter(
+    (node) => !node.hidden && node.getAttribute("aria-hidden") !== "true"
+  );
+}
+
+function trapFocus(event, nodes) {
+  if (event.key !== "Tab" || nodes.length === 0) {
+    return;
+  }
+
+  const first = nodes[0];
+  const last = nodes[nodes.length - 1];
+
+  if (event.shiftKey && event.target === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && event.target === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function isNavDrawer(windowRef) {
+  return (windowRef?.innerWidth ?? Number.POSITIVE_INFINITY) <= NAV_DRAWER_MAX_WIDTH;
 }
 
 function setupHeaderState({ documentRef, windowRef }) {
@@ -49,8 +90,9 @@ function setupHeroProgress({ documentRef, windowRef, prefersReducedMotion }) {
   };
 }
 
-function setupMobileNav({ documentRef }) {
+function setupMobileNav({ documentRef, windowRef = documentRef?.defaultView }) {
   const toggle = documentRef?.querySelector("[data-nav-toggle]");
+  const label = toggle?.querySelector("[data-nav-label]");
   const nav = documentRef?.querySelector("[data-site-nav]");
   const backdrop = documentRef?.querySelector("[data-nav-backdrop]");
 
@@ -58,14 +100,39 @@ function setupMobileNav({ documentRef }) {
     return () => {};
   }
 
+  const updateLabel = (open) => {
+    const text = open ? "Fechar menu" : "Abrir menu";
+    toggle.setAttribute("aria-label", text);
+    if (label) {
+      label.textContent = text;
+    }
+  };
+
+  const syncAccessibility = (open) => {
+    if (isNavDrawer(windowRef)) {
+      nav.toggleAttribute("inert", !open);
+      if (open) {
+        nav.removeAttribute("aria-hidden");
+      } else {
+        nav.setAttribute("aria-hidden", "true");
+      }
+      return;
+    }
+
+    nav.removeAttribute("inert");
+    nav.removeAttribute("aria-hidden");
+  };
+
   const setOpen = (open, { returnFocus = true } = {}) => {
     documentRef.body.classList.toggle("nav-open", open);
     documentRef.body.classList.toggle("has-nav-panel", open);
     toggle.setAttribute("aria-expanded", String(open));
     backdrop.hidden = !open;
+    updateLabel(open);
+    syncAccessibility(open);
 
     if (open) {
-      nav.querySelector("a")?.focus();
+      getFocusable(nav)[0]?.focus();
     } else if (returnFocus) {
       toggle.focus();
     }
@@ -75,27 +142,45 @@ function setupMobileNav({ documentRef }) {
     setOpen(toggle.getAttribute("aria-expanded") !== "true");
   };
   const closeNav = () => setOpen(false);
-  const closeOnEscape = (event) => {
-    if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
-      setOpen(false);
+  const handleKeydown = (event) => {
+    if (toggle.getAttribute("aria-expanded") !== "true") {
+      return;
     }
+
+    if (event.key === "Escape") {
+      setOpen(false);
+      return;
+    }
+
+    trapFocus(event, [toggle, ...getFocusable(nav)]);
   };
   const closeFromLink = (event) => {
     if (event.target.closest("a")) {
       setOpen(false, { returnFocus: false });
     }
   };
+  const syncViewport = () => {
+    if (!isNavDrawer(windowRef)) {
+      setOpen(false, { returnFocus: false });
+      return;
+    }
+
+    syncAccessibility(toggle.getAttribute("aria-expanded") === "true");
+  };
 
   toggle.addEventListener("click", toggleNav);
   backdrop.addEventListener("click", closeNav);
-  documentRef.addEventListener("keydown", closeOnEscape);
+  documentRef.addEventListener("keydown", handleKeydown);
   nav.addEventListener("click", closeFromLink);
+  windowRef?.addEventListener("resize", syncViewport);
+  syncViewport();
 
   return () => {
     toggle.removeEventListener("click", toggleNav);
     backdrop.removeEventListener("click", closeNav);
-    documentRef.removeEventListener("keydown", closeOnEscape);
+    documentRef.removeEventListener("keydown", handleKeydown);
     nav.removeEventListener("click", closeFromLink);
+    windowRef?.removeEventListener("resize", syncViewport);
   };
 }
 
@@ -154,7 +239,7 @@ function bootSite(refs = {}) {
 
   return [
     setupHeaderState({ documentRef, windowRef }),
-    setupMobileNav({ documentRef }),
+    setupMobileNav({ documentRef, windowRef }),
     setupHeroProgress({ documentRef, windowRef, prefersReducedMotion }),
     setupReveals({
       documentRef,
@@ -167,12 +252,16 @@ function bootSite(refs = {}) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
+    NAV_DRAWER_MAX_WIDTH,
     bootSite,
+    getFocusable,
     getPrefersReducedMotion,
+    isNavDrawer,
     setupHeaderState,
     setupHeroProgress,
     setupMobileNav,
-    setupReveals
+    setupReveals,
+    trapFocus
   };
 }
 

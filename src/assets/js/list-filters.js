@@ -1,5 +1,20 @@
+const FILTER_DRAWER_MAX_WIDTH = 980;
+const FILTER_FOCUSABLE_SELECTOR = [
+  "a[href]",
+  "button:not([disabled])",
+  "input:not([disabled])",
+  "select:not([disabled])",
+  "textarea:not([disabled])",
+  "[tabindex]:not([tabindex='-1'])"
+].join(",");
+
 function tokenize(value) {
-  return (value || "").toLowerCase().trim();
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("pt-BR")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function splitDataset(value) {
@@ -17,12 +32,44 @@ function getWindow(refs = {}) {
   return refs.window || (typeof window !== "undefined" ? window : null);
 }
 
+function getFocusable(container) {
+  if (!container) {
+    return [];
+  }
+
+  return [...container.querySelectorAll(FILTER_FOCUSABLE_SELECTOR)].filter(
+    (node) => !node.hidden && node.getAttribute("aria-hidden") !== "true"
+  );
+}
+
+function trapFocus(event, nodes) {
+  if (event.key !== "Tab" || nodes.length === 0) {
+    return;
+  }
+
+  const first = nodes[0];
+  const last = nodes[nodes.length - 1];
+
+  if (event.shiftKey && event.target === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && event.target === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function isFilterDrawer(windowRef) {
+  return (windowRef?.innerWidth ?? Number.POSITIVE_INFINITY) <= FILTER_DRAWER_MAX_WIDTH;
+}
+
 function setFilterPanelState(root, open, refs = {}) {
   const panel = root.querySelector("[data-filter-panel]");
   const backdrop = root.querySelector("[data-filter-backdrop]");
   const toggle = root.querySelector("[data-filter-toggle]");
   const searchInput = root.querySelector("[data-filter-search]");
   const doc = getDocument(root, refs);
+  const win = getWindow(refs);
 
   if (!panel || !backdrop || !toggle) {
     return;
@@ -36,6 +83,18 @@ function setFilterPanelState(root, open, refs = {}) {
   backdrop.hidden = !open;
   toggle.setAttribute("aria-expanded", String(open));
   doc?.body.classList.toggle("has-filter-panel", open);
+
+  if (isFilterDrawer(win)) {
+    panel.toggleAttribute("inert", !open);
+    if (open) {
+      panel.removeAttribute("aria-hidden");
+    } else {
+      panel.setAttribute("aria-hidden", "true");
+    }
+  } else {
+    panel.removeAttribute("inert");
+    panel.removeAttribute("aria-hidden");
+  }
 
   if (open) {
     if (!panel.hasAttribute("tabindex")) {
@@ -145,19 +204,75 @@ function applyFilters(root) {
 
   sectionNodes.forEach((section) => {
     const sectionCards = [...section.querySelectorAll("[data-card]")];
-    const hasVisibleCards = sectionCards.some((card) => !card.hidden);
+    const visibleInSection = sectionCards.filter((card) => !card.hidden).length;
+    const sectionCount = section.querySelector("[data-section-count]");
     const emptyNode = section.querySelector("[data-section-empty]");
 
+    if (sectionCount) {
+      sectionCount.textContent = String(visibleInSection);
+    }
+
     if (emptyNode) {
-      emptyNode.hidden = hasVisibleCards;
+      emptyNode.hidden = visibleInSection > 0;
     }
   });
 
   updateFilterStatus(root);
 }
 
+function hydrateFiltersFromUrl(root, windowRef) {
+  if (!windowRef?.location) {
+    return;
+  }
+
+  const params = new URLSearchParams(windowRef.location.search);
+  const searchInput = root.querySelector("[data-filter-search]");
+  const query = params.get("q");
+
+  if (searchInput && query !== null) {
+    searchInput.value = query;
+  }
+
+  root.querySelectorAll("[data-filter-key]").forEach((input) => {
+    const value = params.get(input.dataset.filterKey);
+    if (value !== null && [...input.options].some((option) => option.value === value)) {
+      input.value = value;
+    }
+  });
+}
+
+function syncFiltersToUrl(root, windowRef) {
+  if (!windowRef?.location || !windowRef?.history?.replaceState) {
+    return;
+  }
+
+  const params = new URLSearchParams(windowRef.location.search);
+  const searchInput = root.querySelector("[data-filter-search]");
+  const query = searchInput?.value?.trim() || "";
+
+  if (query) {
+    params.set("q", query);
+  } else {
+    params.delete("q");
+  }
+
+  root.querySelectorAll("[data-filter-key]").forEach((input) => {
+    const key = input.dataset.filterKey;
+    if (input.value) {
+      params.set(key, input.value);
+    } else {
+      params.delete(key);
+    }
+  });
+
+  const search = params.toString();
+  const nextUrl = `${windowRef.location.pathname}${search ? `?${search}` : ""}${windowRef.location.hash}`;
+  windowRef.history.replaceState(windowRef.history.state, "", nextUrl);
+}
+
 function bindListRoot(root, refs = {}) {
   const form = root.querySelector("[data-filter-form]");
+  const panel = root.querySelector("[data-filter-panel]");
   const toggle = root.querySelector("[data-filter-toggle]");
   const close = root.querySelector("[data-filter-close]");
   const backdrop = root.querySelector("[data-filter-backdrop]");
@@ -176,6 +291,7 @@ function bindListRoot(root, refs = {}) {
       applyTimer = undefined;
     }
     applyFilters(root);
+    syncFiltersToUrl(root, win);
   };
   const scheduleFilters = () => {
     if (applyTimer) {
@@ -201,18 +317,38 @@ function bindListRoot(root, refs = {}) {
     event.preventDefault();
     runFilters();
 
-    if (win?.innerWidth <= 900) {
+    if (isFilterDrawer(win)) {
       setFilterPanelState(root, false, { document: doc, window: win });
     }
   };
-  const closeOnEscape = (event) => {
-    if (event.key === "Escape" && root.classList.contains("filters-open")) {
-      setFilterPanelState(root, false, { document: doc, window: win });
+  const handleKeydown = (event) => {
+    if (!root.classList.contains("filters-open")) {
+      return;
     }
-  };
-  const syncDesktopState = () => {
-    if (win?.innerWidth > 900) {
+
+    if (event.key === "Escape") {
       setFilterPanelState(root, false, { document: doc, window: win });
+      return;
+    }
+
+    trapFocus(event, getFocusable(panel));
+  };
+  const syncViewport = () => {
+    if (!isFilterDrawer(win)) {
+      setFilterPanelState(root, false, {
+        document: doc,
+        window: win,
+        returnFocus: false
+      });
+      return;
+    }
+
+    if (!root.classList.contains("filters-open")) {
+      setFilterPanelState(root, false, {
+        document: doc,
+        window: win,
+        returnFocus: false
+      });
     }
   };
 
@@ -223,9 +359,15 @@ function bindListRoot(root, refs = {}) {
   searchInput?.addEventListener("input", scheduleFilters);
   selectInputs.forEach((input) => input.addEventListener("change", scheduleFilters));
   form?.addEventListener("submit", submitFilters);
-  doc?.addEventListener("keydown", closeOnEscape);
-  win?.addEventListener("resize", syncDesktopState);
+  doc?.addEventListener("keydown", handleKeydown);
+  win?.addEventListener("resize", syncViewport);
 
+  hydrateFiltersFromUrl(root, win);
+  setFilterPanelState(root, false, {
+    document: doc,
+    window: win,
+    returnFocus: false
+  });
   applyFilters(root);
 
   return () => {
@@ -236,8 +378,8 @@ function bindListRoot(root, refs = {}) {
     searchInput?.removeEventListener("input", scheduleFilters);
     selectInputs.forEach((input) => input.removeEventListener("change", scheduleFilters));
     form?.removeEventListener("submit", submitFilters);
-    doc?.removeEventListener("keydown", closeOnEscape);
-    win?.removeEventListener("resize", syncDesktopState);
+    doc?.removeEventListener("keydown", handleKeydown);
+    win?.removeEventListener("resize", syncViewport);
     if (applyTimer) {
       win?.clearTimeout?.(applyTimer);
     }
@@ -258,13 +400,19 @@ function bootListFilters(refs = {}) {
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
+    FILTER_DRAWER_MAX_WIDTH,
     applyFilters,
     bindListRoot,
     bootListFilters,
     getActiveFilters,
+    getFocusable,
+    hydrateFiltersFromUrl,
+    isFilterDrawer,
     setFilterPanelState,
     splitDataset,
+    syncFiltersToUrl,
     tokenize,
+    trapFocus,
     updateFilterStatus
   };
 }

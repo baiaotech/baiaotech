@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ metaDescription }}">
-    <meta name="theme-color" content="#2f4fda">
+    <meta name="theme-color" content="#0b3d3f">
     <meta property="og:title" content="{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:description" content="{{ metaDescription }}">
     <meta property="og:locale" content="{{ site.locale }}">
@@ -23,7 +23,7 @@
     {% block headExtra %}{% endblock %}
   </head>
   <body class="{{ bodyClass or '' }}">
-    <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
     <header class="site-header" data-site-header>
       <div class="container site-header__inner">
@@ -32,8 +32,8 @@
           <span class="site-brand__sub">eventos e comunidades</span>
         </a>
 
-        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Abrir menu</span>
+        <button class="site-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span class="sr-only" data-nav-label>Abrir menu</span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -41,13 +41,13 @@
 
         <nav class="site-nav" id="site-nav" data-site-nav aria-label="Principal">
           {% set nav = [
-            { "href": "/", "label": "Inicio" },
+            { "href": "/", "label": "Início" },
             { "href": "/eventos/", "label": "Eventos" },
             { "href": "/comunidades/", "label": "Comunidades" },
             { "href": "/como-contribuir/", "label": "Contribuir" }
           ] %}
           {% for item in nav %}
-            <a href="{{ item.href | url }}" {% if page.url == item.href %}aria-current="page"{% endif %}>
+            <a href="{{ item.href | url }}" {% if page.url | isNavCurrent(item.href) %}aria-current="page"{% endif %}>
               {{ item.label }}
             </a>
           {% endfor %}
@@ -63,15 +63,16 @@
     <footer class="site-footer">
       <div class="container site-footer__inner">
         <div>
-          <p class="eyebrow">Baião Tech</p>
+          <a class="site-footer__brand" href="{{ '/' | url }}">Baião Tech</a>
           <p class="site-footer__summary">
-            Acompanhe eventos e descubra comunidades de tecnologia em um só lugar.
+            Tecnologia que aproxima os nove estados do Nordeste.
           </p>
         </div>
         <div class="site-footer__links">
           <a href="{{ '/eventos/' | url }}">Eventos</a>
           <a href="{{ '/comunidades/' | url }}">Comunidades</a>
           <a href="{{ '/como-contribuir/' | url }}">Como contribuir</a>
+          <a href="{{ site.repoUrl }}" rel="noopener">GitHub</a>
         </div>
       </div>
     </footer>

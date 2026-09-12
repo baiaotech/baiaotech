@@ -1,4 +1,5 @@
 const { expect } = require("@playwright/test");
+const TITLE_SELECTOR = ":is(.listing-row__title, .community-card h3 a)";
 
 async function countVisibleCards(root) {
   return await root.locator("[data-card]").evaluateAll((cards) => {
@@ -15,7 +16,7 @@ async function getVisibleCardTexts(root, selector) {
 }
 
 async function getFirstVisibleCardTitle(root) {
-  const titles = await getVisibleCardTexts(root, ".listing-row__title a");
+  const titles = await getVisibleCardTexts(root, TITLE_SELECTOR);
   expect(titles.length).toBeGreaterThan(0);
   return titles[0];
 }
@@ -31,7 +32,7 @@ async function expectResultsCountMatches(root) {
 }
 
 async function expectVisibleCardTitlesToContain(root, query) {
-  const titles = await getVisibleCardTexts(root, ".listing-row__title a");
+  const titles = await getVisibleCardTexts(root, TITLE_SELECTOR);
   expect(titles.length).toBeGreaterThan(0);
 
   for (const title of titles) {

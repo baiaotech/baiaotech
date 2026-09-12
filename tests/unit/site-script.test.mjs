@@ -16,13 +16,14 @@ describe("site script", () => {
     document.body.className = "";
     document.body.innerHTML = `
       <header data-site-header></header>
-      <button data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <button data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu"><span data-nav-label>Abrir menu</span></button>
       <nav id="site-nav" data-site-nav><a href="/">Inicio</a></nav>
       <div data-nav-backdrop hidden></div>
       <section data-hero></section>
       <div data-reveal></div>
     `;
     Object.defineProperty(window, "scrollY", { configurable: true, writable: true, value: 0 });
+    Object.defineProperty(window, "innerWidth", { configurable: true, writable: true, value: 1280 });
     window.matchMedia = () => ({ matches: false });
   });
 
@@ -86,21 +87,36 @@ describe("site script", () => {
   });
 
   it("controla o menu mobile", () => {
+    window.innerWidth = 390;
     const { setupMobileNav } = loadModule();
-    const cleanup = setupMobileNav({ documentRef: document });
+    const cleanup = setupMobileNav({ documentRef: document, windowRef: window });
     const toggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
     const backdrop = document.querySelector("[data-nav-backdrop]");
 
+    expect(nav.hasAttribute("inert")).toBe(true);
+    expect(nav.getAttribute("aria-hidden")).toBe("true");
     toggle.click();
 
     expect(document.body.classList.contains("nav-open")).toBe(true);
     expect(document.body.classList.contains("has-nav-panel")).toBe(true);
     expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    expect(toggle.getAttribute("aria-label")).toBe("Fechar menu");
+    expect(nav.hasAttribute("inert")).toBe(false);
     expect(backdrop.hidden).toBe(false);
+    expect(document.activeElement).toBe(nav.querySelector("a"));
 
     document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
     expect(document.body.classList.contains("nav-open")).toBe(false);
     expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(toggle.getAttribute("aria-label")).toBe("Abrir menu");
+    expect(document.activeElement).toBe(toggle);
+    expect(nav.hasAttribute("inert")).toBe(true);
+
+    window.innerWidth = 1280;
+    window.dispatchEvent(new Event("resize"));
+    expect(nav.hasAttribute("inert")).toBe(false);
+    expect(nav.hasAttribute("aria-hidden")).toBe(false);
 
     cleanup();
   });

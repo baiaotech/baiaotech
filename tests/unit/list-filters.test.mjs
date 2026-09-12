@@ -15,23 +15,25 @@ function buildDom() {
   document.body.innerHTML = `
     <div data-list-root>
       <button type="button" data-filter-toggle aria-expanded="false">Abrir</button>
-      <div data-filter-panel></div>
-      <button type="button" data-filter-close>Fechar</button>
+      <div data-filter-panel>
+        <button type="button" data-filter-close>Fechar</button>
+        <form data-filter-form>
+          <input name="q" data-filter-search value="" />
+          <select name="state" data-filter-key="state">
+            <option value="">Todos</option>
+            <option value="PE">PE</option>
+          </select>
+          <button type="reset" data-filter-reset>Limpar</button>
+        </form>
+      </div>
       <div data-filter-backdrop hidden></div>
       <div data-filter-status hidden>
         <div data-filter-chips></div>
         <button type="button" data-filter-reset>Limpar filtros ativos</button>
       </div>
-      <form data-filter-form>
-        <input data-filter-search value="" />
-        <select data-filter-key="state">
-          <option value="">Todos</option>
-          <option value="PE">PE</option>
-        </select>
-        <button type="reset" data-filter-reset>Limpar</button>
-      </form>
       <p><span data-results-count>0</span></p>
       <section data-filter-section>
+        <span data-section-count>2</span>
         <p data-section-empty hidden>Vazio</p>
         <article data-card data-searchable="Recife Frontend" data-state="PE"></article>
         <article data-card data-searchable="Salvador Python" data-state="BA"></article>
@@ -47,11 +49,13 @@ describe("list filters", () => {
     vi.restoreAllMocks();
     document.body.className = "";
     Object.defineProperty(window, "innerWidth", { configurable: true, writable: true, value: 1280 });
+    window.history.replaceState({}, "", "/");
   });
 
   it("normaliza tokens e listas de dataset", () => {
     const { splitDataset, tokenize } = loadModule();
     expect(tokenize("  Recife Frontend ")).toBe("recife frontend");
+    expect(tokenize("  São Luís  ")).toBe("sao luis");
     expect(splitDataset("pe, recife ,  ")).toEqual(["pe", "recife"]);
   });
 
@@ -66,8 +70,70 @@ describe("list filters", () => {
     expect(cards[0].hidden).toBe(false);
     expect(cards[1].hidden).toBe(true);
     expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+    expect(root.querySelector("[data-section-count]").textContent).toBe("1");
     expect(root.querySelector("[data-filter-status]").hidden).toBe(false);
     expect(root.querySelector("[data-filter-chips]").textContent).toContain("Busca: frontend");
+  });
+
+  it("busca texto sem exigir os acentos digitados", () => {
+    const { applyFilters } = loadModule();
+    const root = buildDom();
+    root.querySelectorAll("[data-card]")[0].dataset.searchable = "Encontro em São Luís";
+    root.querySelector("[data-filter-search]").value = "sao luis";
+
+    applyFilters(root);
+
+    expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+    expect(root.querySelectorAll("[data-card]")[0].hidden).toBe(false);
+  });
+
+  it("hidrata filtros pela URL e preserva parametros externos ao sincronizar", () => {
+    const { bindListRoot } = loadModule();
+    window.history.replaceState({}, "", "/eventos/?q=Recife&state=PE&origem=home");
+    const root = buildDom();
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
+
+    expect(root.querySelector("[data-filter-search]").value).toBe("Recife");
+    expect(root.querySelector("[data-filter-key='state']").value).toBe("PE");
+    expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+
+    root.querySelector("[data-filter-search]").value = "";
+    root.querySelector("[data-filter-key='state']").value = "";
+    root.querySelector("[data-filter-search]").dispatchEvent(new Event("input", { bubbles: true }));
+
+    const params = new URLSearchParams(window.location.search);
+    expect(params.get("q")).toBeNull();
+    expect(params.get("state")).toBeNull();
+    expect(params.get("origem")).toBe("home");
+
+    cleanup();
+  });
+
+  it("remove o painel fechado do foco no mobile e restaura no desktop", () => {
+    const { bindListRoot } = loadModule();
+    window.innerWidth = 390;
+    const root = buildDom();
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
+    const panel = root.querySelector("[data-filter-panel]");
+    const toggle = root.querySelector("[data-filter-toggle]");
+
+    expect(panel.hasAttribute("inert")).toBe(true);
+    expect(panel.getAttribute("aria-hidden")).toBe("true");
+
+    toggle.click();
+    expect(panel.hasAttribute("inert")).toBe(false);
+    expect(panel.hasAttribute("aria-hidden")).toBe(false);
+
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    expect(document.activeElement).toBe(toggle);
+    expect(panel.hasAttribute("inert")).toBe(true);
+
+    window.innerWidth = 1200;
+    window.dispatchEvent(new Event("resize"));
+    expect(panel.hasAttribute("inert")).toBe(false);
+    expect(panel.hasAttribute("aria-hidden")).toBe(false);
+
+    cleanup();
   });
 
   it("suporta dataset com multiplos valores e lida com estrutura incompleta", () => {

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Devops",
+    "name": "DevOps",
     "slug": "devops",
     "description": "",
     "color": "#6B7280",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "name": "Fullstack",
+    "name": "Full stack",
     "slug": "fullstack",
     "description": "",
     "color": "#6B7280",
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "name": "OpenSource",
+    "name": "Open source",
     "slug": "opensource",
     "description": "",
     "color": "#6B7280",

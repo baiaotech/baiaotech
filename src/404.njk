@@ -1,19 +1,16 @@
 ---
 layout: layouts/base.njk
 permalink: 404.html
-title: Pagina nao encontrada
-description: A rota que voce tentou acessar nao existe.
+title: Página não encontrada
+description: A rota que você tentou acessar não existe.
 bodyClass: page-404
 excludeFromSitemap: true
 ---
-<section class="utility-intro">
-  <div class="container utility-intro__inner" data-reveal>
-    <p class="eyebrow">404</p>
-    <h1>Essa rota não existe no índice atual.</h1>
-    <p>Volte para a home ou navegue por eventos e comunidades.</p>
-    <div class="hero-home__actions">
-      <a class="button button--primary" href="{{ '/' | url }}">Voltar para a home</a>
-      <a class="button button--ghost" href="{{ '/eventos/' | url }}">Ver eventos</a>
-    </div>
+<section class="not-found">
+  <div class="container not-found__inner" data-reveal>
+    <p class="eyebrow eyebrow--light">Erro 404</p>
+    <h1>Essa rota ficou fora do mapa.</h1>
+    <p>Volte ao início ou encontre um evento e uma comunidade para conhecer.</p>
+    <div class="not-found__actions"><a class="button button--accent" href="{{ '/' | url }}">Voltar ao início</a><a class="button button--on-dark" href="{{ '/eventos/' | url }}">Ver eventos</a><a class="text-link text-link--light text-link--touch" href="{{ '/comunidades/' | url }}">Explorar comunidades</a></div>
   </div>
 </section>

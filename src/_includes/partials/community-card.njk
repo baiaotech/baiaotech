@@ -1,42 +1,31 @@
 {% set data = community.data %}
 {% set cover = data.cover_image | localAsset | displayImage %}
 <article
-  class="listing-row listing-row--community {{ 'listing-row--with-media' if cover else 'listing-row--no-media' }}"
+  class="community-card community-card--{{ communityCardContext or 'listing' }}"
   data-card
-  data-reveal
-  data-searchable="{{ data.title }} {{ data.state }} {{ data.city }} {{ data.tags | join(' ') }}"
+  data-searchable="{{ data.title }} {{ data.state | stateName }} {{ data.city }} {{ data.tags | join(' ') }}"
   data-state="{{ data.state }}"
+  data-tags="{{ data.tags | join(',') }}"
 >
-  <div class="listing-row__territory">
-    <span>{{ data.state }}</span>
+  <div class="community-card__identity">
+    {% if cover %}
+      <img src="{{ cover }}" alt="Logotipo de {{ data.title }}" width="160" height="96" loading="lazy" decoding="async">
+    {% else %}
+      <span aria-hidden="true">{{ data.state }}</span>
+    {% endif %}
   </div>
 
-  <div class="listing-row__body">
-    <p class="listing-row__eyebrow">
-      {{ data.state | stateName }}{% if data.city %} · {{ data.city }}{% endif %}
-    </p>
-    <h3 class="listing-row__title"><a href="{{ community.url | url }}">{{ data.title }}</a></h3>
-    <p class="listing-row__summary listing-row__summary--clamped">
-      {{ community.templateContent | striptags }}
-    </p>
+  <div class="community-card__body">
+    <p class="community-card__location">{{ data.state | stateName }}{% if data.city %} · {{ data.city }}{% endif %}</p>
+    <h3><a href="{{ community.url | url }}">{{ data.title }}</a></h3>
+    <p>{{ community.templateContent | summaryText }}</p>
     {% if data.tags.length %}
-      <ul class="listing-row__meta-list" aria-label="Tags">
-        {% for tag in data.tags.slice(0, 4) %}
-          <li>{{ tag }}</li>
+      <ul class="tag-list" aria-label="Temas">
+        {% for tag in data.tags.slice(0, 3) %}
+          <li>{{ tag | tagLabel }}</li>
         {% endfor %}
       </ul>
     {% endif %}
   </div>
 
-  {% if cover %}
-    <a class="listing-row__media listing-row__media--community" href="{{ community.url | url }}" aria-label="Abrir {{ data.title }}">
-      <img src="{{ cover }}" alt="Capa de {{ data.title }}" width="320" height="190" loading="lazy" decoding="async">
-    </a>
-  {% endif %}
-
-  <div class="listing-row__cta listing-row__cta--links">
-    {% if data.website %}<a class="text-link text-link--touch" href="{{ data.website }}" rel="noopener">Site</a>{% endif %}
-    {% if data.instagram %}<a class="text-link text-link--touch" href="{{ data.instagram }}" rel="noopener">Instagram</a>{% endif %}
-    <a class="text-link text-link--touch" href="{{ community.url | url }}" aria-label="Ver detalhes de {{ data.title }}">Detalhes</a>
-  </div>
 </article>

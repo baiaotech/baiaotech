@@ -1,61 +1,61 @@
 ---
 layout: layouts/base.njk
 title: Comunidades
-description: Diretório aberto de comunidades de tecnologia com leitura direta e filtro simples.
+description: Diretório aberto de comunidades de tecnologia do Nordeste.
 bodyClass: page-communities
 pageScripts:
   - /assets/js/list-filters.js
 ---
 {% set allCommunities = collections.communitiesSorted %}
 {% set stateOptions = allCommunities | uniqueStates %}
+{% set tagOptions = allCommunities | uniqueTags %}
 
-<section class="utility-intro utility-intro--soft">
+<section class="utility-intro utility-intro--communities">
   <div class="container utility-intro__inner" data-reveal>
-    <p class="eyebrow">Diretório</p>
-    <h1>Encontre comunidades tech por estado, cidade ou tema.</h1>
-    <p>
-      Busque por nome, filtre por estado e abra os links principais sem percorrer o diretório inteiro.
-    </p>
+    <p class="eyebrow eyebrow--light">Rede local</p>
+    <h1>Encontre quem constrói tecnologia no Nordeste.</h1>
+    <p>Descubra grupos por estado, cidade ou tema e participe da comunidade mais próxima.</p>
   </div>
 </section>
 
 <section class="listing-shell" data-list-root>
   <div class="container listing-shell__toolbar" data-reveal>
     <div>
-      <p class="eyebrow">Índice</p>
-      <h2><span data-results-count aria-live="polite">{{ allCommunities.length }}</span> comunidades</h2>
+      <p class="eyebrow">Diretório aberto</p>
+      <h2 aria-live="polite" aria-atomic="true"><span data-results-count>{{ allCommunities.length }}</span> comunidades encontradas</h2>
     </div>
-    <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="community-filters">
-      Filtrar
-    </button>
+    <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="community-filters">Abrir filtros</button>
   </div>
 
   <div class="container filter-status" data-filter-status hidden>
     <div class="filter-status__chips" data-filter-chips aria-live="polite"></div>
     <button class="text-link text-link--touch" type="button" data-filter-reset>Limpar filtros</button>
   </div>
-
   <div class="filter-backdrop" data-filter-backdrop hidden></div>
 
   <div class="container listing-shell__layout">
-    <aside class="filter-panel" id="community-filters" data-filter-panel>
+    <aside class="filter-panel" id="community-filters" data-filter-panel aria-label="Filtros de comunidades">
       <div class="filter-panel__header">
-        <h3>Filtros</h3>
+        <div><p class="eyebrow">Refine a busca</p><h3>Filtros</h3></div>
         <button class="filter-panel__close" type="button" data-filter-close>Fechar</button>
       </div>
-
       <form class="filter-form" aria-label="Filtros de comunidades" data-filter-form>
-        <label>
+        <label class="filter-form__search">
           <span>Buscar</span>
-          <input type="search" placeholder="Nome, cidade, tag..." data-filter-search>
+          <input name="q" type="search" placeholder="Nome, cidade ou tema" autocomplete="off" data-filter-search>
         </label>
         <label>
           <span>Estado</span>
-          <select data-filter-key="state">
+          <select name="state" data-filter-key="state">
             <option value="">Todos</option>
-            {% for state in stateOptions %}
-              <option value="{{ state }}">{{ state | stateName }}</option>
-            {% endfor %}
+            {% for state in stateOptions %}<option value="{{ state }}">{{ state | stateName }}</option>{% endfor %}
+          </select>
+        </label>
+        <label>
+          <span>Tema</span>
+          <select name="tags" data-filter-key="tags">
+            <option value="">Todos</option>
+            {% for tag in tagOptions %}<option value="{{ tag }}">{{ tag | tagLabel }}</option>{% endfor %}
           </select>
         </label>
         <div class="filter-actions">
@@ -67,10 +67,12 @@ pageScripts:
 
     <div class="listing-shell__content">
       <section class="listing-block" data-filter-section>
-        <div class="listing-list">
-          {% for community in allCommunities %}
-            {% include "partials/community-card.njk" %}
-          {% endfor %}
+        <header class="listing-block__header listing-block__header--compact">
+          <h2 class="sr-only">Lista de comunidades</h2>
+          <p><span data-section-count>{{ allCommunities.length }}</span> comunidades visíveis</p>
+        </header>
+        <div class="community-grid community-grid--directory">
+          {% for community in allCommunities %}{% include "partials/community-card.njk" %}{% endfor %}
         </div>
         <p class="empty-inline" data-section-empty hidden>Nenhuma comunidade combina com os filtros.</p>
       </section>

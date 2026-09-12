@@ -13,7 +13,7 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "Baião Tech"
+      name: /O próximo encontro tech começa por aqui/i
     })
   ).toBeVisible();
   await expect(page.getByText(/Próximo evento/i)).toBeVisible();
@@ -35,29 +35,38 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /Encontre o próximo evento/i
+      name: /Encontre seu próximo encontro tech/i
     })
   ).toBeVisible();
 
   await page.goto("/");
-  await page.locator(".hero-home__actions").getByRole("link", { name: "Ver comunidades" }).click();
+  await page.getByRole("link", { name: "Explorar comunidades" }).first().click();
   await expect(page).toHaveURL(/\/comunidades\/$/);
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /Encontre comunidades tech por estado, cidade ou tema\./i
+      name: /Encontre quem constrói tecnologia no Nordeste\./i
     })
   ).toBeVisible();
 });
 
 test("home mantém conteúdo essencial visível sem JavaScript", async ({ browser }) => {
-  const context = await browser.newContext({ javaScriptEnabled: false });
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    viewport: { width: 320, height: 844 }
+  });
   const page = await context.newPage();
 
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1, name: "Baião Tech" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Ver eventos" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /O próximo encontro tech começa por aqui/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver agenda completa" })).toBeVisible();
+
+  const topLayout = await page.evaluate(() => ({
+    headerBottom: document.querySelector(".site-header").getBoundingClientRect().bottom,
+    titleTop: document.querySelector("h1").getBoundingClientRect().top
+  }));
+  expect(topLayout.titleTop).toBeGreaterThanOrEqual(topLayout.headerBottom);
 
   await context.close();
 });
@@ -68,11 +77,16 @@ test.describe("navegacao mobile", () => {
   test("abre o menu hamburguer e navega", async ({ page }) => {
     await page.goto("/");
 
-    const toggle = page.getByRole("button", { name: "Abrir menu" });
+    const toggle = page.locator("[data-nav-toggle]");
+    const nav = page.locator("[data-site-nav]");
+    await expect(toggle).toHaveAccessibleName("Abrir menu");
+    await expect(nav).toHaveAttribute("inert", "");
     await toggle.click();
 
     await expect(toggle).toHaveAttribute("aria-expanded", "true");
-    await page.getByRole("navigation", { name: "Principal" }).getByRole("link", { name: "Comunidades" }).click();
+    await expect(toggle).toHaveAccessibleName("Fechar menu");
+    await expect(nav).not.toHaveAttribute("inert", "");
+    await nav.getByRole("link", { name: "Comunidades" }).click();
 
     await expect(page).toHaveURL(/\/comunidades\/$/);
     await expect(toggle).toHaveAttribute("aria-expanded", "false");
@@ -189,7 +203,7 @@ test("comunidades desktop filtra por busca e abre detalhes", async ({ page }) =>
   expect(filteredVisible).toBeLessThanOrEqual(initialVisible);
   await expectVisibleCardTitlesToContain(root, firstTitle);
 
-  await root.locator("[data-card]:not([hidden]) .text-link", { hasText: "Detalhes" }).first().click();
+  await root.locator("[data-card]:not([hidden]) .community-card__body h3 a").first().click();
   await expect(page.getByRole("heading", { level: 1, name: firstTitle })).toBeVisible();
 
   const communityShareHref = await page.getByRole("link", { name: "Compartilhar no WhatsApp" }).getAttribute("href");
@@ -211,13 +225,22 @@ test("comunidades desktop aplica filtro de estado real", async ({ page }) => {
   await expectVisibleCardsToMatchDataset(root, "state", stateOption.value);
 });
 
+test("comunidades hidrata busca da URL e ignora diferenca de acentos", async ({ page }) => {
+  await page.goto("/comunidades/?q=sao+luis");
+
+  const root = page.locator("[data-list-root]");
+  await expect(page.locator("[data-filter-search]")).toHaveValue("sao luis");
+  const visible = await expectResultsCountMatches(root);
+  expect(visible).toBeGreaterThan(0);
+});
+
 test("contribuir desktop mantem layout sem overflow horizontal", async ({ page }) => {
   await page.goto("/como-contribuir/");
 
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /Como sugerir um evento ou uma comunidade\./i
+      name: /Ajude a manter o mapa tech do Nordeste atualizado\./i
     })
   ).toBeVisible();
   await expect(page.locator(".contribute-section")).toHaveCount(2);

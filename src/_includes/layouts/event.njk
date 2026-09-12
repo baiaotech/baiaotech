@@ -1,13 +1,10 @@
 {% extends "layouts/base.njk" %}
 
 {% block headExtra %}
-  {% set eventImage = cover_image | absoluteImage %}
+  {% set eventImage = page.inputPath | eventArtworkAbsolute %}
+  {% if cover_image | localAsset %}{% set eventImage = cover_image | absoluteImage %}{% endif %}
   {% set attendanceMode = "https://schema.org/OfflineEventAttendanceMode" %}
-  {% if format == "online" %}
-    {% set attendanceMode = "https://schema.org/OnlineEventAttendanceMode" %}
-  {% elseif format == "hybrid" %}
-    {% set attendanceMode = "https://schema.org/MixedEventAttendanceMode" %}
-  {% endif %}
+  {% if format == "online" and online_url %}{% set attendanceMode = "https://schema.org/OnlineEventAttendanceMode" %}{% elseif format == "hybrid" and online_url %}{% set attendanceMode = "https://schema.org/MixedEventAttendanceMode" %}{% endif %}
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -18,84 +15,59 @@
       "image": {{ eventImage | jsonify | safe }},
       "startDate": {{ start_date | jsonify | safe }},
       "endDate": {{ (end_date or start_date) | jsonify | safe }},
-      "eventAttendanceMode": {{ attendanceMode | jsonify | safe }},
-      "organizer": {
-        "@type": "Organization",
-        "name": {{ organizer | jsonify | safe }}
-      },
-      "location": {
-        "@type": "Place",
-        "name": {{ venue | jsonify | safe }},
-        "address": {{ ([city, state] | join(", ")) | jsonify | safe }}
-      }
+      {% if format == "in-person" or online_url %}"eventAttendanceMode": {{ attendanceMode | jsonify | safe }},{% endif %}
+      "organizer": { "@type": "Organization", "name": {{ organizer | jsonify | safe }} },
+      "location": {% if format == "online" and online_url %}{ "@type": "VirtualLocation", "url": {{ online_url | jsonify | safe }} }{% elseif format == "hybrid" and online_url %}[{ "@type": "Place", "name": {{ venue | jsonify | safe }}, "address": {{ ([city, state] | join(", ")) | jsonify | safe }} }, { "@type": "VirtualLocation", "url": {{ online_url | jsonify | safe }} }]{% else %}{ "@type": "Place", "name": {{ venue | jsonify | safe }}, "address": {{ ([city, state] | join(", ")) | jsonify | safe }} }{% endif %}
     }
   </script>
 {% endblock %}
 
 {% block content %}
-  {% set fallbackCover = '/assets/editorial/social-card.png' | url %}
-  {% set cover = (cover_image | displayImage) or fallbackCover %}
+  {% set cover = page.inputPath | eventArtwork %}
+  {% if cover_image | localAsset %}{% set cover = cover_image | displayImage %}{% endif %}
   {% set categoryLabels = page.inputPath | eventCategoryLabels(categoriesBySlug) %}
   {% set eventDescription = content | summaryText %}
   <article class="detail-page detail-page--event">
     <section class="detail-intro">
-      <div class="container detail-intro__grid">
-        <div class="detail-intro__content" data-reveal>
-          <p class="eyebrow">Evento</p>
-          <h1>{{ title }}</h1>
-          <p class="detail-intro__lead">
-            {{ start_date | eventDateRange(end_date) }}
-            {% if city or state %} · {{ city }}{% if city and state %}, {% endif %}{{ state | stateName }}{% endif %}
-          </p>
-          <div class="meta-pills">
-            <span>{{ kind | kindLabel }}</span>
-            <span>{{ format | formatLabel }}</span>
-            {% if price %}<span>{{ price | priceLabel }}</span>{% endif %}
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="{{ '/eventos/' | url }}">Eventos</a><span aria-hidden="true">/</span><span aria-current="page">{{ title }}</span></nav>
+        <div class="detail-intro__grid">
+          <div class="detail-intro__content" data-reveal>
+            <p class="eyebrow eyebrow--light">{{ kind | kindLabel }} · {{ format | formatLabel }}</p>
+            <h1>{{ title }}</h1>
+            <p class="detail-intro__lead"><time datetime="{{ start_date }}">{{ start_date | eventDateRange(end_date) }}</time>{% if city or state %}<span>{{ city }}{% if city and state %}, {% endif %}{{ state | stateName }}</span>{% endif %}</p>
+            <div class="meta-pills">
+              {% if price %}<span>{{ price | priceLabel }}</span>{% endif %}
+              {% for categoryLabel in categoryLabels %}<span>{{ categoryLabel }}</span>{% endfor %}
+            </div>
           </div>
+          <figure class="detail-intro__media" data-reveal>
+            <img src="{{ cover }}" alt="Ilustração editorial de {{ title }}" width="1200" height="800" decoding="async" fetchpriority="high">
+          </figure>
         </div>
-
-        <figure class="detail-intro__media" data-reveal>
-          <img src="{{ cover }}" alt="Imagem de capa de {{ title }}" width="960" height="560" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{{ fallbackCover }}';">
-        </figure>
       </div>
     </section>
 
     <section class="detail-body">
       <div class="container detail-body__grid">
-        <aside class="detail-aside" data-reveal>
-          <p class="eyebrow">Acesso</p>
-          <dl class="detail-facts">
-            <div>
-              <dt>Organização</dt>
-              <dd>{{ organizer }}</dd>
-            </div>
-            <div>
-              <dt>Local</dt>
-              <dd>{{ venue }}</dd>
-            </div>
-            {% if categoryLabels.length %}
-              <div>
-                <dt>Categorias</dt>
-                <dd class="detail-facts__chips">
-                  {% for categoryLabel in categoryLabels %}
-                    <span>{{ categoryLabel }}</span>
-                  {% endfor %}
-                </dd>
-              </div>
-            {% endif %}
-          </dl>
-          <div class="detail-actions" role="group" aria-label="Ações do evento">
-            {% if ticket_url %}
-              <a class="button button--primary button--wide" href="{{ ticket_url }}" rel="noopener">Abrir inscrição</a>
-            {% endif %}
-            <a class="button button--ghost button--wide" href="{{ page.url | googleCalendarUrl(title, start_date, end_date, eventDescription, venue, city, state) }}" rel="noopener">Adicionar ao Google Agenda</a>
-            <a class="button button--ghost button--wide" href="{{ page.url | eventIcsPath | url }}" download>Baixar .ics</a>
-            <a class="button button--ghost button--wide" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
-          </div>
-        </aside>
-        <div class="prose" data-reveal>
+        <div class="prose">
+          <h2 class="eyebrow detail-section-title">Sobre o evento</h2>
           {{ content | safe }}
         </div>
+        <aside class="detail-aside" aria-label="Informações e ações do evento">
+          <h2 class="eyebrow detail-section-title">Informações</h2>
+          <dl class="detail-facts">
+            <div><dt>Quando</dt><dd>{{ start_date | eventDateRange(end_date) }}</dd></div>
+            <div><dt>Onde</dt><dd>{{ venue }}{% if city or state %}<span>{{ city }}{% if city and state %}, {% endif %}{{ state | stateName }}</span>{% endif %}</dd></div>
+            <div><dt>Organização</dt><dd>{{ organizer }}</dd></div>
+          </dl>
+          <div class="detail-actions" role="group" aria-label="Ações do evento">
+            {% if ticket_url %}<a class="button button--primary button--wide" href="{{ ticket_url }}" rel="noopener">Abrir inscrição</a>{% endif %}
+            <a class="button button--secondary button--wide" href="{{ page.url | googleCalendarUrl(title, start_date, end_date, eventDescription, venue, city, state) }}" rel="noopener">Adicionar ao Google Agenda</a>
+            <a class="text-link text-link--touch" href="{{ page.url | eventIcsPath | url }}" download>Baixar .ics</a>
+            <a class="text-link text-link--touch" href="{{ page.url | whatsAppShareUrl(title) }}" rel="noopener">Compartilhar no WhatsApp</a>
+          </div>
+        </aside>
       </div>
     </section>
   </article>

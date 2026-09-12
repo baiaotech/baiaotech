@@ -1,14 +1,13 @@
 {% set data = event.data %}
 {% set isFuture = data.end_date | isFutureDate %}
-{% set fallbackCover = '/assets/editorial/social-card.png' | url %}
-{% set cover = (data.cover_image | displayImage) or fallbackCover %}
+{% set cover = data.page.inputPath | eventArtworkThumb %}
 {% set categorySlugs = data.page.inputPath | eventCategorySlugs %}
 {% set categoryLabels = data.page.inputPath | eventCategoryLabels(categoriesBySlug) %}
+{% set spansMonths = data.start_date | eventSpansMonths(data.end_date) %}
 <article
-  class="listing-row listing-row--event listing-row--with-media"
+  class="listing-row listing-row--event listing-row--{{ eventCardContext or 'listing' }}"
   data-card
-  data-reveal
-  data-searchable="{{ data.title }} {{ data.organizer }} {{ data.city }} {{ data.state }} {{ categorySlugs | join(' ') }}"
+  data-searchable="{{ data.title }} {{ data.organizer }} {{ data.city }} {{ data.state | stateName }} {{ categoryLabels | join(' ') }}"
   data-kind="{{ data.kind }}"
   data-format="{{ data.format }}"
   data-state="{{ data.state }}"
@@ -16,36 +15,33 @@
   data-categories="{{ categorySlugs | join(',') }}"
   data-status="{{ 'future' if isFuture else 'past' }}"
 >
-  <div class="listing-row__date">
-    <span class="listing-row__day">{{ data.start_date | dayNumber }}</span>
-    <span class="listing-row__month">{{ data.start_date | monthShort }}</span>
+  <time class="listing-row__date" datetime="{{ data.start_date }}">
+    <span class="listing-row__day{{ ' listing-row__day--cross-month' if spansMonths }}">{{ data.start_date | eventDayRange(data.end_date) }}</span>
+    {% if not spansMonths %}<span class="listing-row__month">{{ data.start_date | monthShort }}</span>{% endif %}
+  </time>
+
+  <div class="listing-row__media" aria-hidden="true">
+    <img src="{{ cover }}" alt="" width="240" height="144" loading="lazy" decoding="async">
   </div>
 
   <div class="listing-row__body">
     <p class="listing-row__eyebrow">
       {{ data.kind | kindLabel }} · {{ data.format | formatLabel }}
-      {% if data.state %} · {{ data.state | stateName }}{% endif %}
     </p>
-    <h3 class="listing-row__title"><a href="{{ event.url | url }}">{{ data.title }}</a></h3>
+    <h3 class="listing-row__title">{{ data.title }}</h3>
     <p class="listing-row__summary">
-      {{ data.organizer }}
-      {% if data.city or data.state %}
-        — {{ data.city }}{% if data.city and data.state %}, {% endif %}{{ data.state | stateName }}
-      {% endif %}
+      {{ data.city }}{% if data.city and data.state %}, {% endif %}{{ data.state | stateName }}
+      {% if data.organizer %}<span> · {{ data.organizer }}</span>{% endif %}
     </p>
 
     {% if categoryLabels.length %}
       <ul class="listing-row__meta-list" aria-label="Categorias">
-        {% for categoryLabel in categoryLabels %}
+        {% for categoryLabel in categoryLabels.slice(0, 3) %}
           <li>{{ categoryLabel }}</li>
         {% endfor %}
       </ul>
     {% endif %}
   </div>
-
-  <a class="listing-row__media" href="{{ event.url | url }}" aria-label="Abrir {{ data.title }}">
-    <img src="{{ cover }}" alt="Capa de {{ data.title }}" width="320" height="190" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='{{ fallbackCover }}';">
-  </a>
 
   <div class="listing-row__cta">
     {% if data.price %}
