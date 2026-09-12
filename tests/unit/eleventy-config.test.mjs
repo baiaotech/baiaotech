@@ -36,4 +36,16 @@ describe("eleventy config filters", () => {
     expect(plainText(html)).toBe("Resumo publico Depois");
     expect(summaryText(html)).toBe("Resumo publico Depois");
   });
+
+  it("preserva datas civis YYYY-MM-DD sem recuo por timezone", () => {
+    const filters = getFilters();
+    const readableDate = filters.get("readableDate");
+    const eventDateRange = filters.get("eventDateRange");
+    const dayNumber = filters.get("dayNumber");
+
+    expect(readableDate("2026-09-16")).toContain("16");
+    expect(eventDateRange("2026-09-16", "2026-09-17")).toContain("16");
+    expect(eventDateRange("2026-09-16", "2026-09-17")).toContain("17");
+    expect(dayNumber("2026-09-16")).toBe("16");
+  });
 });
