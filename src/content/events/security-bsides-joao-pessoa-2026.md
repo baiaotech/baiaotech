@@ -4,10 +4,10 @@ start_date: "2026-09-19"
 end_date: "2026-09-19"
 kind: "conference"
 format: "in-person"
-city: "João Pessoa"
+city: "Cabedelo"
 state: "PB"
 organizer: "Security BSides João Pessoa"
-venue: "Centro Universitário UNIESP"
+venue: "Centro Universitário UNIESP, BR-230, Km 14"
 ticket_url: "https://www.bsidesjp.com.br/"
 source_name: "Security BSides João Pessoa"
 source_url: "https://www.bsidesjp.com.br/"
@@ -18,4 +18,4 @@ cover_image: ""
 price: "Pago"
 ---
 
-A Security BSides João Pessoa 2026 acontece em 19 de setembro, em João Pessoa. Organizada pela comunidade local da Security BSides, a conferência reúne profissionais, pesquisadores, estudantes e entusiastas de Segurança da Informação em uma programação com palestras técnicas, hacking, pesquisa, villages e workshops práticos.
+A Security BSides João Pessoa 2026 acontece em 19 de setembro, no Centro Universitário UNIESP, em Cabedelo. Organizada pela comunidade local da Security BSides, a conferência reúne profissionais, pesquisadores, estudantes e entusiastas de Segurança da Informação em uma programação com palestras técnicas, hacking, pesquisa, técnicas e ferramentas da área.
