@@ -55,15 +55,13 @@ async function pickFirstNonEmptyOption(select) {
 }
 
 async function expectVisibleCardsToMatchDataset(root, datasetKey, expectedValue) {
-  const values = await root.locator("[data-card]:not([hidden])").evaluateAll((cards, key) => {
-    return cards.map((card) => card.dataset[key] || "");
-  }, datasetKey);
+  await expect.poll(async () => {
+    const values = await root.locator("[data-card]:not([hidden])").evaluateAll((cards, key) => {
+      return cards.map((card) => card.dataset[key] || "");
+    }, datasetKey);
 
-  expect(values.length).toBeGreaterThan(0);
-
-  for (const value of values) {
-    expect(value).toBe(expectedValue);
-  }
+    return values.length > 0 && values.every((value) => value === expectedValue);
+  }).toBe(true);
 }
 
 module.exports = {
