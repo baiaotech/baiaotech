@@ -1,0 +1,157 @@
+{
+  "versao": 1,
+  "repositorio": "baiaotech/baiaotech",
+  "branch": "feat/artes-default-comunidades",
+  "base_remota": "ebfdb23f690ea5661c66a8977f44bdf0dc68b8d1",
+  "criterio": "Comunidades cadastradas ainda sem modelo, em ordem alfabética por slug. Um subagent independente por lote de até 10; envio incremental ao remoto após conclusão e conferência de cada lote.",
+  "modelos_anteriores": 10,
+  "novos_modelos_previstos": 83,
+  "lotes": [
+    {
+      "id": "lote-02",
+      "comunidades": [
+        "agenda-ti-potiguar",
+        "agile-maranhao",
+        "all-saints-bay",
+        "apgamed",
+        "arretadas-do-php",
+        "aws-user-group-ceara",
+        "bahia-indie-game-developers",
+        "caju-valley",
+        "cajuina-valley",
+        "carnauba-valley"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-03",
+      "comunidades": [
+        "ceara-java-user-group",
+        "cloud-native-rn",
+        "codar-salvador",
+        "conecta-nordeste",
+        "devops-jp",
+        "django-girls-salvador",
+        "dotnet-recife",
+        "elug-ce",
+        "femug-pe",
+        "forhacker-space"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-04",
+      "comunidades": [
+        "front-end-ce",
+        "gdg-feira-de-santana",
+        "gdg-joao-pessoa",
+        "gdg-maceio",
+        "gdg-parnaiba",
+        "gdg-salvador",
+        "gdg-sao-luis",
+        "geek-night-recife",
+        "github-community-fortaleza",
+        "graphql-recife"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-05",
+      "comunidades": [
+        "grude4j",
+        "grudepb-crudpb",
+        "grupy-ba",
+        "grupy-rn",
+        "gts-ce",
+        "guru-ce",
+        "guts-pb",
+        "hack-in-cariri",
+        "housejs",
+        "ifpe-open-source"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-06",
+      "comunidades": [
+        "jamparuby",
+        "javabahia",
+        "javax-ce",
+        "jerimum-valley",
+        "ladies-that-ux-recife",
+        "manguezal",
+        "meetia-pb",
+        "net-ceara",
+        "net-pb",
+        "owasp-fortaleza"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-07",
+      "comunidades": [
+        "owasp-natal",
+        "owasp-pb",
+        "oxenti-pe",
+        "paraiba-js",
+        "php-com-rapadura",
+        "php-maranhao",
+        "php-pb",
+        "pong-rn",
+        "potiguaras-valley",
+        "projeto-software-livre-bahia"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-08",
+      "comunidades": [
+        "pug-al-grupy-al",
+        "pug-ce",
+        "pug-ma",
+        "pug-pb-python-paraiba",
+        "pug-pe",
+        "pug-pi",
+        "pug-se",
+        "pyladies-natal",
+        "pyladies-recife",
+        "pyladies-sergipe"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-09",
+      "comunidades": [
+        "rails-girls-fortaleza",
+        "rapadura-valley",
+        "react-ladies",
+        "react-recife",
+        "reactjs-ceara",
+        "recife-front-end-community",
+        "santana-valley",
+        "soluises",
+        "sururu-valley",
+        "wids-recife"
+      ],
+      "quantidade": 10,
+      "status": "pendente"
+    },
+    {
+      "id": "lote-10",
+      "comunidades": [
+        "women-techmakers-joao-pessoa",
+        "women-who-code-recife",
+        "wordpress-fortaleza"
+      ],
+      "quantidade": 3,
+      "status": "pendente"
+    }
+  ]
+}

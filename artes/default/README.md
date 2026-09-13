@@ -83,3 +83,11 @@ sha256sum --check SHA256SUMS
 ```
 
 As logos das comunidades mantêm a identidade e titularidade de seus respectivos responsáveis. A presença no diretório não representa endosso adicional nem transfere direitos sobre as marcas.
+
+## Continuação em lotes
+
+O [plano de continuação](lotes/PLANO.json) organiza as 83 comunidades ainda sem modelo em lotes de até 10, cada um produzido por um subagent. Cada lote concluído é conferido e enviado à mesma branch; os anteriores são preservados. Os manifestos em `lotes/lote-XX.json` registram prompts e revisão visual. A criação continua separada da aprovação para publicação.
+
+Para comunidades sem `cover_image` no cadastro, o modelo específico utiliza o nome em destaque desde a margem esquerda, sem logo inventada, marca emprestada ou espaço vazio reservado. A ausência fica registrada no `estilo.json` para revisão.
+
+O script `scripts/build-community.cjs` monta apenas uma comunidade por execução, sem modificar os índices globais. Ele recebe um JSON com `id`, `conceito` e o caminho `ilustracao`; aceita `linhas_nome`, `nome_tamanho`, `logo_largura` e `logo_fundo` para ajustes de legibilidade. Requer Node.js, `gray-matter` do projeto e `sharp` disponível no runtime (`CODEX_PRIMARY_RUNTIME_NODE_MODULES`) ou instalado no ambiente. As ilustrações são geradas separadamente com Image Gen integrado. `assets/Inter.ttf` é a conversão local da fonte Inter Variable já incluída no projeto, sob a mesma [licença SIL OFL](../../src/assets/fonts/Inter-LICENSE.txt); `assets/fonts.conf` permite renderização consistente dos PNGs. O SVG mantém a fonte WOFF2 incorporada.
