@@ -17,7 +17,7 @@ categories:
   - "frontend"
   - "ia"
 featured: false
-cover_image: "https://cdn.thedevconf.com.br/2026/img/site/StageBoldRecWth.png"
+cover_image: ""
 price: ""
 ---
 
