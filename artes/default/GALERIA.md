@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-60 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+70 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -491,6 +491,86 @@ Aprender fazendo com estudantes, cultura maker e código aberto em Pernambuco.
 ![Card completo — IFPE Open Source](comunidades/ifpe-open-source/previa.png)
 
 [SVG editável](comunidades/ifpe-open-source/modelo.svg) · [Estilo e origem](comunidades/ifpe-open-source/estilo.json)
+
+## OWASP Natal
+
+Aprendizado de desenvolvimento seguro e revisão de aplicações no contexto potiguar.
+
+![Card completo — OWASP Natal](comunidades/owasp-natal/previa.png)
+
+[SVG editável](comunidades/owasp-natal/modelo.svg) · [Estilo e origem](comunidades/owasp-natal/estilo.json)
+
+## OWASP-PB
+
+Conscientização em segurança de aplicações e boas práticas compartilhadas na Paraíba.
+
+![Card completo — OWASP-PB](comunidades/owasp-pb/previa.png)
+
+[SVG editável](comunidades/owasp-pb/modelo.svg) · [Estilo e origem](comunidades/owasp-pb/estilo.json)
+
+## OxenTI-PE
+
+Integração das comunidades de TI da Grande Recife em um espaço de colaboração.
+
+![Card completo — OxenTI-PE](comunidades/oxenti-pe/previa.png)
+
+[SVG editável](comunidades/oxenti-pe/modelo.svg) · [Estilo e origem](comunidades/oxenti-pe/estilo.json)
+
+## Paraíba.js
+
+Troca de conhecimentos e apresentação de casos de JavaScript na Paraíba.
+
+![Card completo — Paraíba.js](comunidades/paraiba-js/previa.png)
+
+[SVG editável](comunidades/paraiba-js/modelo.svg) · [Estilo e origem](comunidades/paraiba-js/estilo.json)
+
+## PHP com Rapadura
+
+Encontro de programadores PHP unido por troca técnica, café e rapadura no Ceará.
+
+![Card completo — PHP com Rapadura](comunidades/php-com-rapadura/previa.png)
+
+[SVG editável](comunidades/php-com-rapadura/modelo.svg) · [Estilo e origem](comunidades/php-com-rapadura/estilo.json)
+
+## PHP-Maranhão
+
+Compartilhamento de linguagens e frameworks para desenvolvimento web no Maranhão.
+
+![Card completo — PHP-Maranhão](comunidades/php-maranhao/previa.png)
+
+[SVG editável](comunidades/php-maranhao/modelo.svg) · [Estilo e origem](comunidades/php-maranhao/estilo.json)
+
+## PHP-PB
+
+Mentoria entre diferentes níveis de experiência no ecossistema PHP paraibano.
+
+![Card completo — PHP-PB](comunidades/php-pb/previa.png)
+
+[SVG editável](comunidades/php-pb/modelo.svg) · [Estilo e origem](comunidades/php-pb/estilo.json)
+
+## PONG RN
+
+Criação e testes colaborativos de jogos independentes potiguares.
+
+![Card completo — PONG RN](comunidades/pong-rn/previa.png)
+
+[SVG editável](comunidades/pong-rn/modelo.svg) · [Estilo e origem](comunidades/pong-rn/estilo.json)
+
+## Potiguaras Valley
+
+Empreendedorismo e inovação conectando talentos do Seridó e do Trairi.
+
+![Card completo — Potiguaras Valley](comunidades/potiguaras-valley/previa.png)
+
+[SVG editável](comunidades/potiguaras-valley/modelo.svg) · [Estilo e origem](comunidades/potiguaras-valley/estilo.json)
+
+## Projeto Software Livre Bahia
+
+Colaboração aberta e circulação de conhecimento no movimento de software livre baiano.
+
+![Card completo — Projeto Software Livre Bahia](comunidades/projeto-software-livre-bahia/previa.png)
+
+[SVG editável](comunidades/projeto-software-livre-bahia/modelo.svg) · [Estilo e origem](comunidades/projeto-software-livre-bahia/estilo.json)
 
 ## Genérico com-logo
 

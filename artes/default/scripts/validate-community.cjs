@@ -41,6 +41,9 @@ async function validateCommunity(id) {
     check(illustration && hash(Buffer.from(illustration, 'base64')) === hash(jpg), 'Ilustração incorporada diverge do JPEG');
     const footer = embedded(svg, 'baiao-tech-logo');
     check(footer && hash(Buffer.from(footer, 'base64')) === hash(fs.readFileSync(path.join(root, 'assets/baiao-tech-principal.svg'))), 'Marca Baião Tech não corresponde ao original');
+    const footerGroup = content => content.match(/<g\b[^>]*id="fixed-baiao-footer"[^>]*>[\s\S]*?<\/g>/)?.[0];
+    const baseSvg = fs.readFileSync(path.join(root, 'genericos/com-logo/modelo.svg'), 'utf8');
+    check(footerGroup(svg) === footerGroup(baseSvg), 'Grupo do rodapé diverge da base: preservar posições, proporções, assinatura e URL');
     if (data.cover_image) {
       const source = path.join(repo, 'src', data.cover_image);
       const logo = fs.readFileSync(path.join(dir, 'logo.png'));
@@ -86,7 +89,7 @@ async function validateCommunity(id) {
 async function main() {
   const args = process.argv.slice(2);
   const plan = JSON.parse(fs.readFileSync(path.join(root, 'lotes/PLANO.json')));
-  const ids = args[0]?.startsWith('lote-') ? plan.lotes.find(b => b.id === args[0])?.comunidades : args;
+  const ids = args[0] === 'lote-01' ? JSON.parse(fs.readFileSync(path.join(root, 'catalogo.json'))).comunidades.slice(0,10).map(x=>x.id) : args[0]?.startsWith('lote-') ? plan.lotes.find(b => b.id === args[0])?.comunidades : args;
   if (!ids?.length) throw new Error('Informe lote-XX ou um ou mais slugs');
   const results = [];
   for (const id of ids) results.push(await validateCommunity(id));

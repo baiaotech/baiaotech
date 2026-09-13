@@ -1,0 +1,24 @@
+{
+  "id": "pong-rn",
+  "nome": "PONG RN",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pong-rn.md",
+  "estado": "RN",
+  "cidade": "",
+  "conceito": "Criação e testes colaborativos de jogos independentes potiguares.",
+  "linhas_nome": [
+    "PONG RN"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · RN",
+  "logo_origem": "src/assets/covers/communities/pong-rn.png",
+  "logo_origem_sha256": "63624a1d6bc67e28eb4193eaa139ae70e3b8b8c27f78e9201493c6f5c55c6693",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

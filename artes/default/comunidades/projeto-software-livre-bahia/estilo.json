@@ -1,0 +1,26 @@
+{
+  "id": "projeto-software-livre-bahia",
+  "nome": "Projeto Software Livre Bahia",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/projeto-software-livre-bahia.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Colaboração aberta e circulação de conhecimento no movimento de software livre baiano.",
+  "linhas_nome": [
+    "Projeto Software Livre Bahia"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.",
+  "ilustracao_y": -20,
+  "fundo_canvas": "#fdfcf7"
+}

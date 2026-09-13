@@ -1,0 +1,26 @@
+{
+  "id": "potiguaras-valley",
+  "nome": "Potiguaras Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/potiguaras-valley.md",
+  "estado": "RN",
+  "cidade": "",
+  "conceito": "Empreendedorismo e inovação conectando talentos do Seridó e do Trairi.",
+  "linhas_nome": [
+    "Potiguaras Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · RN",
+  "logo_origem": "src/assets/covers/communities/potiguaras-valley.png",
+  "logo_origem_sha256": "bf96f8e87b4f6c98d1674d5333d63cd3c1ae694a19f873a6fd95c0d7a7fa5587",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -20,
+  "fundo_canvas": "#fcfbf9"
+}

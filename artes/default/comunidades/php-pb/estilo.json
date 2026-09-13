@@ -1,0 +1,26 @@
+{
+  "id": "php-pb",
+  "nome": "PHP-PB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/php-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Mentoria entre diferentes níveis de experiência no ecossistema PHP paraibano.",
+  "linhas_nome": [
+    "PHP-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/php-pb.png",
+  "logo_origem_sha256": "bbf827619b52062285f53b82f7761bef5d9660d22313df113a01d6604755ec08",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -10,
+  "fundo_canvas": "#fefdfb"
+}

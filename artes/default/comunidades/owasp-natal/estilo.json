@@ -1,0 +1,26 @@
+{
+  "id": "owasp-natal",
+  "nome": "OWASP Natal",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/owasp-natal.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Aprendizado de desenvolvimento seguro e revisão de aplicações no contexto potiguar.",
+  "linhas_nome": [
+    "OWASP Natal"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 214,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/owasp-natal.webp",
+  "logo_origem_sha256": "04be66ac5514c82af849daa89a3c167f21b01ec39f04f6f07de0a4b673086f8e",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -60,
+  "fundo_canvas": "#fefdfb"
+}

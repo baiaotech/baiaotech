@@ -1,0 +1,26 @@
+{
+  "id": "php-com-rapadura",
+  "nome": "PHP com Rapadura",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/php-com-rapadura.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Encontro de programadores PHP unido por troca técnica, café e rapadura no Ceará.",
+  "linhas_nome": [
+    "PHP com Rapadura"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/php-com-rapadura.png",
+  "logo_origem_sha256": "e628a98351250e09c09379cbad2f4092c17f797fdcccf253b7919e2af41c215b",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -30,
+  "fundo_canvas": "#fefdfa"
+}

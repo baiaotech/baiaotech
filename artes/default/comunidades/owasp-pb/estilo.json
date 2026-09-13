@@ -1,0 +1,26 @@
+{
+  "id": "owasp-pb",
+  "nome": "OWASP-PB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/owasp-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Conscientização em segurança de aplicações e boas práticas compartilhadas na Paraíba.",
+  "linhas_nome": [
+    "OWASP-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 213,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/owasp-pb.webp",
+  "logo_origem_sha256": "be3bf73d2aacbd043d87572ed5774e584ccc1d35516f85706d6303f166ccc205",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -40,
+  "fundo_canvas": "#fcfbf8"
+}

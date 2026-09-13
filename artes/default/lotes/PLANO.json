@@ -117,7 +117,7 @@
         "projeto-software-livre-bahia"
       ],
       "quantidade": 10,
-      "status": "parcial_em_revisao",
+      "status": "concluido_em_revisao",
       "aprovacao": null,
       "manifesto": "lotes/lote-07.json"
     },

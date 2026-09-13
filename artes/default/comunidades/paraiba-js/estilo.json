@@ -1,0 +1,24 @@
+{
+  "id": "paraiba-js",
+  "nome": "Paraíba.js",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/paraiba-js.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Troca de conhecimentos e apresentação de casos de JavaScript na Paraíba.",
+  "linhas_nome": [
+    "Paraíba.js"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/paraiba-js.png",
+  "logo_origem_sha256": "d6a27dc107a5bb4645f0a230382c1c98245ad8e8b1e51584aadf477d333fa4b7",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

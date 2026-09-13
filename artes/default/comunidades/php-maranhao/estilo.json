@@ -1,0 +1,26 @@
+{
+  "id": "php-maranhao",
+  "nome": "PHP-Maranhão",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/php-maranhao.md",
+  "estado": "MA",
+  "cidade": "",
+  "conceito": "Compartilhamento de linguagens e frameworks para desenvolvimento web no Maranhão.",
+  "linhas_nome": [
+    "PHP-Maranhão"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · MA",
+  "logo_origem": "src/assets/covers/communities/php-maranhao.png",
+  "logo_origem_sha256": "1d5a1524c938aef552ed936f6924df7844d4846cba4036c07ce1a90dc39d2531",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -90,
+  "fundo_canvas": "#fdfdfb"
+}

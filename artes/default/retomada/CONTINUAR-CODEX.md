@@ -22,3 +22,12 @@ node artes/default/scripts/integrate-batch.cjs lote-XX
 Depois de revisar e adicionar ao índice somente os arquivos do lote liberado e os índices globais, execute `node artes/default/scripts/checksums-index.cjs` e adicione `artes/default/SHA256SUMS`. O cálculo usa o índice Git, evitando incluir alterações parciais de outro agente. Faça commit/push imediatamente e confira o SHA remoto com `git ls-remote origin refs/heads/feat/artes-default-comunidades`.
 
 Não alterar a marca, o site, automações ou os cadastros editoriais. Não inventar dados de eventos, aprovação, logos ou cenas genéricas para comunidades cadastradas.
+
+## Verificações complementares em 13/09/2026
+
+- `npm run validate`: passou, com 75 eventos e 93 comunidades cadastradas.
+- `npm run build`: passou.
+- `npm run test:unit`: 133 testes passaram, em 22 arquivos.
+- E2E: 11 testes passaram com um worker e servidor isolado na porta 4186. Uma configuração temporária externa ao repositório alterou somente porta, diretórios de saída e reutilização do servidor; os testes permaneceram intactos. A execução inicial com seis workers teve seis timeouts; a repetição serial passou. A porta padrão 4173 já pertencia ao checkout principal e seu processo não foi interrompido.
+
+Esses testes verificam o site existente, não aprovam as artes. Para concluir o catálogo, execute `node artes/default/scripts/validate-catalog.cjs --complete`, confira os manifestos e PNGs individuais, e verifique o commit publicado com `node artes/default/scripts/verify-release.cjs HEAD`.

@@ -426,6 +426,76 @@
       "estado": "PE",
       "estilo": "comunidades/ifpe-open-source/estilo.json",
       "previa": "comunidades/ifpe-open-source/previa.png"
+    },
+    {
+      "id": "owasp-natal",
+      "nome": "OWASP Natal",
+      "estado": "RN",
+      "estilo": "comunidades/owasp-natal/estilo.json",
+      "previa": "comunidades/owasp-natal/previa.png"
+    },
+    {
+      "id": "owasp-pb",
+      "nome": "OWASP-PB",
+      "estado": "PB",
+      "estilo": "comunidades/owasp-pb/estilo.json",
+      "previa": "comunidades/owasp-pb/previa.png"
+    },
+    {
+      "id": "oxenti-pe",
+      "nome": "OxenTI-PE",
+      "estado": "PE",
+      "estilo": "comunidades/oxenti-pe/estilo.json",
+      "previa": "comunidades/oxenti-pe/previa.png"
+    },
+    {
+      "id": "paraiba-js",
+      "nome": "Paraíba.js",
+      "estado": "PB",
+      "estilo": "comunidades/paraiba-js/estilo.json",
+      "previa": "comunidades/paraiba-js/previa.png"
+    },
+    {
+      "id": "php-com-rapadura",
+      "nome": "PHP com Rapadura",
+      "estado": "CE",
+      "estilo": "comunidades/php-com-rapadura/estilo.json",
+      "previa": "comunidades/php-com-rapadura/previa.png"
+    },
+    {
+      "id": "php-maranhao",
+      "nome": "PHP-Maranhão",
+      "estado": "MA",
+      "estilo": "comunidades/php-maranhao/estilo.json",
+      "previa": "comunidades/php-maranhao/previa.png"
+    },
+    {
+      "id": "php-pb",
+      "nome": "PHP-PB",
+      "estado": "PB",
+      "estilo": "comunidades/php-pb/estilo.json",
+      "previa": "comunidades/php-pb/previa.png"
+    },
+    {
+      "id": "pong-rn",
+      "nome": "PONG RN",
+      "estado": "RN",
+      "estilo": "comunidades/pong-rn/estilo.json",
+      "previa": "comunidades/pong-rn/previa.png"
+    },
+    {
+      "id": "potiguaras-valley",
+      "nome": "Potiguaras Valley",
+      "estado": "RN",
+      "estilo": "comunidades/potiguaras-valley/estilo.json",
+      "previa": "comunidades/potiguaras-valley/previa.png"
+    },
+    {
+      "id": "projeto-software-livre-bahia",
+      "nome": "Projeto Software Livre Bahia",
+      "estado": "BA",
+      "estilo": "comunidades/projeto-software-livre-bahia/estilo.json",
+      "previa": "comunidades/projeto-software-livre-bahia/previa.png"
     }
   ],
   "genericos": [

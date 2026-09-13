@@ -1,10 +1,10 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-04",
+  "checkpoint_lote": "lote-07",
   "total_previsto": 93,
-  "revisados_tecnicamente": 60,
-  "conferidos_contra_base": 60,
+  "revisados_tecnicamente": 70,
+  "conferidos_contra_base": 70,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -909,21 +909,31 @@
     {
       "id": "owasp-natal",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "owasp-pb",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
@@ -936,79 +946,114 @@
         "modelo.svg",
         "previa.png"
       ],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "paraiba-js",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "php-com-rapadura",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "php-maranhao",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "php-pb",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "pong-rn",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "potiguaras-valley",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "parcial",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "projeto-software-livre-bahia",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "parcial_em_correcao",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
