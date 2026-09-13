@@ -1,0 +1,24 @@
+{
+  "id": "conecta-nordeste",
+  "nome": "Conecta Nordeste",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/conecta-nordeste.md",
+  "estado": "Nacional",
+  "cidade": "",
+  "conceito": "Conexões entre empreendedores e ecossistemas de inovação do Nordeste.",
+  "linhas_nome": [
+    "Conecta Nordeste"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Nacional",
+  "logo_origem": "src/assets/covers/communities/conecta-nordeste.png",
+  "logo_origem_sha256": "e0dea24be73de291d598729f4b8ca2d4c1030d03d0422583ecde929e393dbb7d",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

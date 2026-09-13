@@ -1,0 +1,24 @@
+{
+  "id": "femug-pe",
+  "nome": "FEMUG-PE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/femug-pe.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Criação colaborativa de interfaces responsivas e experimentação front-end no Recife.",
+  "linhas_nome": [
+    "FEMUG-PE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/femug-pe.png",
+  "logo_origem_sha256": "c80cbd704b7d1619b017154da0b243966e3a7fad0257cf4dc01d6694568e5855",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

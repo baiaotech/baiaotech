@@ -1,0 +1,24 @@
+{
+  "id": "elug-ce",
+  "nome": "Elug CE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/elug-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Programação funcional, processos e troca de mensagens como construção colaborativa no Ceará.",
+  "linhas_nome": [
+    "Elug CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/elug-ce.png",
+  "logo_origem_sha256": "33b8cc77446f9c12acce49d76e871116dcc185c745930b5f21ad350d4bc26e03",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

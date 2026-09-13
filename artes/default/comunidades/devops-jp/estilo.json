@@ -1,0 +1,24 @@
+{
+  "id": "devops-jp",
+  "nome": "DevOps JP",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/devops-jp.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Responsabilidade compartilhada pela entrega e confiabilidade de software em João Pessoa.",
+  "linhas_nome": [
+    "DevOps JP"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/devops-jp.png",
+  "logo_origem_sha256": "4e2def5c9443e037115f7e3f94f04d0c2f4b2e0cfedb0d0ce2027b8d4f4d9761",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

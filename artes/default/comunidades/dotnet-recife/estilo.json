@@ -1,0 +1,24 @@
+{
+  "id": "dotnet-recife",
+  "nome": "DotNet Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/dotnet-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Conhecimento compartilhado sobre camadas de aplicações e serviços .NET no Recife.",
+  "linhas_nome": [
+    "DotNet Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/dotnet-recife.png",
+  "logo_origem_sha256": "eb80645292cd1f50a7ab43f92312b52b9c7af30c25c72b71a3f1a981aff600b7",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

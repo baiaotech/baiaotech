@@ -1,0 +1,24 @@
+{
+  "id": "django-girls-salvador",
+  "nome": "Django Girls Salvador",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/django-girls-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Primeiros passos na programação web com mentoria inclusiva entre mulheres em Salvador.",
+  "linhas_nome": [
+    "Django Girls Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/django-girls-salvador.png",
+  "logo_origem_sha256": "c1f84957b3efe1b6183103dffe71db69f2c335f4189bc494578de9bf60054eab",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

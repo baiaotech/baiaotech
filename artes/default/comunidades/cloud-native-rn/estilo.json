@@ -1,0 +1,24 @@
+{
+  "id": "cloud-native-rn",
+  "nome": "Cloud Native RN",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/cloud-native-rn.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Oficina colaborativa de nuvem e microsserviços junto às dunas de Natal.",
+  "linhas_nome": [
+    "Cloud Native RN"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/cloud-native-rn.png",
+  "logo_origem_sha256": "838a420eeb3e5db70b8710f3206d11a3101ef386750d257b7d90f8a61faaa734",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
