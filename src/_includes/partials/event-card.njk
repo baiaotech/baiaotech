@@ -1,6 +1,7 @@
 {% set data = event.data %}
 {% set isFuture = data.end_date | isFutureDate %}
-{% set cover = data.page.inputPath | eventArtworkThumb %}
+{% set cover = data.cover_image | displayImage %}
+{% if not cover %}{% set cover = data.page.inputPath | eventArtworkThumb %}{% endif %}
 {% set categorySlugs = data.page.inputPath | eventCategorySlugs %}
 {% set categoryLabels = data.page.inputPath | eventCategoryLabels(categoriesBySlug) %}
 {% set spansMonths = data.start_date | eventSpansMonths(data.end_date) %}
@@ -21,7 +22,7 @@
   </time>
 
   <div class="listing-row__media" aria-hidden="true">
-    <img src="{{ cover }}" alt="" width="240" height="144" loading="lazy" decoding="async">
+    <img src="{{ cover }}" alt="" width="240" height="144" loading="lazy" decoding="async" referrerpolicy="no-referrer">
   </div>
 
   <div class="listing-row__body">

@@ -2,7 +2,7 @@
 
 {% block headExtra %}
   {% set eventImage = page.inputPath | eventArtworkAbsolute %}
-  {% if cover_image | localAsset %}{% set eventImage = cover_image | absoluteImage %}{% endif %}
+  {% if cover_image | displayImage %}{% set eventImage = cover_image | absoluteImage %}{% endif %}
   {% set attendanceMode = "https://schema.org/OfflineEventAttendanceMode" %}
   {% if format == "online" and online_url %}{% set attendanceMode = "https://schema.org/OnlineEventAttendanceMode" %}{% elseif format == "hybrid" and online_url %}{% set attendanceMode = "https://schema.org/MixedEventAttendanceMode" %}{% endif %}
   <script type="application/ld+json">
@@ -23,8 +23,12 @@
 {% endblock %}
 
 {% block content %}
-  {% set cover = page.inputPath | eventArtwork %}
-  {% if cover_image | localAsset %}{% set cover = cover_image | displayImage %}{% endif %}
+  {% set cover = cover_image | displayImage %}
+  {% set coverAlt = "Capa do evento " ~ title %}
+  {% if not cover %}
+    {% set cover = page.inputPath | eventArtwork %}
+    {% set coverAlt = "Ilustração editorial de " ~ title %}
+  {% endif %}
   {% set categoryLabels = page.inputPath | eventCategoryLabels(categoriesBySlug) %}
   {% set eventDescription = content | summaryText %}
   <article class="detail-page detail-page--event">
@@ -42,7 +46,7 @@
             </div>
           </div>
           <figure class="detail-intro__media" data-reveal>
-            <img src="{{ cover }}" alt="Ilustração editorial de {{ title }}" width="1200" height="800" decoding="async" fetchpriority="high">
+            <img src="{{ cover }}" alt="{{ coverAlt }}" width="1200" height="800" decoding="async" fetchpriority="high" referrerpolicy="no-referrer">
           </figure>
         </div>
       </div>
