@@ -87,6 +87,33 @@ describe("list filters", () => {
     expect(root.querySelectorAll("[data-card]")[0].hidden).toBe(false);
   });
 
+  it("limita a prévia da home, busca também o destaque e restaura a seleção ao limpar", () => {
+    const { bindListRoot } = loadModule();
+    const root = buildDom();
+    root.dataset.previewLimit = "1";
+    root.querySelector("[data-card]").setAttribute("data-preview-featured", "");
+    const cleanup = bindListRoot(root, { document, window, debounceMs: 0 });
+    const cards = [...root.querySelectorAll("[data-card]")];
+    const search = root.querySelector("[data-filter-search]");
+
+    expect(cards.map((card) => card.hidden)).toEqual([true, false]);
+    search.value = "Recife";
+    search.dispatchEvent(new Event("input"));
+    expect(cards.map((card) => card.hidden)).toEqual([false, true]);
+    expect(root.querySelector("[data-results-count]").textContent).toBe("1");
+
+    search.value = "evento inexistente";
+    search.dispatchEvent(new Event("input"));
+    expect(root.querySelector("[data-section-empty]").hidden).toBe(false);
+    expect(root.querySelector("[data-results-count]").textContent).toBe("0");
+
+    root.querySelector("[data-filter-status] [data-filter-reset]").click();
+    expect(search.value).toBe("");
+    expect(cards.map((card) => card.hidden)).toEqual([true, false]);
+    expect(root.querySelector("[data-filter-status]").hidden).toBe(true);
+    cleanup();
+  });
+
   it("hidrata filtros pela URL e preserva parametros externos ao sincronizar", () => {
     const { bindListRoot } = loadModule();
     window.history.replaceState({}, "", "/eventos/?q=Recife&state=PE&origem=home");

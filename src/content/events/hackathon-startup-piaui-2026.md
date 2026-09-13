@@ -14,7 +14,8 @@ source_url: "https://www.sympla.com.br/evento/hackathon-startup-piaui/3565078"
 categories:
   - "inovacao"
 featured: false
-cover_image: "https://images.sympla.com.br/6a98789871beb-lg.png"
+# Cópia local da capa oficial: https://images.sympla.com.br/6a98789871beb-lg.png
+cover_image: "/assets/covers/events/hackathon-startup-piaui-2026.png"
 price: ""
 ---
 

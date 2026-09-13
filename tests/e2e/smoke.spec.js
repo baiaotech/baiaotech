@@ -13,10 +13,10 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /O próximo encontro tech começa por aqui/i
+      name: /Tecnologia feita de encontros/i
     })
   ).toBeVisible();
-  await expect(page.getByText(/Próximo evento/i)).toBeVisible();
+  await expect(page.getByRole("complementary", { name: "Próximo encontro" })).toBeVisible();
 
   const headerMetrics = await page.locator(".site-header").evaluate((header) => {
     const rect = header.getBoundingClientRect();
@@ -50,6 +50,23 @@ test("home renderiza navegacao principal e CTAs", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("home mantém destaque com título longo separado da ilustração", async ({ page }) => {
+  for (const width of [1487, 1024, 768, 390, 320]) {
+    await page.setViewportSize({ width, height: 1058 });
+    await page.goto("/");
+    const title = "10º Workshop sobre Inovação com Tecnologias Educacionais: Metodologias Ativas";
+    await page.locator(".hero-event h2").evaluate((heading, text) => { heading.textContent = text; }, title);
+    await page.evaluate(() => document.fonts.ready);
+    const layout = await page.evaluate(() => ({
+      clearSpace: document.querySelector(".hero-home").getBoundingClientRect().bottom - document.querySelector(".hero-event .text-link").getBoundingClientRect().bottom,
+      overflow: document.documentElement.scrollWidth > innerWidth
+    }));
+    expect(layout.clearSpace, `Espaço reservado à ilustração em ${width}px`).toBeGreaterThanOrEqual(width > 720 ? 200 : 140);
+    expect(layout.overflow).toBe(false);
+    await expect(page.locator(".hero-event h2")).toHaveText(title);
+  }
+});
+
 test("home mantém conteúdo essencial visível sem JavaScript", async ({ browser }) => {
   const context = await browser.newContext({
     javaScriptEnabled: false,
@@ -59,8 +76,8 @@ test("home mantém conteúdo essencial visível sem JavaScript", async ({ browse
 
   await page.goto("/");
 
-  await expect(page.getByRole("heading", { level: 1, name: /O próximo encontro tech começa por aqui/i })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Ver agenda completa" })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /Tecnologia feita de encontros/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Ver todos os eventos" })).toBeVisible();
 
   const topLayout = await page.evaluate(() => ({
     headerBottom: document.querySelector(".site-header").getBoundingClientRect().bottom,

@@ -168,6 +168,8 @@ function applyFilters(root) {
   const sectionNodes = [...root.querySelectorAll("[data-filter-section]")];
 
   const searchTerm = tokenize(searchInput?.value);
+  const previewLimit = Number(root.dataset.previewLimit) || 0;
+  const isPreview = previewLimit > 0 && !searchTerm && selectInputs.every((input) => !input.value);
   let visibleCards = 0;
 
   cards.forEach((card) => {
@@ -189,7 +191,8 @@ function applyFilters(root) {
       return datasetValue === filterValue;
     });
 
-    const visible = matchesSearch && matchesSelects;
+    const withinPreview = !isPreview || (!card.hasAttribute("data-preview-featured") && visibleCards < previewLimit);
+    const visible = matchesSearch && matchesSelects && withinPreview;
     card.hidden = !visible;
     card.setAttribute("aria-hidden", String(!visible));
 

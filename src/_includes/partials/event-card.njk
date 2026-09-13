@@ -15,6 +15,10 @@
   data-month="{{ data.start_date.slice(0, 7) }}"
   data-categories="{{ categorySlugs | join(',') }}"
   data-status="{{ 'future' if isFuture else 'past' }}"
+  {% if eventCardContext == 'home' %}
+    {% if previewFeatured %}data-preview-featured{% endif %}
+    {% if previewHidden %}hidden{% endif %}
+  {% endif %}
 >
   <time class="listing-row__date" datetime="{{ data.start_date }}">
     <span class="listing-row__day{{ ' listing-row__day--cross-month' if spansMonths }}">{{ data.start_date | eventDayRange(data.end_date) }}</span>
@@ -27,15 +31,15 @@
 
   <div class="listing-row__body">
     <p class="listing-row__eyebrow">
-      {{ data.kind | kindLabel }} · {{ data.format | formatLabel }}
+      {% if eventCardContext == 'home' %}{{ data.organizer }}{% else %}{{ data.kind | kindLabel }} · {{ data.format | formatLabel }}{% endif %}
     </p>
     <h3 class="listing-row__title">{{ data.title }}</h3>
     <p class="listing-row__summary">
       {{ data.city }}{% if data.city and data.state %}, {% endif %}{{ data.state | stateName }}
-      {% if data.organizer %}<span> · {{ data.organizer }}</span>{% endif %}
+      {% if eventCardContext == 'home' %}<span> · {{ data.format | formatLabel }}</span>{% elif data.organizer %}<span> · {{ data.organizer }}</span>{% endif %}
     </p>
 
-    {% if categoryLabels.length %}
+    {% if categoryLabels.length and eventCardContext != 'home' %}
       <ul class="listing-row__meta-list" aria-label="Categorias">
         {% for categoryLabel in categoryLabels.slice(0, 3) %}
           <li>{{ categoryLabel }}</li>
@@ -45,9 +49,9 @@
   </div>
 
   <div class="listing-row__cta">
-    {% if data.price %}
+    {% if data.price and eventCardContext != 'home' %}
       <span class="listing-row__price">{{ data.price | priceLabel }}</span>
     {% endif %}
-    <a class="text-link text-link--touch" href="{{ event.url | url }}" aria-label="Ver detalhes de {{ data.title }}">Detalhes</a>
+    <a class="text-link text-link--touch" href="{{ event.url | url }}" aria-label="Ver detalhes de {{ data.title }}">{% if eventCardContext == 'home' %}Ver detalhes{% else %}Detalhes{% endif %}<span class="icon icon--arrow" aria-hidden="true"></span></a>
   </div>
 </article>

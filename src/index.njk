@@ -3,89 +3,72 @@ layout: layouts/base.njk
 title: Agenda tech
 description: Descubra eventos e comunidades que movimentam a tecnologia no Nordeste.
 bodyClass: page-home
+pageScripts:
+  - /assets/js/list-filters.js
 ---
 {% set upcomingEvents = collections.eventsFuture %}
 {% set featuredCommunities = collections.featuredCommunities %}
-{% set heroEvent = upcomingEvents[0] or collections.eventsSorted[0] %}
-{% set agendaEvents = upcomingEvents.slice(0, 3) %}
-{% set heroEventSpansMonths = heroEvent.data.start_date | eventSpansMonths(heroEvent.data.end_date) %}
+{% set heroEvent = upcomingEvents[0] %}
 
-<section class="hero-home" data-hero>
-  <picture class="hero-home__picture">
-    <source media="(max-width: 720px)" srcset="{{ '/assets/editorial/hero-pulse-mobile.webp' | url }}">
-    <img class="hero-home__art" src="{{ '/assets/editorial/hero-pulse.webp' | url }}" alt="" width="1600" height="600" decoding="async" fetchpriority="high">
-  </picture>
-
+<section class="hero-home" aria-labelledby="home-title">
+  <img class="hero-home__art" src="{{ '/assets/editorial/brand-community-hero.webp' | url }}" alt="" width="1600" height="533" decoding="async" fetchpriority="high">
+  <img class="hero-home__connections" src="{{ '/assets/brand/conexoes.svg' | url }}" alt="" width="280" height="176" decoding="async">
   <div class="container hero-home__inner">
-    <div class="hero-home__copy" data-reveal>
-      <p class="eyebrow eyebrow--light">Agenda aberta do Nordeste</p>
-      <h1>O próximo encontro tech começa por aqui.</h1>
-
-      <form class="hero-search" action="{{ '/eventos/' | url }}" method="get" role="search">
-        <label class="sr-only" for="home-search">Buscar eventos</label>
-        <input id="home-search" name="q" type="search" placeholder="Busque por evento, cidade ou tema">
-        <button type="submit">Buscar</button>
-      </form>
-
-      <nav class="hero-quick-links" aria-label="Atalhos da agenda">
-        <a href="{{ '/eventos/' | url }}?state=PI">Piauí</a>
-        <a href="{{ '/eventos/' | url }}?state=CE">Ceará</a>
-        <a href="{{ '/eventos/' | url }}?state=PE">Pernambuco</a>
-        <a href="{{ '/eventos/' | url }}?categories=ia">Inteligência Artificial</a>
-      </nav>
+    <div class="hero-home__copy">
+      <p class="eyebrow eyebrow--light">Pessoas · Tecnologia · Nordeste</p>
+      <h1 id="home-title">Tecnologia feita <span>de encontros.</span></h1>
+      <p class="hero-home__lead">Descubra eventos e encontre comunidades que movimentam o Nordeste.</p>
+      <div class="hero-home__actions">
+        <a class="button button--primary" href="{{ '/eventos/' | url }}">Explorar a agenda</a>
+        <a class="text-link text-link--light text-link--touch" href="{{ '/comunidades/' | url }}">Conhecer comunidades</a>
+      </div>
     </div>
-
-    <aside class="hero-stats" aria-label="Cobertura do Baião Tech" data-reveal>
-      <p><strong>{{ upcomingEvents.length }}</strong><span>eventos</span></p>
-      <p><strong>{{ collections.communitiesSorted.length }}</strong><span>comunidades</span></p>
-      <small>Tecnologia que movimenta o Nordeste.</small>
-    </aside>
+    {% if heroEvent %}
+      {% set heroEventSpansMonths = heroEvent.data.start_date | eventSpansMonths(heroEvent.data.end_date) %}
+      <aside class="hero-event" aria-label="Próximo encontro">
+        <p class="eyebrow eyebrow--light">Próximo encontro</p>
+        <p class="hero-event__date{{ ' hero-event__date--long' if heroEventSpansMonths }}">
+          <time datetime="{{ heroEvent.data.start_date }}">{{ heroEvent.data.start_date | eventDayRange(heroEvent.data.end_date) }}{% if not heroEventSpansMonths %} {{ heroEvent.data.start_date | monthShort | replace('.', '') }}{% endif %}</time>
+        </p>
+        <h2>{{ heroEvent.data.title }}</h2>
+        <p class="hero-event__meta">{{ heroEvent.data.organizer }} · {{ heroEvent.data.city }}, {{ heroEvent.data.state }}</p>
+        <a class="text-link text-link--touch" href="{{ heroEvent.url | url }}">Ver evento <span class="icon icon--arrow" aria-hidden="true"></span></a>
+      </aside>
+    {% endif %}
   </div>
 </section>
 
-<section class="home-agenda" aria-labelledby="agenda-title">
-  <div class="container home-agenda__grid">
-    <div class="home-agenda__main">
-      <header class="section-heading">
-        <div>
-          <p class="eyebrow">Agenda</p>
-          <h2 id="agenda-title">Acontece agora</h2>
-        </div>
-        <a class="arrow-link" href="{{ '/eventos/' | url }}">Ver agenda completa</a>
-      </header>
-
-      <div class="listing-list listing-list--home">
-        {% set eventCardContext = 'home' %}
-        {% for event in agendaEvents %}
-          {% include "partials/event-card.njk" %}
-        {% endfor %}
+<section class="home-agenda" aria-labelledby="agenda-title" data-list-root data-preview-limit="2">
+  <div class="container">
+    <header class="section-heading home-agenda__heading">
+      <div>
+        <h2 id="agenda-title">Na agenda</h2>
+        <p>Eventos que conectam pessoas, ideias e oportunidades no Nordeste.</p>
       </div>
+      <form class="agenda-search" action="{{ '/eventos/' | url }}" method="get" role="search" data-filter-form>
+        <label class="sr-only" for="home-search">Buscar eventos</label>
+        <input id="home-search" name="q" type="search" placeholder="Evento, cidade ou tema" data-filter-search>
+        <button type="submit" aria-label="Buscar eventos"><span class="icon icon--search" aria-hidden="true"></span></button>
+      </form>
+    </header>
+    <div class="filter-status" data-filter-status hidden>
+      <div class="filter-status__chips" data-filter-chips></div>
+      <button class="text-link text-link--touch" type="button" data-filter-reset>Limpar busca</button>
     </div>
-
-    {% if heroEvent %}
-      {% set heroCategoryLabels = heroEvent.data.page.inputPath | eventCategoryLabels(categoriesBySlug) %}
-      <aside class="agenda-spotlight" data-reveal>
-        <p class="eyebrow">Próximo evento</p>
-        <h2>{{ heroEvent.data.title }}</h2>
-        <p class="agenda-spotlight__meta">
-          <strong>{{ heroEvent.data.start_date | eventDayRange(heroEvent.data.end_date) }}{% if not heroEventSpansMonths %} {{ heroEvent.data.start_date | monthShort }}{% endif %}</strong>
-          · {{ heroEvent.data.city }}, {{ heroEvent.data.state | stateName }}
-        </p>
-        <p class="agenda-spotlight__summary">{{ heroEvent.templateContent | summaryText }}</p>
-        {% if heroCategoryLabels.length %}
-          <ul class="tag-list" aria-label="Categorias">
-            {% for categoryLabel in heroCategoryLabels.slice(0, 2) %}<li>{{ categoryLabel }}</li>{% endfor %}
-          </ul>
-        {% endif %}
-        <a class="button button--primary button--wide" href="{{ heroEvent.url | url }}">Ver detalhes do evento</a>
-
-        <div class="agenda-spotlight__communities">
-          <strong>{{ collections.communitiesSorted.length }} comunidades</strong>
-          <span>Pessoas que constroem tecnologia no Nordeste.</span>
-          <a class="button button--secondary button--wide" href="{{ '/comunidades/' | url }}">Explorar comunidades</a>
-        </div>
-      </aside>
-    {% endif %}
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true"><span data-results-count>{{ 2 if upcomingEvents.length > 2 else (1 if upcomingEvents.length > 1 else 0) }}</span> eventos encontrados</p>
+    <div class="listing-list listing-list--home" data-filter-section>
+      {% set eventCardContext = 'home' %}
+      {% for event in upcomingEvents %}
+        {% set previewFeatured = loop.first %}
+        {% set previewHidden = loop.first or loop.index0 > 2 %}
+        {% include "partials/event-card.njk" %}
+      {% endfor %}
+      <p class="empty-inline" data-section-empty {% if upcomingEvents.length > 1 %}hidden{% endif %}>Nenhum outro evento nesta seleção. Confira a agenda completa ou procure por outro termo.</p>
+    </div>
+    <div class="home-agenda__footer">
+      <a class="text-link text-link--touch" href="{{ '/eventos/' | url }}">Ver todos os eventos <span class="icon icon--arrow" aria-hidden="true"></span></a>
+      <p>Do nosso chão para o futuro.</p>
+    </div>
   </div>
 </section>
 
@@ -93,13 +76,11 @@ bodyClass: page-home
   <div class="container">
     <header class="section-heading home-communities__heading">
       <div>
-        <p class="eyebrow">Rede local</p>
         <h2 id="communities-title">Comunidades para conhecer</h2>
         <p>Grupos que compartilham conhecimento e conectam pessoas em toda a região.</p>
       </div>
-      <a class="arrow-link" href="{{ '/comunidades/' | url }}">Explorar comunidades</a>
+      <a class="arrow-link" href="{{ '/comunidades/' | url }}">Explorar comunidades <span class="icon icon--arrow" aria-hidden="true"></span></a>
     </header>
-
     <div class="community-grid community-grid--home">
       {% set communityCardContext = 'home' %}
       {% for community in featuredCommunities.slice(0, 3) %}
