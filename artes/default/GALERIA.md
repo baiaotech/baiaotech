@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-40 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+50 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -331,6 +331,86 @@ Consultas conectadas e intercâmbio de experiências com dados em produção.
 ![Card completo — GraphQL Recife](comunidades/graphql-recife/previa.png)
 
 [SVG editável](comunidades/graphql-recife/modelo.svg) · [Estilo e origem](comunidades/graphql-recife/estilo.json)
+
+## JampaRuby
+
+Programação Ruby e código reutilizável em João Pessoa, em uma oficina de componentes de software.
+
+![Card completo — JampaRuby](comunidades/jamparuby/previa.png)
+
+[SVG editável](comunidades/jamparuby/modelo.svg) · [Estilo e origem](comunidades/jamparuby/estilo.json)
+
+## JavaBahia
+
+Troca de conhecimento Java e contribuição open-source entre desenvolvedores da Bahia.
+
+![Card completo — JavaBahia](comunidades/javabahia/previa.png)
+
+[SVG editável](comunidades/javabahia/modelo.svg) · [Estilo e origem](comunidades/javabahia/estilo.json)
+
+## Javax CE
+
+Estudo do ecossistema JVM no Ceará, reunindo diferentes tecnologias em uma plataforma compartilhada.
+
+![Card completo — Javax CE](comunidades/javax-ce/previa.png)
+
+[SVG editável](comunidades/javax-ce/modelo.svg) · [Estilo e origem](comunidades/javax-ce/estilo.json)
+
+## Jerimum Valley
+
+Mentoria e conexões do ecossistema de startups de Natal, com o jerimum como elemento cultural.
+
+![Card completo — Jerimum Valley](comunidades/jerimum-valley/previa.png)
+
+[SVG editável](comunidades/jerimum-valley/modelo.svg) · [Estilo e origem](comunidades/jerimum-valley/estilo.json)
+
+## Ladies That UX Recife
+
+Pesquisa de experiência do usuário e troca de práticas entre mulheres em Recife.
+
+![Card completo — Ladies That UX Recife](comunidades/ladies-that-ux-recife/previa.png)
+
+[SVG editável](comunidades/ladies-that-ux-recife/modelo.svg) · [Estilo e origem](comunidades/ladies-that-ux-recife/estilo.json)
+
+## Manguezal
+
+Colaboração empreendedora em Recife, inspirada nas conexões do mangue e da tecnologia.
+
+![Card completo — Manguezal](comunidades/manguezal/previa.png)
+
+[SVG editável](comunidades/manguezal/modelo.svg) · [Estilo e origem](comunidades/manguezal/estilo.json)
+
+## MEETIA-PB
+
+Aprendizado colaborativo em inteligência artificial e ciência de dados na Paraíba.
+
+![Card completo — MEETIA-PB](comunidades/meetia-pb/previa.png)
+
+[SVG editável](comunidades/meetia-pb/modelo.svg) · [Estilo e origem](comunidades/meetia-pb/estilo.json)
+
+## .NET Ceará
+
+Estudo de desenvolvimento .NET e arquitetura de aplicações no Ceará.
+
+![Card completo — .NET Ceará](comunidades/net-ceara/previa.png)
+
+[SVG editável](comunidades/net-ceara/modelo.svg) · [Estilo e origem](comunidades/net-ceara/estilo.json)
+
+## .NET PB
+
+Encontros virtuais e colaboração entre desenvolvedores .NET na Paraíba.
+
+![Card completo — .NET PB](comunidades/net-pb/previa.png)
+
+[SVG editável](comunidades/net-pb/modelo.svg) · [Estilo e origem](comunidades/net-pb/estilo.json)
+
+## OWASP Fortaleza
+
+Aprendizado em segurança de aplicações e revisão de boas práticas em Fortaleza.
+
+![Card completo — OWASP Fortaleza](comunidades/owasp-fortaleza/previa.png)
+
+[SVG editável](comunidades/owasp-fortaleza/modelo.svg) · [Estilo e origem](comunidades/owasp-fortaleza/estilo.json)
 
 ## Genérico com-logo
 

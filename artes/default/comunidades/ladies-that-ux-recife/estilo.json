@@ -1,0 +1,24 @@
+{
+  "id": "ladies-that-ux-recife",
+  "nome": "Ladies That UX Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/ladies-that-ux-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Pesquisa de experiência do usuário e troca de práticas entre mulheres em Recife.",
+  "linhas_nome": [
+    "Ladies That UX Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/ladies-that-ux-recife.png",
+  "logo_origem_sha256": "b13693995366e1a7eb8a05601ab0fd6afc3ecfcdad37b6dd844ba4a7d3db66ec",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

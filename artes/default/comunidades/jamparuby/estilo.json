@@ -1,0 +1,24 @@
+{
+  "id": "jamparuby",
+  "nome": "JampaRuby",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/jamparuby.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Programação Ruby e código reutilizável em João Pessoa, em uma oficina de componentes de software.",
+  "linhas_nome": [
+    "JampaRuby"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/jamparuby.png",
+  "logo_origem_sha256": "f337c3b6a833ca869080acbf0cbdaeff19c29660a679d2cf34c4b065a214060b",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

@@ -96,7 +96,9 @@
         "owasp-fortaleza"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-06.json"
     },
     {
       "id": "lote-07",
@@ -113,7 +115,9 @@
         "projeto-software-livre-bahia"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "parcial_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-07.json"
     },
     {
       "id": "lote-08",

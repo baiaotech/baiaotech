@@ -15,14 +15,28 @@
     "lote-03": "reconferencia_pendente",
     "lote-04": "reconferencia_pendente",
     "lote-05": "em_correcao",
-    "lote-06": "em_correcao",
+    "lote-06": "conferido_contra_base",
     "lote-07": "parcial_em_correcao"
   },
   "problemas_identificados": [
-    {"id": "bahia-indie-game-developers", "problema": "Ilhas flutuantes no motivo de criação de jogos; substituir por cena coesa sem terreno suspenso"},
-    {"id": "carnauba-valley", "problema": "Grupos duplicados em escalas incompatíveis; manter apenas uma cena"},
-    {"id": "grudepb-crudpb", "problema": "Três mesas repetidas e empilhadas; geração original rejeitada, correção em produção"},
-    {"lote": "lote-06", "problema": "Primeiras vinhetas sem continuidade lateral e sem onda inferior adequada, humanos semirrealistas; rejeitadas"}
+    {
+      "id": "bahia-indie-game-developers",
+      "problema": "Ilhas flutuantes no motivo de criação de jogos; substituir por cena coesa sem terreno suspenso"
+    },
+    {
+      "id": "carnauba-valley",
+      "problema": "Grupos duplicados em escalas incompatíveis; manter apenas uma cena"
+    },
+    {
+      "id": "grudepb-crudpb",
+      "problema": "Três mesas repetidas e empilhadas; geração original rejeitada, correção em produção"
+    },
+    {
+      "lote": "lote-06",
+      "problema": "Primeiras vinhetas sem continuidade lateral e sem onda inferior adequada, humanos semirrealistas; rejeitadas",
+      "resolvido": true,
+      "registro": "lotes/lote-06.json"
+    }
   ],
   "aprovacao": null
 }

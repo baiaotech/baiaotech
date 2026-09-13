@@ -39,7 +39,7 @@ function svg(style, background, logo) {
 <desc id="card-description">${xml(style.conceito)} Campos demonstrativos de evento, data e local. Assinatura do Baião Tech no rodapé. Em revisão; não publicar.</desc>
 <defs><style>@font-face{font-family:'Inter Variable';src:url('${font}') format('woff2');font-weight:100 900;} text{font-family:'Inter Variable',Inter,sans-serif;}</style></defs>
 <rect width="1080" height="1350" fill="#FCFAF7"/>
-<g id="fixed-illustration"><image width="1080" height="1350" xlink:href="${background}"/></g>
+<g id="fixed-illustration"><image width="1080" height="1350" xlink:href="${background}"/>${style.onda_rodape ? '<path id="illustration-footer-wave" d="M0 1130 C160 1085 315 1175 510 1150 C700 1125 850 1095 1080 1145 L1080 1350 H0 Z" fill="#FCFAF7"/>' : ''}</g>
 <g id="agenda-heading">
 <path d="M72 64h44" fill="none" stroke="#F9733B" stroke-width="3"/>
 ${text('agenda-month',138,72,22,'MÊS DA AGENDA',700,'#1F1F1F','letter-spacing="3"')}
@@ -119,7 +119,8 @@ async function buildCommunity(spec) {
     ilustracao:'ilustracao.jpg',modelo:'modelo.svg',previa:'previa.png',referencia_aprovada:null,
     observacao:'Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.'+
       (logoSource?'':' Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.'),
-    ...(spec.logo_fundo ? {logo_fundo:spec.logo_fundo} : {})
+    ...(spec.logo_fundo ? {logo_fundo:spec.logo_fundo} : {}),
+    ...(spec.onda_rodape === true ? {onda_rodape:true} : {})
   };
   writeJSON(path.join(dir,'estilo.json'),style);
   const contents=svg(style,uri(illustration,'image/jpeg'),logoSource?uri(path.join(dir,'logo.png'),'image/png'):null);

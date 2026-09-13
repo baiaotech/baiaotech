@@ -286,6 +286,76 @@
       "estado": "PE",
       "estilo": "comunidades/graphql-recife/estilo.json",
       "previa": "comunidades/graphql-recife/previa.png"
+    },
+    {
+      "id": "jamparuby",
+      "nome": "JampaRuby",
+      "estado": "PB",
+      "estilo": "comunidades/jamparuby/estilo.json",
+      "previa": "comunidades/jamparuby/previa.png"
+    },
+    {
+      "id": "javabahia",
+      "nome": "JavaBahia",
+      "estado": "BA",
+      "estilo": "comunidades/javabahia/estilo.json",
+      "previa": "comunidades/javabahia/previa.png"
+    },
+    {
+      "id": "javax-ce",
+      "nome": "Javax CE",
+      "estado": "CE",
+      "estilo": "comunidades/javax-ce/estilo.json",
+      "previa": "comunidades/javax-ce/previa.png"
+    },
+    {
+      "id": "jerimum-valley",
+      "nome": "Jerimum Valley",
+      "estado": "RN",
+      "estilo": "comunidades/jerimum-valley/estilo.json",
+      "previa": "comunidades/jerimum-valley/previa.png"
+    },
+    {
+      "id": "ladies-that-ux-recife",
+      "nome": "Ladies That UX Recife",
+      "estado": "PE",
+      "estilo": "comunidades/ladies-that-ux-recife/estilo.json",
+      "previa": "comunidades/ladies-that-ux-recife/previa.png"
+    },
+    {
+      "id": "manguezal",
+      "nome": "Manguezal",
+      "estado": "PE",
+      "estilo": "comunidades/manguezal/estilo.json",
+      "previa": "comunidades/manguezal/previa.png"
+    },
+    {
+      "id": "meetia-pb",
+      "nome": "MEETIA-PB",
+      "estado": "PB",
+      "estilo": "comunidades/meetia-pb/estilo.json",
+      "previa": "comunidades/meetia-pb/previa.png"
+    },
+    {
+      "id": "net-ceara",
+      "nome": ".NET Ceará",
+      "estado": "CE",
+      "estilo": "comunidades/net-ceara/estilo.json",
+      "previa": "comunidades/net-ceara/previa.png"
+    },
+    {
+      "id": "net-pb",
+      "nome": ".NET PB",
+      "estado": "PB",
+      "estilo": "comunidades/net-pb/estilo.json",
+      "previa": "comunidades/net-pb/previa.png"
+    },
+    {
+      "id": "owasp-fortaleza",
+      "nome": "OWASP Fortaleza",
+      "estado": "CE",
+      "estilo": "comunidades/owasp-fortaleza/estilo.json",
+      "previa": "comunidades/owasp-fortaleza/previa.png"
     }
   ],
   "genericos": [

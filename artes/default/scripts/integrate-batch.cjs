@@ -10,6 +10,15 @@ async function main() {
   const id = process.argv[2];
   if (!/^lote-\d\d$/.test(id || '')) throw Error('Informe lote-XX');
   const plan = read('lotes/PLANO.json');
+  for (const existing of plan.lotes) {
+    if (existing.id === id) continue;
+    try {
+      const staged = JSON.parse(execFileSync('git', ['show', `:artes/default/lotes/${existing.id}.json`], {cwd: path.resolve(root, '../..'), stdio: ['ignore','pipe','ignore']}).toString());
+      existing.status = staged.status;
+      existing.aprovacao = null;
+      existing.manifesto = `lotes/${existing.id}.json`;
+    } catch { /* Manifesto ainda não preparado para publicação. */ }
+  }
   const batch = plan.lotes.find(x => x.id === id);
   const manifest = read(`lotes/${id}.json`);
   if (!batch || manifest.status !== 'concluido_em_revisao' || manifest.aprovacao !== null) throw Error('Lote não liberado');
@@ -68,10 +77,11 @@ async function main() {
     const has = f => released ? fs.existsSync(path.join(root, f)) : tracked.has('artes/default/' + f);
     const required = ['estilo.json', 'ilustracao.jpg', 'modelo.svg', 'previa.png'];
     const complete = required.every(f => has(`comunidades/${slug}/${f}`));
+    const anyFiles = [...tracked].some(f => f.startsWith(`artes/default/comunidades/${slug}/`));
     const b = plan.lotes.find(x => x.comunidades.includes(slug));
     const firstManifest = path.join(root, 'lotes/lote-01.json');
     const visual = b?.status === 'concluido_em_revisao' || (!b && fs.existsSync(firstManifest) && read('lotes/lote-01.json').comunidades.some(x => x.id === slug && x.revisao_visual?.realizada));
-    return {id: slug, lote: b?.id || 'lote-01', arquivos_basicos_completos: complete, revisao_visual_registrada: visual, estado: visual ? 'concluido_em_revisao' : complete ? 'arquivos_presentes_revisao_pendente' : has(stylePath) ? 'parcial' : 'ausente', aprovacao: null};
+    return {id: slug, lote: b?.id || 'lote-01', arquivos_basicos_completos: complete, arquivos_basicos_presentes: required.filter(f => has(`comunidades/${slug}/${f}`)), revisao_visual_registrada: visual, estado: visual ? 'concluido_em_revisao' : complete ? 'arquivos_presentes_revisao_pendente' : has(stylePath) || anyFiles ? 'parcial' : 'ausente', aprovacao: null};
   });
   fs.mkdirSync(path.join(root, 'retomada'), {recursive: true});
   write('retomada/INVENTARIO.json', {base_remota_encontrada: 'e7336928c607e921c59e6ca6919a2a8e340af2e3', recuperacao: 'Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.', checkpoint_lote: id, total_previsto: 93, revisados_tecnicamente: items.filter(x => x.revisao_visual_registrada).length, comunidades: items});

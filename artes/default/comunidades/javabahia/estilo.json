@@ -1,0 +1,24 @@
+{
+  "id": "javabahia",
+  "nome": "JavaBahia",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/javabahia.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Troca de conhecimento Java e contribuição open-source entre desenvolvedores da Bahia.",
+  "linhas_nome": [
+    "JavaBahia"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": "src/assets/covers/communities/javabahia.jpg",
+  "logo_origem_sha256": "b5f8b6f87f9822aaab489762befa0b5b9bacc5a68498ad3a1baf1ac70bbad5c1",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

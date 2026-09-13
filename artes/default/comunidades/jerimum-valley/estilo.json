@@ -1,0 +1,24 @@
+{
+  "id": "jerimum-valley",
+  "nome": "Jerimum Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/jerimum-valley.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Mentoria e conexões do ecossistema de startups de Natal, com o jerimum como elemento cultural.",
+  "linhas_nome": [
+    "Jerimum Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/jerimum-valley.png",
+  "logo_origem_sha256": "3d24cce6a5323c99b05ddc1919e881a2d48df87b41f12898210e05f18b76d594",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

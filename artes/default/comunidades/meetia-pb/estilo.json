@@ -1,0 +1,24 @@
+{
+  "id": "meetia-pb",
+  "nome": "MEETIA-PB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/meetia-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Aprendizado colaborativo em inteligência artificial e ciência de dados na Paraíba.",
+  "linhas_nome": [
+    "MEETIA-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/meetia-pb.png",
+  "logo_origem_sha256": "3b520ca60a4cc661a2ad06cc956ce073012a114e05212f03def0eeb22313298a",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

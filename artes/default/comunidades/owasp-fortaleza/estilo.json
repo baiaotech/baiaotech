@@ -1,0 +1,24 @@
+{
+  "id": "owasp-fortaleza",
+  "nome": "OWASP Fortaleza",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/owasp-fortaleza.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Aprendizado em segurança de aplicações e revisão de boas práticas em Fortaleza.",
+  "linhas_nome": [
+    "OWASP Fortaleza"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/owasp-fortaleza.png",
+  "logo_origem_sha256": "709c24286cfecae90ed72e12f78125411e4da4e2fae58f683754a772311e4477",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

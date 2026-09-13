@@ -1,0 +1,24 @@
+{
+  "id": "net-pb",
+  "nome": ".NET PB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/net-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Encontros virtuais e colaboração entre desenvolvedores .NET na Paraíba.",
+  "linhas_nome": [
+    ".NET PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/net-pb.png",
+  "logo_origem_sha256": "0bd40cfd6323751665f868c500af1db617b72260641f5ca643aa8af4914109f1",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

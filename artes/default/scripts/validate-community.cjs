@@ -60,6 +60,21 @@ async function validateCommunity(id) {
     const rendered = await sharp(Buffer.from(svg)).ensureAlpha().raw().toBuffer();
     const preview = await sharp(png).ensureAlpha().raw().toBuffer();
     check(hash(rendered) === hash(preview), 'Prévia PNG não corresponde à renderização atual do SVG');
+    // Salvaguarda de margens: não substitui julgamento de estilo/anatomia.
+    const occupied = async (input, top, height) => {
+      const pixels = await sharp(input).toColourspace('srgb').removeAlpha().extract({left:0,top,width:1080,height}).raw().toBuffer();
+      let count = 0;
+      for (let i=0; i<pixels.length; i+=3) {
+        const hi = Math.max(pixels[i],pixels[i+1],pixels[i+2]);
+        const lo = Math.min(pixels[i],pixels[i+1],pixels[i+2]);
+        if ((hi-lo>24 && lo<225) || hi<200) count++;
+      }
+      return count;
+    };
+    const headerPixels = await occupied(jpg, 0, 292);
+    const footerPixels = await occupied(png, 1180, 48);
+    check(headerPixels <= 100, `Ilustração invade faixa do cabeçalho (${headerPixels} pixels marcados)`);
+    check(footerPixels <= 100, `Ilustração invade respiro do rodapé y1180–1228 (${footerPixels} pixels marcados)`);
     return { id, ok: errors.length === 0, errors, ilustracao_sha256: hash(jpg), previa_sha256: hash(png), modelo_sha256: hash(svg), nome: data.title };
   } catch (error) {
     return { id, ok: false, errors: [...errors, error.message] };

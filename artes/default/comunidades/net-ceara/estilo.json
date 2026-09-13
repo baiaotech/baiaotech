@@ -1,0 +1,24 @@
+{
+  "id": "net-ceara",
+  "nome": ".NET Ceará",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/net-ceara.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Estudo de desenvolvimento .NET e arquitetura de aplicações no Ceará.",
+  "linhas_nome": [
+    ".NET Ceará"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/net-ceara.png",
+  "logo_origem_sha256": "cfe38c2946fa6ab93fa6d8a166cc15e3e0462f41ed6824a4b2139e8f684cbdd6",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
