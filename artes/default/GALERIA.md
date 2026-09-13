@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-10 comunidades com ilustrações próprias e 2 genéricos. **Todos os cards finais têm a assinatura do Baião Tech no rodapé.**
+20 comunidades com ilustrações próprias e 2 genéricos. **Todos os cards finais têm a assinatura do Baião Tech no rodapé.**
 
 Campos demonstrativos. Novos modelos em revisão; não publicar.
 
@@ -109,3 +109,7 @@ Comunidade aberta de tecnologia e conexão entre pessoas, sem atribuição a uma
 ![Card completo de Genérico sem logo — nome, campos de evento e rodapé do Baião Tech](genericos/sem-logo/previa.png)
 
 [Abrir SVG editável](genericos/sem-logo/modelo.svg) · [Ver regras e origem](genericos/sem-logo/estilo.json)
+
+## Lotes adicionais
+
+- [lote-03 — 10 comunidades](lotes/lote-03.md)

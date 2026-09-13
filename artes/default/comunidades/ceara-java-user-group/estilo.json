@@ -1,0 +1,24 @@
+{
+  "id": "ceara-java-user-group",
+  "nome": "Ceará Java User Group",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/ceara-java-user-group.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Troca intergeracional de conhecimento e módulos do ecossistema JVM no Ceará.",
+  "linhas_nome": [
+    "Ceará Java User Group"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/ceara-java-user-group.png",
+  "logo_origem_sha256": "33c7e00f775fd976d7a1a1c3f3c94f14519c0506803de2b9ba4b746b9aca51d4",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

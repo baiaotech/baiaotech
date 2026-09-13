@@ -1,0 +1,24 @@
+{
+  "id": "cajuina-valley",
+  "nome": "Cajuína Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/cajuina-valley.md",
+  "estado": "PI",
+  "cidade": "Teresina",
+  "conceito": "Networking de inovação em Teresina, cajuína e conexões empreendedoras.",
+  "linhas_nome": [
+    "Cajuína Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 143,
+  "subtitulo": "Comunidade · Teresina, PI",
+  "logo_origem": "src/assets/covers/communities/cajuina-valley.png",
+  "logo_origem_sha256": "a49c0759f2e0eca63a0f934175f852a29e8dbc1d6982412284834118f3f6d169",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

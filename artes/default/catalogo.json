@@ -76,6 +76,76 @@
       "estado": "CE",
       "estilo": "comunidades/devops-ce/estilo.json",
       "previa": "comunidades/devops-ce/previa.png"
+    },
+    {
+      "id": "ceara-java-user-group",
+      "nome": "Ceará Java User Group",
+      "estado": "CE",
+      "estilo": "comunidades/ceara-java-user-group/estilo.json",
+      "previa": "comunidades/ceara-java-user-group/previa.png"
+    },
+    {
+      "id": "cloud-native-rn",
+      "nome": "Cloud Native RN",
+      "estado": "RN",
+      "estilo": "comunidades/cloud-native-rn/estilo.json",
+      "previa": "comunidades/cloud-native-rn/previa.png"
+    },
+    {
+      "id": "codar-salvador",
+      "nome": "CODAR Salvador",
+      "estado": "BA",
+      "estilo": "comunidades/codar-salvador/estilo.json",
+      "previa": "comunidades/codar-salvador/previa.png"
+    },
+    {
+      "id": "conecta-nordeste",
+      "nome": "Conecta Nordeste",
+      "estado": "Nacional",
+      "estilo": "comunidades/conecta-nordeste/estilo.json",
+      "previa": "comunidades/conecta-nordeste/previa.png"
+    },
+    {
+      "id": "devops-jp",
+      "nome": "DevOps JP",
+      "estado": "PB",
+      "estilo": "comunidades/devops-jp/estilo.json",
+      "previa": "comunidades/devops-jp/previa.png"
+    },
+    {
+      "id": "django-girls-salvador",
+      "nome": "Django Girls Salvador",
+      "estado": "BA",
+      "estilo": "comunidades/django-girls-salvador/estilo.json",
+      "previa": "comunidades/django-girls-salvador/previa.png"
+    },
+    {
+      "id": "dotnet-recife",
+      "nome": "DotNet Recife",
+      "estado": "PE",
+      "estilo": "comunidades/dotnet-recife/estilo.json",
+      "previa": "comunidades/dotnet-recife/previa.png"
+    },
+    {
+      "id": "elug-ce",
+      "nome": "Elug CE",
+      "estado": "CE",
+      "estilo": "comunidades/elug-ce/estilo.json",
+      "previa": "comunidades/elug-ce/previa.png"
+    },
+    {
+      "id": "femug-pe",
+      "nome": "FEMUG-PE",
+      "estado": "PE",
+      "estilo": "comunidades/femug-pe/estilo.json",
+      "previa": "comunidades/femug-pe/previa.png"
+    },
+    {
+      "id": "forhacker-space",
+      "nome": "ForHacker Space",
+      "estado": "CE",
+      "estilo": "comunidades/forhacker-space/estilo.json",
+      "previa": "comunidades/forhacker-space/previa.png"
     }
   ],
   "genericos": [

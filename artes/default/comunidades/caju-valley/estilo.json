@@ -1,0 +1,24 @@
+{
+  "id": "caju-valley",
+  "nome": "Caju Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/caju-valley.md",
+  "estado": "SE",
+  "cidade": "Aracaju",
+  "conceito": "Empreendedorismo e prototipagem colaborativa em Aracaju com referência ao caju.",
+  "linhas_nome": [
+    "Caju Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Aracaju, SE",
+  "logo_origem": "src/assets/covers/communities/caju-valley.png",
+  "logo_origem_sha256": "89a15c888397734d6748fc6a89a174e9123c3bbea3575b8ff73d64191cd0ba1e",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

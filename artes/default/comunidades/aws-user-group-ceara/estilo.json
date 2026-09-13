@@ -1,0 +1,24 @@
+{
+  "id": "aws-user-group-ceara",
+  "nome": "AWS User Group Ceará",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/aws-user-group-ceara.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Discussão de arquitetura em nuvem entre profissionais do Ceará.",
+  "linhas_nome": [
+    "AWS User Group Ceará"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/aws-user-group-ceara.webp",
+  "logo_origem_sha256": "a23741a15044acf4836a5b332dec2d5b2495dbc077f06d651847b01499e15531",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

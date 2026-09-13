@@ -1,0 +1,24 @@
+{
+  "id": "arretadas-do-php",
+  "nome": "Arretadas do PHP",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/arretadas-do-php.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.",
+  "linhas_nome": [
+    "Arretadas do PHP"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado."
+}

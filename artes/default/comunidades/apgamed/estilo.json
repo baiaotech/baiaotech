@@ -1,0 +1,24 @@
+{
+  "id": "apgamed",
+  "nome": "APGameD",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/apgamed.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Desenvolvimento de jogos e testes colaborativos de controles na Paraíba.",
+  "linhas_nome": [
+    "APGameD"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/apgamed.png",
+  "logo_origem_sha256": "2297a4b7ff24b446d2f0f8950d6d9ca467629d031c109678f1fdb9b95007d934",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

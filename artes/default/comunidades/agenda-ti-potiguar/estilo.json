@@ -1,0 +1,24 @@
+{
+  "id": "agenda-ti-potiguar",
+  "nome": "Agenda TI Potiguar",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/agenda-ti-potiguar.md",
+  "estado": "RN",
+  "cidade": "",
+  "conceito": "Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.",
+  "linhas_nome": [
+    "Agenda TI Potiguar"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · RN",
+  "logo_origem": "src/assets/covers/communities/agenda-ti-potiguar.png",
+  "logo_origem_sha256": "7da05c01d6cc178327a8d470c7c92cb6521e9b644e559990a157d8ec276424eb",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
