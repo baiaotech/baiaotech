@@ -3,9 +3,6 @@
   "nome": "GDG Parnaíba",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-original.png","prompt":"spec.json","sha256":"4147496d7938bb80cd331cd6e5436f298531303ada22b3c38d7ca1c0c40931d1"},
-  "revisao_visual": {"realizada":true,"observacoes":"Nome e logo originais legíveis. Dupla com tablets e delta formam conceito exclusivo; mãos coerentes. Cabeçalho, coluna de texto e rodapé não são invadidos."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/gdg-parnaiba.md",
   "estado": "PI",
   "cidade": "Parnaíba",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/gdg-parnaiba/gerada-base-v2-ajustada.png",
+    "insumo": "comunidades/gdg-parnaiba/ilustracao.jpg",
+    "sha256": "3b4c8bc849869b3650ca4c53fc7bae0a0c72c120567689ff413644f2a463b048",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Dois adultos no mesmo banco com tablets e canais do delta contínuos; removidas plataformas e faixa inferior isolada. Pés, logo e rodapé preservados.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "92ad054659a7109e72200e200daed589c441ce9e0764f9bb13d60ce6f5073b25"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Dois adultos no mesmo banco com tablets e canais do delta contínuos; removidas plataformas e faixa inferior isolada. Pés, logo e rodapé preservados."
+  },
+  "dados_demonstrativos": true
 }

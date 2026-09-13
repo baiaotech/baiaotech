@@ -3,9 +3,6 @@
   "nome": "Front-End CE",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"d9a0aae5e2b64752b1943fc20288264c9a08775f34712b49d2e3204eb5990b73"},
-  "revisao_visual": {"realizada":true,"observacoes":"Nome e logo originais legíveis. Mosaico de interfaces exclusivo, mãos e tablet coerentes. Ajuste removeu painel do cabeçalho. Coluna de título/data/local e rodapé desobstruídos."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/front-end-ce.md",
   "estado": "CE",
   "cidade": "Fortaleza",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/front-end-ce/gerada-base-v2.png",
+    "insumo": "comunidades/front-end-ce/ilustracao.jpg",
+    "sha256": "4bdc1cd47f5b2f8f8fcd6d0ba225e3295f9d86773c59df9dc4625c3367990d2c",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Oficina de interfaces em cena única, personagens orgânicos, cavalete com sangria lateral sem afetar logo. Nome, dados e rodapé íntegros.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "efa782a063c90193efcb03f70abef2b5d1d33d8cd76e3df7e31a5b92e91ca412"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Oficina de interfaces em cena única, personagens orgânicos, cavalete com sangria lateral sem afetar logo. Nome, dados e rodapé íntegros."
+  },
+  "dados_demonstrativos": true
 }

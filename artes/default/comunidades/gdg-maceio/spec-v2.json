@@ -1,0 +1,12 @@
+{
+  "id": "gdg-maceio",
+  "conceito": "Demonstração de aplicativos e aprendizado coletivo em Alagoas.",
+  "ilustracao": "artes/default/comunidades/gdg-maceio/gerada-base-v2.png",
+  "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Maceió: application demos and collective learning. At right a Black male facilitator and brown female learner with long dark hair face a single compact terracotta easel displaying two unbranded abstract interface tiles; upper bodies warmly engaged, learner holds a notebook. One cohesive workshop, not full body realistic figures. Continuous low warm lagoon, narrow sandbar and tiny olive palms; broad simplified shapes without detailed waves.",
+  "referencia_estilo": "artes/default/genericos/com-logo/previa.png",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo": "gerada-base-v2.png",
+    "origem_sessao": "/home/gaellopes/.codex/generated_images/01a09c4f-477f-7583-9d8a-c8978c61e728/exec-ea1810a1-8fa2-42c5-b092-94fe28fa2269.png"
+  }
+}

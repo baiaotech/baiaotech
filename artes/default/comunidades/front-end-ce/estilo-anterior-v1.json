@@ -1,0 +1,27 @@
+{
+  "id": "front-end-ce",
+  "nome": "Front-End CE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"d9a0aae5e2b64752b1943fc20288264c9a08775f34712b49d2e3204eb5990b73"},
+  "revisao_visual": {"realizada":true,"observacoes":"Nome e logo originais legíveis. Mosaico de interfaces exclusivo, mãos e tablet coerentes. Ajuste removeu painel do cabeçalho. Coluna de título/data/local e rodapé desobstruídos."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/front-end-ce.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Oficina de interfaces responsivas e construção visual no litoral cearense.",
+  "linhas_nome": [
+    "Front-End CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/front-end-ce.png",
+  "logo_origem_sha256": "6e09a546a3a8eff28a15486cb366b61286fa3c63045d9673270aa265235942d8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

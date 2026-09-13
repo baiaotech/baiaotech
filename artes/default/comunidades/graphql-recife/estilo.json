@@ -3,9 +3,6 @@
   "nome": "GraphQL Recife",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-original.png","prompt":"spec.json","sha256":"90ffe5563d45df83f3a52b507ebfa5b0e0efafe03e72a23535145cf5f57c079c"},
-  "revisao_visual": {"realizada":true,"observacoes":"Nome e logo rosa registrados preservados. Grafo abstrato não imita logo; dupla com tablet/cartão tem anatomia coerente. Texto, margens, cabeçalho e rodapé legíveis."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/graphql-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/graphql-recife/gerada-base-v2-ajustada.png",
+    "insumo": "comunidades/graphql-recife/ilustracao.jpg",
+    "sha256": "b41f3b6466c26f83f786d0e70fda8e92c1bb357e2f49bb485117b6332769c4b6",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "a6ff0b319254273a7a5623e563225a45c4075410723d13c46e28cfd4e8ebf11b"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro."
+  },
+  "dados_demonstrativos": true
 }

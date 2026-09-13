@@ -1,0 +1,27 @@
+{
+  "id": "gdg-maceio",
+  "nome": "GDG Maceió",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"adf049952f31b7b3b8cb6e1dc05b7500c5a4aaa6b0682de069d0950f00c95e95"},
+  "revisao_visual": {"realizada":true,"observacoes":"Logo cadastrada preservada com cores e desenho originais. Apresentador e aprendiz naturais junto ao cavalete. Folhagem reposicionada fora do cabeçalho; coluna textual e rodapé livres."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/gdg-maceio.md",
+  "estado": "AL",
+  "cidade": "Maceió",
+  "conceito": "Demonstração de aplicativos e aprendizado coletivo em Alagoas.",
+  "linhas_nome": [
+    "GDG Maceió"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Maceió, AL",
+  "logo_origem": "src/assets/covers/communities/gdg-maceio.jpg",
+  "logo_origem_sha256": "698aa87b2ee21b1f7f60877b3156861fce3805dcef6bfeeea9dafc3f3db84047",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

@@ -1,6 +1,6 @@
 # Modelos de postagem — Baião Tech
 
-Produção para **93 comunidades, cada uma com ilustração própria**, e **dois modelos genéricos**. O primeiro lote contém 10 comunidades; a continuação está registrada no [plano](lotes/PLANO.json) e no [inventário do checkpoint](retomada/INVENTARIO.json). Todas as peças completas têm logo do Baião Tech e `baiaotech.org` no rodapé, seguindo a hierarquia da referência de PyLadies Maceió.
+Produção para **93 comunidades, cada uma com ilustração própria**, e **dois modelos genéricos**. O primeiro lote contém 10 comunidades; a continuação está registrada no [plano](lotes/PLANO.json) e no [inventário do checkpoint](retomada/INVENTARIO.json). Todas as peças completas têm logo do Baião Tech e `baiaotech.org` no rodapé, seguindo a composição do genérico com logo indicado pelo usuário.
 
 **Em revisão. Os títulos, datas e locais são campos demonstrativos. Estes arquivos não anunciam eventos reais.**
 

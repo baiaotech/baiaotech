@@ -3,9 +3,6 @@
   "nome": "GDG São Luís",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-original.png","prompt":"spec.json","sha256":"103cd12cf69af538a4d3c1bc0bc1c41f3d1030e1bffbcf2d0a09b832f0f67c60"},
-  "revisao_visual": {"realizada":true,"observacoes":"Logo local e nome íntegros. Cena exclusiva de intercâmbio junto ao mosaico de software; mãos e postura coerentes. Cabeçalho, dados e assinatura preservados."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/gdg-sao-luis.md",
   "estado": "MA",
   "cidade": "São Luís",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/gdg-sao-luis/gerada-base-v2-ajustada.png",
+    "insumo": "comunidades/gdg-sao-luis/ilustracao.jpg",
+    "sha256": "d8f1c05eacbd57965185e1eecf000b1c687162916c891e5bb8d2b5bb65f8bd82",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "1327f74606ecbcc152ac0f925af9919293d7b3ca030626a1debf34cdfb102f93"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados."
+  },
+  "dados_demonstrativos": true
 }

@@ -2,25 +2,34 @@
   "id": "lote-04",
   "status": "concluido_em_revisao",
   "aprovacao": null,
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Comparação individual dos dez PNGs completos com a base indicada; previa.png da base foi usada como referência visual explícita no Image Gen. Traço orgânico simplificado, cenas próprias, paisagem contínua lateral, transição ondulada inferior e rodapé livre. Não representa aprovação humana."
+  },
   "comunidades": [
     {
       "id": "front-end-ce",
       "conceito": "Oficina de interfaces responsivas e construção visual no litoral cearense.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. Front-End CE, front-end developers and practical interface workshops. A brown Brazilian woman with short curls at far right arranges a tall vertical stack of THREE responsive unbranded browser panels, while a seated Black man in terracotta overalls uses a small stylus on a tablet below. Panels show only geometric blocks and circles, no code. Dynamic vertical interface mosaic, not a laptop meetup. Narrow coastal Fortaleza strip with boardwalk and a tiny jangada far below.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. Front-End CE: craft of responsive web interfaces. Two Brazilian developers in three-quarter upper-body view at RIGHT, a Black woman with short soft curls standing holds an unbranded wide tablet with three abstract layout blocks, while a brown man with curly hair seated on a plain anchored bench points at a single modest upright interface sketchboard. One coherent workshop scene, not stacked giant screens. Small flowing orange arcs suggest responsive connections. Low flat stylized Fortaleza shore with tiny jangada and simple buildings.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/front-end-ce/gerada-original.png",
-        "arquivo_utilizado": "comunidades/front-end-ce/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/front-end-ce/gerada-base-v2.png",
         "insumo": "comunidades/front-end-ce/ilustracao.jpg",
-        "sha256": "d9a0aae5e2b64752b1943fc20288264c9a08775f34712b49d2e3204eb5990b73"
+        "sha256": "4bdc1cd47f5b2f8f8fcd6d0ba225e3295f9d86773c59df9dc4625c3367990d2c"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome e logo originais legíveis. Mosaico de interfaces exclusivo, mãos e tablet coerentes. Ajuste removeu painel do cabeçalho. Coluna de título/data/local e rodapé desobstruídos.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Oficina de interfaces em cena única, personagens orgânicos, cavalete com sangria lateral sem afetar logo. Nome, dados e rodapé íntegros.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "8460211a4c7995b17c7d6c769fedadee8b9e780f47cf85220f7d4167836d6689"
+        "previa_sha256": "efa782a063c90193efcb03f70abef2b5d1d33d8cd76e3df7e31a5b92e91ca412"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Oficina de interfaces em cena única, personagens orgânicos, cavalete com sangria lateral sem afetar logo. Nome, dados e rodapé íntegros."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -28,21 +37,25 @@
     {
       "id": "gdg-feira-de-santana",
       "conceito": "Oficina multitecnologia e troca de saberes no interior baiano.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG Feira de Santana: interior Bahia developers learning mobile, backend and cloud. Distinct right-side educational scene: older brown-skinned woman mentor stands beside a narrow wheeled demo cart carrying three abstract unbranded connected devices: miniature upright phone, cube and cloud-shaped panel. A young Black man kneels beside the cart holding a blank notebook, looking up engaged. Small sunlit inland city silhouettes and low warm hills in the bottom strip, not seaside.",
-      "ajuste_prompt": "Edit this background ONLY to repair layout safety for typesetting. Keep the same exclusive illustration, people, anatomy, palette, overall style and bottom landscape/footer blank. The TOP 26% of the entire image must be completely empty ivory (#FCFAF7): move every topmost screen, sun, leaf or connecting motif currently above that line down into the right-side illustration area, without cutting any motif. Also keep LEFT x0-55% y0-65% completely blank. Main people stay at right, not moved into text column. No text or logos. Keep portrait 4:5 composition.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Feira de Santana: sharing mobile, backend and cloud knowledge in interior Bahia. Older brown woman mentor with short gray curls calmly explains a SMALL unbranded phone and cloud-shaped paper piece resting on one slim grounded desk, while a young Black male learner holds a blank notebook. Two upper-body stylized people grouped right, no full-body realistic render. Low continuous warm inland rolling hills, modest Feira-like town silhouettes and olive trees.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-feira-de-santana/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-feira-de-santana/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-feira-de-santana/gerada-base-v2.png",
         "insumo": "comunidades/gdg-feira-de-santana/ilustracao.jpg",
-        "sha256": "b12a51cfa0dd897bbdbe1b9e1e544c20003a19ca27c38a478ccf0d88da1c5ddf"
+        "sha256": "b0d9fc1467ceb388f43ec3f98266bf6687fdbec6a0d1e9284587c45aeca41f34"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome longo em uma linha a 45 px sem compressão ou corte. Logo original íntegra. Mentoria e bancada móvel exclusivas; mãos naturais. Fundo ajustado abaixo da divisória. Rodapé limpo.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Mentoria em mesa ancorada, paisagem contínua do interior baiano; ajuste vertical de 65 px preserva topo e posiciona transição inferior. Logo e dados legíveis.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "3bbdf54d92bffe51235a998150f5f475e76d512132a9f83aff1bb6ed5cfc001b"
+        "previa_sha256": "dca498a87e8187b8e29710981a935f70ddfaa15b22276d1a4671089f3eec2999"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Mentoria em mesa ancorada, paisagem contínua do interior baiano; ajuste vertical de 65 px preserva topo e posiciona transição inferior. Logo e dados legíveis."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -50,21 +63,26 @@
     {
       "id": "gdg-joao-pessoa",
       "conceito": "Rede de aprendizado entre desenvolvedores junto à paisagem costeira paraibana.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG João Pessoa: developer knowledge exchange and local technology gatherings. Three Brazilian adults seated at DIFFERENT HEIGHTS on a compact curved amphitheater-like staircase on the right, one Black woman with short braids holding a tablet, a brown man with curls holding a closed notebook, and a silver-haired woman showing an abstract interface tile. Above-right a delicate constellation of orange round nodes and unmarked paper rectangles. A tiny angular white lighthouse and cliffs in low coastal landscape strip. No cloud stack.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG João Pessoa: intergenerational developer knowledge exchange. At right, two seated Brazilian women, one Black with short braids and one brown with silver bob, exchange an abstract interface paper card; a brown male developer in a small side-facing upper-body silhouette observes holding a closed notebook. All on one curved grounded bench, not steps or pedestals. Graceful orange connection arcs overhead entirely below y30%. Continuous very low coastal cliffs, olive greenery and tiny angular lighthouse silhouette.",
+      "ajuste_prompt": "Precise composition edit ONLY. Preserve this same illustration's stylized organic faces, flat warm colors, exact distinct scene and continuous low landscape with ivory wavy footer. Move the WHOLE PEOPLE GROUP AND THEIR OBJECTS to the RIGHT by approximately 12% of canvas width, slightly reducing their scale if needed. Keep every hair strand, shoulder, hand and equipment strictly RIGHT of x=60% from y=25% through y=64%; all space LEFT of x=56% above y=66% must be empty ivory. No character deletion or duplication. Do not change anatomy, do not change landscape positions or footer wave. Header top25% remains blank. No logos or lettering. Portrait 4:5.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-joao-pessoa/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-joao-pessoa/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-joao-pessoa/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/gdg-joao-pessoa/ilustracao.jpg",
-        "sha256": "ae177402be96c5d35f9ee502773bd0ea5f019c91b7ac7bc21a672b103ac25fe4"
+        "sha256": "c47c9d72efc7ae189e75e521dfaa7bbd1a171e98f419ec38905fa38cf69c6d3b"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome e logo originais íntegros. Cena exclusiva em degraus, três pessoas com anatomia coerente. Nós superiores reposicionados abaixo do cabeçalho. Dados e rodapé legíveis.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Troca de aprendizado em banco costeiro ancorado, três adultos com anatomia simplificada e margens corrigidas. Logo, dados e rodapé livres.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "2a5c4566f668a6843378d0ac79d7aa99dad30957d4d02a2710be202ad20bbc07"
+        "previa_sha256": "5d7af9ad3bd631a6f790d2acd52c1efd6b6a0c9ef2aad94f2f76d8fb44f82b57"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Troca de aprendizado em banco costeiro ancorado, três adultos com anatomia simplificada e margens corrigidas. Logo, dados e rodapé livres."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -72,21 +90,25 @@
     {
       "id": "gdg-maceio",
       "conceito": "Demonstração de aplicativos e aprendizado coletivo em Alagoas.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG Maceió: technology-themed meetups and knowledge sharing. At right a Black male facilitator with neat cropped hair stands at an elegant wooden easel showing two oversized abstract application tiles. A brown female learner with long wavy hair sits on a terracotta bench to the far right, watching with small open notebook. Strong diagonal between easel and seated learner, all at right. Beneath only narrow warm Maceió lagoon/coastal sandbar landscape with restrained olive palm silhouettes. No profile portraits, no desert.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Maceió: application demos and collective learning. At right a Black male facilitator and brown female learner with long dark hair face a single compact terracotta easel displaying two unbranded abstract interface tiles; upper bodies warmly engaged, learner holds a notebook. One cohesive workshop, not full body realistic figures. Continuous low warm lagoon, narrow sandbar and tiny olive palms; broad simplified shapes without detailed waves.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-maceio/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-maceio/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-maceio/gerada-base-v2.png",
         "insumo": "comunidades/gdg-maceio/ilustracao.jpg",
-        "sha256": "adf049952f31b7b3b8cb6e1dc05b7500c5a4aaa6b0682de069d0950f00c95e95"
+        "sha256": "d47bd5e2a238cb37d952b3fff2632088b380d7981498e33be87050d300bc0233"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Logo cadastrada preservada com cores e desenho originais. Apresentador e aprendiz naturais junto ao cavalete. Folhagem reposicionada fora do cabeçalho; coluna textual e rodapé livres.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Demonstração de aplicativo com dois adultos e cavalete integrado, paisagem lagunar contínua e onda inferior. Logo, nome e dados íntegros.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "14398447a54b1a4605b53afa2d024b05510b449c366466a9b655895be4a59ab7"
+        "previa_sha256": "817539b9157d9b3e249dd33149bf8582b61761691d2a64417b88d61a1e92f1cc"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Demonstração de aplicativo com dois adultos e cavalete integrado, paisagem lagunar contínua e onda inferior. Logo, nome e dados íntegros."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -94,20 +116,26 @@
     {
       "id": "gdg-parnaiba",
       "conceito": "Conexões regionais de tecnologia inspiradas nos canais do delta.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG Parnaíba: technology community connecting the coast of Piauí and neighboring cities. Distinct right-side composition: two young Brazilian developers, one brown man with close-cut hair and one Black woman with rounded afro, stand on separate low small warm platforms holding abstract tablet screens toward each other across a graceful branching orange pathway. Path metaphor echoes waterways, not technical chart. Tiny river delta islands and winding channels in narrow lower landscape, sparse olive mangroves, warm water. No bridges or cactus.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Parnaíba: regional technology connections inspired by delta waterways. Two Brazilian developers, a brown man with close-cut hair and Black woman with short rounded afro, sit together on ONE grounded riverside bench at right sharing unbranded tablets. Fine orange connecting lines flow between tablets. NO platforms, floating islands or separate vignettes. Below, low continuous sweeping terracotta delta channels with simple olive mangrove silhouettes, a tiny boat, reaches both side edges.",
+      "ajuste_prompt": "Preserve this whole stylized illustration, people, tablets, bench, delta landscape and blank top. Correct ONLY the bottom transition: remove the thin isolated orange ribbon and the white slit separating it from the landscape. Merge that strip back into the landscape, ending in ONE clean organic ivory wave at 83%-85% height; bottom15% fully blank ivory. Keep both people's feet intact and keep landscape reaching both sides. No text or logos.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-parnaiba/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-parnaiba/gerada-original.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-parnaiba/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/gdg-parnaiba/ilustracao.jpg",
-        "sha256": "4147496d7938bb80cd331cd6e5436f298531303ada22b3c38d7ca1c0c40931d1"
+        "sha256": "3b4c8bc849869b3650ca4c53fc7bae0a0c72c120567689ff413644f2a463b048"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome e logo originais legíveis. Dupla com tablets e delta formam conceito exclusivo; mãos coerentes. Cabeçalho, coluna de texto e rodapé não são invadidos.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Dois adultos no mesmo banco com tablets e canais do delta contínuos; removidas plataformas e faixa inferior isolada. Pés, logo e rodapé preservados.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "8fa9d9baeda8db8fd5022c68ec03981fad05eb920c4354704bdf126de7b7e0b7"
+        "previa_sha256": "92ad054659a7109e72200e200daed589c441ce9e0764f9bb13d60ce6f5073b25"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Dois adultos no mesmo banco com tablets e canais do delta contínuos; removidas plataformas e faixa inferior isolada. Pés, logo e rodapé preservados."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -115,21 +143,26 @@
     {
       "id": "gdg-salvador",
       "conceito": "Prototipação colaborativa e encontro de tecnologias em Salvador.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG Salvador: local developer network, hackathons and learning Android/cloud. At right three compact standing Brazilian developers collaboratively arrange unbranded geometric software blocks on a ROUND tall pedestal: Black woman with angular bob, brown man with short curls, and older Black man with small gray beard. One carefully places a block, others hold a tablet and notebook. Floating fan of warm simple application components above-right. Distinct sculptural prototyping vignette, not seated laptop table. Low Salvador bay and pastel warm historic houses only in lower strip.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Salvador: collaborative prototyping and shared technologies. At right three stylized Brazilian developers, Black woman with short bob, brown man with curly hair and older Black man with gray beard, stand shoulder-to-shoulder around ONE low anchored table arranging a few abstract software paper tiles, no pile of giant blocks or floating panels. Friendly clear hands, organic rounded forms. Below continuous warm bay curves and a few tiny colonial house silhouettes; not photorealistic waterfront.",
+      "ajuste_prompt": "Precise composition edit ONLY. Preserve this same illustration's stylized organic faces, flat warm colors, exact distinct scene and continuous low landscape with ivory wavy footer. Move the WHOLE PEOPLE GROUP AND THEIR OBJECTS to the RIGHT by approximately 12% of canvas width, slightly reducing their scale if needed. Keep every hair strand, shoulder, hand and equipment strictly RIGHT of x=60% from y=25% through y=64%; all space LEFT of x=56% above y=66% must be empty ivory. No character deletion or duplication. Do not change anatomy, do not change landscape positions or footer wave. Header top25% remains blank. No logos or lettering. Portrait 4:5.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-salvador/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-salvador/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-salvador/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/gdg-salvador/ilustracao.jpg",
-        "sha256": "0c4a48969567078be1f14b0553b1b1f60dcd513db956cf1f0876c6d1d7d8ffd7"
+        "sha256": "4c11c4d4df843ad8edc61f542ca12cd4a6974ad462e10f28945cf63f97c1364e"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Cadastro sem cover_image: cabeçalho nominal desde a margem esquerda, sem logo inventada ou espaço vazio. Prototipação exclusiva com três pessoas; mãos e objetos coerentes. Motivos superiores ajustados para não invadir cabeçalho.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Três desenvolvedores em mesa de prototipação, cenário de baía integrado. Organizador em destaque sem logo inventada ou espaço reservado; dados e rodapé livres.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "97406540a070d20b2f0ea9cea8bf1e80766a331e62ff556e406df6909c583e25"
+        "previa_sha256": "a74c343bab849ff4cf401a379b6f4dde60c80e08ee4f3b062fcb12b3e6684ff6"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Três desenvolvedores em mesa de prototipação, cenário de baía integrado. Organizador em destaque sem logo inventada ou espaço reservado; dados e rodapé livres."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -137,20 +170,26 @@
     {
       "id": "gdg-sao-luis",
       "conceito": "Intercâmbio de conhecimento em tecnologia e mosaico urbano ludovicense.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG São Luís: sharing development knowledge at local technology meetups. A brown Brazilian woman speaker with low bun gestures beside a tall narrow board holding a MOSAIC of four warm abstract software panels; a seated Black male developer with glasses writes in a notebook at far right. Board resembles handmade gallery of learning modules, with graceful orange linking curves overhead confined right. Narrow bottom landscape with warm historic São Luís tiled facade silhouettes and rooflines, not exact buildings. Distinct standing speaker gallery scene.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG São Luís: shared knowledge in software. At right a brown woman with low dark bun explains one small board with three blank colored modules to a seated Black male learner with round glasses and notebook. Upper-body figures with stylized faces and confident broad color shapes, not full-body rendered realistic figures. Thin terracotta arc overhead below y30%. Low continuous strip of simple historic warm tiled facade silhouettes, roofs and trees flowing into shore.",
+      "ajuste_prompt": "Preserve this stylized scene and landscape; move ONLY the man with notebook another 8% canvas width to RIGHT, keeping his whole body and hair right of x62% above y65%. Woman and board stay unchanged. Do not cut hands or hair. Preserve complete landscape and white wavy footer, blank header. No text or logos.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/gdg-sao-luis/gerada-original.png",
-        "arquivo_utilizado": "comunidades/gdg-sao-luis/gerada-original.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/gdg-sao-luis/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/gdg-sao-luis/ilustracao.jpg",
-        "sha256": "103cd12cf69af538a4d3c1bc0bc1c41f3d1030e1bffbcf2d0a09b832f0f67c60"
+        "sha256": "d8f1c05eacbd57965185e1eecf000b1c687162916c891e5bb8d2b5bb65f8bd82"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Logo local e nome íntegros. Cena exclusiva de intercâmbio junto ao mosaico de software; mãos e postura coerentes. Cabeçalho, dados e assinatura preservados.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "84c2c46e21bd118c5857ca0ce1b11ad65235dd2085c5e598fbf8bb4e9b907556"
+        "previa_sha256": "1327f74606ecbcc152ac0f925af9919293d7b3ca030626a1debf34cdfb102f93"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -158,21 +197,26 @@
     {
       "id": "geek-night-recife",
       "conceito": "Lightning talks, escuta e convivência na cena tecnológica recifense.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. Geek Night Recife: informal multidisciplinary technology gathering and lightning talks. A Black Brazilian woman with short curls stands at a small warm floor microphone giving a friendly short talk; two adult listeners, brown woman with glasses and man with cropped hair, sit on small olive cushions at far right. No stage signage. Small warm circular evening lamp and crescent-like apricot glow behind them confined right; overall ivory canvas remains light. Narrow low Recife riverside evening building silhouettes and bridge arches. Natural expressive storytelling, not coding desk.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. Geek Night Recife: relaxed lightning talks and active listening. At right a Black Brazilian woman with short rounded curls speaks into a simple small microphone; two listeners in simplified upper-body views sit nearby, brown woman with glasses and man with short curls. One cohesive informal scene, no duplicate panels. Apricot moonlike circle and orange gentle arc behind only right. Continuous low Recife riverfront with very simple warm buildings and bridge silhouettes; NOT realistic reflections, no detailed city.",
+      "ajuste_prompt": "Precise composition edit ONLY. Preserve this same illustration's stylized organic faces, flat warm colors, exact distinct scene and continuous low landscape with ivory wavy footer. Move the WHOLE PEOPLE GROUP AND THEIR OBJECTS to the RIGHT by approximately 12% of canvas width, slightly reducing their scale if needed. Keep every hair strand, shoulder, hand and equipment strictly RIGHT of x=60% from y=25% through y=64%; all space LEFT of x=56% above y=66% must be empty ivory. No character deletion or duplication. Do not change anatomy, do not change landscape positions or footer wave. Header top25% remains blank. No logos or lettering. Portrait 4:5.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/geek-night-recife/gerada-original.png",
-        "arquivo_utilizado": "comunidades/geek-night-recife/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/geek-night-recife/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/geek-night-recife/ilustracao.jpg",
-        "sha256": "4f445a59666432966577eaa5b8163145c015898245a33e794abc414138af999b"
+        "sha256": "f6a04864bc89a990d31900a8309b048669492bf86c5c98876cbfc83eaf39afa3"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Logo registrada preservada integralmente, inclusive marca verde sobre fundo original. Nome legível. Lightning talk com microfone e dois ouvintes, anatomia coerente; folhagem superior reposicionada para preservar cabeçalho.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Apresentadora com microfone e dois ouvintes em cena única; cabelo corrigido para não invadir dados. Paisagem ribeirinha contínua, logo e rodapé íntegros.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "27a62fbf0b713c231137b67703e2241329475f6737139230492016c27c3755c2"
+        "previa_sha256": "9a178c58d13f1d43f70adc6dffa634a13862687878ad1b3eec7d7b34f3d7796b"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Apresentadora com microfone e dois ouvintes em cena única; cabelo corrigido para não invadir dados. Paisagem ribeirinha contínua, logo e rodapé íntegros."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -180,21 +224,26 @@
     {
       "id": "github-community-fortaleza",
       "conceito": "Controle de versão, revisão colaborativa e contribuições abertas.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GitHub Community Fortaleza: version control and open-source collaboration, no GitHub logo in illustration. A Black Brazilian woman with tied-back dreadlocks and brown male developer with short curly hair stand beside a tall branching wooden rail of rounded orange nodes. They each carefully attach a blank rectangular paper contribution to separate branches that converge at a small warm cube. Artistic versioning metaphor, no text, code, octopus or mascot. Tiny laptop closed on low pedestal. Coastal Fortaleza strip with distant simple city silhouette and small sail.",
-      "ajuste_prompt": "Edit this illustration background ONLY to repair layout safety. Preserve same exclusive scene, people, anatomy, palette and style. TOP 27% of whole image must be completely empty ivory #FCFAF7. BOTTOM 14% must be completely empty ivory. Move topmost floating motifs or leaves downward so ALL illustrated content fits between y28% and y85%, with soft ivory wave boundary at y85%. Keep subjects at RIGHT x60-100%; left x0-55% y0-70% blank. No clipping, no logo, no added text. Preserve portrait 4:5.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GitHub Community Fortaleza: open-source version control and collaboration. Two stylized developers at right, Black woman with tied-back locs and brown man with curls, jointly arrange two blank contribution cards on ONE compact corkboard with a subtle hand-drawn branching orange line and round nodes. NO mascot or technology logo; NO oversized wooden tree, cube, floating platforms. Upper-body friendly collaboration. Low continuous Fortaleza coastal line with simple warm rooftops and tiny jangada silhouette. Fortaleza background must be a FLAT coast, no cliffs, mountains, sugarloaf formations, no Rio landmarks.",
+      "ajuste_prompt": "Precise composition edit ONLY. Preserve this same illustration's stylized organic faces, flat warm colors, exact distinct scene and continuous low landscape with ivory wavy footer. Move the WHOLE PEOPLE GROUP AND THEIR BOARD to the RIGHT by approximately 12% of canvas width, slightly reducing their scale if needed. Keep every hair strand, shoulder, hand and equipment strictly RIGHT of x=60% from y=25% through y=64%; all space LEFT of x=56% above y=66% must be empty ivory. No character deletion or duplication. Do not change anatomy, do not change landscape positions or footer wave. Header top25% remains blank. No logos or lettering. Portrait 4:5.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/github-community-fortaleza/gerada-original.png",
-        "arquivo_utilizado": "comunidades/github-community-fortaleza/gerada-ajustada.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/github-community-fortaleza/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/github-community-fortaleza/ilustracao.jpg",
-        "sha256": "25f8b5d2184e12801db22ce5831fd0182968a218d2c0634a094b40ca45a20621"
+        "sha256": "f0fdd627e32b7da404512af93ebb0a665a7b05eca06cd616d5b40764e34a9dfd"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome completo em duas linhas a 47 px. Logo registrada intacta, sem regeneração de mascote. Colaboração por ramificações é exclusiva; mãos naturais e nós reposicionados fora do cabeçalho. Rodapé separado.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Contribuições abertas em painel compartilhado, personagens reposicionados; litoral plano sem morro associado ao Rio, sem indicação de local de evento. Logo original e texto livres.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "463c987487c88abf676856a558585ed253428b463916ae04b7f8fa78e134f449"
+        "previa_sha256": "27aa7136475811e36c6440264a649e1dc31e9081b70ca157e1c8b7ec34ad7368"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Contribuições abertas em painel compartilhado, personagens reposicionados; litoral plano sem morro associado ao Rio, sem indicação de local de evento. Logo original e texto livres."
       },
       "status": "em_revisao",
       "aprovacao": null
@@ -202,24 +251,31 @@
     {
       "id": "graphql-recife",
       "conceito": "Consultas conectadas e intercâmbio de experiências com dados em produção.",
-      "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GraphQL Recife: community sharing production experience and query best practices. Distinct right-side scene: Brazilian brown woman engineer with a neat short bob sits with a tablet on her knee looking toward an elegant tall network of connected warm cubes and circles, while a Black male colleague with round glasses stands holding a small blank query-like card at its base. Graph is organic asymmetric orange lines between olive and terracotta objects, NOT the official GraphQL logo or technical labeled diagram. Narrow low Recife river with two tiny bridge arches and warm warehouses. No giant screen, no circle of people.",
+      "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GraphQL Recife: query/data experience sharing. At right a brown woman engineer with short bob holds a small tablet while a Black male colleague with round glasses explains a modest unbranded board with an asymmetric network of orange round nodes and soft connecting curves. Organic warm schematic metaphor, NOT official GraphQL logo or an isometric tower of cubes. Friendly simplified upper-body figures and natural hands. Low continuous Recife river curves with two tiny simple bridge arches and warm warehouses.",
+      "ajuste_prompt": "Precise composition edit ONLY. Preserve this same illustration's stylized organic faces, flat warm colors, exact distinct scene and continuous low landscape with ivory wavy footer. Move the WHOLE PEOPLE GROUP AND THEIR OBJECTS to the RIGHT by approximately 12% of canvas width, slightly reducing their scale if needed. Keep every hair strand, shoulder, hand and equipment strictly RIGHT of x=60% from y=25% through y=64%; all space LEFT of x=56% above y=66% must be empty ivory. No character deletion or duplication. Do not change anatomy, do not change landscape positions or footer wave. Header top25% remains blank. No logos or lettering. Portrait 4:5.",
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "gerada_original": "comunidades/graphql-recife/gerada-original.png",
-        "arquivo_utilizado": "comunidades/graphql-recife/gerada-original.png",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_utilizado": "comunidades/graphql-recife/gerada-base-v2-ajustada.png",
         "insumo": "comunidades/graphql-recife/ilustracao.jpg",
-        "sha256": "90ffe5563d45df83f3a52b507ebfa5b0e0efafe03e72a23535145cf5f57c079c"
+        "sha256": "b41f3b6466c26f83f786d0e70fda8e92c1bb357e2f49bb485117b6332769c4b6"
       },
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png via view_image após exportação final do SVG.",
-        "observacoes": "Nome e logo rosa registrados preservados. Grafo abstrato não imita logo; dupla com tablet/cartão tem anatomia coerente. Texto, margens, cabeçalho e rodapé legíveis.",
+        "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+        "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro.",
         "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-        "previa_sha256": "7bea20739acd376ae9265a829c4b91b93623a25930b9742e9cce925b175ce80e"
+        "previa_sha256": "a6ff0b319254273a7a5623e563225a45c4075410723d13c46e28cfd4e8ebf11b"
+      },
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro."
       },
       "status": "em_revisao",
       "aprovacao": null
     }
   ],
-  "bloqueios": []
+  "bloqueios": [],
+  "historico": "Versão anterior preservada em previa-anterior-v1.png, modelo-anterior-v1.svg, estilo-anterior-v1.json, spec.json e fontes gerada-original.png/gerada-ajustada.png quando existentes. Fontes e prompts da correção preservados em gerada-base-v2*.png e spec-v2.json. Todas as peças permanecem demonstrativas e pendentes de aprovação humana."
 }

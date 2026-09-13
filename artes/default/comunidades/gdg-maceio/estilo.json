@@ -3,9 +3,6 @@
   "nome": "GDG Maceió",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"adf049952f31b7b3b8cb6e1dc05b7500c5a4aaa6b0682de069d0950f00c95e95"},
-  "revisao_visual": {"realizada":true,"observacoes":"Logo cadastrada preservada com cores e desenho originais. Apresentador e aprendiz naturais junto ao cavalete. Folhagem reposicionada fora do cabeçalho; coluna textual e rodapé livres."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/gdg-maceio.md",
   "estado": "AL",
   "cidade": "Maceió",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/gdg-maceio/gerada-base-v2.png",
+    "insumo": "comunidades/gdg-maceio/ilustracao.jpg",
+    "sha256": "d47bd5e2a238cb37d952b3fff2632088b380d7981498e33be87050d300bc0233",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Demonstração de aplicativo com dois adultos e cavalete integrado, paisagem lagunar contínua e onda inferior. Logo, nome e dados íntegros.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "817539b9157d9b3e249dd33149bf8582b61761691d2a64417b88d61a1e92f1cc"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Demonstração de aplicativo com dois adultos e cavalete integrado, paisagem lagunar contínua e onda inferior. Logo, nome e dados íntegros."
+  },
+  "dados_demonstrativos": true
 }

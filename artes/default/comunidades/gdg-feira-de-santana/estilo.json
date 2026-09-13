@@ -3,9 +3,6 @@
   "nome": "GDG Feira de Santana",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"b12a51cfa0dd897bbdbe1b9e1e544c20003a19ca27c38a478ccf0d88da1c5ddf"},
-  "revisao_visual": {"realizada":true,"observacoes":"Nome longo em uma linha a 45 px sem compressão ou corte. Logo original íntegra. Mentoria e bancada móvel exclusivas; mãos naturais. Fundo ajustado abaixo da divisória. Rodapé limpo."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/gdg-feira-de-santana.md",
   "estado": "BA",
   "cidade": "Feira de Santana",
@@ -23,5 +20,28 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": 65,
+  "fundo_canvas": "#fdfcf8",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/gdg-feira-de-santana/gerada-base-v2.png",
+    "insumo": "comunidades/gdg-feira-de-santana/ilustracao.jpg",
+    "sha256": "b0d9fc1467ceb388f43ec3f98266bf6687fdbec6a0d1e9284587c45aeca41f34",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Mentoria em mesa ancorada, paisagem contínua do interior baiano; ajuste vertical de 65 px preserva topo e posiciona transição inferior. Logo e dados legíveis.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "dca498a87e8187b8e29710981a935f70ddfaa15b22276d1a4671089f3eec2999"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Mentoria em mesa ancorada, paisagem contínua do interior baiano; ajuste vertical de 65 px preserva topo e posiciona transição inferior. Logo e dados legíveis."
+  },
+  "dados_demonstrativos": true
 }

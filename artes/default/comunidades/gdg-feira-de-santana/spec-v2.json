@@ -1,0 +1,17 @@
+{
+  "id": "gdg-feira-de-santana",
+  "conceito": "Oficina multitecnologia e troca de saberes no interior baiano.",
+  "ilustracao": "artes/default/comunidades/gdg-feira-de-santana/gerada-base-v2.png",
+  "prompt": "Use case: illustration-story. Generate ONE 4:5 portrait reusable background, intended 1080x1350. Input image is EXPLICIT STYLE AND COMPOSITION REFERENCE ONLY: genericos/com-logo/previa.png. Match its organic stylized Brazilian editorial character drawing, broad flat warm color masses, simplified rounded faces and understated anatomy, discrete texture and beautiful flowing shapes. NOT semirealistic painted people, NOT detailed shading, NOT corporate geometric/isometric vectors. Do NOT copy its three people, laptop scene or poses. NEW exclusive scene described below. Warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, restrained olive and dark brown, ivory #FCFAF7. Clear TOP0-25% blank ivory; LEFT0-55% to y65% blank for future text. Main people at x62-100%, y40-82%, coherent anchored single scene. Low CONTINUOUS stylized landscape across full width touching BOTH side edges at y76-85%. End illustration with strong ORGANIC IVORY WAVE at y83-86%, BOTTOM y87-100% completely blank ivory for footer. NO text, letters, digits, logos, brands, watermarks, frames, floating islands, isolated oval ground, duplicate vignettes, devices or people. Natural simplified hands. Actual logos/text added independently in SVG. GDG Feira de Santana: sharing mobile, backend and cloud knowledge in interior Bahia. Older brown woman mentor with short gray curls calmly explains a SMALL unbranded phone and cloud-shaped paper piece resting on one slim grounded desk, while a young Black male learner holds a blank notebook. Two upper-body stylized people grouped right, no full-body realistic render. Low continuous warm inland rolling hills, modest Feira-like town silhouettes and olive trees.",
+  "referencia_estilo": "artes/default/genericos/com-logo/previa.png",
+  "linhas_nome": [
+    "GDG Feira de Santana"
+  ],
+  "nome_tamanho": 45,
+  "ilustracao_y": 65,
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo": "gerada-base-v2.png",
+    "origem_sessao": "/home/gaellopes/.codex/generated_images/01a09c4f-477f-7583-9d8a-c8978c61e728/exec-d26ede8e-c32a-4576-8da3-b3af4e7ecbd3.png"
+  }
+}

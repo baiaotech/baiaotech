@@ -3,9 +3,6 @@
   "nome": "Geek Night Recife",
   "status": "em_revisao",
   "aprovacao": null,
-  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"4f445a59666432966577eaa5b8163145c015898245a33e794abc414138af999b"},
-  "revisao_visual": {"realizada":true,"observacoes":"Logo registrada preservada integralmente, inclusive marca verde sobre fundo original. Nome legível. Lightning talk com microfone e dois ouvintes, anatomia coerente; folhagem superior reposicionada para preservar cabeçalho."},
-  "dados_demonstrativos": true,
   "comunidade": "src/content/communities/geek-night-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -23,5 +20,26 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_origem": {
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_utilizado": "comunidades/geek-night-recife/gerada-base-v2-ajustada.png",
+    "insumo": "comunidades/geek-night-recife/ilustracao.jpg",
+    "sha256": "f6a04864bc89a990d31900a8309b048669492bf86c5c98876cbfc83eaf39afa3",
+    "prompt": "spec-v2.json"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
+    "observacoes": "Apresentadora com microfone e dois ouvintes em cena única; cabelo corrigido para não invadir dados. Paisagem ribeirinha contínua, logo e rodapé íntegros.",
+    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
+    "previa_sha256": "9a178c58d13f1d43f70adc6dffa634a13862687878ad1b3eec7d7b34f3d7796b"
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Apresentadora com microfone e dois ouvintes em cena única; cabelo corrigido para não invadir dados. Paisagem ribeirinha contínua, logo e rodapé íntegros."
+  },
+  "dados_demonstrativos": true
 }
