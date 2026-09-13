@@ -14,7 +14,7 @@ source_url: "https://doity.com.br/0xe-hacker-conference-2027"
 categories:
   - "seguranca"
 featured: false
-cover_image: "https://conference.oxehc.com.br/assets/img/logo.png"
+cover_image: ""
 price: ""
 ---
 
