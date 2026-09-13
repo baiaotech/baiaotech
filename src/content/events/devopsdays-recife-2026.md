@@ -7,7 +7,7 @@ format: "in-person"
 city: "Recife"
 state: "PE"
 organizer: "DevOpsDays"
-venue: "Recife"
+venue: "UNINASSAU Graças - Bloco B, Auditório Roque de Brito"
 ticket_url: "https://devopsdays.org/events/2026-recife/welcome/"
 source_name: "DevOpsDays Talks"
 source_url: "https://devopsdays.org/events/2026-recife/welcome/"
@@ -15,13 +15,10 @@ categories:
   - "devops"
   - "cloud"
 featured: false
-cover_image: "https://devopsdays.org/events/2026-recife/logo_hu_2156f1783058e197.webp"
+cover_image: ""
 price: ""
 ---
 
-DEVOPSDAYS RECIFE - 2026
-É com grande entusiasmo que convidamos você para a sexta edição do DevOpsDays Recife, em dezembro de 2026, em Recife (Pernambuco). Como organizadores, queremos reunir de novo entusiastas, profissionais e especialistas do ecossistema DevOps para um encontro enriquecedor e inspirador — com gente de todo o Nordeste e de qualquer lugar do Brasil.
+O DevOpsDays Recife 2026 acontece em 12 de dezembro, na UNINASSAU Graças, em Recife. A sexta edição reúne profissionais e comunidades de desenvolvimento, operações, SRE, plataforma e segurança para compartilhar práticas, experiências e tendências do ecossistema DevOps.
 
-Se você é desenvolvedor, sysadmin, SRE, gerente de produto ou projetos, trabalha com plataforma, segurança ou é simplesmente curioso, está convidado! O DevOpsDays Recife é o lugar para trocar ideias, aprender, se conectar com várias pessoas e com a comunidade tech.
-
-O local do evento ainda será divulgado; acompanhe este site e nossas redes para CFP, inscrições e novidades. Esperamos você para explorar e fortalecer a nossa comunidade.
+A edição de 2026 tem como tema "Rios, Pontes e Tecnologia", conectando integração entre pessoas, times, ferramentas e sistemas à identidade da cidade do Recife.
