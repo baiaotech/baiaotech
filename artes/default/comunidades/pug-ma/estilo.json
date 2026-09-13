@@ -1,0 +1,24 @@
+{
+  "id": "pug-ma",
+  "nome": "PUG-MA",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-ma.md",
+  "estado": "MA",
+  "cidade": "",
+  "conceito": "Rede de troca de dicas Python no Maranhão: desenvolvedora conecta uma chamada de grupo ao colega em um canto de estudo.",
+  "linhas_nome": [
+    "PUG-MA"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · MA",
+  "logo_origem": "src/assets/covers/communities/pug-ma.png",
+  "logo_origem_sha256": "1dedeb3887093a5b778f6e2f16e28aa475a4186706fe56b44daf20ac1c105724",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pug-ce",
+  "nome": "PUG-CE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Aprendizado contínuo Python: sessão de perguntas e respostas entre programador e facilitadora, com cartões de dúvidas em painel e paisagem do Ceará.",
+  "linhas_nome": [
+    "PUG-CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/pug-ce.png",
+  "logo_origem_sha256": "7bf6e6d1bfa0dfcd7a4775141e5138d0b216cd3a3af0adac5adf472170324554",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

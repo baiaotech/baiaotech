@@ -1,0 +1,24 @@
+{
+  "id": "pug-al-grupy-al",
+  "nome": "PUG-AL (GruPy-AL)",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-al-grupy-al.md",
+  "estado": "AL",
+  "cidade": "",
+  "conceito": "Palestra e troca de conhecimento Python em Alagoas: voluntária demonstra componentes de um projeto aberto e participante registra ideias, sobre paisagem lagunar contínua.",
+  "linhas_nome": [
+    "PUG-AL (GruPy-AL)"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · AL",
+  "logo_origem": "src/assets/covers/communities/pug-al-grupy-al.jpg",
+  "logo_origem_sha256": "8463f5df4b89f5a3429221bf14e72a4118daba1143eaa5a87d40d8a51a0574f2",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

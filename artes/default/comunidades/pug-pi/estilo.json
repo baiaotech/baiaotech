@@ -1,0 +1,24 @@
+{
+  "id": "pug-pi",
+  "nome": "PUG-PI",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-pi.md",
+  "estado": "PI",
+  "cidade": "",
+  "conceito": "Suporte e crescimento do ecossistema Python piauiense: desenvolvedor experiente ajuda iniciante a depurar um exercício.",
+  "linhas_nome": [
+    "PUG-PI"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PI",
+  "logo_origem": "src/assets/covers/communities/pug-pi.jpeg",
+  "logo_origem_sha256": "2f818ce514b9ac502c74094ce092af1353e83a79a5afb9b3447403603fd3cced",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

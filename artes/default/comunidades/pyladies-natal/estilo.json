@@ -1,0 +1,24 @@
+{
+  "id": "pyladies-natal",
+  "nome": "PyLadies Natal",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pyladies-natal.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Estudo e mentoria entre mulheres Python em Natal: desenvolvedora orienta exercício de programação em ambiente acolhedor.",
+  "linhas_nome": [
+    "PyLadies Natal"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/pyladies-natal.png",
+  "logo_origem_sha256": "88ff32339fefa040f0df0c0958b6ea469a8c2dbf1f43d6b6a79f2c626f4ebaf6",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

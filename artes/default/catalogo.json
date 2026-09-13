@@ -496,6 +496,76 @@
       "estado": "BA",
       "estilo": "comunidades/projeto-software-livre-bahia/estilo.json",
       "previa": "comunidades/projeto-software-livre-bahia/previa.png"
+    },
+    {
+      "id": "pug-al-grupy-al",
+      "nome": "PUG-AL (GruPy-AL)",
+      "estado": "AL",
+      "estilo": "comunidades/pug-al-grupy-al/estilo.json",
+      "previa": "comunidades/pug-al-grupy-al/previa.png"
+    },
+    {
+      "id": "pug-ce",
+      "nome": "PUG-CE",
+      "estado": "CE",
+      "estilo": "comunidades/pug-ce/estilo.json",
+      "previa": "comunidades/pug-ce/previa.png"
+    },
+    {
+      "id": "pug-ma",
+      "nome": "PUG-MA",
+      "estado": "MA",
+      "estilo": "comunidades/pug-ma/estilo.json",
+      "previa": "comunidades/pug-ma/previa.png"
+    },
+    {
+      "id": "pug-pb-python-paraiba",
+      "nome": "PUG-PB (Python Paraíba)",
+      "estado": "PB",
+      "estilo": "comunidades/pug-pb-python-paraiba/estilo.json",
+      "previa": "comunidades/pug-pb-python-paraiba/previa.png"
+    },
+    {
+      "id": "pug-pe",
+      "nome": "PUG-PE",
+      "estado": "PE",
+      "estilo": "comunidades/pug-pe/estilo.json",
+      "previa": "comunidades/pug-pe/previa.png"
+    },
+    {
+      "id": "pug-pi",
+      "nome": "PUG-PI",
+      "estado": "PI",
+      "estilo": "comunidades/pug-pi/estilo.json",
+      "previa": "comunidades/pug-pi/previa.png"
+    },
+    {
+      "id": "pug-se",
+      "nome": "PUG-SE",
+      "estado": "SE",
+      "estilo": "comunidades/pug-se/estilo.json",
+      "previa": "comunidades/pug-se/previa.png"
+    },
+    {
+      "id": "pyladies-natal",
+      "nome": "PyLadies Natal",
+      "estado": "RN",
+      "estilo": "comunidades/pyladies-natal/estilo.json",
+      "previa": "comunidades/pyladies-natal/previa.png"
+    },
+    {
+      "id": "pyladies-recife",
+      "nome": "PyLadies Recife",
+      "estado": "PE",
+      "estilo": "comunidades/pyladies-recife/estilo.json",
+      "previa": "comunidades/pyladies-recife/previa.png"
+    },
+    {
+      "id": "pyladies-sergipe",
+      "nome": "PyLadies Sergipe",
+      "estado": "SE",
+      "estilo": "comunidades/pyladies-sergipe/estilo.json",
+      "previa": "comunidades/pyladies-sergipe/previa.png"
     }
   ],
   "genericos": [

@@ -1,0 +1,24 @@
+{
+  "id": "pug-pe",
+  "nome": "PUG-PE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-pe.md",
+  "estado": "PE",
+  "cidade": "",
+  "conceito": "Aprendizado inclusivo Python em Pernambuco: pequena roda de compartilhamento de soluções com laptop e caderno de exercícios.",
+  "linhas_nome": [
+    "PUG-PE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PE",
+  "logo_origem": "src/assets/covers/communities/pug-pe.png",
+  "logo_origem_sha256": "1dbf6e9853a5d622afd9c23acbccdc34b3b3d25cae69b45aed176b9542a4cd89",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

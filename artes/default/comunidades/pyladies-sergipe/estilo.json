@@ -1,0 +1,24 @@
+{
+  "id": "pyladies-sergipe",
+  "nome": "PyLadies Sergipe",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pyladies-sergipe.md",
+  "estado": "SE",
+  "cidade": "",
+  "conceito": "Capacitação e apoio mútuo entre mulheres Python em Sergipe: facilitadoras compartilham exercícios e recursos de aprendizagem.",
+  "linhas_nome": [
+    "PyLadies Sergipe"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · SE",
+  "logo_origem": "src/assets/covers/communities/pyladies-sergipe.png",
+  "logo_origem_sha256": "7d9e85d0ee3e778e402390f4da0629d0713b6a49428f138a622d39a874843447",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

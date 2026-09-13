@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-70 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+80 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -571,6 +571,86 @@ Colaboração aberta e circulação de conhecimento no movimento de software liv
 ![Card completo — Projeto Software Livre Bahia](comunidades/projeto-software-livre-bahia/previa.png)
 
 [SVG editável](comunidades/projeto-software-livre-bahia/modelo.svg) · [Estilo e origem](comunidades/projeto-software-livre-bahia/estilo.json)
+
+## PUG-AL (GruPy-AL)
+
+Palestra e troca de conhecimento Python em Alagoas: voluntária demonstra componentes de um projeto aberto e participante registra ideias, sobre paisagem lagunar contínua.
+
+![Card completo — PUG-AL (GruPy-AL)](comunidades/pug-al-grupy-al/previa.png)
+
+[SVG editável](comunidades/pug-al-grupy-al/modelo.svg) · [Estilo e origem](comunidades/pug-al-grupy-al/estilo.json)
+
+## PUG-CE
+
+Aprendizado contínuo Python: sessão de perguntas e respostas entre programador e facilitadora, com cartões de dúvidas em painel e paisagem do Ceará.
+
+![Card completo — PUG-CE](comunidades/pug-ce/previa.png)
+
+[SVG editável](comunidades/pug-ce/modelo.svg) · [Estilo e origem](comunidades/pug-ce/estilo.json)
+
+## PUG-MA
+
+Rede de troca de dicas Python no Maranhão: desenvolvedora conecta uma chamada de grupo ao colega em um canto de estudo.
+
+![Card completo — PUG-MA](comunidades/pug-ma/previa.png)
+
+[SVG editável](comunidades/pug-ma/modelo.svg) · [Estilo e origem](comunidades/pug-ma/estilo.json)
+
+## PUG-PB (Python Paraíba)
+
+Colaboração Python na Paraíba: revisão de contribuições de um projeto aberto com cartões de etapas em mesa compartilhada.
+
+![Card completo — PUG-PB (Python Paraíba)](comunidades/pug-pb-python-paraiba/previa.png)
+
+[SVG editável](comunidades/pug-pb-python-paraiba/modelo.svg) · [Estilo e origem](comunidades/pug-pb-python-paraiba/estilo.json)
+
+## PUG-PE
+
+Aprendizado inclusivo Python em Pernambuco: pequena roda de compartilhamento de soluções com laptop e caderno de exercícios.
+
+![Card completo — PUG-PE](comunidades/pug-pe/previa.png)
+
+[SVG editável](comunidades/pug-pe/modelo.svg) · [Estilo e origem](comunidades/pug-pe/estilo.json)
+
+## PUG-PI
+
+Suporte e crescimento do ecossistema Python piauiense: desenvolvedor experiente ajuda iniciante a depurar um exercício.
+
+![Card completo — PUG-PI](comunidades/pug-pi/previa.png)
+
+[SVG editável](comunidades/pug-pi/modelo.svg) · [Estilo e origem](comunidades/pug-pi/estilo.json)
+
+## PUG-SE
+
+Contribuição open-source Python em Sergipe: dupla organiza documentação e melhorias de um projeto aberto.
+
+![Card completo — PUG-SE](comunidades/pug-se/previa.png)
+
+[SVG editável](comunidades/pug-se/modelo.svg) · [Estilo e origem](comunidades/pug-se/estilo.json)
+
+## PyLadies Natal
+
+Estudo e mentoria entre mulheres Python em Natal: desenvolvedora orienta exercício de programação em ambiente acolhedor.
+
+![Card completo — PyLadies Natal](comunidades/pyladies-natal/previa.png)
+
+[SVG editável](comunidades/pyladies-natal/modelo.svg) · [Estilo e origem](comunidades/pyladies-natal/estilo.json)
+
+## PyLadies Recife
+
+Coding dojo e rede de apoio de mulheres Python no Recife: dupla alterna a implementação e a discussão de uma solução.
+
+![Card completo — PyLadies Recife](comunidades/pyladies-recife/previa.png)
+
+[SVG editável](comunidades/pyladies-recife/modelo.svg) · [Estilo e origem](comunidades/pyladies-recife/estilo.json)
+
+## PyLadies Sergipe
+
+Capacitação e apoio mútuo entre mulheres Python em Sergipe: facilitadoras compartilham exercícios e recursos de aprendizagem.
+
+![Card completo — PyLadies Sergipe](comunidades/pyladies-sergipe/previa.png)
+
+[SVG editável](comunidades/pyladies-sergipe/modelo.svg) · [Estilo e origem](comunidades/pyladies-sergipe/estilo.json)
 
 ## Genérico com-logo
 

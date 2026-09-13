@@ -1,0 +1,24 @@
+{
+  "id": "pug-pb-python-paraiba",
+  "nome": "PUG-PB (Python Paraíba)",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-pb-python-paraiba.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Colaboração Python na Paraíba: revisão de contribuições de um projeto aberto com cartões de etapas em mesa compartilhada.",
+  "linhas_nome": [
+    "PUG-PB (Python Paraíba)"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/pug-pb-python-paraiba.png",
+  "logo_origem_sha256": "4e8ee62d17d9b5724512e410f519ac5aa80711b92f07637c912dbcd0d6aecb12",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

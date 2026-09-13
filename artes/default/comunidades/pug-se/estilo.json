@@ -1,0 +1,24 @@
+{
+  "id": "pug-se",
+  "nome": "PUG-SE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pug-se.md",
+  "estado": "SE",
+  "cidade": "",
+  "conceito": "Contribuição open-source Python em Sergipe: dupla organiza documentação e melhorias de um projeto aberto.",
+  "linhas_nome": [
+    "PUG-SE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · SE",
+  "logo_origem": "src/assets/covers/communities/pug-se.png",
+  "logo_origem_sha256": "d805e1a757057b3887a4810996140e86cadad866cc087ccc3912e7d0deb55abe",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
