@@ -14,7 +14,7 @@ source_url: "https://www.bsidesjp.com.br/"
 categories:
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6508a100b9405.jpg"
 price: "Pago"
 ---
 
