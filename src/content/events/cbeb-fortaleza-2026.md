@@ -16,7 +16,7 @@ categories:
   - "data-science"
   - "inovacao"
 featured: false
-cover_image: "https://sbeb.org.br/cbeb2026/wp-content/uploads/2026/02/LogoCBEB2026-2.png"
+cover_image: ""
 price: ""
 ---
 
