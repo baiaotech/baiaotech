@@ -21,5 +21,7 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -25,
+  "fundo_canvas": "#fefdf9"
 }

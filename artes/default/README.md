@@ -96,6 +96,8 @@ O script `scripts/build-community.cjs` monta apenas uma comunidade por execuçã
 
 `scripts/validate-community.cjs lote-XX` confere dimensões, grupos editáveis, status, logos oficiais e correspondência pixel a pixel entre SVG renderizado e PNG. A inspeção visual individual continua obrigatória. O procedimento de integração incremental está em [CONTINUAR-CODEX.md](retomada/CONTINUAR-CODEX.md).
 
+`node artes/default/scripts/validate-catalog.cjs --complete`, executado na raiz do checkout, confere as 93 comunidades contra os cadastros e o plano, os dois genéricos, a exclusividade dos arquivos de ilustração e os registros de conferência individual contra a base. Sem `--complete`, valida somente o catálogo integrado até o momento. A distinção entre imagens por hash não substitui a avaliação de conceitos e cenas. `node artes/default/scripts/verify-release.cjs HEAD` verifica a cobertura e os checksums do commit, sem confundir trabalho local ainda em andamento com o conjunto enviado.
+
 O parâmetro opcional `onda_rodape: true` no spec acrescenta uma curva vetorial orgânica dentro de `fixed-illustration`, para acabamento da paisagem baixa e proteção do rodapé. Use somente quando não ocultar pessoas, pés, dispositivos ou partes relevantes da cena. Não substitui a correção de uma ilustração mal composta; o SVG completo e seu PNG continuam sendo os entregáveis de revisão.
 
 `ilustracao_y` (-100 a 100 px) permite um pequeno reposicionamento vertical da camada raster no SVG, sem mover textos, logos ou rodapé e sem deformar a imagem. Usar apenas após revisão de que nenhuma parte relevante sairá da tela ou invadirá áreas fixas. O insumo JPEG permanece preservado; o validador mede a faixa do cabeçalho na camada já reposicionada.

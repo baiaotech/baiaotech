@@ -165,5 +165,12 @@
       "quantidade": 3,
       "status": "pendente"
     }
-  ]
+  ],
+  "primeiro_lote": {
+    "id": "lote-01",
+    "status": "concluido_em_revisao",
+    "quantidade": 10,
+    "manifesto": "lotes/lote-01.json",
+    "aprovacao": null
+  }
 }

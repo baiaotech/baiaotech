@@ -1,0 +1,27 @@
+{
+  "id": "pyladies-maceio",
+  "nome": "PyLadies Maceió",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pyladies-maceio.md",
+  "estado": "AL",
+  "cidade": "Maceió",
+  "conceito": "Mulheres, pertencimento e conexões; deriva da referência aprovada de PyLadies Maceió.",
+  "linhas_nome": [
+    "PyLadies Maceió"
+  ],
+  "nome_tamanho": 56,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Maceió, AL",
+  "logo_origem": "src/assets/covers/communities/pyladies-maceio.png",
+  "logo_origem_sha256": "e0bd4d53b852ccd220eddd3545f6f702a215f7c656d29ec6a1dbd20446762138",
+  "logo": "logo.png",
+  "ilustracao": "artes/default/comunidades/pyladies-maceio/ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": "../../referencias/pyladies-maceio-aprovado.png",
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "prompt_correcao": "Use case: precise-object-edit. Edit target: supplied existing illustration for PyLadies Maceió. Make ONE tiny correction only: reduce the peach circular backdrop behind the top woman's head so that its top begins at y=310 or lower on the 1080x1350 canvas, leaving the ENTIRE top y=0..300 plain ivory paper. Do not move, redraw or alter the three women, faces, hair, clothes, cacti, landscape, orange connection arcs, or organic bottom wave. Preserve exact existing editorial stylization, colors and paper texture. No text, logos, watermarks or new elements. Preserve full canvas aspect ratio 4:5 and lateral landscape continuity. This is not a new concept: preserve everything except the upper peach disk's intrusion into the blank header.",
+  "origem_geracao": "exec-cf1073cf-b5af-4d4d-829e-972226f8d4a7.png",
+  "prompt_correcao_2": "Use case: precise-object-edit. Edit target supplied PyLadies Maceió existing illustration. REMOVE THE PEACH CIRCULAR BACKDROP completely and replace only that backdrop with matching blank ivory paper. Keep three women, all faces, hairstyles, scarves, clothes, orange connection arcs and their dots, cacti, architecture, full-width low landscape and organic bottom wave unchanged. Do not move anything else or add anything. No new scene. No text or logos. Preserve original 4:5 composition and illustration style. Entire upper 22% of image must be blank ivory."
+}

@@ -1,0 +1,266 @@
+{
+  "id": "lote-01",
+  "status": "concluido_em_revisao",
+  "aprovacao": null,
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Cada PNG completo comparado com a base explicitada pelo usuário: traço editorial estilizado, paisagem lateral contínua e margem orgânica do rodapé. Conferência técnica não constitui aprovação humana."
+  },
+  "comunidades": [
+    {
+      "id": "pyladies-maceio",
+      "conceito": "Mulheres, pertencimento e conexões; deriva da referência aprovada de PyLadies Maceió.",
+      "prompt": "Use case: background-extraction.\nCreate a reusable editorial poster BACKGROUND from the reference, portrait 4:5 1080x1350 composition. The reference is an approved Baião Tech / PyLadies poster. Preserve the beautiful original illustration style and placement: three Brazilian women in profile at RIGHT side, warm terracotta skin/clothes, one afro and orange scarf at upper right, two women below, curved orange network lines and circular nodes, soft apricot sun, tiny caatinga landscape at bottom. Ivory background RGB #FCFAF7. Premium subtle paper grain, same warm flat painted editorial illustration.\nREMOVE ALL TEXT, ALL LOGOS, ALL LINE DIVIDERS, all date/location icons and all lettering from every part of the poster. The upper 0-22% is completely blank ivory. The left 0-52% from y=22%-70% is completely blank ivory negative space for typesetting later. Keep characters on the RIGHT half, beginning around x=58%, y=30%, down to y=85%. Landscape spans full width ONLY y=75%-86%. An ivory curved wave borders the bottom of the landscape. Bottom y=88%-100% is blank ivory with absolutely NO logo or text. Do not add devices, symbols or objects. Output just the finished image; no frame or mockup. Faithfully preserve the women and warm illustrated visual language of the reference.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Edit target: supplied existing illustration for PyLadies Maceió. Make ONE tiny correction only: reduce the peach circular backdrop behind the top woman's head so that its top begins at y=310 or lower on the 1080x1350 canvas, leaving the ENTIRE top y=0..300 plain ivory paper. Do not move, redraw or alter the three women, faces, hair, clothes, cacti, landscape, orange connection arcs, or organic bottom wave. Preserve exact existing editorial stylization, colors and paper texture. No text, logos, watermarks or new elements. Preserve full canvas aspect ratio 4:5 and lateral landscape continuity. This is not a new concept: preserve everything except the upper peach disk's intrusion into the blank header.",
+        "Use case: precise-object-edit. Edit target supplied PyLadies Maceió existing illustration. REMOVE THE PEACH CIRCULAR BACKDROP completely and replace only that backdrop with matching blank ivory paper. Keep three women, all faces, hairstyles, scarves, clothes, orange connection arcs and their dots, cacti, architecture, full-width low landscape and organic bottom wave unchanged. Do not move anything else or add anything. No new scene. No text or logos. Preserve original 4:5 composition and illustration style. Entire upper 22% of image must be blank ivory."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Retratos, cabelos, conexões e paisagem preservados; disco de fundo invasor removido pontualmente. Referência histórica aprovada não alterada. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "pyladies-salvador",
+      "conceito": "Duas mulheres em mentoria e programação em dupla, com paisagem inspirada na baía de Salvador.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: PyLadies Salvador, women learning and teaching Python together. Entirely different from PyLadies Maceió's three profile portraits: depict TWO Brazilian women, one Black woman with short natural hair and one brown-skinned woman with a long braid, seated at a terracotta worktable in a friendly pair-programming mentoring session. A small laptop with abstract unlettered code-like colored rectangles and a notebook. One explains with a natural open hand and the other looks engaged. Half-body three-quarter view, bodies on right, no large portrait heads and no orange bandanas. Behind them, abstract flowing bay curves, small pastel colonial house silhouettes and a distant sun subtly evoke Salvador without pretending an exact venue. Low scene features quiet warm coastal bay and architectural curves instead of a desert landscape. Main characters y=40%-83%, and delicate abstract programming tiles float above them at right. No Python logo.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Supplied image is existing pyladies-salvador illustration, EDIT TARGET not style inspiration. Delete only the uppermost tiny orange arc at top-right that rises above y=315. Shift the entire desk + laptop + notebook + cup + two women upward together by about 65px, keeping their scale and anatomy unchanged, so the lower organic ivory boundary leaves y=1170..1350 fully blank ivory. Keep the continuous landscape and plants extending to both side edges. Do not cut any notebook, cup or hands. Preserve the existing editorial stylized illustration exactly: same people and anatomy, palette, faces, scene and texture; no redesign, no realism or new characters. Full portrait4:5, blank ivory top0..310 and left x0..575 through y850, organic wave into blank footer fromy1170. No text, logos, border, watermark, floating terrain or isolated oval ground. No changes other than specified safe margin corrections.",
+        "Use case: precise-object-edit. Move only the mentoring woman's extended LEFTMOST gesturing hand closer to her own chest so its leftmost pixels remain to the RIGHT of 600px on a1080px-widecanvas. Keep her arm attached naturally and fingers clear. Also move the orange arc/dot at left of her hair to rightofx620, and lower the small peach hill atleft so blank left text area x68..575 stays empty throughy850. Do not move the desk, notebook, laptop, other woman, upper code cards, architecture, full-width landscape or lower wave. No text/logos. This is an edit of supplied pyladies-salvador scene, not a newillustration. Preserve style, palette, composition, anatomy and all unspecified details exactly. Existing margins top and bottom stay unchanged. No newobjects, no realism, no surrealism. Portrait4:5."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Duas mulheres em mentoria, mão recolhida naturalmente junto ao peito, laptop/caderno/caneca inteiros; cabeçalho e rodapé livres após reposicionamento vertical de65px. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-fortaleza",
+      "conceito": "Codelab de aplicativos, smartphone e interfaces, com inspiração na orla de Fortaleza.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: GDG Fortaleza — hands-on mobile development codelab. Distinct right-side illustration dominated by one large elegant tilted terracotta smartphone with a simple unbranded interface made of ivory tiles and olive buttons (no writing), alongside TWO young adult Brazilian developers, a brown-skinned man with short hair standing pointing at a UI card and a Black woman with a short curly hairstyle seated using a tablet. Both are full upper-body smaller figures rather than huge portraits. Phone rises at x=76% y=30%, characters grouped right at y=55%-84%. Light architectural forms and a distant curved coastal boardwalk with a tiny jangada sailboat on warm muted water evoke Fortaleza. Landscape strip stays low. Flowing orange arcs connect phone and small abstract app tiles. Warm human technical education, no clothing logos. Different pose from the reference, no bandanas, no three profile women.",
+      "origem_ilustracao": "JPEG original do primeiro lote reutilizado sem regeneração; somente PNG reexportado.",
+      "prompts_correcao": [],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Ilustração original mantida sem regeneração; codelab, telefone e tablet próprios, logo cadastrada e rodapé íntegros; PNG reexportado com fonte local. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-recife",
+      "conceito": "Troca de conhecimento em grupo, quadro de conexões e paisagem inspirada nos rios e pontes do Recife.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: GDG Recife — community learning, collaborative software and shared knowledge. A DISTINCT composition showing a Brazilian woman speaker with long dark hair and a small adult developer group (one man with short tight curls, one woman with round glasses) interacting around an upright warm ivory board with a simple abstract network of connected orange nodes and app tiles. The presenter stands at far right y=48%-80%, participants seated below y=64%-84%, all bodies to right of x=58%. A small terracotta laptop sits on the table. The board occupies right x=72%-97%, y=28%-50%. This is an informal community knowledge-sharing scene, no named event, no exact real people. Low riverfront architectural silhouettes and a subtle bridge with broad arches evoke Recife at bottom, restrained warm olive water, no cactus desert. Warm inviting intelligence, clear human poses, no bandanas, not three profile women. Tiny arcing orange connection lines echo a bridge connection.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Supplied image is existing gdg-recife illustration, EDIT TARGET not style inspiration. Shorten only the topmost plant leaf at top-right so all foliage starts below y=320. Lower the uppermost orange connecting dot/arc by35px so the whole top0..310 stays ivory. Keep the three people, whiteboard, desk, riverside architecture, full-width landscape and existing bottom organic wave unchanged. Preserve the existing editorial stylized illustration exactly: same people and anatomy, palette, faces, scene and texture; no redesign, no realism or new characters. Full portrait4:5, blank ivory top0..310 and left x0..575 through y850, organic wave into blank footer fromy1170. No text, logos, border, watermark, floating terrain or isolated oval ground. No changes other than specified safe margin corrections.",
+        "Use case: precise-object-edit. Reposition only the seated man in green and his chair about110px to the RIGHT, so his head, hair and all body pixels remain to rightofx600 untily850, without changing head size, pose, face or anatomy. Keep other two women, board, riverfront, architecture and wave exactly unchanged. Move nearby orange connecting line/dot to rightofx600 too in the data area. The entire leftx68..575 throughy850 must remain blank ivory. No text or logos. This is an edit of supplied gdg-recife scene, not a newillustration. Preserve style, palette, composition, anatomy and all unspecified details exactly. Existing margins top and bottom stay unchanged. No newobjects, no realism, no surrealism. Portrait4:5.",
+        "Use case: precise-object-edit. Input is edit target gdg-recife, existing editorial illustration. One correction: SHRINK the entire foreground group of people, their chairs, desk and devices TO 80% OF CURRENT SIZE while anchoring the group at the RIGHT EDGE and at its present bottom baseline. All people and props need to fit ENTIRELY inside the rightmost43% of the image from top through the upper63% height; this must noticeably increase BLANK IVORY space to their LEFT, without cutting off anybody. Keep the same original people, faces, hairstyle, pose and interaction. Retain existing upper technology motifs in place but remove any small orange decorative line or dot that enters the left55% above63%height. Keep original full-width landscape unchanged and connected to both side edges, not an island. Keep original organic wavy bottom edge and empty footer. Do not introduce realism, new characters, text, logos, frames or floating ground. Preserve color palette, illustration style and4:5canvas."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Participantes, quadro e mobiliário reduzidos proporcionalmente à direita para liberar coluna de dados; rostos, mãos, rio/ponte e paisagem contínua preservados. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "aws-user-group-joao-pessoa",
+      "conceito": "Discussão de arquitetura em nuvem, módulos conectados e paisagem costeira inspirada em João Pessoa.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: AWS User Group João Pessoa — cloud architecture discussion and local knowledge exchange. Make a UNIQUE illustration composition with TWO adult Brazilian cloud practitioners at RIGHT: a brown-skinned woman with a sleek dark ponytail holding a small tablet and a Black man with neat short hair holding a notebook. They stand next to a tall floating architectural stack of three ivory CUBES and a warm apricot CLOUD above, joined by fine orange connection lines. NOT a horizontal bank of servers, NOT people huddled at a laptop, no bandanas. The stack of isometric soft geometric cubes occupies x=74%-98%, y=28%-53%, the practitioners occupy x=61%-98% y=55%-84%. Both are in discussion pointing gently toward the conceptual cloud. Low coastline, tropical foliage and a very small angular white lighthouse silhouette evoke João Pessoa at bottom without showing an event venue. Warm terracotta, ivory and muted olive, elegant cloud motifs, no AWS text or logo whatsoever because the real community image will be inserted separately.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Supplied image is existing aws-user-group-joao-pessoa illustration, EDIT TARGET not style inspiration. Reduce and lower only the top decorative cloud so its upper edge begins below y=330. Raise only the lower organic ivory landscape boundary by60px to leave all y=1170..1350 blank ivory, preserving the people's visible heads, arms, tablets and books and their poses. Landscape continues to both side edges; retain natural torso framing. Preserve the existing editorial stylized illustration exactly: same people and anatomy, palette, faces, scene and texture; no redesign, no realism or new characters. Full portrait4:5, blank ivory top0..310 and left x0..575 through y850, organic wave into blank footer fromy1170. No text, logos, border, watermark, floating terrain or isolated oval ground. No changes other than specified safe margin corrections."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Nuvem reduzida e afastada do cabeçalho; arquitetos, tablet e livro íntegros; reposicionamento vertical de-25px libera margem inferior mantendo paisagem contínua. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-natal",
+      "conceito": "Experimentação de interfaces em tablets e notebooks, com degraus e dunas inspiradas em Natal.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: GDG Natal — creative developer workshop, building and experimenting with interfaces. DISTINCT scene: TWO Brazilian developers sitting informally on warm geometric steps, a brown-skinned woman with shoulder-length curls drawing on a landscape tablet and a Black man with round glasses and very short hair working on a small laptop. Above at RIGHT is a graceful fan of three large floating ivory and terracotta UI wireframe cards (only abstract shapes, no words), like an idea turning into an app. Composition is stepped diagonally from upper-right cards to lower-right seated developers; no profile portraits, no standing presenter, no large smartphone. Soft layered apricot dunes and one broad naturally curved coastal hill silhouette evoke Natal at the low horizon, sparse olive coastal vegetation, a tiny sailboat, warm sun partially behind cards. Dynamic yet calm tinkering and experimentation. Figures occupy x=63%-98% y=56%-84%, UI cards x=67%-99% y=30%-51%.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Supplied image is existing gdg-natal illustration, EDIT TARGET not style inspiration. REMOVE the peach sun disk behind the floating interface cards, replacing disk only with ivory paper. Remove the single upper orange arc/dot segment that intrudes above y=320. Reposition the two seated people together WITH their entire staircase and shoes about65px upwards, same scale, so both shoes are fully visible above y=1120 and the organic bottom wave ends above y=1160. Keep both subjects, poses, faces, devices, full-width dunes/coast and interface cards unchanged. Never hide or cut off shoes, feet or legs with an ivory wave. Preserve the existing editorial stylized illustration exactly: same people and anatomy, palette, faces, scene and texture; no redesign, no realism or new characters. Full portrait4:5, blank ivory top0..310 and left x0..575 through y850, organic wave into blank footer fromy1170. No text, logos, border, watermark, floating terrain or isolated oval ground. No changes other than specified safe margin corrections.",
+        "Use case: precise-object-edit. Existing gdg-natal illustration is EDIT TARGET. Change ONLY the three floating interface cards: reduce their size and lower them so their upper edges all start at y=390 or lower. Keep both seated people, both complete shoes, stairs, coastline, plants, colors and organic wave EXACTLY as supplied. No other movement or alteration. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Sol invasor removido e cards menores; duas pessoas sentadas e seus dois sapatos inteiros apoiados nos degraus. Reposicionamento de-50px sem máscara de anatomia. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-aracaju",
+      "conceito": "Encontro e conversa entre desenvolvedores, balões de ideias e paisagem fluvial inspirada em Aracaju.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: GDG Aracaju — a welcoming in-person technology meetup and exchange of ideas. DISTINCT scene of THREE Brazilian adult developers standing in a loose conversational semicircle at the RIGHT, framed from knees up: a Black woman with braided hair holding a small notebook, a man with dark wavy hair holding a closed terracotta laptop under his arm, and a woman with short dark hair gesturing gently. Friendly conversational expressions facing each other. Above them at upper-right, two large overlapping abstract speech shapes with small geometric app tiles inside and orange network nodes symbolize discussion and knowledge exchange, no writing. Not a coding table, not profile portraits, not a presenter at a board. A subtle low curving river, warm mangrove foliage, a distant bridge and small coastal buildings evoke Aracaju, without naming or portraying a particular venue. Leave generous negative space on the LEFT. Use the warm terracotta and olive editorial style. Figures right x=59%-100% y=49%-84%; speech motifs x=70%-97% y=28%-45%.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Existing gdg-aracaju illustration is EDIT TARGET. Remove only the upper connecting orange arc and dot above speech bubbles. Reduce and position both speech bubbles so entire top0..320 is blank. Shift the three people and foreground vegetation RIGHT by about100px and slightly upward 55px, keeping natural poses, faces, clothing and no duplicated limbs, to keep all body/hair/objects right ofx600 above y850. Adjust bottom wave to end byy1155 and leave y1170..1350 ivory; retain full-width lower bridge/mangrove landscape. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only.",
+        "Use case: precise-object-edit. Input is edit target gdg-aracaju, existing editorial illustration. One correction: SHRINK the entire foreground group of people, their chairs, desk and devices TO 80% OF CURRENT SIZE while anchoring the group at the RIGHT EDGE and at its present bottom baseline. All people and props need to fit ENTIRELY inside the rightmost43% of the image from top through the upper63% height; this must noticeably increase BLANK IVORY space to their LEFT, without cutting off anybody. Keep the same original people, faces, hairstyle, pose and interaction. Retain existing upper technology motifs in place but remove any small orange decorative line or dot that enters the left55% above63%height. Keep original full-width landscape unchanged and connected to both side edges, not an island. Keep original organic wavy bottom edge and empty footer. Do not introduce realism, new characters, text, logos, frames or floating ground. Preserve color palette, illustration style and4:5canvas."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Três interlocutores menores à direita, tranças fora da coluna de dados, balões abaixo do cabeçalho; ponte e mangue contínuos com onda orgânica. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "cloud-native-sao-luis",
+      "conceito": "Profissionais colaborando com infraestrutura, nuvem e servidores conectados.",
+      "prompt": "Use case: illustration-story. Create one portrait 4:5 editorial technology-community poster BACKGROUND, design 1080x1350. Attached reference defines the approved Baião Tech STYLE, COLORS and empty left composition. NEW scene: a Brazilian Black woman infrastructure engineer and a brown-skinned male developer calmly collaborating at a small terracotta laptop, with a third adult colleague in background, a beautifully simple stylized cloud outline and three connected rounded rectangular server nodes above and behind them. The cloud is a gentle illustration, not a technical diagram. All people/devices/cloud in RIGHT x=60%-100%, y=30%-84%. Rich warm flat painted illustration, natural correct hands, warm terracotta orange #F9733B and dark burnt sienna #8B3E2F, apricot sun #F6D7B7, tiny olive details, fine paper texture, same refined character drawing as reference. Express collaboration, not a corporate stock drawing. Thin terracotta arcing connection lines with small circular nodes. NO blue, purple or neon. Background very light ivory #FCFAF7. TOP 22% completely empty ivory. LEFT x=0-53% y=22%-70% completely empty ivory for later typography. Low distant northeastern Brazilian hills, cacti and tiny local architecture only y=76%-86%, transitioning into an ivory wave with BOTTOM 12% blank ivory for footer. No text, NO logos, NO brand marks, NO letters or digits, no watermarks, no frame. All cloud and computing motifs stay right of x=60%. Do not create a full poster with text, just the background.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Existing cloud-native-sao-luis illustration is EDIT TARGET. Remove only the peach circular backdrop behind cloud/server symbols, replacing it with ivory paper. Remove the uppermost orange connecting arc and dot that enter top0..310. Preserve cloud, servers, all three people/poses/laptop, full-width low landscape and organic bottom wave unchanged. Keep all characters/objects rightofx590 throughy850. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Disco e ornamento superior invasor removidos; colaboração, nuvem/servidores, laptop e rostos mantidos; paisagem contínua e onda orgânica intactas. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "teresina-hacker-clube",
+      "conceito": "Makers construindo um robô educacional e explorando eletrônica, com paisagem inspirada nos rios de Teresina.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: Teresina Hacker Clube — an OPEN COMMUNITY MAKERSPACE, hardware and free software, NOT a sinister cybersecurity scene. Unique composition: TWO adult Brazilian makers at a workbench on right, a brown-skinned man with curly hair and a short beard carefully connecting a cable to a small exposed olive electronic circuit board, and a Black woman with a high puff and clear glasses checking a little friendly homemade orange two-wheel educational robot. Natural correct fingers, safe low-voltage educational electronics, no sparks. Small hand tools rest neatly on the table. Above them at upper right an oversized terracotta circuit-board motif with round traces, geometric chips and warm connection nodes. Makers shown at three-quarter angle looking down to their project, not profile portraits, no bandanas, no hoodies, no padlocks, no masks. Low background has soft warm inland river curves, abstract tree-lined banks and distant low buildings to evoke Teresina's river landscape, not sea or desert. People x=59%-100% y=52%-84%, circuit motif x=70%-98% y=28%-48%.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Existing teresina-hacker-clube illustration is EDIT TARGET. Remove only the uppermost orange connecting arc and dot entering top0..310, keeping chip/circuit symbols. Shift the two makers WITH entire workbench and electronics rightwards100px so all bodies/objects are rightofx600 throughy850. Keep all faces, tools, robot, poses, full-width river/bridge landscape and organic footerwave otherwise unchanged. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only.",
+        "Use case: precise-object-edit. Input is edit target teresina-hacker-clube, existing editorial illustration. One correction: SHRINK the entire foreground group of people, their chairs, desk and devices TO 80% OF CURRENT SIZE while anchoring the group at the RIGHT EDGE and at its present bottom baseline. All people and props need to fit ENTIRELY inside the rightmost43% of the image from top through the upper63% height; this must noticeably increase BLANK IVORY space to their LEFT, without cutting off anybody. Keep the same original people, faces, hairstyle, pose and interaction. Retain existing upper technology motifs in place but remove any small orange decorative line or dot that enters the left55% above63%height. Keep original full-width landscape unchanged and connected to both side edges, not an island. Keep original organic wavy bottom edge and empty footer. Do not introduce realism, new characters, text, logos, frames or floating ground. Preserve color palette, illustration style and4:5canvas."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Dois makers, robô e bancada reposicionados proporcionalmente à direita; ferramentas e anatomia conferidas, logo original sobre fundo de contraste preservado. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "devops-ce",
+      "conceito": "Colaboração em confiabilidade, telas de operação e ciclo contínuo de automação.",
+      "prompt": "Use case: illustration-story. Asset: ONE reusable editorial poster BACKGROUND, portrait 4:5 1080x1350 design. The supplied approved Baião Tech poster is ONLY a reference for warm painted illustration quality, palette and editorial spacing. DO NOT COPY its women, profiles or character poses. Create a DISTINCT community-specific scene from the requested concept. Colors: warm terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7, dark brown and restrained olive #6B7F56; beautiful subtle paper grain and layered silhouettes, confident premium editorial illustration. Background extremely light warm ivory #FCFAF7. Composition is for a reusable poster: TOP 22% completely BLANK ivory for organizer logo and name; LEFT x=0-54% y=22%-70% BLANK ivory for event title/date/location. Place all principal subject matter on RIGHT x=58%-100% y=28%-84%, with a low landscape strip across width at y=76%-86%. A soft ivory wave under the landscape transitions into completely BLANK bottom 12% for curator footer. Thin warm orange connection curves and nodes tie motifs together. NO TEXT, NO letters, NO digits, NO logos, NO badges, NO tech brand symbols, NO watermarks or frame. This is not a finished poster, only its picture background. Anatomically correct hands, natural poses. No stereotypical hacker hoodies. Community concept: DevOps CE — automation, continuous delivery, shared reliability. UNIQUE scene composed around a large graceful terracotta infinity-shaped ribbon LOOP at upper RIGHT with 5 tiny connected ivory geometric application blocks along it, representing a continuous delivery lifecycle, only visual metaphor, no labels or metrics. Below, a Brazilian brown-skinned male platform engineer with close-cut hair and round glasses and a Black female reliability engineer with short natural hair collaborate side by side at TWO small adjoining screens, one showing simple unlettered vertical bars and the other abstract code rectangles. They sit at a minimal desk on the right, upper bodies visible, thoughtful and relaxed; one gently gestures toward a screen. No huge cloud, no server bank, no profile portraits, no bandanas. Low Ceará-inspired warm hills transition to a tiny coastal urban horizon, quiet olive trees, regional atmosphere without a specific venue. Main infinity loop x=67%-98% y=29%-49%, engineers x=59%-100% y=54%-84%. Warm humans and reliability craftsmanship, not a technical diagram.",
+      "origem_ilustracao": "JPEG original do primeiro lote preservado em historico-rejeitado; margens corrigidas pontualmente via Image Gen integrado, sem nova cena genérica.",
+      "prompts_correcao": [
+        "Use case: precise-object-edit. Existing devops-ce illustration is EDIT TARGET. Remove the peach circular backdrop behind the infinity symbol, replacing it with ivory paper. Preserve infinity, people, computers, poses, tabletop and full-width landscape. Raise the lower organic ivory boundary by65px only within low landscape, avoiding all people/devices which remain fully visible above it. All y1170..1350 ivory. Keep bodies rightofx590 untily850. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only.",
+        "Use case: precise-object-edit. Input is edit target devops-ce, existing editorial illustration. One correction: SHRINK the entire foreground group of people, their chairs, desk and devices TO 80% OF CURRENT SIZE while anchoring the group at the RIGHT EDGE and at its present bottom baseline. All people and props need to fit ENTIRELY inside the rightmost43% of the image from top through the upper63% height; this must noticeably increase BLANK IVORY space to their LEFT, without cutting off anybody. Keep the same original people, faces, hairstyle, pose and interaction. Retain existing upper technology motifs in place but remove any small orange decorative line or dot that enters the left55% above63%height. Keep original full-width landscape unchanged and connected to both side edges, not an island. Keep original organic wavy bottom edge and empty footer. Do not introduce realism, new characters, text, logos, frames or floating ground. Preserve color palette, illustration style and4:5canvas.",
+        "Use case: precise-object-edit. Edit existing supplied DevOps illustration. The small desk is incorrectly floating above a white gap. ADD ONLY two simple terracotta wooden desk legs descending from the desk to the existing low landscape below, and extend a subtle warm apricot ground shape from the desk area to JOIN the existing continuous landscape. The desk and people must be visibly supported, no floating shelf or white gap under table. Keep all people, faces, screens, infinity symbol, positions, colors, original landscape and organic footer wave unchanged. Do not create an island or isolated oval. No text/logo/border. Preserve portrait4:5 editorial stylization and blank top/left margins."
+      ],
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Engenheiros e telas menores à direita, mesa apoiada por pernas sobre paisagem contínua; acabamento vetorial de onda aplicado apenas na paisagem baixa, sem ocultar pessoas ou dispositivos. Nome e logo do cadastro, título, data, local, grupos fixos, assinatura Baião Tech e baiaotech.org conferidos no PNG completo. Status continua em_revisao, sem aprovação humana."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    }
+  ],
+  "bloqueios": [],
+  "revisao_tecnica": {
+    "realizada": true,
+    "resultado": "ok",
+    "comunidades": [
+      {
+        "id": "pyladies-maceio",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "989e7fbc358c6b76cbe4cadf4b6d87552b65ec42f122b8779b939f49f7d6cc5f",
+        "previa_sha256": "bb096bda767cc18db3c92763f74f8da9a4b40b6700e09ea9d7e663a07118338a",
+        "modelo_sha256": "87b8e9dbfeecea9dc98ac4c9cfd3698b3ab7fcad4502e10b99b0b99b32a6f047",
+        "nome": "PyLadies Maceió"
+      },
+      {
+        "id": "pyladies-salvador",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "407d4fbc37e5591100fa8107c75de02a5f08c0f384028777ff80a5e692bf6d94",
+        "previa_sha256": "9577829135a002de67fdd7c5923377a163fbba2292e3ad931665eb85b75cbf47",
+        "modelo_sha256": "ca68882fb78b6d59a20eab1c2c5ba43628379d63b8f7d970950939aa41763999",
+        "nome": "PyLadies Salvador"
+      },
+      {
+        "id": "gdg-fortaleza",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "bad5b36d475e5db8dcf28f9fcd16f0b61907ed4181746470c1411a0381c7b108",
+        "previa_sha256": "8e6a6e83402220e2a7cb32df954240a2baf29f560b45d8b367c52a4d9b65ff72",
+        "modelo_sha256": "f80fe0e74258745b32e89da3f99e4f140d4b9da227b737bc3f6fe977bacfb5e1",
+        "nome": "GDG Fortaleza"
+      },
+      {
+        "id": "gdg-recife",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "62e1c26b148154d02b56e73fd92a51d6ee2700bfb2600109a5e2aacb399c6fb1",
+        "previa_sha256": "fafd5a0e66f7ead8a5ea5269a0181161e85b2855bfa3be9b8a357762fe46738c",
+        "modelo_sha256": "c362b8f28203d85ab7b45667249979fc76669dc224175bc4c033106133ba8900",
+        "nome": "GDG Recife"
+      },
+      {
+        "id": "aws-user-group-joao-pessoa",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "a0c4835f9b32f4051abc544636d90ec23f7d4e4f31cdc9fea7b649c8dc8af5dc",
+        "previa_sha256": "b561ae1ab612cedae37400fb7750421416e4af42f6a75537c9910aa55750a560",
+        "modelo_sha256": "d1264fffc110c047643a27e65d298cc13e32a2f5c93d0291da0aa34a9b207f00",
+        "nome": "AWS User Group João Pessoa"
+      },
+      {
+        "id": "gdg-natal",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "b5c19685f8add9f3b9eb7f0ba1496d985266d608fddb308edb4e5d8d0da3e6fa",
+        "previa_sha256": "4cf02e3debf2bc340fa91a912f967992a9331223e7563bced67c114c90ed0408",
+        "modelo_sha256": "4ccff96ef9071e2ba9e02ce84b35cec8ab9c0939549d08852b258cb3fb6322dd",
+        "nome": "GDG Natal"
+      },
+      {
+        "id": "gdg-aracaju",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "fdb3b5059c9737d541aaf09a21421844c0a6863a5ff59236d08dbcd6ac92416d",
+        "previa_sha256": "8841ad4d7d3927f179aca1158e10ecec47f273db5e6ed47d97298ad4e929a316",
+        "modelo_sha256": "747152ec1f35753235fbe3de6e45047277fea7461bd95a0c267879498c7495de",
+        "nome": "GDG Aracaju"
+      },
+      {
+        "id": "cloud-native-sao-luis",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "f1e54ca708f9d66c09f0a0b61c7228ee1e139ac8f27c1b7e72a563aaca68a6ae",
+        "previa_sha256": "1e8618a38832f4c0739a4b37c69924b862a18f6b7add5826b5bc9d2fb8314132",
+        "modelo_sha256": "a27c314fb447e9e70014c8fec3cbbbc1f989bdc6c46ce22fbaa5875d755b55f3",
+        "nome": "Cloud Native São Luís"
+      },
+      {
+        "id": "teresina-hacker-clube",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "7ba13da5296f87e47f744529753350b6ac65904d9e3327affe3211cc0787e0ae",
+        "previa_sha256": "22866e11e2ecbaa77b483bea278b0cb2138d5ce172a79be1c92099e8d47b3ae2",
+        "modelo_sha256": "67eab8baeb005d6e022771b2801e558eeb60bfca86444ab72ef09a42099e0a4d",
+        "nome": "Teresina Hacker Clube"
+      },
+      {
+        "id": "devops-ce",
+        "ok": true,
+        "errors": [],
+        "ilustracao_sha256": "9c62d1a2f549618ca06a41065f179a9b8a199e37a8641d964b9e662872e2020d",
+        "previa_sha256": "4db11d21e29d72a41af9433623afeb45a4827724f0ec9a3881f1a14e99a2985d",
+        "modelo_sha256": "c148d3add29a26482fd5e39f5be0607d768f99f4ac4a313610e8e90c04d690a8",
+        "nome": "DevOps CE"
+      }
+    ]
+  }
+}

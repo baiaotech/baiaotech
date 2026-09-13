@@ -1,0 +1,27 @@
+{
+  "id": "gdg-aracaju",
+  "nome": "GDG Aracaju",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/gdg-aracaju.md",
+  "estado": "SE",
+  "cidade": "Aracaju",
+  "conceito": "Encontro e conversa entre desenvolvedores, balões de ideias e paisagem fluvial inspirada em Aracaju.",
+  "linhas_nome": [
+    "GDG Aracaju"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Aracaju, SE",
+  "logo_origem": "src/assets/covers/communities/gdg-aracaju.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "artes/default/comunidades/gdg-aracaju/ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "prompt_correcao": "Use case: precise-object-edit. Existing gdg-aracaju illustration is EDIT TARGET. Remove only the upper connecting orange arc and dot above speech bubbles. Reduce and position both speech bubbles so entire top0..320 is blank. Shift the three people and foreground vegetation RIGHT by about100px and slightly upward 55px, keeping natural poses, faces, clothing and no duplicated limbs, to keep all body/hair/objects right ofx600 above y850. Adjust bottom wave to end byy1155 and leave y1170..1350 ivory; retain full-width lower bridge/mangrove landscape. Preserve its existing editorial stylized flat-color illustration, recognizable original scene and all character anatomy. NO new concept, realistic shading, surreal floating terrain, repeated scenes, text, logo, border or watermark. Same4:5aspectratio. All top22% blank ivory, entire left text column x68..575 throughy850 empty ivory, continuous low landscape reaching both side edges, organic wavy ivory bottom margin. This is correction of composition only.",
+  "prompt_correcao_3": "Use case: precise-object-edit. Input is edit target gdg-aracaju, existing editorial illustration. One correction: SHRINK the entire foreground group of people, their chairs, desk and devices TO 80% OF CURRENT SIZE while anchoring the group at the RIGHT EDGE and at its present bottom baseline. All people and props need to fit ENTIRELY inside the rightmost43% of the image from top through the upper63% height; this must noticeably increase BLANK IVORY space to their LEFT, without cutting off anybody. Keep the same original people, faces, hairstyle, pose and interaction. Retain existing upper technology motifs in place but remove any small orange decorative line or dot that enters the left55% above63%height. Keep original full-width landscape unchanged and connected to both side edges, not an island. Keep original organic wavy bottom edge and empty footer. Do not introduce realism, new characters, text, logos, frames or floating ground. Preserve color palette, illustration style and4:5canvas.",
+  "origem_geracao": "exec-1eee4a56-d951-47f2-8210-112f11fe9971.png"
+}
