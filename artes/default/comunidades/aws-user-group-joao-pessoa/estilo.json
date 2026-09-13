@@ -1,0 +1,25 @@
+{
+  "id": "aws-user-group-joao-pessoa",
+  "nome": "AWS User Group João Pessoa",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/aws-user-group-joao-pessoa.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Discussão de arquitetura em nuvem, módulos conectados e paisagem costeira inspirada em João Pessoa.",
+  "linhas_nome": [
+    "AWS User Group",
+    "João Pessoa"
+  ],
+  "nome_tamanho": 48,
+  "logo_largura": 220,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/aws-user-group-joao-pessoa.webp",
+  "logo_origem_sha256": "42d9a30df1c59b3929a1862a46859b629fb753f49a4801db929948fba3b6c005",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

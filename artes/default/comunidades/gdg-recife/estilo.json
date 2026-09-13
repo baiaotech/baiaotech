@@ -1,0 +1,24 @@
+{
+  "id": "gdg-recife",
+  "nome": "GDG Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/gdg-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Troca de conhecimento em grupo, quadro de conexões e paisagem inspirada nos rios e pontes do Recife.",
+  "linhas_nome": [
+    "GDG Recife"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/gdg-recife.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

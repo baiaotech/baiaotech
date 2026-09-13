@@ -1,0 +1,20 @@
+{
+  "id": "sem-logo",
+  "nome": "Genérico sem logo",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "conceito": "Comunidade aberta de tecnologia e conexão entre pessoas, sem atribuição a uma organização cadastrada.",
+  "linhas_nome": [
+    "Nome do",
+    "organizador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Organizador do evento",
+  "logo": null,
+  "ilustracao": "../ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "requer_logo_verificada": false,
+  "observacao": "Nunca reutilizar uma ilustração exclusiva de comunidade como fallback. O campo LOGO AQUI é demonstrativo e não pode aparecer em uma publicação."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "devops-ce",
+  "nome": "DevOps CE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/devops-ce.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Colaboração em confiabilidade, telas de operação e ciclo contínuo de automação.",
+  "linhas_nome": [
+    "DevOps CE"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/devops-ce.png",
+  "logo_origem_sha256": "7a5c6a7c0dc345e3cf98423a3d15577becd3159a08fba17b2f7f77a0f80d1db3",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

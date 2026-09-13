@@ -55,3 +55,8 @@ Rotas minimas para conferir: `/`, `/eventos/`, `/comunidades/`, um detalhe de ev
 - Antes de editar, leia a estrutura existente e siga o padrao local.
 - Nao reverta mudancas que voce nao fez.
 - Se encontrar `CONTEXT.md` no futuro, migre o conteudo relevante para este `AGENTS.md` e mantenha este arquivo como contrato principal para agentes.
+
+## Artes Para Postagem
+
+- Antes de preparar artes para redes sociais, leia `artes/default/AGENTS.md`, o catalogo de modelos e o estilo da comunidade.
+- Cada comunidade tem sua propria ilustracao; todas as pecas finais mantem o logo do Baiao Tech no rodape. Use apenas estilos explicitamente aprovados para publicacao.

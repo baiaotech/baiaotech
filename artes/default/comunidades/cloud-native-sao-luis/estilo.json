@@ -1,0 +1,24 @@
+{
+  "id": "cloud-native-sao-luis",
+  "nome": "Cloud Native São Luís",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/cloud-native-sao-luis.md",
+  "estado": "MA",
+  "cidade": "São Luís",
+  "conceito": "Profissionais colaborando com infraestrutura, nuvem e servidores conectados.",
+  "linhas_nome": [
+    "Cloud Native São Luís"
+  ],
+  "nome_tamanho": 53,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · São Luís, MA",
+  "logo_origem": "src/assets/covers/communities/cloud-native-sao-luis.png",
+  "logo_origem_sha256": "627b315deca69661d077b015a4e0aa7f824f548c3ba345c6ec4f7a114e78404c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

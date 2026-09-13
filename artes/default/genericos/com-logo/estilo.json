@@ -1,0 +1,20 @@
+{
+  "id": "com-logo",
+  "nome": "Genérico com logo",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "conceito": "Comunidade aberta de tecnologia e conexão entre pessoas, sem atribuição a uma organização cadastrada.",
+  "linhas_nome": [
+    "Nome do",
+    "organizador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Organizador do evento",
+  "logo": "campo-demonstrativo",
+  "ilustracao": "../ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "requer_logo_verificada": true,
+  "observacao": "Nunca reutilizar uma ilustração exclusiva de comunidade como fallback. O campo LOGO AQUI é demonstrativo e não pode aparecer em uma publicação."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "teresina-hacker-clube",
+  "nome": "Teresina Hacker Clube",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/teresina-hacker-clube.md",
+  "estado": "PI",
+  "cidade": "Teresina",
+  "conceito": "Makers construindo um robô educacional e explorando eletrônica, com paisagem inspirada nos rios de Teresina.",
+  "linhas_nome": [
+    "Teresina",
+    "Hacker Clube"
+  ],
+  "nome_tamanho": 48,
+  "logo_largura": 280,
+  "subtitulo": "Comunidade · Teresina, PI",
+  "logo_origem": "src/assets/covers/communities/teresina-hacker-clube.png",
+  "logo_origem_sha256": "0d3474690febb369837002314c50a90b222c51fd7b8e84025b47cd9f7744ae25",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

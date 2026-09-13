@@ -1,0 +1,93 @@
+{
+  "versao": 1,
+  "formato": {
+    "largura": 1080,
+    "altura": 1350
+  },
+  "referencia_aprovada": "referencias/pyladies-maceio-aprovado.png",
+  "politica": "Apenas estilos aprovados explicitamente podem ser usados para publicação. Este lote está em revisão.",
+  "comunidades": [
+    {
+      "id": "pyladies-maceio",
+      "nome": "PyLadies Maceió",
+      "estado": "AL",
+      "estilo": "comunidades/pyladies-maceio/estilo.json",
+      "previa": "comunidades/pyladies-maceio/previa.png"
+    },
+    {
+      "id": "pyladies-salvador",
+      "nome": "PyLadies Salvador",
+      "estado": "BA",
+      "estilo": "comunidades/pyladies-salvador/estilo.json",
+      "previa": "comunidades/pyladies-salvador/previa.png"
+    },
+    {
+      "id": "gdg-fortaleza",
+      "nome": "GDG Fortaleza",
+      "estado": "CE",
+      "estilo": "comunidades/gdg-fortaleza/estilo.json",
+      "previa": "comunidades/gdg-fortaleza/previa.png"
+    },
+    {
+      "id": "gdg-recife",
+      "nome": "GDG Recife",
+      "estado": "PE",
+      "estilo": "comunidades/gdg-recife/estilo.json",
+      "previa": "comunidades/gdg-recife/previa.png"
+    },
+    {
+      "id": "aws-user-group-joao-pessoa",
+      "nome": "AWS User Group João Pessoa",
+      "estado": "PB",
+      "estilo": "comunidades/aws-user-group-joao-pessoa/estilo.json",
+      "previa": "comunidades/aws-user-group-joao-pessoa/previa.png"
+    },
+    {
+      "id": "gdg-natal",
+      "nome": "GDG Natal",
+      "estado": "RN",
+      "estilo": "comunidades/gdg-natal/estilo.json",
+      "previa": "comunidades/gdg-natal/previa.png"
+    },
+    {
+      "id": "gdg-aracaju",
+      "nome": "GDG Aracaju",
+      "estado": "SE",
+      "estilo": "comunidades/gdg-aracaju/estilo.json",
+      "previa": "comunidades/gdg-aracaju/previa.png"
+    },
+    {
+      "id": "cloud-native-sao-luis",
+      "nome": "Cloud Native São Luís",
+      "estado": "MA",
+      "estilo": "comunidades/cloud-native-sao-luis/estilo.json",
+      "previa": "comunidades/cloud-native-sao-luis/previa.png"
+    },
+    {
+      "id": "teresina-hacker-clube",
+      "nome": "Teresina Hacker Clube",
+      "estado": "PI",
+      "estilo": "comunidades/teresina-hacker-clube/estilo.json",
+      "previa": "comunidades/teresina-hacker-clube/previa.png"
+    },
+    {
+      "id": "devops-ce",
+      "nome": "DevOps CE",
+      "estado": "CE",
+      "estilo": "comunidades/devops-ce/estilo.json",
+      "previa": "comunidades/devops-ce/previa.png"
+    }
+  ],
+  "genericos": [
+    {
+      "id": "com-logo",
+      "estilo": "genericos/com-logo/estilo.json",
+      "previa": "genericos/com-logo/previa.png"
+    },
+    {
+      "id": "sem-logo",
+      "estilo": "genericos/sem-logo/estilo.json",
+      "previa": "genericos/sem-logo/previa.png"
+    }
+  ]
+}

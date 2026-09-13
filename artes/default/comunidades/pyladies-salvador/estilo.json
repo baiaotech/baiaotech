@@ -1,0 +1,24 @@
+{
+  "id": "pyladies-salvador",
+  "nome": "PyLadies Salvador",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/pyladies-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Duas mulheres em mentoria e programação em dupla, com paisagem inspirada na baía de Salvador.",
+  "linhas_nome": [
+    "PyLadies Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/pyladies-salvador.png",
+  "logo_origem_sha256": "ae9c3825d36f7e76c63754f86b69111dfc6a402d4572df88a0fa4c8453f3c18c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

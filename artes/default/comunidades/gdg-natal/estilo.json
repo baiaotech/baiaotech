@@ -1,0 +1,24 @@
+{
+  "id": "gdg-natal",
+  "nome": "GDG Natal",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/gdg-natal.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Experimentação de interfaces em tablets e notebooks, com degraus e dunas inspiradas em Natal.",
+  "linhas_nome": [
+    "GDG Natal"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/gdg-natal.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

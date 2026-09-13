@@ -1,0 +1,24 @@
+{
+  "id": "gdg-fortaleza",
+  "nome": "GDG Fortaleza",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/gdg-fortaleza.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Codelab de aplicativos, smartphone e interfaces, com inspiração na orla de Fortaleza.",
+  "linhas_nome": [
+    "GDG Fortaleza"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/gdg-fortaleza.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
