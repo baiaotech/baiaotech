@@ -14,7 +14,7 @@
     "lote-02": "conferido_contra_base",
     "lote-03": "reconferencia_pendente",
     "lote-04": "reconferencia_pendente",
-    "lote-05": "em_correcao",
+    "lote-05": "conferido_contra_base",
     "lote-06": "conferido_contra_base",
     "lote-07": "parcial_em_correcao"
   },
@@ -33,7 +33,9 @@
     },
     {
       "id": "grudepb-crudpb",
-      "problema": "Três mesas repetidas e empilhadas; geração original rejeitada, correção em produção"
+      "problema": "Três mesas repetidas e empilhadas; geração original rejeitada, correção em produção",
+      "resolvido": true,
+      "registro": "lotes/lote-05.json"
     },
     {
       "lote": "lote-06",

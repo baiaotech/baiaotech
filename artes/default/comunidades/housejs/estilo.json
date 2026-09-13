@@ -1,0 +1,24 @@
+{
+  "id": "housejs",
+  "nome": "HouseJS",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/housejs.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Encontros descontraídos para compartilhar o ecossistema JavaScript cearense.",
+  "linhas_nome": [
+    "HouseJS"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/housejs.png",
+  "logo_origem_sha256": "e8c2a9841ae853948febbab2e4258455b37994d8f4520a64dbf750f2059efa89",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

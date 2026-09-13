@@ -1,0 +1,24 @@
+{
+  "id": "grupy-ba",
+  "nome": "GruPy-BA",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/grupy-ba.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Troca de dúvidas e colaboração Python entre pessoas da Bahia.",
+  "linhas_nome": [
+    "GruPy-BA"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": "src/assets/covers/communities/grupy-ba.png",
+  "logo_origem_sha256": "c41a42a4478b0f4f8f4259af223a796936838d3af4fdb0e1ee595e4f17bd8814",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

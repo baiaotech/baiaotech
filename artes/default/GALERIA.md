@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-50 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+60 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -411,6 +411,86 @@ Aprendizado em segurança de aplicações e revisão de boas práticas em Fortal
 ![Card completo — OWASP Fortaleza](comunidades/owasp-fortaleza/previa.png)
 
 [SVG editável](comunidades/owasp-fortaleza/modelo.svg) · [Estilo e origem](comunidades/owasp-fortaleza/estilo.json)
+
+## Grude4J
+
+Aprendizado Java/JVM em palestra prática na Paraíba.
+
+![Card completo — Grude4J](comunidades/grude4j/previa.png)
+
+[SVG editável](comunidades/grude4j/modelo.svg) · [Estilo e origem](comunidades/grude4j/estilo.json)
+
+## GrudePB / CRUDPB
+
+Integração de comunidades paraibanas em um ecossistema colaborativo.
+
+![Card completo — GrudePB / CRUDPB](comunidades/grudepb-crudpb/previa.png)
+
+[SVG editável](comunidades/grudepb-crudpb/modelo.svg) · [Estilo e origem](comunidades/grudepb-crudpb/estilo.json)
+
+## GruPy-BA
+
+Troca de dúvidas e colaboração Python entre pessoas da Bahia.
+
+![Card completo — GruPy-BA](comunidades/grupy-ba/previa.png)
+
+[SVG editável](comunidades/grupy-ba/modelo.svg) · [Estilo e origem](comunidades/grupy-ba/estilo.json)
+
+## GruPy-RN
+
+Ambiente inclusivo de aprendizagem e projetos Python potiguares.
+
+![Card completo — GruPy-RN](comunidades/grupy-rn/previa.png)
+
+[SVG editável](comunidades/grupy-rn/modelo.svg) · [Estilo e origem](comunidades/grupy-rn/estilo.json)
+
+## GTS-CE
+
+Investigação da qualidade de software e testes exploratórios no Ceará.
+
+![Card completo — GTS-CE](comunidades/gts-ce/previa.png)
+
+[SVG editável](comunidades/gts-ce/modelo.svg) · [Estilo e origem](comunidades/gts-ce/estilo.json)
+
+## GURU-CE
+
+Construção colaborativa de aplicações Ruby no Ceará.
+
+![Card completo — GURU-CE](comunidades/guru-ce/previa.png)
+
+[SVG editável](comunidades/guru-ce/modelo.svg) · [Estilo e origem](comunidades/guru-ce/estilo.json)
+
+## GUTS-PB
+
+Boas práticas de testes e confiabilidade compartilhadas na Paraíba.
+
+![Card completo — GUTS-PB](comunidades/guts-pb/previa.png)
+
+[SVG editável](comunidades/guts-pb/modelo.svg) · [Estilo e origem](comunidades/guts-pb/estilo.json)
+
+## Hack In Cariri
+
+Aprendizado de segurança, CTF e desafios colaborativos no Cariri.
+
+![Card completo — Hack In Cariri](comunidades/hack-in-cariri/previa.png)
+
+[SVG editável](comunidades/hack-in-cariri/modelo.svg) · [Estilo e origem](comunidades/hack-in-cariri/estilo.json)
+
+## HouseJS
+
+Encontros descontraídos para compartilhar o ecossistema JavaScript cearense.
+
+![Card completo — HouseJS](comunidades/housejs/previa.png)
+
+[SVG editável](comunidades/housejs/modelo.svg) · [Estilo e origem](comunidades/housejs/estilo.json)
+
+## IFPE Open Source
+
+Aprender fazendo com estudantes, cultura maker e código aberto em Pernambuco.
+
+![Card completo — IFPE Open Source](comunidades/ifpe-open-source/previa.png)
+
+[SVG editável](comunidades/ifpe-open-source/modelo.svg) · [Estilo e origem](comunidades/ifpe-open-source/estilo.json)
 
 ## Genérico com-logo
 

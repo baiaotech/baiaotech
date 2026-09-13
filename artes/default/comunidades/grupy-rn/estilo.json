@@ -1,0 +1,26 @@
+{
+  "id": "grupy-rn",
+  "nome": "GruPy-RN",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/grupy-rn.md",
+  "estado": "RN",
+  "cidade": "",
+  "conceito": "Ambiente inclusivo de aprendizagem e projetos Python potiguares.",
+  "linhas_nome": [
+    "GruPy-RN"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · RN",
+  "logo_origem": "src/assets/covers/communities/grupy-rn.png",
+  "logo_origem_sha256": "29bc9292a9a69d9de9b2627612bec00566d6eb3614d7e8f1e6b3791570d47dec",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": 80,
+  "fundo_canvas": "#fefefc"
+}

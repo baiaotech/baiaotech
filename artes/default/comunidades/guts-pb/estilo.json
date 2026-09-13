@@ -1,0 +1,24 @@
+{
+  "id": "guts-pb",
+  "nome": "GUTS-PB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/guts-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Boas práticas de testes e confiabilidade compartilhadas na Paraíba.",
+  "linhas_nome": [
+    "GUTS-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/guts-pb.png",
+  "logo_origem_sha256": "c1188591956e6e397440cd6dd01393ab1e0391dd20229628727f8247c93ef4e9",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

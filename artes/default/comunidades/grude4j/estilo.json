@@ -1,0 +1,24 @@
+{
+  "id": "grude4j",
+  "nome": "Grude4J",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/grude4j.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Aprendizado Java/JVM em palestra prática na Paraíba.",
+  "linhas_nome": [
+    "Grude4J"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/grude4j.png",
+  "logo_origem_sha256": "3bfc18eb5bd5b5e07eb9360ca64783a94de7caea12a60a573a6ce3d06b65e212",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

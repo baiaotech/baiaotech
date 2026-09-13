@@ -356,6 +356,76 @@
       "estado": "CE",
       "estilo": "comunidades/owasp-fortaleza/estilo.json",
       "previa": "comunidades/owasp-fortaleza/previa.png"
+    },
+    {
+      "id": "grude4j",
+      "nome": "Grude4J",
+      "estado": "PB",
+      "estilo": "comunidades/grude4j/estilo.json",
+      "previa": "comunidades/grude4j/previa.png"
+    },
+    {
+      "id": "grudepb-crudpb",
+      "nome": "GrudePB / CRUDPB",
+      "estado": "PB",
+      "estilo": "comunidades/grudepb-crudpb/estilo.json",
+      "previa": "comunidades/grudepb-crudpb/previa.png"
+    },
+    {
+      "id": "grupy-ba",
+      "nome": "GruPy-BA",
+      "estado": "BA",
+      "estilo": "comunidades/grupy-ba/estilo.json",
+      "previa": "comunidades/grupy-ba/previa.png"
+    },
+    {
+      "id": "grupy-rn",
+      "nome": "GruPy-RN",
+      "estado": "RN",
+      "estilo": "comunidades/grupy-rn/estilo.json",
+      "previa": "comunidades/grupy-rn/previa.png"
+    },
+    {
+      "id": "gts-ce",
+      "nome": "GTS-CE",
+      "estado": "CE",
+      "estilo": "comunidades/gts-ce/estilo.json",
+      "previa": "comunidades/gts-ce/previa.png"
+    },
+    {
+      "id": "guru-ce",
+      "nome": "GURU-CE",
+      "estado": "CE",
+      "estilo": "comunidades/guru-ce/estilo.json",
+      "previa": "comunidades/guru-ce/previa.png"
+    },
+    {
+      "id": "guts-pb",
+      "nome": "GUTS-PB",
+      "estado": "PB",
+      "estilo": "comunidades/guts-pb/estilo.json",
+      "previa": "comunidades/guts-pb/previa.png"
+    },
+    {
+      "id": "hack-in-cariri",
+      "nome": "Hack In Cariri",
+      "estado": "CE",
+      "estilo": "comunidades/hack-in-cariri/estilo.json",
+      "previa": "comunidades/hack-in-cariri/previa.png"
+    },
+    {
+      "id": "housejs",
+      "nome": "HouseJS",
+      "estado": "CE",
+      "estilo": "comunidades/housejs/estilo.json",
+      "previa": "comunidades/housejs/previa.png"
+    },
+    {
+      "id": "ifpe-open-source",
+      "nome": "IFPE Open Source",
+      "estado": "PE",
+      "estilo": "comunidades/ifpe-open-source/estilo.json",
+      "previa": "comunidades/ifpe-open-source/previa.png"
     }
   ],
   "genericos": [

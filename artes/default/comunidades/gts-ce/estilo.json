@@ -1,0 +1,24 @@
+{
+  "id": "gts-ce",
+  "nome": "GTS-CE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/gts-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Investigação da qualidade de software e testes exploratórios no Ceará.",
+  "linhas_nome": [
+    "GTS-CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/gts-ce.png",
+  "logo_origem_sha256": "0b3873d28bfb665d050c36b8c0ad62fb7c3272f1d830d436051edcd58706ce4b",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

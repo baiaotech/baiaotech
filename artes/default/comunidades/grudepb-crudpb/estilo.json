@@ -1,0 +1,24 @@
+{
+  "id": "grudepb-crudpb",
+  "nome": "GrudePB / CRUDPB",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/grudepb-crudpb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Integração de comunidades paraibanas em um ecossistema colaborativo.",
+  "linhas_nome": [
+    "GrudePB / CRUDPB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/grudepb-crudpb.png",
+  "logo_origem_sha256": "9ffc18bb26ab6cb0956ae3b5e247bcf1cbc2b96b3f67a2069be938c6f8509f9f",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

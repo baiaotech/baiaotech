@@ -79,7 +79,9 @@
         "ifpe-open-source"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-05.json"
     },
     {
       "id": "lote-06",

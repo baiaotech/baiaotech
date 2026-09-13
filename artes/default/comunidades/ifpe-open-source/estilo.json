@@ -1,0 +1,24 @@
+{
+  "id": "ifpe-open-source",
+  "nome": "IFPE Open Source",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/ifpe-open-source.md",
+  "estado": "PE",
+  "cidade": "",
+  "conceito": "Aprender fazendo com estudantes, cultura maker e código aberto em Pernambuco.",
+  "linhas_nome": [
+    "IFPE Open Source"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · PE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado."
+}

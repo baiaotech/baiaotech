@@ -1,0 +1,26 @@
+{
+  "id": "hack-in-cariri",
+  "nome": "Hack In Cariri",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/hack-in-cariri.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Aprendizado de segurança, CTF e desafios colaborativos no Cariri.",
+  "linhas_nome": [
+    "Hack In Cariri"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/hack-in-cariri.png",
+  "logo_origem_sha256": "8fa72cd3598940157b8cbc832c0896cfb1e5fdc60b1c71d46d3babd704f3b8b8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -25,
+  "fundo_canvas": "#fefef9"
+}

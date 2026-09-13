@@ -1,9 +1,9 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-02",
+  "checkpoint_lote": "lote-05",
   "total_previsto": 93,
-  "revisados_tecnicamente": 40,
+  "revisados_tecnicamente": 50,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -568,91 +568,141 @@
     {
       "id": "grude4j",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "grudepb-crudpb",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "grupy-ba",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "grupy-rn",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gts-ce",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "guru-ce",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "guts-pb",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "hack-in-cariri",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "housejs",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "ifpe-open-source",
       "lote": "lote-05",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
