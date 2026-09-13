@@ -1,8 +1,17 @@
 {
   "id": "carnauba-valley",
   "nome": "Carnaúba Valley",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/carnauba-valley.md",
   "estado": "PI",
   "cidade": "Parnaíba",
@@ -18,28 +27,11 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "onda_rodape": true,
   "ilustracao_sha256": "ae8a7956494318409d7423b043f99b3dd054f5eb1b0910a56fd44cc26c856038",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-6a793122-ac2b-4975-aca2-2fe4b7572817.png",
-    "arquivo_final": "exec-92cc7806-ab39-4115-ad5a-bc7c227cee10.png",
-    "insumo_local": "artes/default/comunidades/carnauba-valley/geracao-base-generica-ajustada.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Eliminados retratos gigantes sobre pessoas pequenas. Agora um único grupo compacto em conversa, escala coerente, sob carnaúba; copa rebaixada para liberar cabeçalho. Delta contínuo nas laterais. Onda vetorial editável somente sobre margem da paisagem."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  },
-  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "68c115389e6d119eabd4e27cb70f260dd7514d3bbb230fb769fc126d678bea71",
+  "imagem_sha256": "101aaebaebcaf09aa22d1e0a61586c9412573cf7789ff5f92544456973706c12"
 }

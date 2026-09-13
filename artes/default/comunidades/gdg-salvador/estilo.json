@@ -1,8 +1,17 @@
 {
   "id": "gdg-salvador",
   "nome": "GDG Salvador",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/gdg-salvador.md",
   "estado": "BA",
   "cidade": "Salvador",
@@ -18,28 +27,10 @@
   "logo": null,
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.",
-  "ilustracao_origem": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_utilizado": "comunidades/gdg-salvador/gerada-base-v2-ajustada.png",
-    "insumo": "comunidades/gdg-salvador/ilustracao.jpg",
-    "sha256": "4c11c4d4df843ad8edc61f542ca12cd4a6974ad462e10f28945cf63f97c1364e",
-    "prompt": "spec-v2.json"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
-    "observacoes": "Três desenvolvedores em mesa de prototipação, cenário de baía integrado. Organizador em destaque sem logo inventada ou espaço reservado; dados e rodapé livres.",
-    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-    "previa_sha256": "a74c343bab849ff4cf401a379b6f4dde60c80e08ee4f3b062fcb12b3e6684ff6"
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Três desenvolvedores em mesa de prototipação, cenário de baía integrado. Organizador em destaque sem logo inventada ou espaço reservado; dados e rodapé livres."
-  },
-  "dados_demonstrativos": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "4c11c4d4df843ad8edc61f542ca12cd4a6974ad462e10f28945cf63f97c1364e",
+  "modelo_sha256": "5840806d3c0f0e3779130e5770de6e2c712af057a4b18af99f415c7af1d53ea5",
+  "imagem_sha256": "827932e18ec53574b791b1ded044597bb5330af0abb8a4ec1687ab78b141120e"
 }

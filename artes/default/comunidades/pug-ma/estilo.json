@@ -1,8 +1,17 @@
 {
   "id": "pug-ma",
   "nome": "PUG-MA",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/pug-ma.md",
   "estado": "MA",
   "cidade": "",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "ed3f000157662569314f0b310b05d5d019688b1e87146a6a7f3f96ce6d5a2ccf",
+  "modelo_sha256": "e166032d657acbb914bc8042e1e6c76301d2fcc510141aafb48940bd0e573939",
+  "imagem_sha256": "b29754a79c165cd51bd55c45c39f87bd163c5a43cbbd97c05a9ca8a0eb7a1941"
 }

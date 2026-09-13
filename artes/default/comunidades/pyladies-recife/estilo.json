@@ -1,8 +1,17 @@
 {
   "id": "pyladies-recife",
   "nome": "PyLadies Recife",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/pyladies-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -18,7 +27,10 @@
   "logo": null,
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "8ac3444fa785aa085bfecdc59473094c4601aa136c22d89016a94b455ba23811",
+  "modelo_sha256": "ef456b7452e74bc9c35e32625b5f6381cf24682d3c02d0fb48aad9826f3a0a52",
+  "imagem_sha256": "7b742a0fa71e21efc7dbc8c525e58b0ed4ff4f468de8727f9e8bfddae37c6354"
 }

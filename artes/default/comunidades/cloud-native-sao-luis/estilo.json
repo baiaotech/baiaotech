@@ -1,8 +1,17 @@
 {
   "id": "cloud-native-sao-luis",
   "nome": "Cloud Native São Luís",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/cloud-native-sao-luis.md",
   "estado": "MA",
   "cidade": "São Luís",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "f1e54ca708f9d66c09f0a0b61c7228ee1e139ac8f27c1b7e72a563aaca68a6ae",
+  "modelo_sha256": "1044e48c35972633e708c0777cac9412a8358b8d93a13a981f15e8d77c72b26c",
+  "imagem_sha256": "33edd3db43f654791897a97926419434b726ff7b5fce77d4e289edf8d5746b36"
 }

@@ -1,8 +1,17 @@
 {
   "id": "gts-ce",
   "nome": "GTS-CE",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/gts-ce.md",
   "estado": "CE",
   "cidade": "",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "802ecb309b0831f69f9e8099ba07efefbce118bf71073209849f6c1c2f197d54",
+  "modelo_sha256": "c40c16d7b344b6ca1c4c39ba4e1bfee0095d4bce66a3a709f6c6e5a7d63cca30",
+  "imagem_sha256": "a40c3fb44ceebb79d0b42244d782b68db590aaefc082a966db2a397404a698c0"
 }

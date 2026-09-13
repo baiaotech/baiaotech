@@ -1,8 +1,17 @@
 {
   "id": "agenda-ti-potiguar",
   "nome": "Agenda TI Potiguar",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/agenda-ti-potiguar.md",
   "estado": "RN",
   "cidade": "",
@@ -18,28 +27,11 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "onda_rodape": true,
   "ilustracao_sha256": "5ced6481968c16eb655193fc7d725b36cada90183c83a2707cb7af7c891f5d46",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-11770ee9-775e-41b4-a49e-4cf014933ff9.png",
-    "arquivo_final": "exec-954fe2bc-425d-4d3d-a475-8d553fa2ec3a.png",
-    "insumo_local": "artes/default/comunidades/agenda-ti-potiguar/geracao-base-generica-ajustada.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena exclusiva de orientação de agenda, calendário apoiado e dois participantes. Mochila e grupo reposicionados à direita, liberando dados. Traço alinhado à base; paisagem de dunas contínua. Onda vetorial editável finaliza apenas margem inferior da paisagem."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  },
-  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "50955fab258f25c46b432f22a02c51f59f8e9fdc2a6ae68416882b09c40cba33",
+  "imagem_sha256": "8abc9d7531fd4b652ecdebe89ea12d0bc22a4221e7bf33f0c6ff88cdde9506cf"
 }

@@ -1,8 +1,17 @@
 {
   "id": "devops-jp",
   "nome": "DevOps JP",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/devops-jp.md",
   "estado": "PB",
   "cidade": "João Pessoa",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "f68d80da04733036c2a8cec0437e10cd8ca800ff02329ae6bc549db26bf3cdcb",
+  "modelo_sha256": "31296a4645e0330fb392bff539d55ac4de83b84f529fbb4cb24f329f2d6018fd",
+  "imagem_sha256": "b60bb0d0582ed3691c8b3708fa4fd1338009765d4667e59fad4783f0bfccf814"
 }

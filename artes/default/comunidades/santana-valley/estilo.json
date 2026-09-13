@@ -1,8 +1,17 @@
 {
   "id": "santana-valley",
   "nome": "Santana Valley",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/santana-valley.md",
   "estado": "BA",
   "cidade": "Feira de Santana",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "47984980e684f81ac206f227870b10e2bdaf258d093b436e689a3c2007b81732",
+  "modelo_sha256": "12a171de6c229c0e10ae675e9bb0dcd6fa1c8fa7e6d12ae1cdd28b31c4b5cfd6",
+  "imagem_sha256": "3f81199e741fd8c1eaa799a0a830747158a129bac82c084b81292af976058fe1"
 }

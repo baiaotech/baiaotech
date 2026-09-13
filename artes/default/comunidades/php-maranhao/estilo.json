@@ -1,8 +1,17 @@
 {
   "id": "php-maranhao",
   "nome": "PHP-Maranhão",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/php-maranhao.md",
   "estado": "MA",
   "cidade": "",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -90,
-  "fundo_canvas": "#fdfdfb"
+  "fundo_canvas": "#fdfdfb",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "43036873ac30138a2949754a4c31a76277d0b0386de7f2fb4999e654cfbe284a",
+  "modelo_sha256": "cc592de32d32cc6e3967e32e8dcb702962323da2940d38fe0b8f5fafcc722709",
+  "imagem_sha256": "01609cae45362a3475bf0a883e61991bf5e51da787dd76a374364dfe50b49305"
 }

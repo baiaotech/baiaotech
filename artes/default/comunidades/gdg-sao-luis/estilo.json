@@ -1,8 +1,17 @@
 {
   "id": "gdg-sao-luis",
   "nome": "GDG São Luís",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/gdg-sao-luis.md",
   "estado": "MA",
   "cidade": "São Luís",
@@ -18,28 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_origem": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_utilizado": "comunidades/gdg-sao-luis/gerada-base-v2-ajustada.png",
-    "insumo": "comunidades/gdg-sao-luis/ilustracao.jpg",
-    "sha256": "d8f1c05eacbd57965185e1eecf000b1c687162916c891e5bb8d2b5bb65f8bd82",
-    "prompt": "spec-v2.json"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
-    "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados.",
-    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-    "previa_sha256": "1327f74606ecbcc152ac0f925af9919293d7b3ca030626a1debf34cdfb102f93"
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Intercâmbio em frente a fachadas urbanas, dupla reposicionada para a direita; traço simplificado, cabeçalho e coluna legíveis, onda e rodapé preservados."
-  },
-  "dados_demonstrativos": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "d8f1c05eacbd57965185e1eecf000b1c687162916c891e5bb8d2b5bb65f8bd82",
+  "modelo_sha256": "adccece249106d5fae32e270f00d2a729721a8da6acb34549b990904a062750e",
+  "imagem_sha256": "076fe5ee10c29b06e4831ddf42dbeb32002cda322469c497c477e01bec12797a"
 }

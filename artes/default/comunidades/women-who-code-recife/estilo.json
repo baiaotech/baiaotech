@@ -1,8 +1,17 @@
 {
   "id": "women-who-code-recife",
   "nome": "Women Who Code Recife",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/women-who-code-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -19,7 +28,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "88567f203584550e1b23cd6a656372a24b08d20c99851f70fd489bd3d73f92fd",
+  "modelo_sha256": "b32c88b9cd69a6dc6e89b53bf16e9173a9f768f4fa4fc2f8148f9d510a41fd53",
+  "imagem_sha256": "79b2866bd1d828d6c0eb45a523404e396c05e31a474b38ab91e10b07f27e5a57"
 }

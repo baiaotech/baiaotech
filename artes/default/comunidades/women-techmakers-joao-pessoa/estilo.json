@@ -1,8 +1,17 @@
 {
   "id": "women-techmakers-joao-pessoa",
   "nome": "Women Techmakers João Pessoa",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/women-techmakers-joao-pessoa.md",
   "estado": "PB",
   "cidade": "João Pessoa",
@@ -19,7 +28,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "1493be82c69f95db7c37816e0df0247193f25ad94356736657b54b7406702d90",
+  "modelo_sha256": "92fb2faa6ba8d7ddc7c5ecafcd5bc349aa6e3918fcaf56977c7d5bd1eea21aa3",
+  "imagem_sha256": "aa76acad7e68c14051dbb7b5ec2cb5095949e042f1ce60e8512e25e2b1b6736d"
 }

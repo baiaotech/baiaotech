@@ -1,8 +1,17 @@
 {
   "id": "all-saints-bay",
   "nome": "All Saints Bay",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/all-saints-bay.md",
   "estado": "BA",
   "cidade": "Salvador",
@@ -18,26 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_sha256": "b54e549e9e7b16629830c6ba054b7dc2d58659db219bd1f82b6e7e00827676c3",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-d95c66bd-0e48-47d2-808a-7e9f8b736d6f.png",
-    "arquivo_final": "exec-d95c66bd-0e48-47d2-808a-7e9f8b736d6f.png",
-    "insumo_local": "artes/default/comunidades/all-saints-bay/geracao-base-generica.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena de apresentação de protótipo a interlocutor com caderno. Faces estilizadas, anatomia natural e baía contínua nas laterais. Transição antes reta substituída por onda orgânica na própria ilustração, mantendo rodapé livre."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  }
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "aeee9f88e55b262b9d4afbb46832af2369fd6bdc66d378cb0a68686dffb13279",
+  "imagem_sha256": "a86e532f526e36e21bca133420fd7a4574209249f61504b2f3e7b043bcf67437"
 }

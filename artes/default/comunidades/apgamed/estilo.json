@@ -1,8 +1,17 @@
 {
   "id": "apgamed",
   "nome": "APGameD",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/apgamed.md",
   "estado": "PB",
   "cidade": "",
@@ -18,26 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_sha256": "6de3fbf2a46bfbfbfd7d3ca21d35680984bc30e5a050d350d10e73a50107c181",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-4aa14eb4-7a92-49df-ac3f-541bdc43cedc.png",
-    "arquivo_final": "exec-cc810377-c3d8-4156-8521-9341a59a5088.png",
-    "insumo_local": "artes/default/comunidades/apgamed/geracao-base-generica-ajustada.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena coesa de testes de jogos com três criadores; monitor apoiado, menor e deslocado para fora da coluna de dados. Sem ilhas ou telas suspensas. Paisagem costeira contínua e onda orgânica, traço alinhado à base."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  }
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "86669505bb2d42923cb07b1e69083009ec55af8cc78607f706524106722dad96",
+  "imagem_sha256": "e36e2b168fbd25e7decf569d25ad54d191b14af6feb4e26f2f209cb83f206444"
 }

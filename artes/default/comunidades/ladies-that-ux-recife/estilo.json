@@ -1,8 +1,17 @@
 {
   "id": "ladies-that-ux-recife",
   "nome": "Ladies That UX Recife",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/ladies-that-ux-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -18,7 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "185c919de68b1cc83a47734e869b51fc752bbf59953b2ee2bf8b5e74503e3bd0",
+  "modelo_sha256": "82cabe542fa34d6d99e9280e1dcfa5f52e0f4d3287c64d5845ca13f072ea8174",
+  "imagem_sha256": "e1d12b96fe3138020b6d1ea11ec0e4c48c6e37218cc13ee7c8d8787b9231ee78"
 }

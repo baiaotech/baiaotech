@@ -1,8 +1,17 @@
 {
   "id": "caju-valley",
   "nome": "Caju Valley",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/caju-valley.md",
   "estado": "SE",
   "cidade": "Aracaju",
@@ -18,26 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_sha256": "625fc03cbff5003e89df6a7dc62b666e9e39bf9d36c3db5579f606d7fc52e220",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-8501c31d-fb92-4766-b817-84b98ee34669.png",
-    "arquivo_final": "exec-9aff4612-78a3-4ce6-a44e-967c61e180b8.png",
-    "insumo_local": "artes/default/comunidades/caju-valley/geracao-base-generica-ajustada.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena de prototipagem sob cajueiro, sem placas vazias ou marcas inventadas. Arco superior removido para liberar cabeçalho. Duas figuras no traço da base, rio e ponte contínuos e rodapé ondulado."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  }
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "bdc93da6268da8750c73a816d033bb8805dc6c83bd10ddaf099b4c4e62944e4b",
+  "imagem_sha256": "78d8477b4ba9edf178decf82badd2b35206ab5bf30c9d8830862e6339cf9d5c9"
 }

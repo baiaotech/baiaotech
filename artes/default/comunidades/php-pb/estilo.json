@@ -1,8 +1,17 @@
 {
   "id": "php-pb",
   "nome": "PHP-PB",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/php-pb.md",
   "estado": "PB",
   "cidade": "",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -10,
-  "fundo_canvas": "#fefdfb"
+  "fundo_canvas": "#fefdfb",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "d0557a36c61280a3b1640d201aad159208993a626e712b8a54641d3fdd3e1869",
+  "modelo_sha256": "90c33fdbd9b4c68dc1f945313017c25f5461782c1cff8e31e572079ba48c033f",
+  "imagem_sha256": "ab798b982cfce3f5a67800cba719b1b13d82ef23a4e4930cdc038424a1f6fe77"
 }

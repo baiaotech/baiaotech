@@ -1,675 +1,866 @@
 {
-  "versao": 1,
+  "versao": 2,
   "formato": {
     "largura": 1080,
     "altura": 1350
   },
-  "referencia_aprovada": "referencias/pyladies-maceio-aprovado.png",
-  "politica": "Modelos em revisão, com dados demonstrativos. Revisão técnica não constitui aprovação humana nem autorização para publicação.",
+  "politica": "Bases visuais aprovadas pelo usuário. Preencher dados verificados de eventos; aprovação do modelo não autoriza publicação automática nem alteração da identidade.",
   "comunidades": [
     {
       "id": "pyladies-maceio",
       "nome": "PyLadies Maceió",
       "estado": "AL",
       "estilo": "comunidades/pyladies-maceio/estilo.json",
-      "previa": "comunidades/pyladies-maceio/previa.png"
+      "modelo": "comunidades/pyladies-maceio/modelo.svg",
+      "imagem": "comunidades/pyladies-maceio/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pyladies-salvador",
       "nome": "PyLadies Salvador",
       "estado": "BA",
       "estilo": "comunidades/pyladies-salvador/estilo.json",
-      "previa": "comunidades/pyladies-salvador/previa.png"
+      "modelo": "comunidades/pyladies-salvador/modelo.svg",
+      "imagem": "comunidades/pyladies-salvador/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-fortaleza",
       "nome": "GDG Fortaleza",
       "estado": "CE",
       "estilo": "comunidades/gdg-fortaleza/estilo.json",
-      "previa": "comunidades/gdg-fortaleza/previa.png"
+      "modelo": "comunidades/gdg-fortaleza/modelo.svg",
+      "imagem": "comunidades/gdg-fortaleza/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-recife",
       "nome": "GDG Recife",
       "estado": "PE",
       "estilo": "comunidades/gdg-recife/estilo.json",
-      "previa": "comunidades/gdg-recife/previa.png"
+      "modelo": "comunidades/gdg-recife/modelo.svg",
+      "imagem": "comunidades/gdg-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "aws-user-group-joao-pessoa",
       "nome": "AWS User Group João Pessoa",
       "estado": "PB",
       "estilo": "comunidades/aws-user-group-joao-pessoa/estilo.json",
-      "previa": "comunidades/aws-user-group-joao-pessoa/previa.png"
+      "modelo": "comunidades/aws-user-group-joao-pessoa/modelo.svg",
+      "imagem": "comunidades/aws-user-group-joao-pessoa/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-natal",
       "nome": "GDG Natal",
       "estado": "RN",
       "estilo": "comunidades/gdg-natal/estilo.json",
-      "previa": "comunidades/gdg-natal/previa.png"
+      "modelo": "comunidades/gdg-natal/modelo.svg",
+      "imagem": "comunidades/gdg-natal/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-aracaju",
       "nome": "GDG Aracaju",
       "estado": "SE",
       "estilo": "comunidades/gdg-aracaju/estilo.json",
-      "previa": "comunidades/gdg-aracaju/previa.png"
+      "modelo": "comunidades/gdg-aracaju/modelo.svg",
+      "imagem": "comunidades/gdg-aracaju/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "cloud-native-sao-luis",
       "nome": "Cloud Native São Luís",
       "estado": "MA",
       "estilo": "comunidades/cloud-native-sao-luis/estilo.json",
-      "previa": "comunidades/cloud-native-sao-luis/previa.png"
+      "modelo": "comunidades/cloud-native-sao-luis/modelo.svg",
+      "imagem": "comunidades/cloud-native-sao-luis/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "teresina-hacker-clube",
       "nome": "Teresina Hacker Clube",
       "estado": "PI",
       "estilo": "comunidades/teresina-hacker-clube/estilo.json",
-      "previa": "comunidades/teresina-hacker-clube/previa.png"
+      "modelo": "comunidades/teresina-hacker-clube/modelo.svg",
+      "imagem": "comunidades/teresina-hacker-clube/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "devops-ce",
       "nome": "DevOps CE",
       "estado": "CE",
       "estilo": "comunidades/devops-ce/estilo.json",
-      "previa": "comunidades/devops-ce/previa.png"
+      "modelo": "comunidades/devops-ce/modelo.svg",
+      "imagem": "comunidades/devops-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "ceara-java-user-group",
       "nome": "Ceará Java User Group",
       "estado": "CE",
       "estilo": "comunidades/ceara-java-user-group/estilo.json",
-      "previa": "comunidades/ceara-java-user-group/previa.png"
+      "modelo": "comunidades/ceara-java-user-group/modelo.svg",
+      "imagem": "comunidades/ceara-java-user-group/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "cloud-native-rn",
       "nome": "Cloud Native RN",
       "estado": "RN",
       "estilo": "comunidades/cloud-native-rn/estilo.json",
-      "previa": "comunidades/cloud-native-rn/previa.png"
+      "modelo": "comunidades/cloud-native-rn/modelo.svg",
+      "imagem": "comunidades/cloud-native-rn/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "codar-salvador",
       "nome": "CODAR Salvador",
       "estado": "BA",
       "estilo": "comunidades/codar-salvador/estilo.json",
-      "previa": "comunidades/codar-salvador/previa.png"
+      "modelo": "comunidades/codar-salvador/modelo.svg",
+      "imagem": "comunidades/codar-salvador/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "conecta-nordeste",
       "nome": "Conecta Nordeste",
       "estado": "Nacional",
       "estilo": "comunidades/conecta-nordeste/estilo.json",
-      "previa": "comunidades/conecta-nordeste/previa.png"
+      "modelo": "comunidades/conecta-nordeste/modelo.svg",
+      "imagem": "comunidades/conecta-nordeste/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "devops-jp",
       "nome": "DevOps JP",
       "estado": "PB",
       "estilo": "comunidades/devops-jp/estilo.json",
-      "previa": "comunidades/devops-jp/previa.png"
+      "modelo": "comunidades/devops-jp/modelo.svg",
+      "imagem": "comunidades/devops-jp/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "django-girls-salvador",
       "nome": "Django Girls Salvador",
       "estado": "BA",
       "estilo": "comunidades/django-girls-salvador/estilo.json",
-      "previa": "comunidades/django-girls-salvador/previa.png"
+      "modelo": "comunidades/django-girls-salvador/modelo.svg",
+      "imagem": "comunidades/django-girls-salvador/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "dotnet-recife",
       "nome": "DotNet Recife",
       "estado": "PE",
       "estilo": "comunidades/dotnet-recife/estilo.json",
-      "previa": "comunidades/dotnet-recife/previa.png"
+      "modelo": "comunidades/dotnet-recife/modelo.svg",
+      "imagem": "comunidades/dotnet-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "elug-ce",
       "nome": "Elug CE",
       "estado": "CE",
       "estilo": "comunidades/elug-ce/estilo.json",
-      "previa": "comunidades/elug-ce/previa.png"
+      "modelo": "comunidades/elug-ce/modelo.svg",
+      "imagem": "comunidades/elug-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "femug-pe",
       "nome": "FEMUG-PE",
       "estado": "PE",
       "estilo": "comunidades/femug-pe/estilo.json",
-      "previa": "comunidades/femug-pe/previa.png"
+      "modelo": "comunidades/femug-pe/modelo.svg",
+      "imagem": "comunidades/femug-pe/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "forhacker-space",
       "nome": "ForHacker Space",
       "estado": "CE",
       "estilo": "comunidades/forhacker-space/estilo.json",
-      "previa": "comunidades/forhacker-space/previa.png"
+      "modelo": "comunidades/forhacker-space/modelo.svg",
+      "imagem": "comunidades/forhacker-space/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "agenda-ti-potiguar",
       "nome": "Agenda TI Potiguar",
       "estado": "RN",
       "estilo": "comunidades/agenda-ti-potiguar/estilo.json",
-      "previa": "comunidades/agenda-ti-potiguar/previa.png"
+      "modelo": "comunidades/agenda-ti-potiguar/modelo.svg",
+      "imagem": "comunidades/agenda-ti-potiguar/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "agile-maranhao",
       "nome": "Agile Maranhão",
       "estado": "MA",
       "estilo": "comunidades/agile-maranhao/estilo.json",
-      "previa": "comunidades/agile-maranhao/previa.png"
+      "modelo": "comunidades/agile-maranhao/modelo.svg",
+      "imagem": "comunidades/agile-maranhao/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "all-saints-bay",
       "nome": "All Saints Bay",
       "estado": "BA",
       "estilo": "comunidades/all-saints-bay/estilo.json",
-      "previa": "comunidades/all-saints-bay/previa.png"
+      "modelo": "comunidades/all-saints-bay/modelo.svg",
+      "imagem": "comunidades/all-saints-bay/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "apgamed",
       "nome": "APGameD",
       "estado": "PB",
       "estilo": "comunidades/apgamed/estilo.json",
-      "previa": "comunidades/apgamed/previa.png"
+      "modelo": "comunidades/apgamed/modelo.svg",
+      "imagem": "comunidades/apgamed/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "arretadas-do-php",
       "nome": "Arretadas do PHP",
       "estado": "CE",
       "estilo": "comunidades/arretadas-do-php/estilo.json",
-      "previa": "comunidades/arretadas-do-php/previa.png"
+      "modelo": "comunidades/arretadas-do-php/modelo.svg",
+      "imagem": "comunidades/arretadas-do-php/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "aws-user-group-ceara",
       "nome": "AWS User Group Ceará",
       "estado": "CE",
       "estilo": "comunidades/aws-user-group-ceara/estilo.json",
-      "previa": "comunidades/aws-user-group-ceara/previa.png"
+      "modelo": "comunidades/aws-user-group-ceara/modelo.svg",
+      "imagem": "comunidades/aws-user-group-ceara/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "bahia-indie-game-developers",
       "nome": "Bahia Indie Game Developers",
       "estado": "BA",
       "estilo": "comunidades/bahia-indie-game-developers/estilo.json",
-      "previa": "comunidades/bahia-indie-game-developers/previa.png"
+      "modelo": "comunidades/bahia-indie-game-developers/modelo.svg",
+      "imagem": "comunidades/bahia-indie-game-developers/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "caju-valley",
       "nome": "Caju Valley",
       "estado": "SE",
       "estilo": "comunidades/caju-valley/estilo.json",
-      "previa": "comunidades/caju-valley/previa.png"
+      "modelo": "comunidades/caju-valley/modelo.svg",
+      "imagem": "comunidades/caju-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "cajuina-valley",
       "nome": "Cajuína Valley",
       "estado": "PI",
       "estilo": "comunidades/cajuina-valley/estilo.json",
-      "previa": "comunidades/cajuina-valley/previa.png"
+      "modelo": "comunidades/cajuina-valley/modelo.svg",
+      "imagem": "comunidades/cajuina-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "carnauba-valley",
       "nome": "Carnaúba Valley",
       "estado": "PI",
       "estilo": "comunidades/carnauba-valley/estilo.json",
-      "previa": "comunidades/carnauba-valley/previa.png"
+      "modelo": "comunidades/carnauba-valley/modelo.svg",
+      "imagem": "comunidades/carnauba-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "front-end-ce",
       "nome": "Front-End CE",
       "estado": "CE",
       "estilo": "comunidades/front-end-ce/estilo.json",
-      "previa": "comunidades/front-end-ce/previa.png"
+      "modelo": "comunidades/front-end-ce/modelo.svg",
+      "imagem": "comunidades/front-end-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-feira-de-santana",
       "nome": "GDG Feira de Santana",
       "estado": "BA",
       "estilo": "comunidades/gdg-feira-de-santana/estilo.json",
-      "previa": "comunidades/gdg-feira-de-santana/previa.png"
+      "modelo": "comunidades/gdg-feira-de-santana/modelo.svg",
+      "imagem": "comunidades/gdg-feira-de-santana/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-joao-pessoa",
       "nome": "GDG João Pessoa",
       "estado": "PB",
       "estilo": "comunidades/gdg-joao-pessoa/estilo.json",
-      "previa": "comunidades/gdg-joao-pessoa/previa.png"
+      "modelo": "comunidades/gdg-joao-pessoa/modelo.svg",
+      "imagem": "comunidades/gdg-joao-pessoa/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-maceio",
       "nome": "GDG Maceió",
       "estado": "AL",
       "estilo": "comunidades/gdg-maceio/estilo.json",
-      "previa": "comunidades/gdg-maceio/previa.png"
+      "modelo": "comunidades/gdg-maceio/modelo.svg",
+      "imagem": "comunidades/gdg-maceio/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-parnaiba",
       "nome": "GDG Parnaíba",
       "estado": "PI",
       "estilo": "comunidades/gdg-parnaiba/estilo.json",
-      "previa": "comunidades/gdg-parnaiba/previa.png"
+      "modelo": "comunidades/gdg-parnaiba/modelo.svg",
+      "imagem": "comunidades/gdg-parnaiba/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-salvador",
       "nome": "GDG Salvador",
       "estado": "BA",
       "estilo": "comunidades/gdg-salvador/estilo.json",
-      "previa": "comunidades/gdg-salvador/previa.png"
+      "modelo": "comunidades/gdg-salvador/modelo.svg",
+      "imagem": "comunidades/gdg-salvador/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gdg-sao-luis",
       "nome": "GDG São Luís",
       "estado": "MA",
       "estilo": "comunidades/gdg-sao-luis/estilo.json",
-      "previa": "comunidades/gdg-sao-luis/previa.png"
+      "modelo": "comunidades/gdg-sao-luis/modelo.svg",
+      "imagem": "comunidades/gdg-sao-luis/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "geek-night-recife",
       "nome": "Geek Night Recife",
       "estado": "PE",
       "estilo": "comunidades/geek-night-recife/estilo.json",
-      "previa": "comunidades/geek-night-recife/previa.png"
+      "modelo": "comunidades/geek-night-recife/modelo.svg",
+      "imagem": "comunidades/geek-night-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "github-community-fortaleza",
       "nome": "GitHub Community Fortaleza",
       "estado": "CE",
       "estilo": "comunidades/github-community-fortaleza/estilo.json",
-      "previa": "comunidades/github-community-fortaleza/previa.png"
+      "modelo": "comunidades/github-community-fortaleza/modelo.svg",
+      "imagem": "comunidades/github-community-fortaleza/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "graphql-recife",
       "nome": "GraphQL Recife",
       "estado": "PE",
       "estilo": "comunidades/graphql-recife/estilo.json",
-      "previa": "comunidades/graphql-recife/previa.png"
+      "modelo": "comunidades/graphql-recife/modelo.svg",
+      "imagem": "comunidades/graphql-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "jamparuby",
       "nome": "JampaRuby",
       "estado": "PB",
       "estilo": "comunidades/jamparuby/estilo.json",
-      "previa": "comunidades/jamparuby/previa.png"
+      "modelo": "comunidades/jamparuby/modelo.svg",
+      "imagem": "comunidades/jamparuby/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "javabahia",
       "nome": "JavaBahia",
       "estado": "BA",
       "estilo": "comunidades/javabahia/estilo.json",
-      "previa": "comunidades/javabahia/previa.png"
+      "modelo": "comunidades/javabahia/modelo.svg",
+      "imagem": "comunidades/javabahia/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "javax-ce",
       "nome": "Javax CE",
       "estado": "CE",
       "estilo": "comunidades/javax-ce/estilo.json",
-      "previa": "comunidades/javax-ce/previa.png"
+      "modelo": "comunidades/javax-ce/modelo.svg",
+      "imagem": "comunidades/javax-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "jerimum-valley",
       "nome": "Jerimum Valley",
       "estado": "RN",
       "estilo": "comunidades/jerimum-valley/estilo.json",
-      "previa": "comunidades/jerimum-valley/previa.png"
+      "modelo": "comunidades/jerimum-valley/modelo.svg",
+      "imagem": "comunidades/jerimum-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "ladies-that-ux-recife",
       "nome": "Ladies That UX Recife",
       "estado": "PE",
       "estilo": "comunidades/ladies-that-ux-recife/estilo.json",
-      "previa": "comunidades/ladies-that-ux-recife/previa.png"
+      "modelo": "comunidades/ladies-that-ux-recife/modelo.svg",
+      "imagem": "comunidades/ladies-that-ux-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "manguezal",
       "nome": "Manguezal",
       "estado": "PE",
       "estilo": "comunidades/manguezal/estilo.json",
-      "previa": "comunidades/manguezal/previa.png"
+      "modelo": "comunidades/manguezal/modelo.svg",
+      "imagem": "comunidades/manguezal/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "meetia-pb",
       "nome": "MEETIA-PB",
       "estado": "PB",
       "estilo": "comunidades/meetia-pb/estilo.json",
-      "previa": "comunidades/meetia-pb/previa.png"
+      "modelo": "comunidades/meetia-pb/modelo.svg",
+      "imagem": "comunidades/meetia-pb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "net-ceara",
       "nome": ".NET Ceará",
       "estado": "CE",
       "estilo": "comunidades/net-ceara/estilo.json",
-      "previa": "comunidades/net-ceara/previa.png"
+      "modelo": "comunidades/net-ceara/modelo.svg",
+      "imagem": "comunidades/net-ceara/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "net-pb",
       "nome": ".NET PB",
       "estado": "PB",
       "estilo": "comunidades/net-pb/estilo.json",
-      "previa": "comunidades/net-pb/previa.png"
+      "modelo": "comunidades/net-pb/modelo.svg",
+      "imagem": "comunidades/net-pb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "owasp-fortaleza",
       "nome": "OWASP Fortaleza",
       "estado": "CE",
       "estilo": "comunidades/owasp-fortaleza/estilo.json",
-      "previa": "comunidades/owasp-fortaleza/previa.png"
+      "modelo": "comunidades/owasp-fortaleza/modelo.svg",
+      "imagem": "comunidades/owasp-fortaleza/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "grude4j",
       "nome": "Grude4J",
       "estado": "PB",
       "estilo": "comunidades/grude4j/estilo.json",
-      "previa": "comunidades/grude4j/previa.png"
+      "modelo": "comunidades/grude4j/modelo.svg",
+      "imagem": "comunidades/grude4j/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "grudepb-crudpb",
       "nome": "GrudePB / CRUDPB",
       "estado": "PB",
       "estilo": "comunidades/grudepb-crudpb/estilo.json",
-      "previa": "comunidades/grudepb-crudpb/previa.png"
+      "modelo": "comunidades/grudepb-crudpb/modelo.svg",
+      "imagem": "comunidades/grudepb-crudpb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "grupy-ba",
       "nome": "GruPy-BA",
       "estado": "BA",
       "estilo": "comunidades/grupy-ba/estilo.json",
-      "previa": "comunidades/grupy-ba/previa.png"
+      "modelo": "comunidades/grupy-ba/modelo.svg",
+      "imagem": "comunidades/grupy-ba/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "grupy-rn",
       "nome": "GruPy-RN",
       "estado": "RN",
       "estilo": "comunidades/grupy-rn/estilo.json",
-      "previa": "comunidades/grupy-rn/previa.png"
+      "modelo": "comunidades/grupy-rn/modelo.svg",
+      "imagem": "comunidades/grupy-rn/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "gts-ce",
       "nome": "GTS-CE",
       "estado": "CE",
       "estilo": "comunidades/gts-ce/estilo.json",
-      "previa": "comunidades/gts-ce/previa.png"
+      "modelo": "comunidades/gts-ce/modelo.svg",
+      "imagem": "comunidades/gts-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "guru-ce",
       "nome": "GURU-CE",
       "estado": "CE",
       "estilo": "comunidades/guru-ce/estilo.json",
-      "previa": "comunidades/guru-ce/previa.png"
+      "modelo": "comunidades/guru-ce/modelo.svg",
+      "imagem": "comunidades/guru-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "guts-pb",
       "nome": "GUTS-PB",
       "estado": "PB",
       "estilo": "comunidades/guts-pb/estilo.json",
-      "previa": "comunidades/guts-pb/previa.png"
+      "modelo": "comunidades/guts-pb/modelo.svg",
+      "imagem": "comunidades/guts-pb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "hack-in-cariri",
       "nome": "Hack In Cariri",
       "estado": "CE",
       "estilo": "comunidades/hack-in-cariri/estilo.json",
-      "previa": "comunidades/hack-in-cariri/previa.png"
+      "modelo": "comunidades/hack-in-cariri/modelo.svg",
+      "imagem": "comunidades/hack-in-cariri/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "housejs",
       "nome": "HouseJS",
       "estado": "CE",
       "estilo": "comunidades/housejs/estilo.json",
-      "previa": "comunidades/housejs/previa.png"
+      "modelo": "comunidades/housejs/modelo.svg",
+      "imagem": "comunidades/housejs/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "ifpe-open-source",
       "nome": "IFPE Open Source",
       "estado": "PE",
       "estilo": "comunidades/ifpe-open-source/estilo.json",
-      "previa": "comunidades/ifpe-open-source/previa.png"
+      "modelo": "comunidades/ifpe-open-source/modelo.svg",
+      "imagem": "comunidades/ifpe-open-source/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "owasp-natal",
       "nome": "OWASP Natal",
       "estado": "RN",
       "estilo": "comunidades/owasp-natal/estilo.json",
-      "previa": "comunidades/owasp-natal/previa.png"
+      "modelo": "comunidades/owasp-natal/modelo.svg",
+      "imagem": "comunidades/owasp-natal/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "owasp-pb",
       "nome": "OWASP-PB",
       "estado": "PB",
       "estilo": "comunidades/owasp-pb/estilo.json",
-      "previa": "comunidades/owasp-pb/previa.png"
+      "modelo": "comunidades/owasp-pb/modelo.svg",
+      "imagem": "comunidades/owasp-pb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "oxenti-pe",
       "nome": "OxenTI-PE",
       "estado": "PE",
       "estilo": "comunidades/oxenti-pe/estilo.json",
-      "previa": "comunidades/oxenti-pe/previa.png"
+      "modelo": "comunidades/oxenti-pe/modelo.svg",
+      "imagem": "comunidades/oxenti-pe/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "paraiba-js",
       "nome": "Paraíba.js",
       "estado": "PB",
       "estilo": "comunidades/paraiba-js/estilo.json",
-      "previa": "comunidades/paraiba-js/previa.png"
+      "modelo": "comunidades/paraiba-js/modelo.svg",
+      "imagem": "comunidades/paraiba-js/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "php-com-rapadura",
       "nome": "PHP com Rapadura",
       "estado": "CE",
       "estilo": "comunidades/php-com-rapadura/estilo.json",
-      "previa": "comunidades/php-com-rapadura/previa.png"
+      "modelo": "comunidades/php-com-rapadura/modelo.svg",
+      "imagem": "comunidades/php-com-rapadura/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "php-maranhao",
       "nome": "PHP-Maranhão",
       "estado": "MA",
       "estilo": "comunidades/php-maranhao/estilo.json",
-      "previa": "comunidades/php-maranhao/previa.png"
+      "modelo": "comunidades/php-maranhao/modelo.svg",
+      "imagem": "comunidades/php-maranhao/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "php-pb",
       "nome": "PHP-PB",
       "estado": "PB",
       "estilo": "comunidades/php-pb/estilo.json",
-      "previa": "comunidades/php-pb/previa.png"
+      "modelo": "comunidades/php-pb/modelo.svg",
+      "imagem": "comunidades/php-pb/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pong-rn",
       "nome": "PONG RN",
       "estado": "RN",
       "estilo": "comunidades/pong-rn/estilo.json",
-      "previa": "comunidades/pong-rn/previa.png"
+      "modelo": "comunidades/pong-rn/modelo.svg",
+      "imagem": "comunidades/pong-rn/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "potiguaras-valley",
       "nome": "Potiguaras Valley",
       "estado": "RN",
       "estilo": "comunidades/potiguaras-valley/estilo.json",
-      "previa": "comunidades/potiguaras-valley/previa.png"
+      "modelo": "comunidades/potiguaras-valley/modelo.svg",
+      "imagem": "comunidades/potiguaras-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "projeto-software-livre-bahia",
       "nome": "Projeto Software Livre Bahia",
       "estado": "BA",
       "estilo": "comunidades/projeto-software-livre-bahia/estilo.json",
-      "previa": "comunidades/projeto-software-livre-bahia/previa.png"
+      "modelo": "comunidades/projeto-software-livre-bahia/modelo.svg",
+      "imagem": "comunidades/projeto-software-livre-bahia/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-al-grupy-al",
       "nome": "PUG-AL (GruPy-AL)",
       "estado": "AL",
       "estilo": "comunidades/pug-al-grupy-al/estilo.json",
-      "previa": "comunidades/pug-al-grupy-al/previa.png"
+      "modelo": "comunidades/pug-al-grupy-al/modelo.svg",
+      "imagem": "comunidades/pug-al-grupy-al/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-ce",
       "nome": "PUG-CE",
       "estado": "CE",
       "estilo": "comunidades/pug-ce/estilo.json",
-      "previa": "comunidades/pug-ce/previa.png"
+      "modelo": "comunidades/pug-ce/modelo.svg",
+      "imagem": "comunidades/pug-ce/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-ma",
       "nome": "PUG-MA",
       "estado": "MA",
       "estilo": "comunidades/pug-ma/estilo.json",
-      "previa": "comunidades/pug-ma/previa.png"
+      "modelo": "comunidades/pug-ma/modelo.svg",
+      "imagem": "comunidades/pug-ma/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-pb-python-paraiba",
       "nome": "PUG-PB (Python Paraíba)",
       "estado": "PB",
       "estilo": "comunidades/pug-pb-python-paraiba/estilo.json",
-      "previa": "comunidades/pug-pb-python-paraiba/previa.png"
+      "modelo": "comunidades/pug-pb-python-paraiba/modelo.svg",
+      "imagem": "comunidades/pug-pb-python-paraiba/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-pe",
       "nome": "PUG-PE",
       "estado": "PE",
       "estilo": "comunidades/pug-pe/estilo.json",
-      "previa": "comunidades/pug-pe/previa.png"
+      "modelo": "comunidades/pug-pe/modelo.svg",
+      "imagem": "comunidades/pug-pe/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-pi",
       "nome": "PUG-PI",
       "estado": "PI",
       "estilo": "comunidades/pug-pi/estilo.json",
-      "previa": "comunidades/pug-pi/previa.png"
+      "modelo": "comunidades/pug-pi/modelo.svg",
+      "imagem": "comunidades/pug-pi/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pug-se",
       "nome": "PUG-SE",
       "estado": "SE",
       "estilo": "comunidades/pug-se/estilo.json",
-      "previa": "comunidades/pug-se/previa.png"
+      "modelo": "comunidades/pug-se/modelo.svg",
+      "imagem": "comunidades/pug-se/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pyladies-natal",
       "nome": "PyLadies Natal",
       "estado": "RN",
       "estilo": "comunidades/pyladies-natal/estilo.json",
-      "previa": "comunidades/pyladies-natal/previa.png"
+      "modelo": "comunidades/pyladies-natal/modelo.svg",
+      "imagem": "comunidades/pyladies-natal/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pyladies-recife",
       "nome": "PyLadies Recife",
       "estado": "PE",
       "estilo": "comunidades/pyladies-recife/estilo.json",
-      "previa": "comunidades/pyladies-recife/previa.png"
+      "modelo": "comunidades/pyladies-recife/modelo.svg",
+      "imagem": "comunidades/pyladies-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "pyladies-sergipe",
       "nome": "PyLadies Sergipe",
       "estado": "SE",
       "estilo": "comunidades/pyladies-sergipe/estilo.json",
-      "previa": "comunidades/pyladies-sergipe/previa.png"
+      "modelo": "comunidades/pyladies-sergipe/modelo.svg",
+      "imagem": "comunidades/pyladies-sergipe/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "women-techmakers-joao-pessoa",
       "nome": "Women Techmakers João Pessoa",
       "estado": "PB",
       "estilo": "comunidades/women-techmakers-joao-pessoa/estilo.json",
-      "previa": "comunidades/women-techmakers-joao-pessoa/previa.png"
+      "modelo": "comunidades/women-techmakers-joao-pessoa/modelo.svg",
+      "imagem": "comunidades/women-techmakers-joao-pessoa/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "women-who-code-recife",
       "nome": "Women Who Code Recife",
       "estado": "PE",
       "estilo": "comunidades/women-who-code-recife/estilo.json",
-      "previa": "comunidades/women-who-code-recife/previa.png"
+      "modelo": "comunidades/women-who-code-recife/modelo.svg",
+      "imagem": "comunidades/women-who-code-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "wordpress-fortaleza",
       "nome": "WordPress Fortaleza",
       "estado": "CE",
       "estilo": "comunidades/wordpress-fortaleza/estilo.json",
-      "previa": "comunidades/wordpress-fortaleza/previa.png"
+      "modelo": "comunidades/wordpress-fortaleza/modelo.svg",
+      "imagem": "comunidades/wordpress-fortaleza/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "rails-girls-fortaleza",
       "nome": "Rails Girls Fortaleza",
       "estado": "CE",
       "estilo": "comunidades/rails-girls-fortaleza/estilo.json",
-      "previa": "comunidades/rails-girls-fortaleza/previa.png"
+      "modelo": "comunidades/rails-girls-fortaleza/modelo.svg",
+      "imagem": "comunidades/rails-girls-fortaleza/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "rapadura-valley",
       "nome": "Rapadura Valley",
       "estado": "CE",
       "estilo": "comunidades/rapadura-valley/estilo.json",
-      "previa": "comunidades/rapadura-valley/previa.png"
+      "modelo": "comunidades/rapadura-valley/modelo.svg",
+      "imagem": "comunidades/rapadura-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "react-ladies",
       "nome": "React Ladies",
       "estado": "PE",
       "estilo": "comunidades/react-ladies/estilo.json",
-      "previa": "comunidades/react-ladies/previa.png"
+      "modelo": "comunidades/react-ladies/modelo.svg",
+      "imagem": "comunidades/react-ladies/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "react-recife",
       "nome": "React Recife",
       "estado": "PE",
       "estilo": "comunidades/react-recife/estilo.json",
-      "previa": "comunidades/react-recife/previa.png"
+      "modelo": "comunidades/react-recife/modelo.svg",
+      "imagem": "comunidades/react-recife/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "reactjs-ceara",
       "nome": "ReactJS Ceará",
       "estado": "CE",
       "estilo": "comunidades/reactjs-ceara/estilo.json",
-      "previa": "comunidades/reactjs-ceara/previa.png"
+      "modelo": "comunidades/reactjs-ceara/modelo.svg",
+      "imagem": "comunidades/reactjs-ceara/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "recife-front-end-community",
       "nome": "Recife Front-End Community",
       "estado": "PE",
       "estilo": "comunidades/recife-front-end-community/estilo.json",
-      "previa": "comunidades/recife-front-end-community/previa.png"
+      "modelo": "comunidades/recife-front-end-community/modelo.svg",
+      "imagem": "comunidades/recife-front-end-community/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "santana-valley",
       "nome": "Santana Valley",
       "estado": "BA",
       "estilo": "comunidades/santana-valley/estilo.json",
-      "previa": "comunidades/santana-valley/previa.png"
+      "modelo": "comunidades/santana-valley/modelo.svg",
+      "imagem": "comunidades/santana-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "soluises",
       "nome": "SOLuíses",
       "estado": "MA",
       "estilo": "comunidades/soluises/estilo.json",
-      "previa": "comunidades/soluises/previa.png"
+      "modelo": "comunidades/soluises/modelo.svg",
+      "imagem": "comunidades/soluises/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "sururu-valley",
       "nome": "Sururu Valley",
       "estado": "AL",
       "estilo": "comunidades/sururu-valley/estilo.json",
-      "previa": "comunidades/sururu-valley/previa.png"
+      "modelo": "comunidades/sururu-valley/modelo.svg",
+      "imagem": "comunidades/sururu-valley/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "wids-recife",
       "nome": "WiDS Recife",
       "estado": "PE",
       "estilo": "comunidades/wids-recife/estilo.json",
-      "previa": "comunidades/wids-recife/previa.png"
+      "modelo": "comunidades/wids-recife/modelo.svg",
+      "imagem": "comunidades/wids-recife/modelo.png",
+      "status": "aprovado"
     }
   ],
   "genericos": [
     {
       "id": "com-logo",
       "estilo": "genericos/com-logo/estilo.json",
-      "previa": "genericos/com-logo/previa.png"
+      "modelo": "genericos/com-logo/modelo.svg",
+      "imagem": "genericos/com-logo/modelo.png",
+      "status": "aprovado"
     },
     {
       "id": "sem-logo",
       "estilo": "genericos/sem-logo/estilo.json",
-      "previa": "genericos/sem-logo/previa.png"
+      "modelo": "genericos/sem-logo/modelo.svg",
+      "imagem": "genericos/sem-logo/modelo.png",
+      "status": "aprovado"
     }
   ],
-  "base_composicao": "genericos/com-logo/modelo.svg"
+  "base_composicao": "genericos/com-logo/modelo.svg",
+  "status": "aprovado",
+  "aprovacao": "APROVACAO.json"
 }

@@ -1,8 +1,17 @@
 {
   "id": "github-community-fortaleza",
   "nome": "GitHub Community Fortaleza",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/github-community-fortaleza.md",
   "estado": "CE",
   "cidade": "Fortaleza",
@@ -19,28 +28,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_origem": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_utilizado": "comunidades/github-community-fortaleza/gerada-base-v2-ajustada.png",
-    "insumo": "comunidades/github-community-fortaleza/ilustracao.jpg",
-    "sha256": "f0fdd627e32b7da404512af93ebb0a665a7b05eca06cd616d5b40764e34a9dfd",
-    "prompt": "spec-v2.json"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
-    "observacoes": "Contribuições abertas em painel compartilhado, personagens reposicionados; litoral plano sem morro associado ao Rio, sem indicação de local de evento. Logo original e texto livres.",
-    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-    "previa_sha256": "27aa7136475811e36c6440264a649e1dc31e9081b70ca157e1c8b7ec34ad7368"
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Contribuições abertas em painel compartilhado, personagens reposicionados; litoral plano sem morro associado ao Rio, sem indicação de local de evento. Logo original e texto livres."
-  },
-  "dados_demonstrativos": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "f0fdd627e32b7da404512af93ebb0a665a7b05eca06cd616d5b40764e34a9dfd",
+  "modelo_sha256": "6e4460894a53f1008002e678230d3a056a19240692bf8b2dee91f1926e303d7f",
+  "imagem_sha256": "3e534fd76b944158d2e6e8334bf23fe6d1abbbe5e1f63c0fbff534bf1e43aa9c"
 }

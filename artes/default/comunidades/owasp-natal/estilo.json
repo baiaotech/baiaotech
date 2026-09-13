@@ -1,8 +1,17 @@
 {
   "id": "owasp-natal",
   "nome": "OWASP Natal",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/owasp-natal.md",
   "estado": "RN",
   "cidade": "Natal",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -60,
-  "fundo_canvas": "#fefdfb"
+  "fundo_canvas": "#fefdfb",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "7235496c26d836ef4135a1268cc66e50fec4a5d053a53d7586be6bb24270a71a",
+  "modelo_sha256": "b81797c3a011a85bcf398afd174634a008c12ad794888779acf1b3f8465e558e",
+  "imagem_sha256": "fb50bd8ae6b19cec34a47cbee1a2203885948f13a439b0d42c1a89a170fc55d8"
 }

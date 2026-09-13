@@ -1,103 +1,49 @@
-# Modelos de postagem — Baião Tech
+# Modelos finais — Baião Tech
 
-Produção para **93 comunidades, cada uma com ilustração própria**, e **dois modelos genéricos**. O primeiro lote contém 10 comunidades; a continuação está registrada no [plano](lotes/PLANO.json) e no [inventário do checkpoint](retomada/INVENTARIO.json). Todas as peças completas têm logo do Baião Tech e `baiaotech.org` no rodapé, seguindo a composição do genérico com logo indicado pelo usuário.
+**93 modelos exclusivos de comunidades e dois genéricos aprovados pelo usuário.** A aprovação e os hashes das versões finais estão em [APROVACAO.json](APROVACAO.json). Consulte a [galeria](GALERIA.md) e o [catálogo](catalogo.json).
 
-**Em revisão. Os títulos, datas e locais são campos demonstrativos. Estes arquivos não anunciam eventos reais.**
+Os arquivos são bases para criar postagens, não anúncios de eventos reais. Não há avisos editoriais sobrepostos à arte. Nome do evento, mês, data e local continuam como campos a preencher; a aprovação da identidade visual não confirma esses dados nem autoriza publicação automática.
 
-A base de composição explicitada pelo usuário é o [genérico com logo](genericos/com-logo/modelo.svg): paisagem contínua nas laterais, ilustração editorial estilizada e onda orgânica preservando o rodapé. Os conceitos das comunidades continuam exclusivos. A [reconferência do padrão](retomada/REVISAO-PADRAO.json) registra correções adicionais; uma conferência técnica anterior não encerra uma ressalva visual posterior.
+## Arquivos finais
 
-## Revisar as artes
+- `modelo.svg`: card completo editável, com fonte, ilustração e marcas incorporadas.
+- `modelo.png`: exportação limpa do mesmo card, em 1080 × 1350 px.
+- `ilustracao.jpg`: fundo aprovado, sem textos; é um insumo, não o card completo.
+- `logo.png`: cópia fiel do `cover_image` cadastrado, quando existente. Há 87 logos e seis comunidades com cabeçalho exclusivamente nominal.
+- `estilo.json`: conceito, vínculo com cadastro, aprovação, composição e hashes dos arquivos.
 
-Abra a [galeria de cards completos](GALERIA.md). As prévias PNG têm **1080 × 1350 px**. Cada `modelo.svg` contém os mesmos elementos, com textos editáveis e imagens incorporadas, e pode ser aberto sem buscar arquivos externos. A tabela abaixo documenta o primeiro lote; os demais estão na galeria e nos manifestos.
+Os genéricos compartilham `genericos/ilustracao.jpg` e têm versões [com logo](genericos/com-logo/modelo.svg) e [sem logo](genericos/sem-logo/modelo.svg). Os SVGs são híbridos: textos editáveis, elementos vetoriais e ilustrações raster incorporadas. Para editar textos, alguns programas exigem a fonte Inter instalada; a fonte e sua [licença SIL OFL](../../src/assets/fonts/Inter-LICENSE.txt) pertencem ao projeto.
 
-| Comunidade | UF | Direção exclusiva | Card completo |
-|---|---|---|---|
-| PyLadies Maceió | AL | Mulheres, pertencimento e conexões | [PNG](comunidades/pyladies-maceio/previa.png) · [SVG](comunidades/pyladies-maceio/modelo.svg) |
-| PyLadies Salvador | BA | Mentoria entre mulheres, programação em dupla e baía | [PNG](comunidades/pyladies-salvador/previa.png) · [SVG](comunidades/pyladies-salvador/modelo.svg) |
-| GDG Fortaleza | CE | Codelab de aplicativos e orla | [PNG](comunidades/gdg-fortaleza/previa.png) · [SVG](comunidades/gdg-fortaleza/modelo.svg) |
-| GDG Recife | PE | Troca de conhecimento, rios e pontes | [PNG](comunidades/gdg-recife/previa.png) · [SVG](comunidades/gdg-recife/modelo.svg) |
-| AWS User Group João Pessoa | PB | Arquitetura em nuvem e litoral | [PNG](comunidades/aws-user-group-joao-pessoa/previa.png) · [SVG](comunidades/aws-user-group-joao-pessoa/modelo.svg) |
-| GDG Natal | RN | Experimentação de interfaces e dunas | [PNG](comunidades/gdg-natal/previa.png) · [SVG](comunidades/gdg-natal/modelo.svg) |
-| GDG Aracaju | SE | Encontro de desenvolvedores e troca de ideias | [PNG](comunidades/gdg-aracaju/previa.png) · [SVG](comunidades/gdg-aracaju/modelo.svg) |
-| Cloud Native São Luís | MA | Colaboração em infraestrutura, nuvem e servidores | [PNG](comunidades/cloud-native-sao-luis/previa.png) · [SVG](comunidades/cloud-native-sao-luis/modelo.svg) |
-| Teresina Hacker Clube | PI | Cultura maker, eletrônica e robótica educacional | [PNG](comunidades/teresina-hacker-clube/previa.png) · [SVG](comunidades/teresina-hacker-clube/modelo.svg) |
-| DevOps CE | CE | Automação contínua e confiabilidade | [PNG](comunidades/devops-ce/previa.png) · [SVG](comunidades/devops-ce/modelo.svg) |
+## Uso pela atividade diária do ChatGPT
 
-O lote contempla os nove estados do Nordeste. Os conceitos partem das descrições dos cadastros; não restringem os temas de eventos futuros. Pessoas e paisagens são ilustrações, não fotografias de integrantes, sedes ou locais confirmados de eventos.
+1. Leia `AGENTS.md`, `catalogo.json` e o estilo correspondente ao organizador confirmado do evento.
+2. Comunidade cadastrada: use somente seu modelo específico. Não gere uma nova ilustração nem substitua a identidade por um genérico.
+3. Organizador não catalogado: use o genérico com logo somente se houver logo oficial verificada; caso contrário, use o genérico sem logo. Nunca invente ou empreste uma marca.
+4. Crie uma cópia de `modelo.svg` fora deste diretório. Preencha somente os campos abaixo com informações confirmadas. No genérico, substitua também nome e logo do organizador; `LOGO AQUI` é o campo de inserção, não uma marca publicável.
+5. Exporte essa cópia para PNG em 1080 × 1350, sRGB. Confira acentos, título, data, horário/fuso, local, logo e margens. Não publique com campos pendentes ou sem a autorização aplicável.
 
-## Arquivos e origem
+Não use geração de imagens para redesenhar o card ou os textos: a base já está pronta. Edite o SVG e exporte o resultado. Preserve os grupos `fixed-illustration`, `fixed-organizer` e `fixed-baiao-footer`; a única exceção é preencher o organizador do genérico com dados verificados.
 
-- `catalogo.json`: índice de estilos e caminhos.
-- `comunidades/<slug>/estilo.json`: vínculo exato com o cadastro, conceito, origem da imagem, hash e estado de aprovação.
-- `comunidades/<slug>/modelo.svg`: **card completo editável**, com tipografia, imagem oficial da comunidade, ilustração e assinatura do Baião Tech incorporadas.
-- `comunidades/<slug>/previa.png`: **card completo para revisão**, exportado do SVG.
-- `comunidades/<slug>/logo.png`: cópia em PNG da imagem local indicada no cadastro, sem alterações visuais. O original e seu SHA-256 estão no `estilo.json`.
-- `comunidades/<slug>/ilustracao.jpg`: **insumo de fundo**, sem textos e sem marcas; não é um card de postagem.
-- `genericos/`: uma cena neutra exclusiva dos organizadores não catalogados, com dois cabeçalhos: com logo e sem logo.
-- `assets/baiao-tech-principal.svg`: logo original da composição principal do kit de marca adotado. Não foi redesenhado.
-- `referencias/pyladies-maceio-aprovado.png`: cópia intacta da imagem aprovada na conversa de 13/09/2026, preservada para comparação.
-- `PROMPTS.json`: instruções usadas na geração das ilustrações, registradas para rastreabilidade. Não são autorização para regenerar estilos aprovados a cada postagem.
-- `SHA256SUMS`: integridade do conjunto revisado, incluindo modelos, ilustrações, logos e PNGs.
-
-Os SVGs são composições híbridas: **textos editáveis, elementos vetoriais e ilustrações raster incorporadas**. Não são ilustrações integralmente vetorizadas. A fonte Inter Variable do próprio repositório está incorporada; sua licença SIL OFL está em [`src/assets/fonts/Inter-LICENSE.txt`](../../src/assets/fonts/Inter-LICENSE.txt). Alguns editores vetoriais precisam da fonte instalada para editar texto; confirme a aparência em relação ao PNG antes de exportar.
-
-## Seleção do modelo
-
-| Situação verificada | Modelo / ação |
+| ID no SVG | Preenchimento |
 |---|---|
-| Comunidade catalogada e estilo aprovado | Usar exclusivamente o modelo daquela comunidade. |
-| Comunidade catalogada e estilo em revisão, ausente ou desatualizado | Encaminhar a peça para revisão do modelo específico. Não usar genérico automaticamente. |
-| Organizador não catalogado, com logo verificável e genérico aprovado | `genericos/com-logo/modelo.svg`. Substituir o campo demonstrativo pela logo real, sem distorção. |
-| Organizador não catalogado, sem logo verificável e genérico aprovado | `genericos/sem-logo/modelo.svg`. O nome ocupa o cabeçalho desde a margem esquerda. |
-| Vínculo entre evento e organizador incerto | Não associar por semelhança de nome ou por cidade. Encaminhar a dúvida à curadoria. |
+| `agenda-month` | Mês ou edição da agenda. |
+| `event-title-1`, `event-title-2`, `event-title-3` | Título do evento, com quebras entre palavras. |
+| `event-category` | Categoria/formato confirmado; pode permanecer vazio. |
+| `event-date-time` | Data, horário e fuso confirmados. |
+| `event-location` | Local ou formato confirmado. “A confirmar” somente quando isso corresponder à informação oficial. |
 
-Uma busca de logo fora do catálogo deve registrar a URL da fonte oficial. Se não houver comprovação suficiente, usar a versão sem logo. **Nunca usar o logo de uma comunidade como exemplo de outra organização.** `LOGO AQUI` aparece apenas na prévia demonstrativa do genérico e deve impedir publicação enquanto não for substituído.
+Área do título: x=68 até x=575. Modelo curto: duas linhas de 108 px, bases y=429 e 535. Para título longo, use três linhas de 78 px, bases y=385, 470 e 555; não comprima letras nem invada a imagem. Data/local ficam de x=124 a x=550. O rodapé não deve mudar. Se não couber, solicite um ajuste manual.
 
-## Preenchimento sem alterar o estilo
+## Integridade e manutenção
 
-Trabalhe em uma cópia do SVG aprovado. Preserve `fixed-illustration`, `fixed-organizer` e `fixed-baiao-footer`. Para genéricos, o organizador e sua logo são campos variáveis, sempre confirmados com a fonte do evento.
-
-| ID no SVG | Conteúdo variável |
-|---|---|
-| `agenda-month` | Mês/edição da agenda. |
-| `event-title-1`, `event-title-2`, `event-title-3` | Título real, com quebras de linha entre palavras. |
-| `event-category` | Categoria ou formato confirmado; pode ficar vazio. |
-| `event-date-time` | Data e horário confirmados; explicitar o fuso quando necessário. |
-| `event-location` | Local/formato confirmado; usar “A confirmar” se ausente. |
-| `review-label` | Marcador de revisão, removível apenas após validar a peça e o modelo. |
-
-Área máxima do título: **x=68 até x=575**. O modelo curto tem duas linhas de 108 px, nas bases y=429 e 535. Para um título maior, usar três linhas de **78 px**, nas bases **y=385, 470 e 555**, preservando a faixa de dados abaixo. Não invadir a ilustração, comprimir letras, omitir parte do título nem reduzir indefinidamente a fonte; se não couber, encaminhar para ajuste manual e revisão. Data e local ficam na coluna esquerda, de x=124 a x=550. O rodapé permanece fixo.
-
-Use os dados confirmados do evento, nunca os campos de demonstração como valores padrão. Exportar o SVG para PNG em 1080 × 1350, sRGB, e conferir texto, logos, rodapé e margens na imagem final. A revisão do modelo não substitui a checagem factual e a aprovação de cada publicação.
-
-## Aprovação e atividade mensal
-
-Todos os modelos permanecem em `em_revisao`, com `aprovacao: null`. Para aprovar um estilo, registrar `status: "aprovado"` e um objeto `aprovacao` com responsável, data e link do comentário/revisão que identifica a versão aprovada. Não alterar esses campos em nome do revisor. Revisão técnica registrada nos lotes não é aprovação humana.
-
-A referência de PyLadies Maceió já foi aprovada na conversa; a conversão em modelo editável é apresentada junto das demais para comparação. Não substituir a referência histórica pela adaptação.
-
-Depois da revisão e integração do PR, a atividade mensal deverá ler este contrato e selecionar somente versões explicitamente aprovadas. Novas ilustrações ou alterações da marca/composição retornam a `em_revisao`. **Este PR não modifica a tarefa agendada nem publica conteúdo.**
-
-Para conferir a integridade a partir desta pasta:
+Na raiz do checkout:
 
 ```bash
-sha256sum --check SHA256SUMS
+npm ci --prefix artes/default/scripts --ignore-scripts --no-audit --no-fund
+node artes/default/scripts/validate-catalog.cjs
+node artes/default/scripts/verify-release.cjs HEAD
 ```
 
-As logos das comunidades mantêm a identidade e titularidade de seus respectivos responsáveis. A presença no diretório não representa endosso adicional nem transfere direitos sobre as marcas.
+O validador confere os 95 modelos, aprovação/hashes, logos oficiais, grupos fixos, margens e igualdade SVG/PNG. Uma alteração de identidade visual exige nova autorização expressa; não reutilize a aprovação de uma versão diferente. Preencher os campos previstos em uma cópia para um evento não altera a base aprovada.
 
-## Continuação em lotes
-
-O [plano de continuação](lotes/PLANO.json) organiza as 83 comunidades além do primeiro lote em grupos de até 10, cada um produzido por um subagente. Cada lote concluído é conferido e enviado à mesma branch; os anteriores são preservados. Os manifestos em `lotes/lote-XX.json` registram prompts e revisão visual. A criação continua separada da aprovação para publicação.
-
-Para comunidades sem `cover_image` no cadastro, o modelo específico utiliza o nome em destaque desde a margem esquerda, sem logo inventada, marca emprestada ou espaço vazio reservado. A ausência fica registrada no `estilo.json` para revisão.
-
-O script `scripts/build-community.cjs` monta apenas uma comunidade por execução, sem modificar os índices globais. Ele recebe um JSON com `id`, `conceito` e o caminho `ilustracao`; aceita `linhas_nome`, `nome_tamanho`, `logo_largura` e `logo_fundo` para ajustes de legibilidade. Instale as dependências locais com `npm ci --prefix artes/default/scripts --ignore-scripts --no-audit --no-fund`; não depende de variáveis do runtime antigo. As ilustrações são geradas separadamente com Image Gen integrado. `assets/Inter.ttf` é a conversão local da fonte Inter Variable já incluída no projeto, sob a mesma [licença SIL OFL](../../src/assets/fonts/Inter-LICENSE.txt); `assets/fonts.conf` permite renderização consistente dos PNGs. O SVG mantém a fonte WOFF2 incorporada.
-
-`scripts/validate-community.cjs lote-XX` confere dimensões, grupos editáveis, status, logos oficiais e correspondência pixel a pixel entre SVG renderizado e PNG. A inspeção visual individual continua obrigatória. O procedimento de integração incremental está em [CONTINUAR-CODEX.md](retomada/CONTINUAR-CODEX.md).
-
-`node artes/default/scripts/validate-catalog.cjs --complete`, executado na raiz do checkout, confere as 93 comunidades contra os cadastros e o plano, os dois genéricos, a exclusividade dos arquivos de ilustração e os registros de conferência individual contra a base. Sem `--complete`, valida somente o catálogo integrado até o momento. A distinção entre imagens por hash não substitui a avaliação de conceitos e cenas. `node artes/default/scripts/verify-release.cjs HEAD` verifica a cobertura e os checksums do commit, sem confundir trabalho local ainda em andamento com o conjunto enviado.
-
-O parâmetro opcional `onda_rodape: true` no spec acrescenta uma curva vetorial orgânica dentro de `fixed-illustration`, para acabamento da paisagem baixa e proteção do rodapé. Use somente quando não ocultar pessoas, pés, dispositivos ou partes relevantes da cena. Não substitui a correção de uma ilustração mal composta; o SVG completo e seu PNG continuam sendo os entregáveis de revisão.
-
-`ilustracao_y` (-100 a 100 px) permite um pequeno reposicionamento vertical da camada raster no SVG, sem mover textos, logos ou rodapé e sem deformar a imagem. Usar apenas após revisão de que nenhuma parte relevante sairá da tela ou invadirá áreas fixas. O insumo JPEG permanece preservado; o validador mede a faixa do cabeçalho na camada já reposicionada.
+Materiais auxiliares da produção anterior foram retirados do conjunto de uso a pedido do usuário. Permanecem recuperáveis no histórico do Git, no commit `c1349b5165bf2a2db1cdfc97e0bade82eba367b6`. Não os utilize no fluxo diário. Esta entrega não modifica tarefas agendadas, workflows, o site ou integrações de publicação.

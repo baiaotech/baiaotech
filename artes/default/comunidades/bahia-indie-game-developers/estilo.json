@@ -1,8 +1,17 @@
 {
   "id": "bahia-indie-game-developers",
   "nome": "Bahia Indie Game Developers",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/bahia-indie-game-developers.md",
   "estado": "BA",
   "cidade": "",
@@ -19,26 +28,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_sha256": "4d4cccd50da05b80f9e79a2dfe276b981fc842b13e56fcc3dda1a34c612a7ab4",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
-    "arquivo_final": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
-    "insumo_local": "artes/default/comunidades/bahia-indie-game-developers/geracao-base-generica.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Substituídas ilhas suspensas por oficina única com artista digital e designer de storyboard, equipamentos apoiados. Traço estilizado, Bahia contínua nas laterais e onda orgânica. Amostra completa comparada antes da expansão da direção."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  }
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "3acdb4bd8c2fede70e82336a7fc56bf1501661992b8fda1500819ea6e0f835a9",
+  "imagem_sha256": "ef5058b64d31df1691705e3ec2bfdf52b54db9997e13df80d1b12776a5f34f83"
 }

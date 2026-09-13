@@ -1,8 +1,17 @@
 {
   "id": "potiguaras-valley",
   "nome": "Potiguaras Valley",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/potiguaras-valley.md",
   "estado": "RN",
   "cidade": "",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -20,
-  "fundo_canvas": "#fcfbf9"
+  "fundo_canvas": "#fcfbf9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "82cf60be3b41a7b1575449edc93837aafae232b160a7e94affb5bd6301c3a3d3",
+  "modelo_sha256": "9613020c2a1f3b9cfcaeefe31cfdf0ba719b1c340947f384ac8a187fcec0dbab",
+  "imagem_sha256": "a904bdc816602ee1e244c3b0dada1062b4e518123336f3d56cb6cf9a17113545"
 }

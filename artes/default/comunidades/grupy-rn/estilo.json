@@ -1,8 +1,17 @@
 {
   "id": "grupy-rn",
   "nome": "GruPy-RN",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/grupy-rn.md",
   "estado": "RN",
   "cidade": "",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": 80,
-  "fundo_canvas": "#fefefc"
+  "fundo_canvas": "#fefefc",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "a2cfbaec3e12f58cda5f14651ec4f9936ace7cd626a891e7a3f4291e8a1905f4",
+  "modelo_sha256": "786f4503f707b45b21e3213516e7c20bfe2b2455ee90dfa270cc753fe6642da9",
+  "imagem_sha256": "7406f173156f33169244bd21787b812575dee873c70ce9cd0459c3ad26953a28"
 }

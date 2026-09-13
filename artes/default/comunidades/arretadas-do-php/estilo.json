@@ -1,8 +1,17 @@
 {
   "id": "arretadas-do-php",
   "nome": "Arretadas do PHP",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/arretadas-do-php.md",
   "estado": "CE",
   "cidade": "",
@@ -18,26 +27,10 @@
   "logo": null,
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_sha256": "a6fd60a2f130eafa78515ca7c08032042d90fc30f642b7f664c46ec4c97f754b",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
-    "arquivo_final": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
-    "insumo_local": "artes/default/comunidades/arretadas-do-php/geracao-base-generica.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena de duas mulheres compartilhando programação, distinta da base genérica. Nome em destaque sem logo ou reserva vazia; rostos simplificados, mãos naturais, caatinga contínua e rodapé ondulado."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  }
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "760d0c9437064cf7523778c8c24d248cacc00e371e90e58f4e2303049c77d564",
+  "imagem_sha256": "3266378fd043a446cd09fc8a125797d1a94dd04d6b26daac860bf63171c65322"
 }

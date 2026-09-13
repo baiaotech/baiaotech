@@ -1,8 +1,17 @@
 {
   "id": "soluises",
   "nome": "SOLuíses",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/soluises.md",
   "estado": "MA",
   "cidade": "São Luís",
@@ -18,9 +27,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -25,
-  "fundo_canvas": "#fefdf9"
+  "fundo_canvas": "#fefdf9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "45a08fc592840c6d6ee62bd2cdaf5fe2c2c5d955a631351b0161e935345545e9",
+  "modelo_sha256": "95813813a9fc6b8ce0894e5d2c55073dea3eae8301bf80e769abc8e797363d62",
+  "imagem_sha256": "f6c9b67e306b20e34ae613d291e586c07e5f7084e25d90860bf0f4d80d09a5ff"
 }

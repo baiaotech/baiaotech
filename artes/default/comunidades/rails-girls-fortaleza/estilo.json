@@ -1,8 +1,17 @@
 {
   "id": "rails-girls-fortaleza",
   "nome": "Rails Girls Fortaleza",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/rails-girls-fortaleza.md",
   "estado": "CE",
   "cidade": "Fortaleza",
@@ -19,10 +28,13 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "logo_fundo": "#8B3E2F",
   "ilustracao_y": 30,
-  "fundo_canvas": "#fdfcfa"
+  "fundo_canvas": "#fdfcfa",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "5edd4ec31d05efa957a85c5fd10b8815969104293914ecbc646983e66a257d7c",
+  "modelo_sha256": "5394d93f067438be4ae3bef615d96977431821d109c54b12a732be5a29553b53",
+  "imagem_sha256": "97bf76b85b87a83422e5c8283c18dbb241963a2e6ca70c30943cb00eecd450c4"
 }

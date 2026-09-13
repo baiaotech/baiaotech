@@ -21,19 +21,27 @@ async function validateCommunity(id) {
   const cadastro = `src/content/communities/${id}.md`;
   try {
     const data = matter.read(path.join(repo, cadastro)).data;
-    const required = ['estilo.json', 'ilustracao.jpg', 'modelo.svg', 'previa.png', ...(data.cover_image ? ['logo.png'] : [])];
+    const required = ['estilo.json', 'ilustracao.jpg', 'modelo.svg', 'modelo.png', ...(data.cover_image ? ['logo.png'] : [])];
     for (const name of required) check(fs.existsSync(path.join(dir, name)), `Arquivo ausente: ${name}`);
     if (errors.length) return { id, ok: false, errors };
     const style = JSON.parse(fs.readFileSync(path.join(dir, 'estilo.json')));
     const svg = fs.readFileSync(path.join(dir, 'modelo.svg'), 'utf8');
     const jpg = fs.readFileSync(path.join(dir, 'ilustracao.jpg'));
-    const png = fs.readFileSync(path.join(dir, 'previa.png'));
+    const png = fs.readFileSync(path.join(dir, 'modelo.png'));
     check(style.id === id && style.nome === data.title && style.comunidade === cadastro, 'Vínculo/nome do cadastro divergente');
-    check(style.status === 'em_revisao' && style.aprovacao === null, 'Estado deve permanecer em_revisao, aprovacao:null');
+    const approval = JSON.parse(fs.readFileSync(path.join(root, 'APROVACAO.json')));
+    const approved = approval.modelos.find(x => x.estilo === `comunidades/${id}/estilo.json`);
+    check(style.status === 'aprovado' && style.aprovacao?.versao_aprovada === approval.versao_aprovada && style.aprovacao?.declaracao === approval.declaracao, 'Aprovação não corresponde ao registro do usuário');
+    check(approved?.modelo_sha256 === hash(Buffer.from(svg)) && approved?.imagem_sha256 === hash(png) && approved?.ilustracao_sha256 === hash(jpg), 'Arquivos divergem da versão final aprovada');
+    check(style.modelo_sha256 === approved?.modelo_sha256 && style.imagem_sha256 === approved?.imagem_sha256 && style.ilustracao_sha256 === approved?.ilustracao_sha256, 'Hashes do estilo divergentes');
+    check(style.imagem === 'modelo.png' && !('previa' in style), 'Estilo deve apontar para imagem final');
+    check(fs.readdirSync(dir).sort().join('|') === required.sort().join('|'), 'Pasta contém arquivos alheios ao conjunto final');
     for (const fixed of ['fixed-illustration','fixed-organizer','fixed-baiao-footer']) check(svg.includes(`id="${fixed}"`), `Grupo fixo ausente: ${fixed}`);
-    for (const field of ['agenda-month','event-title-1','event-title-2','event-title-3','event-category','event-date-time','event-location','review-label']) check(svg.includes(`id="${field}"`), `Campo editável ausente: ${field}`);
+    for (const field of ['agenda-month','event-title-1','event-title-2','event-title-3','event-category','event-date-time','event-location']) check(svg.includes(`id="${field}"`), `Campo editável ausente: ${field}`);
     check(/<svg\b[^>]*width="1080"[^>]*height="1350"/.test(svg), 'Dimensões SVG incorretas');
-    check(svg.includes('baiaotech.org') && svg.includes('EM REVISÃO'), 'Rodapé ou marcador de revisão ausente');
+    check(svg.includes('baiaotech.org'), 'Rodapé ausente');
+    check(!/review-label|em revis[aã]o|prévia de composi[çc][aã]o/i.test(svg), 'Aviso editorial indevido no modelo final');
+    check(/id="event-category"[^>]*><\/text>/.test(svg), 'Categoria da base deve estar vazia');
     check(!/(?:xlink:)?href="(?:https?:|\/|file:)/.test(svg), 'SVG depende de imagem externa');
     const names = [...svg.matchAll(/<text\b[^>]*id="organizer-name-\d+"[^>]*>([^<]*)<\/text>/g)].map(m => decode(m[1])).join(' ');
     check(names === data.title, 'Nome editável não corresponde ao cadastro');
@@ -59,10 +67,10 @@ async function validateCommunity(id) {
       check(/id="organizer-name-1" x="72"/.test(svg), 'Espaço de logo reservado indevidamente');
     }
     const meta = await sharp(png).metadata();
-    check(meta.width === 1080 && meta.height === 1350 && meta.format === 'png', 'Prévia fora do formato1080x1350 PNG');
+    check(meta.width === 1080 && meta.height === 1350 && meta.format === 'png', 'Imagem final fora do formato1080x1350 PNG');
     const rendered = await sharp(Buffer.from(svg)).ensureAlpha().raw().toBuffer();
     const preview = await sharp(png).ensureAlpha().raw().toBuffer();
-    check(hash(rendered) === hash(preview), 'Prévia PNG não corresponde à renderização atual do SVG');
+    check(hash(rendered) === hash(preview), 'PNG final não corresponde à renderização atual do SVG');
     // Salvaguarda de margens: não substitui julgamento de estilo/anatomia.
     const occupied = async (input, top, height) => {
       const pixels = await sharp(input).toColourspace('srgb').removeAlpha().extract({left:0,top,width:1080,height}).raw().toBuffer();
@@ -80,7 +88,7 @@ async function validateCommunity(id) {
     const footerPixels = await occupied(png, 1180, 48);
     check(headerPixels <= 100, `Ilustração invade faixa do cabeçalho (${headerPixels} pixels marcados)`);
     check(footerPixels <= 100, `Ilustração invade respiro do rodapé y1180–1228 (${footerPixels} pixels marcados)`);
-    return { id, ok: errors.length === 0, errors, ilustracao_sha256: hash(jpg), previa_sha256: hash(png), modelo_sha256: hash(svg), nome: data.title };
+    return { id, ok: errors.length === 0, errors, ilustracao_sha256: hash(jpg), imagem_sha256: hash(png), modelo_sha256: hash(svg), nome: data.title };
   } catch (error) {
     return { id, ok: false, errors: [...errors, error.message] };
   }
@@ -88,9 +96,8 @@ async function validateCommunity(id) {
 
 async function main() {
   const args = process.argv.slice(2);
-  const plan = JSON.parse(fs.readFileSync(path.join(root, 'lotes/PLANO.json')));
-  const ids = args[0] === 'lote-01' ? JSON.parse(fs.readFileSync(path.join(root, 'catalogo.json'))).comunidades.slice(0,10).map(x=>x.id) : args[0]?.startsWith('lote-') ? plan.lotes.find(b => b.id === args[0])?.comunidades : args;
-  if (!ids?.length) throw new Error('Informe lote-XX ou um ou mais slugs');
+  const ids = args.length ? args : JSON.parse(fs.readFileSync(path.join(root, 'catalogo.json'))).comunidades.map(x=>x.id);
+  if (!ids.length) throw new Error('Catálogo vazio');
   const results = [];
   for (const id of ids) results.push(await validateCommunity(id));
   console.log(JSON.stringify({ resultado: results.every(r => r.ok) ? 'ok' : 'falhou', comunidades: results }, null, 2));

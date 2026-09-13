@@ -1,8 +1,17 @@
 {
   "id": "gdg-joao-pessoa",
   "nome": "GDG João Pessoa",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/gdg-joao-pessoa.md",
   "estado": "PB",
   "cidade": "João Pessoa",
@@ -18,28 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_origem": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_utilizado": "comunidades/gdg-joao-pessoa/gerada-base-v2-ajustada.png",
-    "insumo": "comunidades/gdg-joao-pessoa/ilustracao.jpg",
-    "sha256": "c47c9d72efc7ae189e75e521dfaa7bbd1a171e98f419ec38905fa38cf69c6d3b",
-    "prompt": "spec-v2.json"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
-    "observacoes": "Troca de aprendizado em banco costeiro ancorado, três adultos com anatomia simplificada e margens corrigidas. Logo, dados e rodapé livres.",
-    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-    "previa_sha256": "5d7af9ad3bd631a6f790d2acd52c1efd6b6a0c9ef2aad94f2f76d8fb44f82b57"
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Troca de aprendizado em banco costeiro ancorado, três adultos com anatomia simplificada e margens corrigidas. Logo, dados e rodapé livres."
-  },
-  "dados_demonstrativos": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "c47c9d72efc7ae189e75e521dfaa7bbd1a171e98f419ec38905fa38cf69c6d3b",
+  "modelo_sha256": "589200fd9b07be91607d0f94dfcb9844f1f9673f8c037c713fc1f0b1b470c73f",
+  "imagem_sha256": "0a8d21711999c99f86f0bc6293fa21ba559ebfb8cac570d5092b4b4716f4387e"
 }

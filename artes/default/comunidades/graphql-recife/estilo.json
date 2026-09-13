@@ -1,8 +1,17 @@
 {
   "id": "graphql-recife",
   "nome": "GraphQL Recife",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/graphql-recife.md",
   "estado": "PE",
   "cidade": "Recife",
@@ -18,28 +27,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_origem": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_utilizado": "comunidades/graphql-recife/gerada-base-v2-ajustada.png",
-    "insumo": "comunidades/graphql-recife/ilustracao.jpg",
-    "sha256": "b41f3b6466c26f83f786d0e70fda8e92c1bb357e2f49bb485117b6332769c4b6",
-    "prompt": "spec-v2.json"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png via view_image e comparação com genericos/com-logo/previa.png.",
-    "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro.",
-    "correspondencia_svg_png": "Validada pixel a pixel por validate-community.cjs.",
-    "previa_sha256": "a6ff0b319254273a7a5623e563225a45c4075410723d13c46e28cfd4e8ebf11b"
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Consulta em grafo mostrada por dupla junto a painel, sem redesenhar a marca. Grupo deslocado à direita, margem de texto livre, paisagem contínua e rodapé íntegro."
-  },
-  "dados_demonstrativos": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "b41f3b6466c26f83f786d0e70fda8e92c1bb357e2f49bb485117b6332769c4b6",
+  "modelo_sha256": "6797f2b10d272cfda0016731c5d18658dec29bb7ea0f658b5e93360229b4e5e8",
+  "imagem_sha256": "770caa7f26405643123830dc35f24e5461178487a606a282abdb2c5060a81eee"
 }

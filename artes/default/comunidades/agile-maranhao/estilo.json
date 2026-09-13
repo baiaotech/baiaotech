@@ -1,8 +1,17 @@
 {
   "id": "agile-maranhao",
   "nome": "Agile Maranhão",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/agile-maranhao.md",
   "estado": "MA",
   "cidade": "",
@@ -18,28 +27,11 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "onda_rodape": true,
   "ilustracao_sha256": "3637727833f52b59f179a73e9d2e02981e2e70f82a8633ce1533165550eb1d56",
-  "origem_ilustracao": {
-    "ferramenta": "Image Gen integrado",
-    "referencia_estilo": "genericos/com-logo/previa.png",
-    "arquivo_gerado": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
-    "arquivo_final": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
-    "insumo_local": "artes/default/comunidades/agile-maranhao/geracao-base-generica.png",
-    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
-  },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
-    "observacoes": "Cena exclusiva de práticas ágeis com quadro e três participantes, sem vinhetas nem móveis suspensos. Traço simplificado com textura discreta; paisagem maranhense contínua. Acabamento vetorial ondulado aplicado à margem baixa, sem ocultar pés ou mãos."
-  },
-  "comparacao_base": {
-    "realizada": true,
-    "base": "genericos/com-logo/modelo.svg",
-    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
-  },
-  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "7f99c7feca194a52ccb1445284dd027d87113b60b4785eb3ea35a015e4f83d21",
+  "imagem_sha256": "a8a870d4def8bbf4436ecb34a4a01c062f94d8aa2710c20f0913a09f45fc23ff"
 }

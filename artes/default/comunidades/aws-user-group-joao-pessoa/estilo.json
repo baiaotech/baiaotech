@@ -1,8 +1,17 @@
 {
   "id": "aws-user-group-joao-pessoa",
   "nome": "AWS User Group João Pessoa",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/aws-user-group-joao-pessoa.md",
   "estado": "PB",
   "cidade": "João Pessoa",
@@ -19,9 +28,12 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
   "ilustracao_y": -25,
-  "fundo_canvas": "#fefdf9"
+  "fundo_canvas": "#fefdf9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "a0c4835f9b32f4051abc544636d90ec23f7d4e4f31cdc9fea7b649c8dc8af5dc",
+  "modelo_sha256": "bda7d6d8b3f0eb86541e343324a5576d3d276af0378e023e8c3ef394c4858039",
+  "imagem_sha256": "c263cb6116fdc38094bdd1fee343ecb336ed72f1a44626472936b11888b5c402"
 }

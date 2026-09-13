@@ -1,8 +1,17 @@
 {
   "id": "wordpress-fortaleza",
   "nome": "WordPress Fortaleza",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/wordpress-fortaleza.md",
   "estado": "CE",
   "cidade": "Fortaleza",
@@ -19,7 +28,10 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "2dc5b90b5b29836e56ff11150d6a61addab42ce875ae5b7ce8a371c27b6ffda0",
+  "modelo_sha256": "837301547c62b6cdc4a67b072f268175087d29973bc5f14b97d150a82532a8b4",
+  "imagem_sha256": "d90cc7deca0648bd7489112204f55fc527da8210f71e8976636da9faf5c6a619"
 }

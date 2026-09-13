@@ -1,8 +1,17 @@
 {
   "id": "devops-ce",
   "nome": "DevOps CE",
-  "status": "em_revisao",
-  "aprovacao": null,
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
   "comunidade": "src/content/communities/devops-ce.md",
   "estado": "CE",
   "cidade": "Fortaleza",
@@ -18,8 +27,11 @@
   "logo": "logo.png",
   "ilustracao": "ilustracao.jpg",
   "modelo": "modelo.svg",
-  "previa": "previa.png",
-  "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "onda_rodape": true
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "onda_rodape": true,
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "9c62d1a2f549618ca06a41065f179a9b8a199e37a8641d964b9e662872e2020d",
+  "modelo_sha256": "184fffa565f6a9453e1399e9a4cec549ebb9da94df4f0eb2e27147883ddff82e",
+  "imagem_sha256": "788bb89c3f1a55076bd63cc8831a3fceb7afa81d76c954e029da5f13469dbdc7"
 }
