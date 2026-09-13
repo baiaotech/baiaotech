@@ -1,0 +1,26 @@
+{
+  "id": "rapadura-valley",
+  "nome": "Rapadura Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/rapadura-valley.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Conexão entre empreendedores e inovação cearense, com protótipo e identidade cultural da rapadura.",
+  "linhas_nome": [
+    "Rapadura Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/rapadura-valley.png",
+  "logo_origem_sha256": "500518849447de3f0b06472b454ebe85f1e6546711a8eb963c21f98931c46aa2",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -40,
+  "fundo_canvas": "#fcfbf7"
+}

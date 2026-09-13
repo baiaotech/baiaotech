@@ -1,0 +1,24 @@
+{
+  "id": "reactjs-ceara",
+  "nome": "ReactJS Ceará",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/reactjs-ceara.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Troca de experiências do ecossistema React em uma conversa técnica sobre aplicações modernas.",
+  "linhas_nome": [
+    "ReactJS Ceará"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/reactjs-ceara.png",
+  "logo_origem_sha256": "c1795698df5493c54b195075164ce22cfa24cf8f24b153e120b780f9b7cea8fb",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

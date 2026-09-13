@@ -1,0 +1,28 @@
+{
+  "id": "rails-girls-fortaleza",
+  "nome": "Rails Girls Fortaleza",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/rails-girls-fortaleza.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Oficina acolhedora de primeiros passos em desenvolvimento web Ruby on Rails para mulheres, com mentoria e aprendizagem prática.",
+  "linhas_nome": [
+    "Rails Girls",
+    "Fortaleza"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 280,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/rails-girls-fortaleza.png",
+  "logo_origem_sha256": "b8220c2e939e22ad8372772223f00f51aa248d2c1954e7ff1c0652bb98e21702",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "logo_fundo": "#8B3E2F",
+  "ilustracao_y": 30,
+  "fundo_canvas": "#fdfcfa"
+}

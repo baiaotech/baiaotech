@@ -587,6 +587,76 @@
       "estado": "CE",
       "estilo": "comunidades/wordpress-fortaleza/estilo.json",
       "previa": "comunidades/wordpress-fortaleza/previa.png"
+    },
+    {
+      "id": "rails-girls-fortaleza",
+      "nome": "Rails Girls Fortaleza",
+      "estado": "CE",
+      "estilo": "comunidades/rails-girls-fortaleza/estilo.json",
+      "previa": "comunidades/rails-girls-fortaleza/previa.png"
+    },
+    {
+      "id": "rapadura-valley",
+      "nome": "Rapadura Valley",
+      "estado": "CE",
+      "estilo": "comunidades/rapadura-valley/estilo.json",
+      "previa": "comunidades/rapadura-valley/previa.png"
+    },
+    {
+      "id": "react-ladies",
+      "nome": "React Ladies",
+      "estado": "PE",
+      "estilo": "comunidades/react-ladies/estilo.json",
+      "previa": "comunidades/react-ladies/previa.png"
+    },
+    {
+      "id": "react-recife",
+      "nome": "React Recife",
+      "estado": "PE",
+      "estilo": "comunidades/react-recife/estilo.json",
+      "previa": "comunidades/react-recife/previa.png"
+    },
+    {
+      "id": "reactjs-ceara",
+      "nome": "ReactJS Ceará",
+      "estado": "CE",
+      "estilo": "comunidades/reactjs-ceara/estilo.json",
+      "previa": "comunidades/reactjs-ceara/previa.png"
+    },
+    {
+      "id": "recife-front-end-community",
+      "nome": "Recife Front-End Community",
+      "estado": "PE",
+      "estilo": "comunidades/recife-front-end-community/estilo.json",
+      "previa": "comunidades/recife-front-end-community/previa.png"
+    },
+    {
+      "id": "santana-valley",
+      "nome": "Santana Valley",
+      "estado": "BA",
+      "estilo": "comunidades/santana-valley/estilo.json",
+      "previa": "comunidades/santana-valley/previa.png"
+    },
+    {
+      "id": "soluises",
+      "nome": "SOLuíses",
+      "estado": "MA",
+      "estilo": "comunidades/soluises/estilo.json",
+      "previa": "comunidades/soluises/previa.png"
+    },
+    {
+      "id": "sururu-valley",
+      "nome": "Sururu Valley",
+      "estado": "AL",
+      "estilo": "comunidades/sururu-valley/estilo.json",
+      "previa": "comunidades/sururu-valley/previa.png"
+    },
+    {
+      "id": "wids-recife",
+      "nome": "WiDS Recife",
+      "estado": "PE",
+      "estilo": "comunidades/wids-recife/estilo.json",
+      "previa": "comunidades/wids-recife/previa.png"
     }
   ],
   "genericos": [

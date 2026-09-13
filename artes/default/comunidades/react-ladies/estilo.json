@@ -1,0 +1,24 @@
+{
+  "id": "react-ladies",
+  "nome": "React Ladies",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/react-ladies.md",
+  "estado": "PE",
+  "cidade": "",
+  "conceito": "Mulheres liderando estudos colaborativos de componentes React e desenvolvimento front-end.",
+  "linhas_nome": [
+    "React Ladies"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 213,
+  "subtitulo": "Comunidade · PE",
+  "logo_origem": "src/assets/covers/communities/react-ladies.webp",
+  "logo_origem_sha256": "1f2950e97acdb63e42364a1fe1d648c12d77717e3784eba5f10d98f8b9b676ea",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

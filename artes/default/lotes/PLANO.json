@@ -155,7 +155,9 @@
         "wids-recife"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-09.json"
     },
     {
       "id": "lote-10",

@@ -1,10 +1,10 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-10",
+  "checkpoint_lote": "lote-09",
   "total_previsto": 93,
-  "revisados_tecnicamente": 83,
-  "conferidos_contra_base": 83,
+  "revisados_tecnicamente": 93,
+  "conferidos_contra_base": 93,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -1209,101 +1209,151 @@
     {
       "id": "rails-girls-fortaleza",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "rapadura-valley",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "react-ladies",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "react-recife",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "reactjs-ceara",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "recife-front-end-community",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "santana-valley",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "soluises",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "sururu-valley",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "wids-recife",
       "lote": "lote-09",
-      "arquivos_basicos_completos": false,
-      "arquivos_basicos_presentes": [],
-      "revisao_visual_registrada": false,
-      "comparacao_base": "pendente",
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "arquivos_basicos_presentes": [
+        "estilo.json",
+        "ilustracao.jpg",
+        "modelo.svg",
+        "previa.png"
+      ],
+      "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {

@@ -1,0 +1,26 @@
+{
+  "id": "soluises",
+  "nome": "SOLuíses",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/soluises.md",
+  "estado": "MA",
+  "cidade": "São Luís",
+  "conceito": "Economia criativa, dados e empreendedorismo conectados por projetos colaborativos no Maranhão.",
+  "linhas_nome": [
+    "SOLuíses"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · São Luís, MA",
+  "logo_origem": "src/assets/covers/communities/soluises.png",
+  "logo_origem_sha256": "4acf61028cc2cf82fc206756e7db3b2901a60ca449632d5d2339894a909c6e43",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -25,
+  "fundo_canvas": "#fefdf9"
+}

@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-83 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+93 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -675,6 +675,86 @@ Oficina de criação de sites e componentes WordPress em Fortaleza, com montagem
 ![Card completo — WordPress Fortaleza](comunidades/wordpress-fortaleza/previa.png)
 
 [SVG editável](comunidades/wordpress-fortaleza/modelo.svg) · [Estilo e origem](comunidades/wordpress-fortaleza/estilo.json)
+
+## Rails Girls Fortaleza
+
+Oficina acolhedora de primeiros passos em desenvolvimento web Ruby on Rails para mulheres, com mentoria e aprendizagem prática.
+
+![Card completo — Rails Girls Fortaleza](comunidades/rails-girls-fortaleza/previa.png)
+
+[SVG editável](comunidades/rails-girls-fortaleza/modelo.svg) · [Estilo e origem](comunidades/rails-girls-fortaleza/estilo.json)
+
+## Rapadura Valley
+
+Conexão entre empreendedores e inovação cearense, com protótipo e identidade cultural da rapadura.
+
+![Card completo — Rapadura Valley](comunidades/rapadura-valley/previa.png)
+
+[SVG editável](comunidades/rapadura-valley/modelo.svg) · [Estilo e origem](comunidades/rapadura-valley/estilo.json)
+
+## React Ladies
+
+Mulheres liderando estudos colaborativos de componentes React e desenvolvimento front-end.
+
+![Card completo — React Ladies](comunidades/react-ladies/previa.png)
+
+[SVG editável](comunidades/react-ladies/modelo.svg) · [Estilo e origem](comunidades/react-ladies/estilo.json)
+
+## React Recife
+
+Aprendizado conjunto em React para interfaces web e móveis, articulando as duas plataformas.
+
+![Card completo — React Recife](comunidades/react-recife/previa.png)
+
+[SVG editável](comunidades/react-recife/modelo.svg) · [Estilo e origem](comunidades/react-recife/estilo.json)
+
+## ReactJS Ceará
+
+Troca de experiências do ecossistema React em uma conversa técnica sobre aplicações modernas.
+
+![Card completo — ReactJS Ceará](comunidades/reactjs-ceara/previa.png)
+
+[SVG editável](comunidades/reactjs-ceara/modelo.svg) · [Estilo e origem](comunidades/reactjs-ceara/estilo.json)
+
+## Recife Front-End Community
+
+Conexões multidisciplinares entre desenvolvimento, dados e design no ecossistema de Recife.
+
+![Card completo — Recife Front-End Community](comunidades/recife-front-end-community/previa.png)
+
+[SVG editável](comunidades/recife-front-end-community/modelo.svg) · [Estilo e origem](comunidades/recife-front-end-community/estilo.json)
+
+## Santana Valley
+
+Empreendedorismo e inovação no interior baiano, com colaboração em novos produtos e serviços.
+
+![Card completo — Santana Valley](comunidades/santana-valley/previa.png)
+
+[SVG editável](comunidades/santana-valley/modelo.svg) · [Estilo e origem](comunidades/santana-valley/estilo.json)
+
+## SOLuíses
+
+Economia criativa, dados e empreendedorismo conectados por projetos colaborativos no Maranhão.
+
+![Card completo — SOLuíses](comunidades/soluises/previa.png)
+
+[SVG editável](comunidades/soluises/modelo.svg) · [Estilo e origem](comunidades/soluises/estilo.json)
+
+## Sururu Valley
+
+Conexão entre ciência, tecnologia e empreendedorismo em Alagoas.
+
+![Card completo — Sururu Valley](comunidades/sururu-valley/previa.png)
+
+[SVG editável](comunidades/sururu-valley/modelo.svg) · [Estilo e origem](comunidades/sururu-valley/estilo.json)
+
+## WiDS Recife
+
+Visibilidade de mulheres em ciência de dados e aprendizado de máquina, por meio de apresentações e troca de conhecimento.
+
+![Card completo — WiDS Recife](comunidades/wids-recife/previa.png)
+
+[SVG editável](comunidades/wids-recife/modelo.svg) · [Estilo e origem](comunidades/wids-recife/estilo.json)
 
 ## Genérico com-logo
 

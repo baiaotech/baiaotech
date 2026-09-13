@@ -1,0 +1,26 @@
+{
+  "id": "sururu-valley",
+  "nome": "Sururu Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/sururu-valley.md",
+  "estado": "AL",
+  "cidade": "",
+  "conceito": "Conexão entre ciência, tecnologia e empreendedorismo em Alagoas.",
+  "linhas_nome": [
+    "Sururu Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 205,
+  "subtitulo": "Comunidade · AL",
+  "logo_origem": "src/assets/covers/communities/sururu-valley.webp",
+  "logo_origem_sha256": "2e7fb1c79f7c9186f94a55f5c5466bbcdd4bae3fa6de02091a556a90051d15a8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -30,
+  "fundo_canvas": "#fdfcfa"
+}

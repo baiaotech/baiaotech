@@ -1,0 +1,26 @@
+{
+  "id": "react-recife",
+  "nome": "React Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/react-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Aprendizado conjunto em React para interfaces web e móveis, articulando as duas plataformas.",
+  "linhas_nome": [
+    "React Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/react-recife.png",
+  "logo_origem_sha256": "df58d72ee65908b91af20ef98a13c24edf0ea4d7ee57c9712f229f462043e377",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": 60,
+  "fundo_canvas": "#fefefc"
+}

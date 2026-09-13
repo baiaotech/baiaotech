@@ -1,0 +1,26 @@
+{
+  "id": "wids-recife",
+  "nome": "WiDS Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/wids-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Visibilidade de mulheres em ciência de dados e aprendizado de máquina, por meio de apresentações e troca de conhecimento.",
+  "linhas_nome": [
+    "WiDS Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/wids-recife.png",
+  "logo_origem_sha256": "54649f28bc284433e1c148327453db541efc995408e734d67500cbc95d31b30c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_y": -20,
+  "fundo_canvas": "#fcf9f6"
+}

@@ -2,6 +2,16 @@
 
 Branch: `feat/artes-default-comunidades`. Nunca force-push, merge ou publicação nas redes nesta etapa.
 
+## Produção concluída para revisão — 13/09/2026
+
+Os dez lotes estão completos: **93 modelos exclusivos de comunidades e dois genéricos**. Há 87 logos copiadas dos cadastros e seis cabeçalhos nominais sem espaço de logo. Catálogo, prompts, galerias, plano e inventário foram integrados; todos os modelos permanecem `em_revisao`, com `aprovacao: null` e dados demonstrativos.
+
+`node artes/default/scripts/validate-catalog.cjs --complete` passou para as 93 comunidades e os dois genéricos, incluindo integridade das logos, rodapé idêntico ao grupo da base, correspondência pixel a pixel SVG/PNG e registros de conferência individual. Os 93 JPEGs são distintos. Uma medição complementar no Chromium, após carregar a fonte incorporada, não encontrou nomes, títulos demonstrativos, datas ou locais fora das respectivas áreas reservadas nos 93 SVGs.
+
+Todos os PNGs finais foram inspecionados individualmente e os dez manifestos registram comparação com `genericos/com-logo/modelo.svg`. Essa conferência técnica não é aprovação humana. A próxima etapa é revisar os cards da [galeria](../GALERIA.md); não regenerar cenas nem alterar aprovações automaticamente. Marca, referência histórica, site, cadastros e automações ficaram intactos nesta produção.
+
+## Histórico da retomada
+
 O remoto encontrado foi `e7336928c607e921c59e6ca6919a2a8e340af2e3`, com apenas parte da preservação anterior (commit identificado como 80/410 arquivos). Não existiam os diretórios de imagens recuperadas mencionados no chat. O usuário confirmou não possuir ZIP. Não declarar os 410 arquivos recuperados.
 
 Consulte `INVENTARIO.json`, `../lotes/PLANO.json` e os manifestos de cada lote. Arquivos presentes não significam revisão visual. Cada manifesto concluído registra inspeção individual dos PNGs e prompts; a aprovação humana continua nula.

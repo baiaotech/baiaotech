@@ -1,0 +1,24 @@
+{
+  "id": "santana-valley",
+  "nome": "Santana Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/santana-valley.md",
+  "estado": "BA",
+  "cidade": "Feira de Santana",
+  "conceito": "Empreendedorismo e inovação no interior baiano, com colaboração em novos produtos e serviços.",
+  "linhas_nome": [
+    "Santana Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Feira de Santana, BA",
+  "logo_origem": "src/assets/covers/communities/santana-valley.jpg",
+  "logo_origem_sha256": "583fb1f04feea076f8b1f15ba98570a343c90d91afb3f6b2390e7b8e85b6f616",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
