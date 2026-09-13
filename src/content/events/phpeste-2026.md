@@ -15,7 +15,7 @@ categories:
   - "backend"
   - "opensource"
 featured: false
-cover_image: "https://phpeste.dev/images/assets/phpeste_marrom.png"
+cover_image: ""
 price: "Pago"
 ---
 
