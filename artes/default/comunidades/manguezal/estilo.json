@@ -1,0 +1,36 @@
+{
+  "id": "manguezal",
+  "nome": "Manguezal",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/manguezal.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Colaboração empreendedora em Recife, inspirada nas conexões do mangue e da tecnologia.",
+  "linhas_nome": [
+    "Manguezal"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "761707eed83d1e1788a160778a04233850cb34d2b894f3a4baf1dcf967937669",
+  "modelo_sha256": "63e9eafe7a0e96452827e81aee590c5227e705df6132c57615aebe5cd043279f",
+  "imagem_sha256": "8f01d2a424420c708232fbae1b44b742cf72f2d0223489ca9e3793f74372427b"
+}

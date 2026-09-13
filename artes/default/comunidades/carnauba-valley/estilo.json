@@ -1,0 +1,37 @@
+{
+  "id": "carnauba-valley",
+  "nome": "Carnaúba Valley",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/carnauba-valley.md",
+  "estado": "PI",
+  "cidade": "Parnaíba",
+  "conceito": "Conexão entre academia, público e empreendedorismo digital em Parnaíba, com carnaúba como rede regional de inovação.",
+  "linhas_nome": [
+    "Carnaúba Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Parnaíba, PI",
+  "logo_origem": "src/assets/covers/communities/carnauba-valley.png",
+  "logo_origem_sha256": "ddb5e81d3832544c7de5474681d21c6e180d3ddf22b737ef71c8032eadc11cc3",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "onda_rodape": true,
+  "ilustracao_sha256": "ae8a7956494318409d7423b043f99b3dd054f5eb1b0910a56fd44cc26c856038",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "68c115389e6d119eabd4e27cb70f260dd7514d3bbb230fb769fc126d678bea71",
+  "imagem_sha256": "101aaebaebcaf09aa22d1e0a61586c9412573cf7789ff5f92544456973706c12"
+}

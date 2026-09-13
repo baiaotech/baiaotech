@@ -1,0 +1,36 @@
+{
+  "id": "jamparuby",
+  "nome": "JampaRuby",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/jamparuby.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Programação Ruby e código reutilizável em João Pessoa, em uma oficina de componentes de software.",
+  "linhas_nome": [
+    "JampaRuby"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/jamparuby.png",
+  "logo_origem_sha256": "f337c3b6a833ca869080acbf0cbdaeff19c29660a679d2cf34c4b065a214060b",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "4e88d57a174ef9e9aa942ad837aa47cb4e36ecc88f869bf378073014b42b2712",
+  "modelo_sha256": "87bba83bd095f957445aefe021ee53942a2113cd04cc9512aec82c087dcc64a4",
+  "imagem_sha256": "4a81c396c205e4d8daab1e43c47963fae91eb464e085083b08a16fe21b41c426"
+}

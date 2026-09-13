@@ -1,0 +1,36 @@
+{
+  "id": "paraiba-js",
+  "nome": "Paraíba.js",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/paraiba-js.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Troca de conhecimentos e apresentação de casos de JavaScript na Paraíba.",
+  "linhas_nome": [
+    "Paraíba.js"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/paraiba-js.png",
+  "logo_origem_sha256": "d6a27dc107a5bb4645f0a230382c1c98245ad8e8b1e51584aadf477d333fa4b7",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "c7acecc703b1291c60a656020d7da559934070ba21640960e08cf3b313f36f7e",
+  "modelo_sha256": "34a6b4da0e98a441c584cc3ea562544166ad9bef879345b55d07d94afd5434b5",
+  "imagem_sha256": "4019409d7f9607e7b0fd086d97ea8f3486ea25c50ea171fe14d4f2be7405fbfa"
+}

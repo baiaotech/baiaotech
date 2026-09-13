@@ -1,0 +1,36 @@
+{
+  "id": "geek-night-recife",
+  "nome": "Geek Night Recife",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/geek-night-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Lightning talks, escuta e convivência na cena tecnológica recifense.",
+  "linhas_nome": [
+    "Geek Night Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/geek-night-recife.png",
+  "logo_origem_sha256": "144e09aafcabec28414e6d37ddaf8b27be13b8fbc8acd02577978ddaa5b8702c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "f6a04864bc89a990d31900a8309b048669492bf86c5c98876cbfc83eaf39afa3",
+  "modelo_sha256": "9d3b05f33f40c935f1781c710b1eba580da06ce80aadb9d55fface66d42e6f72",
+  "imagem_sha256": "a20a11df994d9bdfd200bae2927b0eb897bb356cbab38f3150f2372604337990"
+}

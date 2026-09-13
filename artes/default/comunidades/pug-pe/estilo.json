@@ -1,0 +1,36 @@
+{
+  "id": "pug-pe",
+  "nome": "PUG-PE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pug-pe.md",
+  "estado": "PE",
+  "cidade": "",
+  "conceito": "Aprendizado inclusivo Python em Pernambuco: pequena roda de compartilhamento de soluções com laptop e caderno de exercícios.",
+  "linhas_nome": [
+    "PUG-PE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PE",
+  "logo_origem": "src/assets/covers/communities/pug-pe.png",
+  "logo_origem_sha256": "1dbf6e9853a5d622afd9c23acbccdc34b3b3d25cae69b45aed176b9542a4cd89",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "cf70e67fbc275cfe9c23b41295c10d4e52189e3aab5a594695533930b7dce1b4",
+  "modelo_sha256": "5b2b60860e989e9bb6ebf30c18c5e21adb7940059ec3b3ce8235ade64196b047",
+  "imagem_sha256": "4cee4333a87277edc8cd6c33efabf8600091a8dc8b5433f20c6ce5e45ffaec0d"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "php-pb",
+  "nome": "PHP-PB",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/php-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Mentoria entre diferentes níveis de experiência no ecossistema PHP paraibano.",
+  "linhas_nome": [
+    "PHP-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/php-pb.png",
+  "logo_origem_sha256": "bbf827619b52062285f53b82f7761bef5d9660d22313df113a01d6604755ec08",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -10,
+  "fundo_canvas": "#fefdfb",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "d0557a36c61280a3b1640d201aad159208993a626e712b8a54641d3fdd3e1869",
+  "modelo_sha256": "90c33fdbd9b4c68dc1f945313017c25f5461782c1cff8e31e572079ba48c033f",
+  "imagem_sha256": "ab798b982cfce3f5a67800cba719b1b13d82ef23a4e4930cdc038424a1f6fe77"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "baiaotech-artes-default-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Montagem e verificação local dos modelos de postagem, sem dependência do runtime do ChatGPT.",
+  "dependencies": {
+    "gray-matter": "4.0.3",
+    "sharp": "0.34.5"
+  }
+}

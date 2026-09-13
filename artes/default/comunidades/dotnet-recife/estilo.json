@@ -1,0 +1,36 @@
+{
+  "id": "dotnet-recife",
+  "nome": "DotNet Recife",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/dotnet-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Conhecimento compartilhado sobre camadas de aplicações e serviços .NET no Recife.",
+  "linhas_nome": [
+    "DotNet Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/dotnet-recife.png",
+  "logo_origem_sha256": "eb80645292cd1f50a7ab43f92312b52b9c7af30c25c72b71a3f1a981aff600b7",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "fa5a45760fc634094e3a07e1985128e0b0fdcb378a9b26a6cb0e09b1d8aef61e",
+  "modelo_sha256": "7f3fc0cba18e02e7723464f16558c3ecf3e2419e5ae55b92f378995ebe6d16c1",
+  "imagem_sha256": "61de3a7f9996a5890d29681410cb61ce01060555b3739c9a91be52d6034bf943"
+}

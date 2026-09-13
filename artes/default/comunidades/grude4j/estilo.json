@@ -1,0 +1,36 @@
+{
+  "id": "grude4j",
+  "nome": "Grude4J",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/grude4j.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Aprendizado Java/JVM em palestra prática na Paraíba.",
+  "linhas_nome": [
+    "Grude4J"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/grude4j.png",
+  "logo_origem_sha256": "3bfc18eb5bd5b5e07eb9360ca64783a94de7caea12a60a573a6ce3d06b65e212",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "4c6b583adf7a3c42158d8d40858bf96d735d99a4c4edde2fe444a98b88ec94f7",
+  "modelo_sha256": "2fc2740e6a390b83b9fb7753f716db4a697c7a2757ecd9163c320d6e643c9b8e",
+  "imagem_sha256": "cb6b3ab28bbf95d69d240a7f8dadf5aba7525afbc5dd0ec2f8490533b1a44210"
+}

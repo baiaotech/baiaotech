@@ -1,0 +1,36 @@
+{
+  "id": "arretadas-do-php",
+  "nome": "Arretadas do PHP",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/arretadas-do-php.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.",
+  "linhas_nome": [
+    "Arretadas do PHP"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_sha256": "a6fd60a2f130eafa78515ca7c08032042d90fc30f642b7f664c46ec4c97f754b",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "760d0c9437064cf7523778c8c24d248cacc00e371e90e58f4e2303049c77d564",
+  "imagem_sha256": "3266378fd043a446cd09fc8a125797d1a94dd04d6b26daac860bf63171c65322"
+}

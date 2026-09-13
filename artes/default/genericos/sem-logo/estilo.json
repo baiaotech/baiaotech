@@ -1,0 +1,33 @@
+{
+  "id": "sem-logo",
+  "nome": "Genérico sem logo",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "conceito": "Comunidade aberta de tecnologia e conexão entre pessoas, sem atribuição a uma organização cadastrada.",
+  "linhas_nome": [
+    "Nome do",
+    "organizador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Organizador do evento",
+  "logo": null,
+  "ilustracao": "../ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "requer_logo_verificada": false,
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "76b223a887718e09f1213121d58b9ec22d743b20e0ae5003b9715d6f97518526",
+  "modelo_sha256": "718ca24e74de7109a683cd0b1aee68663b4f72d54f7572317aa4b4c185be5718",
+  "imagem_sha256": "fd119b1264d0f41e1df3d238ebea00c49e8e379bd3dc463b9a2f23f3a3acd391"
+}

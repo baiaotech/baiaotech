@@ -1,0 +1,36 @@
+{
+  "id": "ifpe-open-source",
+  "nome": "IFPE Open Source",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/ifpe-open-source.md",
+  "estado": "PE",
+  "cidade": "",
+  "conceito": "Aprender fazendo com estudantes, cultura maker e código aberto em Pernambuco.",
+  "linhas_nome": [
+    "IFPE Open Source"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · PE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "aefa54472bac4a2ee927ac4f8aedc84f35a93bf9cb2462155e6351340c684d42",
+  "modelo_sha256": "84ce362ca0e0f5247f7266cef3e3d360ccbb3da7a9a9df8da3631c0bdf03dfbe",
+  "imagem_sha256": "7595cae0994eec0d968cf9829d5e779ff40094cd2ae5e943e932d3c3aeb4489e"
+}

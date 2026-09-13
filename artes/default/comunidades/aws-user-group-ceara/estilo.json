@@ -1,0 +1,36 @@
+{
+  "id": "aws-user-group-ceara",
+  "nome": "AWS User Group Ceará",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/aws-user-group-ceara.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Discussão de arquitetura em nuvem entre profissionais do Ceará.",
+  "linhas_nome": [
+    "AWS User Group Ceará"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/aws-user-group-ceara.webp",
+  "logo_origem_sha256": "a23741a15044acf4836a5b332dec2d5b2495dbc077f06d651847b01499e15531",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_sha256": "d162359a5d5899e1cb0c87c18d6a1cffd182bca22a8549fba8f889c1b6ce240b",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "72f656d3a2af28df9d082a0ddd8cc225c8f72bcedfd3b9d1ea145bcf18a2d30c",
+  "imagem_sha256": "a9635910ae8f7b6b59d77dec3f332c779e621986d52c075611c08e68969bd130"
+}

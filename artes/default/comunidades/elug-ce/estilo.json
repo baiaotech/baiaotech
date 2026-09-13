@@ -1,0 +1,36 @@
+{
+  "id": "elug-ce",
+  "nome": "Elug CE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/elug-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Programação funcional, processos e troca de mensagens como construção colaborativa no Ceará.",
+  "linhas_nome": [
+    "Elug CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/elug-ce.png",
+  "logo_origem_sha256": "33b8cc77446f9c12acce49d76e871116dcc185c745930b5f21ad350d4bc26e03",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "eaf5e902696d0acb90d6caf537d30ae029a9292f15f33294bc458fdf64f6ac50",
+  "modelo_sha256": "f381f0f798029056196c41f2eba9d66389904e05144c738d63b83ca33e1e5e1c",
+  "imagem_sha256": "05cec388c17bc0ca937e2d48bc9f9181a5880e95a35cecedc0bd9876f833d0ed"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "net-pb",
+  "nome": ".NET PB",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/net-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Encontros virtuais e colaboração entre desenvolvedores .NET na Paraíba.",
+  "linhas_nome": [
+    ".NET PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/net-pb.png",
+  "logo_origem_sha256": "0bd40cfd6323751665f868c500af1db617b72260641f5ca643aa8af4914109f1",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "5bf884859c10dae43150ca73e790713931e666ebdf0042b386db208124ebe531",
+  "modelo_sha256": "14dc3cdb7f7729b6eb82f3cd30e6fc865ab9ed402e3b0db1e4bd26fe713b2d5b",
+  "imagem_sha256": "eda306a2d4045d0106ca6268b230970c373cfbed709c2a1944b1d4993f0b52de"
+}

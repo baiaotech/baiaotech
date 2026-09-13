@@ -1,0 +1,36 @@
+{
+  "id": "guru-ce",
+  "nome": "GURU-CE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/guru-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Construção colaborativa de aplicações Ruby no Ceará.",
+  "linhas_nome": [
+    "GURU-CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/guru-ce.png",
+  "logo_origem_sha256": "7457bfd0177238fadc9d92b06afcd2524ce7cbf525ad71ab38112e243c8145f5",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "9f8622ccf85664dc1b97830f2716699cbe140eec960b84902dd241d126f1f4a8",
+  "modelo_sha256": "b28db0d8e0f7d33dda778f42d97a7750b9a4dde468a07dc25d60f1e9e5eae09c",
+  "imagem_sha256": "658b51b5f9243bffdaa63bf57c1e3277c744f86b96cc0ad305a1a8ddd769572a"
+}

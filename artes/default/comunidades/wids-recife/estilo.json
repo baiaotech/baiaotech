@@ -1,0 +1,38 @@
+{
+  "id": "wids-recife",
+  "nome": "WiDS Recife",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/wids-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Visibilidade de mulheres em ciência de dados e aprendizado de máquina, por meio de apresentações e troca de conhecimento.",
+  "linhas_nome": [
+    "WiDS Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/wids-recife.png",
+  "logo_origem_sha256": "54649f28bc284433e1c148327453db541efc995408e734d67500cbc95d31b30c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -20,
+  "fundo_canvas": "#fcf9f6",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "987f09d2ebe539ad8d7754a5732cea9671ab8b065e7e68b0fecf8e468a27524c",
+  "modelo_sha256": "a96e78100318b423fe2aee6bcbde33f968f468c1139f4a1a513e0ffeb794d65b",
+  "imagem_sha256": "850b0fd74a7cb991dad6a22bacff8b47ffb86fa3785186ff0f386f208d02086f"
+}

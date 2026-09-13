@@ -1,0 +1,36 @@
+{
+  "id": "meetia-pb",
+  "nome": "MEETIA-PB",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/meetia-pb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Aprendizado colaborativo em inteligência artificial e ciência de dados na Paraíba.",
+  "linhas_nome": [
+    "MEETIA-PB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/meetia-pb.png",
+  "logo_origem_sha256": "3b520ca60a4cc661a2ad06cc956ce073012a114e05212f03def0eeb22313298a",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "862365e08c74a90f19030882d4b6ad88b2cdff2766672661eb440300206881c2",
+  "modelo_sha256": "11e23cdfd88250fda5e2d60f359562b84652a0f1c658542bd4ad480ee530e309",
+  "imagem_sha256": "1b2ce4f5d7d47c05752c90b146ad44dc153a6ff96394305eec74e5f7c8b61fd8"
+}

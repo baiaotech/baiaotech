@@ -1,0 +1,36 @@
+{
+  "id": "pug-al-grupy-al",
+  "nome": "PUG-AL (GruPy-AL)",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pug-al-grupy-al.md",
+  "estado": "AL",
+  "cidade": "",
+  "conceito": "Palestra e troca de conhecimento Python em Alagoas: voluntária demonstra componentes de um projeto aberto e participante registra ideias, sobre paisagem lagunar contínua.",
+  "linhas_nome": [
+    "PUG-AL (GruPy-AL)"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · AL",
+  "logo_origem": "src/assets/covers/communities/pug-al-grupy-al.jpg",
+  "logo_origem_sha256": "8463f5df4b89f5a3429221bf14e72a4118daba1143eaa5a87d40d8a51a0574f2",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "38348cf2eff52ffcbfc520f0e153f634274e6580165b115a530f94007653f57e",
+  "modelo_sha256": "8fb6390bec87cd94a72aad393e600db27efb54f89f5405dcefc2c7a757534b1a",
+  "imagem_sha256": "9af289fedf36d55290f4d206c9230e782369b1562975e365c6d034a9d6cf285a"
+}

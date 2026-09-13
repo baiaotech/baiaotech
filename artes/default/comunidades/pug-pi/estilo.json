@@ -1,0 +1,36 @@
+{
+  "id": "pug-pi",
+  "nome": "PUG-PI",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pug-pi.md",
+  "estado": "PI",
+  "cidade": "",
+  "conceito": "Suporte e crescimento do ecossistema Python piauiense: desenvolvedor experiente ajuda iniciante a depurar um exercício.",
+  "linhas_nome": [
+    "PUG-PI"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PI",
+  "logo_origem": "src/assets/covers/communities/pug-pi.jpeg",
+  "logo_origem_sha256": "2f818ce514b9ac502c74094ce092af1353e83a79a5afb9b3447403603fd3cced",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "faf8163177fa26a655e4b82bc940fba89baf16cf481f2b4dfb0e8375cc88042b",
+  "modelo_sha256": "08ac8508e680cab39df6a4010d8218847ed18884889abc4f1700ff0f877a7907",
+  "imagem_sha256": "cfd331014e59102e5d32dc15c61a7e6c2a42c9e14d191f7c86670e1acbcee28e"
+}

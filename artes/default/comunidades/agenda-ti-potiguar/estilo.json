@@ -1,0 +1,37 @@
+{
+  "id": "agenda-ti-potiguar",
+  "nome": "Agenda TI Potiguar",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/agenda-ti-potiguar.md",
+  "estado": "RN",
+  "cidade": "",
+  "conceito": "Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.",
+  "linhas_nome": [
+    "Agenda TI Potiguar"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · RN",
+  "logo_origem": "src/assets/covers/communities/agenda-ti-potiguar.png",
+  "logo_origem_sha256": "7da05c01d6cc178327a8d470c7c92cb6521e9b644e559990a157d8ec276424eb",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "onda_rodape": true,
+  "ilustracao_sha256": "5ced6481968c16eb655193fc7d725b36cada90183c83a2707cb7af7c891f5d46",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "50955fab258f25c46b432f22a02c51f59f8e9fdc2a6ae68416882b09c40cba33",
+  "imagem_sha256": "8abc9d7531fd4b652ecdebe89ea12d0bc22a4221e7bf33f0c6ff88cdde9506cf"
+}

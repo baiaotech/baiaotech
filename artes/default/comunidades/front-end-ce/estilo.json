@@ -1,0 +1,36 @@
+{
+  "id": "front-end-ce",
+  "nome": "Front-End CE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/front-end-ce.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Oficina de interfaces responsivas e construção visual no litoral cearense.",
+  "linhas_nome": [
+    "Front-End CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/front-end-ce.png",
+  "logo_origem_sha256": "6e09a546a3a8eff28a15486cb366b61286fa3c63045d9673270aa265235942d8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "4bdc1cd47f5b2f8f8fcd6d0ba225e3295f9d86773c59df9dc4625c3367990d2c",
+  "modelo_sha256": "655616cd1694494a59d040810eea770d440fa5d9941fd8a7975bc2d25c00452a",
+  "imagem_sha256": "91eb44698e5e42b1cda5d51dd789f6f11d76358e509f444f49d2f9f3db23e9ee"
+}

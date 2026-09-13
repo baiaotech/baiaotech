@@ -1,0 +1,38 @@
+{
+  "id": "hack-in-cariri",
+  "nome": "Hack In Cariri",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/hack-in-cariri.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Aprendizado de segurança, CTF e desafios colaborativos no Cariri.",
+  "linhas_nome": [
+    "Hack In Cariri"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/hack-in-cariri.png",
+  "logo_origem_sha256": "8fa72cd3598940157b8cbc832c0896cfb1e5fdc60b1c71d46d3babd704f3b8b8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -25,
+  "fundo_canvas": "#fefef9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "6ebfd7f66f97cadc48052baef5d8b33d361a264faa7c6de1d81704e79bbe72dc",
+  "modelo_sha256": "5c401d4db54735694c0c85654b4a88a00c47538a520cd55c0c3745360576a79d",
+  "imagem_sha256": "1e554ac50787d2106a4c6e58fb463cef26b674d0c14bc0af88cfaf941d867add"
+}

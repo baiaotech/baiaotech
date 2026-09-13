@@ -1,0 +1,36 @@
+{
+  "id": "django-girls-salvador",
+  "nome": "Django Girls Salvador",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/django-girls-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Primeiros passos na programação web com mentoria inclusiva entre mulheres em Salvador.",
+  "linhas_nome": [
+    "Django Girls Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/django-girls-salvador.png",
+  "logo_origem_sha256": "c1f84957b3efe1b6183103dffe71db69f2c335f4189bc494578de9bf60054eab",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "697b69a54bed4aff16a00c8153ac770ec7efa79c5f086e881356546ad85692f2",
+  "modelo_sha256": "328e8b81c657817461960f5d22805472241a30cf455cad7650bfb29f2ad70b38",
+  "imagem_sha256": "f85aab849eff70af2b33fef6cb6749370c424948ff1623234590eddc3c4b9535"
+}

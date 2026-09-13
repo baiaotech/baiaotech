@@ -1,0 +1,36 @@
+{
+  "id": "grudepb-crudpb",
+  "nome": "GrudePB / CRUDPB",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/grudepb-crudpb.md",
+  "estado": "PB",
+  "cidade": "",
+  "conceito": "Integração de comunidades paraibanas em um ecossistema colaborativo.",
+  "linhas_nome": [
+    "GrudePB / CRUDPB"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · PB",
+  "logo_origem": "src/assets/covers/communities/grudepb-crudpb.png",
+  "logo_origem_sha256": "9ffc18bb26ab6cb0956ae3b5e247bcf1cbc2b96b3f67a2069be938c6f8509f9f",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "fc0961e1fd8301b508e93f022cfaef1624791333050e0f83d03aa02bf05e3ba6",
+  "modelo_sha256": "e7ba18163885e2c850147f57e9aeee1210d3400ed7e7a16023accd4da6f5f7c0",
+  "imagem_sha256": "5c749a0b26b12de600f1eaa44ff8630e9f585566577435f6718906076d7e0edc"
+}

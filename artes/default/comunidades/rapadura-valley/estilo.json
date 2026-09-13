@@ -1,0 +1,38 @@
+{
+  "id": "rapadura-valley",
+  "nome": "Rapadura Valley",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/rapadura-valley.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Conexão entre empreendedores e inovação cearense, com protótipo e identidade cultural da rapadura.",
+  "linhas_nome": [
+    "Rapadura Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/rapadura-valley.png",
+  "logo_origem_sha256": "500518849447de3f0b06472b454ebe85f1e6546711a8eb963c21f98931c46aa2",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -40,
+  "fundo_canvas": "#fcfbf7",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "99a01d43471369ab810a31a2b136d3e386ac7e88b40885f048da05dfd199e40d",
+  "modelo_sha256": "55c6960e0b66ff8b4d71961d303cdb411764e0294afc1b82928554534a425221",
+  "imagem_sha256": "2f8021182cf7d320a904159df3f3765c572295f690b50b9d76ff11ef740e91d7"
+}

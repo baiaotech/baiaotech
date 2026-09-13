@@ -1,0 +1,38 @@
+{
+  "id": "php-com-rapadura",
+  "nome": "PHP com Rapadura",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/php-com-rapadura.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Encontro de programadores PHP unido por troca técnica, café e rapadura no Ceará.",
+  "linhas_nome": [
+    "PHP com Rapadura"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/php-com-rapadura.png",
+  "logo_origem_sha256": "e628a98351250e09c09379cbad2f4092c17f797fdcccf253b7919e2af41c215b",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -30,
+  "fundo_canvas": "#fefdfa",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "29815056ea87a390a2a5110fc971d92300dd1e8f435f43a15fbfd35ba2e6b581",
+  "modelo_sha256": "b65fe7dc17d421a214f1eb1de19d7e4cb6300cd04fa61a3fe0fd2d9a9044f79f",
+  "imagem_sha256": "cacad9180fc79ba72bb31952ccd7446802285f3fa1ea7ed9f96b44c9d21eae86"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gdg-joao-pessoa",
+  "nome": "GDG João Pessoa",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-joao-pessoa.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Rede de aprendizado entre desenvolvedores junto à paisagem costeira paraibana.",
+  "linhas_nome": [
+    "GDG João Pessoa"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/gdg-joao-pessoa.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "c47c9d72efc7ae189e75e521dfaa7bbd1a171e98f419ec38905fa38cf69c6d3b",
+  "modelo_sha256": "589200fd9b07be91607d0f94dfcb9844f1f9673f8c037c713fc1f0b1b470c73f",
+  "imagem_sha256": "0a8d21711999c99f86f0bc6293fa21ba559ebfb8cac570d5092b4b4716f4387e"
+}

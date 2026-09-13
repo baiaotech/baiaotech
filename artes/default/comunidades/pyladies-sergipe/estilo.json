@@ -1,0 +1,36 @@
+{
+  "id": "pyladies-sergipe",
+  "nome": "PyLadies Sergipe",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pyladies-sergipe.md",
+  "estado": "SE",
+  "cidade": "",
+  "conceito": "Capacitação e apoio mútuo entre mulheres Python em Sergipe: facilitadoras compartilham exercícios e recursos de aprendizagem.",
+  "linhas_nome": [
+    "PyLadies Sergipe"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · SE",
+  "logo_origem": "src/assets/covers/communities/pyladies-sergipe.png",
+  "logo_origem_sha256": "7d9e85d0ee3e778e402390f4da0629d0713b6a49428f138a622d39a874843447",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "ec6e910893072abd21ee587ca31e5ff56b4a2997383a6c63419c8de69c18b3dc",
+  "modelo_sha256": "e6d238afced91404d94b3a2b89cb7271df990983541848d6ce9cc23f35b3b24d",
+  "imagem_sha256": "1bd98889ceef88bbc0a30e41ec6ecc2b19394cc0cd810cb95361c3892936bd80"
+}

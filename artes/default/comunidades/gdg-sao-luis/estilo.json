@@ -1,0 +1,36 @@
+{
+  "id": "gdg-sao-luis",
+  "nome": "GDG São Luís",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-sao-luis.md",
+  "estado": "MA",
+  "cidade": "São Luís",
+  "conceito": "Intercâmbio de conhecimento em tecnologia e mosaico urbano ludovicense.",
+  "linhas_nome": [
+    "GDG São Luís"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · São Luís, MA",
+  "logo_origem": "src/assets/covers/communities/gdg-sao-luis.png",
+  "logo_origem_sha256": "5b35248a51a21a1db2448c549bcdda56b1813e2f8bec5e4feb7ae5def2ac9038",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "d8f1c05eacbd57965185e1eecf000b1c687162916c891e5bb8d2b5bb65f8bd82",
+  "modelo_sha256": "adccece249106d5fae32e270f00d2a729721a8da6acb34549b990904a062750e",
+  "imagem_sha256": "076fe5ee10c29b06e4831ddf42dbeb32002cda322469c497c477e01bec12797a"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gdg-salvador",
+  "nome": "GDG Salvador",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Prototipação colaborativa e encontro de tecnologias em Salvador.",
+  "linhas_nome": [
+    "GDG Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "4c11c4d4df843ad8edc61f542ca12cd4a6974ad462e10f28945cf63f97c1364e",
+  "modelo_sha256": "5840806d3c0f0e3779130e5770de6e2c712af057a4b18af99f415c7af1d53ea5",
+  "imagem_sha256": "827932e18ec53574b791b1ded044597bb5330af0abb8a4ec1687ab78b141120e"
+}

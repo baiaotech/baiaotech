@@ -1,0 +1,36 @@
+{
+  "id": "all-saints-bay",
+  "nome": "All Saints Bay",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/all-saints-bay.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.",
+  "linhas_nome": [
+    "All Saints Bay"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/all-saints-bay.jpg",
+  "logo_origem_sha256": "fa5489b3fbd58e21ea462cd7e07b0c27117e66f6822b31d07f6df9279317d8b4",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_sha256": "b54e549e9e7b16629830c6ba054b7dc2d58659db219bd1f82b6e7e00827676c3",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "aeee9f88e55b262b9d4afbb46832af2369fd6bdc66d378cb0a68686dffb13279",
+  "imagem_sha256": "a86e532f526e36e21bca133420fd7a4574209249f61504b2f3e7b043bcf67437"
+}

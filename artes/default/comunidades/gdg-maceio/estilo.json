@@ -1,0 +1,36 @@
+{
+  "id": "gdg-maceio",
+  "nome": "GDG Maceió",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-maceio.md",
+  "estado": "AL",
+  "cidade": "Maceió",
+  "conceito": "Demonstração de aplicativos e aprendizado coletivo em Alagoas.",
+  "linhas_nome": [
+    "GDG Maceió"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Maceió, AL",
+  "logo_origem": "src/assets/covers/communities/gdg-maceio.jpg",
+  "logo_origem_sha256": "698aa87b2ee21b1f7f60877b3156861fce3805dcef6bfeeea9dafc3f3db84047",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "d47bd5e2a238cb37d952b3fff2632088b380d7981498e33be87050d300bc0233",
+  "modelo_sha256": "7a47b66e2f2863604ea8838fbc89cc3bb47149eab999919941ab37d965b986fc",
+  "imagem_sha256": "a63bf56b04f77581f3fa2e438378464055570df6416f4d5c510d4953f3d034cb"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "caju-valley",
+  "nome": "Caju Valley",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/caju-valley.md",
+  "estado": "SE",
+  "cidade": "Aracaju",
+  "conceito": "Empreendedorismo e prototipagem colaborativa em Aracaju com referência ao caju.",
+  "linhas_nome": [
+    "Caju Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Aracaju, SE",
+  "logo_origem": "src/assets/covers/communities/caju-valley.png",
+  "logo_origem_sha256": "89a15c888397734d6748fc6a89a174e9123c3bbea3575b8ff73d64191cd0ba1e",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_sha256": "625fc03cbff5003e89df6a7dc62b666e9e39bf9d36c3db5579f606d7fc52e220",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "bdc93da6268da8750c73a816d033bb8805dc6c83bd10ddaf099b4c4e62944e4b",
+  "imagem_sha256": "78d8477b4ba9edf178decf82badd2b35206ab5bf30c9d8830862e6339cf9d5c9"
+}

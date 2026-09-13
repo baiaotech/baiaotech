@@ -1,0 +1,36 @@
+{
+  "id": "pyladies-natal",
+  "nome": "PyLadies Natal",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pyladies-natal.md",
+  "estado": "RN",
+  "cidade": "Natal",
+  "conceito": "Estudo e mentoria entre mulheres Python em Natal: desenvolvedora orienta exercício de programação em ambiente acolhedor.",
+  "linhas_nome": [
+    "PyLadies Natal"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Natal, RN",
+  "logo_origem": "src/assets/covers/communities/pyladies-natal.png",
+  "logo_origem_sha256": "88ff32339fefa040f0df0c0958b6ea469a8c2dbf1f43d6b6a79f2c626f4ebaf6",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "bccd0f47224c7d619e9311656519d22b0f822624f0a7b4f8b83e07c206777fa0",
+  "modelo_sha256": "6fa887d8f55e1bfa109af3939c08eee90a60eeb607206d5245cbe2f0f3d32302",
+  "imagem_sha256": "328c7f022fd5c853df86e2bbee1bc633365603a5501dd044f9531b2e093dd3e9"
+}

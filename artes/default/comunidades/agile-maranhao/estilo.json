@@ -1,0 +1,37 @@
+{
+  "id": "agile-maranhao",
+  "nome": "Agile Maranhão",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/agile-maranhao.md",
+  "estado": "MA",
+  "cidade": "",
+  "conceito": "Facilitação de práticas ágeis com quadro visual e colaboração no Maranhão.",
+  "linhas_nome": [
+    "Agile Maranhão"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · MA",
+  "logo_origem": "src/assets/covers/communities/agile-maranhao.png",
+  "logo_origem_sha256": "184f1c8b23aba4d8c8c22e603100b87e5a9067733fa73dd3633d7a3c41d3437c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "onda_rodape": true,
+  "ilustracao_sha256": "3637727833f52b59f179a73e9d2e02981e2e70f82a8633ce1533165550eb1d56",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "7f99c7feca194a52ccb1445284dd027d87113b60b4785eb3ea35a015e4f83d21",
+  "imagem_sha256": "a8a870d4def8bbf4436ecb34a4a01c062f94d8aa2710c20f0913a09f45fc23ff"
+}

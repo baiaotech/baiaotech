@@ -1,0 +1,36 @@
+{
+  "id": "gdg-parnaiba",
+  "nome": "GDG Parnaíba",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-parnaiba.md",
+  "estado": "PI",
+  "cidade": "Parnaíba",
+  "conceito": "Conexões regionais de tecnologia inspiradas nos canais do delta.",
+  "linhas_nome": [
+    "GDG Parnaíba"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Parnaíba, PI",
+  "logo_origem": "src/assets/covers/communities/gdg-parnaiba.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "3b4c8bc849869b3650ca4c53fc7bae0a0c72c120567689ff413644f2a463b048",
+  "modelo_sha256": "9a1b890c1c8e1c1f32a543246e72faceaae891eb1fa2fb836d5cc3d88df4fb55",
+  "imagem_sha256": "41646da877bc389135b5af46b7ec3b0577a142cdb4cd7e1e7dd778bee65927fe"
+}

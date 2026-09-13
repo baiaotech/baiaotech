@@ -1,0 +1,36 @@
+{
+  "id": "javax-ce",
+  "nome": "Javax CE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/javax-ce.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Estudo do ecossistema JVM no Ceará, reunindo diferentes tecnologias em uma plataforma compartilhada.",
+  "linhas_nome": [
+    "Javax CE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/javax-ce.png",
+  "logo_origem_sha256": "bb4d10c2f52b6296152d6134f505c50d2d8568bd9762efca27f49c87efe1bf24",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "6eec80d71442766e155bf5e85d5e2a06ed4da70aea550fa510f6dbe16b5fd3e2",
+  "modelo_sha256": "9b367a1b43d75a253c0222d73bed4173055b9e6c39e14d2a143d3345df94f247",
+  "imagem_sha256": "45631b63ee3432b7d09d9f9e9d4b15d62d64fa4ece61e64f4a5d252f00a91b7b"
+}

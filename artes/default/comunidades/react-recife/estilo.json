@@ -1,0 +1,38 @@
+{
+  "id": "react-recife",
+  "nome": "React Recife",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/react-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Aprendizado conjunto em React para interfaces web e móveis, articulando as duas plataformas.",
+  "linhas_nome": [
+    "React Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/react-recife.png",
+  "logo_origem_sha256": "df58d72ee65908b91af20ef98a13c24edf0ea4d7ee57c9712f229f462043e377",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": 60,
+  "fundo_canvas": "#fefefc",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "a921584ec005b48efbab9d0f16127e6450705cb5aae7772482ccf8564fbd4bdc",
+  "modelo_sha256": "74450bf375d1e07f98527b216223ad83f4e4cdcd72a7b3c04fca75a4f13b3e58",
+  "imagem_sha256": "bc0e48996a5e9dcc2753e7216f8e0b3dee91534a2577d4621a48106464b7cb0c"
+}

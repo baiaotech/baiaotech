@@ -1,0 +1,36 @@
+{
+  "id": "javabahia",
+  "nome": "JavaBahia",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/javabahia.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Troca de conhecimento Java e contribuição open-source entre desenvolvedores da Bahia.",
+  "linhas_nome": [
+    "JavaBahia"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": "src/assets/covers/communities/javabahia.jpg",
+  "logo_origem_sha256": "b5f8b6f87f9822aaab489762befa0b5b9bacc5a68498ad3a1baf1ac70bbad5c1",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "9dcd18d8b9992a502527cc98c44f1a77064a3c929cb0ba1e0dfc9dfd796edfcc",
+  "modelo_sha256": "c13afb89530ad585a29a14d9faec2d492682aef285e47a2d469289f16569872d",
+  "imagem_sha256": "f2b1d31ede00459df83841f3b073a17c2b952a4bbfda85b05651752c9f28b58d"
+}

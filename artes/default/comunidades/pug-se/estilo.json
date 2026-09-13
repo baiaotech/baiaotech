@@ -1,0 +1,36 @@
+{
+  "id": "pug-se",
+  "nome": "PUG-SE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pug-se.md",
+  "estado": "SE",
+  "cidade": "",
+  "conceito": "Contribuição open-source Python em Sergipe: dupla organiza documentação e melhorias de um projeto aberto.",
+  "linhas_nome": [
+    "PUG-SE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · SE",
+  "logo_origem": "src/assets/covers/communities/pug-se.png",
+  "logo_origem_sha256": "d805e1a757057b3887a4810996140e86cadad866cc087ccc3912e7d0deb55abe",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "429e7f60ab6e82ebb40e2e209bac725727d606baff1db2aa52aa64f099afb129",
+  "modelo_sha256": "67204dda328242e4f809cbc550cd27e67b78728916b575225698606a05825046",
+  "imagem_sha256": "033270a3e4ee130933ecb53645d876a71d5e365b2106512184eeec85cc96f8dd"
+}

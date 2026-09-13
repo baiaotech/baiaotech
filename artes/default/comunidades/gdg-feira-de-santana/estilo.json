@@ -1,0 +1,38 @@
+{
+  "id": "gdg-feira-de-santana",
+  "nome": "GDG Feira de Santana",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-feira-de-santana.md",
+  "estado": "BA",
+  "cidade": "Feira de Santana",
+  "conceito": "Oficina multitecnologia e troca de saberes no interior baiano.",
+  "linhas_nome": [
+    "GDG Feira de Santana"
+  ],
+  "nome_tamanho": 45,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Feira de Santana, BA",
+  "logo_origem": "src/assets/covers/communities/gdg-feira-de-santana.png",
+  "logo_origem_sha256": "6e597b3780200a6140975925ea14ce57ddcb5cf06270ec4cc8cbf42ed80f1fef",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": 65,
+  "fundo_canvas": "#fdfcf8",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "b0d9fc1467ceb388f43ec3f98266bf6687fdbec6a0d1e9284587c45aeca41f34",
+  "modelo_sha256": "dd682de4aeb17716e69c6542c974b9394be5424b11db53dc6bf4ec28995d6129",
+  "imagem_sha256": "33c2edb409c304582e662ffda2566266a7198d94a628ab2893d918d023a62e90"
+}

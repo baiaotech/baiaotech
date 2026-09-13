@@ -1,0 +1,36 @@
+{
+  "id": "gdg-aracaju",
+  "nome": "GDG Aracaju",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/gdg-aracaju.md",
+  "estado": "SE",
+  "cidade": "Aracaju",
+  "conceito": "Encontro e conversa entre desenvolvedores, balões de ideias e paisagem fluvial inspirada em Aracaju.",
+  "linhas_nome": [
+    "GDG Aracaju"
+  ],
+  "nome_tamanho": 64,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Aracaju, SE",
+  "logo_origem": "src/assets/covers/communities/gdg-aracaju.png",
+  "logo_origem_sha256": "59439bc767d1ae48dc40e3048069d9269e1677d00e567a658b846a14e0c34351",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "fdb3b5059c9737d541aaf09a21421844c0a6863a5ff59236d08dbcd6ac92416d",
+  "modelo_sha256": "8711f6f5c1e7da617b28e6341235481076ca3d1b4716a831ffbd4bb65a41bb9c",
+  "imagem_sha256": "58ae9b74b5beacea19f3ad3c257ac01bec5cb25cecf30b7d8f7b687410a08817"
+}

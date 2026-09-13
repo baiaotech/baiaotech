@@ -1,0 +1,36 @@
+{
+  "id": "cajuina-valley",
+  "nome": "Cajuína Valley",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/cajuina-valley.md",
+  "estado": "PI",
+  "cidade": "Teresina",
+  "conceito": "Networking de inovação em Teresina, cajuína e conexões empreendedoras.",
+  "linhas_nome": [
+    "Cajuína Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 143,
+  "subtitulo": "Comunidade · Teresina, PI",
+  "logo_origem": "src/assets/covers/communities/cajuina-valley.png",
+  "logo_origem_sha256": "a49c0759f2e0eca63a0f934175f852a29e8dbc1d6982412284834118f3f6d169",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_sha256": "aa968a712e14e22f53e9da79bd010a4fd7d3607303f05518382120da9ba5d5f9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "modelo_sha256": "c8b72522e4bb8ae8229fe72e15d47ff2f28fe192bd08325932ae42be419d0b7d",
+  "imagem_sha256": "e390bf2bafceaae21aebebb032e73a82d0991058786f72b1c64eb2ad70900e97"
+}

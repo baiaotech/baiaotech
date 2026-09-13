@@ -1,0 +1,38 @@
+{
+  "id": "projeto-software-livre-bahia",
+  "nome": "Projeto Software Livre Bahia",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/projeto-software-livre-bahia.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Colaboração aberta e circulação de conhecimento no movimento de software livre baiano.",
+  "linhas_nome": [
+    "Projeto Software Livre Bahia"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -20,
+  "fundo_canvas": "#fdfcf7",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "6cb533404c4ff1dd8544858e696e66ea948168273ae97e4b610f5bb518099488",
+  "modelo_sha256": "3f362bc61775d08c9ea9c92e6f118dde0659a5186089a0b0e9e77f66a92c8e1c",
+  "imagem_sha256": "c3e7e368daa05f954d53782002d05430c9d10291c9f53f94db40a4d7f4431f58"
+}

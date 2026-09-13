@@ -1,0 +1,38 @@
+{
+  "id": "sururu-valley",
+  "nome": "Sururu Valley",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/sururu-valley.md",
+  "estado": "AL",
+  "cidade": "",
+  "conceito": "Conexão entre ciência, tecnologia e empreendedorismo em Alagoas.",
+  "linhas_nome": [
+    "Sururu Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 205,
+  "subtitulo": "Comunidade · AL",
+  "logo_origem": "src/assets/covers/communities/sururu-valley.webp",
+  "logo_origem_sha256": "2e7fb1c79f7c9186f94a55f5c5466bbcdd4bae3fa6de02091a556a90051d15a8",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": -30,
+  "fundo_canvas": "#fdfcfa",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "1cb804260c6d80da2b6f859d390c8b9700ead98e54c97cee7ea4c61976408744",
+  "modelo_sha256": "7e405f28afadc32c679bba844c59c8a3b187ceb23144556d8d30f227737ea24e",
+  "imagem_sha256": "deea4d0f682b2769a022faf3c2272a9846e1cd58ee4a62191efcab12646174a6"
+}

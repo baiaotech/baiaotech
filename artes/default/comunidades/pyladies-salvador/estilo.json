@@ -1,0 +1,38 @@
+{
+  "id": "pyladies-salvador",
+  "nome": "PyLadies Salvador",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pyladies-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Duas mulheres em mentoria e programação em dupla, com paisagem inspirada na baía de Salvador.",
+  "linhas_nome": [
+    "PyLadies Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/pyladies-salvador.png",
+  "logo_origem_sha256": "ae9c3825d36f7e76c63754f86b69111dfc6a402d4572df88a0fa4c8453f3c18c",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "ilustracao_y": 65,
+  "fundo_canvas": "#fdfef9",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "407d4fbc37e5591100fa8107c75de02a5f08c0f384028777ff80a5e692bf6d94",
+  "modelo_sha256": "901808ee91f67a0716b152376d7ed4523bc474735ea3aa7a80cee1d2213863ee",
+  "imagem_sha256": "b393bc45952102b9d7c529139cece9ebdb2fb793cc7733260f477ba262c5bfa1"
+}

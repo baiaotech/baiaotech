@@ -1,0 +1,36 @@
+{
+  "id": "oxenti-pe",
+  "nome": "OxenTI-PE",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/oxenti-pe.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Integração das comunidades de TI da Grande Recife em um espaço de colaboração.",
+  "linhas_nome": [
+    "OxenTI-PE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/oxenti-pe.png",
+  "logo_origem_sha256": "a98f33d653cfdb0138db7edd282689672270e5aabf07bfc2b3e1a5573f1ec30a",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "a6467132493aff26f0a078f71e7d0f8e30d5a26104fbb65092f8f1227614f402",
+  "modelo_sha256": "5c10da994fc821e9c3e5118fdb3691648ecfcdc9e8b4cbe89d6709272e029b86",
+  "imagem_sha256": "1a5d70447babbaeb802ef49aa097143db72445bf70fc10abc4168cad233d24eb"
+}

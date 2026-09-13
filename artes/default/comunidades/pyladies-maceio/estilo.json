@@ -1,0 +1,36 @@
+{
+  "id": "pyladies-maceio",
+  "nome": "PyLadies Maceió",
+  "status": "aprovado",
+  "aprovacao": {
+    "status": "aprovado",
+    "responsavel": "Usuário solicitante, nesta conversa",
+    "origem": "Mensagem explícita do usuário após a entrega do conjunto completo",
+    "conversa": "01a09b30-a5a6-7203-b1fd-6add7c892901",
+    "declaracao": "Todas aprovadas!",
+    "versao_aprovada": "c1349b5165bf2a2db1cdfc97e0bade82eba367b6",
+    "escopo": "93 modelos específicos e os dois genéricos; limpeza dos avisos e materiais auxiliares autorizada na mesma mensagem.",
+    "registro": "../../APROVACAO.json"
+  },
+  "comunidade": "src/content/communities/pyladies-maceio.md",
+  "estado": "AL",
+  "cidade": "Maceió",
+  "conceito": "Mulheres, pertencimento e conexões; deriva da referência aprovada de PyLadies Maceió.",
+  "linhas_nome": [
+    "PyLadies Maceió"
+  ],
+  "nome_tamanho": 56,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Maceió, AL",
+  "logo_origem": "src/assets/covers/communities/pyladies-maceio.png",
+  "logo_origem_sha256": "e0bd4d53b852ccd220eddd3545f6f702a215f7c656d29ec6a1dbd20446762138",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "observacao": "Base visual aprovada. Pessoas e paisagens são ilustrativas; dados de cada evento devem ser confirmados antes do uso.",
+  "imagem": "modelo.png",
+  "campos_evento": "Preencher somente com informações verificadas do evento.",
+  "ilustracao_sha256": "989e7fbc358c6b76cbe4cadf4b6d87552b65ec42f122b8779b939f49f7d6cc5f",
+  "modelo_sha256": "532469791bd0426f082a8466d07eb2909fb2c2d9dff2290ab5c5e4ec29294b4c",
+  "imagem_sha256": "d0b3b62b41fcbbae9744d4ba37e8c85cd52936d83f07c743e318017a59570bcf"
+}
