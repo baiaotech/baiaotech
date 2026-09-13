@@ -21,17 +21,25 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "74b45f0ca443cd5403a1bbdf1a059f2c223bbaefa5ea69454dc091efd128c2e4",
+  "onda_rodape": true,
+  "ilustracao_sha256": "3637727833f52b59f179a73e9d2e02981e2e70f82a8633ce1533165550eb1d56",
   "origem_ilustracao": {
-    "arquivo_recuperado": "ilustracao.jpg",
-    "commit_recuperacao": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "prompt_original": "Não recuperado; não reconstruído como se fosse original.",
-    "arquivo_final": "exec-d1f9e1ab-caaf-4192-b6a0-087d58f8fd4d.png",
-    "ferramenta": "Image Gen integrado"
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
+    "arquivo_final": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
+    "insumo_local": "artes/default/comunidades/agile-maranhao/geracao-base-generica.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "PNG recuperado não decodificava e foi reexportado. Arco superior removido por Image Gen para liberar cabeçalho. Quadro ágil, três participantes e marcas preservados; mãos e dados legíveis."
-  }
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena exclusiva de práticas ágeis com quadro e três participantes, sem vinhetas nem móveis suspensos. Traço simplificado com textura discreta; paisagem maranhense contínua. Acabamento vetorial ondulado aplicado à margem baixa, sem ocultar pés ou mãos."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+  },
+  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
 }

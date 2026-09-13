@@ -21,16 +21,23 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "6d026000fd00ff811e8871087a0b53d7b44ea6bed70cdbe61d0756a1c0821953",
+  "ilustracao_sha256": "aa968a712e14e22f53e9da79bd010a4fd7d3607303f05518382120da9ba5d5f9",
   "origem_ilustracao": {
-    "tipo": "recuperada_do_remoto",
-    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "arquivo": "ilustracao.jpg",
-    "prompt_original": "Não recuperado; não inventado."
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-a6795eb0-da31-4304-8a28-a5ba1d0d2e09.png",
+    "arquivo_final": "exec-7c02aec6-c6fe-4515-8064-14423a69f518.png",
+    "insumo_local": "artes/default/comunidades/cajuina-valley/geracao-base-generica-ajustada.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Cena recuperada de conversa empreendedora com cajuína; três figuras, mãos, nome acentuado, logo sem recorte e dados/rodapé conferidos."
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena única de networking em torno de mesa apoiada com cajuína. Grupo compactado para liberar coluna; rostos e anatomia estilizados, paisagem de Teresina contínua e onda orgânica."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
   }
 }

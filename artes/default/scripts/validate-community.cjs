@@ -71,7 +71,9 @@ async function validateCommunity(id) {
       }
       return count;
     };
-    const headerPixels = await occupied(jpg, 0, 292);
+    const sceneGroup = svg.match(/<g\b[^>]*id="fixed-illustration"[^>]*>[\s\S]*?<\/g>/)?.[0];
+    const scene = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1350"><rect width="1080" height="1350" fill="#FCFAF7"/>${sceneGroup || ''}</svg>`);
+    const headerPixels = await occupied(scene, 0, 292);
     const footerPixels = await occupied(png, 1180, 48);
     check(headerPixels <= 100, `Ilustração invade faixa do cabeçalho (${headerPixels} pixels marcados)`);
     check(footerPixels <= 100, `Ilustração invade respiro do rodapé y1180–1228 (${footerPixels} pixels marcados)`);

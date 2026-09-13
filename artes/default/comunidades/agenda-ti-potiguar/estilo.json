@@ -21,16 +21,25 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "befdac8a29260fec249bb081c0bb56fe23d329dce7cd03d99472562223b191ac",
+  "onda_rodape": true,
+  "ilustracao_sha256": "5ced6481968c16eb655193fc7d725b36cada90183c83a2707cb7af7c891f5d46",
   "origem_ilustracao": {
     "ferramenta": "Image Gen integrado",
-    "arquivo_gerado": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png",
-    "gerado_nesta_retomada": true,
-    "arquivo_final": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png"
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-11770ee9-775e-41b4-a49e-4cf014933ff9.png",
+    "arquivo_final": "exec-954fe2bc-425d-4d3d-a475-8d553fa2ec3a.png",
+    "insumo_local": "artes/default/comunidades/agenda-ti-potiguar/geracao-base-generica-ajustada.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Calendário e sol reposicionados por Image Gen para liberar o cabeçalho; gesto de indicação preservado. Nome, logo, anatomia, título, dados e rodapé conferidos."
-  }
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena exclusiva de orientação de agenda, calendário apoiado e dois participantes. Mochila e grupo reposicionados à direita, liberando dados. Traço alinhado à base; paisagem de dunas contínua. Onda vetorial editável finaliza apenas margem inferior da paisagem."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+  },
+  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
 }

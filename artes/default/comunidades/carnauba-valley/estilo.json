@@ -21,16 +21,25 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "81b9306065457b76326ea3f0fa66b8bfad2b1c6c7944a78a6be211264635c676",
+  "onda_rodape": true,
+  "ilustracao_sha256": "ae8a7956494318409d7423b043f99b3dd054f5eb1b0910a56fd44cc26c856038",
   "origem_ilustracao": {
     "ferramenta": "Image Gen integrado",
-    "arquivo_gerado": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png",
-    "gerado_nesta_retomada": true,
-    "arquivo_final": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png"
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-6a793122-ac2b-4975-aca2-2fe4b7572817.png",
+    "arquivo_final": "exec-92cc7806-ab39-4115-ad5a-bc7c227cee10.png",
+    "insumo_local": "artes/default/comunidades/carnauba-valley/geracao-base-generica-ajustada.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Ilustração exclusiva de inovação regional com palmeira e delta; retratos e pequeno grupo de conversa conferidos. Nome acentuado, logo original, áreas textuais e rodapé legíveis."
-  }
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Eliminados retratos gigantes sobre pessoas pequenas. Agora um único grupo compacto em conversa, escala coerente, sob carnaúba; copa rebaixada para liberar cabeçalho. Delta contínuo nas laterais. Onda vetorial editável somente sobre margem da paisagem."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+  },
+  "acabamento_rodape": "Curva orgânica vetorial editável dentro de fixed-illustration, apenas sobre margem baixa/paisagem, preservando anatomia e assinatura."
 }

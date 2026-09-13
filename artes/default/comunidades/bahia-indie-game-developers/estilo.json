@@ -22,16 +22,23 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "283249335cbc5cf0a13432aff4a940aeeda20d01aa48368d3f8cf06bd16ce2f0",
+  "ilustracao_sha256": "4d4cccd50da05b80f9e79a2dfe276b981fc842b13e56fcc3dda1a34c612a7ab4",
   "origem_ilustracao": {
     "ferramenta": "Image Gen integrado",
-    "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
-    "gerado_nesta_retomada": true,
-    "arquivo_final": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png"
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
+    "arquivo_final": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
+    "insumo_local": "artes/default/comunidades/bahia-indie-game-developers/geracao-base-generica.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Ilustração exclusiva de arte digital, storyboard e mundo de jogo; ilhas reposicionadas por Image Gen para não invadir o cabeçalho. Nome completo em duas linhas, logo e rodapé conferidos."
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Substituídas ilhas suspensas por oficina única com artista digital e designer de storyboard, equipamentos apoiados. Traço estilizado, Bahia contínua nas laterais e onda orgânica. Amostra completa comparada antes da expansão da direção."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
   }
 }

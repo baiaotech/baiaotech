@@ -6,217 +6,319 @@
     {
       "id": "agenda-ti-potiguar",
       "conceito": "Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.",
-      "prompt": "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
+      "prompt": "Use case precise-object-edit. Retain the exact stylized illustration style, all characters, objects, natural anatomy, palette, paper texture and full-width continuous low landscape with organic ivory footer wave. Shift the whole calendar-and-two-person group significantly RIGHT, compacting it into the RIGHTMOST 38% of the canvas. Every part of backpack and hair must be right of60%canvas width until y900. Keep calendar physically supported and all bodies whole. Header top25% blank ivory. Left60% from top25% tobottom65% blank ivory, including foliage and backpack. Bottom15% blank ivory separated by organic wave. No logos lettering or watermarks.",
       "prompts_efetivos": [
-        "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks."
+        "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Agenda TI Potiguar event information network in Rio Grande do Norte. EXACTLY TWO people at right: brown-skinned woman with curly bun holding a tablet points to an unlettered calendar board mounted on an easel, young adult man seen three-quarter back with backpack looking at board. Calendar and all sun/ornaments begin below y390. Low dunes, small lighthouse and warm coastline across both edges.",
+        "Use case precise-object-edit. Retain the exact stylized illustration style, all characters, objects, natural anatomy, palette, paper texture and full-width continuous low landscape with organic ivory footer wave. Shift the whole calendar-and-two-person group significantly RIGHT, compacting it into the RIGHTMOST 38% of the canvas. Every part of backpack and hair must be right of60%canvas width until y900. Keep calendar physically supported and all bodies whole. Header top25% blank ivory. Left60% from top25% tobottom65% blank ivory, including foliage and backpack. Bottom15% blank ivory separated by organic wave. No logos lettering or watermarks."
       ],
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "arquivo_gerado": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png",
-        "gerado_nesta_retomada": true,
-        "arquivo_final": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png"
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-11770ee9-775e-41b4-a49e-4cf014933ff9.png",
+        "arquivo_final": "exec-954fe2bc-425d-4d3d-a475-8d553fa2ec3a.png",
+        "insumo_local": "artes/default/comunidades/agenda-ti-potiguar/geracao-base-generica-ajustada.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "befdac8a29260fec249bb081c0bb56fe23d329dce7cd03d99472562223b191ac",
+      "ilustracao_sha256": "5ced6481968c16eb655193fc7d725b36cada90183c83a2707cb7af7c891f5d46",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Calendário e sol reposicionados por Image Gen para liberar o cabeçalho; gesto de indicação preservado. Nome, logo, anatomia, título, dados e rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena exclusiva de orientação de agenda, calendário apoiado e dois participantes. Mochila e grupo reposicionados à direita, liberando dados. Traço alinhado à base; paisagem de dunas contínua. Onda vetorial editável finaliza apenas margem inferior da paisagem."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": true
     },
     {
       "id": "agile-maranhao",
       "conceito": "Facilitação de práticas ágeis com quadro visual e colaboração no Maranhão.",
-      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Agile Maranhão agile practice community. Three adults collaborating at right around a supported tall Kanban board with blank unlettered colored sticky notes. Woman with hair bun holding sticky note, brown-skinned man placing a note, seated woman listening on a chair. Coherent workshop scene not collage, all furniture supported. Maranhão low riverside houses and palms across both edges.",
       "prompts_efetivos": [
-        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Agile Maranhão agile practice community. Three adults collaborating at right around a supported tall Kanban board with blank unlettered colored sticky notes. Woman with hair bun holding sticky note, brown-skinned man placing a note, seated woman listening on a chair. Coherent workshop scene not collage, all furniture supported. Maranhão low riverside houses and palms across both edges."
       ],
       "origem_ilustracao": {
-        "arquivo_recuperado": "ilustracao.jpg",
-        "commit_recuperacao": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-        "prompt_original": "Não recuperado; não reconstruído como se fosse original.",
-        "arquivo_final": "exec-d1f9e1ab-caaf-4192-b6a0-087d58f8fd4d.png",
-        "ferramenta": "Image Gen integrado"
+        "ferramenta": "Image Gen integrado",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
+        "arquivo_final": "exec-0599690e-627b-4798-8b0b-eac4af6c674f.png",
+        "insumo_local": "artes/default/comunidades/agile-maranhao/geracao-base-generica.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "74b45f0ca443cd5403a1bbdf1a059f2c223bbaefa5ea69454dc091efd128c2e4",
+      "ilustracao_sha256": "3637727833f52b59f179a73e9d2e02981e2e70f82a8633ce1533165550eb1d56",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "PNG recuperado não decodificava e foi reexportado. Arco superior removido por Image Gen para liberar cabeçalho. Quadro ágil, três participantes e marcas preservados; mãos e dados legíveis."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena exclusiva de práticas ágeis com quadro e três participantes, sem vinhetas nem móveis suspensos. Traço simplificado com textura discreta; paisagem maranhense contínua. Acabamento vetorial ondulado aplicado à margem baixa, sem ocultar pés ou mãos."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": true
     },
     {
       "id": "all-saints-bay",
       "conceito": "Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.",
-      "prompt": "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits.",
+      "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: All Saints Bay startup community in Salvador. EXACTLY TWO adults on right: Black woman founder with short natural hair holds a small unbranded product prototype, brown-skinned man with glasses takes notes in an open notebook. A narrow supported board showing abstract connected idea circles behind them, on the same ground. Low Salvador bay coastal architecture across both edges.",
       "prompts_efetivos": [
-        "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits."
+        "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits.",
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: All Saints Bay startup community in Salvador. EXACTLY TWO adults on right: Black woman founder with short natural hair holds a small unbranded product prototype, brown-skinned man with glasses takes notes in an open notebook. A narrow supported board showing abstract connected idea circles behind them, on the same ground. Low Salvador bay coastal architecture across both edges."
       ],
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "arquivo_gerado": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png",
-        "gerado_nesta_retomada": true,
-        "arquivo_final": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png"
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-d95c66bd-0e48-47d2-808a-7e9f8b736d6f.png",
+        "arquivo_final": "exec-d95c66bd-0e48-47d2-808a-7e9f8b736d6f.png",
+        "insumo_local": "artes/default/comunidades/all-saints-bay/geracao-base-generica.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "507d6c38742e9740a24d368c4a5b3412f942179dd5a2d7b73623da3b3fd43dff",
+      "ilustracao_sha256": "b54e549e9e7b16629830c6ba054b7dc2d58659db219bd1f82b6e7e00827676c3",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Protótipo e diálogo empreendedor exclusivos; duas figuras com mãos naturais. Logo cadastrada, nome, título, margens e rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena de apresentação de protótipo a interlocutor com caderno. Faces estilizadas, anatomia natural e baía contínua nas laterais. Transição antes reta substituída por onda orgânica na própria ilustração, mantendo rodapé livre."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "apgamed",
       "conceito": "Desenvolvimento de jogos e testes colaborativos de controles na Paraíba.",
-      "prompt": null,
-      "prompts_efetivos": [],
+      "prompt": "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the entire monitor and its stand 130 pixels RIGHT on the table, nearer the laptop. Make the monitor smaller if needed. Its left edge must be clearly to the RIGHT OF THE CANVAS CENTER by120px. Preserve all three people, table, natural controller hands. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty.",
+      "prompts_efetivos": [
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: APGameD game developers of Paraíba. EXACTLY THREE adult game creators at right, bearded man seated holding a controller naturally, woman with glasses using a laptop on a small table, woman standing beside them leaning in to observe. Supported monitor on table shows abstract ORIGINAL block-platform game, no lettering or brands. No floating screen, islands or furniture. Quiet Paraíba coastal strip across both edges.",
+        "Use case precise-object-edit. Preserve EXACT stylized editorial drawing, flat warm color masses, discreet texture, unique scene, landscape continuously spanning full width and organic ivory footer wave. Correct composition only: The game monitor is invading the left text column. Move the whole table, monitor and three creators 170px to the RIGHT, reducing them slightly if necessary. Leftmost monitor edge must be RIGHT of x615px in a1080px-wide output. Keep supported screen and controller, all three people, no floating object or cropped face. TOP0-292 empty ivory, LEFT0-590 fromy292to900 completely empty ivory; no foliage, device, hair or arm in that column. Keep footer wave and blank bottom1180-1350. No text logos watermark.",
+        "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the entire monitor and its stand 130 pixels RIGHT on the table, nearer the laptop. Make the monitor smaller if needed. Its left edge must be clearly to the RIGHT OF THE CANVAS CENTER by120px. Preserve all three people, table, natural controller hands. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty."
+      ],
       "origem_ilustracao": {
-        "tipo": "recuperada_do_remoto",
-        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-        "arquivo": "ilustracao.jpg",
-        "prompt_original": "Não recuperado; não inventado."
+        "ferramenta": "Image Gen integrado",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-4aa14eb4-7a92-49df-ac3f-541bdc43cedc.png",
+        "arquivo_final": "exec-cc810377-c3d8-4156-8521-9341a59a5088.png",
+        "insumo_local": "artes/default/comunidades/apgamed/geracao-base-generica-ajustada.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "587fb7f022ef7ae2bbad73d1f9b87cfdf98914ee53b05bb0dace8753c2aedb73",
+      "ilustracao_sha256": "6de3fbf2a46bfbfbfd7d3ca21d35680984bc30e5a050d350d10e73a50107c181",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Cena recuperada de criação/teste de jogos com controle, notebook e mundo de plataformas; três figuras distintas e anatomia revisada. Nome, logo e todas as áreas textuais legíveis."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena coesa de testes de jogos com três criadores; monitor apoiado, menor e deslocado para fora da coluna de dados. Sem ilhas ou telas suspensas. Paisagem costeira contínua e onda orgânica, traço alinhado à base."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "arretadas-do-php",
       "conceito": "Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.",
-      "prompt": null,
-      "prompts_efetivos": [],
+      "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Arretadas do PHP, women sharing PHP programming knowledge in Ceará. EXACTLY TWO Brazilian women at right, one with long small braids seated with laptop on lap, one with afro standing and explaining colored unlettered code blocks on a supported board while holding a tablet. Friendly mentor conversation, no generic logo or PHP text. Low Ceará serras and small caatinga plants across both edges.",
+      "prompts_efetivos": [
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Arretadas do PHP, women sharing PHP programming knowledge in Ceará. EXACTLY TWO Brazilian women at right, one with long small braids seated with laptop on lap, one with afro standing and explaining colored unlettered code blocks on a supported board while holding a tablet. Friendly mentor conversation, no generic logo or PHP text. Low Ceará serras and small caatinga plants across both edges."
+      ],
       "origem_ilustracao": {
-        "tipo": "recuperada_do_remoto",
-        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-        "arquivo": "ilustracao.jpg",
-        "prompt_original": "Não recuperado; não inventado."
+        "ferramenta": "Image Gen integrado",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
+        "arquivo_final": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
+        "insumo_local": "artes/default/comunidades/arretadas-do-php/geracao-base-generica.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "1f74193e508c15e7ce29c21dbedcf1da5a196fb3e158a5d38adb9e5e669605b9",
+      "ilustracao_sha256": "a6fd60a2f130eafa78515ca7c08032042d90fc30f642b7f664c46ec4c97f754b",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Cena recuperada de duas desenvolvedoras compartilhando programação; nome desde a margem esquerda, sem logo inventada ou área vazia. Mãos, composição, dados e rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena de duas mulheres compartilhando programação, distinta da base genérica. Nome em destaque sem logo ou reserva vazia; rostos simplificados, mãos naturais, caatinga contínua e rodapé ondulado."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "aws-user-group-ceara",
       "conceito": "Discussão de arquitetura em nuvem entre profissionais do Ceará.",
-      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Move ONLY the cloud down by 80 pixels, shrinking it slightly so it stays above the cubes without overlap. Highest point of cloud must be BELOW 370px in a 1350px-tall canvas. Keep all three cubes, both people and landscape intact. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: AWS User Group Ceará cloud knowledge community. EXACTLY TWO adults at right, curly-bun woman explaining an unbranded diagram on an upright physical board with a cloud and three connected cubes, Black man with glasses seated on a grounded bench examining tablet. Diagram is on board, not floating 3D objects. Low Ceará coastline and palms across both edges.",
       "prompts_efetivos": [
         "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the cloud downward so its top is BELOW y=30%; slightly compress the vertical three-cube stack if needed, preserving all cubes and practitioner's natural gesture. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
-        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Move ONLY the cloud down by 80 pixels, shrinking it slightly so it stays above the cubes without overlap. Highest point of cloud must be BELOW 370px in a 1350px-tall canvas. Keep all three cubes, both people and landscape intact. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Move ONLY the cloud down by 80 pixels, shrinking it slightly so it stays above the cubes without overlap. Highest point of cloud must be BELOW 370px in a 1350px-tall canvas. Keep all three cubes, both people and landscape intact. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: AWS User Group Ceará cloud knowledge community. EXACTLY TWO adults at right, curly-bun woman explaining an unbranded diagram on an upright physical board with a cloud and three connected cubes, Black man with glasses seated on a grounded bench examining tablet. Diagram is on board, not floating 3D objects. Low Ceará coastline and palms across both edges."
       ],
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "arquivo_gerado": "exec-ca89c2d9-f70f-4747-9e52-472c396ce628.png",
-        "gerado_nesta_retomada": true,
-        "arquivo_final": "exec-d6747156-1355-40b4-9690-b3edb0b56966.png"
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-af6f4a7e-8310-46e7-bd5e-9b6754e822a5.png",
+        "arquivo_final": "exec-af6f4a7e-8310-46e7-bd5e-9b6754e822a5.png",
+        "insumo_local": "artes/default/comunidades/aws-user-group-ceara/geracao-base-generica.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "efb988da96e2237b8050e850210a62263d9e2b47f9ef563d8893c57cd3f6d150",
+      "ilustracao_sha256": "d162359a5d5899e1cb0c87c18d6a1cffd182bca22a8549fba8f889c1b6ce240b",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Nuvem reposicionada e reduzida em duas edições Image Gen para liberar cabeçalho; três cubos e profissionais preservados. Logo cadastrada intacta, dados e rodapé legíveis."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena de troca de conhecimento com diagrama de nuvem em quadro apoiado e interlocutor no banco; sem cubos físicos suspensos. Traço da base, coluna de dados e topo livres, litoral contínuo e onda orgânica."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "bahia-indie-game-developers",
       "conceito": "Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.",
-      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompt": "Use case illustration-story. Generate ONE Baião Tech editorial background for Bahia Indie Game Developers. Reference image is STYLE AND COMPOSITION ONLY, not its people or scene. Match its stylized illustrated faces, broad flat warm color masses, discreet paper texture, terracotta orange / apricot / olive and light ivory #FCFAF7. NOT realistic painted people, NOT photographic, NOT corporate geometric faceless people. Do NOT copy reference text, logos or the three-person laptop scene. NEW EXCLUSIVE COHESIVE SCENE: two Brazilian indie game creators at RIGHT, woman with long braid seated drawing an original simple game character on a small pen tablet at a workbench, man with short curly hair standing beside an easel pinning unlettered paper storyboards. All equipment physically supported, feet or chair on continuous ground. Only these two people. NO floating islands, floating terrain, duplicate miniature people, floating furniture or collage vignettes. Simple stylized low Bahia coastal town landscape runs continuously to BOTH left and right edges. Portrait4:5 intended1080x1350. Entire TOP0-292px empty ivory, LEFT x0-590 y292-900 empty ivory. ALL people, equipment, leaves and decorations strictly x620-1080 y380-1120. Landscape runs full width only y990-1140. Lower edge is an unmistakable organic sweeping ivory wave, crest y1090 trough y1160, as reference. Everything y1180-1350 completely blank ivory. No straight bottom line, no oval cutout, no blurred fade. Subtle orange connection arcs ONLY on right belowy400. No text, letters, digits, logo, mark or watermark anywhere. Return background illustration ONLY; original branding and editable type are inserted later.",
       "prompts_efetivos": [
         "Use case illustration-story. ONE exclusive editorial illustration BACKGROUND for Bahia Indie Game Developers, independent game creation collective from Bahia. Portrait 4:5 composition, 1080x1350 intended. Warm flat painted premium editorial art, subtle paper grain, ivory #FCFAF7 terracotta #F9733B burnt sienna #8B3E2F apricot and olive. DISTINCT scene at RIGHT: an adult Brazilian woman game artist with long braid seated on a low stool draws a small imaginary game character on a pen display, while a Black man game designer with short hair arranges unlettered storyboard tiles vertically on a narrow easel. Above them a whimsical small fantasy island made of terracotta geometric platforms and foliage evokes world-building, without copyrighted characters or console branding. Not a group at a laptop or game controller scene. Warm low Salvador coastal architecture strip at bottom. Correct natural hands, anatomy and devices. Strict composition: TOP0-25% blank ivory, LEFT0-55% y25-72% blank ivory; all principal subjects x62-98% y32-83%. Landscape only y77-86%, bottom12% fully blank ivory. No text, numbers, lettering, logos, watermarks, border. Background asset only; typography and registered logo will be added separately.",
-        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+        "Use case illustration-story. Generate ONE Baião Tech editorial background for Bahia Indie Game Developers. Reference image is STYLE AND COMPOSITION ONLY, not its people or scene. Match its stylized illustrated faces, broad flat warm color masses, discreet paper texture, terracotta orange / apricot / olive and light ivory #FCFAF7. NOT realistic painted people, NOT photographic, NOT corporate geometric faceless people. Do NOT copy reference text, logos or the three-person laptop scene. NEW EXCLUSIVE COHESIVE SCENE: two Brazilian indie game creators at RIGHT, woman with long braid seated drawing an original simple game character on a small pen tablet at a workbench, man with short curly hair standing beside an easel pinning unlettered paper storyboards. All equipment physically supported, feet or chair on continuous ground. Only these two people. NO floating islands, floating terrain, duplicate miniature people, floating furniture or collage vignettes. Simple stylized low Bahia coastal town landscape runs continuously to BOTH left and right edges. Portrait4:5 intended1080x1350. Entire TOP0-292px empty ivory, LEFT x0-590 y292-900 empty ivory. ALL people, equipment, leaves and decorations strictly x620-1080 y380-1120. Landscape runs full width only y990-1140. Lower edge is an unmistakable organic sweeping ivory wave, crest y1090 trough y1160, as reference. Everything y1180-1350 completely blank ivory. No straight bottom line, no oval cutout, no blurred fade. Subtle orange connection arcs ONLY on right belowy400. No text, letters, digits, logo, mark or watermark anywhere. Return background illustration ONLY; original branding and editable type are inserted later."
       ],
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
-        "gerado_nesta_retomada": true,
-        "arquivo_final": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png"
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
+        "arquivo_final": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png",
+        "insumo_local": "artes/default/comunidades/bahia-indie-game-developers/geracao-base-generica.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "283249335cbc5cf0a13432aff4a940aeeda20d01aa48368d3f8cf06bd16ce2f0",
+      "ilustracao_sha256": "4d4cccd50da05b80f9e79a2dfe276b981fc842b13e56fcc3dda1a34c612a7ab4",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Ilustração exclusiva de arte digital, storyboard e mundo de jogo; ilhas reposicionadas por Image Gen para não invadir o cabeçalho. Nome completo em duas linhas, logo e rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Substituídas ilhas suspensas por oficina única com artista digital e designer de storyboard, equipamentos apoiados. Traço estilizado, Bahia contínua nas laterais e onda orgânica. Amostra completa comparada antes da expansão da direção."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "caju-valley",
       "conceito": "Empreendedorismo e prototipagem colaborativa em Aracaju com referência ao caju.",
-      "prompt": null,
-      "prompts_efetivos": [],
+      "prompt": "Use case precise-object-edit. Retain the exact stylized illustration style, all characters, objects, natural anatomy, palette, paper texture and full-width continuous low landscape with organic ivory footer wave. REMOVE the upper orange arc and its highest node completely; no stroke or leaf may appear in top25% of canvas. Keep the lower orange arc, cashew tree and two prototyping entrepreneurs; move only upper cashew leaves lower if necessary. Header top25% blank ivory. Left60% from top25% tobottom65% blank ivory, including foliage and backpack. Bottom15% blank ivory separated by organic wave. No logos lettering or watermarks.",
+      "prompts_efetivos": [
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Caju Valley entrepreneurship and innovation in Aracaju. EXACTLY TWO adults at right beside a cashew tree, Black woman in ivory shirt holding an unbranded sustainable packaging prototype, man kneeling at a low grounded work block assembling a small benign prototype. Distinct product innovation scene with cashew fruit, no blank hanging cards. Aracaju river bridge and low coast run across both edges.",
+        "Use case precise-object-edit. Retain the exact stylized illustration style, all characters, objects, natural anatomy, palette, paper texture and full-width continuous low landscape with organic ivory footer wave. REMOVE the upper orange arc and its highest node completely; no stroke or leaf may appear in top25% of canvas. Keep the lower orange arc, cashew tree and two prototyping entrepreneurs; move only upper cashew leaves lower if necessary. Header top25% blank ivory. Left60% from top25% tobottom65% blank ivory, including foliage and backpack. Bottom15% blank ivory separated by organic wave. No logos lettering or watermarks."
+      ],
       "origem_ilustracao": {
-        "tipo": "recuperada_do_remoto",
-        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-        "arquivo": "ilustracao.jpg",
-        "prompt_original": "Não recuperado; não inventado."
+        "ferramenta": "Image Gen integrado",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-8501c31d-fb92-4766-b817-84b98ee34669.png",
+        "arquivo_final": "exec-9aff4612-78a3-4ce6-a44e-967c61e180b8.png",
+        "insumo_local": "artes/default/comunidades/caju-valley/geracao-base-generica-ajustada.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "c1cc08aae48084ff199f7ca571b44142ae6824397a5d87bc04c522cf0a07ebfe",
+      "ilustracao_sha256": "625fc03cbff5003e89df6a7dc62b666e9e39bf9d36c3db5579f606d7fc52e220",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Cena recuperada de prototipagem com caju e ecossistema local; mãos, duas figuras, nome, logo, margens textuais e rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena de prototipagem sob cajueiro, sem placas vazias ou marcas inventadas. Arco superior removido para liberar cabeçalho. Duas figuras no traço da base, rio e ponte contínuos e rodapé ondulado."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "cajuina-valley",
       "conceito": "Networking de inovação em Teresina, cajuína e conexões empreendedoras.",
-      "prompt": null,
-      "prompts_efetivos": [],
+      "prompt": "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the leftmost woman 130pixels RIGHT into the foreground of the conversation group, slightly in front of the other two, not to their left. Her hair and elbow must be entirely in the RIGHTMOST45%ofcanvas. Keep all three people whole, same-scale and natural; preserve tablets/notebooks and table if present. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty.",
+      "prompts_efetivos": [
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Cajuína Valley innovation networking in Teresina. EXACTLY THREE adult entrepreneurs at right gathered round a tall supported small round table with two unlabelled golden cajuina bottles. Woman with curly hair and orange headband holding notebook gestures, man with glasses listens, woman with tied hair holds rolled plans. One coherent same-scale group, no duplicates. Low Teresina river and bridge landscape across both edges.",
+        "Use case precise-object-edit. Preserve EXACT stylized editorial drawing, flat warm color masses, discreet texture, unique scene, landscape continuously spanning full width and organic ivory footer wave. Correct composition only: Move the whole three-person conversation group and round table 170px to the RIGHT, reducing group scale slightly so all three fit. The leftmost woman's hair, elbow and notebook MUST be RIGHT of x610px in1080px-wide output. Do not remove a person, cut hair or distort anatomy. TOP0-292 empty ivory, LEFT0-590 fromy292to900 completely empty ivory; no foliage, device, hair or arm in that column. Keep footer wave and blank bottom1180-1350. No text logos watermark.",
+        "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the leftmost woman 130pixels RIGHT into the foreground of the conversation group, slightly in front of the other two, not to their left. Her hair and elbow must be entirely in the RIGHTMOST45%ofcanvas. Keep all three people whole, same-scale and natural; preserve tablets/notebooks and table if present. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty."
+      ],
       "origem_ilustracao": {
-        "tipo": "recuperada_do_remoto",
-        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-        "arquivo": "ilustracao.jpg",
-        "prompt_original": "Não recuperado; não inventado."
+        "ferramenta": "Image Gen integrado",
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-a6795eb0-da31-4304-8a28-a5ba1d0d2e09.png",
+        "arquivo_final": "exec-7c02aec6-c6fe-4515-8064-14423a69f518.png",
+        "insumo_local": "artes/default/comunidades/cajuina-valley/geracao-base-generica-ajustada.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "6d026000fd00ff811e8871087a0b53d7b44ea6bed70cdbe61d0756a1c0821953",
+      "ilustracao_sha256": "aa968a712e14e22f53e9da79bd010a4fd7d3607303f05518382120da9ba5d5f9",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Cena recuperada de conversa empreendedora com cajuína; três figuras, mãos, nome acentuado, logo sem recorte e dados/rodapé conferidos."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Cena única de networking em torno de mesa apoiada com cajuína. Grupo compactado para liberar coluna; rostos e anatomia estilizados, paisagem de Teresina contínua e onda orgânica."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": false
     },
     {
       "id": "carnauba-valley",
       "conceito": "Conexão entre academia, público e empreendedorismo digital em Parnaíba, com carnaúba como rede regional de inovação.",
-      "prompt": "Use case illustration-story. Create one exclusive painted editorial background for Carnaúba Valley, community of startup technology and digital entrepreneurship in Parnaíba, Piauí, linking public, academia and private sector. Portrait4:5 intended1080x1350. Warm textured editorial painting, ivory #FCFAF7 terracotta #F9733B sienna #8B3E2F apricot and olive #6B7F56. DISTINCT visual metaphor: at RIGHT a Brazilian brown-skinned woman researcher with tied-back hair holds a tablet showing plain geometric blocks, discussing with a Black male entrepreneur carrying rolled plans and a small older female participant holding a notebook. Three smaller full-body figures around a carnauba palm whose fronds branch into subtle connected orange idea nodes, symbolic regional innovation network. Delta waterways, low vegetation and palms form a narrow landscape strip, no invented venue. All main subjects x62-98% y35-82%; every motif and sun below y30%. TOP0-25% wholly blank ivory. LEFT0-55% y25-72% wholly blank ivory, free for text. Landscape ONLY y77-86%, BOTTOM12% fully blank ivory for footer. Accurate natural anatomy and hands, no repeated people from other cards. No text letters digits logos badges branding watermark or frame. Background only, no finished poster typography.",
+      "prompt": "Use case precise-object-edit. Zoom out ONLY the three people by25percent, anchored at the RIGHT edge and at the landscape horizon. Preserve their exact faces, pose, natural hands and objects; now they form a compact group entirely inside the RIGHTMOST40percent of the image. The space to left of them must expand visibly. Leftmost hair and elbow must begin at62percent of image width, not at50percent. Do NOT change the continuous full-width delta landscape, palm, stylized painted palette, top blank ivory or organic footer wave. No duplicate people, no miniature second group, no text logos or watermarks.",
       "prompts_efetivos": [
-        "Use case illustration-story. Create one exclusive painted editorial background for Carnaúba Valley, community of startup technology and digital entrepreneurship in Parnaíba, Piauí, linking public, academia and private sector. Portrait4:5 intended1080x1350. Warm textured editorial painting, ivory #FCFAF7 terracotta #F9733B sienna #8B3E2F apricot and olive #6B7F56. DISTINCT visual metaphor: at RIGHT a Brazilian brown-skinned woman researcher with tied-back hair holds a tablet showing plain geometric blocks, discussing with a Black male entrepreneur carrying rolled plans and a small older female participant holding a notebook. Three smaller full-body figures around a carnauba palm whose fronds branch into subtle connected orange idea nodes, symbolic regional innovation network. Delta waterways, low vegetation and palms form a narrow landscape strip, no invented venue. All main subjects x62-98% y35-82%; every motif and sun below y30%. TOP0-25% wholly blank ivory. LEFT0-55% y25-72% wholly blank ivory, free for text. Landscape ONLY y77-86%, BOTTOM12% fully blank ivory for footer. Accurate natural anatomy and hands, no repeated people from other cards. No text letters digits logos badges branding watermark or frame. Background only, no finished poster typography."
+        "Use case illustration-story. Create one exclusive painted editorial background for Carnaúba Valley, community of startup technology and digital entrepreneurship in Parnaíba, Piauí, linking public, academia and private sector. Portrait4:5 intended1080x1350. Warm textured editorial painting, ivory #FCFAF7 terracotta #F9733B sienna #8B3E2F apricot and olive #6B7F56. DISTINCT visual metaphor: at RIGHT a Brazilian brown-skinned woman researcher with tied-back hair holds a tablet showing plain geometric blocks, discussing with a Black male entrepreneur carrying rolled plans and a small older female participant holding a notebook. Three smaller full-body figures around a carnauba palm whose fronds branch into subtle connected orange idea nodes, symbolic regional innovation network. Delta waterways, low vegetation and palms form a narrow landscape strip, no invented venue. All main subjects x62-98% y35-82%; every motif and sun below y30%. TOP0-25% wholly blank ivory. LEFT0-55% y25-72% wholly blank ivory, free for text. Landscape ONLY y77-86%, BOTTOM12% fully blank ivory for footer. Accurate natural anatomy and hands, no repeated people from other cards. No text letters digits logos badges branding watermark or frame. Background only, no finished poster typography.",
+        "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Carnaúba Valley digital entrepreneurship network in Parnaíba, Piauí. EXACTLY THREE Brazilian adults of SAME scale, a brown-skinned researcher woman holding a tablet, older woman holding a notebook, Black male entrepreneur with glasses carrying rolled plans, in one coherent discussion beside ONE carnauba palm. Half-body or three-quarter group on right, sharing a single ground plane. No giant portraits above miniature people, no second group, no collage. Low delta waterways and carnauba palms across both edges.",
+        "Use case precise-object-edit. Preserve EXACT stylized editorial drawing, flat warm color masses, discreet texture, unique scene, landscape continuously spanning full width and organic ivory footer wave. Correct composition only: Move the entire three-person group 170px to the RIGHT, reducing group scale slightly to fit all three whole people. The leftmost hair/arm must stay to RIGHT of 610px until y900. Move the carnauba palm fronds down80px so every leaf is below y330. Keep one group only, no duplicates. TOP0-292 empty ivory, LEFT0-590 fromy292to900 completely empty ivory; no foliage, device, hair or arm in that column. Keep footer wave and blank bottom1180-1350. No text logos watermark.",
+        "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the leftmost woman 130pixels RIGHT into the foreground of the conversation group, slightly in front of the other two, not to their left. Her hair and elbow must be entirely in the RIGHTMOST45%ofcanvas. Keep all three people whole, same-scale and natural; preserve tablets/notebooks and table if present. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty.",
+        "Use case precise-object-edit. Zoom out ONLY the three people by25percent, anchored at the RIGHT edge and at the landscape horizon. Preserve their exact faces, pose, natural hands and objects; now they form a compact group entirely inside the RIGHTMOST40percent of the image. The space to left of them must expand visibly. Leftmost hair and elbow must begin at62percent of image width, not at50percent. Do NOT change the continuous full-width delta landscape, palm, stylized painted palette, top blank ivory or organic footer wave. No duplicate people, no miniature second group, no text logos or watermarks."
       ],
       "origem_ilustracao": {
         "ferramenta": "Image Gen integrado",
-        "arquivo_gerado": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png",
-        "gerado_nesta_retomada": true,
-        "arquivo_final": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png"
+        "referencia_estilo": "genericos/com-logo/previa.png",
+        "arquivo_gerado": "exec-6a793122-ac2b-4975-aca2-2fe4b7572817.png",
+        "arquivo_final": "exec-92cc7806-ab39-4115-ad5a-bc7c227cee10.png",
+        "insumo_local": "artes/default/comunidades/carnauba-valley/geracao-base-generica-ajustada.png",
+        "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
       },
-      "ilustracao_sha256": "81b9306065457b76326ea3f0fa66b8bfad2b1c6c7944a78a6be211264635c676",
+      "ilustracao_sha256": "ae8a7956494318409d7423b043f99b3dd054f5eb1b0910a56fd44cc26c856038",
       "revisao_visual": {
         "realizada": true,
-        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-        "observacoes": "Ilustração exclusiva de inovação regional com palmeira e delta; retratos e pequeno grupo de conversa conferidos. Nome acentuado, logo original, áreas textuais e rodapé legíveis."
+        "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+        "observacoes": "Eliminados retratos gigantes sobre pessoas pequenas. Agora um único grupo compacto em conversa, escala coerente, sob carnaúba; copa rebaixada para liberar cabeçalho. Delta contínuo nas laterais. Onda vetorial editável somente sobre margem da paisagem."
       },
       "status": "em_revisao",
-      "aprovacao": null
+      "aprovacao": null,
+      "comparacao_base": {
+        "realizada": true,
+        "base": "genericos/com-logo/modelo.svg",
+        "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+      },
+      "onda_rodape": true
     }
   ],
   "bloqueios": [],
@@ -228,5 +330,19 @@
     "previas_pixels_iguais_ao_svg": true,
     "dados_demonstrativos": true
   },
-  "nota": "Revisão técnica e visual do agente não é aprovação humana. Os prompts originais de ilustrações recuperadas que não estavam nos arquivos remotos permanecem desconhecidos; apenas prompts realmente executados nesta retomada foram registrados."
+  "nota": "Revisão técnica e visual do agente não é aprovação humana. Os prompts originais de ilustrações recuperadas que não estavam nos arquivos remotos permanecem desconhecidos; apenas prompts realmente executados nesta retomada foram registrados.",
+  "historico_revisoes": [
+    {
+      "motivo": "Correção após esclarecimento explícito da base visual aprovada. Revisão anterior não detectou todos os desvios.",
+      "base_anterior": "referencia histórica PyLadies",
+      "status_anterior": "concluido_em_revisao",
+      "arquivos_anteriores": "comunidades/<id>/historico-rejeitado/",
+      "observacao": "As observações anteriores permanecem no histórico Git; não constituem aprovação humana."
+    }
+  ],
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
+  }
 }

@@ -11,7 +11,7 @@
   ],
   "lotes": {
     "lote-01": "reconferencia_pendente",
-    "lote-02": "em_correcao",
+    "lote-02": "conferido_contra_base",
     "lote-03": "reconferencia_pendente",
     "lote-04": "reconferencia_pendente",
     "lote-05": "em_correcao",
@@ -21,11 +21,15 @@
   "problemas_identificados": [
     {
       "id": "bahia-indie-game-developers",
-      "problema": "Ilhas flutuantes no motivo de criação de jogos; substituir por cena coesa sem terreno suspenso"
+      "problema": "Ilhas flutuantes no motivo de criação de jogos; substituir por cena coesa sem terreno suspenso",
+      "resolvido": true,
+      "registro": "lotes/lote-02.json"
     },
     {
       "id": "carnauba-valley",
-      "problema": "Grupos duplicados em escalas incompatíveis; manter apenas uma cena"
+      "problema": "Grupos duplicados em escalas incompatíveis; manter apenas uma cena",
+      "resolvido": true,
+      "registro": "lotes/lote-02.json"
     },
     {
       "id": "grudepb-crudpb",

@@ -1,0 +1,45 @@
+{
+  "id": "cajuina-valley",
+  "nome": "Cajuína Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/cajuina-valley.md",
+  "estado": "PI",
+  "cidade": "Teresina",
+  "conceito": "Networking de inovação em Teresina, cajuína e conexões empreendedoras.",
+  "linhas_nome": [
+    "Cajuína Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 143,
+  "subtitulo": "Comunidade · Teresina, PI",
+  "logo_origem": "src/assets/covers/communities/cajuina-valley.png",
+  "logo_origem_sha256": "a49c0759f2e0eca63a0f934175f852a29e8dbc1d6982412284834118f3f6d169",
+  "logo": "logo.png",
+  "ilustracao": "artes/default/comunidades/cajuina-valley/geracao-base-generica-ajustada.png",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "6d026000fd00ff811e8871087a0b53d7b44ea6bed70cdbe61d0756a1c0821953",
+  "origem_ilustracao": {
+    "tipo": "recuperada_do_remoto",
+    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+    "arquivo": "ilustracao.jpg",
+    "prompt_original": "Não recuperado; não inventado."
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Cena recuperada de conversa empreendedora com cajuína; três figuras, mãos, nome acentuado, logo sem recorte e dados/rodapé conferidos."
+  },
+  "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Cajuína Valley innovation networking in Teresina. EXACTLY THREE adult entrepreneurs at right gathered round a tall supported small round table with two unlabelled golden cajuina bottles. Woman with curly hair and orange headband holding notebook gestures, man with glasses listens, woman with tied hair holds rolled plans. One coherent same-scale group, no duplicates. Low Teresina river and bridge landscape across both edges.",
+  "referencia_composicao": "artes/default/genericos/com-logo/modelo.svg",
+  "arquivo_gerado": "exec-a6795eb0-da31-4304-8a28-a5ba1d0d2e09.png",
+  "onda_rodape": false,
+  "arquivo_final": "exec-7c02aec6-c6fe-4515-8064-14423a69f518.png",
+  "prompts_ajustes": [
+    "Use case precise-object-edit. Preserve EXACT stylized editorial drawing, flat warm color masses, discreet texture, unique scene, landscape continuously spanning full width and organic ivory footer wave. Correct composition only: Move the whole three-person conversation group and round table 170px to the RIGHT, reducing group scale slightly so all three fit. The leftmost woman's hair, elbow and notebook MUST be RIGHT of x610px in1080px-wide output. Do not remove a person, cut hair or distort anatomy. TOP0-292 empty ivory, LEFT0-590 fromy292to900 completely empty ivory; no foliage, device, hair or arm in that column. Keep footer wave and blank bottom1180-1350. No text logos watermark.",
+    "Use case precise-object-edit. Keep this exact stylized Baião Tech illustration, faces, palette, texture and full-width landscape and organic footer wave. FINAL SAFE-COLUMN CORRECTION. Move ONLY the leftmost woman 130pixels RIGHT into the foreground of the conversation group, slightly in front of the other two, not to their left. Her hair and elbow must be entirely in the RIGHTMOST45%ofcanvas. Keep all three people whole, same-scale and natural; preserve tablets/notebooks and table if present. Treat LEFT55%ofcanvas betweeny300and900 as ABSOLUTELY EMPTY IVORY; cannot contain hair, elbow, monitor, vegetation or any illustration. No textual labels, no watermark, no logos. Top25%empty and bottom15%empty."
+  ]
+}

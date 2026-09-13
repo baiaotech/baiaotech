@@ -21,16 +21,23 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.",
-  "ilustracao_sha256": "1f74193e508c15e7ce29c21dbedcf1da5a196fb3e158a5d38adb9e5e669605b9",
+  "ilustracao_sha256": "a6fd60a2f130eafa78515ca7c08032042d90fc30f642b7f664c46ec4c97f754b",
   "origem_ilustracao": {
-    "tipo": "recuperada_do_remoto",
-    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "arquivo": "ilustracao.jpg",
-    "prompt_original": "Não recuperado; não inventado."
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
+    "arquivo_final": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
+    "insumo_local": "artes/default/comunidades/arretadas-do-php/geracao-base-generica.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Cena recuperada de duas desenvolvedoras compartilhando programação; nome desde a margem esquerda, sem logo inventada ou área vazia. Mãos, composição, dados e rodapé conferidos."
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena de duas mulheres compartilhando programação, distinta da base genérica. Nome em destaque sem logo ou reserva vazia; rostos simplificados, mãos naturais, caatinga contínua e rodapé ondulado."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
   }
 }

@@ -1,0 +1,40 @@
+{
+  "id": "bahia-indie-game-developers",
+  "nome": "Bahia Indie Game Developers",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/bahia-indie-game-developers.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.",
+  "linhas_nome": [
+    "Bahia Indie Game",
+    "Developers"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": "src/assets/covers/communities/bahia-indie-game-developers.jpg",
+  "logo_origem_sha256": "27cbd5b04523a06d551ea47a088923ae99d36894a6c0925bd1ed3fa6a6d83909",
+  "logo": "logo.png",
+  "ilustracao": "artes/default/comunidades/bahia-indie-game-developers/geracao-base-generica.png",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "283249335cbc5cf0a13432aff4a940aeeda20d01aa48368d3f8cf06bd16ce2f0",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Ilustração exclusiva de arte digital, storyboard e mundo de jogo; ilhas reposicionadas por Image Gen para não invadir o cabeçalho. Nome completo em duas linhas, logo e rodapé conferidos."
+  },
+  "prompt": "Use case illustration-story. Generate ONE Baião Tech editorial background for Bahia Indie Game Developers. Reference image is STYLE AND COMPOSITION ONLY, not its people or scene. Match its stylized illustrated faces, broad flat warm color masses, discreet paper texture, terracotta orange / apricot / olive and light ivory #FCFAF7. NOT realistic painted people, NOT photographic, NOT corporate geometric faceless people. Do NOT copy reference text, logos or the three-person laptop scene. NEW EXCLUSIVE COHESIVE SCENE: two Brazilian indie game creators at RIGHT, woman with long braid seated drawing an original simple game character on a small pen tablet at a workbench, man with short curly hair standing beside an easel pinning unlettered paper storyboards. All equipment physically supported, feet or chair on continuous ground. Only these two people. NO floating islands, floating terrain, duplicate miniature people, floating furniture or collage vignettes. Simple stylized low Bahia coastal town landscape runs continuously to BOTH left and right edges. Portrait4:5 intended1080x1350. Entire TOP0-292px empty ivory, LEFT x0-590 y292-900 empty ivory. ALL people, equipment, leaves and decorations strictly x620-1080 y380-1120. Landscape runs full width only y990-1140. Lower edge is an unmistakable organic sweeping ivory wave, crest y1090 trough y1160, as reference. Everything y1180-1350 completely blank ivory. No straight bottom line, no oval cutout, no blurred fade. Subtle orange connection arcs ONLY on right belowy400. No text, letters, digits, logo, mark or watermark anywhere. Return background illustration ONLY; original branding and editable type are inserted later.",
+  "referencia_composicao": "artes/default/genericos/com-logo/modelo.svg",
+  "arquivo_gerado": "exec-03563614-d7a9-4199-baef-8a59fcd4cbb5.png"
+}

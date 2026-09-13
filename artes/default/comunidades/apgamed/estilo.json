@@ -21,16 +21,23 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "587fb7f022ef7ae2bbad73d1f9b87cfdf98914ee53b05bb0dace8753c2aedb73",
+  "ilustracao_sha256": "6de3fbf2a46bfbfbfd7d3ca21d35680984bc30e5a050d350d10e73a50107c181",
   "origem_ilustracao": {
-    "tipo": "recuperada_do_remoto",
-    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "arquivo": "ilustracao.jpg",
-    "prompt_original": "Não recuperado; não inventado."
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-4aa14eb4-7a92-49df-ac3f-541bdc43cedc.png",
+    "arquivo_final": "exec-cc810377-c3d8-4156-8521-9341a59a5088.png",
+    "insumo_local": "artes/default/comunidades/apgamed/geracao-base-generica-ajustada.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Cena recuperada de criação/teste de jogos com controle, notebook e mundo de plataformas; três figuras distintas e anatomia revisada. Nome, logo e todas as áreas textuais legíveis."
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena coesa de testes de jogos com três criadores; monitor apoiado, menor e deslocado para fora da coluna de dados. Sem ilhas ou telas suspensas. Paisagem costeira contínua e onda orgânica, traço alinhado à base."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
   }
 }

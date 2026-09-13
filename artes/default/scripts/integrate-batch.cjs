@@ -25,6 +25,7 @@ async function main() {
   for (const slug of batch.comunidades) {
     const entry = manifest.comunidades.find(x => x.id === slug);
     if (!entry?.revisao_visual?.realizada || entry.status !== 'em_revisao') throw Error(`Sem revisão: ${slug}`);
+    if (typeof entry.prompt !== 'string' || !entry.prompt.trim()) throw Error(`Prompt sem rastreabilidade: ${slug}`);
     const result = await validateCommunity(slug);
     if (!result.ok) throw Error(JSON.stringify(result));
   }

@@ -1,7 +1,7 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-06",
+  "checkpoint_lote": "lote-02",
   "total_previsto": 93,
   "revisados_tecnicamente": 40,
   "comunidades": [

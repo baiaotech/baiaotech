@@ -1,0 +1,40 @@
+{
+  "id": "arretadas-do-php",
+  "nome": "Arretadas do PHP",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/arretadas-do-php.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.",
+  "linhas_nome": [
+    "Arretadas do PHP"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "artes/default/comunidades/arretadas-do-php/geracao-base-generica.png",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.",
+  "ilustracao_sha256": "1f74193e508c15e7ce29c21dbedcf1da5a196fb3e158a5d38adb9e5e669605b9",
+  "origem_ilustracao": {
+    "tipo": "recuperada_do_remoto",
+    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+    "arquivo": "ilustracao.jpg",
+    "prompt_original": "Não recuperado; não inventado."
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Cena recuperada de duas desenvolvedoras compartilhando programação; nome desde a margem esquerda, sem logo inventada ou área vazia. Mãos, composição, dados e rodapé conferidos."
+  },
+  "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: Arretadas do PHP, women sharing PHP programming knowledge in Ceará. EXACTLY TWO Brazilian women at right, one with long small braids seated with laptop on lap, one with afro standing and explaining colored unlettered code blocks on a supported board while holding a tablet. Friendly mentor conversation, no generic logo or PHP text. Low Ceará serras and small caatinga plants across both edges.",
+  "referencia_composicao": "artes/default/genericos/com-logo/modelo.svg",
+  "arquivo_gerado": "exec-e6cf35cb-d9ba-4653-9d68-1b1cf2f8d15c.png",
+  "onda_rodape": false
+}

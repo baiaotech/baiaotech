@@ -21,16 +21,23 @@
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "c1cc08aae48084ff199f7ca571b44142ae6824397a5d87bc04c522cf0a07ebfe",
+  "ilustracao_sha256": "625fc03cbff5003e89df6a7dc62b666e9e39bf9d36c3db5579f606d7fc52e220",
   "origem_ilustracao": {
-    "tipo": "recuperada_do_remoto",
-    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "arquivo": "ilustracao.jpg",
-    "prompt_original": "Não recuperado; não inventado."
+    "ferramenta": "Image Gen integrado",
+    "referencia_estilo": "genericos/com-logo/previa.png",
+    "arquivo_gerado": "exec-8501c31d-fb92-4766-b817-84b98ee34669.png",
+    "arquivo_final": "exec-9aff4612-78a3-4ce6-a44e-967c61e180b8.png",
+    "insumo_local": "artes/default/comunidades/caju-valley/geracao-base-generica-ajustada.png",
+    "versao_anterior_preservada": "historico-rejeitado/ilustracao-antes-base-generica.jpg"
   },
   "revisao_visual": {
     "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "Cena recuperada de prototipagem com caju e ecossistema local; mãos, duas figuras, nome, logo, margens textuais e rodapé conferidos."
+    "metodo": "Inspeção individual do card completo com view_image, comparação com a base genérica e validação de pixels SVG/PNG.",
+    "observacoes": "Cena de prototipagem sob cajueiro, sem placas vazias ou marcas inventadas. Arco superior removido para liberar cabeçalho. Duas figuras no traço da base, rio e ponte contínuos e rodapé ondulado."
+  },
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "Card completo comparado visualmente com genericos/com-logo/previa.png: traço editorial estilizado com massas de cor e textura discreta; cena única exclusiva, sem duplicatas ou ilhas; paisagem contínua às laterais; onda orgânica e rodapé livre a partir de y1180; nomes, logos oficiais, anatomia e áreas textuais conferidos. Revisão técnica não representa aprovação humana."
   }
 }

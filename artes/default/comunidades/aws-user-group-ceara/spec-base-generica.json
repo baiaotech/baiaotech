@@ -1,0 +1,40 @@
+{
+  "id": "aws-user-group-ceara",
+  "nome": "AWS User Group Ceará",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/aws-user-group-ceara.md",
+  "estado": "CE",
+  "cidade": "",
+  "conceito": "Discussão de arquitetura em nuvem entre profissionais do Ceará.",
+  "linhas_nome": [
+    "AWS User Group Ceará"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · CE",
+  "logo_origem": "src/assets/covers/communities/aws-user-group-ceara.webp",
+  "logo_origem_sha256": "a23741a15044acf4836a5b332dec2d5b2495dbc077f06d651847b01499e15531",
+  "logo": "logo.png",
+  "ilustracao": "artes/default/comunidades/aws-user-group-ceara/geracao-base-generica.png",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "efb988da96e2237b8050e850210a62263d9e2b47f9ef563d8893c57cd3f6d150",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-ca89c2d9-f70f-4747-9e52-472c396ce628.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-d6747156-1355-40b4-9690-b3edb0b56966.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Nuvem reposicionada e reduzida em duas edições Image Gen para liberar cabeçalho; três cubos e profissionais preservados. Logo cadastrada intacta, dados e rodapé legíveis."
+  },
+  "prompt": "Use case illustration-story. Create ONE exclusive Baião Tech community editorial background. Attached reference is ONLY approved STYLE + COMPOSITION, not a scene to copy. Match stylized expressive illustrated faces, broad flat color masses, simple anatomy and subtle paper texture; warm terracotta, apricot, sienna and muted olive on ivory #FCFAF7. NOT realistic painted skin or photographic people; NOT faceless corporate geometric figures. Portrait4:5 intended1080x1350. Header y0-292 completely empty ivory; left x0-590 y292-900 completely empty ivory, including hair/ornaments/leaves/furniture. All figures, devices and motifs at right x620-1080 y380-1120, one supported ground plane. Full-width LOW landscape continuously reaches BOTH lateral edges, y990-1140. End with a visible ORGANIC SWEEPING IVORY WAVE, crest1090/trough1160; y1180-1350 totally empty ivory for footer. No straight bottom cut, no isolated oval floor, no fadeout, no floating islands, no duplicate tiny group below large portraits. If used, subtle orange arcs only right belowy400. No text, digits, letters, logos, brands, watermark or frame. Background only, original logos and editable text added separately. UNIQUE SCENE: AWS User Group Ceará cloud knowledge community. EXACTLY TWO adults at right, curly-bun woman explaining an unbranded diagram on an upright physical board with a cloud and three connected cubes, Black man with glasses seated on a grounded bench examining tablet. Diagram is on board, not floating 3D objects. Low Ceará coastline and palms across both edges.",
+  "referencia_composicao": "artes/default/genericos/com-logo/modelo.svg",
+  "arquivo_gerado": "exec-af6f4a7e-8310-46e7-bd5e-9b6754e822a5.png",
+  "onda_rodape": false
+}

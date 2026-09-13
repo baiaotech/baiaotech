@@ -38,8 +38,8 @@ function svg(style, background, logo) {
 <title id="card-title">${xml(style.nome)} — modelo de postagem</title>
 <desc id="card-description">${xml(style.conceito)} Campos demonstrativos de evento, data e local. Assinatura do Baião Tech no rodapé. Em revisão; não publicar.</desc>
 <defs><style>@font-face{font-family:'Inter Variable';src:url('${font}') format('woff2');font-weight:100 900;} text{font-family:'Inter Variable',Inter,sans-serif;}</style></defs>
-<rect width="1080" height="1350" fill="#FCFAF7"/>
-<g id="fixed-illustration"><image width="1080" height="1350" xlink:href="${background}"/>${style.onda_rodape ? '<path id="illustration-footer-wave" d="M0 1130 C160 1085 315 1175 510 1150 C700 1125 850 1095 1080 1145 L1080 1350 H0 Z" fill="#FCFAF7"/>' : ''}</g>
+<rect width="1080" height="1350" fill="${style.fundo_canvas || '#FCFAF7'}"/>
+<g id="fixed-illustration"><image${style.ilustracao_y ? ` y="${style.ilustracao_y}"` : ''} width="1080" height="1350" xlink:href="${background}"/>${style.onda_rodape ? '<path id="illustration-footer-wave" d="M0 1130 C160 1085 315 1175 510 1150 C700 1125 850 1095 1080 1145 L1080 1350 H0 Z" fill="#FCFAF7"/>' : ''}</g>
 <g id="agenda-heading">
 <path d="M72 64h44" fill="none" stroke="#F9733B" stroke-width="3"/>
 ${text('agenda-month',138,72,22,'MÊS DA AGENDA',700,'#1F1F1F','letter-spacing="3"')}
@@ -71,6 +71,7 @@ ${text('footer-url',1008,1284,23,'baiaotech.org',600,'#8B3E2F','text-anchor="end
 async function buildCommunity(spec) {
   if (!/^[a-z0-9-]+$/.test(spec.id || '')) throw new Error('Invalid community id');
   if (!spec.conceito || !spec.ilustracao) throw new Error('conceito and ilustracao are required');
+  if (spec.ilustracao_y !== undefined && (!Number.isInteger(spec.ilustracao_y) || spec.ilustracao_y < -100 || spec.ilustracao_y > 100)) throw new Error('ilustracao_y deve ser inteiro entre -100 e 100');
   const source = `src/content/communities/${spec.id}.md`;
   const data = matter.read(path.join(repo, source)).data;
   const dir = path.join(root, 'comunidades', spec.id);
@@ -84,6 +85,14 @@ async function buildCommunity(spec) {
     if (imagePath !== illustration) fs.copyFileSync(imagePath, illustration);
   } else {
     await sharp(original).resize(1080,1350,{fit:spec.ajuste_ilustracao || 'cover',position:'centre',background:'#FCFAF7'}).jpeg({quality:92,mozjpeg:true}).toFile(illustration);
+  }
+  // O pequeno trecho de tela exposto por reposicionamento acompanha o papel da borda,
+  // evitando uma faixa horizontal de outro tom. Não altera nenhum pixel do insumo.
+  let canvasColor;
+  if (spec.ilustracao_y) {
+    const edgeBuffer = await sharp(illustration).extract({left:0,top:spec.ilustracao_y > 0 ? 0 : 1346,width:1080,height:4}).png().toBuffer();
+    const edge = await sharp(edgeBuffer).stats();
+    canvasColor = '#' + edge.channels.slice(0,3).map(c => Math.round(c.mean).toString(16).padStart(2,'0')).join('');
   }
   const logoSource = data.cover_image ? path.join(repo, 'src', data.cover_image) : null;
   if (logoSource && !fs.existsSync(logoSource)) throw new Error('Registered cover does not exist: '+logoSource);
@@ -120,7 +129,8 @@ async function buildCommunity(spec) {
     observacao:'Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.'+
       (logoSource?'':' Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado.'),
     ...(spec.logo_fundo ? {logo_fundo:spec.logo_fundo} : {}),
-    ...(spec.onda_rodape === true ? {onda_rodape:true} : {})
+    ...(spec.onda_rodape === true ? {onda_rodape:true} : {}),
+    ...(spec.ilustracao_y ? {ilustracao_y:spec.ilustracao_y,fundo_canvas:canvasColor} : {})
   };
   writeJSON(path.join(dir,'estilo.json'),style);
   const contents=svg(style,uri(illustration,'image/jpeg'),logoSource?uri(path.join(dir,'logo.png'),'image/png'):null);
