@@ -15,7 +15,7 @@ categories:
   - "inovacao"
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6a3e629e17949.png"
 price: "Pago"
 ---
 
