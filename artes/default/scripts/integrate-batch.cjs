@@ -20,6 +20,7 @@ async function main() {
     if (!result.ok) throw Error(JSON.stringify(result));
   }
   const catalog = read('catalogo.json');
+  catalog.base_composicao = 'genericos/com-logo/modelo.svg';
   const prompts = read('PROMPTS.json');
   prompts.correcoes ||= {};
   if (fs.existsSync(path.join(root, 'genericos/REVISAO.json'))) prompts.correcoes.genericos = [read('genericos/REVISAO.json').prompt_correcao];
@@ -42,7 +43,14 @@ async function main() {
   batch.manifesto = `lotes/${id}.json`;
   catalog.politica = 'Modelos em revisão, com dados demonstrativos. Revisão técnica não constitui aprovação humana nem autorização para publicação.';
   write('catalogo.json', catalog); write('PROMPTS.json', prompts); write('lotes/PLANO.json', plan);
-  let gallery = '# Galeria de revisão — cards completos\n\n' + catalog.comunidades.length + ' comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.\n\n[Plano e progresso](lotes/PLANO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)\n\n## Referência histórica aprovada\n\n![PyLadies Maceió — referência preservada](referencias/pyladies-maceio-aprovado.png)\n\n';
+  const qualityPath = 'retomada/REVISAO-PADRAO.json';
+  if (manifest.comparacao_base?.realizada && fs.existsSync(path.join(root, qualityPath))) {
+    const quality = read(qualityPath);
+    quality.lotes[id] = 'conferido_contra_base';
+    quality.problemas_identificados = quality.problemas_identificados.map(item => item.lote === id || batch.comunidades.includes(item.id) ? {...item, resolvido: true, registro: `lotes/${id}.json`} : item);
+    write(qualityPath, quality);
+  }
+  let gallery = '# Galeria de revisão — cards completos\n\n' + catalog.comunidades.length + ' comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.\n\n[Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)\n\n## Base de composição indicada pelo usuário\n\n[Genérico com logo — SVG](genericos/com-logo/modelo.svg). A cena de cada comunidade permanece exclusiva.\n\n## Referência histórica aprovada\n\n![PyLadies Maceió — referência preservada](referencias/pyladies-maceio-aprovado.png)\n\n';
   for (const item of [...catalog.comunidades, ...catalog.genericos]) {
     const base = path.posix.dirname(item.estilo);
     const style = read(item.estilo);
@@ -51,8 +59,8 @@ async function main() {
   fs.writeFileSync(path.join(root, 'GALERIA.md'), gallery.trimEnd() + '\n');
   const subgallery = '# ' + id + ' — revisão técnica concluída\n\nTodos os modelos permanecem em revisão humana, com aprovação nula e dados demonstrativos.\n\n' + batch.comunidades.map(slug => `## ${read(`comunidades/${slug}/estilo.json`).nome}\n\n![Card completo](../comunidades/${slug}/previa.png)\n\n[SVG](../comunidades/${slug}/modelo.svg) · [Estilo](../comunidades/${slug}/estilo.json)\n`).join('\n');
   fs.writeFileSync(path.join(root, `lotes/${id}.md`), subgallery);
-  // Inventário usa HEAD + este lote, não os diretórios ainda em trabalho por outros agentes.
-  const tracked = new Set(execFileSync('git', ['ls-tree', '-r', '--name-only', 'HEAD', '--', 'artes/default'], {cwd: path.resolve(root, '../..')}).toString().trim().split('\n'));
+  // Inventário usa o índice + este lote, não diretórios ainda em trabalho por outros agentes.
+  const tracked = new Set(execFileSync('git', ['ls-files', '--cached', '--', 'artes/default'], {cwd: path.resolve(root, '../..')}).toString().trim().split('\n'));
   const initial = catalog.comunidades.slice(0, 10).map(x => x.id);
   const items = [...initial, ...plan.lotes.flatMap(x => x.comunidades)].map(slug => {
     const released = batch.comunidades.includes(slug);

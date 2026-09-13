@@ -299,5 +299,6 @@
       "estilo": "genericos/sem-logo/estilo.json",
       "previa": "genericos/sem-logo/previa.png"
     }
-  ]
+  ],
+  "base_composicao": "genericos/com-logo/modelo.svg"
 }

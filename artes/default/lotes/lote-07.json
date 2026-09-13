@@ -1,0 +1,120 @@
+{
+  "id": "lote-07",
+  "status": "parcial_em_revisao",
+  "aprovacao": null,
+  "comunidades": [
+    {
+      "id": "owasp-natal",
+      "conceito": "Aprendizado de desenvolvimento seguro e revisão de aplicações no contexto potiguar.",
+      "prompt": "Use case: illustration-story. Generate ONE premium editorial illustration BACKGROUND for Baião Tech community posting, portrait 4:5 1080x1350. Flat hand-painted shapes with subtle paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 and restrained olive #6B7F56. Warm Northeast Brazilian context. STRICT composition: upper 0–30 percent entirely blank ivory. Left 0–55 percent from top through y=900 entirely blank ivory, for separately editable typography. ALL people and props occupy RIGHT x=620–1030 and y=450–1100, full bodies visible, correct natural anatomy. Low narrow landscape allowed across width only y=1030–1140, soft ivory wave below, bottom y=1180–1350 entirely blank ivory. No text, letters, numbers, logo, watermark, frame or brands. Background only, not event poster. OWASP Natal software safety workshops: a brown-skinned woman educator with a dark bob haircut points at a small translucent application panel with a simple generic shield silhouette, while a seated Black developer wearing olive glasses checks the panel using a small magnifying lens. Small blank vulnerability cards neatly arranged on a short easel, ethical positive educational mood, no criminals or hoodies. Narrow warm Natal coastal dunes at base.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Rascunho semi-realista a substituir."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "owasp-pb",
+      "conceito": "Conscientização em segurança de aplicações e boas práticas compartilhadas na Paraíba.",
+      "prompt": "Use case: illustration-story. Generate ONE premium editorial illustration BACKGROUND for Baião Tech community posting, portrait 4:5 1080x1350. Flat hand-painted shapes with subtle paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 and restrained olive #6B7F56. Warm Northeast Brazilian context. STRICT composition: upper 0–30 percent entirely blank ivory. Left 0–55 percent from top through y=900 entirely blank ivory, for separately editable typography. ALL people and props occupy RIGHT x=620–1030 and y=450–1100, full bodies visible, correct natural anatomy. Low narrow landscape allowed across width only y=1030–1140, soft ivory wave below, bottom y=1180–1350 entirely blank ivory. No text, letters, numbers, logo, watermark, frame or brands. Background only, not event poster. OWASP-PB: two Brazilian application security students, a curly-haired brown-skinned man standing and a Black woman with tied-back braids sitting on a stool, collaboratively assemble a vertical stack of protective interlocking application tiles; one holds an open checklist clipboard with only dots and lines, no lettering. Metaphor for secure construction, not padlocks or hacking. Low Paraíba hills and olive coastal vegetation.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Rascunho semi-realista a substituir."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "oxenti-pe",
+      "conceito": "Integração das comunidades de TI da Grande Recife em um espaço de colaboração.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. OxenTI-PE community integration hub: three small diverse Brazilian technologists standing in a friendly semicircle around a sculptural vertical hub of blank rounded speech panels, colored terracotta and olive, connected with short lines. One person holds a tablet, another welcomes with an open hand. Focus on conversation and community connections, no logos. Narrow Recife river and simple warm bridges low at base.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Amostra montada encaminhada para alinhamento com genérico aprovado."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "paraiba-js",
+      "conceito": "Troca de conhecimentos e apresentação de casos de JavaScript na Paraíba.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. Paraíba.js: a Black woman presenter with short curly hair stands beside a narrow easel displaying modular unmarked browser interface tiles, while a brown-skinned man on a low seat uses a tablet to try the same interface. A few warm geometric components float above the easel but below y450. JavaScript knowledge-sharing metaphor with no code glyphs or JS logo. Low Paraíba hills, sparse olive shrubs.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "php-com-rapadura",
+      "conceito": "Encontro de programadores PHP unido por troca técnica, café e rapadura no Ceará.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. PHP com Rapadura: brown-skinned Brazilian woman with round glasses and a bearded Brazilian man with tied curly hair share a small round cafe table, one reviewing a laptop and the other holding a plain ceramic coffee cup. On table a small plate of rectangular brown rapadura sweets. Friendly technical knowledge exchange, unbranded laptop with abstract blocks only. Low Ceará inland hills and warm little houses.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "php-maranhao",
+      "conceito": "Compartilhamento de linguagens e frameworks para desenvolvimento web no Maranhão.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. PHP-Maranhão: a Black developer with closely cropped hair seated on an olive stool works at a slim upright workstation, while a brown-skinned woman with wavy shoulder-length hair arranges three connected unmarked website framework blocks on a vertical board. Building applications together, warm artisan feeling, no technology symbols. Low Maranhão colonial roof silhouettes and terracotta patterned facade hints restricted to bottom strip.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "php-pb",
+      "conceito": "Mentoria entre diferentes níveis de experiência no ecossistema PHP paraibano.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. PHP-PB: a Brazilian older woman mentor with silver curly hair kneels beside a younger brown-skinned developer seated cross-legged with a tablet on lap; they inspect a staircase-shaped arrangement of warm rectangular software modules and small connected tool pieces. Gentle mentoring and progression in web programming, not electronics. Sparse Paraíba rocky inland hills and low warm houses at base. Feet must touch continuous ochre ground connected to bottom landscape, no separate vignettes.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "pong-rn",
+      "conceito": "Criação e testes colaborativos de jogos independentes potiguares.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. PONG RN Potiguar Indie Games: a Black Brazilian woman game designer sits on a low terracotta cube holding a plain game controller, testing a small monitor on a narrow stand with original abstract platform-game shapes. Beside her a brown-skinned man wearing olive shirt stands holding a storyboard of three blank picture frames with simple landscape shapes. Joyful game-jam playtesting; no existing game character or brand. Low Rio Grande do Norte dunes and sea strip. Feet and furniture naturally stand on same continuous ochre ground connected to lower landscape, no detached vignettes.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "potiguaras-valley",
+      "conceito": "Empreendedorismo e inovação conectando talentos do Seridó e do Trairi.",
+      "prompt": "Use case: illustration-story. Create ONE editorial BACKGROUND, portrait4:5 1080x1350. Style: STRICTLY FLAT 2D CUT-PAPER EDITORIAL, simplified geometric silhouettes, simple tiny faces, flat blocks of color, NO volumetric shading, NO realistic skin or fabric texture, NO rendered muscles, NO photorealism, NOT semi-realistic illustration. Ivory #FCFAF7 with terracotta #F9733B, dark sienna #8B3E2F, apricot #F6D7B7 and restrained olive. Minimal fine paper grain only. Human figures stylized as flat shapes like contemporary editorial print illustration, NOT realistic people. All figures and props stay rightmost40% x650–1040, entirely between y450 and1100, modest scale with ample surrounding blank space. TOP0–30% completely blank ivory. LEFT0–56% y0–950 completely blank ivory. Low integrated landscape strip only y1050–1150, grows naturally from lower edge, NO floating island, NO isolated platform, NO horizontal continuous baseline; organic ivory wave fades landscape below, bottom1180–1350 totally blank. Absolutely no text, logo, letters, numbers, brand, watermark or frame. Potiguaras Valley interior RN entrepreneurship: a brown-skinned Brazilian woman entrepreneur standing in terracotta outfit holds a small unbranded product prototype shaped like stacked rounded wooden modules; an older Black man on a stool sketches a branching growth plan on a tablet. Behind them a small sculptural network of olive dots and orange arches connects low workshop silhouettes, all below y450. Narrow Seridó and Trairi semi-arid rocky hills with modest rural roofs, no skyscrapers. Feet and furniture naturally stand on same continuous ochre ground connected to lower landscape, no detached vignettes.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada, ainda não validada para compor modelo final",
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "projeto-software-livre-bahia",
+      "conceito": "Colaboração aberta e circulação de conhecimento no movimento de software livre baiano.",
+      "prompt": null,
+      "origem_ilustracao": null,
+      "revisao_visual": {
+        "realizada": false,
+        "observacoes": "Aguardando alinhamento visual antes da montagem final."
+      },
+      "status": "em_revisao"
+    }
+  ],
+  "bloqueios": [
+    "Pausa de novas gerações solicitada pelo agente principal para alinhar amostra à referência genérica explicitada pelo usuário."
+  ]
+}

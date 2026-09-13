@@ -2,6 +2,16 @@
 
 Leia `README.md`, `catalogo.json` e o `estilo.json` da comunidade antes de produzir uma postagem.
 
+## Base visual esclarecida pelo usuário em 13/09/2026
+
+- A base de composição aprovada é `genericos/com-logo/modelo.svg`, indicada explicitamente pelo usuário. Compare o card completo, não apenas a ilustração isolada. A referência histórica PyLadies Maceió continua preservada; sua cena não é modelo global.
+- Preserve o traço editorial estilizado da base: massas de cor, rostos e anatomia simplificados, textura discreta. Rejeite pessoas semirrealistas/fotorrealistas e também simplificação geométrica corporativa que descaracterize a base.
+- Cada comunidade exige uma única cena própria e coesa. Rejeite vinhetas repetidas empilhadas, ilhas/terrenos suspensos, pessoas ou móveis sem apoio e membros duplicados.
+- A paisagem baixa deve continuar até as duas bordas laterais. Não transformar a composição em recorte isolado sobre fundo branco ou chão oval.
+- Preserve a transição orgânica ondulada para o rodapé, como na base. Não substituir por linha horizontal reta, faixa difusa ou cena chegando à assinatura. A ilustração termina aproximadamente entre y=1110 e y=1165; y=1180 até 1350 fica livre para o rodapé original.
+- Topo y=0–292 livre; coluna x=68–575 livre para título e dados. Conferir cabelos, folhas, ornamentos e móveis, não apenas os corpos principais.
+- Antes de expandir uma nova direção em série, confira um PNG completo contra a base. A validação automática SVG/PNG não prova conformidade visual; registrar a inspeção individual e corrigir desvios antes de marcar o lote concluído.
+
 - Cada comunidade tem uma ilustração e um modelo próprios. Não reutilize a cena de PyLadies Maceió, nem a de qualquer outra comunidade, como padrão de outra organização.
 - Todas as artes finais precisam conter o grupo `fixed-baiao-footer`, com o logo original do Baião Tech e `baiaotech.org`, nas posições e proporções do modelo.
 - `ilustracao.jpg` é somente um insumo. Nunca envie esse arquivo como card pronto. O card completo é `modelo.svg`; `previa.png` permite revisar a composição.

@@ -504,9 +504,9 @@
     {
       "id": "oxenti-pe",
       "lote": "lote-07",
-      "arquivos_basicos_completos": false,
+      "arquivos_basicos_completos": true,
       "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {

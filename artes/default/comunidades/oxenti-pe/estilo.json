@@ -1,0 +1,24 @@
+{
+  "id": "oxenti-pe",
+  "nome": "OxenTI-PE",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/oxenti-pe.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Integração das comunidades de TI da Grande Recife em um espaço de colaboração.",
+  "linhas_nome": [
+    "OxenTI-PE"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/oxenti-pe.png",
+  "logo_origem_sha256": "a98f33d653cfdb0138db7edd282689672270e5aabf07bfc2b3e1a5573f1ec30a",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

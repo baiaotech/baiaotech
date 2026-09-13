@@ -1,0 +1,28 @@
+{
+  "base_indicada_pelo_usuario": "https://github.com/baiaotech/baiaotech/blob/feat/artes-default-comunidades/artes/default/genericos/com-logo/modelo.svg",
+  "data": "2026-09-13",
+  "nota": "Revisão adicional após feedback visual do usuário. Validação de arquivos e revisão anterior não bastam para garantir aderência ao padrão. Nenhum modelo está aprovado para publicação.",
+  "criterios": [
+    "Traço editorial estilizado compatível com o genérico, sem semirrealismo ou geometrização corporativa excessiva",
+    "Uma cena própria e coesa por comunidade, sem pessoas duplicadas, ilhas suspensas ou vinhetas empilhadas",
+    "Paisagem baixa contínua até ambas as laterais",
+    "Onda orgânica encerrando a ilustração até aproximadamente y1165, rodapé livre a partir de y1180",
+    "Cabeçalho e coluna de texto sem invasão por cabelos, folhas, dispositivos ou outros motivos"
+  ],
+  "lotes": {
+    "lote-01": "reconferencia_pendente",
+    "lote-02": "em_correcao",
+    "lote-03": "reconferencia_pendente",
+    "lote-04": "reconferencia_pendente",
+    "lote-05": "em_correcao",
+    "lote-06": "em_correcao",
+    "lote-07": "parcial_em_correcao"
+  },
+  "problemas_identificados": [
+    {"id": "bahia-indie-game-developers", "problema": "Ilhas flutuantes no motivo de criação de jogos; substituir por cena coesa sem terreno suspenso"},
+    {"id": "carnauba-valley", "problema": "Grupos duplicados em escalas incompatíveis; manter apenas uma cena"},
+    {"id": "grudepb-crudpb", "problema": "Três mesas repetidas e empilhadas; geração original rejeitada, correção em produção"},
+    {"lote": "lote-06", "problema": "Primeiras vinhetas sem continuidade lateral e sem onda inferior adequada, humanos semirrealistas; rejeitadas"}
+  ],
+  "aprovacao": null
+}

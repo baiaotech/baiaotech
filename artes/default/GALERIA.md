@@ -2,7 +2,11 @@
 
 40 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
-[Plano e progresso](lotes/PLANO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
+[Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
+
+## Base de composição indicada pelo usuário
+
+[Genérico com logo — SVG](genericos/com-logo/modelo.svg). A cena de cada comunidade permanece exclusiva.
 
 ## Referência histórica aprovada
 

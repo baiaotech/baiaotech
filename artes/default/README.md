@@ -4,6 +4,8 @@ Produção para **93 comunidades, cada uma com ilustração própria**, e **dois
 
 **Em revisão. Os títulos, datas e locais são campos demonstrativos. Estes arquivos não anunciam eventos reais.**
 
+A base de composição explicitada pelo usuário é o [genérico com logo](genericos/com-logo/modelo.svg): paisagem contínua nas laterais, ilustração editorial estilizada e onda orgânica preservando o rodapé. Os conceitos das comunidades continuam exclusivos. A [reconferência do padrão](retomada/REVISAO-PADRAO.json) registra correções adicionais; uma conferência técnica anterior não encerra uma ressalva visual posterior.
+
 ## Revisar as artes
 
 Abra a [galeria de cards completos](GALERIA.md). As prévias PNG têm **1080 × 1350 px**. Cada `modelo.svg` contém os mesmos elementos, com textos editáveis e imagens incorporadas, e pode ser aberto sem buscar arquivos externos. A tabela abaixo documenta o primeiro lote; os demais estão na galeria e nos manifestos.
