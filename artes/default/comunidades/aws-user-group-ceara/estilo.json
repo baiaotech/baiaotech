@@ -20,5 +20,17 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "efb988da96e2237b8050e850210a62263d9e2b47f9ef563d8893c57cd3f6d150",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-ca89c2d9-f70f-4747-9e52-472c396ce628.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-d6747156-1355-40b4-9690-b3edb0b56966.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Nuvem reposicionada e reduzida em duas edições Image Gen para liberar cabeçalho; três cubos e profissionais preservados. Logo cadastrada intacta, dados e rodapé legíveis."
+  }
 }

@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-20 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+30 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -167,6 +167,86 @@ Laboratório comunitário de hardware livre e eletrônica, com aprendizado prát
 ![Card completo — ForHacker Space](comunidades/forhacker-space/previa.png)
 
 [SVG editável](comunidades/forhacker-space/modelo.svg) · [Estilo e origem](comunidades/forhacker-space/estilo.json)
+
+## Agenda TI Potiguar
+
+Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.
+
+![Card completo — Agenda TI Potiguar](comunidades/agenda-ti-potiguar/previa.png)
+
+[SVG editável](comunidades/agenda-ti-potiguar/modelo.svg) · [Estilo e origem](comunidades/agenda-ti-potiguar/estilo.json)
+
+## Agile Maranhão
+
+Facilitação de práticas ágeis com quadro visual e colaboração no Maranhão.
+
+![Card completo — Agile Maranhão](comunidades/agile-maranhao/previa.png)
+
+[SVG editável](comunidades/agile-maranhao/modelo.svg) · [Estilo e origem](comunidades/agile-maranhao/estilo.json)
+
+## All Saints Bay
+
+Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.
+
+![Card completo — All Saints Bay](comunidades/all-saints-bay/previa.png)
+
+[SVG editável](comunidades/all-saints-bay/modelo.svg) · [Estilo e origem](comunidades/all-saints-bay/estilo.json)
+
+## APGameD
+
+Desenvolvimento de jogos e testes colaborativos de controles na Paraíba.
+
+![Card completo — APGameD](comunidades/apgamed/previa.png)
+
+[SVG editável](comunidades/apgamed/modelo.svg) · [Estilo e origem](comunidades/apgamed/estilo.json)
+
+## Arretadas do PHP
+
+Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.
+
+![Card completo — Arretadas do PHP](comunidades/arretadas-do-php/previa.png)
+
+[SVG editável](comunidades/arretadas-do-php/modelo.svg) · [Estilo e origem](comunidades/arretadas-do-php/estilo.json)
+
+## AWS User Group Ceará
+
+Discussão de arquitetura em nuvem entre profissionais do Ceará.
+
+![Card completo — AWS User Group Ceará](comunidades/aws-user-group-ceara/previa.png)
+
+[SVG editável](comunidades/aws-user-group-ceara/modelo.svg) · [Estilo e origem](comunidades/aws-user-group-ceara/estilo.json)
+
+## Bahia Indie Game Developers
+
+Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.
+
+![Card completo — Bahia Indie Game Developers](comunidades/bahia-indie-game-developers/previa.png)
+
+[SVG editável](comunidades/bahia-indie-game-developers/modelo.svg) · [Estilo e origem](comunidades/bahia-indie-game-developers/estilo.json)
+
+## Caju Valley
+
+Empreendedorismo e prototipagem colaborativa em Aracaju com referência ao caju.
+
+![Card completo — Caju Valley](comunidades/caju-valley/previa.png)
+
+[SVG editável](comunidades/caju-valley/modelo.svg) · [Estilo e origem](comunidades/caju-valley/estilo.json)
+
+## Cajuína Valley
+
+Networking de inovação em Teresina, cajuína e conexões empreendedoras.
+
+![Card completo — Cajuína Valley](comunidades/cajuina-valley/previa.png)
+
+[SVG editável](comunidades/cajuina-valley/modelo.svg) · [Estilo e origem](comunidades/cajuina-valley/estilo.json)
+
+## Carnaúba Valley
+
+Conexão entre academia, público e empreendedorismo digital em Parnaíba, com carnaúba como rede regional de inovação.
+
+![Card completo — Carnaúba Valley](comunidades/carnauba-valley/previa.png)
+
+[SVG editável](comunidades/carnauba-valley/modelo.svg) · [Estilo e origem](comunidades/carnauba-valley/estilo.json)
 
 ## Genérico com-logo
 

@@ -1,0 +1,36 @@
+{
+  "id": "carnauba-valley",
+  "nome": "Carnaúba Valley",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/carnauba-valley.md",
+  "estado": "PI",
+  "cidade": "Parnaíba",
+  "conceito": "Conexão entre academia, público e empreendedorismo digital em Parnaíba, com carnaúba como rede regional de inovação.",
+  "linhas_nome": [
+    "Carnaúba Valley"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Parnaíba, PI",
+  "logo_origem": "src/assets/covers/communities/carnauba-valley.png",
+  "logo_origem_sha256": "ddb5e81d3832544c7de5474681d21c6e180d3ddf22b737ef71c8032eadc11cc3",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "81b9306065457b76326ea3f0fa66b8bfad2b1c6c7944a78a6be211264635c676",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Ilustração exclusiva de inovação regional com palmeira e delta; retratos e pequeno grupo de conversa conferidos. Nome acentuado, logo original, áreas textuais e rodapé legíveis."
+  }
+}

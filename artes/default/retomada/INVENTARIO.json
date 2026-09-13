@@ -1,9 +1,9 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-03",
+  "checkpoint_lote": "lote-02",
   "total_previsto": 93,
-  "revisados_tecnicamente": 10,
+  "revisados_tecnicamente": 20,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -89,80 +89,80 @@
       "id": "agenda-ti-potiguar",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "agile-maranhao",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "all-saints-bay",
       "lote": "lote-02",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "apgamed",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "arretadas-do-php",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "aws-user-group-ceara",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "bahia-indie-game-developers",
       "lote": "lote-02",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "caju-valley",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "cajuina-valley",
       "lote": "lote-02",
       "arquivos_basicos_completos": true,
-      "revisao_visual_registrada": false,
-      "estado": "arquivos_presentes_revisao_pendente",
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "carnauba-valley",
       "lote": "lote-02",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {

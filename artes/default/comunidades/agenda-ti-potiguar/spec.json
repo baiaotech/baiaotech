@@ -1,0 +1,14 @@
+{
+  "id": "agenda-ti-potiguar",
+  "conceito": "Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.",
+  "ilustracao": "artes/default/comunidades/agenda-ti-potiguar/geracao-original.png",
+  "linhas_nome": [
+    "Agenda TI Potiguar"
+  ],
+  "prompt": "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png",
+    "gerado_nesta_retomada": true
+  }
+}

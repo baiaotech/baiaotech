@@ -1,0 +1,36 @@
+{
+  "id": "all-saints-bay",
+  "nome": "All Saints Bay",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/all-saints-bay.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.",
+  "linhas_nome": [
+    "All Saints Bay"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": "src/assets/covers/communities/all-saints-bay.jpg",
+  "logo_origem_sha256": "fa5489b3fbd58e21ea462cd7e07b0c27117e66f6822b31d07f6df9279317d8b4",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "507d6c38742e9740a24d368c4a5b3412f942179dd5a2d7b73623da3b3fd43dff",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Protótipo e diálogo empreendedor exclusivos; duas figuras com mãos naturais. Logo cadastrada, nome, título, margens e rodapé conferidos."
+  }
+}

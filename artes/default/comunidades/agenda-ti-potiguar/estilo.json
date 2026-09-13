@@ -20,5 +20,17 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "befdac8a29260fec249bb081c0bb56fe23d329dce7cd03d99472562223b191ac",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Calendário e sol reposicionados por Image Gen para liberar o cabeçalho; gesto de indicação preservado. Nome, logo, anatomia, título, dados e rodapé conferidos."
+  }
 }

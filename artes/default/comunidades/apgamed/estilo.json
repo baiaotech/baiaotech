@@ -20,5 +20,17 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "587fb7f022ef7ae2bbad73d1f9b87cfdf98914ee53b05bb0dace8753c2aedb73",
+  "origem_ilustracao": {
+    "tipo": "recuperada_do_remoto",
+    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+    "arquivo": "ilustracao.jpg",
+    "prompt_original": "Não recuperado; não inventado."
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Cena recuperada de criação/teste de jogos com controle, notebook e mundo de plataformas; três figuras distintas e anatomia revisada. Nome, logo e todas as áreas textuais legíveis."
+  }
 }

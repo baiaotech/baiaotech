@@ -1,0 +1,232 @@
+{
+  "id": "lote-02",
+  "status": "concluido_em_revisao",
+  "aprovacao": null,
+  "comunidades": [
+    {
+      "id": "agenda-ti-potiguar",
+      "conceito": "Curadoria de eventos de tecnologia, conexão entre agendas e encontros no Rio Grande do Norte.",
+      "prompt": "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
+      "prompts_efetivos": [
+        "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the calendar, sun and upper connecting curves downward and slightly smaller so every part begins BELOW y=30%; keep the woman's pointing gesture natural and retain the calendar whole. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks."
+      ],
+      "origem_ilustracao": {
+        "ferramenta": "Image Gen integrado",
+        "arquivo_gerado": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png",
+        "gerado_nesta_retomada": true,
+        "arquivo_final": "exec-85b03ef1-a301-4079-94c2-8c594316e57b.png"
+      },
+      "ilustracao_sha256": "befdac8a29260fec249bb081c0bb56fe23d329dce7cd03d99472562223b191ac",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Calendário e sol reposicionados por Image Gen para liberar o cabeçalho; gesto de indicação preservado. Nome, logo, anatomia, título, dados e rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "agile-maranhao",
+      "conceito": "Facilitação de práticas ágeis com quadro visual e colaboração no Maranhão.",
+      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompts_efetivos": [
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+      ],
+      "origem_ilustracao": {
+        "arquivo_recuperado": "ilustracao.jpg",
+        "commit_recuperacao": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+        "prompt_original": "Não recuperado; não reconstruído como se fosse original.",
+        "arquivo_final": "exec-d1f9e1ab-caaf-4192-b6a0-087d58f8fd4d.png",
+        "ferramenta": "Image Gen integrado"
+      },
+      "ilustracao_sha256": "74b45f0ca443cd5403a1bbdf1a059f2c223bbaefa5ea69454dc091efd128c2e4",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "PNG recuperado não decodificava e foi reexportado. Arco superior removido por Image Gen para liberar cabeçalho. Quadro ágil, três participantes e marcas preservados; mãos e dados legíveis."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "all-saints-bay",
+      "conceito": "Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.",
+      "prompt": "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits.",
+      "prompts_efetivos": [
+        "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits."
+      ],
+      "origem_ilustracao": {
+        "ferramenta": "Image Gen integrado",
+        "arquivo_gerado": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png",
+        "gerado_nesta_retomada": true,
+        "arquivo_final": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png"
+      },
+      "ilustracao_sha256": "507d6c38742e9740a24d368c4a5b3412f942179dd5a2d7b73623da3b3fd43dff",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Protótipo e diálogo empreendedor exclusivos; duas figuras com mãos naturais. Logo cadastrada, nome, título, margens e rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "apgamed",
+      "conceito": "Desenvolvimento de jogos e testes colaborativos de controles na Paraíba.",
+      "prompt": null,
+      "prompts_efetivos": [],
+      "origem_ilustracao": {
+        "tipo": "recuperada_do_remoto",
+        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+        "arquivo": "ilustracao.jpg",
+        "prompt_original": "Não recuperado; não inventado."
+      },
+      "ilustracao_sha256": "587fb7f022ef7ae2bbad73d1f9b87cfdf98914ee53b05bb0dace8753c2aedb73",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Cena recuperada de criação/teste de jogos com controle, notebook e mundo de plataformas; três figuras distintas e anatomia revisada. Nome, logo e todas as áreas textuais legíveis."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "arretadas-do-php",
+      "conceito": "Mulheres desenvolvedoras compartilhando conhecimento de programação PHP no Ceará.",
+      "prompt": null,
+      "prompts_efetivos": [],
+      "origem_ilustracao": {
+        "tipo": "recuperada_do_remoto",
+        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+        "arquivo": "ilustracao.jpg",
+        "prompt_original": "Não recuperado; não inventado."
+      },
+      "ilustracao_sha256": "1f74193e508c15e7ce29c21dbedcf1da5a196fb3e158a5d38adb9e5e669605b9",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Cena recuperada de duas desenvolvedoras compartilhando programação; nome desde a margem esquerda, sem logo inventada ou área vazia. Mãos, composição, dados e rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "aws-user-group-ceara",
+      "conceito": "Discussão de arquitetura em nuvem entre profissionais do Ceará.",
+      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Move ONLY the cloud down by 80 pixels, shrinking it slightly so it stays above the cubes without overlap. Highest point of cloud must be BELOW 370px in a 1350px-tall canvas. Keep all three cubes, both people and landscape intact. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompts_efetivos": [
+        "Use case precise-object-edit. Edit this illustration BACKGROUND only, preserving its exact warm painted style, palette, people, devices and low landscape. Required correction: make TOP 0-25% completely blank warm ivory #FCFAF7. Move and scale the cloud downward so its top is BELOW y=30%; slightly compress the vertical three-cube stack if needed, preserving all cubes and practitioner's natural gesture. Keep LEFT x0-55% from y25-72% blank ivory, and bottom y89-100% blank ivory. No abrupt masks, clipped objects, extra anatomy or new people. Keep image composition portrait4:5. No text logos or watermarks.",
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Move ONLY the cloud down by 80 pixels, shrinking it slightly so it stays above the cubes without overlap. Highest point of cloud must be BELOW 370px in a 1350px-tall canvas. Keep all three cubes, both people and landscape intact. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+      ],
+      "origem_ilustracao": {
+        "ferramenta": "Image Gen integrado",
+        "arquivo_gerado": "exec-ca89c2d9-f70f-4747-9e52-472c396ce628.png",
+        "gerado_nesta_retomada": true,
+        "arquivo_final": "exec-d6747156-1355-40b4-9690-b3edb0b56966.png"
+      },
+      "ilustracao_sha256": "efb988da96e2237b8050e850210a62263d9e2b47f9ef563d8893c57cd3f6d150",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Nuvem reposicionada e reduzida em duas edições Image Gen para liberar cabeçalho; três cubos e profissionais preservados. Logo cadastrada intacta, dados e rodapé legíveis."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "bahia-indie-game-developers",
+      "conceito": "Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.",
+      "prompt": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+      "prompts_efetivos": [
+        "Use case illustration-story. ONE exclusive editorial illustration BACKGROUND for Bahia Indie Game Developers, independent game creation collective from Bahia. Portrait 4:5 composition, 1080x1350 intended. Warm flat painted premium editorial art, subtle paper grain, ivory #FCFAF7 terracotta #F9733B burnt sienna #8B3E2F apricot and olive. DISTINCT scene at RIGHT: an adult Brazilian woman game artist with long braid seated on a low stool draws a small imaginary game character on a pen display, while a Black man game designer with short hair arranges unlettered storyboard tiles vertically on a narrow easel. Above them a whimsical small fantasy island made of terracotta geometric platforms and foliage evokes world-building, without copyrighted characters or console branding. Not a group at a laptop or game controller scene. Warm low Salvador coastal architecture strip at bottom. Correct natural hands, anatomy and devices. Strict composition: TOP0-25% blank ivory, LEFT0-55% y25-72% blank ivory; all principal subjects x62-98% y32-83%. Landscape only y77-86%, bottom12% fully blank ivory. No text, numbers, lettering, logos, watermarks, border. Background asset only; typography and registered logo will be added separately.",
+        "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly."
+      ],
+      "origem_ilustracao": {
+        "ferramenta": "Image Gen integrado",
+        "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
+        "gerado_nesta_retomada": true,
+        "arquivo_final": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png"
+      },
+      "ilustracao_sha256": "283249335cbc5cf0a13432aff4a940aeeda20d01aa48368d3f8cf06bd16ce2f0",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Ilustração exclusiva de arte digital, storyboard e mundo de jogo; ilhas reposicionadas por Image Gen para não invadir o cabeçalho. Nome completo em duas linhas, logo e rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "caju-valley",
+      "conceito": "Empreendedorismo e prototipagem colaborativa em Aracaju com referência ao caju.",
+      "prompt": null,
+      "prompts_efetivos": [],
+      "origem_ilustracao": {
+        "tipo": "recuperada_do_remoto",
+        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+        "arquivo": "ilustracao.jpg",
+        "prompt_original": "Não recuperado; não inventado."
+      },
+      "ilustracao_sha256": "c1cc08aae48084ff199f7ca571b44142ae6824397a5d87bc04c522cf0a07ebfe",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Cena recuperada de prototipagem com caju e ecossistema local; mãos, duas figuras, nome, logo, margens textuais e rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "cajuina-valley",
+      "conceito": "Networking de inovação em Teresina, cajuína e conexões empreendedoras.",
+      "prompt": null,
+      "prompts_efetivos": [],
+      "origem_ilustracao": {
+        "tipo": "recuperada_do_remoto",
+        "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+        "arquivo": "ilustracao.jpg",
+        "prompt_original": "Não recuperado; não inventado."
+      },
+      "ilustracao_sha256": "6d026000fd00ff811e8871087a0b53d7b44ea6bed70cdbe61d0756a1c0821953",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Cena recuperada de conversa empreendedora com cajuína; três figuras, mãos, nome acentuado, logo sem recorte e dados/rodapé conferidos."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "carnauba-valley",
+      "conceito": "Conexão entre academia, público e empreendedorismo digital em Parnaíba, com carnaúba como rede regional de inovação.",
+      "prompt": "Use case illustration-story. Create one exclusive painted editorial background for Carnaúba Valley, community of startup technology and digital entrepreneurship in Parnaíba, Piauí, linking public, academia and private sector. Portrait4:5 intended1080x1350. Warm textured editorial painting, ivory #FCFAF7 terracotta #F9733B sienna #8B3E2F apricot and olive #6B7F56. DISTINCT visual metaphor: at RIGHT a Brazilian brown-skinned woman researcher with tied-back hair holds a tablet showing plain geometric blocks, discussing with a Black male entrepreneur carrying rolled plans and a small older female participant holding a notebook. Three smaller full-body figures around a carnauba palm whose fronds branch into subtle connected orange idea nodes, symbolic regional innovation network. Delta waterways, low vegetation and palms form a narrow landscape strip, no invented venue. All main subjects x62-98% y35-82%; every motif and sun below y30%. TOP0-25% wholly blank ivory. LEFT0-55% y25-72% wholly blank ivory, free for text. Landscape ONLY y77-86%, BOTTOM12% fully blank ivory for footer. Accurate natural anatomy and hands, no repeated people from other cards. No text letters digits logos badges branding watermark or frame. Background only, no finished poster typography.",
+      "prompts_efetivos": [
+        "Use case illustration-story. Create one exclusive painted editorial background for Carnaúba Valley, community of startup technology and digital entrepreneurship in Parnaíba, Piauí, linking public, academia and private sector. Portrait4:5 intended1080x1350. Warm textured editorial painting, ivory #FCFAF7 terracotta #F9733B sienna #8B3E2F apricot and olive #6B7F56. DISTINCT visual metaphor: at RIGHT a Brazilian brown-skinned woman researcher with tied-back hair holds a tablet showing plain geometric blocks, discussing with a Black male entrepreneur carrying rolled plans and a small older female participant holding a notebook. Three smaller full-body figures around a carnauba palm whose fronds branch into subtle connected orange idea nodes, symbolic regional innovation network. Delta waterways, low vegetation and palms form a narrow landscape strip, no invented venue. All main subjects x62-98% y35-82%; every motif and sun below y30%. TOP0-25% wholly blank ivory. LEFT0-55% y25-72% wholly blank ivory, free for text. Landscape ONLY y77-86%, BOTTOM12% fully blank ivory for footer. Accurate natural anatomy and hands, no repeated people from other cards. No text letters digits logos badges branding watermark or frame. Background only, no finished poster typography."
+      ],
+      "origem_ilustracao": {
+        "ferramenta": "Image Gen integrado",
+        "arquivo_gerado": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png",
+        "gerado_nesta_retomada": true,
+        "arquivo_final": "exec-9ba7fca6-ac23-40c3-907d-6fdec931d520.png"
+      },
+      "ilustracao_sha256": "81b9306065457b76326ea3f0fa66b8bfad2b1c6c7944a78a6be211264635c676",
+      "revisao_visual": {
+        "realizada": true,
+        "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+        "observacoes": "Ilustração exclusiva de inovação regional com palmeira e delta; retratos e pequeno grupo de conversa conferidos. Nome acentuado, logo original, áreas textuais e rodapé legíveis."
+      },
+      "status": "em_revisao",
+      "aprovacao": null
+    }
+  ],
+  "bloqueios": [],
+  "validacao": {
+    "dimensoes": "1080x1350",
+    "svgs_editaveis": true,
+    "grupos_fixos_preservados": true,
+    "logos_pixels_iguais_ao_cover_image": true,
+    "previas_pixels_iguais_ao_svg": true,
+    "dados_demonstrativos": true
+  },
+  "nota": "Revisão técnica e visual do agente não é aprovação humana. Os prompts originais de ilustrações recuperadas que não estavam nos arquivos remotos permanecem desconhecidos; apenas prompts realmente executados nesta retomada foram registrados."
+}

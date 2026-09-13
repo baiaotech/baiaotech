@@ -1,0 +1,37 @@
+{
+  "id": "bahia-indie-game-developers",
+  "nome": "Bahia Indie Game Developers",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/bahia-indie-game-developers.md",
+  "estado": "BA",
+  "cidade": "",
+  "conceito": "Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.",
+  "linhas_nome": [
+    "Bahia Indie Game",
+    "Developers"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · BA",
+  "logo_origem": "src/assets/covers/communities/bahia-indie-game-developers.jpg",
+  "logo_origem_sha256": "27cbd5b04523a06d551ea47a088923ae99d36894a6c0925bd1ed3fa6a6d83909",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "283249335cbc5cf0a13432aff4a940aeeda20d01aa48368d3f8cf06bd16ce2f0",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
+    "gerado_nesta_retomada": true,
+    "arquivo_final": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png"
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Ilustração exclusiva de arte digital, storyboard e mundo de jogo; ilhas reposicionadas por Image Gen para não invadir o cabeçalho. Nome completo em duas linhas, logo e rodapé conferidos."
+  }
+}

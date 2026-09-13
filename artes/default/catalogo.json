@@ -146,6 +146,76 @@
       "estado": "CE",
       "estilo": "comunidades/forhacker-space/estilo.json",
       "previa": "comunidades/forhacker-space/previa.png"
+    },
+    {
+      "id": "agenda-ti-potiguar",
+      "nome": "Agenda TI Potiguar",
+      "estado": "RN",
+      "estilo": "comunidades/agenda-ti-potiguar/estilo.json",
+      "previa": "comunidades/agenda-ti-potiguar/previa.png"
+    },
+    {
+      "id": "agile-maranhao",
+      "nome": "Agile Maranhão",
+      "estado": "MA",
+      "estilo": "comunidades/agile-maranhao/estilo.json",
+      "previa": "comunidades/agile-maranhao/previa.png"
+    },
+    {
+      "id": "all-saints-bay",
+      "nome": "All Saints Bay",
+      "estado": "BA",
+      "estilo": "comunidades/all-saints-bay/estilo.json",
+      "previa": "comunidades/all-saints-bay/previa.png"
+    },
+    {
+      "id": "apgamed",
+      "nome": "APGameD",
+      "estado": "PB",
+      "estilo": "comunidades/apgamed/estilo.json",
+      "previa": "comunidades/apgamed/previa.png"
+    },
+    {
+      "id": "arretadas-do-php",
+      "nome": "Arretadas do PHP",
+      "estado": "CE",
+      "estilo": "comunidades/arretadas-do-php/estilo.json",
+      "previa": "comunidades/arretadas-do-php/previa.png"
+    },
+    {
+      "id": "aws-user-group-ceara",
+      "nome": "AWS User Group Ceará",
+      "estado": "CE",
+      "estilo": "comunidades/aws-user-group-ceara/estilo.json",
+      "previa": "comunidades/aws-user-group-ceara/previa.png"
+    },
+    {
+      "id": "bahia-indie-game-developers",
+      "nome": "Bahia Indie Game Developers",
+      "estado": "BA",
+      "estilo": "comunidades/bahia-indie-game-developers/estilo.json",
+      "previa": "comunidades/bahia-indie-game-developers/previa.png"
+    },
+    {
+      "id": "caju-valley",
+      "nome": "Caju Valley",
+      "estado": "SE",
+      "estilo": "comunidades/caju-valley/estilo.json",
+      "previa": "comunidades/caju-valley/previa.png"
+    },
+    {
+      "id": "cajuina-valley",
+      "nome": "Cajuína Valley",
+      "estado": "PI",
+      "estilo": "comunidades/cajuina-valley/estilo.json",
+      "previa": "comunidades/cajuina-valley/previa.png"
+    },
+    {
+      "id": "carnauba-valley",
+      "nome": "Carnaúba Valley",
+      "estado": "PI",
+      "estilo": "comunidades/carnauba-valley/estilo.json",
+      "previa": "comunidades/carnauba-valley/previa.png"
     }
   ],
   "genericos": [

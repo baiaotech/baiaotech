@@ -22,7 +22,9 @@
         "carnauba-valley"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-02.json"
     },
     {
       "id": "lote-03",

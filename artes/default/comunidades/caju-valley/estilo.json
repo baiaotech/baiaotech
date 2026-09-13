@@ -20,5 +20,17 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "c1cc08aae48084ff199f7ca571b44142ae6824397a5d87bc04c522cf0a07ebfe",
+  "origem_ilustracao": {
+    "tipo": "recuperada_do_remoto",
+    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+    "arquivo": "ilustracao.jpg",
+    "prompt_original": "Não recuperado; não inventado."
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Cena recuperada de prototipagem com caju e ecossistema local; mãos, duas figuras, nome, logo, margens textuais e rodapé conferidos."
+  }
 }

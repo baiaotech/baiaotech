@@ -20,5 +20,17 @@
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
-  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
+  "ilustracao_sha256": "6d026000fd00ff811e8871087a0b53d7b44ea6bed70cdbe61d0756a1c0821953",
+  "origem_ilustracao": {
+    "tipo": "recuperada_do_remoto",
+    "commit": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+    "arquivo": "ilustracao.jpg",
+    "prompt_original": "Não recuperado; não inventado."
+  },
+  "revisao_visual": {
+    "realizada": true,
+    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
+    "observacoes": "Cena recuperada de conversa empreendedora com cajuína; três figuras, mãos, nome acentuado, logo sem recorte e dados/rodapé conferidos."
+  }
 }

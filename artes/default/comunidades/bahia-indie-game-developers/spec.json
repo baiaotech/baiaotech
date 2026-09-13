@@ -1,0 +1,18 @@
+{
+  "id": "bahia-indie-game-developers",
+  "conceito": "Criação independente de mundos de jogos na Bahia: arte digital e planejamento narrativo de cenários.",
+  "ilustracao": "artes/default/comunidades/bahia-indie-game-developers/geracao-corrigida.png",
+  "linhas_nome": [
+    "Bahia Indie Game",
+    "Developers"
+  ],
+  "prompt": "Use case illustration-story. ONE exclusive editorial illustration BACKGROUND for Bahia Indie Game Developers, independent game creation collective from Bahia. Portrait 4:5 composition, 1080x1350 intended. Warm flat painted premium editorial art, subtle paper grain, ivory #FCFAF7 terracotta #F9733B burnt sienna #8B3E2F apricot and olive. DISTINCT scene at RIGHT: an adult Brazilian woman game artist with long braid seated on a low stool draws a small imaginary game character on a pen display, while a Black man game designer with short hair arranges unlettered storyboard tiles vertically on a narrow easel. Above them a whimsical small fantasy island made of terracotta geometric platforms and foliage evokes world-building, without copyrighted characters or console branding. Not a group at a laptop or game controller scene. Warm low Salvador coastal architecture strip at bottom. Correct natural hands, anatomy and devices. Strict composition: TOP0-25% blank ivory, LEFT0-55% y25-72% blank ivory; all principal subjects x62-98% y32-83%. Landscape only y77-86%, bottom12% fully blank ivory. No text, numbers, lettering, logos, watermarks, border. Background asset only; typography and registered logo will be added separately.",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-d9210d87-57a7-4c85-b2d7-56645a7357bc.png",
+    "gerado_nesta_retomada": true
+  },
+  "prompt_correcao": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Make the entire floating fantasy island cluster smaller and place it lower at right. Its highest point INCLUDING sun and trees must be BELOW 350px in a 1350px-tall canvas. Keep the full islands, game artist and storyboard designer. No part may enter header. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+  "arquivo_correcao": "exec-bfea8041-fadb-4b61-8cc6-ddda4701c4cc.png",
+  "ferramenta_correcao": "Image Gen integrado"
+}

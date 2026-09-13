@@ -16,22 +16,18 @@
   "logo_origem": "src/assets/covers/communities/agile-maranhao.png",
   "logo_origem_sha256": "184f1c8b23aba4d8c8c22e603100b87e5a9067733fa73dd3633d7a3c41d3437c",
   "logo": "logo.png",
-  "ilustracao": "ilustracao.jpg",
+  "ilustracao": "artes/default/comunidades/agile-maranhao/geracao-corrigida.png",
   "modelo": "modelo.svg",
   "previa": "previa.png",
   "referencia_aprovada": null,
   "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais.",
-  "ilustracao_sha256": "74b45f0ca443cd5403a1bbdf1a059f2c223bbaefa5ea69454dc091efd128c2e4",
+  "prompt": null,
   "origem_ilustracao": {
     "arquivo_recuperado": "ilustracao.jpg",
     "commit_recuperacao": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
-    "prompt_original": "Não recuperado; não reconstruído como se fosse original.",
-    "arquivo_final": "exec-d1f9e1ab-caaf-4192-b6a0-087d58f8fd4d.png",
-    "ferramenta": "Image Gen integrado"
+    "prompt_original": "Não recuperado; não reconstruído como se fosse original."
   },
-  "revisao_visual": {
-    "realizada": true,
-    "metodo": "Inspeção individual de previa.png com view_image e comparação pixel a pixel com renderização do SVG.",
-    "observacoes": "PNG recuperado não decodificava e foi reexportado. Arco superior removido por Image Gen para liberar cabeçalho. Quadro ágil, três participantes e marcas preservados; mãos e dados legíveis."
-  }
+  "prompt_correcao": "Use case precise-object-edit. Correct the attached illustration background, preserving original warm painted style, palette, faces, natural anatomy, unique scene and low landscape. Remove the thin orange arc and all orange nodes above the board. Keep board, people and landscape. Mandatory empty header: whole TOP quarter canvas is blank ivory #FCFAF7. No motif, cloud, arc, sun or island in top quarter. Keep LEFT x0-55% y25-65% blank for typesetting. Bottom12% blank for footer. Never add typography, logos, brands or watermarks. Do not crop characters or cut shapes abruptly.",
+  "arquivo_correcao": "exec-d1f9e1ab-caaf-4192-b6a0-087d58f8fd4d.png",
+  "ferramenta_correcao": "Image Gen integrado"
 }

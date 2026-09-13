@@ -1,0 +1,14 @@
+{
+  "id": "all-saints-bay",
+  "conceito": "Conexão entre empreendedores e investidores em Salvador, com apresentação de protótipo e rede de ideias junto à baía.",
+  "ilustracao": "artes/default/comunidades/all-saints-bay/geracao-original.png",
+  "linhas_nome": [
+    "All Saints Bay"
+  ],
+  "prompt": "Use case: illustration-story. Create ONE exclusive editorial poster illustration background for All Saints Bay, Salvador startup and innovation community connecting founders and investors. Portrait 4:5 1080x1350 composition. Premium warm painted editorial illustration with subtle paper texture, ivory #FCFAF7, terracotta #F9733B, burnt sienna #8B3E2F, apricot #F6D7B7 and olive #6B7F56. DISTINCT scene: at RIGHT, a Black Brazilian woman founder with short natural hair presents an unbranded small physical product prototype held in both hands to a brown-skinned man with glasses holding an open notebook. They stand next to a narrow board with abstract connected circular idea tiles; a calm Salvador bay shoreline and small distant colonial architectural silhouettes occupy only the low landscape. Friendly startup knowledge exchange, no money symbols, rockets or stock graph. ALL main figures and objects x=62%-98%, y=32%-83%. TOP y=0%-25% entirely blank ivory; LEFT x=0%-55% y=25%-72% entirely blank ivory reserved for editorial text. Low thin landscape spans width ONLY y=77%-86%; bottom 12% completely blank ivory for footer. Natural correct hands and anatomy. NO text, letters, numbers, logo, watermark, border. Only illustration background, not finished card. Do not copy any other community scene or profile portraits.",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo_gerado": "exec-c11a6255-b5b3-4c36-a880-4eba82de66b4.png",
+    "gerado_nesta_retomada": true
+  }
+}
