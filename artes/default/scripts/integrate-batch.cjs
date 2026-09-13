@@ -22,6 +22,7 @@ async function main() {
   const catalog = read('catalogo.json');
   const prompts = read('PROMPTS.json');
   prompts.correcoes ||= {};
+  if (fs.existsSync(path.join(root, 'genericos/REVISAO.json'))) prompts.correcoes.genericos = [read('genericos/REVISAO.json').prompt_correcao];
   for (const slug of batch.comunidades) {
     const style = read(`comunidades/${slug}/estilo.json`);
     const entry = manifest.comunidades.find(x => x.id === slug);
@@ -60,7 +61,8 @@ async function main() {
     const required = ['estilo.json', 'ilustracao.jpg', 'modelo.svg', 'previa.png'];
     const complete = required.every(f => has(`comunidades/${slug}/${f}`));
     const b = plan.lotes.find(x => x.comunidades.includes(slug));
-    const visual = b?.status === 'concluido_em_revisao';
+    const firstManifest = path.join(root, 'lotes/lote-01.json');
+    const visual = b?.status === 'concluido_em_revisao' || (!b && fs.existsSync(firstManifest) && read('lotes/lote-01.json').comunidades.some(x => x.id === slug && x.revisao_visual?.realizada));
     return {id: slug, lote: b?.id || 'lote-01', arquivos_basicos_completos: complete, revisao_visual_registrada: visual, estado: visual ? 'concluido_em_revisao' : complete ? 'arquivos_presentes_revisao_pendente' : has(stylePath) ? 'parcial' : 'ausente', aprovacao: null};
   });
   fs.mkdirSync(path.join(root, 'retomada'), {recursive: true});

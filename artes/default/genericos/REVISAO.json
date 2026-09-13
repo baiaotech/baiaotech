@@ -1,0 +1,17 @@
+{
+  "id": "genericos",
+  "status": "concluido_em_revisao",
+  "aprovacao": null,
+  "exclusivo_para": "Organizadores não catalogados",
+  "ferramenta": "Image Gen integrado",
+  "prompt_correcao": "Use case precise-object-edit. Input image is edit target, an existing generic technology-community editorial poster background. Change ONLY composition spacing: reduce the group of three people and laptop by 20 percent and shift the whole group RIGHT, keeping baseline around y1100 on1080x1350 canvas. All hair, bodies, hands and devices must stay RIGHT of x600 through y850, leaving left55% entirely empty ivory paper for event data. Lower the large apricot circle so its top edge starts BELOW y350; keep thin terracotta network arcs below y350. Preserve the same three people, natural faces/hands, collaborative laptop scene, palette, paper texture, low Northeast hills/cacti/church landscape and blank ivory footer from y1180 down. Top0..320 entirely blank ivory. No text, logos, badges or border. Portrait4:5, background only.",
+  "origem": "JPEG existente preservado em ilustracao-anterior-nao-aprovada.jpg; PNG de correção preservado em geracao-corrigida.png",
+  "revisao_visual": {
+    "realizada": true,
+    "modelos": [
+      "com-logo",
+      "sem-logo"
+    ],
+    "observacoes": "Ambos os PNGs finais inspecionados individualmente. Cabeçalho, coluna de dados e rodapé livres; nomes e dados demonstrativos legíveis, rostos e mãos coerentes. Logo original e SVG textual preservados; PNG reexportado com fonte Inter local. Revisão técnica não é aprovação humana."
+  }
+}
