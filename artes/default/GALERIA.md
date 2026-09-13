@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-80 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+83 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Revisão adicional do padrão](retomada/REVISAO-PADRAO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -651,6 +651,30 @@ Capacitação e apoio mútuo entre mulheres Python em Sergipe: facilitadoras com
 ![Card completo — PyLadies Sergipe](comunidades/pyladies-sergipe/previa.png)
 
 [SVG editável](comunidades/pyladies-sergipe/modelo.svg) · [Estilo e origem](comunidades/pyladies-sergipe/estilo.json)
+
+## Women Techmakers João Pessoa
+
+Protagonismo feminino e troca entre gerações sobre carreiras em tecnologia em João Pessoa, em uma conversa com microfone e trilha de desenvolvimento profissional.
+
+![Card completo — Women Techmakers João Pessoa](comunidades/women-techmakers-joao-pessoa/previa.png)
+
+[SVG editável](comunidades/women-techmakers-joao-pessoa/modelo.svg) · [Estilo e origem](comunidades/women-techmakers-joao-pessoa/estilo.json)
+
+## Women Who Code Recife
+
+Mentoria e revisão colaborativa de programação entre mulheres em Recife, com monitor de código abstrato e anotações de estudo.
+
+![Card completo — Women Who Code Recife](comunidades/women-who-code-recife/previa.png)
+
+[SVG editável](comunidades/women-who-code-recife/modelo.svg) · [Estilo e origem](comunidades/women-who-code-recife/estilo.json)
+
+## WordPress Fortaleza
+
+Oficina de criação de sites e componentes WordPress em Fortaleza, com montagem colaborativa de um layout modular.
+
+![Card completo — WordPress Fortaleza](comunidades/wordpress-fortaleza/previa.png)
+
+[SVG editável](comunidades/wordpress-fortaleza/modelo.svg) · [Estilo e origem](comunidades/wordpress-fortaleza/estilo.json)
 
 ## Genérico com-logo
 

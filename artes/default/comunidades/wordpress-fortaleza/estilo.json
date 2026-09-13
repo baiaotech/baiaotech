@@ -1,0 +1,25 @@
+{
+  "id": "wordpress-fortaleza",
+  "nome": "WordPress Fortaleza",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/wordpress-fortaleza.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Oficina de criação de sites e componentes WordPress em Fortaleza, com montagem colaborativa de um layout modular.",
+  "linhas_nome": [
+    "WordPress",
+    "Fortaleza"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/wordpress-fortaleza.png",
+  "logo_origem_sha256": "6c3006d1a11ccdb8afdeedc6a8d48e35572e9db1899b1fbc68d519de7ae20854",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

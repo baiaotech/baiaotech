@@ -1,0 +1,25 @@
+{
+  "id": "women-who-code-recife",
+  "nome": "Women Who Code Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/women-who-code-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Mentoria e revisão colaborativa de programação entre mulheres em Recife, com monitor de código abstrato e anotações de estudo.",
+  "linhas_nome": [
+    "Women Who Code",
+    "Recife"
+  ],
+  "nome_tamanho": 49,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/women-who-code-recife.png",
+  "logo_origem_sha256": "a9734aa88492bd163d91038c8629dc3d94c81b2c8d207f56842831b3e86231f1",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

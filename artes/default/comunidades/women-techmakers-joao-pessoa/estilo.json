@@ -1,0 +1,25 @@
+{
+  "id": "women-techmakers-joao-pessoa",
+  "nome": "Women Techmakers João Pessoa",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/women-techmakers-joao-pessoa.md",
+  "estado": "PB",
+  "cidade": "João Pessoa",
+  "conceito": "Protagonismo feminino e troca entre gerações sobre carreiras em tecnologia em João Pessoa, em uma conversa com microfone e trilha de desenvolvimento profissional.",
+  "linhas_nome": [
+    "Women Techmakers",
+    "João Pessoa"
+  ],
+  "nome_tamanho": 47,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · João Pessoa, PB",
+  "logo_origem": "src/assets/covers/communities/women-techmakers-joao-pessoa.png",
+  "logo_origem_sha256": "3ab5045bdeec4500d8eac99883d2612081d174ed261692c5401047e6724e367e",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

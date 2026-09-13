@@ -88,7 +88,7 @@ As logos das comunidades mantêm a identidade e titularidade de seus respectivos
 
 ## Continuação em lotes
 
-O [plano de continuação](lotes/PLANO.json) organiza as 83 comunidades ainda sem modelo em lotes de até 10, cada um produzido por um subagent. Cada lote concluído é conferido e enviado à mesma branch; os anteriores são preservados. Os manifestos em `lotes/lote-XX.json` registram prompts e revisão visual. A criação continua separada da aprovação para publicação.
+O [plano de continuação](lotes/PLANO.json) organiza as 83 comunidades além do primeiro lote em grupos de até 10, cada um produzido por um subagente. Cada lote concluído é conferido e enviado à mesma branch; os anteriores são preservados. Os manifestos em `lotes/lote-XX.json` registram prompts e revisão visual. A criação continua separada da aprovação para publicação.
 
 Para comunidades sem `cover_image` no cadastro, o modelo específico utiliza o nome em destaque desde a margem esquerda, sem logo inventada, marca emprestada ou espaço vazio reservado. A ausência fica registrada no `estilo.json` para revisão.
 

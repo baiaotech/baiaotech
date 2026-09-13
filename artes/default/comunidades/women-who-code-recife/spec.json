@@ -1,0 +1,14 @@
+{
+  "id": "women-who-code-recife",
+  "conceito": "Mentoria e revisão colaborativa de programação entre mulheres em Recife, com monitor de código abstrato e anotações de estudo.",
+  "linhas_nome": [
+    "Women Who Code",
+    "Recife"
+  ],
+  "nome_tamanho": 49,
+  "prompt": "Use case: illustration-story. Generate ONE unique illustration background for Women Who Code Recife, portrait 1080x1350. Input image: STYLE AND COMPOSITION reference ONLY. Do not copy its people, laptop scene, text or logos. Same organic warm editorial hand-painted flat masses of terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 and restrained olive on ivory #FCFAF7, discreet paper grain, simplified expressive faces. NOT photorealistic or semirealistic; NOT corporate geometric people. UNIQUE SCENE grounded in programming workshops and career mentorship: two Brazilian women doing a thoughtful code review at a narrow upright desk on the RIGHT. One dark-skinned woman with long braids stands leaning slightly toward an upright monitor with abstract indented short code-like bars (NO letters); an older brown woman with short wavy hair and round glasses sits on a stool writing notes in a small notebook. Both face the monitor in cooperative side-profile, different heights, natural hands, all feet and furniture legs intact. Small stack of unmarked notebooks on desk. NO microphone, no career board. Continuous low Recife riverbank landscape with small distant bridge arches and warm flat rooflines beneath. EXACT spacing: entire top y0–340 blank ivory, left x0–600 blank until y870, all people/props x640–1060 y470–1090. Landscape connects BOTH lateral edges y1000–1140, absolutely no isolated vignette or floating land. Ivory organic wave ends by y1160. ALL y1180–1350 completely empty for fixed footer. No straight horizontal line. No words, logos, watermarks, labels, brand symbols, border. Background only, not complete card.",
+  "ilustracao": "artes/default/comunidades/women-who-code-recife/geracao-original.png",
+  "prompts_correcao": [],
+  "referencia_composicao": "artes/default/genericos/com-logo/modelo.svg",
+  "ferramenta": "ImageGen integrado"
+}

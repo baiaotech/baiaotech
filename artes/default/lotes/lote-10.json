@@ -1,0 +1,68 @@
+{
+  "id": "lote-10",
+  "status": "concluido_em_revisao",
+  "aprovacao": null,
+  "comparacao_base": {
+    "realizada": true,
+    "base": "genericos/com-logo/modelo.svg",
+    "observacoes": "As três ilustrações foram geradas com a prévia do genérico como referência explícita de traço e composição, sem copiar a cena. Primeiro card WTM João Pessoa conferido pelo agente principal antes de expandir os outros dois. Cada PNG completo foi inspecionado individualmente após montagem. WordPress recebeu três correções de margem/posição; os insumos anteriores estão preservados, não aprovados. Revisão técnica não é aprovação humana."
+  },
+  "comunidades": [
+    {
+      "id": "women-techmakers-joao-pessoa",
+      "conceito": "Protagonismo feminino e troca entre gerações sobre carreiras em tecnologia em João Pessoa, em uma conversa com microfone e trilha de desenvolvimento profissional.",
+      "prompt": "Use case: illustration-story. Generate ONE original background for Women Techmakers João Pessoa, portrait 1080x1350. Input image is STYLE AND COMPOSITION reference only; do not reproduce its scene, people, words or logos. Match organic warm editorial illustration with broad flat terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 shapes, restrained olive, subtle paper grain and simplified expressive faces. No semirealism, no geometric corporate stick people. UNIQUE SCENE: two Brazilian women in an inspiring technology career conversation on the RIGHT. A Black woman speaker with short natural curls stands holding a small floor microphone naturally; an older brown woman with silver bob sits on a simple chair holding a closed notebook, listening. A narrow simple backdrop board with three blank ascending cards suggests career development, not an event sign. Both full figures supported by real continuous ground, natural hands, feet visible. Low João Pessoa coastal landscape with subtle flat coastline and tiny palms, NOT mountains or desert. STRICT LAYOUT: entire top y0–340 empty opaque ivory #FCFAF7. Entire left x0–600 blank ivory until y870. All people and props within x640–1050, y470–1090. Low landscape flows continuously to BOTH lateral edges at y1000–1145, grounded, no floating island or oval vignette. Organic ivory wave ends by y1160, ALL y1180–1350 completely blank ivory for footer. No straight horizontal boundary. NO text, letters, logos, watermarks or brand marks anywhere; those will be added separately. Background only, not complete card.",
+      "prompts_correcao": [],
+      "origem_ilustracao": "comunidades/women-techmakers-joao-pessoa/geracao-original.png",
+      "ferramenta": "ImageGen integrado",
+      "status": "em_revisao",
+      "aprovacao": null,
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Conversa intergeracional com microfone e painel de desenvolvimento de carreira. As duas mulheres, mãos, pés e cadeira estão coerentes e apoiados. Paisagem costeira contínua até ambas as bordas; folhas começam fora da reserva de texto. Nome e logo originais íntegros. Primeiro card comparado à base antes da expansão do lote. PNG completo inspecionado individualmente contra o genérico com logo: traço editorial orgânico estilizado, sem semirrealismo ou ilhas flutuantes, topo e coluna de texto livres, onda orgânica terminando antes de y1180, rodapé original preservado. Dimensões 1080 x 1350 e correspondência pixel a pixel com SVG validadas. Conferência técnica não constitui aprovação humana."
+      }
+    },
+    {
+      "id": "women-who-code-recife",
+      "conceito": "Mentoria e revisão colaborativa de programação entre mulheres em Recife, com monitor de código abstrato e anotações de estudo.",
+      "prompt": "Use case: illustration-story. Generate ONE unique illustration background for Women Who Code Recife, portrait 1080x1350. Input image: STYLE AND COMPOSITION reference ONLY. Do not copy its people, laptop scene, text or logos. Same organic warm editorial hand-painted flat masses of terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 and restrained olive on ivory #FCFAF7, discreet paper grain, simplified expressive faces. NOT photorealistic or semirealistic; NOT corporate geometric people. UNIQUE SCENE grounded in programming workshops and career mentorship: two Brazilian women doing a thoughtful code review at a narrow upright desk on the RIGHT. One dark-skinned woman with long braids stands leaning slightly toward an upright monitor with abstract indented short code-like bars (NO letters); an older brown woman with short wavy hair and round glasses sits on a stool writing notes in a small notebook. Both face the monitor in cooperative side-profile, different heights, natural hands, all feet and furniture legs intact. Small stack of unmarked notebooks on desk. NO microphone, no career board. Continuous low Recife riverbank landscape with small distant bridge arches and warm flat rooflines beneath. EXACT spacing: entire top y0–340 blank ivory, left x0–600 blank until y870, all people/props x640–1060 y470–1090. Landscape connects BOTH lateral edges y1000–1140, absolutely no isolated vignette or floating land. Ivory organic wave ends by y1160. ALL y1180–1350 completely empty for fixed footer. No straight horizontal line. No words, logos, watermarks, labels, brand symbols, border. Background only, not complete card.",
+      "prompts_correcao": [],
+      "origem_ilustracao": "comunidades/women-who-code-recife/geracao-original.png",
+      "ferramenta": "ImageGen integrado",
+      "status": "em_revisao",
+      "aprovacao": null,
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Revisão colaborativa de código em monitor e anotações, com duas mulheres em poses distintas, sem cópia da cena genérica. Mãos, pés, banco e mesa coerentes; parte direita do monitor segue até a borda, sem cortar pessoas ou logos. Paisagem fluvial com ponte e casario contínua; nome e logo originais íntegros. PNG completo inspecionado individualmente contra o genérico com logo: traço editorial orgânico estilizado, sem semirrealismo ou ilhas flutuantes, topo e coluna de texto livres, onda orgânica terminando antes de y1180, rodapé original preservado. Dimensões 1080 x 1350 e correspondência pixel a pixel com SVG validadas. Conferência técnica não constitui aprovação humana."
+      }
+    },
+    {
+      "id": "wordpress-fortaleza",
+      "conceito": "Oficina de criação de sites e componentes WordPress em Fortaleza, com montagem colaborativa de um layout modular.",
+      "prompt": "Use case: illustration-story. Generate ONE exclusive illustration background for WordPress Fortaleza, portrait 1080x1350. Attached reference is ONLY warm editorial style and reserved layout, not its characters or scene. Match broad organic flat terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7 masses and restrained olive, subtle printed grain, stylized expressive faces. No photo/semirealistic shading, no geometric corporate people. UNIQUE SCENE inspired by community workshops on website creation and plugins: on RIGHT a brown Brazilian woman with hair in a low bun stands beside a narrow freestanding website-layout board, arranging a single blank orange modular content card. Beside her a Black male developer with a short beard kneels naturally holding a tablet, observing the layout. Board has a plain abstract web-page layout of rectangle image area, short horizontal bars and two content columns, NO text or logo. The board has TWO sturdy visible feet planted on continuous ground, not floating. The man's knees and shoe are physically coherent, woman's shoes visible, nothing cropped. NO laptop meetup. A tiny distant jangada sail and low Fortaleza coastline in the landscape, no mountains or desert. STRICT COMPOSITION: top y0–340 empty ivory #FCFAF7; left x0–600 completely empty until y870. All people, hair, props and board x640–1060 y480–1090. Low landscape connects BOTH lateral edges y1000–1140, no floating island/oval vignette. Transition into blank ivory footer with graceful ORGANIC WAVE ending by y1160; all y1180–1350 completely empty. Never a straight boundary. No logos, brand marks, watermark, border, letters or words. Background only, not card.",
+      "prompts_correcao": [
+        "Precise composition edit of image1 (WordPress workshop illustration only). Keep its unique two-person website layout workshop, their identities, warm organic flat editorial drawing and all props intact. Image2 is approved composition reference only, no copying scene/text/logos. Move the ENTIRE people-plus-board group to the right and reduce width slightly: absolutely all hair, shoulders, arms and props must be RIGHT of x610 until y850 on a1080x1350 canvas. Keep woman standing and man kneeling with complete natural legs, hands and shoes. Shift the whole scene DOWN about 50px while keeping top0–340 blank ivory. Rebuild low coastline naturally so it continuously reaches BOTH lateral edges, with its bottom organic ivory wave around y1110–1155, no higher than1110 and no lower than1160. All y1180–1350 remains plain ivory #FCFAF7. No straight cut, no oval floating ground. Keep small sail, low Fortaleza city skyline, colors and paper texture. No letters, text, logos, watermark or new objects.",
+        "Precise single correction: move ONLY the kneeling man 70 pixels to the RIGHT on a1080x1350 canvas, making his upper body a little narrower if needed. His left shoulder currently intrudes into the text column: every part of his hair, shoulder and sleeve ABOVE y850 must begin at x620 or greater. Preserve his coherent kneeling legs and shoes, tablet and natural hands. Preserve woman, website board, coastline, warm flat editorial style, full-width organic wave, top margin and blank footer EXACTLY unchanged. No new elements, text or logos. Avoid moving the group downward again. The correction is horizontal clearance only.",
+        "Edit only the kneeling man: make him clearly 25 percent SMALLER, anchored at the same ground baseline, and position his whole silhouette entirely within the rightmost 40 percent of the image. There must be a visibly wide empty ivory corridor between the left edge and the man, just as beside the woman. His leftmost hair and sleeve should align vertically below the woman's left elbow/hair, not project to its left. Keep his tablet, two hands, kneeling pose and both shoes anatomically coherent. Do not change woman, board, coastline, illustration palette, full-width wavy lower edge or blank ivory footer. No text/logos/new elements."
+      ],
+      "origem_ilustracao": "comunidades/wordpress-fortaleza/geracao-corrigida.png",
+      "ferramenta": "ImageGen integrado",
+      "status": "em_revisao",
+      "aprovacao": null,
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Montagem de layout modular com mulher em pé e desenvolvedor ajoelhado com tablet. Correções baixaram a cena/paisagem e reduziram/reposicionaram o homem para liberar a coluna de dados. Versão final com mãos, joelhos, sapatos e pés do painel coerentes. Costa de Fortaleza com jangada e paisagem contínua; nome e logo cadastrada intactos. PNG completo inspecionado individualmente contra o genérico com logo: traço editorial orgânico estilizado, sem semirrealismo ou ilhas flutuantes, topo e coluna de texto livres, onda orgânica terminando antes de y1180, rodapé original preservado. Dimensões 1080 x 1350 e correspondência pixel a pixel com SVG validadas. Conferência técnica não constitui aprovação humana."
+      }
+    }
+  ],
+  "bloqueios": [],
+  "validacao": {
+    "comando": "node artes/default/scripts/validate-community.cjs lote-10",
+    "resultado": "ok",
+    "comunidades": 3,
+    "png_svg": "Correspondência pixel a pixel",
+    "logos": "3 logos oficiais preservadas, conforme cover_image",
+    "dimensoes": "1080 x 1350"
+  },
+  "historico": "Em WordPress Fortaleza, geracao-original.png e geracao-intermediaria-01.png/02.png foram substituídas na composição por geracao-corrigida.png. Não usar variantes anteriores como cards. As três peças usam somente campos demonstrativos e continuam em_revisao, aprovacao null."
+}

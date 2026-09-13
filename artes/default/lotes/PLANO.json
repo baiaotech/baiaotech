@@ -3,7 +3,7 @@
   "repositorio": "baiaotech/baiaotech",
   "branch": "feat/artes-default-comunidades",
   "base_remota": "ebfdb23f690ea5661c66a8977f44bdf0dc68b8d1",
-  "criterio": "Comunidades cadastradas ainda sem modelo, em ordem alfabética por slug. Um subagent independente por lote de até 10; envio incremental ao remoto após conclusão e conferência de cada lote.",
+  "criterio": "Critério original: comunidades cadastradas sem modelo após o primeiro lote, em ordem alfabética por slug. Um subagente independente por lote de até 10; envio incremental ao remoto após conclusão e conferência de cada lote. Os status abaixo registram o progresso atual, separado da aprovação humana.",
   "modelos_anteriores": 10,
   "novos_modelos_previstos": 83,
   "lotes": [
@@ -165,7 +165,9 @@
         "wordpress-fortaleza"
       ],
       "quantidade": 3,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-10.json"
     }
   ],
   "primeiro_lote": {

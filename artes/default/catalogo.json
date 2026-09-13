@@ -566,6 +566,27 @@
       "estado": "SE",
       "estilo": "comunidades/pyladies-sergipe/estilo.json",
       "previa": "comunidades/pyladies-sergipe/previa.png"
+    },
+    {
+      "id": "women-techmakers-joao-pessoa",
+      "nome": "Women Techmakers João Pessoa",
+      "estado": "PB",
+      "estilo": "comunidades/women-techmakers-joao-pessoa/estilo.json",
+      "previa": "comunidades/women-techmakers-joao-pessoa/previa.png"
+    },
+    {
+      "id": "women-who-code-recife",
+      "nome": "Women Who Code Recife",
+      "estado": "PE",
+      "estilo": "comunidades/women-who-code-recife/estilo.json",
+      "previa": "comunidades/women-who-code-recife/previa.png"
+    },
+    {
+      "id": "wordpress-fortaleza",
+      "nome": "WordPress Fortaleza",
+      "estado": "CE",
+      "estilo": "comunidades/wordpress-fortaleza/estilo.json",
+      "previa": "comunidades/wordpress-fortaleza/previa.png"
     }
   ],
   "genericos": [
