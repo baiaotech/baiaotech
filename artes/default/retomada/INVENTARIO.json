@@ -1,9 +1,10 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-05",
+  "checkpoint_lote": "lote-03",
   "total_previsto": 93,
   "revisados_tecnicamente": 50,
+  "conferidos_contra_base": 40,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -16,6 +17,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -30,6 +32,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -44,6 +47,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -58,6 +62,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -72,6 +77,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -86,6 +92,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -100,6 +107,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -114,6 +122,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -128,6 +137,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -142,6 +152,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "reconferencia_pendente",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -156,6 +167,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -170,6 +182,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -184,6 +197,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -198,6 +212,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -212,6 +227,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -226,6 +242,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -240,6 +257,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -254,6 +272,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -268,6 +287,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -282,6 +302,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -296,6 +317,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -310,6 +332,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -324,6 +347,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -338,6 +362,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -352,6 +377,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -366,6 +392,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -380,6 +407,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -394,6 +422,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -408,6 +437,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -422,6 +452,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -436,7 +467,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -450,7 +482,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -464,7 +497,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -478,7 +512,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -492,7 +527,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -506,7 +542,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -520,7 +557,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -534,7 +572,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -548,7 +587,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -562,7 +602,8 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
-      "estado": "concluido_em_revisao",
+      "comparacao_base": "reconferencia_pendente",
+      "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
     {
@@ -576,6 +617,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -590,6 +632,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -604,6 +647,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -618,6 +662,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -632,6 +677,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -646,6 +692,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -660,6 +707,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -674,6 +722,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -688,6 +737,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -702,6 +752,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -716,6 +767,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -730,6 +782,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -744,6 +797,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -758,6 +812,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -772,6 +827,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -786,6 +842,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -800,6 +857,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -814,6 +872,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -828,6 +887,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -842,6 +902,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": true,
+      "comparacao_base": "conferido_contra_base",
       "estado": "concluido_em_revisao",
       "aprovacao": null
     },
@@ -851,6 +912,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -860,6 +922,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -874,6 +937,7 @@
         "previa.png"
       ],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "arquivos_presentes_revisao_pendente",
       "aprovacao": null
     },
@@ -883,6 +947,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -892,6 +957,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -901,6 +967,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -910,6 +977,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -919,6 +987,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -928,6 +997,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "parcial",
       "aprovacao": null
     },
@@ -937,6 +1007,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "parcial_em_correcao",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -946,6 +1017,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -955,6 +1027,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -964,6 +1037,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -973,6 +1047,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -982,6 +1057,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -991,6 +1067,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1000,6 +1077,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1009,6 +1087,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1018,6 +1097,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1027,6 +1107,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1036,6 +1117,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1045,6 +1127,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1054,6 +1137,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1063,6 +1147,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1072,6 +1157,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1081,6 +1167,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1090,6 +1177,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1099,6 +1187,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1108,6 +1197,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1117,6 +1207,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1126,6 +1217,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1135,6 +1227,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     },
@@ -1144,6 +1237,7 @@
       "arquivos_basicos_completos": false,
       "arquivos_basicos_presentes": [],
       "revisao_visual_registrada": false,
+      "comparacao_base": "pendente",
       "estado": "ausente",
       "aprovacao": null
     }

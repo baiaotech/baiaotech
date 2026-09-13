@@ -19,7 +19,7 @@ async function main() {
       existing.manifesto = `lotes/${existing.id}.json`;
     } catch { /* Manifesto ainda não preparado para publicação. */ }
   }
-  const batch = plan.lotes.find(x => x.id === id);
+  const batch = id === 'lote-01' ? {id,comunidades:read('catalogo.json').comunidades.slice(0,10).map(x=>x.id),quantidade:10} : plan.lotes.find(x => x.id === id);
   const manifest = read(`lotes/${id}.json`);
   if (!batch || manifest.status !== 'concluido_em_revisao' || manifest.aprovacao !== null) throw Error('Lote não liberado');
   for (const slug of batch.comunidades) {
@@ -51,6 +51,7 @@ async function main() {
   batch.status = 'concluido_em_revisao';
   batch.aprovacao = null;
   batch.manifesto = `lotes/${id}.json`;
+  if (id === 'lote-01') plan.primeiro_lote = {id,status:batch.status,quantidade:10,manifesto:batch.manifesto,aprovacao:null};
   catalog.politica = 'Modelos em revisão, com dados demonstrativos. Revisão técnica não constitui aprovação humana nem autorização para publicação.';
   write('catalogo.json', catalog); write('PROMPTS.json', prompts); write('lotes/PLANO.json', plan);
   const qualityPath = 'retomada/REVISAO-PADRAO.json';
@@ -72,6 +73,11 @@ async function main() {
   // Inventário usa o índice + este lote, não diretórios ainda em trabalho por outros agentes.
   const tracked = new Set(execFileSync('git', ['ls-files', '--cached', '--', 'artes/default'], {cwd: path.resolve(root, '../..')}).toString().trim().split('\n'));
   const initial = catalog.comunidades.slice(0, 10).map(x => x.id);
+  const qualitySnapshot = fs.existsSync(path.join(root, qualityPath)) ? read(qualityPath) : null;
+  let firstAudit = id === 'lote-01' ? manifest : null;
+  if (!firstAudit) {
+    try { firstAudit = JSON.parse(execFileSync('git', ['show', ':artes/default/lotes/lote-01.json'], {cwd:path.resolve(root,'../..'),stdio:['ignore','pipe','ignore']}).toString()); } catch { /* Ainda sem revisão do primeiro lote preparada para envio. */ }
+  }
   const items = [...initial, ...plan.lotes.flatMap(x => x.comunidades)].map(slug => {
     const released = batch.comunidades.includes(slug);
     const stylePath = `comunidades/${slug}/estilo.json`;
@@ -80,12 +86,12 @@ async function main() {
     const complete = required.every(f => has(`comunidades/${slug}/${f}`));
     const anyFiles = [...tracked].some(f => f.startsWith(`artes/default/comunidades/${slug}/`));
     const b = plan.lotes.find(x => x.comunidades.includes(slug));
-    const firstManifest = path.join(root, 'lotes/lote-01.json');
-    const visual = b?.status === 'concluido_em_revisao' || (!b && fs.existsSync(firstManifest) && read('lotes/lote-01.json').comunidades.some(x => x.id === slug && x.revisao_visual?.realizada));
-    return {id: slug, lote: b?.id || 'lote-01', arquivos_basicos_completos: complete, arquivos_basicos_presentes: required.filter(f => has(`comunidades/${slug}/${f}`)), revisao_visual_registrada: visual, estado: visual ? 'concluido_em_revisao' : complete ? 'arquivos_presentes_revisao_pendente' : has(stylePath) || anyFiles ? 'parcial' : 'ausente', aprovacao: null};
+    const visual = b?.status === 'concluido_em_revisao' || (!b && firstAudit?.status === 'concluido_em_revisao' && firstAudit.comunidades.some(x => x.id === slug && x.revisao_visual?.realizada));
+    const comparison = qualitySnapshot?.lotes[b?.id || 'lote-01'] || 'pendente';
+    return {id: slug, lote: b?.id || 'lote-01', arquivos_basicos_completos: complete, arquivos_basicos_presentes: required.filter(f => has(`comunidades/${slug}/${f}`)), revisao_visual_registrada: visual, comparacao_base:comparison, estado: visual && comparison === 'conferido_contra_base' ? 'concluido_em_revisao' : complete ? 'arquivos_presentes_revisao_pendente' : has(stylePath) || anyFiles ? 'parcial' : 'ausente', aprovacao: null};
   });
   fs.mkdirSync(path.join(root, 'retomada'), {recursive: true});
-  write('retomada/INVENTARIO.json', {base_remota_encontrada: 'e7336928c607e921c59e6ca6919a2a8e340af2e3', recuperacao: 'Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.', checkpoint_lote: id, total_previsto: 93, revisados_tecnicamente: items.filter(x => x.revisao_visual_registrada).length, comunidades: items});
+  write('retomada/INVENTARIO.json', {base_remota_encontrada: 'e7336928c607e921c59e6ca6919a2a8e340af2e3', recuperacao: 'Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.', checkpoint_lote: id, total_previsto: 93, revisados_tecnicamente: items.filter(x => x.revisao_visual_registrada).length, conferidos_contra_base:items.filter(x=>x.comparacao_base === 'conferido_contra_base').length, comunidades: items});
   console.log(`${id} integrado: ${catalog.comunidades.length} entradas; ${items.filter(x => x.revisao_visual_registrada).length} revisões técnicas registradas.`);
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });
