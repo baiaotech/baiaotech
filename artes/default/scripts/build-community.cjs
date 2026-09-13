@@ -78,7 +78,7 @@ async function buildCommunity(spec) {
   const imagePath = path.resolve(spec.ilustracao);
   const illustration = path.join(dir, 'ilustracao.jpg');
   const original = fs.readFileSync(imagePath);
-  await sharp(original).resize(1080,1350,{fit:'contain',background:'#FCFAF7'}).jpeg({quality:92,mozjpeg:true}).toFile(illustration);
+  await sharp(original).resize(1080,1350,{fit:spec.ajuste_ilustracao || 'cover',position:'centre',background:'#FCFAF7'}).jpeg({quality:92,mozjpeg:true}).toFile(illustration);
   const logoSource = data.cover_image ? path.join(repo, 'src', data.cover_image) : null;
   if (logoSource && !fs.existsSync(logoSource)) throw new Error('Registered cover does not exist: '+logoSource);
   let logoWidth = 0;
