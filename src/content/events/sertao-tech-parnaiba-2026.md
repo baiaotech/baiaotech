@@ -17,7 +17,7 @@ categories:
   - "cloud"
   - "seguranca"
 featured: false
-cover_image: "https://www.osertaotech.com.br/assets/logo-720.webp"
+cover_image: ""
 price: "R$ 20"
 ---
 
