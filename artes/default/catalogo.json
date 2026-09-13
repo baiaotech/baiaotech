@@ -216,6 +216,76 @@
       "estado": "PI",
       "estilo": "comunidades/carnauba-valley/estilo.json",
       "previa": "comunidades/carnauba-valley/previa.png"
+    },
+    {
+      "id": "front-end-ce",
+      "nome": "Front-End CE",
+      "estado": "CE",
+      "estilo": "comunidades/front-end-ce/estilo.json",
+      "previa": "comunidades/front-end-ce/previa.png"
+    },
+    {
+      "id": "gdg-feira-de-santana",
+      "nome": "GDG Feira de Santana",
+      "estado": "BA",
+      "estilo": "comunidades/gdg-feira-de-santana/estilo.json",
+      "previa": "comunidades/gdg-feira-de-santana/previa.png"
+    },
+    {
+      "id": "gdg-joao-pessoa",
+      "nome": "GDG João Pessoa",
+      "estado": "PB",
+      "estilo": "comunidades/gdg-joao-pessoa/estilo.json",
+      "previa": "comunidades/gdg-joao-pessoa/previa.png"
+    },
+    {
+      "id": "gdg-maceio",
+      "nome": "GDG Maceió",
+      "estado": "AL",
+      "estilo": "comunidades/gdg-maceio/estilo.json",
+      "previa": "comunidades/gdg-maceio/previa.png"
+    },
+    {
+      "id": "gdg-parnaiba",
+      "nome": "GDG Parnaíba",
+      "estado": "PI",
+      "estilo": "comunidades/gdg-parnaiba/estilo.json",
+      "previa": "comunidades/gdg-parnaiba/previa.png"
+    },
+    {
+      "id": "gdg-salvador",
+      "nome": "GDG Salvador",
+      "estado": "BA",
+      "estilo": "comunidades/gdg-salvador/estilo.json",
+      "previa": "comunidades/gdg-salvador/previa.png"
+    },
+    {
+      "id": "gdg-sao-luis",
+      "nome": "GDG São Luís",
+      "estado": "MA",
+      "estilo": "comunidades/gdg-sao-luis/estilo.json",
+      "previa": "comunidades/gdg-sao-luis/previa.png"
+    },
+    {
+      "id": "geek-night-recife",
+      "nome": "Geek Night Recife",
+      "estado": "PE",
+      "estilo": "comunidades/geek-night-recife/estilo.json",
+      "previa": "comunidades/geek-night-recife/previa.png"
+    },
+    {
+      "id": "github-community-fortaleza",
+      "nome": "GitHub Community Fortaleza",
+      "estado": "CE",
+      "estilo": "comunidades/github-community-fortaleza/estilo.json",
+      "previa": "comunidades/github-community-fortaleza/previa.png"
+    },
+    {
+      "id": "graphql-recife",
+      "nome": "GraphQL Recife",
+      "estado": "PE",
+      "estilo": "comunidades/graphql-recife/estilo.json",
+      "previa": "comunidades/graphql-recife/previa.png"
     }
   ],
   "genericos": [

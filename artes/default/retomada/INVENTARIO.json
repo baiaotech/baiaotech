@@ -1,9 +1,9 @@
 {
   "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
   "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
-  "checkpoint_lote": "lote-02",
+  "checkpoint_lote": "lote-04",
   "total_previsto": 93,
-  "revisados_tecnicamente": 20,
+  "revisados_tecnicamente": 30,
   "comunidades": [
     {
       "id": "pyladies-maceio",
@@ -248,81 +248,81 @@
     {
       "id": "front-end-ce",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-feira-de-santana",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-joao-pessoa",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-maceio",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-parnaiba",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-salvador",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "gdg-sao-luis",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "geek-night-recife",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "github-community-fortaleza",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {
       "id": "graphql-recife",
       "lote": "lote-04",
-      "arquivos_basicos_completos": false,
-      "revisao_visual_registrada": false,
-      "estado": "ausente",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
       "aprovacao": null
     },
     {

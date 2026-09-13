@@ -1,0 +1,27 @@
+{
+  "id": "gdg-salvador",
+  "nome": "GDG Salvador",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"0c4a48969567078be1f14b0553b1b1f60dcd513db956cf1f0876c6d1d7d8ffd7"},
+  "revisao_visual": {"realizada":true,"observacoes":"Cadastro sem cover_image: cabeçalho nominal desde a margem esquerda, sem logo inventada ou espaço vazio. Prototipação exclusiva com três pessoas; mãos e objetos coerentes. Motivos superiores ajustados para não invadir cabeçalho."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/gdg-salvador.md",
+  "estado": "BA",
+  "cidade": "Salvador",
+  "conceito": "Prototipação colaborativa e encontro de tecnologias em Salvador.",
+  "linhas_nome": [
+    "GDG Salvador"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 0,
+  "subtitulo": "Comunidade · Salvador, BA",
+  "logo_origem": null,
+  "logo_origem_sha256": null,
+  "logo": null,
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais. Cadastro sem cover_image: cabeçalho nominal exclusivo, sem logo inventada nem espaço vazio reservado."
+}

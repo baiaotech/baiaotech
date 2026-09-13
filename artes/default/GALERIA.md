@@ -1,6 +1,6 @@
 # Galeria de revisão — cards completos
 
-30 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
+40 comunidades no catálogo e 2 genéricos. Campos demonstrativos; não publicar. A presença no catálogo não substitui a revisão individual registrada nos manifestos.
 
 [Plano e progresso](lotes/PLANO.json) · [Inventário do checkpoint](retomada/INVENTARIO.json) · [Contrato](README.md)
 
@@ -247,6 +247,86 @@ Conexão entre academia, público e empreendedorismo digital em Parnaíba, com c
 ![Card completo — Carnaúba Valley](comunidades/carnauba-valley/previa.png)
 
 [SVG editável](comunidades/carnauba-valley/modelo.svg) · [Estilo e origem](comunidades/carnauba-valley/estilo.json)
+
+## Front-End CE
+
+Oficina de interfaces responsivas e construção visual no litoral cearense.
+
+![Card completo — Front-End CE](comunidades/front-end-ce/previa.png)
+
+[SVG editável](comunidades/front-end-ce/modelo.svg) · [Estilo e origem](comunidades/front-end-ce/estilo.json)
+
+## GDG Feira de Santana
+
+Oficina multitecnologia e troca de saberes no interior baiano.
+
+![Card completo — GDG Feira de Santana](comunidades/gdg-feira-de-santana/previa.png)
+
+[SVG editável](comunidades/gdg-feira-de-santana/modelo.svg) · [Estilo e origem](comunidades/gdg-feira-de-santana/estilo.json)
+
+## GDG João Pessoa
+
+Rede de aprendizado entre desenvolvedores junto à paisagem costeira paraibana.
+
+![Card completo — GDG João Pessoa](comunidades/gdg-joao-pessoa/previa.png)
+
+[SVG editável](comunidades/gdg-joao-pessoa/modelo.svg) · [Estilo e origem](comunidades/gdg-joao-pessoa/estilo.json)
+
+## GDG Maceió
+
+Demonstração de aplicativos e aprendizado coletivo em Alagoas.
+
+![Card completo — GDG Maceió](comunidades/gdg-maceio/previa.png)
+
+[SVG editável](comunidades/gdg-maceio/modelo.svg) · [Estilo e origem](comunidades/gdg-maceio/estilo.json)
+
+## GDG Parnaíba
+
+Conexões regionais de tecnologia inspiradas nos canais do delta.
+
+![Card completo — GDG Parnaíba](comunidades/gdg-parnaiba/previa.png)
+
+[SVG editável](comunidades/gdg-parnaiba/modelo.svg) · [Estilo e origem](comunidades/gdg-parnaiba/estilo.json)
+
+## GDG Salvador
+
+Prototipação colaborativa e encontro de tecnologias em Salvador.
+
+![Card completo — GDG Salvador](comunidades/gdg-salvador/previa.png)
+
+[SVG editável](comunidades/gdg-salvador/modelo.svg) · [Estilo e origem](comunidades/gdg-salvador/estilo.json)
+
+## GDG São Luís
+
+Intercâmbio de conhecimento em tecnologia e mosaico urbano ludovicense.
+
+![Card completo — GDG São Luís](comunidades/gdg-sao-luis/previa.png)
+
+[SVG editável](comunidades/gdg-sao-luis/modelo.svg) · [Estilo e origem](comunidades/gdg-sao-luis/estilo.json)
+
+## Geek Night Recife
+
+Lightning talks, escuta e convivência na cena tecnológica recifense.
+
+![Card completo — Geek Night Recife](comunidades/geek-night-recife/previa.png)
+
+[SVG editável](comunidades/geek-night-recife/modelo.svg) · [Estilo e origem](comunidades/geek-night-recife/estilo.json)
+
+## GitHub Community Fortaleza
+
+Controle de versão, revisão colaborativa e contribuições abertas.
+
+![Card completo — GitHub Community Fortaleza](comunidades/github-community-fortaleza/previa.png)
+
+[SVG editável](comunidades/github-community-fortaleza/modelo.svg) · [Estilo e origem](comunidades/github-community-fortaleza/estilo.json)
+
+## GraphQL Recife
+
+Consultas conectadas e intercâmbio de experiências com dados em produção.
+
+![Card completo — GraphQL Recife](comunidades/graphql-recife/previa.png)
+
+[SVG editável](comunidades/graphql-recife/modelo.svg) · [Estilo e origem](comunidades/graphql-recife/estilo.json)
 
 ## Genérico com-logo
 

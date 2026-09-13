@@ -60,7 +60,9 @@
         "graphql-recife"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-04.json"
     },
     {
       "id": "lote-05",

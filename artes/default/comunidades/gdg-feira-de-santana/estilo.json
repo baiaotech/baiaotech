@@ -1,0 +1,27 @@
+{
+  "id": "gdg-feira-de-santana",
+  "nome": "GDG Feira de Santana",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"b12a51cfa0dd897bbdbe1b9e1e544c20003a19ca27c38a478ccf0d88da1c5ddf"},
+  "revisao_visual": {"realizada":true,"observacoes":"Nome longo em uma linha a 45 px sem compressão ou corte. Logo original íntegra. Mentoria e bancada móvel exclusivas; mãos naturais. Fundo ajustado abaixo da divisória. Rodapé limpo."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/gdg-feira-de-santana.md",
+  "estado": "BA",
+  "cidade": "Feira de Santana",
+  "conceito": "Oficina multitecnologia e troca de saberes no interior baiano.",
+  "linhas_nome": [
+    "GDG Feira de Santana"
+  ],
+  "nome_tamanho": 45,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Feira de Santana, BA",
+  "logo_origem": "src/assets/covers/communities/gdg-feira-de-santana.png",
+  "logo_origem_sha256": "6e597b3780200a6140975925ea14ce57ddcb5cf06270ec4cc8cbf42ed80f1fef",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

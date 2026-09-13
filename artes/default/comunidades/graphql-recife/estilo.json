@@ -1,0 +1,27 @@
+{
+  "id": "graphql-recife",
+  "nome": "GraphQL Recife",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-original.png","prompt":"spec.json","sha256":"90ffe5563d45df83f3a52b507ebfa5b0e0efafe03e72a23535145cf5f57c079c"},
+  "revisao_visual": {"realizada":true,"observacoes":"Nome e logo rosa registrados preservados. Grafo abstrato não imita logo; dupla com tablet/cartão tem anatomia coerente. Texto, margens, cabeçalho e rodapé legíveis."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/graphql-recife.md",
+  "estado": "PE",
+  "cidade": "Recife",
+  "conceito": "Consultas conectadas e intercâmbio de experiências com dados em produção.",
+  "linhas_nome": [
+    "GraphQL Recife"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Recife, PE",
+  "logo_origem": "src/assets/covers/communities/graphql-recife.png",
+  "logo_origem_sha256": "da7a53ba3a3481e2e28bbd041359d8a4acdd26931bf7dd5497808c1bfc5c2b45",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

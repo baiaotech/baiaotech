@@ -1,0 +1,11 @@
+{
+  "id": "gdg-parnaiba",
+  "conceito": "Conexões regionais de tecnologia inspiradas nos canais do delta.",
+  "ilustracao": "artes/default/comunidades/gdg-parnaiba/gerada-original.png",
+  "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GDG Parnaíba: technology community connecting the coast of Piauí and neighboring cities. Distinct right-side composition: two young Brazilian developers, one brown man with close-cut hair and one Black woman with rounded afro, stand on separate low small warm platforms holding abstract tablet screens toward each other across a graceful branching orange pathway. Path metaphor echoes waterways, not technical chart. Tiny river delta islands and winding channels in narrow lower landscape, sparse olive mangroves, warm water. No bridges or cactus.",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo": "gerada-original.png",
+    "origem_sessao": "/home/gaellopes/.codex/generated_images/01a09c4f-477f-7583-9d8a-c8978c61e728/exec-08f09a99-664f-460a-b78e-775cc561b1ff.png"
+  }
+}

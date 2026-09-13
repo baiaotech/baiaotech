@@ -1,0 +1,11 @@
+{
+  "id": "graphql-recife",
+  "conceito": "Consultas conectadas e intercâmbio de experiências com dados em produção.",
+  "ilustracao": "artes/default/comunidades/graphql-recife/gerada-original.png",
+  "prompt": "Use case: illustration-story. Create ONE original reusable illustration background for an editorial technology-community card. Portrait 4:5, intended 1080x1350. Premium warm flat-painted gouache illustration, layered shapes, delicate paper grain; palette terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, olive #6B7F56 and dark warm brown on extremely light ivory #FCFAF7. STRICT typography safe areas: top 0-23% entirely blank ivory; left x0-55% from y23-73% entirely blank ivory; bottom y88-100% entirely blank ivory. ALL main subjects/devices/motifs restricted to right x60-98% and y30-84%. A narrow landscape strip may span full width only y77-86%, ending with a soft ivory wave. Anatomically sound simplified people, natural hands, no giant profile portraits. No text, letters, digits, logos, brand symbols, watermarks, labels, or frame. Background only, not a finished card. Scene not an actual venue or real event. GraphQL Recife: community sharing production experience and query best practices. Distinct right-side scene: Brazilian brown woman engineer with a neat short bob sits with a tablet on her knee looking toward an elegant tall network of connected warm cubes and circles, while a Black male colleague with round glasses stands holding a small blank query-like card at its base. Graph is organic asymmetric orange lines between olive and terracotta objects, NOT the official GraphQL logo or technical labeled diagram. Narrow low Recife river with two tiny bridge arches and warm warehouses. No giant screen, no circle of people.",
+  "origem_ilustracao": {
+    "ferramenta": "Image Gen integrado",
+    "arquivo": "gerada-original.png",
+    "origem_sessao": "/home/gaellopes/.codex/generated_images/01a09c4f-477f-7583-9d8a-c8978c61e728/exec-f1915504-6d24-4079-b420-6b8c41d9302e.png"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "github-community-fortaleza",
+  "nome": "GitHub Community Fortaleza",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "ilustracao_origem": {"ferramenta":"Image Gen integrado","arquivo":"gerada-ajustada.png","prompt":"spec.json","sha256":"25f8b5d2184e12801db22ce5831fd0182968a218d2c0634a094b40ca45a20621"},
+  "revisao_visual": {"realizada":true,"observacoes":"Nome completo em duas linhas a 47 px. Logo registrada intacta, sem regeneração de mascote. Colaboração por ramificações é exclusiva; mãos naturais e nós reposicionados fora do cabeçalho. Rodapé separado."},
+  "dados_demonstrativos": true,
+  "comunidade": "src/content/communities/github-community-fortaleza.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Controle de versão, revisão colaborativa e contribuições abertas.",
+  "linhas_nome": [
+    "GitHub Community",
+    "Fortaleza"
+  ],
+  "nome_tamanho": 47,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/github-community-fortaleza.jpg",
+  "logo_origem_sha256": "e78b23d02eaaf8d3a02129f40f41b440d879f5294c0543e04f29e7b88a47cb40",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}
