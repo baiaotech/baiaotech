@@ -4,8 +4,8 @@ const crypto = require('node:crypto');
 const repo = path.resolve(__dirname, '../../..');
 const root = path.join(repo, 'artes/default');
 process.env.FONTCONFIG_FILE ||= path.join(root, 'assets/fonts.conf');
-const sharp = require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES ? path.join(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES, 'sharp') : 'sharp');
-const matter = require(path.join(repo, 'node_modules/gray-matter'));
+const sharp = require('sharp');
+const matter = require('gray-matter');
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 const xml = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const uri = (file, mime) => `data:${mime};base64,${fs.readFileSync(file).toString('base64')}`;
@@ -78,7 +78,13 @@ async function buildCommunity(spec) {
   const imagePath = path.resolve(spec.ilustracao);
   const illustration = path.join(dir, 'ilustracao.jpg');
   const original = fs.readFileSync(imagePath);
-  await sharp(original).resize(1080,1350,{fit:spec.ajuste_ilustracao || 'cover',position:'centre',background:'#FCFAF7'}).jpeg({quality:92,mozjpeg:true}).toFile(illustration);
+  const imageMeta = await sharp(original).metadata();
+  if (imageMeta.format === 'jpeg' && imageMeta.width === 1080 && imageMeta.height === 1350) {
+    // Reuse recovered JPEGs without a lossy re-encoding on each layout adjustment.
+    if (imagePath !== illustration) fs.copyFileSync(imagePath, illustration);
+  } else {
+    await sharp(original).resize(1080,1350,{fit:spec.ajuste_ilustracao || 'cover',position:'centre',background:'#FCFAF7'}).jpeg({quality:92,mozjpeg:true}).toFile(illustration);
+  }
   const logoSource = data.cover_image ? path.join(repo, 'src', data.cover_image) : null;
   if (logoSource && !fs.existsSync(logoSource)) throw new Error('Registered cover does not exist: '+logoSource);
   let logoWidth = 0;

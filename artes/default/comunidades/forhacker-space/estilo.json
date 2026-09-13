@@ -1,0 +1,24 @@
+{
+  "id": "forhacker-space",
+  "nome": "ForHacker Space",
+  "status": "em_revisao",
+  "aprovacao": null,
+  "comunidade": "src/content/communities/forhacker-space.md",
+  "estado": "CE",
+  "cidade": "Fortaleza",
+  "conceito": "Laboratório comunitário de hardware livre e eletrônica, com aprendizado prático entre makers em Fortaleza.",
+  "linhas_nome": [
+    "ForHacker Space"
+  ],
+  "nome_tamanho": 54,
+  "logo_largura": 120,
+  "subtitulo": "Comunidade · Fortaleza, CE",
+  "logo_origem": "src/assets/covers/communities/forhacker-space.png",
+  "logo_origem_sha256": "dc614500f24a519653f38a133f80923f06f775ea91b1296df5a723de1345b475",
+  "logo": "logo.png",
+  "ilustracao": "ilustracao.jpg",
+  "modelo": "modelo.svg",
+  "previa": "previa.png",
+  "referencia_aprovada": null,
+  "observacao": "Ilustração exclusiva desta comunidade. Arquitetura e pessoas são ilustrativas; não representam sede, local de evento ou participantes reais."
+}

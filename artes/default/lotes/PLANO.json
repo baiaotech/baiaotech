@@ -39,7 +39,9 @@
         "forhacker-space"
       ],
       "quantidade": 10,
-      "status": "pendente"
+      "status": "concluido_em_revisao",
+      "aprovacao": null,
+      "manifesto": "lotes/lote-03.json"
     },
     {
       "id": "lote-04",

@@ -1,12 +1,12 @@
 # Modelos de postagem — Baião Tech
 
-Primeiro lote: **10 comunidades, cada uma com ilustração própria**, e **dois modelos genéricos**. Todas as peças completas têm logo do Baião Tech e `baiaotech.org` no rodapé, seguindo a hierarquia da referência de PyLadies Maceió.
+Produção para **93 comunidades, cada uma com ilustração própria**, e **dois modelos genéricos**. O primeiro lote contém 10 comunidades; a continuação está registrada no [plano](lotes/PLANO.json) e no [inventário do checkpoint](retomada/INVENTARIO.json). Todas as peças completas têm logo do Baião Tech e `baiaotech.org` no rodapé, seguindo a hierarquia da referência de PyLadies Maceió.
 
 **Em revisão. Os títulos, datas e locais são campos demonstrativos. Estes arquivos não anunciam eventos reais.**
 
 ## Revisar as artes
 
-Abra a [galeria com os 12 cards completos](GALERIA.md). As prévias PNG têm **1080 × 1350 px**. Cada `modelo.svg` contém os mesmos elementos, com textos editáveis e imagens incorporadas, e pode ser aberto sem buscar arquivos externos.
+Abra a [galeria de cards completos](GALERIA.md). As prévias PNG têm **1080 × 1350 px**. Cada `modelo.svg` contém os mesmos elementos, com textos editáveis e imagens incorporadas, e pode ser aberto sem buscar arquivos externos. A tabela abaixo documenta o primeiro lote; os demais estão na galeria e nos manifestos.
 
 | Comunidade | UF | Direção exclusiva | Card completo |
 |---|---|---|---|
@@ -70,7 +70,7 @@ Use os dados confirmados do evento, nunca os campos de demonstração como valor
 
 ## Aprovação e atividade mensal
 
-Os 12 `estilo.json` estão em `em_revisao`, com `aprovacao: null`. Para aprovar um estilo, registrar `status: "aprovado"` e um objeto `aprovacao` com responsável, data e link do comentário/revisão que identifica a versão aprovada. Não alterar esses campos em nome do revisor.
+Todos os modelos permanecem em `em_revisao`, com `aprovacao: null`. Para aprovar um estilo, registrar `status: "aprovado"` e um objeto `aprovacao` com responsável, data e link do comentário/revisão que identifica a versão aprovada. Não alterar esses campos em nome do revisor. Revisão técnica registrada nos lotes não é aprovação humana.
 
 A referência de PyLadies Maceió já foi aprovada na conversa; a conversão em modelo editável é apresentada junto das demais para comparação. Não substituir a referência histórica pela adaptação.
 
@@ -90,4 +90,6 @@ O [plano de continuação](lotes/PLANO.json) organiza as 83 comunidades ainda se
 
 Para comunidades sem `cover_image` no cadastro, o modelo específico utiliza o nome em destaque desde a margem esquerda, sem logo inventada, marca emprestada ou espaço vazio reservado. A ausência fica registrada no `estilo.json` para revisão.
 
-O script `scripts/build-community.cjs` monta apenas uma comunidade por execução, sem modificar os índices globais. Ele recebe um JSON com `id`, `conceito` e o caminho `ilustracao`; aceita `linhas_nome`, `nome_tamanho`, `logo_largura` e `logo_fundo` para ajustes de legibilidade. Requer Node.js, `gray-matter` do projeto e `sharp` disponível no runtime (`CODEX_PRIMARY_RUNTIME_NODE_MODULES`) ou instalado no ambiente. As ilustrações são geradas separadamente com Image Gen integrado. `assets/Inter.ttf` é a conversão local da fonte Inter Variable já incluída no projeto, sob a mesma [licença SIL OFL](../../src/assets/fonts/Inter-LICENSE.txt); `assets/fonts.conf` permite renderização consistente dos PNGs. O SVG mantém a fonte WOFF2 incorporada.
+O script `scripts/build-community.cjs` monta apenas uma comunidade por execução, sem modificar os índices globais. Ele recebe um JSON com `id`, `conceito` e o caminho `ilustracao`; aceita `linhas_nome`, `nome_tamanho`, `logo_largura` e `logo_fundo` para ajustes de legibilidade. Instale as dependências locais com `npm ci --prefix artes/default/scripts --ignore-scripts --no-audit --no-fund`; não depende de variáveis do runtime antigo. As ilustrações são geradas separadamente com Image Gen integrado. `assets/Inter.ttf` é a conversão local da fonte Inter Variable já incluída no projeto, sob a mesma [licença SIL OFL](../../src/assets/fonts/Inter-LICENSE.txt); `assets/fonts.conf` permite renderização consistente dos PNGs. O SVG mantém a fonte WOFF2 incorporada.
+
+`scripts/validate-community.cjs lote-XX` confere dimensões, grupos editáveis, status, logos oficiais e correspondência pixel a pixel entre SVG renderizado e PNG. A inspeção visual individual continua obrigatória. O procedimento de integração incremental está em [CONTINUAR-CODEX.md](retomada/CONTINUAR-CODEX.md).

@@ -1,0 +1,753 @@
+{
+  "base_remota_encontrada": "e7336928c607e921c59e6ca6919a2a8e340af2e3",
+  "recuperacao": "Remoto continha checkpoint parcial 80/410; diretório retomada e 66+11 imagens antigas não estavam disponíveis. Usuário confirmou não possuir ZIP. Novas gerações identificadas nos manifestos.",
+  "checkpoint_lote": "lote-03",
+  "total_previsto": 93,
+  "revisados_tecnicamente": 10,
+  "comunidades": [
+    {
+      "id": "pyladies-maceio",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "pyladies-salvador",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-fortaleza",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-recife",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "aws-user-group-joao-pessoa",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-natal",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-aracaju",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "cloud-native-sao-luis",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "teresina-hacker-clube",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "devops-ce",
+      "lote": "lote-01",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "agenda-ti-potiguar",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "agile-maranhao",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "all-saints-bay",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "apgamed",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "arretadas-do-php",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "aws-user-group-ceara",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "bahia-indie-game-developers",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "caju-valley",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "cajuina-valley",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": false,
+      "estado": "arquivos_presentes_revisao_pendente",
+      "aprovacao": null
+    },
+    {
+      "id": "carnauba-valley",
+      "lote": "lote-02",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "ceara-java-user-group",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "cloud-native-rn",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "codar-salvador",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "conecta-nordeste",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "devops-jp",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "django-girls-salvador",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "dotnet-recife",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "elug-ce",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "femug-pe",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "forhacker-space",
+      "lote": "lote-03",
+      "arquivos_basicos_completos": true,
+      "revisao_visual_registrada": true,
+      "estado": "concluido_em_revisao",
+      "aprovacao": null
+    },
+    {
+      "id": "front-end-ce",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-feira-de-santana",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-joao-pessoa",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-maceio",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-parnaiba",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-salvador",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gdg-sao-luis",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "geek-night-recife",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "github-community-fortaleza",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "graphql-recife",
+      "lote": "lote-04",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "grude4j",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "grudepb-crudpb",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "grupy-ba",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "grupy-rn",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "gts-ce",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "guru-ce",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "guts-pb",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "hack-in-cariri",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "housejs",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "ifpe-open-source",
+      "lote": "lote-05",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "jamparuby",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "javabahia",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "javax-ce",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "jerimum-valley",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "ladies-that-ux-recife",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "manguezal",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "meetia-pb",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "net-ceara",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "net-pb",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "owasp-fortaleza",
+      "lote": "lote-06",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "owasp-natal",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "owasp-pb",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "oxenti-pe",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "paraiba-js",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "php-com-rapadura",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "php-maranhao",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "php-pb",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pong-rn",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "potiguaras-valley",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "projeto-software-livre-bahia",
+      "lote": "lote-07",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-al-grupy-al",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-ce",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-ma",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-pb-python-paraiba",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-pe",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-pi",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pug-se",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pyladies-natal",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pyladies-recife",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "pyladies-sergipe",
+      "lote": "lote-08",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "rails-girls-fortaleza",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "rapadura-valley",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "react-ladies",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "react-recife",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "reactjs-ceara",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "recife-front-end-community",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "santana-valley",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "soluises",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "sururu-valley",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "wids-recife",
+      "lote": "lote-09",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "women-techmakers-joao-pessoa",
+      "lote": "lote-10",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "women-who-code-recife",
+      "lote": "lote-10",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    },
+    {
+      "id": "wordpress-fortaleza",
+      "lote": "lote-10",
+      "arquivos_basicos_completos": false,
+      "revisao_visual_registrada": false,
+      "estado": "ausente",
+      "aprovacao": null
+    }
+  ]
+}

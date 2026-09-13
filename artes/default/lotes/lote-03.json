@@ -1,0 +1,132 @@
+{
+  "id": "lote-03",
+  "status": "concluido_em_revisao",
+  "aprovacao": null,
+  "comunidades": [
+    {
+      "id": "ceara-java-user-group",
+      "conceito": "Troca intergeracional de conhecimento e módulos do ecossistema JVM no Ceará.",
+      "prompt": "Use case: illustration-story. Create ONE original reusable editorial poster BACKGROUND, portrait 4:5 1080x1350. Refined flat painted illustration, subtle paper grain, warm terracotta #F9733B, sienna #8B3E2F, apricot #F6D7B7, dark brown, restrained olive. Ivory #FCFAF7. Community concept CEJUG Ceará Java User Group: polygot JVM knowledge sharing. DISTINCT scene all on RIGHT: mature Brazilian woman developer with short silver curly hair and glasses seated holding an open notebook, young brown-skinned male programmer standing beside a tall narrow shelf of geometric software blocks, one small laptop on pedestal, curved orange connections between the blocks like an ecosystem. Warm conversational poses, natural anatomy, no logos. Upper-right floating stacked amber rounded tiles suggest virtual machine layers, not a technical diagram. Ceará low warm hills and small coastal jangada silhouette near bottom. Strict composition: TOP y0–22% entirely blank ivory; LEFT x0–54%, y22–70% entirely blank ivory; all people/devices/motifs only x58–100%, y30–84%; landscape narrow strip full width y76–86%; soft ivory curved wave below; BOTTOM y88–100% empty ivory. NO text, letters, digits, logos, watermark, badges or frame. No logo imitation, no coffee brand motif, no infinity loop, no huge portraits. Image is only an illustration background, not final card.",
+      "prompts_correcao": [
+        "Use case precise-object-edit. This image is an editable poster illustration background. Remove ONLY the floating stack of 3 amber translucent tiles and its thin orange connecting lines at extreme upper right, above the wooden shelf. Replace removed region seamlessly with same blank ivory paper background. Entire top 25% must be blank ivory. Preserve the two people, all anatomy, bookshelf with blocks, laptop, landscape, wave, palette and composition exactly. No text or logos added. Portrait 4:5."
+      ],
+      "origem_ilustracao": "JPEG recuperado do remoto; correções pontuais via Image Gen integrado; original não aprovado e PNGs de correção preservados na pasta da comunidade",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Removidos módulos flutuantes que invadiam cabeçalho; estante e troca intergeracional preservadas. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "cloud-native-rn",
+      "conceito": "Oficina colaborativa de nuvem e microsserviços junto às dunas de Natal.",
+      "prompt": "Use case: illustration-story. ONE editorial poster illustration background 4:5 portrait 1080x1350, premium flat painted gouache and subtle paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot and restrained olive. Cloud Native RN community concept: Kubernetes and microservice learning in Natal. On RIGHT show a young Black Brazilian woman engineer with long twist braids standing at a slim upright modular board, arranging three warm cloud-shaped paper pieces with small separate connected containers beneath; an older brown-skinned man wearing olive casual shirt sits on low stool observing with tablet. Natural poses, elegant simplified anatomy, human workshop, conceptual not precise technical diagram. Low Natal coastal dunes and sunlit ocean strip. Absolutely no text/lettering/numbers/logos, no brand symbols, no chart labels. All subject matter x58–100% and y30–84%, upper motifs start below y30%. TOP 0–22% wholly blank ivory. LEFT 0–54% y22–70% blank ivory for large typography. Landscape only y76–86% full width, blank ivory wave and BOTTOM 88–100% empty. Not an infographic or final card. Unique upright collaborative cloud collage scene, no infinity symbol, no stock giant profiles.",
+      "origem_ilustracao": "ilustracao.jpg recuperada do remoto e reutilizada sem regeneração",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Quadro de nuvem, mãos e tablet conferidos; nome e logo íntegros; texto e rodapé livres. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "codar-salvador",
+      "conceito": "Desenvolvimento open-source colaborativo e conexões entre módulos na baía de Salvador.",
+      "prompt": "Use case illustration-story. ONE original portrait 4:5 editorial poster BACKGROUND 1080x1350 for CODAR Salvador open-source developer community. Premium flat painted Brazilian editorial illustration, subtle paper grain, warm terracotta #F9733B, burnt sienna #8B3E2F, apricot, dark brown, restrained olive, ivory #FCFAF7. Distinct scene: three young Brazilian adults working on a communal open-source project around a SMALL triangular worktable, seen in three-quarter view, all to RIGHT. Black man with very short hair sits facing right with laptop, brown woman with high bun stands behind with tablet, woman with dark bob sits facing inward arranging abstract blank module tiles. Floating fork-like branching orange connection lines and warm geometric blocks above right symbolize open collaboration, no letters. Low Salvador bay strip with colonial facade silhouettes, quiet olive sea and small boats. TOP0–22% blank ivory; LEFT x0–54% y22–70% entirely blank ivory. All figures/devices/motifs confined x58–100%, y30–84%. Landscape only y76–86%, soft curved ivory wave below and bottom88–100% wholly blank ivory for footer. No text, numbers, logos, brand marks, watermark or border. Natural hands and warm engaged faces; no giant portraits, no stereotypical hacker imagery. This is background only, text added separately.",
+      "prompts_correcao": [
+        "Use case precise-object-edit. Correct this reusable editorial poster BACKGROUND, portrait 4:5. Remove the upper-right floating module squares and connecting lines ONLY above y=350 in 1080x1350 coordinate space; reconnect remaining lower branches naturally ending below y=350. TOP 25% must be entirely blank ivory paper for organizer header. Preserve all three people, faces, hands, table, laptop, tablet, lower module blocks, Salvador bay scene, style palette and footer wave exactly. Also move the small distant colonial building silhouettes nearest left text column below y=860 so left x0..575 y300..840 stays empty ivory. Do not add text logos borders.",
+        "Use case precise-object-edit. Correct only spatial margin of this illustration. Move seated male programmer and his chair 100px right and reduce him10%, preserving natural anatomy and interaction with table. Leftmost edge of people must start at x600 on1080wide canvas. Remove the few distant church towers/building tops in LEFT HALF that rise above y870; reduce those buildings until their top edge below y870, preserving bay coast boats. Keep women, table, connected module motif, palette, paper, empty topquarter and bottomfooter. The entire left55% from top to y850 must be empty ivory, no shoulder, chairs or buildings. No text or logos. Portrait4:5."
+      ],
+      "origem_ilustracao": "JPEG recuperado do remoto; correções pontuais via Image Gen integrado; original não aprovado e PNGs de correção preservados na pasta da comunidade",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Removidos módulos no cabeçalho e reduzida aproximação das construções à coluna de dados; trio colaborativo preservado. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "conecta-nordeste",
+      "conceito": "Conexões entre empreendedores e ecossistemas de inovação do Nordeste.",
+      "prompt": "Use case illustration-story. ONE original portrait 4:5 1080x1350 reusable editorial background for Conecta Nordeste, inter-state startup and creative economy network. Warm premium FLAT PAINTED illustration with subtle grain: ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot, olive. Unique scene: three Brazilian startup founders at RIGHT stand on staggered low terracotta platforms sharing blank project cards; a Black woman with short angular afro in olive jacket, brown man with wavy shoulder-length hair carrying a closed laptop, older brown woman with gray straight bob holding a notebook. Different relaxed natural conversational gestures, no handshake. ABOVE THEM but entirely below 30% page height, an airy canopy of linked orange circular nodes between three stylized small architectural blocks evokes regional collaboration. Low landscape of warm hills transitioning into coast, small urban and rural silhouettes across bottom. EVERYTHING including platforms and devices at x60–100%, y32–84%. TOP0–25% absolutely empty ivory, no motifs. LEFT0–54% y22–70% blank. Landscape narrow horizontal strip y76–86%; curved ivory wave and bottom88–100% empty for future footer. NO text/logos/numbers/letters, no literal map, no flags, no claims about partners. Humans and landscape imagined, not event venue. Not final poster.",
+      "origem_ilustracao": "ilustracao.jpg recuperada do remoto e reutilizada sem regeneração",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Três fundadores e arquitetura conectada distintos; sem sobreposição com nome, dados e rodapé. Estado Nacional reproduz cadastro. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "devops-jp",
+      "conceito": "Responsabilidade compartilhada pela entrega e confiabilidade de software em João Pessoa.",
+      "prompt": "Use case illustration-story. ONE 4:5 portrait editorial illustration background 1080x1350, warm refined flat painted gouache and paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, muted apricot/olive. DevOps JP community, João Pessoa: shared delivery practices and software reliability. DISTINCT scene on RIGHT: Brazilian Black male developer with shaved head in warm ivory shirt stands beside narrow tabletop carefully passing an unmarked small geometric deployment cube toward a brown-skinned female engineer with long dark ponytail and olive blouse; she checks a compact upright monitor showing abstract unlabeled circles and bars. Two people sharing responsibility, natural hands and anatomy. Above only at right below y32%, three gently curved terracotta ribbon segments carry simple geometric package cubes toward an abstract sun, visual metaphor for delivery, NO infinity loop, NO cloud. Low coastal cliff, green shoreline and tiny white lighthouse evocative of João Pessoa. TOP y0–25% entirely blank ivory. LEFT x0–54% y22–70% entirely blank ivory. All subjects/devices and motifs x60–100% y32–84%. Bottom landscape y76–86%, soft ivory wave, bottom88–100% entirely blank. No text, letters, numbers, logos, labels, watermarks or brand marks. Only background art, no event announcement.",
+      "origem_ilustracao": "ilustracao.jpg recuperada do remoto e reutilizada sem regeneração",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Entrega de cubo e monitor, mãos e rostos conferidos; metáfora exclusiva de entrega compartilhada. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "django-girls-salvador",
+      "conceito": "Primeiros passos na programação web com mentoria inclusiva entre mulheres em Salvador.",
+      "prompt": "Use case illustration-story. ONE original 4:5 portrait 1080x1350 reusable editorial illustration BACKGROUND for Django Girls Salvador, inclusive women's introduction to Python web programming. Premium warm FLAT PAINTED editorial style, subtle paper grain, warm terracotta #F9733B, sienna #8B3E2F, apricot, dark brown, olive accents, ivory #FCFAF7. Distinct scene at RIGHT: young Black Brazilian woman with long box braids seated on terracotta bench excitedly showing her first small website on a laptop to a standing brown-skinned female mentor with cropped curly hair and glasses, mentor leaning in with encouraging open-hand gesture. Laptop abstract ivory interface blocks only, no actual text. Behind them three large overlapping browser-like paper panels with blank colored modules, all below y32%, evoke building web pages. No snake or Python/Django logos. Low Salvador bay with small colorful warm colonial houses as horizontal strip only y76–86%. People x60–100%, y42–84%, all motifs x62–100% y32–60%. TOP0–25% wholly empty ivory, LEFT0–54% y22–70% empty ivory. Bottom88–100% blank ivory beyond curved wave. No text/letters/numbers/logos/brands/watermarks/frame. Friendly learning, natural hands, no giant portrait profiles. Background only.",
+      "prompts_correcao": [
+        "Use case precise-object-edit. Preserve this illustration of two Brazilian women mentoring in web development exactly in its warm style, palette, anatomy and Salvador bay landscape. Make ONE composition correction: remove the smallest browser panel (leftmost olive-top browser), and remove plant leaves that protrude into the middle-left. Shift the seated woman's open left hand gently right as necessary. The entire LEFT 55 percent of canvas from top through 65 percent height must be blank ivory paper, absolutely no plants, browsers or hands intruding. The two remaining browser panels and both women stay at RIGHT. Top quarter and bottom footer blank. Keep 4:5 portrait, no text logos marks. Main aim is clear left text column, do not change faces or invent extra anatomy."
+      ],
+      "origem_ilustracao": "JPEG recuperado do remoto; correções pontuais via Image Gen integrado; original não aprovado e PNGs de correção preservados na pasta da comunidade",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Removido painel esquerdo e folhagem que aproximavam ilustração da coluna; mentoria e anatomia conferidas. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "dotnet-recife",
+      "conceito": "Conhecimento compartilhado sobre camadas de aplicações e serviços .NET no Recife.",
+      "prompt": "Use case illustration-story. ONE original reusable editorial background, STRICT 4:5 portrait 1080x1350. DotNet Recife developer community, web backend development and knowledge exchange. Refined FLAT PAINTED illustration with paper grain, ivory #FCFAF7, terracotta #F9733B, dark sienna #8B3E2F, apricot and olive; not photorealistic. UNIQUE scene: Brazilian developer woman with long dark straight hair seated facing right on an olive stool, examining a tall open terracotta laptop on a narrow standing desk; beside her at far right a brown-skinned male teacher with short tight curls and thin mustache holds three blank stacked application panels, pointing to small connected rectangular server modules above. Backend software layers as elegant abstract warm tile stack, no brand symbols, no text or letters. Friendly technically focused natural anatomy. Below scene a narrow low Recife river and simple arched bridge, modest warm building silhouettes. TOP0–25% wholly blank ivory, LEFT0–54% y22–70% entirely blank. All people, devices, motifs x60–100%, y32–84%. Landscape strip y76–86% across entire width. Soft ivory wave ends scene, bottom88–100% blank ivory. No frame, watermark, logos, numbers, words. Background only, NOT a final event poster.",
+      "prompts_correcao": [
+        "Use case precise-object-edit. Correct this reusable editorial poster illustration BACKGROUND, portrait4:5. Remove ONLY the topmost floating server bar and connecting lines that currently intrude above y=300 in 1080x1350 coordinates. All illustration must begin below y=330, leaving top25% completely blank ivory paper. Keep two lower small bars, the layered software blocks, gesturing teacher and female developer, laptop, table, natural anatomy, warm palette, Recife river bridge and footer wave. Shift the female developer and her stool slightly right so they stay entirely right of x=600 and left x0..575 y300..840 stays empty for typesetting. No letters, text, logos or frames.",
+        "Use case precise-object-edit. Change ONLY position and size of the seated woman, her stool, laptop and table: reduce this group by about 18 percent and shift it RIGHT 120 pixels on this 1080 wide canvas, keeping feet at same baseline. Her leftmost hair, back and stool must start to the RIGHT of x600. This creates empty left 55 percent for event text. Keep her full natural anatomy and engaged pose. Keep standing male developer, software layer tiles, warm paper palette, empty top quarter, Recife landscape and bottom footer wave unchanged. No text or logos. Portrait4:5."
+      ],
+      "origem_ilustracao": "JPEG recuperado do remoto; correções pontuais via Image Gen integrado; original não aprovado e PNGs de correção preservados na pasta da comunidade",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Removido módulo no cabeçalho e reposicionada desenvolvedora para liberar coluna; camadas de software preservadas. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "elug-ce",
+      "conceito": "Programação funcional, processos e troca de mensagens como construção colaborativa no Ceará.",
+      "prompt": "Use case illustration-story. ONE original 4:5 portrait editorial illustration BACKGROUND 1080x1350 for Elug CE, Elixir Erlang functional programming community in Ceará. Premium warm flat painted illustration with subtle paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot, olive accents. DISTINCT scene on RIGHT: a Brazilian brown-skinned developer with wavy dark hair tied in a small bun kneels next to a low circular table arranging connected rounded wooden tokens; Black woman with short natural hair sits opposite on a low cushion, holding a tablet and smiling thoughtfully. Above them an elegant abstract branching tree of warm rounded nodes and tiny envelope-like shapes suggests concurrent processes and messages; artistic metaphor, not technical diagram. All motifs confined right side beneath y32%, no official technology logo, no purple. Low Ceará inland hills and tiny distant houses with sparse olive shrubs. TOP0–25% wholly blank ivory; LEFT0–54% y22–70% wholly blank ivory; all people/devices/branches x60–100% y32–84%. Landscape full-width only y76–86%, blank ivory wave beneath, bottom88–100% empty. No text, lettering, digits, logos, brand marks, watermarks, or frame. Natural clear hands, no giant portraits. Background only, no event.",
+      "origem_ilustracao": "ilustracao.jpg recuperada do remoto e reutilizada sem regeneração",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Árvore de mensagens, peças na mesa e mãos conferidas; sem invasão dos textos; identidade cadastrada integral. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "femug-pe",
+      "conceito": "Criação colaborativa de interfaces responsivas e experimentação front-end no Recife.",
+      "prompt": "Use case illustration-story. ONE original editorial background for FEMUG-PE front-end meetup community Recife. Portrait 4:5 1080x1350. Premium warm flat painted illustration and subtle paper texture, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot and olive accents. DISTINCT scene on RIGHT: brown-skinned Brazilian woman front-end developer with asymmetrical short hair stands holding a large blank responsive interface panel, while a Black man wearing round glasses sits cross-legged on a low terracotta platform using a tablet with stylus. Above-right, two smaller unbranded device silhouettes and floating modular interface blocks show responsive layouts visually, without any code characters or words. Composition airy, playful craft of interface design, no big laptop-table scene. Small warm Recife bridge and riverfront silhouettes in narrow bottom strip, quiet olive water. TOP0–25% entirely blank ivory; LEFT0–54% y22–70% completely empty ivory. People/devices/motifs only x60–100% y32–84%. Landscape across width y76–86%, ivory curved wave below; BOTTOM88–100% completely blank. NO text, letters, digits, logo, CSS or JS symbols, brand marks, watermarks, frame. Natural correct hands and engaged faces. Background only for editable typography later.",
+      "origem_ilustracao": "ilustracao.jpg recuperada do remoto e reutilizada sem regeneração",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Montado card completo a partir do JPEG recuperado; interfaces e mãos conferidas; logo oficial incorporada sem corte. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    },
+    {
+      "id": "forhacker-space",
+      "conceito": "Laboratório comunitário de hardware livre e eletrônica, com aprendizado prático entre makers em Fortaleza.",
+      "prompt": "Use case illustration-story. ONE original reusable editorial BACKGROUND portrait 4:5 1080x1350 for ForHacker Space Fortaleza, a friendly collaborative makerspace of open hardware and electronics. Warm premium FLAT PAINTED editorial art, subtle paper grain, ivory #FCFAF7, terracotta #F9733B, sienna #8B3E2F, apricot, restrained olive. DISTINCT scene on RIGHT: Brazilian brown-skinned woman maker with a short dark pixie haircut seated at a narrow wooden bench carefully holding a small low-voltage sensor circuit; beside her a Black man with medium dreadlocks pulled back and clear safety glasses stands using a screwdriver on a small open orange electronics enclosure. A friendly small desk lamp and a few neat hand tools, no robot. Above at upper-right BELOW y35% a whimsical olive circuit motif with terracotta round traces and floating simple unmarked hardware pieces evokes making and learning. Natural careful hands and benign daytime workshop; no hoodies, masks, padlocks or sinister imagery. Low coastal Fortaleza strip with tiny jangada and warm hills. TOP0–25% wholly blank ivory. LEFT0–54% y22–70% wholly blank ivory. All people/devices/motifs x60–100% y35–84%. Landscape only y76–86% across width, soft ivory wave and bottom88–100% blank. NO text, logos, letters, numbers, brand marks, watermark or frame. Background only. Ensure strictly absolutely no motif above y35%, needed for separate organizer header.",
+      "origem_ilustracao": "Image Gen integrado; geracao-original.png preservada na pasta da comunidade",
+      "revisao_visual": {
+        "realizada": true,
+        "observacoes": "Ilustração nova de eletrônica e hardware livre; circuito sem marca, mãos, ferramentas e rostos conferidos; cabeçalho e rodapé livres. PNG individual inspecionado em 1080×1350; dados demonstrativos e assinatura original Baião Tech com baiaotech.org. Revisão técnica não constitui aprovação humana."
+      },
+      "status": "em_revisao"
+    }
+  ],
+  "bloqueios": []
+}
