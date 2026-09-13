@@ -15,7 +15,7 @@ categories:
   - "inovacao"
   - "ia"
 featured: false
-cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_DhAqm0f"
+cover_image: "https://res.cloudinary.com/startup-grind/image/upload/c_scale%2Cw_2560/c_crop%2Ch_640%2Cw_2560%2Cy_0.0_mul_h_sub_0.0_mul_640/c_crop%2Ch_640%2Cw_2560/c_fill%2Cdpr_2.0%2Cf_auto%2Cg_center%2Cq_auto%3Agood/v1/gcs/platform-data-goog/event_banners/blob_Vp1tGUo"
 price: ""
 ---
 
