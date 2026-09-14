@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
+  <title id="title">Exemplo visual — Agenda diária sem evento confirmado hoje</title>
+  <desc id="desc">Referência de composição para destacar o próximo encontro cadastrado sem usar faixa improvisada no topo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset="1" stop-color="#fff1df"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb36e"/>
+      <stop offset="1" stop-color="#f45d34"/>
+    </linearGradient>
+    <style>
+      .ui{font-family:Inter,Arial,sans-serif}.red{fill:#a93122}.orange{fill:#f56b3f}.ink{fill:#181818}.muted{fill:#725a51}.small{font-size:24px;letter-spacing:.08em}.label{font-size:22px;font-weight:800;letter-spacing:.05em}.meta{font-size:31px;font-weight:700}.title{font-size:74px;font-weight:900}.headline{font-size:47px;font-weight:900}.sub{font-size:30px}.thin{font-weight:400}.bold{font-weight:800}
+    </style>
+    <clipPath id="artClip"><rect x="0" y="0" width="1080" height="1185"/></clipPath>
+  </defs>
+
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+
+  <g id="decorative-orbits" fill="none" stroke="#f66b43" stroke-width="3" opacity=".95">
+    <path d="M740 0 C900 6 1010 42 1080 88"/>
+    <path d="M616 547 C804 410 940 366 1080 389"/>
+    <path d="M606 653 C780 514 930 482 1080 528"/>
+  </g>
+  <g fill="#ff6841">
+    <circle cx="757" cy="112" r="18"/>
+    <circle cx="762" cy="427" r="17"/>
+    <circle cx="640" cy="532" r="13"/>
+  </g>
+
+  <g class="ui" id="editorial-state">
+    <g transform="translate(72 42)">
+      <circle cx="34" cy="34" r="34" fill="url(#sun)"/>
+      <rect x="82" y="3" rx="28" ry="28" width="272" height="62" fill="#fde7d2"/>
+      <text x="116" y="44" class="red bold" font-size="27">AGENDA DIÁRIA</text>
+    </g>
+    <text x="72" y="156" class="headline red">Sem evento confirmado hoje</text>
+    <text x="72" y="205" class="sub muted">Próximo encontro cadastrado</text>
+    <rect x="72" y="239" width="78" height="5" rx="2.5" fill="#f56b3f"/>
+    <line x1="72" y1="283" x2="1008" y2="283" stroke="#e7b9a1" stroke-width="2"/>
+  </g>
+
+  <g id="fixed-organizer" class="ui" transform="translate(72 338)">
+    <circle cx="44" cy="44" r="44" fill="#fbd9bf" stroke="#ed865a" stroke-width="2"/>
+    <text x="44" y="53" text-anchor="middle" class="red bold" font-size="18">ORG</text>
+    <text x="110" y="34" class="red bold" font-size="38">UFC — Campus de Crateús</text>
+    <text x="110" y="70" class="small muted">CONFERÊNCIA · CRATEÚS, CE</text>
+  </g>
+
+  <g class="ui" id="event-copy">
+    <text x="72" y="540" class="title ink">13º Fórum de</text>
+    <text x="72" y="620" class="title ink">Inovação e</text>
+    <text x="72" y="700" class="title ink">Tecnologia</text>
+    <text x="72" y="785" class="title red">FIT 2026</text>
+
+    <g transform="translate(72 835)">
+      <circle cx="18" cy="18" r="15" fill="none" stroke="#f56b3f" stroke-width="3"/>
+      <line x1="9" y1="18" x2="27" y2="18" stroke="#f56b3f" stroke-width="3"/>
+      <text x="58" y="10" class="label red">DATA</text>
+      <text x="58" y="52" class="meta ink">15–17 set.</text>
+    </g>
+
+    <g transform="translate(72 930)">
+      <path d="M18 0c-11 0-20 9-20 20 0 15 20 36 20 36s20-21 20-36C38 9 29 0 18 0Zm0 27a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" fill="#f56b3f"/>
+      <text x="58" y="8" class="label red">LOCAL / FORMATO</text>
+      <text x="58" y="51" class="meta ink">Crateús, CE · Presencial</text>
+    </g>
+
+    <text x="72" y="1056" class="red bold" font-size="29">IA · Inovação · Tecnologia</text>
+  </g>
+
+  <g id="fixed-illustration" clip-path="url(#artClip)">
+    <circle cx="886" cy="665" r="264" fill="#ffbb79" opacity=".62"/>
+    <path d="M690 904 C780 790 902 762 1080 801 L1080 1186 L604 1186 Z" fill="#d85b32" opacity=".22"/>
+    <path d="M620 1058 C752 924 886 930 1080 978 L1080 1186 L520 1186 Z" fill="#ef7d43" opacity=".55"/>
+    <path d="M0 1124 C184 1044 331 1054 505 1114 C650 1164 795 1149 1080 1067 L1080 1188 L0 1188 Z" fill="#e99151" opacity=".65"/>
+    <path d="M690 634 h286 v238 H690z" fill="#f7e6ce" stroke="#d7a77e" stroke-width="3"/>
+    <rect x="735" y="696" width="92" height="176" fill="#f1d6b8"/>
+    <rect x="851" y="675" width="78" height="197" fill="#fff7e7"/>
+    <g fill="#c66a3e"><rect x="755" y="720" width="48" height="58"/><rect x="755" y="803" width="48" height="49"/><rect x="868" y="702" width="42" height="62"/><rect x="868" y="791" width="42" height="61"/></g>
+    <text x="889" y="648" text-anchor="middle" class="ui red bold" font-size="27">CAMPUS · CRATEÚS</text>
+
+    <g transform="translate(690 768)">
+      <circle cx="120" cy="68" r="42" fill="#7a3f2d"/>
+      <rect x="86" y="106" width="76" height="188" rx="34" fill="#bf5d37"/>
+      <circle cx="244" cy="105" r="39" fill="#5a2c25"/>
+      <rect x="212" y="142" width="71" height="163" rx="32" fill="#f07142"/>
+      <circle cx="12" cy="136" r="36" fill="#693328"/>
+      <rect x="-19" y="172" width="71" height="137" rx="30" fill="#a94a31"/>
+      <rect x="61" y="236" width="167" height="96" rx="14" fill="#d7c2ae" transform="rotate(-5 61 236)"/>
+      <circle cx="145" cy="278" r="18" fill="#f26f42"/>
+      <path d="M145 258l9 20-9 18-9-18z" fill="#fff6d7"/>
+    </g>
+
+    <g opacity=".9" fill="#465e3a">
+      <circle cx="647" cy="780" r="42"/><circle cx="1000" cy="839" r="38"/><circle cx="624" cy="835" r="26"/>
+    </g>
+    <g stroke="#31562c" stroke-width="13"><line x1="647" y1="815" x2="647" y2="919"/><line x1="1000" y1="868" x2="1000" y2="961"/></g>
+    <g fill="#2f6b3b"><rect x="1015" y="900" width="16" height="104" rx="8"/><rect x="1037" y="931" width="13" height="72" rx="6"/><rect x="590" y="1010" width="13" height="104" rx="6"/></g>
+  </g>
+
+  <path d="M0 1167 C160 1135 295 1156 434 1180 C622 1214 835 1188 1080 1144 L1080 1350 L0 1350 Z" fill="#fff"/>
+  <g id="fixed-baiao-footer">
+    <image href="../../assets/baiao-tech-principal.svg" x="72" y="1218" width="184" height="86" preserveAspectRatio="xMinYMid meet"/>
+    <line x1="278" y1="1227" x2="278" y2="1300" stroke="#e3b5a1" stroke-width="2"/>
+    <text x="304" y="1251" class="ui label red">CURADORIA</text>
+    <text x="304" y="1282" class="ui muted" font-size="23">Eventos e comunidades</text>
+    <text x="304" y="1310" class="ui muted" font-size="23">de tecnologia.</text>
+    <rect x="700" y="1231" width="130" height="63" rx="14" fill="#fffaf5" stroke="#efc1aa" stroke-width="2"/>
+    <text x="765" y="1271" text-anchor="middle" class="ui red bold" font-size="25">DIÁRIO</text>
+    <line x1="852" y1="1237" x2="852" y2="1293" stroke="#e3b5a1" stroke-width="2"/>
+    <text x="878" y="1276" class="ui red bold" font-size="25">baiaotech.org</text>
+  </g>
+
+  <text x="1002" y="1325" text-anchor="end" class="ui muted" font-size="14">EXEMPLO DE LAYOUT · NÃO PUBLICAR SEM DADOS REVALIDADOS</text>
+</svg>
