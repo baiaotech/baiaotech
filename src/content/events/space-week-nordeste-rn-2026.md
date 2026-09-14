@@ -16,7 +16,7 @@ categories:
   - "inovacao"
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://spaceweeknordeste.com/wp-content/uploads/2025/12/cartaz_swn_2026-685x1024.jpg"
 price: "Pago"
 ---
 
