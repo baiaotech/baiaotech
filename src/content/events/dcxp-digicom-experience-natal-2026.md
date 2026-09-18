@@ -15,7 +15,7 @@ categories:
   - "games"
   - "inovacao"
 featured: false
-cover_image: "https://images.ticket360.com.br/images.ticket360/eventos/interna/32705-20260310160739.webp"
+cover_image: "https://images.ticket360.com.br/images.ticket360/eventos/composto/internas/32705.jpg"
 price: "A partir de R$ 25"
 ---
 
