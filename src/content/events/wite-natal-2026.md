@@ -14,7 +14,8 @@ source_url: "https://www.even3.com.br/10-workshop-sobre-inovacao-com-tecnologias
 categories:
   - "inovacao"
 featured: false
-cover_image: "https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg"
+# Copia local otimizada da capa oficial, sem recorte: https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg
+cover_image: "/assets/covers/events/wite-natal-2026.jpg"
 price: "R$ 20"
 ---
 
