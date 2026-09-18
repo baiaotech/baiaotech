@@ -49,6 +49,33 @@ jobs:
           npm rebuild esbuild
           npm ls vitest @vitest/coverage-v8
 
+      - name: Verify and localize original WITE cover without changing pixels
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFile, writeFile, mkdir } from 'node:fs/promises';
+          import { createHash } from 'node:crypto';
+          const oldUrl = 'https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg';
+          const originalUrl = 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg';
+          const response = await fetch(originalUrl, { signal: AbortSignal.timeout(30000), redirect: 'error' });
+          console.log('Original WITE cover:', response.status, response.headers.get('content-type'));
+          assert.equal(response.status, 200);
+          assert.match(response.headers.get('content-type') ?? '', /^image\/jpeg(?:;|$)/i);
+          const bytes = Buffer.from(await response.arrayBuffer());
+          assert(bytes.length > 100 && bytes.length < 10 * 1024 * 1024);
+          assert.equal(bytes.subarray(0, 3).toString('hex'), 'ffd8ff');
+          await mkdir('src/assets/covers/events', { recursive: true });
+          await writeFile('src/assets/covers/events/wite-natal-2026.jpg', bytes);
+          console.log('Original image bytes:', bytes.length, 'sha256:', createHash('sha256').update(bytes).digest('hex'));
+          const path = 'src/content/events/wite-natal-2026.md';
+          const text = await readFile(path, 'utf8');
+          const expected = `cover_image: "${oldUrl}"`;
+          assert.equal(text.split(expected).length, 2, 'Expected exactly one original cover field');
+          await writeFile(path, text.replace(expected, `# Copia local, sem alteracao de pixels, da capa oficial: ${originalUrl}\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"`));
+          NODE
+
       - name: Validate editorial content
         run: npm run validate
 
@@ -62,23 +89,26 @@ jobs:
         env:
           SITE_URL: https://baiaotech.org
           PATH_PREFIX: /
-        run: npm run build
+        run: npm run build > "$RUNNER_TEMP/build-production.log"
 
       - name: Install Playwright Chromium
         run: npx --no-install playwright install --with-deps chromium
 
-      - name: Run existing smoke E2E suite
-        run: npm run test:e2e
+      - name: Run existing smoke E2E suite unchanged
+        run: npm run test:e2e > "$RUNNER_TEMP/e2e.log" 2>&1 || { tail -n 180 "$RUNNER_TEMP/e2e.log"; exit 1; }
 
-      - name: Preserve tested manifests on isolated branch
+      - name: Show E2E summary
+        run: tail -n 25 "$RUNNER_TEMP/e2e.log"
+
+      - name: Preserve tested files on isolated branch
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- package.json package-lock.json
+          git add -- package.json package-lock.json src/content/events/wite-natal-2026.md src/assets/covers/events/wite-natal-2026.jpg
           git diff --cached --check
-          git commit -m 'fix(deps): align Vitest and coverage on supported Node.js'
+          git commit -m 'fix: restore locked install and serve original WITE cover locally'
           git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
           git rev-parse HEAD
 
@@ -92,5 +122,7 @@ jobs:
           path: |
             package.json
             package-lock.json
+            src/content/events/wite-natal-2026.md
+            src/assets/covers/events/wite-natal-2026.jpg
             coverage/lcov.info
             output/playwright
