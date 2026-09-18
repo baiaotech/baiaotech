@@ -35,13 +35,10 @@ jobs:
           cache: npm
 
       - name: Align Vitest and coverage and regenerate lockfile
-        shell: bash
         run: |
-          set -euo pipefail
           npm pkg set 'devDependencies.vitest=5.0.1' 'devDependencies.@vitest/coverage-v8=5.0.1' 'engines.node=>=24.0.0'
           npm install --package-lock-only --ignore-scripts --no-audit --no-fund
           git diff --check
-          git diff --stat -- package.json package-lock.json
 
       - name: Verify clean locked installation
         run: |
@@ -49,96 +46,77 @@ jobs:
           npm rebuild esbuild
           npm ls vitest @vitest/coverage-v8
 
-      - name: Install Playwright Chromium
-        run: npx --no-install playwright install --with-deps chromium > "$RUNNER_TEMP/install-browser.log" 2>&1 || { tail -n 50 "$RUNNER_TEMP/install-browser.log"; exit 1; }
-
-      - name: Verify and optimize original official WITE cover
-        shell: bash
-        run: |
-          set -euo pipefail
-          node --input-type=module <<'NODE'
-          import assert from 'node:assert/strict';
-          import { readFile, writeFile, mkdir } from 'node:fs/promises';
-          import { createHash } from 'node:crypto';
-          import { chromium } from '@playwright/test';
-          const oldUrl = 'https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg';
-          const originalUrl = 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg';
-          const response = await fetch(originalUrl, { signal: AbortSignal.timeout(30000), redirect: 'error' });
-          console.log('Original cover response:', response.status, response.headers.get('content-type'), response.headers.get('content-length'));
-          assert.equal(response.status, 200);
-          assert.match(response.headers.get('content-type') ?? '', /^image\/jpeg(?:;|$)/i);
-          const chunks = [];
-          let size = 0;
-          for await (const chunk of response.body) {
-            size += chunk.length;
-            assert(size <= 50 * 1024 * 1024, `Original image exceeds 50 MiB: ${size}`);
-            chunks.push(chunk);
-          }
-          const bytes = Buffer.concat(chunks);
-          console.log('Original image bytes:', bytes.length, 'sha256:', createHash('sha256').update(bytes).digest('hex'));
-          assert(bytes.length > 100, `Empty or truncated image: ${bytes.length} bytes`);
-          assert.equal(bytes.subarray(0, 3).toString('hex'), 'ffd8ff');
-          const browser = await chromium.launch();
-          let image;
-          try {
-            const page = await browser.newPage();
-            image = await page.evaluate(async (base64) => {
-              const img = new Image();
-              img.src = `data:image/jpeg;base64,${base64}`;
-              await img.decode();
-              if (!img.naturalWidth || !img.naturalHeight || img.naturalWidth * img.naturalHeight > 100000000) throw new Error('Invalid image geometry');
-              const canvas = document.createElement('canvas');
-              const scale = Math.min(1, 1600 / img.naturalWidth);
-              canvas.width = Math.round(img.naturalWidth * scale);
-              canvas.height = Math.round(img.naturalHeight * scale);
-              canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-              return { originalWidth: img.naturalWidth, originalHeight: img.naturalHeight, width: canvas.width, height: canvas.height, data: canvas.toDataURL('image/jpeg', 0.9).split(',')[1] };
-            }, bytes.toString('base64'));
-          } finally {
-            await browser.close();
-          }
-          const optimized = Buffer.from(image.data, 'base64');
-          assert(optimized.length > 100 && optimized.length < 2 * 1024 * 1024);
-          console.log('Decoded and optimized:', JSON.stringify({ ...image, data: undefined, bytes: optimized.length }));
-          await mkdir('src/assets/covers/events', { recursive: true });
-          await writeFile('src/assets/covers/events/wite-natal-2026.jpg', optimized);
-          const path = 'src/content/events/wite-natal-2026.md';
-          const text = await readFile(path, 'utf8');
-          const expected = `cover_image: "${oldUrl}"`;
-          assert.equal(text.split(expected).length, 2, 'Expected exactly one original cover field');
-          await writeFile(path, text.replace(expected, `# Copia local otimizada da capa oficial, sem recorte: ${originalUrl}\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"`));
-          NODE
-
-      - name: Validate editorial content
-        run: npm run validate
-
-      - name: Run unit tests
-        run: npm run test:unit
-
-      - name: Verify coverage
-        run: npm run test:coverage
-
-      - name: Build production site
+      - name: Validate content, unit tests, coverage and build
+        id: core
         env:
           SITE_URL: https://baiaotech.org
           PATH_PREFIX: /
-        run: npm run build > "$RUNNER_TEMP/build-production.log"
+        run: |
+          npm run validate
+          npm run test:unit
+          npm run test:coverage
+          npm run build > "$RUNNER_TEMP/build-production.log"
+
+      - name: Preserve validated manifests on isolated branch
+        run: |
+          set -eu
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- package.json package-lock.json
+          git diff --cached --check
+          git commit -m 'fix(deps): align Vitest and coverage on supported Node.js'
+          git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
+          git rev-parse HEAD
+
+      - name: Read original JPEG and inspect encoding
+        run: |
+          set -eu
+          curl --fail --silent --show-error --proto '=https' --tlsv1.2 --max-time 30 --max-filesize 52428800 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg' -o "$RUNNER_TEMP/wite-original.jpg"
+          sha256sum "$RUNNER_TEMP/wite-original.jpg"
+          file "$RUNNER_TEMP/wite-original.jpg"
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends python3-pil > "$RUNNER_TEMP/pillow-install.log"
+          /usr/bin/python3 <<'PY'
+          import os, warnings
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          warnings.simplefilter('error', Image.DecompressionBombWarning)
+          Image.MAX_IMAGE_PIXELS = 150_000_000
+          source = Path(os.environ['RUNNER_TEMP']) / 'wite-original.jpg'
+          with Image.open(source) as original:
+              print('ORIGINAL:', original.format, original.mode, original.size, flush=True)
+              original.draft('RGB', (1600, 1600))
+              original.load()
+              image = ImageOps.exif_transpose(original).convert('RGB')
+              image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
+              target = Path('src/assets/covers/events/wite-natal-2026.jpg')
+              target.parent.mkdir(parents=True, exist_ok=True)
+              image.save(target, format='JPEG', quality=90, optimize=True)
+              print('OPTIMIZED:', image.size, target.stat().st_size, flush=True)
+              assert 100 < target.stat().st_size < 2 * 1024 * 1024
+          event = Path('src/content/events/wite-natal-2026.md')
+          text = event.read_text()
+          old = 'cover_image: "https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg"'
+          assert text.count(old) == 1
+          replacement = '# Copia local otimizada da capa oficial, sem recorte: https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"'
+          event.write_text(text.replace(old, replacement))
+          PY
+
+      - name: Install Playwright Chromium
+        run: npx --no-install playwright install --with-deps chromium > "$RUNNER_TEMP/install-browser.log" 2>&1 || { tail -n 50 "$RUNNER_TEMP/install-browser.log"; exit 1; }
 
       - name: Run existing smoke E2E suite unchanged
-        run: npm run test:e2e > "$RUNNER_TEMP/e2e.log" 2>&1 || { tail -n 180 "$RUNNER_TEMP/e2e.log"; exit 1; }
+        run: npm run test:e2e > "$RUNNER_TEMP/e2e.log" 2>&1 || { tail -n 150 "$RUNNER_TEMP/e2e.log"; exit 1; }
 
       - name: Show E2E summary
         run: tail -n 25 "$RUNNER_TEMP/e2e.log"
 
-      - name: Preserve tested files on isolated branch
-        shell: bash
+      - name: Preserve browser-validated cover on isolated branch
         run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- package.json package-lock.json src/content/events/wite-natal-2026.md src/assets/covers/events/wite-natal-2026.jpg
+          set -eu
+          git add -- src/content/events/wite-natal-2026.md src/assets/covers/events/wite-natal-2026.jpg
           git diff --cached --check
-          git commit -m 'fix: restore locked install and serve verified WITE cover locally'
+          git commit -m 'fix(media): serve browser-compatible official WITE cover locally'
           git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
           git rev-parse HEAD
 
@@ -156,3 +134,4 @@ jobs:
             src/assets/covers/events/wite-natal-2026.jpg
             coverage/lcov.info
             output/playwright
+            ${{ runner.temp }}/wite-original.jpg
