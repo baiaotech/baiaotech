@@ -34,20 +34,50 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Align Vitest and coverage and regenerate lockfile
-        run: |
-          npm pkg set 'devDependencies.vitest=5.0.1' 'devDependencies.@vitest/coverage-v8=5.0.1' 'engines.node=>=24.0.0'
-          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-          git diff --check
-
       - name: Verify clean locked installation
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           npm rebuild esbuild
           npm ls vitest @vitest/coverage-v8
 
-      - name: Validate content, unit tests, coverage and build
-        id: core
+      - name: Optimize oversized verified JPEG using bounded scaled decoding
+        run: |
+          set -eu
+          curl --fail --silent --show-error --proto '=https' --tlsv1.2 --max-time 30 --max-filesize 15000000 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg' -o "$RUNNER_TEMP/wite-original.jpg"
+          printf '%s  %s\n' '3ecfd4a7b041a72f2b514019cd577662fd00ec2b5a55ac30fdebd46ab994951f' "$RUNNER_TEMP/wite-original.jpg" | sha256sum --check
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends python3-pil > "$RUNNER_TEMP/pillow-install.log"
+          /usr/bin/python3 <<'PY'
+          import os
+          from pathlib import Path
+          from PIL import Image
+          # Only the exact, hashed official JPEG is allowed past this larger header limit.
+          # JPEG draft decoding reduces pixel allocation before loading the source image.
+          Image.MAX_IMAGE_PIXELS = 400_000_000
+          source = Path(os.environ['RUNNER_TEMP']) / 'wite-original.jpg'
+          with Image.open(source) as image:
+              assert image.format == 'JPEG' and image.mode == 'RGB' and image.size == (23623, 14764)
+              print('Original JPEG:', image.size, flush=True)
+              image.draft('RGB', (1600, 1600))
+              assert image.width * image.height < 6_000_000
+              print('Bounded JPEG decode:', image.size, flush=True)
+              image.load()
+              image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
+              target = Path('src/assets/covers/events/wite-natal-2026.jpg')
+              target.parent.mkdir(parents=True, exist_ok=True)
+              image.save(target, format='JPEG', quality=88, optimize=True)
+              assert image.size == (1600, 1000)
+              assert 100 < target.stat().st_size < 250000
+              print('Optimized official image:', image.size, target.stat().st_size, flush=True)
+          event = Path('src/content/events/wite-natal-2026.md')
+          text = event.read_text()
+          old = 'cover_image: "https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg"'
+          assert text.count(old) == 1
+          replacement = '# Copia local otimizada da capa oficial, sem recorte: https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"'
+          event.write_text(text.replace(old, replacement))
+          PY
+
+      - name: Validate content, unit tests, coverage and production build
         env:
           SITE_URL: https://baiaotech.org
           PATH_PREFIX: /
@@ -56,51 +86,6 @@ jobs:
           npm run test:unit
           npm run test:coverage
           npm run build > "$RUNNER_TEMP/build-production.log"
-
-      - name: Preserve validated manifests on isolated branch
-        run: |
-          set -eu
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- package.json package-lock.json
-          git diff --cached --check
-          git commit -m 'fix(deps): align Vitest and coverage on supported Node.js'
-          git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
-          git rev-parse HEAD
-
-      - name: Read original JPEG and inspect encoding
-        run: |
-          set -eu
-          curl --fail --silent --show-error --proto '=https' --tlsv1.2 --max-time 30 --max-filesize 52428800 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg' -o "$RUNNER_TEMP/wite-original.jpg"
-          sha256sum "$RUNNER_TEMP/wite-original.jpg"
-          file "$RUNNER_TEMP/wite-original.jpg"
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends python3-pil > "$RUNNER_TEMP/pillow-install.log"
-          /usr/bin/python3 <<'PY'
-          import os, warnings
-          from pathlib import Path
-          from PIL import Image, ImageOps
-          warnings.simplefilter('error', Image.DecompressionBombWarning)
-          Image.MAX_IMAGE_PIXELS = 150_000_000
-          source = Path(os.environ['RUNNER_TEMP']) / 'wite-original.jpg'
-          with Image.open(source) as original:
-              print('ORIGINAL:', original.format, original.mode, original.size, flush=True)
-              original.draft('RGB', (1600, 1600))
-              original.load()
-              image = ImageOps.exif_transpose(original).convert('RGB')
-              image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
-              target = Path('src/assets/covers/events/wite-natal-2026.jpg')
-              target.parent.mkdir(parents=True, exist_ok=True)
-              image.save(target, format='JPEG', quality=90, optimize=True)
-              print('OPTIMIZED:', image.size, target.stat().st_size, flush=True)
-              assert 100 < target.stat().st_size < 2 * 1024 * 1024
-          event = Path('src/content/events/wite-natal-2026.md')
-          text = event.read_text()
-          old = 'cover_image: "https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg"'
-          assert text.count(old) == 1
-          replacement = '# Copia local otimizada da capa oficial, sem recorte: https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"'
-          event.write_text(text.replace(old, replacement))
-          PY
 
       - name: Install Playwright Chromium
         run: npx --no-install playwright install --with-deps chromium > "$RUNNER_TEMP/install-browser.log" 2>&1 || { tail -n 50 "$RUNNER_TEMP/install-browser.log"; exit 1; }
@@ -114,6 +99,8 @@ jobs:
       - name: Preserve browser-validated cover on isolated branch
         run: |
           set -eu
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- src/content/events/wite-natal-2026.md src/assets/covers/events/wite-natal-2026.jpg
           git diff --cached --check
           git commit -m 'fix(media): serve browser-compatible official WITE cover locally'
@@ -134,4 +121,3 @@ jobs:
             src/assets/covers/events/wite-natal-2026.jpg
             coverage/lcov.info
             output/playwright
-            ${{ runner.temp }}/wite-original.jpg
