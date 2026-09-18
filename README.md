@@ -13,7 +13,7 @@ Agenda de eventos e diretório de comunidades de tecnologia do Nordeste, gerado 
 
 ## Stack
 
-- Node.js 20+
+- Node.js 24 LTS
 - Eleventy
 - Vitest + cobertura LCOV
 - Playwright
