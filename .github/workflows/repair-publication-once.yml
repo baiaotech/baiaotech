@@ -1,0 +1,96 @@
+name: Validate publication repair (temporary)
+
+on:
+  push:
+    branches:
+      - fix/restore-site-publication-20260918
+    paths:
+      - .github/workflows/repair-publication-once.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repair-publication-20260918
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  repair-and-test:
+    if: github.repository == 'baiaotech/baiaotech'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated repair branch
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          ref: fix/restore-site-publication-20260918
+
+      - name: Setup supported Node.js LTS
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Align Vitest and coverage and regenerate lockfile
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm pkg set 'devDependencies.vitest=5.0.1' 'devDependencies.@vitest/coverage-v8=5.0.1' 'engines.node=>=24.0.0'
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+          git diff --check
+          git diff --stat -- package.json package-lock.json
+
+      - name: Verify clean locked installation
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm rebuild esbuild
+          npm ls vitest @vitest/coverage-v8
+
+      - name: Validate editorial content
+        run: npm run validate
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Verify coverage
+        run: npm run test:coverage
+
+      - name: Build production site
+        env:
+          SITE_URL: https://baiaotech.org
+          PATH_PREFIX: /
+        run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx --no-install playwright install --with-deps chromium
+
+      - name: Run existing smoke E2E suite
+        run: npm run test:e2e
+
+      - name: Preserve tested manifests on isolated branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- package.json package-lock.json
+          git diff --cached --check
+          git commit -m 'fix(deps): align Vitest and coverage on supported Node.js'
+          git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
+          git rev-parse HEAD
+
+      - name: Preserve validation artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: publication-repair-validation
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            package.json
+            package-lock.json
+            coverage/lcov.info
+            output/playwright
