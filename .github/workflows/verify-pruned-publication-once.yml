@@ -1,0 +1,103 @@
+name: Verify past-event cleanup (temporary)
+
+on:
+  push:
+    branches:
+      - fix/restore-site-publication-20260918
+    paths:
+      - .github/workflows/verify-pruned-publication-once.yml
+
+permissions: {}
+
+jobs:
+  verify-public-cleanup:
+    if: github.repository == 'baiaotech/baiaotech'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify live event count and removed pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import concurrent.futures
+          import datetime
+          import json
+          import re
+          import time
+          import urllib.error
+          import urllib.request
+
+          origin = 'https://baiaotech.org'
+          revision = '2d56fdcf355b358bdf4494a80af5bbe4d52a677a'
+          removed = [
+              'fit-crateus-2026',
+              'hackathon-startup-piaui-2026',
+              'imersao-digital-ux-ui-fortaleza-2026',
+              'pet-saude-informacao-saude-digital-recife-2026',
+              'entrepreneurship-experience-natal-2026',
+              'esquenta-go-rn-natal-2026',
+              'imersao-digital-gestao-agil-projetos-fortaleza-2026',
+              'meetup-phppe-ete-porto-digital-recife-2026',
+          ]
+          preserved = [
+              'sscad-natal-2026',
+              'devfest-lauro-de-freitas-2026',
+              'wanda-campina-grande-2026',
+              'wite-natal-2026',
+              'go-rn-devfest-natal-2026',
+          ]
+
+          def get(path):
+              url = origin + path + '?publication=' + revision
+              req = urllib.request.Request(url, headers={
+                  'User-Agent': 'BaiaoTech-Publication-Verification/1.0',
+                  'Cache-Control': 'no-cache',
+              })
+              try:
+                  with urllib.request.urlopen(req, timeout=20) as response:
+                      assert response.geturl().startswith(origin + '/'), 'Unexpected redirect'
+                      data = response.read(2 * 1024 * 1024 + 1)
+                      assert len(data) <= 2 * 1024 * 1024, 'Oversized response'
+                      return response.status, data.decode('utf-8')
+              except urllib.error.HTTPError as error:
+                  return error.code, ''
+
+          for attempt in range(4):
+              status, html = get('/eventos/')
+              match = re.search(r'data-results-count[^>]*>\s*(\d+)', html)
+              count = int(match.group(1)) if match else None
+              if status == 200 and count == 76 and 'Eventos anteriores' not in html:
+                  break
+              if attempt == 3:
+                  raise RuntimeError(f'Unexpected live listing: status={status}, count={count}')
+              time.sleep(8)
+
+          for slug in removed:
+              assert '/eventos/' + slug + '/' not in html, f'Removed event still listed: {slug}'
+          for slug in preserved:
+              assert '/eventos/' + slug + '/' in html, f'Preserved event missing: {slug}'
+
+          paths = [('/eventos/' + slug + '/', 404) for slug in removed]
+          paths += [('/eventos/' + slug + '/agenda.ics', 404) for slug in removed]
+          paths += [('/eventos/' + slug + '/', 200) for slug in preserved]
+          def verify_path(item):
+              path, expected = item
+              status, _ = get(path)
+              assert status == expected, f'{path}: expected {expected}, got {status}'
+              return {'path': path, 'http_status': status}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+              pages = list(pool.map(verify_path, paths))
+
+          print(json.dumps({
+              'verified_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'revision': revision,
+              'listing_http_status': 200,
+              'total_events': count,
+              'past_events_section_present': False,
+              'removed_events': len(removed),
+              'new_and_ongoing_events_preserved': preserved,
+              'pages': pages,
+              'verification': 'Live public HTTP and HTML; no browser rendering',
+          }, ensure_ascii=False, indent=2))
+          PY
