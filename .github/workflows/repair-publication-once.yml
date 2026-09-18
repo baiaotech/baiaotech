@@ -1,4 +1,4 @@
-name: Validate publication repair (temporary)
+name: Verify published site (temporary)
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
       - .github/workflows/repair-publication-once.yml
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: repair-publication-20260918
@@ -18,106 +18,126 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
-  repair-and-test:
+  verify-live-site:
     if: github.repository == 'baiaotech/baiaotech'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
-      - name: Checkout isolated repair branch
+      - name: Checkout exact published revision
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
         with:
-          ref: fix/restore-site-publication-20260918
+          ref: fb34bf1a96e179c1c66c69bc8a2b6eac29d4f59e
+          persist-credentials: false
 
-      - name: Setup supported Node.js LTS
+      - name: Setup supported Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
         with:
           node-version: 24
           cache: npm
 
-      - name: Verify clean locked installation
+      - name: Install locked browser dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Install Chromium
+        run: npx --no-install playwright install --with-deps chromium > "$RUNNER_TEMP/browser-install.log" 2>&1 || { tail -n 40 "$RUNNER_TEMP/browser-install.log"; exit 1; }
+
+      - name: Verify live public pages, metadata and loaded images
+        shell: bash
         run: |
-          npm ci --ignore-scripts --no-audit --no-fund
-          npm rebuild esbuild
-          npm ls vitest @vitest/coverage-v8
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFile, readdir, mkdir, writeFile, cp } from 'node:fs/promises';
+          import { dirname } from 'node:path';
+          import { setTimeout as delay } from 'node:timers/promises';
+          import { createHash } from 'node:crypto';
+          import { chromium } from '@playwright/test';
+          import matter from 'gray-matter';
+          const root = 'output/publication-verification';
+          await mkdir(root, { recursive: true });
+          const sha = 'fb34bf1a96e179c1c66c69bc8a2b6eac29d4f59e';
+          const origin = 'https://baiaotech.org';
+          const slugs = ['sscad-natal-2026', 'devfest-lauro-de-freitas-2026', 'wanda-campina-grande-2026'];
+          const report = { revision: sha, verifiedAt: new Date().toISOString(), method: 'Chromium against the public HTTPS site; no local server or mocked responses', repositoryEvents: (await readdir('src/content/events')).filter(x => x.endsWith('.md')).length, listing: null, events: [], wite: null, dcxp: null, status: 'IN_PROGRESS' };
+          const browser = await chromium.launch();
+          try {
+            const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
+            const page = await context.newPage();
+            page.setDefaultTimeout(20000);
+            let found = false;
+            for (let attempt = 1; attempt <= 4; attempt++) {
+              const response = await page.goto(`${origin}/eventos/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+              await page.locator('[data-results-count]').waitFor();
+              const listing = await page.evaluate(() => ({ count: document.querySelector('[data-results-count]')?.textContent.trim(), cards: document.querySelectorAll('[data-card]').length, links: Array.from(document.querySelectorAll('a[href]'), a => a.href) }));
+              report.listing = { url: page.url(), status: response.status(), count: Number(listing.count), cards: listing.cards, attempts: attempt, newEventsPresent: slugs.map(slug => ({ slug, present: listing.links.some(href => new URL(href).pathname === `/eventos/${slug}/`) })) };
+              found = response.status() === 200 && report.listing.newEventsPresent.every(event => event.present);
+              if (found) break;
+              if (attempt < 4) await delay(20000);
+            }
+            await writeFile(`${root}/eventos-publicados.html`, await page.content());
+            await page.screenshot({ path: `${root}/agenda-publicada.png`, fullPage: false });
+            assert(found, 'The public listing does not yet contain all three added events');
+            assert.equal(report.listing.count, report.listing.cards, 'Public counter differs from rendered cards');
+            for (const slug of slugs) {
+              const expected = matter(await readFile(`src/content/events/${slug}.md`, 'utf8')).data;
+              const response = await page.goto(`${origin}/eventos/${slug}/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+              assert.equal(response.status(), 200, `${slug}: HTTP status`);
+              await page.locator('h1').waitFor();
+              const detail = await page.evaluate(() => ({ title: document.querySelector('h1')?.textContent.trim(), canonical: document.querySelector('link[rel="canonical"]')?.href, description: document.querySelector('meta[name="description"]')?.content, jsonLd: Array.from(document.querySelectorAll('script[type="application/ld+json"]'), script => JSON.parse(script.textContent)) }));
+              const nodes = detail.jsonLd.flatMap(item => Array.isArray(item) ? item : [item, ...(item['@graph'] ?? [])]);
+              const event = nodes.find(item => item['@type'] === 'Event' || (Array.isArray(item['@type']) && item['@type'].includes('Event')));
+              assert.equal(detail.title, expected.title, `${slug}: title`);
+              assert.equal(new URL(detail.canonical).pathname, `/eventos/${slug}/`, `${slug}: canonical`);
+              assert(event, `${slug}: Event metadata missing`);
+              assert.equal(event.name, expected.title, `${slug}: metadata title`);
+              assert.equal(event.startDate.slice(0, 10), expected.start_date, `${slug}: metadata start date`);
+              assert.equal(event.endDate.slice(0, 10), expected.end_date, `${slug}: metadata end date`);
+              report.events.push({ slug, url: page.url(), status: response.status(), ...detail, expectedStartDate: expected.start_date, expectedEndDate: expected.end_date });
+              await page.screenshot({ path: `${root}/${slug}.png`, fullPage: false });
+            }
+            const witeResponse = await page.goto(`${origin}/eventos/wite-natal-2026/`, { waitUntil: 'domcontentloaded', timeout: 45000 });
+            assert.equal(witeResponse.status(), 200);
+            const witeImage = page.locator('.detail-intro__media img');
+            await witeImage.scrollIntoViewIfNeeded();
+            await page.waitForFunction(() => { const img = document.querySelector('.detail-intro__media img'); return img?.complete && img.naturalWidth > 0 && img.currentSrc.endsWith('/assets/covers/events/wite-natal-2026.jpg'); }, null, { timeout: 45000 });
+            report.wite = await witeImage.evaluate(img => ({ currentSrc: img.currentSrc, complete: img.complete, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, visible: img.getBoundingClientRect().width > 0 }));
+            const publicImage = await page.request.get(report.wite.currentSrc);
+            const publicBytes = await publicImage.body();
+            const sourceBytes = await readFile('src/assets/covers/events/wite-natal-2026.jpg');
+            report.wite.httpStatus = publicImage.status();
+            report.wite.contentType = publicImage.headers()['content-type'];
+            report.wite.sha256 = createHash('sha256').update(publicBytes).digest('hex');
+            assert(publicBytes.equals(sourceBytes), 'Published WITE bytes differ from committed asset');
+            await page.screenshot({ path: `${root}/wite-capa-publicada.png`, fullPage: false });
+            const dcxpResponse = await page.request.get(`${origin}/eventos/dcxp-digicom-experience-natal-2026/`);
+            const dcxpHtml = await dcxpResponse.text();
+            report.dcxp = { status: dcxpResponse.status(), currentBannerSelected: dcxpHtml.includes('https://images.ticket360.com.br/images.ticket360/eventos/composto/internas/32705.jpg') };
+            report.status = 'SUCCESS';
+          } catch (error) {
+            report.status = 'FAILURE';
+            report.error = String(error.stack ?? error);
+            process.exitCode = 1;
+          } finally {
+            await browser.close();
+            report.finishedAt = new Date().toISOString();
+            await writeFile(`${root}/verificacao-publica.json`, JSON.stringify(report, null, 2));
+            console.log(JSON.stringify(report, null, 2));
+            const files = ['package.json', 'package-lock.json', 'README.md', '.github/workflows/ci.yml', '.github/workflows/deploy-pages.yml', '.github/workflows/sonarcloud.yml', 'src/content/events/wite-natal-2026.md', 'src/assets/covers/events/wite-natal-2026.jpg'];
+            for (const file of files) {
+              const target = `${root}/arquivos-corrigidos/${file}`;
+              await mkdir(dirname(target), { recursive: true });
+              await cp(file, target);
+            }
+            await writeFile(`${root}/LEIA-ME.txt`, `Baião Tech — verificação de publicação\nRevisão: ${sha}\nOs arquivos em arquivos-corrigidos/ são cópias integrais da revisão indicada, preservando os caminhos do repositório.\nAs capturas e o JSON foram obtidos no site público, sem servidor local ou respostas simuladas.\n`);
+          }
+          NODE
 
-      - name: Optimize oversized verified JPEG using bounded scaled decoding
-        run: |
-          set -eu
-          curl --fail --silent --show-error --proto '=https' --tlsv1.2 --max-time 30 --max-filesize 15000000 'https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg' -o "$RUNNER_TEMP/wite-original.jpg"
-          printf '%s  %s\n' '3ecfd4a7b041a72f2b514019cd577662fd00ec2b5a55ac30fdebd46ab994951f' "$RUNNER_TEMP/wite-original.jpg" | sha256sum --check
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends python3-pil > "$RUNNER_TEMP/pillow-install.log"
-          /usr/bin/python3 <<'PY'
-          import os
-          from pathlib import Path
-          from PIL import Image
-          # Only the exact, hashed official JPEG is allowed past this larger header limit.
-          # JPEG draft decoding reduces pixel allocation before loading the source image.
-          Image.MAX_IMAGE_PIXELS = 400_000_000
-          source = Path(os.environ['RUNNER_TEMP']) / 'wite-original.jpg'
-          with Image.open(source) as image:
-              assert image.format == 'JPEG' and image.mode == 'RGB' and image.size == (23623, 14764)
-              print('Original JPEG:', image.size, flush=True)
-              image.draft('RGB', (1600, 1600))
-              assert image.width * image.height < 6_000_000
-              print('Bounded JPEG decode:', image.size, flush=True)
-              image.load()
-              image.thumbnail((1600, 1600), Image.Resampling.LANCZOS)
-              target = Path('src/assets/covers/events/wite-natal-2026.jpg')
-              target.parent.mkdir(parents=True, exist_ok=True)
-              image.save(target, format='JPEG', quality=88, optimize=True)
-              assert image.size == (1600, 1000)
-              assert 100 < target.stat().st_size < 250000
-              print('Optimized official image:', image.size, target.stat().st_size, flush=True)
-          event = Path('src/content/events/wite-natal-2026.md')
-          text = event.read_text()
-          old = 'cover_image: "https://images.even3.com/dQC2Mfi72TQO5ome2DgYCZQuDpE=/1100x440/smart/https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg"'
-          assert text.count(old) == 1
-          replacement = '# Copia local otimizada da capa oficial, sem recorte: https://static.even3.com/banner/WITE26_Backdrop_page-0001.24d31f3a665b42c397b6.jpg\ncover_image: "/assets/covers/events/wite-natal-2026.jpg"'
-          event.write_text(text.replace(old, replacement))
-          PY
-
-      - name: Validate content, unit tests, coverage and production build
-        env:
-          SITE_URL: https://baiaotech.org
-          PATH_PREFIX: /
-        run: |
-          npm run validate
-          npm run test:unit
-          npm run test:coverage
-          npm run build > "$RUNNER_TEMP/build-production.log"
-
-      - name: Install Playwright Chromium
-        run: npx --no-install playwright install --with-deps chromium > "$RUNNER_TEMP/install-browser.log" 2>&1 || { tail -n 50 "$RUNNER_TEMP/install-browser.log"; exit 1; }
-
-      - name: Run existing smoke E2E suite unchanged
-        run: npm run test:e2e > "$RUNNER_TEMP/e2e.log" 2>&1 || { tail -n 150 "$RUNNER_TEMP/e2e.log"; exit 1; }
-
-      - name: Show E2E summary
-        run: tail -n 25 "$RUNNER_TEMP/e2e.log"
-
-      - name: Preserve browser-validated cover on isolated branch
-        run: |
-          set -eu
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- src/content/events/wite-natal-2026.md src/assets/covers/events/wite-natal-2026.jpg
-          git diff --cached --check
-          git commit -m 'fix(media): serve browser-compatible official WITE cover locally'
-          git push origin HEAD:refs/heads/fix/restore-site-publication-20260918
-          git rev-parse HEAD
-
-      - name: Preserve validation artifacts
+      - name: Upload public verification and exact corrected files
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: publication-repair-validation
-          retention-days: 1
-          if-no-files-found: ignore
-          path: |
-            package.json
-            package-lock.json
-            src/content/events/wite-natal-2026.md
-            src/assets/covers/events/wite-natal-2026.jpg
-            coverage/lcov.info
-            output/playwright
+          name: public-site-verification
+          retention-days: 3
+          if-no-files-found: error
+          include-hidden-files: true
+          path: output/publication-verification
