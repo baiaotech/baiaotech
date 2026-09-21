@@ -14,7 +14,7 @@ source_url: "https://securityleaders.com.br/eventos/security-leaders-fortaleza-2
 categories:
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://securityleaders.com.br/wp-content/uploads/2025/11/fortaleza-1.jpg"
 price: "Pago"
 ---
 

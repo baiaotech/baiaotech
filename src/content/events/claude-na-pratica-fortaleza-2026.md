@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/claude-na-pratica/3559841"
 categories:
   - "ia"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6a94796213c7d-lg.jpg"
 price: "R$ 500"
 ---
 

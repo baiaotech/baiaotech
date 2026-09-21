@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/lgc/3554293"
 categories:
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6a8dec28dd11d-lg.jpg"
 price: ""
 ---
 

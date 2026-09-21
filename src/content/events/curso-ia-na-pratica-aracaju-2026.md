@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/curso-em-ia-na-pratica/3557994"
 categories:
   - "ia"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6a916e013370e-lg.jpg"
 price: "Pago"
 ---
 

@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "gestao-po-pm-tech-recruiter"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6aa014c3a1882-lg.png"
 price: "Doação de 2 kg de alimentos"
 ---
 
