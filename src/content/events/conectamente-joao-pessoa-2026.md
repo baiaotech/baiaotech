@@ -16,7 +16,7 @@ categories:
   - "data-science"
   - "inovacao"
 featured: false
-cover_image: "https://www.ifpb.edu.br/campus/joaopessoa/noticias/2026/09/ifpb-campus-joao-pessoa-sedia-forum-sobre-computacao-e-saude-mental/conectamente.png/@@images/image-1672-c20da7f3ba974660bd6e5176fb2a71cd.png"
+cover_image: "https://images.even3.com/ApE2ESw7-JJfiC_ouiEw-zhvJa0=/1100x440/smart/https://static.even3.com/banner/banner-conectamente-com-assert1.695739fa839b4c01827e.png"
 price: "Gratuito"
 ---
 
