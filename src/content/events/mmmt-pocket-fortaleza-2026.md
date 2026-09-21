@@ -16,7 +16,7 @@ categories:
   - "ux"
   - "ui"
 featured: false
-cover_image: "https://images.sympla.com.br/6a96ee800c130-lg.png"
+cover_image: ""
 price: ""
 ---
 

@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/lgc/3540607"
 categories:
   - "inovacao"
 featured: false
-cover_image: "https://images.sympla.com.br/6a99c6115dae8-lg.jpg"
+cover_image: ""
 price: ""
 ---
 
