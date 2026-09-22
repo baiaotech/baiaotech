@@ -15,7 +15,7 @@ categories:
   - "opensource"
   - "outros"
 featured: false
-cover_image: "https://www.gov.br/ibict/pt-br/central-de-conteudos/noticias/2026/fevereiro/conferencia-open-repositories-2027-sera-realizada-no-brasil/banner_site_-2.png"
+cover_image: ""
 price: ""
 ---
 
