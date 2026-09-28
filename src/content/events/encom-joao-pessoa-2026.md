@@ -13,7 +13,7 @@ source_name: "ENCOM / Even3"
 source_url: "https://www.even3.com.br/encom-2026-776552/"
 categories:
   - "seguranca"
-  - "cloud"
+  - "outros"
 featured: false
 cover_image: "https://images.even3.com/fW2KUZ0_w0XzJUhhemIDhE52mvk=/1100x440/smart/https://static.even3.com/banner/encom2026-logo.59b0c8922d8e4aee851b.png"
 price: "R$ 110 a R$ 330"
