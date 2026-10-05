@@ -16,7 +16,7 @@ categories:
   - "ia"
   - "outros"
 featured: false
-cover_image: "/assets/covers/events/sbesc-salvador-2026.png"
+cover_image: ""
 price: "Pago; valores variam conforme categoria e lote"
 ---
 
@@ -26,4 +26,4 @@ Promovido pela Comissão Especial de Engenharia de Sistemas Computacionais da SB
 
 As [inscrições estão abertas](https://sbesc.lisha.ufsc.br/sbesc2026/Registration), com valores diferentes para estudantes, profissionais e associados. A grade é preliminar e pode receber ajustes; consulte o [programa oficial](https://sbesc.lisha.ufsc.br/sbesc2026/Program) antes de participar.
 
-Informações consultadas em 5 de outubro de 2026. Capa: [logotipo oficial do SBESC](https://sbesc.lisha.ufsc.br/sbesc2026/display2571), disponibilizado no site da edição de 2026.
+Informações consultadas em 5 de outubro de 2026. A imagem oficial localizada é um logotipo isolado, não uma capa da edição; por isso o cadastro mantém o fallback editorial.
