@@ -79,5 +79,86 @@
     "state": "BA",
     "city": "Salvador",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "ERCAS 2026 / UFBA",
+    "source_type": "generic-html",
+    "entry_url": "https://ercas2026.ufba.br/sobre/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "EXPO ISP Brasil",
+    "source_type": "generic-html",
+    "entry_url": "https://www.expoispbrasil.com.br/evento/expedicao-ma-2026",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Feira do Conhecimento",
+    "source_type": "generic-html",
+    "entry_url": "https://feiradoconhecimento.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "FAPITEC/SE / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/2-edicao-feira-de-inovacao-tencologia-empreendedorismo-e-ciencia-da-fapitec-se-feitec/3606764",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Rede Cidade Digital via Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/forum-de-cidades-digitais-e-inteligentes-do-natal/3290628",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Liga Nacional de Robótica",
+    "source_type": "generic-html",
+    "entry_url": "https://www.lnrobotica.com.br/",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "PMI-PE via Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/pm-day-caruaru-2026-estrategia-inovacao-e-valor-humano-na-era-da-ia/3603569",
+    "enabled": true,
+    "state": "PE",
+    "city": "Caruaru",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "RoboCup Brasil",
+    "source_type": "generic-html",
+    "entry_url": "https://robotica.robocup.org.br/?p=2328",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UFAL / SINPETE Nacional 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://sinpete.ufal.br/2026/participe/eventos-satelite/secomp-semana-de-computacao",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
   }
 ]
