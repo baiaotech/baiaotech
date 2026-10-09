@@ -117,15 +117,6 @@
     "fetch_mode": "http"
   },
   {
-    "source_name": "Rede Cidade Digital via Sympla",
-    "source_type": "generic-html",
-    "entry_url": "https://www.sympla.com.br/evento/forum-de-cidades-digitais-e-inteligentes-do-natal/3290628",
-    "enabled": true,
-    "state": "RN",
-    "city": "Natal",
-    "fetch_mode": "http"
-  },
-  {
     "source_name": "Liga Nacional de Robótica",
     "source_type": "generic-html",
     "entry_url": "https://www.lnrobotica.com.br/",
