@@ -151,5 +151,50 @@
     "state": "AL",
     "city": "Maceió",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Alfama Cursos / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/curso-em-ia-na-pratica/3557994",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Berlim Digital",
+    "source_type": "generic-html",
+    "entry_url": "https://www.berlimdigital.com.br/curso/recife/startianalytics/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Gov in Play / ATI-PE e Emprel",
+    "source_type": "generic-html",
+    "entry_url": "https://govinplay.rec.br/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Organização do II Simpósio de Gestão e Tecnologia / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/ii-simpsio-de-gesto-e-tecnologia",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "PMI Ceará / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/16-congresso-de-gestao-projetos-e-lideranca-cgpl/3400264",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
