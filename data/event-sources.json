@@ -196,5 +196,95 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Bit.Week / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/bitweek-2026",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Detach! / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.detach.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "LAES / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/evidencias-inteligentes-ia-a-servico-da-justica-1",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "SESI Bahia",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sesibahia.com.br/detalhes-noticia?id=8312",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Bruno de Castro Silva / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/inteligencia-artificial-aplicada-a-tomada-de-decisao-presencial-sao-luis/3588112",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IHC 2026 / Sociedade Brasileira de Computação",
+    "source_type": "generic-html",
+    "entry_url": "https://ihc.sbc.org.br/2026/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Quixadá",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Bruno de Castro Silva / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-bi-1-do-basico-ao-dashboard-presencial-sao-luis/3588169",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPB Campus João Pessoa / Integra IFPB",
+    "source_type": "generic-html",
+    "entry_url": "https://integra.ifpb.edu.br/e/pulsar-2026",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "PPGMSB/UNEB e Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://www.ppgmsb.uneb.br/eventos/2026/sbmsb/sbmsb.html",
+    "enabled": true,
+    "state": "BA",
+    "city": "Alagoinhas",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Bruno de Castro Silva / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-bi-ii-do-intermediario-a-introducao-dax-presencial-sao-luis/3588175",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
