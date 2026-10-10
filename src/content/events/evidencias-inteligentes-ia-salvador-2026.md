@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://grcmlesydpcd.objectstorage.sa-saopaulo-1.oci.customer-oci.com/p/OQwcvnO-c63O08Gc2Kv4OTbJttj5ik60dguiDIyyQ0wuo5SWn-jHOLW9wNbylNqI/n/grcmlesydpcd/b/dtysppobjmntbkp01/o/media/doity/eventos/evento-303024-banner.jpeg"
 price: ""
 ---
 
