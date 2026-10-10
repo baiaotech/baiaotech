@@ -286,5 +286,50 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "FH Data / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/ai-sessions-by-fh-data/3597814",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "FaveLab Hub Criativo / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/meu-primeiro-robo-com-inteligencia-artificial/3614094",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Mandalla Comunicação & Design / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/ciclo-de-formacao-e-co-sistema-de-impacto-i-como-a-ia-pode-ajudar-o-seu-negocio-de-impacto/3608715",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Lovable Fortaleza / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/construindo-com-o-lovable-em-fortaleza/3584600",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "KGMlan Distribuidora / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/wi-fi-na-pratica-imersao-no-metodo-wi-fi-profissional/3590235",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
   }
 ]
