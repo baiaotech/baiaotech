@@ -331,5 +331,23 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "FING / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/fing-2026-festival-de-inovacao-e-negocios-de-garanhuns/3590559",
+    "enabled": true,
+    "state": "PE",
+    "city": "Garanhuns",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFRN Campus Ipanguaçu — Semana da Computação",
+    "source_type": "generic-html",
+    "entry_url": "https://portal.ifrn.edu.br/eventos/9877/",
+    "enabled": true,
+    "state": "RN",
+    "city": "Ipanguaçu",
+    "fetch_mode": "http"
   }
 ]
