@@ -349,5 +349,59 @@
     "state": "RN",
     "city": "Ipanguaçu",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Audens Edu",
+    "source_type": "generic-html",
+    "entry_url": "https://audensedu.com.br/formacao-em-inteligencia-artificial-para-executivo-da-audens-edu/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IMAP",
+    "source_type": "generic-html",
+    "entry_url": "https://imap.org.br/cursos/formacao-imersiva-educacao-digital-e-conectada/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Camaçari",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tiradentes Innovation Center / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/cursomakerimpressora3d-6",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "NEMA / UESPI — Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/simposiocga2026",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFCE / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/connepi-fortaleza-2026/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFMA / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/universoif2026-760578/",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
