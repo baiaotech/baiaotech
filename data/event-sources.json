@@ -403,5 +403,41 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sebrae Alagoas / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/curso-claude-na-pratica-arapiraca",
+    "enabled": true,
+    "state": "AL",
+    "city": "Arapiraca",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UFMA / III CONTEC MATOPIBA",
+    "source_type": "generic-html",
+    "entry_url": "https://contecmatopiba.ufma.br/",
+    "enabled": true,
+    "state": "MA",
+    "city": "Balsas",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IPASI / INOVA Caruaru",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.ipasi.org.br/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Caruaru",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Game Jam Caruaru / GameJamPlus",
+    "source_type": "generic-html",
+    "entry_url": "https://forms.gle/mXwZU57VAcDWWYX29",
+    "enabled": true,
+    "state": "PE",
+    "city": "Caruaru",
+    "fetch_mode": "http"
   }
 ]
