@@ -439,5 +439,50 @@
     "state": "PE",
     "city": "Caruaru",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFBA Campus Brumado / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/23-semana-nacional-de-ciencia-e-tecnologia-snct-secitec-2026-ciencia-delas-mulheres-na-ciencia-tecendo-saberes-e-vivencias-no-sertao-produtivo-772570/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Brumado",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFMA Campus Santa Inês / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/snct_ifma_santa_ines-796878/",
+    "enabled": true,
+    "state": "MA",
+    "city": "Santa Inês",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Instituto Fecomércio PE / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/circuito-ia-negocios-digitais-na-pratica-edicao-caruaru/3519203",
+    "enabled": true,
+    "state": "PE",
+    "city": "Caruaru",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "KGMlan Distribuidora / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/intelbras-defense-ia-lite/3590295",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "REC’n’Play / Porto Digital e Sebrae Pernambuco",
+    "source_type": "generic-html",
+    "entry_url": "https://recnplay.pe/o-futuro-nasce-aqui-inscricoes-abertas-para-o-recnplay-2026/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
   }
 ]
