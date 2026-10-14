@@ -547,5 +547,23 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "UESC / Hack Turismo Costa do Cacau",
+    "source_type": "generic-html",
+    "entry_url": "https://www2.uesc.br/eventos/1016/Hack-Turismo-Costa-do-Cacau",
+    "enabled": true,
+    "state": "BA",
+    "city": "Ilhéus",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AI Festival Natal",
+    "source_type": "generic-html",
+    "entry_url": "https://aifestival.com.br/edicoes/natal",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
   }
 ]
