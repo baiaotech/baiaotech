@@ -565,5 +565,14 @@
     "state": "RN",
     "city": "Natal",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "XXII SBSR / INPE e SELPER Brasil",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sbsr.com.br/sbsr-2027/page/8162-inicio",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
