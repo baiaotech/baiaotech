@@ -592,5 +592,41 @@
     "state": "BA",
     "city": "Vitória da Conquista",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Senac Sergipe / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/conectese2026-797437/",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPE Campus Garanhuns / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ii-conecta-ifpe-garanhuns-772564/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Garanhuns",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Unifametro / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/conexao-unifametro-2026",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Circuito Livre / UFBA",
+    "source_type": "generic-html",
+    "entry_url": "https://circuitolivre.org.br/programacao/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
   }
 ]
