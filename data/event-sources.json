@@ -583,5 +583,14 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sebrae Bahia e Secti Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/conquista-tech-experience-cotex/3610150",
+    "enabled": true,
+    "state": "BA",
+    "city": "Vitória da Conquista",
+    "fetch_mode": "http"
   }
 ]
