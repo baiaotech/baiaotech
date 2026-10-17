@@ -628,5 +628,23 @@
     "state": "BA",
     "city": "Salvador",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Software House UNDB / I Hackathon São Luís do Futuro",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AJE-MA / Nem Tudo É IA",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/nem-tudo-e-ia/3617110",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
