@@ -646,5 +646,23 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "R2 Distribuição / Curso de Cabeamento Estruturado",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/aplique-as-boas-praticas-de-cabeamento-estruturado/3592857",
+    "enabled": true,
+    "state": "AL",
+    "city": "Arapiraca",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Universidade Potiguar / Workshop de Vibe Coding",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/workshop-de-vibe-coding-aprendendo-a-criar-aplicativos-atraves-da-ia/3616907",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
   }
 ]
