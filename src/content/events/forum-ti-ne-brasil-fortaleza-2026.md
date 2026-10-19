@@ -9,15 +9,17 @@ state: "CE"
 organizer: "Group TI NE Brasil"
 venue: "Hotel Praia Centro - Fábrica de Negócios"
 ticket_url: "https://www.sympla.com.br/evento/12-forum-tine-brasil-edicao-fortaleza/3507947"
-source_name: "Group TI NE Brasil / Sympla"
-source_url: "https://www.sympla.com.br/evento/12-forum-tine-brasil-edicao-fortaleza/3507947"
+source_name: "Fórum TI NE Brasil"
+source_url: "https://forumtinebrasil.com.br/"
 categories:
+  - "cloud"
+  - "ia"
+  - "seguranca"
+  - "big-data"
   - "inovacao"
-  - "gestao-po-pm-tech-recruiter"
-  - "outros"
 featured: false
 cover_image: ""
 price: "Pago"
 ---
 
-O 12º Fórum TI NE Brasil acontece em 27 e 28 de novembro, em Fortaleza. O encontro reúne executivos, empresários, líderes de tecnologia, fornecedores e empresas do setor para discutir soluções, tendências, decisões estratégicas, transformação digital e oportunidades de negócio no ecossistema de tecnologia do Nordeste.
+A 12ª edição do Fórum TI NE Brasil reúne empresas, especialistas e lideranças em Fortaleza para dois dias de conteúdo, demonstrações de soluções e networking. As frentes tecnológicas incluem ERP e integração fiscal, cloud, dados, Inteligência Artificial, BI, cibersegurança, automação, infraestrutura digital, e-commerce, aplicativos e integração de sistemas, além de temas de gestão empresarial.
