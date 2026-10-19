@@ -664,5 +664,23 @@
     "state": "RN",
     "city": "Natal",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Hub LightHouse / Inovação Corporativa 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/inovacao-corporativa-2026-ia-nos-negocios/3548162",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Fórum TINE Brasil",
+    "source_type": "generic-html",
+    "entry_url": "https://forumtinebrasil.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
