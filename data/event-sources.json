@@ -682,5 +682,14 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "SENAI CIMATEC / Cibersegurança pós-quântica",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/ciberseguranca-na-era-pos-quantica",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
   }
 ]
