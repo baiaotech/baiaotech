@@ -407,10 +407,10 @@
   {
     "source_name": "Sebrae Alagoas / Doity",
     "source_type": "generic-html",
-    "entry_url": "https://doity.com.br/curso-claude-na-pratica-arapiraca",
+    "entry_url": "https://doity.com.br/sebraealagoas",
     "enabled": true,
     "state": "AL",
-    "city": "Arapiraca",
+    "city": "",
     "fetch_mode": "http"
   },
   {
@@ -690,6 +690,42 @@
     "enabled": true,
     "state": "BA",
     "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "SENAI Alagoas / 1º Simpósio da Construção Civil",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/1-simposio-senai-da-construcao-civil",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Núcleo de Eventos Penedo / Health Tech",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/penedo-health-tech-2026",
+    "enabled": true,
+    "state": "AL",
+    "city": "Penedo",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CRCMA / Contabilidade 5.0",
+    "source_type": "generic-html",
+    "entry_url": "https://crcma.org.br/noticias/contabilidade-5-0-crcma-integra-evento-com-debate-sobre-a-reforma-tributaria",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UEMASUL / IX SAPIENS",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.uemasul.edu.br/eventos/public/evento/IXSAPIENS",
+    "enabled": true,
+    "state": "MA",
+    "city": "Imperatriz",
     "fetch_mode": "http"
   }
 ]
