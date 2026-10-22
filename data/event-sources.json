@@ -727,5 +727,32 @@
     "state": "MA",
     "city": "Imperatriz",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Hack In Cariri / Submitly",
+    "source_type": "generic-html",
+    "entry_url": "https://submitly.com.br/evento/hack-in-cariri-4-edicao",
+    "enabled": true,
+    "state": "CE",
+    "city": "Juazeiro do Norte",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Campus Party Weekend Piauí 3",
+    "source_type": "generic-html",
+    "entry_url": "https://brasil.campus-party.org/cpweekend/piaui3/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "RTX Treinamentos / EducAI 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://rtxeventosai.com.br/",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
   }
 ]
