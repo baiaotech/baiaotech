@@ -754,5 +754,14 @@
     "state": "AL",
     "city": "Maceió",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "VIRTUS-CC / Conect.AI Aracaju",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/conect-ai-startup-aracaju-se/3607548",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
   }
 ]
