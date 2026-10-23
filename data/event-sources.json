@@ -763,5 +763,41 @@
     "state": "SE",
     "city": "Aracaju",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Grupo O POVO / Fábrica de Programadores",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/tecnologia-ia-e-educacao-os-desafios-e-oportunidades-na-educacao-dos-jovens/3623306",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CEST / IA na Produção Científica",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/inteligencia-artificial-na-producao-cientifica-estrategias-para-pesquisa-escrita-e-publicacao/3626148",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IPOG / Liderança na Era da IA",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/o-novo-papel-da-lideranca-na-era-da-i-a/3626656",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "More Up / II Colloquium",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/ii-colloquium-more-up-educacao-bilingue-na-era-da-inteligencia-artificial/3545493",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
