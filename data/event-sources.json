@@ -799,5 +799,32 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "LARSEC UFBA / ECHO",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/echo-evento-de-conexoes-hackin-e-operacoes-em-seguranca-788397/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Space Terra / NASA Space Apps Salvador",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/pre-inscricao-nasa-space-apps-challenge-salvador-2026/3584875",
+    "enabled": true,
+    "state": "BA",
+    "city": "Lauro de Freitas",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Quantum Brasil e CESAR / Qiskit Fall Fest",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/qiskit-fall-fest-brazil-2026/3620955",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
   }
 ]
