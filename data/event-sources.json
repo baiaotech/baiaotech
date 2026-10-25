@@ -826,5 +826,41 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Comercial Brasil / Intelbras Juazeiro",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/treinamento-intelbras-em-juazeiro-integracao-de-centrais-smart-e-cftv-ip-com-inteligencia-de-video/3629713",
+    "enabled": true,
+    "state": "CE",
+    "city": "Juazeiro do Norte",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "DTS Distribuidora / Casa Inteligente",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/tecnico-de-casa-inteligente/3628770",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UFPI / GIS Day 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/gis-day-ufpi-2026-797356/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPI Pedro II / Engenharia de Software 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/engenharia-de-software-2026-801371/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Pedro II",
+    "fetch_mode": "http"
   }
 ]
