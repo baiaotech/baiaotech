@@ -862,5 +862,50 @@
     "state": "PI",
     "city": "Pedro II",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Comissão de ADS / Conexão Universo",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/conexao-universo/3614104",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Churras Tec / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/churras-tec/3518710",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CPE Tecnologia / CPE Experience BA",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/cpe-experience-ba-lauro-de-freitas/3573115",
+    "enabled": true,
+    "state": "BA",
+    "city": "Lauro de Freitas",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPE Caruaru / SEMATEC 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/sematec2026-796992/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Caruaru",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UniAteneu / NASA Space Apps Fortaleza",
+    "source_type": "generic-html",
+    "entry_url": "https://uniateneu.edu.br/uniateneu-traz-a-nasa-com-evento-de-inovacao-e-tecnologia-para-o-campus-lagoa-de-messejana/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
