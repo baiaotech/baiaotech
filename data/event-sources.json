@@ -907,5 +907,68 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "CJE Maceió / MOVE Outubro",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/move-outubro-cje-maceio-301866-20261016220138",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tudotec / November Day Aracaju",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/november-day-tudotec-aracaju",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tiradentes Innovation Center / Workshop Maker",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/workshop3d-8",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tiradentes Innovation Center / Curso Maker",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/cursomakerimpressora3d-7",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Pipeline Moderno",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/digital-plus-pipeline-moderno-ponta-a-ponta-transformando-dados-com-dlt-dbt-e-duckdb/3634165",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Imersão Front-end e Back-end",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/imersao-digital-front-end-e-back-end/3633477",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "SNCT João Pessoa",
+    "source_type": "generic-html",
+    "entry_url": "https://snctjp.com.br/",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
   }
 ]
