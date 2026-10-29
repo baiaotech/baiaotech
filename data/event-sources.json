@@ -970,5 +970,32 @@
     "state": "PB",
     "city": "João Pessoa",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Agentes de IA",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/digital-plus-do-chatbot-ao-colega-de-trabalho-agentes-de-ia/3633845",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Observabilidade e APIs",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/digital-plus-desvendando-falhas-observabilidade-e-monitoramento-de-apis-com-ferramentas-do-mercado/3633973",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Comercial Brasil / INC Cloud Fortaleza",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/treinamento-inc-cloud-na-pratica-gerenciamento-profissional-de-redes-corporativas/3629740",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
