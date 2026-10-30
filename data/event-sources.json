@@ -997,5 +997,14 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Qiskit Fall Fest Recife 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/qiskit-fall-fest-recife-2026/3630121",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
   }
 ]
