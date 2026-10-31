@@ -1006,5 +1006,23 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Faculdade R. Sá — Semana da Computação",
+    "source_type": "generic-html",
+    "entry_url": "https://www.faculdadersa.edu.br/faculdade-r-sa-abre-inscricoes-para-a-xi-semana-da-computacao/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Picos",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Portal de Eventos Unibalsas — StartUB",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.unibalsas.edu.br/eventos/333a8f96-2a20-406a-8310-80118e7fd4c3/programacao",
+    "enabled": true,
+    "state": "MA",
+    "city": "Balsas",
+    "fetch_mode": "http"
   }
 ]
