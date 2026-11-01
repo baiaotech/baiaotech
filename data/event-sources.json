@@ -1024,5 +1024,14 @@
     "state": "MA",
     "city": "Balsas",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "UNDB Imperatriz — IA para Negócios com Claude",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/ia-para-negocios-com-claude/3580465",
+    "enabled": true,
+    "state": "MA",
+    "city": "Imperatriz",
+    "fetch_mode": "http"
   }
 ]
