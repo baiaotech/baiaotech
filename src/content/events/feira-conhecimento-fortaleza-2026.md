@@ -15,7 +15,7 @@ categories:
   - "inovacao"
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://feiradoconhecimento.com.br/wp-content/uploads/2026/10/SHARE-FDC.webp"
 price: "Gratuito"
 ---
 
