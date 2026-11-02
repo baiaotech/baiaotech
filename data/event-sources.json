@@ -1033,5 +1033,23 @@
     "state": "MA",
     "city": "Imperatriz",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Piauí Instituto de Tecnologia — PIT LAB",
+    "source_type": "generic-html",
+    "entry_url": "https://www.pi.gov.br/pit-realiza-semana-de-tecnologia-inovacao-e-empregabilidade-em-teresina-inscricoes-abertas/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group Salvador",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-senai-cimatec-university/events/317102890/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
   }
 ]
