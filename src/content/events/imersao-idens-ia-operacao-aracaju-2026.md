@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "gestao-po-pm-tech-recruiter"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6ab2ea1f07217-lg.png"
 price: "Pago"
 ---
 
