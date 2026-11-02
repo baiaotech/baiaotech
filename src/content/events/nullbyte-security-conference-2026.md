@@ -14,7 +14,7 @@ source_url: "https://www.sympla.com.br/evento/nullbyte-security-conference-2026/
 categories: 
   - "seguranca"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/63762dfde3e4e-lg.png"
 price: "R$ 250,00"
 ---
 
