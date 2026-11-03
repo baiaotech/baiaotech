@@ -1051,5 +1051,14 @@
     "state": "BA",
     "city": "Salvador",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Python Nordeste 2027",
+    "source_type": "generic-html",
+    "entry_url": "https://2027.pythonnordeste.org/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
   }
 ]
