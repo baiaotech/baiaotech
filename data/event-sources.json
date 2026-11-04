@@ -1060,5 +1060,23 @@
     "state": "PI",
     "city": "Parnaíba",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "PHP PI + PHPWomen PI — Parnaíba",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/3-anos-da-comunidade-phppi-phpwomen-pi/3636832",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sertão Tech",
+    "source_type": "generic-html",
+    "entry_url": "https://www.osertaotech.com.br/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
   }
 ]
