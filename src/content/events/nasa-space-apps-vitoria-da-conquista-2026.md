@@ -16,7 +16,7 @@ categories:
   - "data-science"
   - "fullstack"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6aac502f5481a-lg.png"
 price: ""
 ---
 
