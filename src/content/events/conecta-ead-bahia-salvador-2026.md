@@ -16,7 +16,7 @@ categories:
   - "inovacao"
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://images.even3.com/vH0ToSO8rsJIHtxgKeDHZpz2Z4A=/1100x440/smart/https://static.even3.com/banner/Principal2.7066a3be486a4ace9b41.png"
 price: "Gratuito"
 ---
 
