@@ -1134,12 +1134,21 @@
     "fetch_mode": "http"
   },
   {
-    "source_name": "Prof. JVidal / Doity",
+    "source_name": "IFAL — Materiais acessíveis com IA",
     "source_type": "generic-html",
-    "entry_url": "https://doity.com.br/techday-2026",
+    "entry_url": "https://oficina-adt-studio.vercel.app/",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Brasil JUG Fortaleza",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/brasil-jug-fortaleza/3631418",
     "enabled": true,
     "state": "CE",
-    "city": "Massapê",
+    "city": "Fortaleza",
     "fetch_mode": "http"
   }
 ]
