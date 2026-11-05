@@ -1078,5 +1078,68 @@
     "state": "PI",
     "city": "Parnaíba",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "CASS Workshop — Northeast Brazil",
+    "source_type": "generic-html",
+    "entry_url": "https://cassw-ne.site/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFRN — Portal de eventos e SUAP",
+    "source_type": "generic-html",
+    "entry_url": "https://portal.ifrn.edu.br/eventos/9981/",
+    "enabled": true,
+    "state": "RN",
+    "city": "Nova Cruz",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFRN — Portal de eventos e SUAP",
+    "source_type": "generic-html",
+    "entry_url": "https://portal.ifrn.edu.br/eventos/9983/",
+    "enabled": true,
+    "state": "RN",
+    "city": "Nova Cruz",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CCT/UEPB — Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ii-semana-de-educacao-ciencias-e-tecnologia-do-cct-798617/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Campina Grande",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Conecta EaD Bahia / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/i-conecta-ead-bahia-761729/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sebrae — Reload Aracaju",
+    "source_type": "generic-html",
+    "entry_url": "https://reload.sebrae.com.br/cidade/aracaju/",
+    "enabled": true,
+    "state": "SE",
+    "city": "Aracaju",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Prof. JVidal / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/techday-2026",
+    "enabled": true,
+    "state": "CE",
+    "city": "Massapê",
+    "fetch_mode": "http"
   }
 ]
