@@ -14,7 +14,7 @@ source_url: "https://www.even3.com.br/ii-semana-de-educacao-ciencias-e-tecnologi
 categories:
   - "ia"
 featured: false
-cover_image: ""
+cover_image: "https://images.even3.com/DbgB8GqHUixOK57xnyK_h-Hg_oI=/1100x440/smart/https://static.even3.com/banner/FaixaCCT_SECT_site.8c31b6c0cc0742788f7c.png"
 price: "Gratuito"
 ---
 
