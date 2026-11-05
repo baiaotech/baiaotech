@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "inovacao"
 featured: false
-cover_image: "/assets/covers/events/reload-aracaju-2026.jpg"
+cover_image: ""
 price: "Pago; consulte os valores atuais na loja oficial"
 ---
 
@@ -27,4 +27,3 @@ As inscrições são pela loja oficial do Sebrae, com modalidade para pessoa fí
 
 As atividades acontecem simultaneamente em quatro arenas, com entrada por ordem de chegada e sujeita à lotação, sem pré-reserva de lugares. A organização informa que não haverá transmissão online. Consulte a programação e os valores atualizados antes de se inscrever.
 
-Capa: divulgação oficial do Reload, via Sebrae.
