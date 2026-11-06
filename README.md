@@ -136,7 +136,7 @@ Workflow: `.github/workflows/ci.yml`
 - instala dependências com `npm ci --ignore-scripts`
 - roda `npm run validate`
 - roda `npm run test:unit`
-- roda smoke E2E com Playwright
+- roda smoke E2E com Playwright no runner fixo `ubuntu-24.04`, suportado pela versão instalada
 - publica artefatos do Playwright em caso de falha
 
 ### Deploy GitHub Pages
@@ -169,6 +169,7 @@ Workflow: `.github/workflows/event-intake.yml`
 Workflow: `.github/workflows/notify-new-events.yml`
 
 - roda em `push` para `main` quando um arquivo novo entra em `src/content/events/`
+- verifica se o webhook está configurado antes de instalar dependências e aguardar
 - espera 30 minutos antes de enviar a notificação
 - envia um POST por evento novo com `event_name`, `event_link` e os principais campos do front matter
 - usa o secret `EVENT_NOTIFICATION_WEBHOOK_URL` para a URL do webhook

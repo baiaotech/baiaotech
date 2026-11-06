@@ -11,7 +11,8 @@ env:
 
 jobs:
   validate-and-build:
-    runs-on: ubuntu-latest
+    # Playwright 1.58 supports Ubuntu 24.04, not the moving ubuntu-latest image.
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:

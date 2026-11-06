@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -12,6 +12,13 @@ function loadModule() {
 }
 
 describe("site script", () => {
+  const cleanups = [];
+
+  afterEach(() => {
+    cleanups.splice(0).forEach((cleanup) => cleanup());
+    vi.restoreAllMocks();
+  });
+
   beforeEach(() => {
     document.body.className = "";
     document.body.innerHTML = `
@@ -127,6 +134,150 @@ describe("site script", () => {
     require("../../src/assets/js/site.js");
 
     expect(document.body.classList.contains("is-scrolled")).toBe(false);
+  });
+
+  it("mantem o foco dentro do menu aberto nas duas direcoes", () => {
+    window.innerWidth = 390;
+    document.querySelector("[data-site-nav]").innerHTML = `
+      <a href="/">Inicio</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/oculto/" hidden>Oculto</a>
+      <button disabled>Indisponivel</button>
+      <a href="/inacessivel/" aria-hidden="true">Inacessivel</a>
+    `;
+    const { setupMobileNav, getFocusable } = loadModule();
+    cleanups.push(setupMobileNav({ documentRef: document, windowRef: window }));
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const links = getFocusable(document.querySelector("[data-site-nav]"));
+
+    expect(links).toHaveLength(2);
+    toggle.click();
+    links[1].focus();
+    const forward = new KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true });
+    links[1].dispatchEvent(forward);
+    expect(forward.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(toggle);
+
+    const backward = new KeyboardEvent("keydown", { key: "Tab", shiftKey: true, bubbles: true, cancelable: true });
+    toggle.dispatchEvent(backward);
+    expect(backward.defaultPrevented).toBe(true);
+    expect(document.activeElement).toBe(links[1]);
+
+    links[0].focus();
+    const middle = new KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true });
+    links[0].dispatchEvent(middle);
+    expect(middle.defaultPrevented).toBe(false);
+  });
+
+  it("fecha pelo backdrop, mas so navega ao clicar em um link", () => {
+    window.innerWidth = 390;
+    const nav = document.querySelector("[data-site-nav]");
+    nav.innerHTML = '<button>Outra acao</button><a href="#destino"><span>Eventos</span></a>';
+    const { setupMobileNav } = loadModule();
+    cleanups.push(setupMobileNav({ documentRef: document, windowRef: window }));
+    const toggle = document.querySelector("[data-nav-toggle]");
+
+    toggle.click();
+    nav.querySelector("button").click();
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+    document.querySelector("[data-nav-backdrop]").click();
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(toggle);
+
+    toggle.click();
+    nav.querySelector("a").focus();
+    nav.querySelector("span").click();
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(nav.querySelector("a"));
+  });
+
+  it("fecha ao mudar para desktop sem roubar foco e permite reabrir no mobile", () => {
+    window.innerWidth = 390;
+    const { setupMobileNav } = loadModule();
+    cleanups.push(setupMobileNav({ documentRef: document, windowRef: window }));
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    toggle.click();
+
+    window.innerWidth = 1280;
+    window.dispatchEvent(new Event("resize"));
+    expect(toggle.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(nav.querySelector("a"));
+    expect(nav.hasAttribute("inert")).toBe(false);
+
+    window.innerWidth = 390;
+    window.dispatchEvent(new Event("resize"));
+    expect(nav.hasAttribute("inert")).toBe(true);
+    toggle.click();
+    expect(nav.hasAttribute("inert")).toBe(false);
+    expect(toggle.querySelector("[data-nav-label]").textContent).toBe("Fechar menu");
+  });
+
+  it("remove todos os listeners do menu ao encerrar", () => {
+    window.innerWidth = 390;
+    const { setupMobileNav } = loadModule();
+    const cleanup = setupMobileNav({ documentRef: document, windowRef: window });
+    const toggle = document.querySelector("[data-nav-toggle]");
+    toggle.click();
+    cleanup();
+
+    toggle.click();
+    document.querySelector("[data-nav-backdrop]").click();
+    document.querySelector("[data-site-nav] a").click();
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+    window.innerWidth = 1280;
+    window.dispatchEvent(new Event("resize"));
+    expect(toggle.getAttribute("aria-expanded")).toBe("true");
+  });
+
+  it("suporta menu sem rotulo ou links e ignora marcacao incompleta", () => {
+    window.innerWidth = 390;
+    const { setupMobileNav, getFocusable, isNavDrawer, trapFocus } = loadModule();
+    document.querySelector("[data-nav-label]").remove();
+    document.querySelector("[data-site-nav]").replaceChildren();
+    cleanups.push(setupMobileNav({ documentRef: document }));
+    const toggle = document.querySelector("[data-nav-toggle]");
+    toggle.click();
+    expect(toggle.getAttribute("aria-label")).toBe("Fechar menu");
+
+    const event = { key: "Tab", preventDefault: vi.fn() };
+    trapFocus(event, []);
+    expect(event.preventDefault).not.toHaveBeenCalled();
+    expect(getFocusable(null)).toEqual([]);
+    expect(isNavDrawer()).toBe(false);
+    expect(isNavDrawer({ innerWidth: 720 })).toBe(true);
+    expect(isNavDrawer({ innerWidth: 721 })).toBe(false);
+
+    document.querySelector("[data-nav-backdrop]").remove();
+    expect(setupMobileNav({ documentRef: document })()).toBeUndefined();
+  });
+
+  it("nao revela itens fora da viewport e libera o observer ao encerrar", () => {
+    const { setupReveals } = loadModule();
+    let callback;
+    const unobserve = vi.fn();
+    const disconnect = vi.fn();
+    const cleanup = setupReveals({
+      documentRef: document,
+      windowRef: window,
+      prefersReducedMotion: { matches: false },
+      Observer: class {
+        constructor(cb) { callback = cb; }
+        observe() {}
+        unobserve = unobserve;
+        disconnect = disconnect;
+      }
+    });
+    const target = document.querySelector("[data-reveal]");
+
+    callback([{ isIntersecting: false, target }]);
+    expect(target.classList.contains("is-visible")).toBe(false);
+    expect(unobserve).not.toHaveBeenCalled();
+    callback([{ isIntersecting: true, target }]);
+    expect(target.classList.contains("is-visible")).toBe(true);
+    expect(unobserve).toHaveBeenCalledWith(target);
+    cleanup();
+    expect(disconnect).toHaveBeenCalledOnce();
   });
 
   it("faz fallback quando matchMedia nao existe e quando nao ha observer", () => {

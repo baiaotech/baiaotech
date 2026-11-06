@@ -64,6 +64,17 @@ jobs:
             echo "Nenhum evento novo detectado."
           fi
 
+      - name: Check notification configuration
+        if: steps.events.outputs.count != '0'
+        env:
+          EVENT_NOTIFICATION_WEBHOOK_URL: ${{ secrets.EVENT_NOTIFICATION_WEBHOOK_URL }}
+        run: |
+          webhook_url="${EVENT_NOTIFICATION_WEBHOOK_URL:-}"
+          if [ -z "${webhook_url//[[:space:]]/}" ]; then
+            echo "::error::EVENT_NOTIFICATION_WEBHOOK_URL nao esta configurado. Configure o secret antes de reenviar notificacoes."
+            exit 1
+          fi
+
       - name: Install dependencies
         if: steps.events.outputs.count != '0'
         run: npm ci --ignore-scripts
