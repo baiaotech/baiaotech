@@ -1150,5 +1150,14 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "DC Conference",
+    "source_type": "generic-html",
+    "entry_url": "https://conferenciadatacenter.com.br/",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
   }
 ]
