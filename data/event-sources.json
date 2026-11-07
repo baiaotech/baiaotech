@@ -1159,5 +1159,68 @@
     "state": "RN",
     "city": "Natal",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Fazedor de Código / Luma",
+    "source_type": "generic-html",
+    "entry_url": "https://luma.com/csk3hesu",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/imersao-digital-data-storytelling/3633470",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Abradi PE / Luma",
+    "source_type": "generic-html",
+    "entry_url": "https://luma.com/wvoow91g",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Instituto Fecomércio PE / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/circuito-ia-negocios-digitais-na-pratica-edicao-serra-talhada/3521934",
+    "enabled": true,
+    "state": "PE",
+    "city": "Serra Talhada",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "TXP / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/txp-tech-meetup-fortaleza/3617623",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "MulherIA / Priscila Reis",
+    "source_type": "generic-html",
+    "entry_url": "https://www.mulheria.com/ia-para-profissionais-salvador",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UNINASSAU Parnaíba / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/uninassau-on-tech-2026/3646281",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
   }
 ]
