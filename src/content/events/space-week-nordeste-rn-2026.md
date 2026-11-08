@@ -21,3 +21,5 @@ price: "Pago"
 ---
 
 A Space Week Nordeste 2026 acontece de 9 a 15 de novembro em Natal e Parnamirim. A quinta edição reúne especialistas, pesquisadores, estudantes e empresas em atividades sobre ciência, tecnologia e inovação espacial, com programação técnica em Inteligência Artificial, satélites, drones, sensoriamento remoto, análise de dados geoespaciais, telecomunicações, robótica e sistemas aeroespaciais.
+
+As inscrições online estão encerradas. A organização orienta realizar novas inscrições em 9 de novembro na secretaria do evento, na Escola de Ciências e Tecnologia (ECT) da UFRN. As inscrições para os minicursos também estão encerradas. Consulte a programação oficial para os locais de cada atividade.
