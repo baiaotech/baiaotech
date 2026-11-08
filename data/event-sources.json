@@ -1240,5 +1240,14 @@
     "state": "BA",
     "city": "Salvador",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "começa.ai / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/ia-de-verdade-para-quem-decide/3639146",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
   }
 ]
