@@ -1249,5 +1249,68 @@
     "state": "PB",
     "city": "João Pessoa",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "ArduCom / UFC",
+    "source_type": "generic-html",
+    "entry_url": "https://arducom.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Sobral",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Instituto Bojogá / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/caju-2026-conferencia-anual-de-jogos-unicos/3647330",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "VIRTUS / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/conect-ai-startup-natal-rn/3638296",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Projeto ELEVE / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/eleve-ii",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/lgc/3632546",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IP.rec",
+    "source_type": "generic-html",
+    "entry_url": "https://seminarioia.ip.rec.br/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "XI ETIB / IFCE Tianguá",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/xi-etib-787602/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Tianguá",
+    "fetch_mode": "http"
   }
 ]
