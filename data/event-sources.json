@@ -1303,5 +1303,14 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "XI ETIB / IFCE Tianguá",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/xi-etib-787602/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Tianguá",
+    "fetch_mode": "http"
   }
 ]

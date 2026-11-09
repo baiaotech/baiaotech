@@ -16,7 +16,7 @@ categories:
   - "games"
   - "outros"
 featured: false
-cover_image: ""
+cover_image: "https://arducom.com.br/opengraph-image?430f618606c5dc9a"
 price: "Gratuito"
 ---
 

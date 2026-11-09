@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "inovacao"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6ab3ec96cabfd-lg.jpg"
 price: ""
 ---
 

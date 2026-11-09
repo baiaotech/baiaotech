@@ -15,7 +15,7 @@ categories:
   - "ia"
   - "data-science"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/68588da775bad-lg.jpg"
 price: ""
 ---
 

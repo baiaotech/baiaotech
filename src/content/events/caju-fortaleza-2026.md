@@ -15,7 +15,7 @@ categories:
   - "games"
   - "inovacao"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/656918363207d-lg.jpg"
 price: ""
 ---
 
