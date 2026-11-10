@@ -1312,5 +1312,14 @@
     "state": "CE",
     "city": "Tianguá",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Sympla — Claude como Assistente Pessoal",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/imersao-digital-claude-como-assistente-pessoal/3633458",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
