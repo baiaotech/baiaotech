@@ -1312,5 +1312,23 @@
     "state": "CE",
     "city": "Tianguá",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Horus / Intelbras / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/mao-na-massa-implemetando-r3005g-na-sua-rede-fortaleza/3632574",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-bi-ii-do-intermediario-a-introducao-dax-presencial-sao-luis/3620907",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
