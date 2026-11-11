@@ -49,7 +49,8 @@ concurrency:
 
 jobs:
   intake:
-    runs-on: ubuntu-latest
+    # Playwright 1.58.x supports Ubuntu 24.04; do not follow ubuntu-latest.
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:
@@ -59,7 +60,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Prepare inline source registry
