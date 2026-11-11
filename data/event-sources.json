@@ -1330,5 +1330,14 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Fab Lab Recife — Open Day REC’n’Play",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/open-day-rec-n-play-2026/3646056",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
   }
 ]
