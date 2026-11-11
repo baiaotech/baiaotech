@@ -1,7 +1,25 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíãS¢Ö¥¢ëiºÙbë5---
+---
 title: "ImersÃ£o Digital â€” Claude como Assistente Pessoal"
 start_date: "2026-11-12"
 end_date: "2026-11-12"
 kind: "workshop"
 format: "in-person"
-ßm¢G§²ÚîÆ­y×'F–f–6–Âà ¤'F–6—:|:6ò:’w&GV—FÂ6öÒ6W'F–f–6FòRfv2Æ–Ö—FF2â–ç67&œ:|:6ò:’fV—Fæ:v–æöf–6–ÂFF–v—FÂ6öÆÆVvRæ7–×Æà
+city: "Fortaleza"
+state: "CE"
+organizer: "Digital College"
+venue: "Digital College Aldeota â€” Avenida Santos Dumont, 1510, 1Âº andar, Aldeota"
+ticket_url: "https://www.sympla.com.br/evento/imersao-digital-claude-como-assistente-pessoal/3633458"
+source_name: "Digital College / Sympla"
+source_url: "https://www.sympla.com.br/evento/imersao-digital-claude-como-assistente-pessoal/3633458"
+categories:
+  - "ia"
+featured: false
+cover_image: "https://images.sympla.com.br/6ae0afe8c26fe-lg.jpg"
+price: "Gratuito"
+---
+
+A Digital College promove uma imersÃ£o presencial sobre o uso do Claude como assistente pessoal e profissional em 12 de novembro de 2026, das 18h30 Ã s 20h30, na unidade Aldeota, em Fortaleza.
+
+Conduzida pelo professor Rafael Barreira, a atividade apresenta formas de fornecer contexto e instruÃ§Ãµes Ã  IA, organizar informaÃ§Ãµes e utilizar a ferramenta no planejamento e na execuÃ§Ã£o de tarefas. O encontro Ã© introdutÃ³rio e voltado a estudantes, profissionais e demais interessados em aplicaÃ§Ãµes de inteligÃªncia artificial.
+
+A participaÃ§Ã£o Ã© gratuita, com certificado e vagas limitadas. A inscriÃ§Ã£o Ã© feita na pÃ¡gina oficial da Digital College na Sympla.

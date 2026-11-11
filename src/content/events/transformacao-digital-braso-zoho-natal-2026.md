@@ -1,7 +1,27 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíçÓ¢Ö¥¢ëiºÙbë5---
+---
 title: "TransformaÃ§Ã£o Digital com a Braso + Zoho"
 start_date: "2026-11-18"
 end_date: "2026-11-18"
 kind: "meetup"
 format: "in-person"
-city: "Nataãí¢G§²ÚîÆ­yÖW&W76F÷2VÒ6öÇ\:|;VW2F–v—F—2Æ–6F2÷2æV|;66–÷2â2fv2<:6òÆ–Ö—FF2Â6öÒ–ç67&œ:|:6òVÆòf÷&×VÌ:&–òöf–6–Â–æF–6FòVÆò”ÔBõTe$âà 
+city: "Natal"
+state: "RN"
+organizer: "Braso, Zoho e MetrÃ³pole Parque"
+venue: "Sala de Treinamento do MetrÃ³pole Parque â€” IMD/UFRN"
+ticket_url: "https://forms.zohopublic.in/zohocorporation/form/EventoBrasoeZoho18112026/formperma/pY5JZsdTSNcLET6yRFlcV3aTDNaIEkM2LO4VJ3VclYM"
+source_name: "Instituto MetrÃ³pole Digital / UFRN"
+source_url: "https://www.imd.ufrn.br/portal/eventos/797/encontro-sobre-transforma%C3%A7%C3%A3o-digital"
+categories:
+  - "cloud"
+  - "ia"
+  - "inovacao"
+featured: false
+cover_image: "https://arquivista.imd.ufrn.br/fileservice/file/01a1c61b-354c-7deb-88e3-d77bda9b8c2a?key=9fbe3adcaf8fc627ea031b03ac67acd153b027a31cf96b8e44c200188ecf726f&v=20261111083145"
+price: "Gratuito"
+---
+
+O encontro TransformaÃ§Ã£o Digital com a Braso + Zoho acontece em 18 de novembro de 2026, das 18h Ã s 21h, na Sala de Treinamento do MetrÃ³pole Parque, no Instituto MetrÃ³pole Digital da UFRN, em Natal.
+
+A programaÃ§Ã£o apresenta o portfÃ³lio de software como serviÃ§o da Zoho e inclui demonstraÃ§Ãµes prÃ¡ticas e discussÃµes sobre inteligÃªncia artificial, automaÃ§Ã£o de processos, gestÃ£o comercial, atendimento ao cliente e controle de custos com serviÃ§os em nuvem. Participam profissionais de parcerias e treinamento da Zoho e a lideranÃ§a tÃ©cnica da Braso.
+
+A atividade Ã© presencial, gratuita e voltada a profissionais, gestores, empreendedores e demais interessados em soluÃ§Ãµes digitais aplicadas aos negÃ³cios. As vagas sÃ£o limitadas, com inscriÃ§Ã£o pelo formulÃ¡rio oficial indicado pelo IMD/UFRN.

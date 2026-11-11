@@ -1,7 +1,25 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíçNS¢Ö¥¢ëiºÙbë5---
+---
 title: "Power BI I â€” Do BÃ¡sico ao Dashboard"
 start_date: "2026-11-14"
 end_date: "2026-11-14"
 kind: "workshop"
 format: "in-person"
-city: "SÃ£o LãNm¢G§²ÚîÆ­yÜ;VW2ÂfÆ÷&W2R6öæFœ:|;VW2FR'F–6—:|:6òFWfVÒ6W"6öç7VÇFF÷2æ:v–æöf–6–ÂF7–×Æâ÷2†÷,:&–÷2<:6òÆö6—2FR<:6òÇ\:×2…UD>(‰#2’à 
+city: "SÃ£o LuÃ­s"
+state: "MA"
+organizer: "Yeow Treinamentos Gamificados / Bruno de Castro Silva"
+venue: "Yeow Treinamentos Gameficados, Rua Deputado LuÃ­s Rocha, 567, Royal Center, sala 207, Vila Vicente Fialho"
+ticket_url: "https://www.sympla.com.br/evento/power-bi-1-do-basico-ao-dashboard-presencial-sao-luis/3588169"
+source_name: "Yeow Treinamentos Gamificados / Sympla"
+source_url: "https://www.sympla.com.br/evento/power-bi-1-do-basico-ao-dashboard-presencial-sao-luis/3588169"
+categories:
+  - "data-science"
+featured: false
+cover_image: "https://images.sympla.com.br/664fddff8677b-lg.png"
+price: ""
+---
+
+O treinamento presencial Power BI I â€” Do BÃ¡sico ao Dashboard acontece em 14 de novembro de 2026, das 8h Ã s 18h, na Yeow Treinamentos Gamificados, em SÃ£o LuÃ­s. A atividade corresponde ao primeiro mÃ³dulo da formaÃ§Ã£o, com exercÃ­cios em equipe e certificado de participaÃ§Ã£o.
+
+O programa aborda os componentes do Power BI, configuraÃ§Ã£o inicial, importaÃ§Ã£o de dados, relacionamentos entre tabelas, limpeza com Power Query e criaÃ§Ã£o de visualizaÃ§Ãµes e relatÃ³rios interativos. TambÃ©m apresenta boas prÃ¡ticas de organizaÃ§Ã£o dos dados e desempenho.
+
+Cada participante deve levar seu notebook. InscriÃ§Ãµes, valores e condiÃ§Ãµes de participaÃ§Ã£o devem ser consultados na pÃ¡gina oficial da Sympla. Os horÃ¡rios sÃ£o locais de SÃ£o LuÃ­s (UTCâˆ’3).

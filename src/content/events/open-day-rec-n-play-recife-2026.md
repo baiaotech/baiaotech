@@ -1,7 +1,25 @@
-YªçŠx-®éÜj×¢ëiºÚ+Š§j[h‘éÜ¢éíã­“¢Ö¥¢ëiºÙbë5---
+---
 title: "Open Day | RECâ€™nâ€™Play 2026 â€” Fab Lab Recife"
 start_date: "2026-11-13"
 end_date: "2026-11-13"
 kind: "workshop"
 format: "in-person"
-ciß­­¢G§²ÚîÆ­y×"&ö¦WFòRòÄ7W7F"BÃS÷"w&Öâ6öç7VÇFR:v–æöf–6–Â&F—7öæ–&–Æ–FFRFR†÷,:&–÷2R÷&–VçF:|;VW2FR&W&:|:6òF÷2'V—f÷2à
+city: "Recife"
+state: "PE"
+organizer: "Fab Lab Recife"
+venue: "Fab Lab Recife â€” Rua da Moeda, 129, tÃ©rreo, Recife"
+ticket_url: "https://www.sympla.com.br/evento/open-day-rec-n-play-2026/3646056"
+categories:
+  - "inovacao"
+featured: false
+cover_image: "https://images.sympla.com.br/6aedd13446908-lg.png"
+price: "Uso das mÃ¡quinas gratuito nos limites anunciados; materiais cobrados Ã  parte"
+source_name: "Fab Lab Recife â€” Sympla"
+source_url: "https://www.sympla.com.br/evento/open-day-rec-n-play-2026/3646056"
+---
+
+O Fab Lab Recife promove uma ediÃ§Ã£o presencial do Open Day integrada ao RECâ€™nâ€™Play em 13 de novembro de 2026, das 13h Ã s 17h. A atividade permite experimentar fabricaÃ§Ã£o digital com cortadora a laser e impressoras 3D.
+
+O agendamento pela Sympla Ã© obrigatÃ³rio, limitado a um horÃ¡rio por pessoa. Para aproveitar o laboratÃ³rio, leve o arquivo do projeto pronto; se precisar de ajustes, leve tambÃ©m seu notebook.
+
+O corte a laser inclui atÃ© 30 minutos de uso gratuito, com cobranÃ§a dos materiais utilizados. Para impressÃ£o 3D, o limite Ã© de duas horas por projeto e o PLA custa R$ 0,50 por grama. Consulte a pÃ¡gina oficial para disponibilidade de horÃ¡rios e orientaÃ§Ãµes de preparaÃ§Ã£o dos arquivos.
