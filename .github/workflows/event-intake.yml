@@ -215,8 +215,7 @@ jobs:
 
           if [ -n "${MANUAL_EVENT_INTAKE_JSON}" ]; then
             node scripts/event-intake/manual.mjs \
-              "$APPLY_FLAG" \
-              "--today=2026-04-29"
+              "$APPLY_FLAG"
             exit 0
           fi
 
