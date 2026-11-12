@@ -1420,5 +1420,14 @@
     "state": "PB",
     "city": "João Pessoa",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Power Apps e Power Automate — Meu primeiro App",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-apps-e-power-automate-meu-primeiro-app/3644733",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
