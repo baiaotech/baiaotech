@@ -1357,5 +1357,23 @@
     "state": "RN",
     "city": "Natal",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Bruno de Castro Silva / Power Apps e Power Automate — Meu primeiro App",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-apps-e-power-automate-meu-primeiro-app/3644733",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Digital College / Digital Plus — Scrum na Prática: Projetos Ágeis de Tecnologia",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/digital-plus-scrum-na-pratica-projetos-ageis-de-tecnologia/3635522",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
