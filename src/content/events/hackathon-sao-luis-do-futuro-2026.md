@@ -15,7 +15,7 @@ categories:
   - "inovacao"
   - "fullstack"
 featured: false
-cover_image: ""
+cover_image: "https://images.sympla.com.br/6acfcaefe2e29-lg.png"
 ---
 
 O I Hackathon São Luís do Futuro acontece de 13 a 15 de novembro de 2026, presencialmente no Campus Renascença da UNDB, em São Luís. A página oficial informa início às 19h do dia 13 e encerramento às 21h do dia 15, no horário local (UTC−3).
@@ -24,4 +24,4 @@ Durante os três dias, equipes passam por ideação, construção, validação, 
 
 A realização é da Software House UNDB em parceria com a SEMISPE. A participação é feita pela página oficial da Sympla, sujeita à disponibilidade.
 
-Fonte: [página oficial do evento na Sympla](https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201), consultada em 17 de outubro de 2026. A capa específica foi confirmada na origem, mas o site usa a ilustração editorial padrão até haver um asset estável.
+Fonte: [página oficial do evento na Sympla](https://www.sympla.com.br/evento/i-hackathon-sao-luis-do-futuro-undb-semispe/3583201), consultada em 12 de novembro de 2026. A capa é o banner principal da página específica do evento, também declarado em `og:image` e `twitter:image`.
