@@ -16,7 +16,7 @@ categories:
   - "seguranca"
   - "gestao-po-pm-tech-recruiter"
 featured: false
-cover_image: ""
+cover_image: "https://static.jalanlive.com/public/imports/techwoman26/image/20ff5dbf-85d7-49b8-b030-f446abf41b45.webp"
 price: "R$ 80; ingresso social gratuito limitado, conforme critérios da organização"
 ---
 
@@ -27,3 +27,5 @@ A programação inclui engenharia de contexto aplicada a produtos, algoritmos au
 As inscrições são feitas pela Jalan. Na consulta de 13 de novembro, havia ingresso regular de R$ 80 e modalidade social gratuita com autodeclaração e vagas limitadas. A opção social com alimentação estava esgotada. Consulte a disponibilidade e as condições antes de se inscrever.
 
 Fontes: [programação oficial](https://app.jalanlive.com/techwoman26/home), [inscrições](https://register.jalanlive.com/techwoman26) e [divulgação do Instituto Metrópole Digital da UFRN](https://www.imd.ufrn.br/portal/eventos/794/tech-woman-2026), consultadas em 13 de novembro de 2026.
+
+Capa: banner principal da página oficial da edição, com identidade, data e local do evento.
