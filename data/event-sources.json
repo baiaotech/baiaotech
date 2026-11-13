@@ -1438,5 +1438,14 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "browser"
+  },
+  {
+    "source_name": "AWS Student Builder Group UEPB / Meetup",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-uepb-state-university-of-paraiba-campus-i/events/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Campina Grande",
+    "fetch_mode": "http"
   }
 ]
