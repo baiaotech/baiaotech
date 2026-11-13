@@ -1429,5 +1429,14 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tech Woman / Jalan",
+    "source_type": "generic-html",
+    "entry_url": "https://app.jalanlive.com/techwoman26/home",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "browser"
   }
 ]
