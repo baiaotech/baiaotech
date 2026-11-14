@@ -1483,5 +1483,32 @@
     "state": "BA",
     "city": "Salvador",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "TCE Protege / ECPCJAM TCE-AL / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/tce-protege-privacidade-dados-e-informacao-303163-20261110082614",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "DTS Distribuidora / Intelbras CVE-Pro / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/estacoes-de-recargas-rapidas-para-veiculos-eletricos-software-intelbras-cve-pro/3628747",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CETEC UFRB / Ciclo de Seminários",
+    "source_type": "generic-html",
+    "entry_url": "https://www.ufrb.edu.br/cetec/eventos/1446-cetec-promove-seminario-sobre-aprendizado-federado-e-seguranca-na-era-quantica",
+    "enabled": true,
+    "state": "BA",
+    "city": "Cruz das Almas",
+    "fetch_mode": "http"
   }
 ]
