@@ -1447,5 +1447,41 @@
     "state": "PB",
     "city": "Campina Grande",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Ideathon AGR-IA: Inteligência Artificial para transformar territórios / UFDPar / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ideathon-agr-ia-inteligencia-artificial-para-transformar-territorios-808966/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IA Summit 2026 / Kadenza Tecnologia",
+    "source_type": "generic-html",
+    "entry_url": "https://www.iasummit2026recife.com.br/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GameLab: Atendimento Inteligente & IA / Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/gamelab-atendimento-inteligente-ia/3621659",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GameLab: Agentes de IA e Produtividade / Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/gamelab-agentes-de-ia-e-produtividade/3621668",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
   }
 ]
