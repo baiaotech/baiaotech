@@ -1357,5 +1357,158 @@
     "state": "RN",
     "city": "Natal",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "UFCA — WTICIFES 2027",
+    "source_type": "generic-html",
+    "entry_url": "https://www.ufca.edu.br/noticias/ufca-sedia-edicao-2027-do-congresso-de-tecnologia-da-informacao-e-da-comunicacao-das-instituicoes-de-ensino-superior-do-brasil/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Juazeiro do Norte",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP Recife",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/74/recife-pe",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP Teresina",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/76/teresina-pi",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP Fortaleza",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/77/fortaleza-ce",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP São Luís",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/81/saoluis-ma",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP Natal",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/82/natal-rn",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "INTER'ISP João Pessoa",
+    "source_type": "generic-html",
+    "entry_url": "https://www.interisp.com.br/eventos/84/joaopessoa-pb",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Power Apps e Power Automate — Meu primeiro App",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/power-apps-e-power-automate-meu-primeiro-app/3644733",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Tech Woman / Jalan",
+    "source_type": "generic-html",
+    "entry_url": "https://app.jalanlive.com/techwoman26/home",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "browser"
+  },
+  {
+    "source_name": "AWS Student Builder Group UEPB / Meetup",
+    "source_type": "meetup-group",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-uepb-state-university-of-paraiba-campus-i/events/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Campina Grande",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Ideathon AGR-IA: Inteligência Artificial para transformar territórios / UFDPar / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ideathon-agr-ia-inteligencia-artificial-para-transformar-territorios-808966/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IA Summit 2026 / Kadenza Tecnologia",
+    "source_type": "generic-html",
+    "entry_url": "https://www.iasummit2026recife.com.br/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Recife",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GameLab: Atendimento Inteligente & IA / Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/gamelab-atendimento-inteligente-ia/3621659",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "GameLab: Agentes de IA e Produtividade / Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/gamelab-agentes-de-ia-e-produtividade/3621668",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "TCE Protege / ECPCJAM TCE-AL / Doity",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/tce-protege-privacidade-dados-e-informacao-303163-20261110082614",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "DTS Distribuidora / Intelbras CVE-Pro / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/estacoes-de-recargas-rapidas-para-veiculos-eletricos-software-intelbras-cve-pro/3628747",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "CETEC UFRB / Ciclo de Seminários",
+    "source_type": "generic-html",
+    "entry_url": "https://www.ufrb.edu.br/cetec/eventos/1446-cetec-promove-seminario-sobre-aprendizado-federado-e-seguranca-na-era-quantica",
+    "enabled": true,
+    "state": "BA",
+    "city": "Cruz das Almas",
+    "fetch_mode": "http"
   }
 ]
