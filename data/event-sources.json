@@ -1510,5 +1510,14 @@
     "state": "BA",
     "city": "Cruz das Almas",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "RoboCup Brasil / Robótica 2026 / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/robotica-2026/3647514",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
   }
 ]
