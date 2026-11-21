@@ -1143,6 +1143,15 @@
     "fetch_mode": "http"
   },
   {
+    "source_name": "IFAL — Campus Maceió / Doity (3ª turma)",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/criacao-de-conteudo-acessivel-uma-abordagem-automatizada-com-inteligencia-artificial-3-turma",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
     "source_name": "Brasil JUG Fortaleza",
     "source_type": "generic-html",
     "entry_url": "https://www.sympla.com.br/evento/brasil-jug-fortaleza/3631418",
