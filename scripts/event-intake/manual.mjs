@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
@@ -24,7 +25,12 @@ import {
   unique
 } from "./shared.mjs";
 
-const DEFAULT_TODAY_KEY = "2026-04-29";
+const require = createRequire(import.meta.url);
+const { EVENT_TIME_ZONE, getDateKeyInTimeZone } = require("../../lib/event-dates.js");
+
+function currentTodayKey() {
+  return getDateKeyInTimeZone(new Date(), EVENT_TIME_ZONE);
+}
 const OUTPUT_DIR = path.join("output", "event-intake");
 
 const KIND_MAP = new Map([
@@ -273,7 +279,7 @@ export function normalizeManualEvent(rawEvent, options = {}) {
 }
 
 export function validateManualEvent(candidate, rawEvent = {}, options = {}) {
-  const todayKey = options.todayKey || DEFAULT_TODAY_KEY;
+  const todayKey = options.todayKey || currentTodayKey();
   const issues = [];
   const sourceInput = rawEvent.source_url || rawEvent.ticket_url || candidate.source_url || candidate.ticket_url;
   const endDate = candidate.end_date || candidate.start_date;
@@ -358,7 +364,7 @@ export async function buildManualEventOperations(rawEvents, options = {}) {
   const categories = options.categories || await loadCategories();
   const categorySlugs = categories.map((item) => item.slug);
   const existingEvents = options.existingEvents || await loadExistingEvents();
-  const todayKey = options.todayKey || DEFAULT_TODAY_KEY;
+  const todayKey = options.todayKey || currentTodayKey();
   const accepted = [];
   const rejected = [];
 
@@ -584,7 +590,7 @@ function parseArgs(argv) {
     apply: false,
     file: "",
     json: "",
-    todayKey: DEFAULT_TODAY_KEY
+    todayKey: ""
   };
 
   for (const arg of argv) {
