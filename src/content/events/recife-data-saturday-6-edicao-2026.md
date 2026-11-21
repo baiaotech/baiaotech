@@ -20,8 +20,12 @@ cover_image: "/assets/covers/events/recife-data-saturday-6-edicao-2026.jpg"
 price: "Gratuito"
 ---
 
-A sexta edição do Recife Data Saturday acontece em 19 de dezembro de 2026, das 9h às 16h30, no Auditório Roque de Brito da UNINASSAU Graças. Os horários são locais, no fuso America/Fortaleza (UTC−3).
+A sexta edição do Recife Data Saturday acontece em 19 de dezembro de 2026, das 8h40 às 16h30, no Auditório Roque de Brito da UNINASSAU Graças. Os horários são locais, no fuso America/Fortaleza (UTC−3).
 
 A conferência reúne profissionais e estudantes interessados em bancos de dados, Business Intelligence, Big Data, Analytics e Data Science. A programação inclui tecnologias de dados e nuvem, como Azure, Databricks e Microsoft Fabric, além de carreira e certificações.
+
+As palestras começam às 9h. Os temas anunciados incluem certificações e credenciais Databricks, carreira nacional e internacional em dados e agentes de IA com Databricks e Microsoft Fabric. Entre os palestrantes estão Kelvin Frade, Luciano Borba, Luiz Santana e Tulio Melibeu.
+
+A organização também prevê certificado de participação e sorteios de vouchers de certificação Microsoft. A doação de 1 kg de alimento não perecível para a ação solidária é voluntária, não uma condição de entrada.
 
 As inscrições são gratuitas pela página oficial na Sympla, sujeitas à disponibilidade de vagas.
