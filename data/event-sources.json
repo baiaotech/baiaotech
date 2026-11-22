@@ -1537,5 +1537,32 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group da UFC / Meetup",
+    "source_type": "generic-html",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-ufc-federal-university-of-ceara/events/317362685/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Quixadá",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IEEE SMC UFPB / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/automacao-na-era-da-inteligencia-artificial-industrial/3658682",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group UFBA / Meetup",
+    "source_type": "generic-html",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-ufba/events/317444083/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
   }
 ]
