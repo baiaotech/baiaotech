@@ -1537,5 +1537,14 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Equipe Additive IFMA / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/i-workshop-de-manufatura-aditiva-additive-ifma-790014/",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
