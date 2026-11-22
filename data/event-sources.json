@@ -1573,5 +1573,50 @@
     "state": "PE",
     "city": "Igarassu",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Festival SESI de Ciência, Tecnologia e Inovação",
+    "source_type": "generic-html",
+    "entry_url": "https://www.festivalsesi.com.br/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPB Campus Soledade — InovaIF 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/inovaif-804970/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Soledade",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFCE Campus Aracati — ValeTech 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/valetech2026-808965/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Aracati",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "EXPOLOG — FuturoLog",
+    "source_type": "generic-html",
+    "entry_url": "https://feiraexpolog.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Banco do Nordeste — Semana da Segurança e Privacidade",
+    "source_type": "generic-html",
+    "entry_url": "https://www.bnb.gov.br/semana-da-seguranca-e-privacidade",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
   }
 ]
