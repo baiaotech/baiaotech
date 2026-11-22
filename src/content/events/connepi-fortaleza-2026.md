@@ -15,7 +15,7 @@ categories:
   - "inovacao"
   - "games"
 featured: false
-cover_image: ""
+cover_image: "/assets/covers/events/connepi-fortaleza-2026.webp"
 price: "Gratuito"
 ---
 
@@ -23,6 +23,6 @@ O XV CONNEPI acontece de 9 a 11 de dezembro de 2026 no Centro de Eventos do Cear
 
 Entre as atividades anunciadas estão o Torneio de Robótica, a Arena Games com festival de jogos digitais e a Mostra Tecnológica, além de apresentações científicas, palestras e mesas-redondas. Consulte a página oficial para os horários e a programação atualizada.
 
-Em 11 de outubro, a página oficial disponibilizava inscrição gratuita para visitantes. As competições têm regulamentos e inscrições próprios; as submissões de trabalhos científicos já estavam encerradas. A participação deve observar as condições e vagas informadas pela organização.
+Em 16 de novembro, a Even3 exibia a opção gratuita para visitantes até 11 de dezembro. A comissão informa que pode avaliar novos períodos de inscrição. Consulte a disponibilidade na página oficial antes de se programar. As competições têm inscrições e regulamentos próprios, e a submissão de trabalhos científicos está encerrada.
 
-Fonte: [página oficial na Even3](https://www.even3.com.br/connepi-fortaleza-2026/), consultada em 11 de outubro de 2026.
+Fonte: [página oficial na Even3](https://www.even3.com.br/connepi-fortaleza-2026/), consultada em 16 de novembro de 2026. Arte oficial: Comissão Organizadora do CONNEPI / IFCE.
