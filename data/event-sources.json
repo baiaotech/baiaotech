@@ -1618,5 +1618,95 @@
     "state": "CE",
     "city": "Fortaleza",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group da UFC / Meetup",
+    "source_type": "generic-html",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-ufc-federal-university-of-ceara/events/317362685/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Quixadá",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IEEE SMC UFPB / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/automacao-na-era-da-inteligencia-artificial-industrial/3658682",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group UFBA / Meetup",
+    "source_type": "generic-html",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-ufba/events/317444083/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Geopública / CECAR e SEI Bahia / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/geopublica-2026-797756/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "DevFest Salvador / GDG Salvador / Catraca Virtual",
+    "source_type": "generic-html",
+    "entry_url": "https://catracavirtual.com/eventos/devfest-salvador-2026",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "browser"
+  },
+  {
+    "source_name": "DevFest Parnaíba / GDG Parnaíba / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/devfest-parnaiba/3637926",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Bahia Tech Experience / Secti Bahia e Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/bahia-tech-experience-btx26/3579757",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "I Simpósio Piauiense de Ciência de Dados em Saúde / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/i-simposio-piauiense-de-ciencia-de-dados-em-saude-810707/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IBGE / IFRN — CONFEST/CONFEGE 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.ibge.gov.br/conferencia/inicio",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UESB — Connect.SI 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/connect-si-semana-de-sistemas-de-informacao-806068/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Jequié",
+    "fetch_mode": "http"
   }
 ]
