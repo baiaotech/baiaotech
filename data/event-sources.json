@@ -1143,6 +1143,15 @@
     "fetch_mode": "http"
   },
   {
+    "source_name": "IFAL — Campus Maceió / Doity (3ª turma)",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/criacao-de-conteudo-acessivel-uma-abordagem-automatizada-com-inteligencia-artificial-3-turma",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
+  },
+  {
     "source_name": "Brasil JUG Fortaleza",
     "source_type": "generic-html",
     "entry_url": "https://www.sympla.com.br/evento/brasil-jug-fortaleza/3631418",
@@ -1539,6 +1548,78 @@
     "fetch_mode": "http"
   },
   {
+    "source_name": "Equipe Additive IFMA / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/i-workshop-de-manufatura-aditiva-additive-ifma-790014/",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPI Campus Picos — II SCTI 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ii-semana-de-ciencia-tecnologia-e-inovacao-2026-783956/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Picos",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPE Campus Igarassu — CTF 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/ctf-ifpe-811068/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Igarassu",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Festival SESI de Ciência, Tecnologia e Inovação",
+    "source_type": "generic-html",
+    "entry_url": "https://www.festivalsesi.com.br/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFPB Campus Soledade — InovaIF 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/inovaif-804970/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Soledade",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IFCE Campus Aracati — ValeTech 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/valetech2026-808965/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Aracati",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "EXPOLOG — FuturoLog",
+    "source_type": "generic-html",
+    "entry_url": "https://feiraexpolog.com.br/",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Banco do Nordeste — Semana da Segurança e Privacidade",
+    "source_type": "generic-html",
+    "entry_url": "https://www.bnb.gov.br/semana-da-seguranca-e-privacidade",
+    "enabled": true,
+    "state": "CE",
+    "city": "Fortaleza",
+    "fetch_mode": "http"
+  },
+  {
     "source_name": "AWS Student Builder Group da UFC / Meetup",
     "source_type": "generic-html",
     "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-ufc-federal-university-of-ceara/events/317362685/",
@@ -1563,6 +1644,69 @@
     "enabled": true,
     "state": "BA",
     "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Geopública / CECAR e SEI Bahia / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/geopublica-2026-797756/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "DevFest Salvador / GDG Salvador / Catraca Virtual",
+    "source_type": "generic-html",
+    "entry_url": "https://catracavirtual.com/eventos/devfest-salvador-2026",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "browser"
+  },
+  {
+    "source_name": "DevFest Parnaíba / GDG Parnaíba / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/devfest-parnaiba/3637926",
+    "enabled": true,
+    "state": "PI",
+    "city": "Parnaíba",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Bahia Tech Experience / Secti Bahia e Sebrae Bahia / Sympla",
+    "source_type": "generic-html",
+    "entry_url": "https://www.sympla.com.br/evento/bahia-tech-experience-btx26/3579757",
+    "enabled": true,
+    "state": "BA",
+    "city": "Salvador",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "I Simpósio Piauiense de Ciência de Dados em Saúde / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/i-simposio-piauiense-de-ciencia-de-dados-em-saude-810707/",
+    "enabled": true,
+    "state": "PI",
+    "city": "Teresina",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "IBGE / IFRN — CONFEST/CONFEGE 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.ibge.gov.br/conferencia/inicio",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "UESB — Connect.SI 2026 / Even3",
+    "source_type": "generic-html",
+    "entry_url": "https://www.even3.com.br/connect-si-semana-de-sistemas-de-informacao-806068/",
+    "enabled": true,
+    "state": "BA",
+    "city": "Jequié",
     "fetch_mode": "http"
   }
 ]

@@ -17,7 +17,11 @@ categories:
   - "devops"
 featured: false
 cover_image: "https://images.even3.com/BuIkDtyEv5cYapdQPd239SOmkRM=/1100x440/smart/https://static.even3.com/banner/Banner-AIEng20273.8e2a8501172e4022be7d.png"
-price: ""
+price: "Pago"
 ---
 
 O AIEng 2027 é uma escola internacional de verão dedicada à engenharia de sistemas baseados em inteligência artificial. Realizado durante cinco dias na UECE, em Fortaleza, o evento terá palestras, atividades práticas e discussões sobre projeto, desenvolvimento, testes, qualidade, implantação, observabilidade e evolução de sistemas de IA. A programação será conduzida em inglês e é voltada a estudantes, pesquisadores, desenvolvedores, arquitetos de software e profissionais da indústria.
+
+O credenciamento será no Auditório Central do Campus Itaperi (Av. Dr. Silas Munguba, 1700). Até 20 de janeiro de 2027, os valores promocionais na Even3 são R$ 110 para estudantes de graduação, R$ 165 para estudantes de pós-graduação e R$ 275 para profissionais, já com a taxa da plataforma.
+
+O GESAD recebe pedidos de auxílio de estudantes com dificuldade financeira pelo [site oficial do evento](https://gesaduece.com.br/pt/events/aieng/2027). O auxílio não é garantido, e o pedido não substitui a inscrição na Even3.

@@ -24,4 +24,6 @@ O Brasil JUG Fortaleza 2026 acontece em 28 de novembro, das 13h às 17h, na Digi
 
 A programação inclui desenvolvimento de agentes de inteligência artificial com Koog e Kotlin, integração de aplicações Java e Spring Boot com modelos de linguagem e APIs, além de uma palestra sobre carreiras em tecnologia, produto, agilidade, UX e UI. O evento também prevê networking, coffee break e sorteios.
 
+O credenciamento começa às 13h. A agenda prevê Mattheus Cassundé com Koog e Kotlin às 13h30, Thiago Leite com integração de Java/Spring e IA às 14h20 e Régis Simão com carreiras em tecnologia às 15h40. O encerramento e os sorteios estão previstos para 16h30.
+
 As inscrições são feitas pela página oficial do evento no Sympla. Consulte o valor e a disponibilidade atuais antes de participar.
