@@ -1744,5 +1744,23 @@
     "state": "SE",
     "city": "Aracaju",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "UNI-RN — Semana de Informática 2026",
+    "source_type": "generic-html",
+    "entry_url": "https://eventos.unirn.edu.br/sisuni/eventos/visualizar/1649",
+    "enabled": true,
+    "state": "RN",
+    "city": "Natal",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Caatingeek — site oficial",
+    "source_type": "generic-html",
+    "entry_url": "https://caatingeek.com/",
+    "enabled": true,
+    "state": "PE",
+    "city": "Serra Talhada",
+    "fetch_mode": "http"
   }
 ]
