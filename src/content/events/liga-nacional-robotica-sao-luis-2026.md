@@ -1,7 +1,7 @@
 ---
 title: "Liga Nacional de Robótica 2026 — São Luís"
 start_date: "2026-12-01"
-end_date: "2026-12-04"
+end_date: "2026-12-03"
 kind: "other"
 format: "in-person"
 city: "São Luís"
@@ -19,7 +19,7 @@ cover_image: "/assets/covers/events/liga-nacional-robotica-sao-luis-2026.png"
 price: "R$ 300 por equipe, conforme regulamento"
 ---
 
-A etapa presencial da Liga Nacional de Robótica 2026 será realizada de 1º a 4 de dezembro no Golden Shopping Calhau, em São Luís. A competição reúne equipes para aplicar conhecimentos de programação, eletrônica e mecânica na construção e operação de robôs.
+A etapa presencial da Liga Nacional de Robótica 2026 será realizada de 1º a 3 de dezembro no Golden Shopping Calhau, em São Luís. A competição reúne equipes para aplicar conhecimentos de programação, eletrônica e mecânica na construção e operação de robôs.
 
 Entre as modalidades presenciais anunciadas estão Smart Maze, Robot Sumô, Balloon Battle, Tug of War, Artistic Performance, Drone Rescue e Robot Soccer. As provas envolvem navegação autônoma, sensores, controle e estratégias de competição.
 
