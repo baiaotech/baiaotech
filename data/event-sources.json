@@ -1762,5 +1762,14 @@
     "state": "PE",
     "city": "Serra Talhada",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Power BI 1",
+    "source_type": "sympla",
+    "entry_url": "https://www.sympla.com.br/evento/power-bi-1-do-basico-ao-dashboard-presencial-sao-luis/3651361",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
   }
 ]
