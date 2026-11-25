@@ -1762,5 +1762,23 @@
     "state": "PE",
     "city": "Serra Talhada",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Yeow Treinamentos Gamificados / Power BI 1",
+    "source_type": "sympla",
+    "entry_url": "https://www.sympla.com.br/evento/power-bi-1-do-basico-ao-dashboard-presencial-sao-luis/3651361",
+    "enabled": true,
+    "state": "MA",
+    "city": "São Luís",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group at UEPB / S3 e Bedrock",
+    "source_type": "meetup-event",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-uepb-state-university-of-paraiba-campus-i/events/317164488/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Campina Grande",
+    "fetch_mode": "http"
   }
 ]
