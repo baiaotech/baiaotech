@@ -1771,5 +1771,14 @@
     "state": "MA",
     "city": "São Luís",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "AWS Student Builder Group at UEPB / S3 e Bedrock",
+    "source_type": "meetup-event",
+    "entry_url": "https://www.meetup.com/pt-br/aws-sbg-at-uepb-state-university-of-paraiba-campus-i/events/317164488/",
+    "enabled": true,
+    "state": "PB",
+    "city": "Campina Grande",
+    "fetch_mode": "http"
   }
 ]
