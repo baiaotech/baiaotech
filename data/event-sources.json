@@ -1798,5 +1798,14 @@
     "state": "PE",
     "city": "Recife",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Parque Tecnológico Horizontes de Inovação / Conecta PTHI",
+    "source_type": "generic-html",
+    "entry_url": "https://beevent.com.br/ingressos/conecta-pthi-2026-2026-12-03/",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
   }
 ]
