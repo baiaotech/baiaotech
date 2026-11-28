@@ -1807,5 +1807,32 @@
     "state": "PB",
     "city": "Campina Grande",
     "fetch_mode": "http"
+  },
+  {
+    "source_name": "Parque Tecnológico Horizontes de Inovação / Conecta PTHI",
+    "source_type": "generic-html",
+    "entry_url": "https://beevent.com.br/ingressos/conecta-pthi-2026-2026-12-03/",
+    "enabled": true,
+    "state": "PB",
+    "city": "João Pessoa",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sebrae Alagoas / Oficina de Criação de Jogos",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/criajogosarapiraca",
+    "enabled": true,
+    "state": "AL",
+    "city": "Arapiraca",
+    "fetch_mode": "http"
+  },
+  {
+    "source_name": "Sebrae Alagoas / Game Jam Sebrae Games",
+    "source_type": "generic-html",
+    "entry_url": "https://doity.com.br/game-jam-sebrae-games--maratona-de-desenvolvimento-de-jogos-digitais-maceio",
+    "enabled": true,
+    "state": "AL",
+    "city": "Maceió",
+    "fetch_mode": "http"
   }
 ]
